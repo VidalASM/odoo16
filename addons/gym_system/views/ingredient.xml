@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_nutrition_ingredient_id">
+            <field name="name">Ingredient</field>
+            <field name="model">gym.ingredient</field>
+            <field name="arch" type="xml">
+                <form string="gym ingredient form">
+                <sheet>
+                    <h2>
+                        <!--field name="no"/-->
+                    </h2>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="value_in" required="1"/>
+                            <field name="unit_id" widget = "selection" required="1"/>
+                            <field name="energy"/>
+                            <field name="protein"/>
+                            <field name="carbohydrates"/>
+                        </group>
+                        <group>
+                            <field name="sugerincarbohydrates"/>
+                            <field name="fat"/>
+                            <field name="staturated"/>
+                            <field name="fibres"/>
+                            <field name="sodium"/>
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_ingredient_tree_id">
+            <field name="name">ingedient tree</field>
+            <field name="model">gym.ingredient</field>
+            <field name="arch" type="xml">
+                <tree string="ingredient list">
+<!--                    <field name="no"/-->
+                    <field name="name"/>
+                    <field name="value_in"/>
+                    <field name="unit_id" groups="product.group_uom" class="oe_inline"/>
+                    <field name="energy"/>
+                    <field name="protein"/>
+                    <field name="carbohydrates"/>
+                    <field name="sugerincarbohydrates"/>
+                    <field name="fat"/>
+                    <field name="staturated"/>
+                    <field name="fibres"/>
+                    <field name="sodium"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+
+    </data>
+</odoo>        

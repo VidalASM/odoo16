@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+  <t
+        t-name="PartnerDetailsEdit"
+        t-inherit="point_of_sale.PartnerDetailsEdit"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+    <xpath expr="//div[hasclass('partner-details-right')]/div[6]" position="replace" />
+    <xpath expr="//div[hasclass('partner-details-left')]/div[1]" position="before">
+      <div class="partner-detail">
+        <span class="label">Doc. type</span>
+        <select
+                    class="detail type-doc needsclick"
+                    name="l10n_latam_identification_type_id"
+                    t-on-change="captureChange"
+                >
+          <option value="">None</option>
+          <t
+                        t-foreach="env.pos.l10n_latam_identification"
+                        t-as="latam"
+                        t-key="latam.id"
+                    >
+            <option
+                            t-att-value="latam.id"
+                            t-att-selected="props.partner.l10n_latam_identification_type_id ? ((latam.id === props.partner.l10n_latam_identification_type_id[0]) ? true : undefined) : undefined"
+                        >
+              <t t-esc="latam.name" />
+            </option>
+          </t>
+        </select>
+      </div>
+      <div class="partner-detail">
+        <span class="label">RUC/DNI</span>
+          <input
+                    class="detail vat"
+                    name="vat"
+                    t-on-change="captureChange"
+                    t-att-value="props.partner.vat || ''"
+                />
+      </div>
+    </xpath>
+  </t>
+</templates>

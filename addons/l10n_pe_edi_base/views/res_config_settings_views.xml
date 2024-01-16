@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_pe_edi_base</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="40" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div
+                    class="app_settings_block"
+                    data-string="E-Documents"
+                    string="E-Documents"
+                    data-key="l10n_pe_edi_base"
+                    groups="base.group_erp_manager"
+                >
+                    <h2>Send to Nubefact</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        name="nubefact_setting_container"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="active_send_nubefact"
+                        >
+                            <div class="o_setting_left_pane">
+                                <field name="l10n_pe_edi_send_invoice" />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="l10n_pe_edi_send_invoice" />
+                                <div
+                                    class="text-muted"
+                                >Send your electronic documents by PSE / OSE</div>
+                                <div
+                                    class="content-group"
+                                    attrs="{'invisible': [('l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                                    <label for="l10n_pe_edi_ose_id" />
+                                    <field
+                                        name="l10n_pe_edi_ose_id"
+                                        class="o_light_label"
+                                        attrs="{'required': [('l10n_pe_edi_send_invoice', '=', True)]}"
+                                        options="{'no_create': True, 'no_create_edit': True}"
+                                    />
+                                    <div class="mt8">
+                                        <button
+                                            name="%(l10n_pe_edi_shop_action)d"
+                                            icon="fa-arrow-right"
+                                            type="action"
+                                            string="Configure Shops and Tokens"
+                                            class="btn-link"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="send_auto_nubefact"
+                            attrs="{'invisible': [('l10n_pe_edi_send_invoice', '=', False)]}"
+                        >
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <span
+                                    class="o_form_label"
+                                >Send e-documents automatically</span>
+                                <div
+                                    class="text-muted"
+                                >Choose the period to send e-documents</div>
+                                <div class="content-group">
+                                    <label
+                                        for="l10n_pe_edi_send_invoice_interval_unit"
+                                    />
+                                    <field
+                                        name="l10n_pe_edi_send_invoice_interval_unit"
+                                        class="o_light_label"
+                                        attrs="{'required': [('l10n_pe_edi_send_invoice', '=', True)]}"
+                                    />
+                                    <label
+                                        for="l10n_pe_edi_send_invoice_next_execution_date"
+                                    />
+                                    <field
+                                        name="l10n_pe_edi_send_invoice_next_execution_date"
+                                        class="o_light_label"
+                                        attrs="{'required': [('l10n_pe_edi_send_invoice', '=', True)]}"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="active_nubefact_account"
+                            attrs="{'invisible': [('l10n_pe_edi_send_invoice', '=', False)]}"
+                        >
+                            <div class="o_setting_left_pane" />
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Activation</span>
+                                <div
+                                    class="text-muted"
+                                >Links to activate and configure your Nubefact account</div>
+                                <div class="mt8">
+                                    <a
+                                        href="https://www.nubefact.com/registro"
+                                        class="oe-link"
+                                        target="_blank"
+                                    >Request an account</a>
+                                </div>
+                                <div class="mt8">
+                                    <a
+                                        href="https://www.operu.pe/manuales"
+                                        class="oe-link"
+                                        target="_blank"
+                                    >Follow the instructions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2
+                        attrs="{'invisible': [('l10n_pe_edi_send_invoice','=',False)]}"
+                    >Electronic Inviocing</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        name="invoice_setting_container"
+                        attrs="{'invisible': [('l10n_pe_edi_send_invoice','=',False)]}"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="active_electronic_invoicing"
+                        >
+                            <div class="o_setting_left_pane">
+                                <field name="module_l10n_pe_edi_odoofact" />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_l10n_pe_edi_odoofact" />
+                                <div
+                                    class="bg-warning bg-opacity-25 text-muted"
+                                    attrs="{'invisible': [('module_l10n_pe_edi_odoofact', '=', True)]}"
+                                >In order to enable this option you must have the module l10n_pe_edi_odoofact in your system</div>
+                                <div
+                                    class="text-muted"
+                                >Activate electronic invoicing.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2
+                        attrs="{'invisible': [('l10n_pe_edi_send_invoice','=',False)]}"
+                    >Electronic Guide Remission</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        name="guide_setting_container"
+                        attrs="{'invisible': [('l10n_pe_edi_send_invoice','=',False)]}"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="active_electronic_guide"
+                        >
+                            <div class="o_setting_left_pane">
+                                <field name="module_l10n_pe_edi_picking" />
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_l10n_pe_edi_picking" />
+                                <div
+                                    class="bg-warning bg-opacity-25 text-muted"
+                                    attrs="{'invisible': [('module_l10n_pe_edi_picking', '=', True)]}"
+                                >In order to enable this option you must have the module l10n_pe_edi_picking in your system</div>
+                                <div
+                                    class="text-muted"
+                                >Activate electronic guide remission.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_config_settings_setup_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings_setup.view.form.l10n_pe_edi_base</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='contacts_settings']" position="after">
+                <h2>API services</h2>
+                <div
+                    class="row mt16 o_settings_container"
+                    name="api_services_setting_container"
+                >
+                    <div
+                        class="col-12 col-lg-6 o_setting_box"
+                        id="active_odoope_ruc_validation"
+                    >
+                        <div class="o_setting_left_pane">
+                            <field name="module_odoope_ruc_validation" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="module_odoope_ruc_validation" />
+                            <div
+                                class="bg-warning bg-opacity-25 text-muted"
+                                attrs="{'invisible': [('module_odoope_ruc_validation', '=', True)]}"
+                            >In order to enable this option you must have the module odoope_ruc_validation in your system</div>
+                            <div
+                                class="text-muted"
+                            >Activate RUC and DNI Data Validator (PE).</div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-12 col-lg-6 o_setting_box"
+                        id="active_l10n_pe_currency"
+                    >
+                        <div class="o_setting_left_pane">
+                            <field name="module_l10n_pe_currency" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="module_l10n_pe_currency" />
+                            <div
+                                class="bg-warning bg-opacity-25 text-muted"
+                                attrs="{'invisible': [('module_l10n_pe_currency', '=', True)]}"
+                            >In order to enable this option you must have the module l10n_pe_currency in your system</div>
+                            <div
+                                class="text-muted"
+                            >Activate Exchange rate of the day (PE).</div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'l10n_pe_edi_base', 'bin_size': False}</field>
+    </record>
+</odoo>

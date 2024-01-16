@@ -1,0 +1,1180 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_edi_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-11 15:24+0000\n"
+"PO-Revision-Date: 2023-07-11 15:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Activation</span>"
+msgstr "<span class=\"o_form_label\">Activación</span>"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Send e-documents automatically</span>"
+msgstr "<span class=\"o_form_label\">Enviar e-documentos automáticamente</span>"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "<span class=\"o_stat_text\">E-Document</span>"
+msgstr "<span class=\"o_stat_text\">E-Documento</span>"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_setup_view_form
+msgid "API services"
+msgstr "Servicios API"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__ose_accepted
+msgid "Accepted by PSE/OSE"
+msgstr "Aceptado por PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__sunat_accepted
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_accepted
+#: model:ir.model.fields.selection,name:l10n_pe_edi_base.selection__l10n_pe_edi_request__state__accepted
+msgid "Accepted by SUNAT"
+msgstr "Aceptado por SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_needaction
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_setup_view_form
+msgid "Activate Exchange rate of the day (PE)."
+msgstr "Activar Tipo de cambio del día (PE)."
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_setup_view_form
+msgid "Activate RUC and DNI Data Validator (PE)."
+msgstr "Activar Validador de Datos RUC y DNI (PE)."
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Activate electronic guide remission."
+msgstr "Activar guía de remisión electrónica."
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Activate electronic invoicing."
+msgstr "Activar facturación electrónica."
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_exception_decoration
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_state
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_type_icon
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__partner_id
+msgid "Address"
+msgstr "Dirección"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_attachment_count
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__authorization_message
+msgid "Authorization Message"
+msgstr "Mensaje de Autorización"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__link_cdr
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__link_cdr
+msgid "CDR link"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__sunat_canceled
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_canceled
+msgid "Canceled by SUNAT"
+msgstr "Cancelado por SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_03_menu
+msgid "Catalog No. 03"
+msgstr "Catálogo No. 03"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_07_menu
+msgid "Catalog No. 07"
+msgstr "Catálogo No. 07"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_08_menu
+msgid "Catalog No. 08"
+msgstr "Catálogo No. 08"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_09_menu
+msgid "Catalog No. 09"
+msgstr "Catálogo No. 09"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_10_menu
+msgid "Catalog No. 10"
+msgstr "Catálogo No. 10"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_11_menu
+msgid "Catalog No. 11"
+msgstr "Catálogo No. 11"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_12_menu
+msgid "Catalog No. 12"
+msgstr "Catálogo No. 12"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_14_menu
+msgid "Catalog No. 14"
+msgstr "Catálogo No. 14"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_15_menu
+msgid "Catalog No. 15"
+msgstr "Catálogo No. 15"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_16_menu
+msgid "Catalog No. 16"
+msgstr "Catálogo No. 16"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_17_menu
+msgid "Catalog No. 17"
+msgstr "Catálogo No. 17"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_18_menu
+msgid "Catalog No. 18"
+msgstr "Catálogo No. 18"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_19_menu
+msgid "Catalog No. 19"
+msgstr "Catálogo No. 19"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_20_menu
+msgid "Catalog No. 20"
+msgstr "Catálogo No. 20"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_21_menu
+msgid "Catalog No. 21"
+msgstr "Catálogo No. 21"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_22_menu
+msgid "Catalog No. 22"
+msgstr "Catálogo No. 22"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_23_menu
+msgid "Catalog No. 23"
+msgstr "Catálogo No. 23"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_24_menu
+msgid "Catalog No. 24"
+msgstr "Catálogo No. 24"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_25_menu
+msgid "Catalog No. 25"
+msgstr "Catálogo No. 25"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_26_menu
+msgid "Catalog No. 26"
+msgstr "Catálogo No. 26"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_27_menu
+msgid "Catalog No. 27"
+msgstr "Catálogo No. 27"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_51_menu
+msgid "Catalog No. 51"
+msgstr "Catálogo No. 51"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_52_menu
+msgid "Catalog No. 52"
+msgstr "Catálogo No. 52"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_53_menu
+msgid "Catalog No. 53"
+msgstr "Catálogo No. 53"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_54_menu
+msgid "Catalog No. 54"
+msgstr "Catálogo No. 54"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_55_menu
+msgid "Catalog No. 55"
+msgstr "Catálogo No. 55"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_56_menu
+msgid "Catalog No. 56"
+msgstr "Catálogo No. 56"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_57_menu
+msgid "Catalog No. 57"
+msgstr "Catálogo No. 57"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_58_menu
+msgid "Catalog No. 58"
+msgstr "Catálogo No. 58"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_catalog_59_menu
+msgid "Catalog No. 59"
+msgstr "Catálogo No. 59"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.catalog_menu
+msgid "Catalogs SUNAT"
+msgstr "Catálogos SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Check Status in SUNAT"
+msgstr "Verificar en SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_tree
+msgid "Check status in SUNAT"
+msgstr "Verificar en SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Choose the period to send e-documents"
+msgstr "Elija el período para enviar e-documentos"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__code
+msgid "Code"
+msgstr "Código"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__code
+msgid "Code from SUNAT"
+msgstr "Código de SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__l10n_pe_edi_ose_code
+msgid "Code of PSE / OSE supplier"
+msgstr "Código de proveedor PSE / OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__company_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__company_id
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Company"
+msgstr "Compañia"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__complete_name
+msgid "Complete Name"
+msgstr "Nombre Completo"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_base_configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Configure Shops and Tokens"
+msgstr "Configurar Tiendas y Tokens"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_cron_check_count
+msgid "Cron check count available"
+msgstr "Cant disponible para verificar cron"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_cron_send_count
+msgid "Cron send count available"
+msgstr "Cant disponible para enviar cron"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields.selection,name:l10n_pe_edi_base.selection__res_company__l10n_pe_edi_send_invoice_interval_unit__daily
+msgid "Daily"
+msgstr "Diariamente"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.edocuments_type_board_menu
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__module_odoope_ruc_validation
+msgid "Data Validator - (PE)"
+msgstr "Validador de datos - (PE)"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Document"
+msgstr "Documento"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__document_date
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Document Date"
+msgstr "Fecha de documento"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__document_number
+msgid "Document Number"
+msgstr "Número de documento"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.act_window,name:l10n_pe_edi_base.l10n_pe_edi_document_type_action
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_document_type
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__link_document
+msgid "Document link"
+msgstr "Documento Link"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Document number"
+msgstr "Número de Documento"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.act_window,name:l10n_pe_edi_base.l10n_pe_edi_document_type_action_kanban
+msgid "E-Document Resume"
+msgstr "E-Documentos Resumen"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_base_menu
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "E-Documents"
+msgstr "E-Documentos"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_shop_view_form
+msgid "E-invoice configuration"
+msgstr "Configuración de E-Factura"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_l10n_pe_edi_request_document_type
+msgid "EDI Document Type"
+msgstr "Tipo de Documento EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_l10n_pe_edi_shop
+msgid "EDI PE Shop"
+msgstr "Tienda EDI PE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_l10n_pe_edi_request
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "EDI Request"
+msgstr "Solicitud EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_l10n_pe_edi_request_log
+msgid "EDI Request Log"
+msgstr "Log de Solicitud EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__log_id
+msgid "EDI log"
+msgstr "Log EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__log_ids
+msgid "EDI logs"
+msgstr "Logs EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__request_id
+msgid "EDI request"
+msgstr "Solicitud EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.edi_request_menu
+msgid "EDI-Request"
+msgstr "Solicitud-EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.ui.menu,name:l10n_pe_edi_base.edi_request_all_menu
+msgid "EDI-Request All"
+msgstr "Solicitud-EDI Todas"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Electronic Guide Remission"
+msgstr "Guía de Remisión Electrónica"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__module_l10n_pe_edi_odoofact
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Electronic Inviocing"
+msgstr "Facturación Electrónica"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__module_l10n_pe_edi_picking
+msgid "Electronic Remission Guide"
+msgstr "Guía de Remisión Electrónica"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__module_l10n_pe_currency
+msgid "Exchange Rate of the Day - (PE)"
+msgstr "Tipo de Cambio del Día - (PE)"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.act_window,name:l10n_pe_edi_base.l10n_pe_edi_request_invoice_action
+msgid "Follow E-Documents"
+msgstr "Seguimiento de E-Documentos"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.actions.act_window,help:l10n_pe_edi_base.l10n_pe_edi_request_invoice_action
+msgid "Follow the Electronic documents"
+msgstr "Seguimiento de Documentos Electrónicos"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Follow the instructions"
+msgstr "Seguir las instrucciones"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_follower_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_partner_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_type_icon
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__has_message
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields.selection,name:l10n_pe_edi_base.selection__res_company__l10n_pe_edi_send_invoice_interval_unit__hourly
+msgid "Hourly"
+msgstr "Horariamente"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__res_id
+msgid "ID of the target record in the database"
+msgstr "ID del registro de destino en la base de datos"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_exception_icon
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_exception_icon
+msgid "Icon"
+msgstr "Ícono"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_exception_icon
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__message_needaction
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__message_has_error
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_setup_view_form
+msgid ""
+"In order to enable this option you must have the module l10n_pe_currency in "
+"your system"
+msgstr ""
+"Para habilitar esta opción debe tener el módulo l10n_pe_currency ensu "
+"sistema"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid ""
+"In order to enable this option you must have the module l10n_pe_edi_odoofact"
+" in your system"
+msgstr ""
+"Para habilitar esta opción debe tener el módulo l10n_pe_edi_odoofact en su "
+"sistema"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid ""
+"In order to enable this option you must have the module l10n_pe_edi_picking "
+"in your system"
+msgstr ""
+"Para habilitar esta opción debe tener el módulo l10n_pe_edi_pickingen su "
+"sistema"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_setup_view_form
+msgid ""
+"In order to enable this option you must have the module "
+"odoope_ruc_validation in your system"
+msgstr ""
+"Para habilitar esta opción debe tener el módulo odoope_ruc_validation en su "
+"sistema"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Information"
+msgstr "Información"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_company__l10n_pe_edi_send_invoice_interval_unit
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__l10n_pe_edi_send_invoice_interval_unit
+msgid "Interval Unit for sending"
+msgstr "Unidad de Intervalo para enviar"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__link_document
+msgid "Invoice link"
+msgstr "Factura Link"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.server,name:l10n_pe_edi_base.ir_cron_send_invoices_ir_actions_server
+#: model:ir.cron,cron_name:l10n_pe_edi_base.ir_cron_send_invoices
+msgid "Invoices: Send to PSE/OSE"
+msgstr "Facturas: Enviar a PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_is_follower
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: l10n_pe_edi_base
+#: model:l10n_pe_edi.supplier,authorization_message:l10n_pe_edi_base.l10n_pe_edi_supplier_nubefact
+#: model:l10n_pe_edi.supplier,authorization_message:l10n_pe_edi_base.l10n_pe_edi_supplier_odoofact
+msgid ""
+"Issued by a SUPPLIER Authorized by SUNAT through Intendance Resolution "
+"Num.034-005-0005315"
+msgstr ""
+"Emitido por PROVEEDOR Autorizado por SUNAT mediante Resolución de "
+"Intendencia Num.034-005-0005315"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "JSON"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__json_response
+msgid "JSON response"
+msgstr "JSON respuesta"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__json_sent
+msgid "JSON sent"
+msgstr "JSON enviado"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__kanban_dashboard
+msgid "Kanban Dashboard"
+msgstr "Tablero Kanban"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Links"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Links to activate and configure your Nubefact account"
+msgstr "Enlaces para activar y configurar tu cuenta de Nubefact"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_main_attachment_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_has_error
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__model
+msgid "Model Name"
+msgstr "Nombre de Modelo"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__my_activity_date_deadline
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "NUBEFACT"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields.selection,name:l10n_pe_edi_base.selection__l10n_pe_edi_request__state__draft
+msgid "New"
+msgstr "Nuevo"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_date_deadline
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_summary
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_type_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_company__l10n_pe_edi_send_invoice_next_execution_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__l10n_pe_edi_send_invoice_next_execution_date
+msgid "Next Execution"
+msgstr "Siguiente ejecución"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_oe_edi_document_type_view_kanban
+msgid "Not OSE"
+msgstr "No OSE"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_oe_edi_document_type_view_kanban
+msgid "Not SUNAT"
+msgstr "No SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Not sent to PSE/OSE"
+msgstr "No enviado a PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Not sent to SUNAT"
+msgstr "No enviado a SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__code_of
+msgid "Nubefact Code"
+msgstr "Código Nubefact"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_needaction_counter
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_cron_check_count
+msgid "Number of attempts available for checking e-invoices by the Cron"
+msgstr ""
+"Número de intentos disponibles para la verificación de facturas electrónicas"
+" por el Cron"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_cron_send_count
+msgid "Number of attempts available for sending e-invoices by the Cron"
+msgstr ""
+"Número de intentos disponibles para el envío de facturas electrónicas por "
+"parte del Cron"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__message_has_error_counter
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__message_needaction_counter
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__message_has_error_counter
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_shop_view_form
+msgid "Odoofact"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_tree
+msgid "Open Document"
+msgstr "Abrir Documento"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_tree
+msgid "Open Error details"
+msgstr "Abrir Detalles de Error"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__operation_type
+msgid "Operation type"
+msgstr "Tipo de Operación"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__link_pdf
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__link_pdf
+msgid "PDF link"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__l10n_pe_edi_ose_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_company__l10n_pe_edi_ose_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__l10n_pe_edi_ose_id
+msgid "PSE / OSE Supplier"
+msgstr "Proveedor PSE / OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_l10n_pe_edi_supplier
+msgid "PSE/OSE Supplier"
+msgstr "Proveedor PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model,name:l10n_pe_edi_base.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida del producto"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_document_type_id
+#: model:ir.ui.menu,name:l10n_pe_edi_base.request_document_type_menu
+msgid "Request Document Type"
+msgstr "Tipo de Documento Solicitud"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Request an account"
+msgstr "Solicitar una cuenta"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__response
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__response
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Response"
+msgstr "Respuesta"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_user_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_document_type__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__code
+msgid "SUNAT Code"
+msgstr "Código SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_responsecode
+msgid "SUNAT Response code"
+msgstr "Código de Respuesta SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_soap_error
+msgid "SUNAT SOAP error"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_uom_uom__l10n_pe_edi_uom_code_id
+msgid "SUNAT code"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_description
+msgid "SUNAT error description"
+msgstr "Descripción de error de SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__sunat_note
+msgid "SUNAT note"
+msgstr "SUNAT nota"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Search EDI request"
+msgstr "Buscar solicitud EDI"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_company__l10n_pe_edi_send_invoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_res_config_settings__l10n_pe_edi_send_invoice
+msgid "Send E-Documents to PSE/OSE"
+msgstr "Enviar E-Documentos a PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__send_email
+msgid "Send email automatically when the invoice is sent"
+msgstr "Enviar correo electrónico automáticamente cuando se envía la factura"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__send_email
+msgid "Send invoice by Email"
+msgstr "Enviar factura por correo"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Send to Nubefact"
+msgstr "Enviar a Nubefact"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_tree
+msgid "Send to PSE/OSE"
+msgstr "Enviar a PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Send to SUNAT"
+msgstr "Enviar a SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.res_config_settings_view_form
+msgid "Send your electronic documents by PSE / OSE"
+msgstr "Envía tus documentos electrónicos por PSE / OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__ose_accepted
+#: model:ir.model.fields.selection,name:l10n_pe_edi_base.selection__l10n_pe_edi_request__state__sent
+msgid "Sent to PSE/OSE"
+msgstr "Enviado a PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.act_window,name:l10n_pe_edi_base.l10n_pe_edi_settings_action
+#: model:ir.ui.menu,name:l10n_pe_edi_base.l10n_pe_edi_settings_menu
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: l10n_pe_edi_base
+#. odoo-python
+#: code:addons/l10n_pe_edi_base/hooks.py:0
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__l10n_pe_edi_shop_id
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_shop_view_form
+#, python-format
+msgid "Shop"
+msgstr "Tienda"
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.act_window,name:l10n_pe_edi_base.l10n_pe_edi_shop_action
+#: model:ir.ui.menu,name:l10n_pe_edi_base.shop_menu
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_shop_view_search
+msgid "Shops"
+msgstr "Tiendas"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Show all records which has not been accepted by PSE/OSE"
+msgstr "Mostrar todos los registros que no han sido aceptados por PSE/OSE"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Show all records which has not been accepted by SUNAT"
+msgstr "Mostrar todos los registros que no han sido aceptados por la SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__state
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "States"
+msgstr "Estados"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_filter
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_state
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_pe_edi_request_view_form
+msgid "Status log"
+msgstr "Log de estado"
+
+#. module: l10n_pe_edi_base
+#. odoo-python
+#: code:addons/l10n_pe_edi_base/models/edi_request.py:0
+#, python-format
+msgid "The connection data with nubefact are not registered"
+msgstr "Los datos de conexión con nubefact no están registrados"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_supplier__authorization_message
+msgid "The message will be printed on the invoice"
+msgstr "El mensaje se imprimirá en la factura."
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_base.l10n_oe_edi_document_type_view_kanban
+msgid "To Send"
+msgstr "A Enviar"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__l10n_pe_edi_ose_token
+msgid "Token"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_request__activity_exception_decoration
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_l10n_pe_edi_shop__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_shop__l10n_pe_edi_ose_url
+msgid "URL"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__resume_url
+msgid "URL for resume documents"
+msgstr "URL para resumen de documentos"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_supplier__control_url
+msgid "URL for searching electronic documents"
+msgstr "URL para buscar documentos electrónicos"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,help:l10n_pe_edi_base.field_uom_uom__l10n_pe_edi_uom_code_id
+msgid ""
+"Unit code that relates to a product in order to identify what measure unit "
+"it uses"
+msgstr ""
+
+#. module: l10n_pe_edi_base
+#: model:ir.actions.server,name:l10n_pe_edi_base.ir_cron_verify_documents_per_day_ir_actions_server
+#: model:ir.cron,cron_name:l10n_pe_edi_base.ir_cron_verify_documents_per_day
+msgid "Verify electronic documents per day"
+msgstr "Verificar documentos electrónicos por día"
+
+#. module: l10n_pe_edi_base
+#: model_terms:ir.actions.act_window,help:l10n_pe_edi_base.l10n_pe_edi_request_invoice_action
+msgid ""
+"When the document is sent to PSE/OSE, you can follow the document status in "
+"SUNAT"
+msgstr ""
+"Cuando el documento es enviado a PSE/OSE, puede seguir el estado del "
+"documento en SUNAT"
+
+#. module: l10n_pe_edi_base
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request__link_xml
+#: model:ir.model.fields,field_description:l10n_pe_edi_base.field_l10n_pe_edi_request_log__link_xml
+msgid "XML link"
+msgstr ""

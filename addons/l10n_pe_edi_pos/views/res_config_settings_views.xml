@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.inherit.einvoice</field>
+    <field name="model">res.config.settings</field>
+    <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//div[@id='pos_bills_and_receipts_section']" position="after">
+        <h2>Peruvian Electronic Invoicing</h2>
+        <div class="row mt16 o_settings_container" id="redirect_einvoicing_settings">
+          <div
+                        class="col-12 col-lg-6 o_setting_box"
+                        id="redirect_einvoicing_setting_options"
+                    >
+            <div class="o_setting_left_pane" />
+            <div class="o_setting_right_pane">
+              <div
+                                class="text-muted"
+                            >Configuration options for the electronic invoice</div>
+              <div class="mt8">
+                <button
+                                    name="%(l10n_pe_edi_base.l10n_pe_edi_settings_action)d"
+                                    icon="fa-arrow-right"
+                                    type="action"
+                                    string="Redirect to settings"
+                                    class="btn-link"
+                                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <field name="pos_l10n_pe_edi_send_invoice" invisible="1" />
+        <span attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}">
+          <h2>Electronic invoicing</h2>
+          <div class="row mt16 o_settings_container" id="electronic_invoicing">
+            <div class="col-12 col-lg-6 o_setting_box">
+              <div class="o_setting_left_pane">
+                <field name="pos_l10n_pe_edi_send_invoice" />
+              </div>
+              <div class="o_setting_right_pane">
+                <label
+                                    string="Electronic invoicing"
+                                    for="pos_l10n_pe_edi_send_invoice"
+                                />
+                <div class="text-muted" id="einvoice_journal">
+                  Select the journals for Electronic invoices
+                </div>
+                <div
+                                    class="content-group mt16"
+                                    attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                  <div class="row mt16">
+                    <label
+                                            string="Invoice Journals"
+                                            for="pos_invoice_journal_ids"
+                                            class="col-lg-3 o_light_label"
+                                        />
+                    <field
+                                            name="pos_invoice_journal_ids"
+                                            widget="many2many_tags"
+                                            domain="[('company_id', '=', company_id), ('type', '=', 'sale')]"
+                                            attrs="{'required': [('pos_l10n_pe_edi_send_invoice', '=', True)]}"
+                                            context="{'default_company_id': company_id, 'default_type': 'sale'}"
+                                            options="{'no_create': True}"
+                                        />
+                  </div>
+                </div>
+                <div
+                                    class="text-muted"
+                                    id="check_invoice"
+                                    attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                  Auto check to button Invoice on POS Payment Screen
+                </div>
+                <div
+                                    class="content-group mt16"
+                                    attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                  <div class="row mt16">
+                    <label
+                                            for="pos_auto_check_invoice"
+                                            class="col-lg-3 o_light_label"
+                                        />
+                    <field name="pos_auto_check_invoice" />
+                  </div>
+                </div>
+                <div
+                                    class="text-muted"
+                                    id="default_partner"
+                                    attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                  Select the client by default for Electronic invoices. It could bue used for Documents type 'Boleta'
+                </div>
+                <div
+                                    class="content-group mt16"
+                                    attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                                >
+                  <div class="row mt16">
+                    <label
+                                            string="Default client"
+                                            for="pos_default_partner_id"
+                                            class="col-lg-3 o_light_label"
+                                        />
+                    <field
+                                            name="pos_default_partner_id"
+                                            options="{'no_create': True}"
+                                        />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div
+                        class="row mt16 o_settings_container"
+                        id="pos_receipts_section"
+                        attrs="{'invisible': [('pos_l10n_pe_edi_send_invoice', '=', False)]}"
+                    >
+            <div class="col-xs-12 col-md-6 o_setting_box">
+              <div class="o_setting_left_pane">
+                <field name="pos_is_custom_receipt" />
+              </div>
+              <div class="o_setting_right_pane">
+                <label for="pos_receipt_design" />
+                <div class="text-muted">
+                  Use Custom Receipt Design
+                </div>
+                <div class="content-group mt16">
+                  <field
+                                        name="pos_receipt_design"
+                                        attrs="{'invisible': [('pos_is_custom_receipt', '=', False)]}"
+                                    />
+                </div>
+                <div class="content-group mt16">
+                  <field name="pos_design_receipt" invisible="1" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </span>
+      </xpath>
+    </field>
+  </record>
+</odoo>

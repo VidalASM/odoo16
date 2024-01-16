@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <record id="cron_send_picking_day" model="ir.cron">
+        <field name="name">Send pickings day</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_send_pickings()</field>
+    </record>
+
+    <record id="cron_check_picking_day" model="ir.cron">
+        <field name="name">Check pickings day</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_check_pickings()</field>
+    </record>
+</odoo>

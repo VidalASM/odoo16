@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="workout_overview_form_view">
+            <field name="name">workout overviw</field>
+            <field name="model">gym.workout</field>
+            <field name="arch" type="xml">
+                <form string="gym workout add form">
+                    <header>
+                        <button name="%(wizard_workout_entry_action)d" string="Weight" type="action"
+                                class="oe_highlight"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer" required="1"/>
+                            </group>
+                            <group>
+                                <field name="from_date" required="1"/>
+                                <field name='to_date' required="1"/>
+                            </group>
+                            <group>
+                                <field name="workout_id"/>
+                                <field name="trainer_id" domain="[('trainer','=',True)]"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Exercises">
+                                <field name="exercise_ids"/>
+                            </page>
+                            <page string="Days">
+                                <field name='day_ids'>
+                                    <tree editable="bottom">
+                                        <field name="state"/>
+                                        <field name="day" readonly="1"/>
+                                        <button name="done" string="Done" type="object" states="new" widget="button"/>
+                                        <button name="cancle" string="Cancle" type="object" states="new"/>
+                                        <button name="reset" string="Reset" type="object" states="done,cancle"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="gym_workout_overview_tree">
+            <field name="name">work add tree</field>
+            <field name="model">gym.workout</field>
+            <field name="arch" type="xml">
+                <tree string="workout add list">
+                    <field name="customer"/>
+                    <field name="from_date"/>
+                    <field name='to_date'/>
+                </tree>
+            </field>
+        </record>
+
+        <!--record model="ir.ui.view" id="workout_overview_search">
+            <field name="name">workout overview search</field>
+            <field name="model">gym.workout</field>
+            <field name="arch" type="xml">
+                <search>
+
+                    <group>
+                        <filter string="No" filter_domain="[('no','ilike', self)]" />
+                        <filter  string="Name" filter_domain="[('customer','ilike', self)]" />
+                        <filter  string="From Date" filter_domain="[('from_date','ilike', self)]" />
+                        <filter  string="From Date" context="{'group_by':'from_date'}" domain="[]" />
+                    </group>
+                </search>
+            </field>
+        </record-->
+        <record id="calendar_gym_workout" model="ir.ui.view">
+            <field name="name">gym.workout.calendar</field>
+            <field name="model">gym.workout</field>
+            <field name="arch" type="xml">
+                <calendar string="Workout Schedule" color="customer" date_start="from_date">
+                    <field name="customer"/>
+                    <field name="from_date"/>
+                    <field name='to_date'/>
+                </calendar>
+            </field>
+        </record>
+    </data>
+</odoo>        

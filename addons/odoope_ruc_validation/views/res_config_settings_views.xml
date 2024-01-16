@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.odoope_ruc_validation</field>
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="l10n_pe_edi_base.res_config_settings_setup_view_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='active_l10n_pe_currency']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="active_edi_token">
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <label
+                            for="l10n_pe_partner_token"
+                            string="Token"
+                            attrs="{'invisible': [('module_odoope_ruc_validation', '=', False)]}"
+                        />
+                        <field
+                            name="l10n_pe_partner_token"
+                            attrs="{'invisible': [('module_odoope_ruc_validation', '=', False)]}"
+                        />
+                        <div
+                            class="text-muted mb8"
+                            attrs="{'invisible': [('module_odoope_ruc_validation', '=', False)]}"
+                        >Set a Partner service token to generate unlimited queries of RUC, DNI and Exchange Rate.</div>
+                        <div
+                            class="text-rigth"
+                            style="position:relative;"
+                            attrs="{'invisible': [('module_odoope_ruc_validation', '=', False)]}"
+                        >
+                            <a
+                                class="btn-link"
+                                role="button"
+                                href="https://www.operu.pe/shop/libros-ple-ilimitados-92"
+                                target="_blank"
+                            >
+                                <i class="fa fa-arrow-right" />
+                                Get unlimited token
+                            </a>
+                            <widget
+                                name="iap_buy_more_credits"
+                                service_name="l10n_pe_data"
+                                hide_service="1"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="l10n_pe_validation_data"
+                    attrs="{'invisible': [('module_odoope_ruc_validation', '=', False)]}"
+                >
+                    <div class="col-12 o_setting_box" id="l10n_pe_ruc">
+                        <div class="o_setting_left_pane">
+                            <field name="l10n_pe_ruc_validation" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label
+                                for="l10n_pe_ruc_validation"
+                                string="RUC validation"
+                            />
+                            <div
+                                class="text-muted"
+                            >Extract your client's data from SUNAT</div>
+                        </div>
+                    </div>
+                    <div class="col-12 o_setting_box" id="l10n_pe_dni">
+                        <div class="o_setting_left_pane">
+                            <field name="l10n_pe_dni_validation" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="l10n_pe_dni_validation" />
+                            <div
+                                class="text-muted"
+                            >Validate the names and surnames of your contacts with DNI</div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_epicking" model="ir.sequence">
+            <field name="name">E-Picking Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="prefix">T001-</field>
+            <field name="code">epicking.sequence</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+        </record>
+
+        <record id="sequence_epicking_dropship" model="ir.sequence">
+            <field name="name">E-Picking Sequence Dropship</field>
+            <field name="implementation">standard</field>
+            <field name="prefix">T002-</field>
+            <field name="code">epicking.sequence.dropship</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

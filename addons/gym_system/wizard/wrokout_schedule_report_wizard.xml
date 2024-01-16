@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+       <record model="ir.ui.view" id="workout_schedule_report_wizard">
+          <field name="name">Workout Schedule Report</field>
+          <field name="model">workout.schedule.report</field>
+          <field name="arch" type="xml">
+              <form string="workout schedule report">
+                <group>
+                    <group>
+                        <field name="customer_id" domain="[('trainer', '=', False)]"/>
+
+                        <field name="from_date" />
+                        <field name="to_date" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="print_workout_schedule" string="Print" type="object" class="oe_highlight"/> or 
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+              </form>
+          </field>
+      </record>
+     
+
+     
+  </data>
+</odoo>

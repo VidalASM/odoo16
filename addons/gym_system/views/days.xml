@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="gym_days_form_view">
+            <field name="name">Gym Days</field>
+            <field name="model">gym.day</field>
+            <field name="arch" type="xml">
+            <form string="gym days form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="day"/>
+                        </group>
+                        <group>
+                        </group>
+                        <group>
+                            <field name="is_done"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+            </field>
+        </record>
+    </data>
+</odoo>

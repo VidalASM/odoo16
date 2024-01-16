@@ -1,0 +1,709 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_edi_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-02 17:26+0000\n"
+"PO-Revision-Date: 2023-10-02 17:26+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Client/ClientDefault.js:0
+#, python-format
+msgid ""
+" set to Default Customer of new Order, but it Arichived it. Please Unarchive"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+#, python-format
+msgid "% discount"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid ", is not valid."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid ". Visit"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid ""
+"<br/>\n"
+"                Order :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid ""
+"<br/>\n"
+"                Phone:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid ""
+"<span style=\"font-size: 12px;font-weight: bold;\">AMOUNT IN LETTERS: "
+"</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">CLIENT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">CURRENCY:</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">DATE DUE:</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">DATE INVOICE:</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">IGV:</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"font-size: 12px;font-weight: bold;\">PAYMENT METHOD :</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "<span style=\"margin-left: 40%;\">CHANGE : </span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "<span style=\"margin-left: 40%;\">Discounts : </span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "<span style=\"margin-left: 40%;\">Subtotal : </span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "<span style=\"margin-left: 40%;\">TOTAL : </span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "<span style=\"margin-left: 40%;\">Total Taxes : </span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span style=\"text-align:lenf;font-size: small;\">CHANGE</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span>DISCOUNT</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span>IGV 18%</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span>SUB-TOTAL</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+msgid "<span>TOTAL TO PAY</span>"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "ALERT"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "AMOUNT IN LETTERS:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__invoice_journal_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_invoice_journal_ids
+msgid "Accounting Invoice Journal"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_pos_config__design_receipt
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_pos_receipt__design_receipt
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_res_config_settings__pos_design_receipt
+msgid "Add your customised receipts for pos"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Amount"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Auto check to button Invoice on POS Payment Screen"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__auto_check_invoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_auto_check_invoice
+msgid "Auto create Invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "CHANGE"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "CLIENT"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "CURRENCY:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Cashier :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_pos_config__receipt_design
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_res_config_settings__pos_receipt_design
+msgid "Choose any receipt design"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__default_partner_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_default_partner_id
+msgid "Client by default"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Configuration options for the electronic invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "Connection Error"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Customer :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "DATE DUE:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "DATE INVOICE:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "DESCRIPTION"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "DISCOUNT"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "DNI :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Date :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Default client"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__l10n_pe_edi_send_invoice
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_l10n_pe_edi_send_invoice
+msgid "Electronic Invoicing"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Electronic invoicing"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "Error: no internet connection."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "IGV 18%"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "IGV:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Ticket/TicketScreen.xml:0
+#, python-format
+msgid "INVOICE NUMBER"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_account_journal__l10n_document_internal_type
+msgid "Internal Type"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Payment/PaymentScreen.xml:0
+#, python-format
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Invoice Journals"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Ticket/TicketScreen.xml:0
+#, python-format
+msgid "Invoice Number"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_pos_config__invoice_journal_ids
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_res_config_settings__pos_invoice_journal_ids
+msgid "Invoice journals for Electronic invoices."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__is_custom_receipt
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_is_custom_receipt
+msgid "Is Custom Receipt"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Payment/PaymentScreen.xml:0
+#: model:ir.model,name:l10n_pe_edi_pos.model_account_journal
+#, python-format
+msgid "Journal"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_order__invoice_journal_id
+msgid "Journal account"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "Logo"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "Order is not synced. Check your internet connection"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "P.U."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "PAYMENT METHOD :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Peruvian Electronic Invoicing"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "Please select a Document type."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_pos_order
+msgid "Point of Sale Orders"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_pos_session
+msgid "Point of Sale Session"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "Printed representation of"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Product"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "QTY."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Qty"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "RUC :"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/PartnerListScreen/PartnerListScreen.xml:0
+#, python-format
+msgid "RUC/DNI"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "RUC:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__receipt_design
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_receipt_design
+msgid "Receipt Design"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.actions.act_window,name:l10n_pe_edi_pos.action_pos_receipt
+#: model:ir.ui.menu,name:l10n_pe_edi_pos.menu_pos_receipt
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.pos_receipt_form
+msgid "Receipt Designs"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_config__design_receipt
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_pos_receipt__design_receipt
+#: model:ir.model.fields,field_description:l10n_pe_edi_pos.field_res_config_settings__pos_design_receipt
+msgid "Receipt XML"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Redirect to settings"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "Remaining unsynced orders"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "SUB-TOTAL"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "Select the Identification type of the client: "
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid ""
+"Select the client by default for Electronic invoices. It could bue used for "
+"Documents type 'Boleta'"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Select the journals for Electronic invoices"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#, python-format
+msgid "Served by"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "Some, if not all, post-processing after syncing order failed."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.l10n_pe_edi_pos_receipt
+#, python-format
+msgid "TOTAL"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/xml/Screens/Receipt/OdooFactReceipt.xml:0
+#, python-format
+msgid "TOTAL TO PAY"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+msgid "Tel:"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design2
+#: model_terms:pos.receipt,design_receipt:l10n_pe_edi_pos.pos_receipt_design3
+msgid "Thank You... Please Visit Again ..."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "The DNI of the client: "
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "The RUC  of the client: "
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "The RUC of the client: "
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Payment/PaymentScreen.js:0
+#, python-format
+msgid "The document type 'Invoice' is valid only for clients with valid RUC."
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Receipt/ElectronicInvoice.js:0
+#, python-format
+msgid "There are unsynced orders. Do you want to sync these orders?"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_pos_config__default_partner_id
+#: model:ir.model.fields,help:l10n_pe_edi_pos.field_res_config_settings__pos_default_partner_id
+msgid "This client will be set by default in the order"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pos.res_config_settings_view_form
+msgid "Use Custom Receipt Design"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#. odoo-javascript
+#: code:addons/l10n_pe_edi_pos/static/src/js/Screens/Client/ClientDefault.js:0
+#, python-format
+msgid "Warning !!!"
+msgstr ""
+
+#. module: l10n_pe_edi_pos
+#: model:ir.model,name:l10n_pe_edi_pos.model_pos_receipt
+msgid "pos.receipt"
+msgstr ""

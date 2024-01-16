@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="it_OTR" model="l10n_latam.identification.type">
+        <field name="name">VARIOS</field>
+        <field name="description">Sales less than S/.700.00 and others</field>
+        <field name="country_id" ref="base.pe" />
+        <field name="l10n_pe_vat_code">-</field>
+        <field name="sequence">83</field>
+    </record>
+</odoo>

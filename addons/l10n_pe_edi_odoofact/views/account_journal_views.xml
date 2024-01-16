@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">account.journal.form.l10n_pe_edi_odoofact</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field
+                    name="l10n_pe_edi_shop_id"
+                    options="{'no_create': True,'no_open': True}"
+                    domain="[('company_id','=',company_id)]"
+                />
+                <field name="l10n_latam_document_type_id" />
+                <field
+                    name="l10n_pe_edi_is_einvoice"
+                    attrs="{'invisible': [('type', '!=', 'sale')]}"
+                    widget="boolean_toggle"
+                />
+                <field
+                    name="l10n_pe_edi_contingency"
+                    attrs="{'invisible': [('type', '!=', 'sale')]}"
+                    widget="boolean_toggle"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

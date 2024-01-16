@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_exercise_category">
+            <field name="name">exercise category</field>
+            <field name="model">exercise.category</field>
+            <field name="arch" type="xml">
+            <form string="gym exercise category form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="exercise_id" widget = "selection" required="1"/>
+                                <field name="exercise_category_id" domain="[('body_parts_id', '=', exercise_id)]" required="1"/>
+                                <field name="equipment_id" widget = "many2many_list" required="1"/>
+                                <field name="description"/>
+                                <field name="muscles_id" required="1"/>
+                                <field name="image" widget="image" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="gym_exercise_category_tree">
+            <field name="name">exercise category tree</field>
+            <field name="model">exercise.category</field>
+            <field name="arch" type="xml">
+                <tree string="exercise category list">
+                    <field name="exercise_category_id"/>
+                    <field name="exercise_id"/>
+                    <field name="equipment_id"/>
+                    <field name="description"/>
+                    <field name="muscles_id"/>
+                </tree>
+            </field>
+        </record>
+        
+
+        
+       
+    </data>
+</odoo>        

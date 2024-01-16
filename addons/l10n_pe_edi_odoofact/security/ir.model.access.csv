@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l10n_pe_edi_picking_number,l10n_pe_edi.picking.number,model_l10n_pe_edi_picking_number,base.group_user,1,0,0,0
+access_l10n_pe_edi_picking_number_account,l10n_pe_edi.picking.number.account,model_l10n_pe_edi_picking_number,account.group_account_invoice,1,1,1,1
+access_l10n_pe_edi_picking_number_manager,l10n_pe_edi.picking.number.manager,model_l10n_pe_edi_picking_number,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_dues,l10n_pe_edi.dues,model_l10n_pe_edi_dues,base.group_user,1,0,0,0
+access_l10n_pe_edi_dues_account,l10n_pe_edi.dues.account,model_l10n_pe_edi_dues,account.group_account_invoice,1,1,1,1
+access_l10n_pe_edi_dues_manager,l10n_pe_edi.dues.manager,model_l10n_pe_edi_dues,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_move_cancel,access_l10n_pe_edi_move_cancel,model_l10n_pe_edi_move_cancel,base.group_user,1,1,1,1
+access_l10n_pe_edi_request_account,l10n_pe_edi.request.account,l10n_pe_edi_base.model_l10n_pe_edi_request,account.group_account_invoice,1,1,1,0
+access_l10n_pe_edi_request_log_account,l10n_pe_edi.request.log.account,l10n_pe_edi_base.model_l10n_pe_edi_request_log,account.group_account_invoice,1,1,1,0

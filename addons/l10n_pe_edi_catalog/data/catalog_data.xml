@@ -1,0 +1,2140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Catalog No. 07: Codigos de Tipo de afectacion del IGV -->
+    <record id="l10n_pe_edi_cat07_10" model="l10n_pe_edi.catalog.07">
+        <field name="code">10</field>
+        <field name="name">Gravado - Operación Onerosa</field>
+        <field name="tribute_code">1000</field>
+        <field name="code_of">1</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_11" model="l10n_pe_edi.catalog.07">
+        <field name="code">11</field>
+        <field name="name">Gravado - Retiro por premio</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">2</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_12" model="l10n_pe_edi.catalog.07">
+        <field name="code">12</field>
+        <field name="name">Gravado - Retiro por donación</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">3</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_13" model="l10n_pe_edi.catalog.07">
+        <field name="code">13</field>
+        <field name="name">Gravado - Retiro</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_14" model="l10n_pe_edi.catalog.07">
+        <field name="code">14</field>
+        <field name="name">Gravado - Retiro por publicidad</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">5</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_15" model="l10n_pe_edi.catalog.07">
+        <field name="code">15</field>
+        <field name="name">Gravado - Bonificaciones</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">6</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_16" model="l10n_pe_edi.catalog.07">
+        <field name="code">16</field>
+        <field name="name">Gravado - Retiro por entrega a trabajadores</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">7</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_17" model="l10n_pe_edi.catalog.07">
+        <field name="code">17</field>
+        <field name="name">Gravado - IVAP</field>
+        <field name="tribute_code">1016-9996</field>
+        <field name="code_of" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="l10n_pe_edi_cat07_20" model="l10n_pe_edi.catalog.07">
+        <field name="code">20</field>
+        <field name="name">Exonerado - Operación Onerosa</field>
+        <field name="tribute_code">9997</field>
+        <field name="code_of">8</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_21" model="l10n_pe_edi.catalog.07">
+        <field name="code">21</field>
+        <field name="name">Exonerado - Transferencia gratuita</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">17</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_30" model="l10n_pe_edi.catalog.07">
+        <field name="code">30</field>
+        <field name="name">Inafecto - Operación Onerosa</field>
+        <field name="tribute_code">9998</field>
+        <field name="code_of">9</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_31" model="l10n_pe_edi.catalog.07">
+        <field name="code">31</field>
+        <field name="name">Inafecto - Retiro por Bonificación</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_32" model="l10n_pe_edi.catalog.07">
+        <field name="code">32</field>
+        <field name="name">Inafecto - Retiro</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">11</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_33" model="l10n_pe_edi.catalog.07">
+        <field name="code">33</field>
+        <field name="name">Inafecto - Retiro por Muestras Médicas</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_34" model="l10n_pe_edi.catalog.07">
+        <field name="code">34</field>
+        <field name="name">Inafecto - Retiro por Convenio Colectivo</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">13</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_35" model="l10n_pe_edi.catalog.07">
+        <field name="code">35</field>
+        <field name="name">Inafecto - Retiro por premio</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">14</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_36" model="l10n_pe_edi.catalog.07">
+        <field name="code">36</field>
+        <field name="name">Inafecto - Retiro por publicidad</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of">15</field>
+    </record>
+    <record id="l10n_pe_edi_cat07_37" model="l10n_pe_edi.catalog.07">
+        <field name="code">37</field>
+        <field name="name">Inafecto - Transferencia gratuita</field>
+        <field name="tribute_code">9996</field>
+        <field name="code_of" />
+        <field name="active" eval="False" />
+    </record>
+    <record id="l10n_pe_edi_cat07_40" model="l10n_pe_edi.catalog.07">
+        <field name="code">40</field>
+        <field name="name">Exportación de Bienes o Servicios</field>
+        <field name="tribute_code">9995-9996</field>
+        <field name="code_of">16</field>
+    </record>
+    <!-- Catalog No. 08: Codigos de Sistema de calculo del ISC -->
+    <record id="l10n_pe_edi_cat08_01" model="l10n_pe_edi.catalog.08">
+        <field name="code">01</field>
+        <field
+            name="name"
+        >Sistema al valor (Apéndice IV, lit. A - T.U.O IGV e ISC)</field>
+        <field name="rate">1</field>
+        <field name="code_of">1</field>
+    </record>
+    <record id="l10n_pe_edi_cat08_02" model="l10n_pe_edi.catalog.08">
+        <field name="code">02</field>
+        <field
+            name="name"
+        >Aplicación del Monto Fijo ( Sistema específico, bienes en el apéndice III, Apéndice IV, lit. B - T.U.O IGV e ISC)</field>
+        <field name="rate">2</field>
+        <field name="code_of">2</field>
+    </record>
+    <record id="l10n_pe_edi_cat08_03" model="l10n_pe_edi.catalog.08">
+        <field name="code">03</field>
+        <field
+            name="name"
+        >Sistema de Precios de Venta al Público (Apéndice IV, lit. C - T.U.O IGV e ISC)</field>
+        <field name="rate">0.5</field>
+        <field name="code_of">3</field>
+    </record>
+    <!-- Catalog No. 09: Codigos de Tipo de Nota de credito electronica -->
+    <record id="l10n_pe_edi_cat09_01" model="l10n_pe_edi.catalog.09">
+        <field name="code">01</field>
+        <field name="name">Anulación de la operación</field>
+        <field name="code_of">1</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_02" model="l10n_pe_edi.catalog.09">
+        <field name="code">02</field>
+        <field name="name">Anulación por error en el RUC</field>
+        <field name="code_of">2</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_03" model="l10n_pe_edi.catalog.09">
+        <field name="code">03</field>
+        <field name="name">Corrección por error en la descripción</field>
+        <field name="code_of">3</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_04" model="l10n_pe_edi.catalog.09">
+        <field name="code">04</field>
+        <field name="name">Descuento global</field>
+        <field name="code_of">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_05" model="l10n_pe_edi.catalog.09">
+        <field name="code">05</field>
+        <field name="name">Descuento por ítem</field>
+        <field name="code_of">5</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_06" model="l10n_pe_edi.catalog.09">
+        <field name="code">06</field>
+        <field name="name">Devolución total</field>
+        <field name="code_of">6</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_07" model="l10n_pe_edi.catalog.09">
+        <field name="code">07</field>
+        <field name="name">Devolución por ítem</field>
+        <field name="code_of">7</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_08" model="l10n_pe_edi.catalog.09">
+        <field name="code">08</field>
+        <field name="name">Bonificación</field>
+        <field name="code_of">8</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_09" model="l10n_pe_edi.catalog.09">
+        <field name="code">09</field>
+        <field name="name">Disminución en el valor</field>
+        <field name="code_of">9</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_10" model="l10n_pe_edi.catalog.09">
+        <field name="code">10</field>
+        <field name="name">Otros Conceptos</field>
+        <field name="code_of">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_11" model="l10n_pe_edi.catalog.09">
+        <field name="code">11</field>
+        <field name="name">Ajustes de operaciones de exportación</field>
+        <field name="code_of">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_12" model="l10n_pe_edi.catalog.09">
+        <field name="code">12</field>
+        <field name="name">Ajustes afectos al IVAP</field>
+        <field name="code_of">11</field>
+    </record>
+    <record id="l10n_pe_edi_cat09_13" model="l10n_pe_edi.catalog.09">
+        <field name="code">13</field>
+        <field name="name">Ajustes montos y/o fechas de pago</field>
+        <field name="code_of">13</field>
+    </record>
+    <!-- Catalog No. 10: Codigos de Tipo de Nota de debito electronica -->
+    <record id="l10n_pe_edi_cat10_01" model="l10n_pe_edi.catalog.10">
+        <field name="code">01</field>
+        <field name="name">Intereses por mora</field>
+        <field name="code_of">1</field>
+    </record>
+    <record id="l10n_pe_edi_cat10_02" model="l10n_pe_edi.catalog.10">
+        <field name="code">02</field>
+        <field name="name">Aumento en el valor</field>
+        <field name="code_of">2</field>
+    </record>
+    <record id="l10n_pe_edi_cat10_03" model="l10n_pe_edi.catalog.10">
+        <field name="code">03</field>
+        <field name="name">Penalidades/ otros conceptos</field>
+        <field name="code_of">3</field>
+    </record>
+    <record id="l10n_pe_edi_cat10_11" model="l10n_pe_edi.catalog.10">
+        <field name="code">11</field>
+        <field name="name">Ajustes de operaciones de exportación</field>
+        <field name="code_of">5</field>
+    </record>
+    <record id="l10n_pe_edi_cat10_12" model="l10n_pe_edi.catalog.10">
+        <field name="code">12</field>
+        <field name="name">Ajustes afectos al IVAP</field>
+        <field name="code_of">4</field>
+    </record>
+    <!-- Catalog No. 11: Codigos de Tipo de Valor de venta -->
+    <record id="l10n_pe_edi_cat11_01" model="l10n_pe_edi.catalog.11">
+        <field name="code">01</field>
+        <field name="name">Gravado</field>
+    </record>
+    <record id="l10n_pe_edi_cat11_02" model="l10n_pe_edi.catalog.11">
+        <field name="code">02</field>
+        <field name="name">Exonerado</field>
+    </record>
+    <record id="l10n_pe_edi_cat11_03" model="l10n_pe_edi.catalog.11">
+        <field name="code">03</field>
+        <field name="name">Inafecto</field>
+    </record>
+    <record id="l10n_pe_edi_cat11_04" model="l10n_pe_edi.catalog.11">
+        <field name="code">04</field>
+        <field name="name">Exportación</field>
+    </record>
+    <record id="l10n_pe_edi_cat11_05" model="l10n_pe_edi.catalog.11">
+        <field name="code">05</field>
+        <field name="name">Gratuitas</field>
+    </record>
+    <!-- Catalog No. 12: Codigos de Tipo de Documento relacionado tributario -->
+    <record id="l10n_pe_edi_cat12_01" model="l10n_pe_edi.catalog.12">
+        <field name="code">01</field>
+        <field name="name">Factura - emitida para corregir error en el RUC</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_02" model="l10n_pe_edi.catalog.12">
+        <field name="code">02</field>
+        <field name="name">Factura - emitida por anticipos</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_03" model="l10n_pe_edi.catalog.12">
+        <field name="code">03</field>
+        <field name="name">Boleta de Venta - emitida por anticipos</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_04" model="l10n_pe_edi.catalog.12">
+        <field name="code">04</field>
+        <field name="name">Ticket de Salida - ENAPU</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_05" model="l10n_pe_edi.catalog.12">
+        <field name="code">05</field>
+        <field name="name">Código SCOP</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_06" model="l10n_pe_edi.catalog.12">
+        <field name="code">06</field>
+        <field name="name">Factura electrónica remitente</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_07" model="l10n_pe_edi.catalog.12">
+        <field name="code">07</field>
+        <field name="name">Guia de remisión remitente</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_08" model="l10n_pe_edi.catalog.12">
+        <field name="code">08</field>
+        <field name="name">Declaración de salida del depósito franco</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_09" model="l10n_pe_edi.catalog.12">
+        <field name="code">09</field>
+        <field name="name">Declaración simplificada de importación</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_10" model="l10n_pe_edi.catalog.12">
+        <field name="code">10</field>
+        <field name="name">Liquidación de compra - emitida por anticipos</field>
+    </record>
+    <record id="l10n_pe_edi_cat12_99" model="l10n_pe_edi.catalog.12">
+        <field name="code">99</field>
+        <field name="name">Otros</field>
+    </record>
+    <!-- Catalog No. 14: Codigos de Otro concepto tributarios -->
+    <record id="l10n_pe_edi_cat14_1000" model="l10n_pe_edi.catalog.14">
+        <field name="code">1000</field>
+        <field name="name">Total valor de venta - operaciones exportadas</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_1001" model="l10n_pe_edi.catalog.14">
+        <field name="code">1001</field>
+        <field name="name">Total valor de venta - operaciones gravadas</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_1002" model="l10n_pe_edi.catalog.14">
+        <field name="code">1002</field>
+        <field name="name">Total valor de venta - operaciones inafectas</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_1003" model="l10n_pe_edi.catalog.14">
+        <field name="code">1003</field>
+        <field name="name">Total valor de venta - operaciones exoneradas</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_1004" model="l10n_pe_edi.catalog.14">
+        <field name="code">1004</field>
+        <field name="name">Total valor de venta - Operaciones gratuitas</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_1005" model="l10n_pe_edi.catalog.14">
+        <field name="code">1005</field>
+        <field name="name">Sub total de venta</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_2001" model="l10n_pe_edi.catalog.14">
+        <field name="code">2001</field>
+        <field name="name">Percepciones</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_2002" model="l10n_pe_edi.catalog.14">
+        <field name="code">2002</field>
+        <field name="name">Retenciones</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_2003" model="l10n_pe_edi.catalog.14">
+        <field name="code">2003</field>
+        <field name="name">Detracciones</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_2004" model="l10n_pe_edi.catalog.14">
+        <field name="code">2004</field>
+        <field name="name">Bonificaciones</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_2005" model="l10n_pe_edi.catalog.14">
+        <field name="code">2005</field>
+        <field name="name">Total descuentos</field>
+    </record>
+    <record id="l10n_pe_edi_cat14_3001" model="l10n_pe_edi.catalog.14">
+        <field name="code">3001</field>
+        <field name="name">FISE (Ley 29852) Fondo Inclusión Social Energético</field>
+    </record>
+    <!-- Catalog No. 15: Codigos de Elemento adicionale en la factura y/o boleta de venta -->
+    <record id="l10n_pe_edi_cat15_1000" model="l10n_pe_edi.catalog.15">
+        <field name="code">1000</field>
+        <field name="name">Monto en Letras</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_1002" model="l10n_pe_edi.catalog.15">
+        <field name="code">1002</field>
+        <field
+            name="name"
+        >Leyenda "TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE"</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2000" model="l10n_pe_edi.catalog.15">
+        <field name="code">2000</field>
+        <field name="name">Leyenda “COMPROBANTE DE PERCEPCIÓN”</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2001" model="l10n_pe_edi.catalog.15">
+        <field name="code">2001</field>
+        <field
+            name="name"
+        >Leyenda “BIENES TRANSFERIDOS EN LA AMAZONÍA REGIÓN SELVAPARA SER CONSUMIDOS EN LA MISMA"</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2002" model="l10n_pe_edi.catalog.15">
+        <field name="code">2002</field>
+        <field
+            name="name"
+        >Leyenda “SERVICIOS PRESTADOS EN LA AMAZONÍA  REGIÓN SELVA PARA SER CONSUMIDOS EN LA MISMA”</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2003" model="l10n_pe_edi.catalog.15">
+        <field name="code">2003</field>
+        <field
+            name="name"
+        >Leyenda “CONTRATOS DE CONSTRUCCIÓN EJECUTADOS  EN LA AMAZONÍA REGIÓN SELVA”</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2004" model="l10n_pe_edi.catalog.15">
+        <field name="code">2004</field>
+        <field name="name">Leyenda “Agencia de Viaje - Paquete turístico”</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2005" model="l10n_pe_edi.catalog.15">
+        <field name="code">2005</field>
+        <field name="name">Leyenda “Venta realizada por emisor itinerante”</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2006" model="l10n_pe_edi.catalog.15">
+        <field name="code">2006</field>
+        <field name="name">Leyenda: Operación sujeta a detracción</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2007" model="l10n_pe_edi.catalog.15">
+        <field name="code">2007</field>
+        <field name="name">Leyenda: Operación sujeta a IVAP</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_2010" model="l10n_pe_edi.catalog.15">
+        <field name="code">2010</field>
+        <field name="name">Restitución Simplificado de Derechos Arancelarios</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3000" model="l10n_pe_edi.catalog.15">
+        <field name="code">3000</field>
+        <field name="name">Detracciones: CODIGO DE BB Y SS SUJETOS A DETRACCION</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3001" model="l10n_pe_edi.catalog.15">
+        <field name="code">3001</field>
+        <field name="name">Detracciones: NUMERO DE CTA EN EL BN</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3002" model="l10n_pe_edi.catalog.15">
+        <field name="code">3002</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Nombre y matrícula de la embarcación</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3003" model="l10n_pe_edi.catalog.15">
+        <field name="code">3003</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Tipo y cantidad de especie vendida</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3004" model="l10n_pe_edi.catalog.15">
+        <field name="code">3004</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos -Lugar de descarga</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3005" model="l10n_pe_edi.catalog.15">
+        <field name="code">3005</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos -Fecha de descarga</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3006" model="l10n_pe_edi.catalog.15">
+        <field name="code">3006</field>
+        <field
+            name="name"
+        >Detracciones: Transporte Bienes vía terrestre - Numero Registro MTC</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3007" model="l10n_pe_edi.catalog.15">
+        <field name="code">3007</field>
+        <field
+            name="name"
+        >Detracciones: Transporte Bienes vía terrestre - configuración vehicular</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3008" model="l10n_pe_edi.catalog.15">
+        <field name="code">3008</field>
+        <field
+            name="name"
+        >Detracciones: Transporte Bienes vía terrestre - punto de origen</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3009" model="l10n_pe_edi.catalog.15">
+        <field name="code">3009</field>
+        <field
+            name="name"
+        >Detracciones: Transporte Bienes vía terrestre - punto destino</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_3010" model="l10n_pe_edi.catalog.15">
+        <field name="code">3010</field>
+        <field
+            name="name"
+        >Detracciones: Transporte Bienes vía terrestre - valor referencial preliminar</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4000" model="l10n_pe_edi.catalog.15">
+        <field name="code">4000</field>
+        <field
+            name="name"
+        >Beneficio hospedajes: Código País de emisión del pasaporte</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4001" model="l10n_pe_edi.catalog.15">
+        <field name="code">4001</field>
+        <field
+            name="name"
+        >Beneficio hospedajes: Código País de residencia del sujeto no domiciliado</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4002" model="l10n_pe_edi.catalog.15">
+        <field name="code">4002</field>
+        <field name="name">Beneficio Hospedajes: Fecha de ingreso al país</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4003" model="l10n_pe_edi.catalog.15">
+        <field name="code">4003</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Fecha de ingreso al establecimiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4004" model="l10n_pe_edi.catalog.15">
+        <field name="code">4004</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Fecha de salida del establecimiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4005" model="l10n_pe_edi.catalog.15">
+        <field name="code">4005</field>
+        <field name="name">Beneficio Hospedajes: Número de días de permanencia</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4006" model="l10n_pe_edi.catalog.15">
+        <field name="code">4006</field>
+        <field name="name">Beneficio Hospedajes: Fecha de consumo</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4007" model="l10n_pe_edi.catalog.15">
+        <field name="code">4007</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Paquete turístico - Nombres y Apellidos del Huésped</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4008" model="l10n_pe_edi.catalog.15">
+        <field name="code">4008</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Paquete turístico - Tipo documento identidad del huésped</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_4009" model="l10n_pe_edi.catalog.15">
+        <field name="code">4009</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Paquete turístico - Numero de documento identidad de huésped</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_5000" model="l10n_pe_edi.catalog.15">
+        <field name="code">5000</field>
+        <field name="name">Proveedores Estado: Número de Expediente</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_5001" model="l10n_pe_edi.catalog.15">
+        <field name="code">5001</field>
+        <field name="name">Proveedores Estado : Código de unidad ejecutora</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_5002" model="l10n_pe_edi.catalog.15">
+        <field name="code">5002</field>
+        <field name="name">Proveedores Estado : N° de proceso de selección</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_5003" model="l10n_pe_edi.catalog.15">
+        <field name="code">5003</field>
+        <field name="name">Proveedores Estado : N° de contrato</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6000" model="l10n_pe_edi.catalog.15">
+        <field name="code">6000</field>
+        <field
+            name="name"
+        >Comercialización de Oro :  Código Unico Concesión Minera</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6001" model="l10n_pe_edi.catalog.15">
+        <field name="code">6001</field>
+        <field name="name">Comercialización de Oro :  N° declaración compromiso</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6002" model="l10n_pe_edi.catalog.15">
+        <field name="code">6002</field>
+        <field
+            name="name"
+        >Comercialización de Oro :  N° Reg. Especial .Comerci. Oro</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6003" model="l10n_pe_edi.catalog.15">
+        <field name="code">6003</field>
+        <field
+            name="name"
+        >Comercialización de Oro :  N° Resolución que autoriza Planta de Beneficio</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6004" model="l10n_pe_edi.catalog.15">
+        <field name="code">6004</field>
+        <field
+            name="name"
+        >Comercialización de Oro : Ley Mineral (% concent. oro)</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6005" model="l10n_pe_edi.catalog.15">
+        <field name="code">6005</field>
+        <field name="name">Comercialización de Oro : Naturaleza del mineral</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_6006" model="l10n_pe_edi.catalog.15">
+        <field name="code">6006</field>
+        <field name="name">Comercialización de Oro : Nombre del derecho minero</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_7000" model="l10n_pe_edi.catalog.15">
+        <field name="code">7000</field>
+        <field
+            name="name"
+        >Primera venta de mercancia identificable entre usuarios de la zona comercial</field>
+    </record>
+    <record id="l10n_pe_edi_cat15_7001" model="l10n_pe_edi.catalog.15">
+        <field name="code">7001</field>
+        <field
+            name="name"
+        >Venta exonerada del IGV-ISC-IPM. Prohibida la venta fuera de la zona comercial de Tacna</field>
+    </record>
+    <!-- Catalog No. 16: Codigos de Tipo de Precio de venta unitario -->
+    <record id="l10n_pe_edi_cat16_01" model="l10n_pe_edi.catalog.16">
+        <field name="code">01</field>
+        <field name="name">Precio unitario (incluye el IGV)</field>
+    </record>
+    <record id="l10n_pe_edi_cat16_02" model="l10n_pe_edi.catalog.16">
+        <field name="code">02</field>
+        <field
+            name="name"
+        >Valor referencial unitario en operaciones no onerosas (Gratuitas)</field>
+    </record>
+    <record id="l10n_pe_edi_cat16_03" model="l10n_pe_edi.catalog.16">
+        <field name="code">03</field>
+        <field name="name">Tarifas reguladas</field>
+    </record>
+    <!-- Catalog No. 17: Codigos de Tipo de Operacion -->
+    <record id="l10n_pe_edi_cat17_01" model="l10n_pe_edi.catalog.17">
+        <field name="code">01</field>
+        <field name="name">Venta lnterna</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_02" model="l10n_pe_edi.catalog.17">
+        <field name="code">02</field>
+        <field name="name">Exportación de bienes</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_03" model="l10n_pe_edi.catalog.17">
+        <field name="code">03</field>
+        <field name="name">No Domiciliados</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_04" model="l10n_pe_edi.catalog.17">
+        <field name="code">04</field>
+        <field name="name">Venta Interna - Anticipos</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_05" model="l10n_pe_edi.catalog.17">
+        <field name="code">05</field>
+        <field name="name">Venta Itinerante</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_06" model="l10n_pe_edi.catalog.17">
+        <field name="code">06</field>
+        <field name="name">Factura Guía</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_07" model="l10n_pe_edi.catalog.17">
+        <field name="code">07</field>
+        <field name="name">Venta Arroz Pilado</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_08" model="l10n_pe_edi.catalog.17">
+        <field name="code">08</field>
+        <field name="name">Factura - Comprobante de Percepción</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_10" model="l10n_pe_edi.catalog.17">
+        <field name="code">10</field>
+        <field name="name">Factura - Guía remitente</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_11" model="l10n_pe_edi.catalog.17">
+        <field name="code">11</field>
+        <field name="name">Factura - Guía transportista</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_12" model="l10n_pe_edi.catalog.17">
+        <field name="code">12</field>
+        <field name="name">Boleta de venta - Comprobante de Percepción.</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_13" model="l10n_pe_edi.catalog.17">
+        <field name="code">13</field>
+        <field name="name">Gasto Deducible Persona Natural</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_14" model="l10n_pe_edi.catalog.17">
+        <field name="code">14</field>
+        <field
+            name="name"
+        >Exportación de servicios - prestación de servicios de hospedaje No Dom</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_15" model="l10n_pe_edi.catalog.17">
+        <field name="code">15</field>
+        <field name="name">Exportación de servicios - Transporte de navieras</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_16" model="l10n_pe_edi.catalog.17">
+        <field name="code">16</field>
+        <field
+            name="name"
+        >Exportación de servicios - servicios  a naves y aeronaves de bandera extranjera</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_17" model="l10n_pe_edi.catalog.17">
+        <field name="code">17</field>
+        <field name="name">Exportación de servicios - RES</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_18" model="l10n_pe_edi.catalog.17">
+        <field name="code">18</field>
+        <field
+            name="name"
+        >Exportación de servicios  - Servicios que conformen un Paquete Turístico</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_19" model="l10n_pe_edi.catalog.17">
+        <field name="code">19</field>
+        <field
+            name="name"
+        >Exportación de servicios - Servicios complementarios al transporte de carga</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_20" model="l10n_pe_edi.catalog.17">
+        <field name="code">20</field>
+        <field
+            name="name"
+        >Exportación de servicios - Suministro de energía eléctrica a favor de sujetos domiciliados en ZED</field>
+    </record>
+    <record id="l10n_pe_edi_cat17_21" model="l10n_pe_edi.catalog.17">
+        <field name="code">21</field>
+        <field
+            name="name"
+        >Exportación de servicios - Prestación servicios realizados parcialmente en el extranjero</field>
+    </record>
+    <!-- Catalog No. 18: Codigos de Modalidad de traslado -->
+    <record id="l10n_pe_edi_cat18_01" model="l10n_pe_edi.catalog.18">
+        <field name="code">01</field>
+        <field name="name">Transporte público</field>
+    </record>
+    <record id="l10n_pe_edi_cat18_02" model="l10n_pe_edi.catalog.18">
+        <field name="code">02</field>
+        <field name="name">Transporte privado</field>
+    </record>
+    <!-- Catalog No. 19: Codigos de Estado de item -->
+    <record id="l10n_pe_edi_cat19_1" model="l10n_pe_edi.catalog.19">
+        <field name="code">1</field>
+        <field name="name">Adicionar</field>
+    </record>
+    <record id="l10n_pe_edi_cat19_2" model="l10n_pe_edi.catalog.19">
+        <field name="code">2</field>
+        <field name="name">Modificar</field>
+    </record>
+    <record id="l10n_pe_edi_cat19_3" model="l10n_pe_edi.catalog.19">
+        <field name="code">3</field>
+        <field name="name">Anulado</field>
+    </record>
+    <!-- Catalog No. 20: Codigos de Motivo de traslado -->
+    <record id="l10n_pe_edi_cat20_01" model="l10n_pe_edi.catalog.20">
+        <field name="code">01</field>
+        <field name="name">Venta</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_02" model="l10n_pe_edi.catalog.20">
+        <field name="code">02</field>
+        <field name="name">Compra</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_04" model="l10n_pe_edi.catalog.20">
+        <field name="code">04</field>
+        <field name="name">Traslado entre establecimientos de la misma empresa</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_05" model="l10n_pe_edi.catalog.20">
+        <field name="code">05</field>
+        <field name="name">Consignación</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_08" model="l10n_pe_edi.catalog.20">
+        <field name="code">08</field>
+        <field name="name">Importación</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_09" model="l10n_pe_edi.catalog.20">
+        <field name="code">09</field>
+        <field name="name">Exportación</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_13" model="l10n_pe_edi.catalog.20">
+        <field name="code">13</field>
+        <field name="name">Otros</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_14" model="l10n_pe_edi.catalog.20">
+        <field name="code">14</field>
+        <field name="name">Venta sujeta a confirmación del comprador</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_18" model="l10n_pe_edi.catalog.20">
+        <field name="code">18</field>
+        <field name="name">Traslado emisor itinerante CP</field>
+    </record>
+    <record id="l10n_pe_edi_cat20_19" model="l10n_pe_edi.catalog.20">
+        <field name="code">19</field>
+        <field name="name">Traslado a zona primaria</field>
+        <field name="active">False</field>
+    </record>
+    <!-- Catalog No. 21: Codigos de Documento relacionado para la guia -->
+    <record id="l10n_pe_edi_cat21_01" model="l10n_pe_edi.catalog.21">
+        <field name="code">01</field>
+        <field name="name">Numeración DAM</field>
+    </record>
+    <record id="l10n_pe_edi_cat21_02" model="l10n_pe_edi.catalog.21">
+        <field name="code">02</field>
+        <field name="name">Número de orden de entrega</field>
+    </record>
+    <record id="l10n_pe_edi_cat21_03" model="l10n_pe_edi.catalog.21">
+        <field name="code">03</field>
+        <field name="name">Número SCOP</field>
+    </record>
+    <record id="l10n_pe_edi_cat21_04" model="l10n_pe_edi.catalog.21">
+        <field name="code">04</field>
+        <field name="name">Número de manifiesto de carga</field>
+    </record>
+    <record id="l10n_pe_edi_cat21_05" model="l10n_pe_edi.catalog.21">
+        <field name="code">05</field>
+        <field name="name">Número de constancia de detracción</field>
+    </record>
+    <record id="l10n_pe_edi_cat21_06" model="l10n_pe_edi.catalog.21">
+        <field name="code">06</field>
+        <field name="name">Otros</field>
+    </record>
+    <!-- Catalog No. 22: Codigos de Tipo de regimene de percepcion -->
+    <record id="l10n_pe_edi_cat22_01" model="l10n_pe_edi.catalog.22">
+        <field name="code">01</field>
+        <field name="name">Percepción Venta Interna</field>
+        <field name="rate">2.0</field>
+    </record>
+    <record id="l10n_pe_edi_cat22_02" model="l10n_pe_edi.catalog.22">
+        <field name="code">02</field>
+        <field name="name">Percepción a la adquisición de combustible</field>
+        <field name="rate">1.0</field>
+    </record>
+    <record id="l10n_pe_edi_cat22_03" model="l10n_pe_edi.catalog.22">
+        <field name="code">03</field>
+        <field
+            name="name"
+        >Percepción realizada al agente de percepción con tasa especial</field>
+        <field name="rate">0.5</field>
+    </record>
+    <!-- Catalog No. 23: Codigos de Tipo de regimene de retencion -->
+    <record id="l10n_pe_edi_cat23_01" model="l10n_pe_edi.catalog.23">
+        <field name="code">01</field>
+        <field name="name">Tasa 3%</field>
+        <field name="rate">3.0</field>
+    </record>
+    <record id="l10n_pe_edi_cat23_02" model="l10n_pe_edi.catalog.23">
+        <field name="code">02</field>
+        <field name="name">Tasa 6%</field>
+        <field name="rate">6.0</field>
+    </record>
+    <!-- Catalog No. 24: Codigos de Tarifa de servicio publico -->
+    <record id="l10n_pe_edi_cat24_L001" model="l10n_pe_edi.catalog.24">
+        <field name="code">L001</field>
+        <field name="name">AT</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L002" model="l10n_pe_edi.catalog.24">
+        <field name="code">L002</field>
+        <field name="name">MT2</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L003" model="l10n_pe_edi.catalog.24">
+        <field name="code">L003</field>
+        <field name="name">MT3</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L004" model="l10n_pe_edi.catalog.24">
+        <field name="code">L004</field>
+        <field name="name">MT4</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L005" model="l10n_pe_edi.catalog.24">
+        <field name="code">L005</field>
+        <field name="name">BT2</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L006" model="l10n_pe_edi.catalog.24">
+        <field name="code">L006</field>
+        <field name="name">BT3</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L007" model="l10n_pe_edi.catalog.24">
+        <field name="code">L007</field>
+        <field name="name">BT4</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L008" model="l10n_pe_edi.catalog.24">
+        <field name="code">L008</field>
+        <field name="name">BT5A</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L009" model="l10n_pe_edi.catalog.24">
+        <field name="code">L009</field>
+        <field name="name">BT5B NO RESIDENCIAL</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L010" model="l10n_pe_edi.catalog.24">
+        <field name="code">L010</field>
+        <field name="name">BT6</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L011" model="l10n_pe_edi.catalog.24">
+        <field name="code">L011</field>
+        <field name="name">BT5C-AP</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L012" model="l10n_pe_edi.catalog.24">
+        <field name="code">L012</field>
+        <field name="name">BT5D</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L013" model="l10n_pe_edi.catalog.24">
+        <field name="code">L013</field>
+        <field name="name">BT5E</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L014" model="l10n_pe_edi.catalog.24">
+        <field name="code">L014</field>
+        <field name="name">BT7</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_L015" model="l10n_pe_edi.catalog.24">
+        <field name="code">L015</field>
+        <field name="name">BT8</field>
+        <field name="type">LUZ</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_A011" model="l10n_pe_edi.catalog.24">
+        <field name="code">A011</field>
+        <field name="name">COMERCIAL</field>
+        <field name="type">AGUA</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_A012" model="l10n_pe_edi.catalog.24">
+        <field name="code">A012</field>
+        <field name="name">INDUSTRIAL</field>
+        <field name="type">AGUA</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_A014" model="l10n_pe_edi.catalog.24">
+        <field name="code">A014</field>
+        <field name="name">DOMÉSTICO</field>
+        <field name="type">AGUA</field>
+    </record>
+    <record id="l10n_pe_edi_cat24_A015" model="l10n_pe_edi.catalog.24">
+        <field name="code">A015</field>
+        <field name="name">SOCIAL</field>
+        <field name="type">AGUA</field>
+    </record>
+    <!-- Catalog No. 26: Codigos de Tipo de prestamo (credito hipotecario) -->
+    <record id="l10n_pe_edi_cat26_0" model="l10n_pe_edi.catalog.26">
+        <field name="code">0</field>
+        <field name="name">Sin información</field>
+    </record>
+    <record id="l10n_pe_edi_cat26_1" model="l10n_pe_edi.catalog.26">
+        <field name="code">1</field>
+        <field name="name">Si es construcción /adquisición</field>
+    </record>
+    <record id="l10n_pe_edi_cat26_2" model="l10n_pe_edi.catalog.26">
+        <field name="code">2</field>
+        <field
+            name="name"
+        >Si es para refacción, remodelación, ampliación, mejoramiento o subdivisión de vivienda propia.</field>
+    </record>
+    <!-- Catalog No. 27: Codigos de Indicador de primera vivienda -->
+    <record id="l10n_pe_edi_cat27_0" model="l10n_pe_edi.catalog.27">
+        <field name="code">0</field>
+        <field name="name">Sin indicador</field>
+    </record>
+    <record id="l10n_pe_edi_cat27_1" model="l10n_pe_edi.catalog.27">
+        <field name="code">1</field>
+        <field name="name">Calificado para crédito Mi Vivienda / Techo Propio</field>
+    </record>
+    <record id="l10n_pe_edi_cat27_2" model="l10n_pe_edi.catalog.27">
+        <field name="code">2</field>
+        <field name="name">Libre disposición de la AFP</field>
+    </record>
+    <record id="l10n_pe_edi_cat27_3" model="l10n_pe_edi.catalog.27">
+        <field name="code">3</field>
+        <field
+            name="name"
+        >Calificado como primera vivienda de acuerdo a la información proporcionada por el cliente (para créditos otorgados a partir del 01.01.2013)</field>
+    </record>
+    <!-- Catalog No. 51: Codigos de Tipo de operacion -->
+    <record id="l10n_pe_edi_cat51_0101" model="l10n_pe_edi.catalog.51">
+        <field name="code">0101</field>
+        <field name="name">Venta interna</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0112" model="l10n_pe_edi.catalog.51">
+        <field name="code">0112</field>
+        <field
+            name="name"
+        >Venta Interna - Sustenta Gastos Deducibles Persona Natural</field>
+        <field name="type">Factura</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0113" model="l10n_pe_edi.catalog.51">
+        <field name="code">0113</field>
+        <field name="name">Venta Interna-NRUS</field>
+        <field name="type">Boleta</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0200" model="l10n_pe_edi.catalog.51">
+        <field name="code">0200</field>
+        <field name="name">Exportación de Bienes</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0201" model="l10n_pe_edi.catalog.51">
+        <field name="code">0201</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Prestación servicios realizados íntegramente en el país</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0202" model="l10n_pe_edi.catalog.51">
+        <field name="code">0202</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Prestación de servicios de hospedaje No Domiciliado</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0203" model="l10n_pe_edi.catalog.51">
+        <field name="code">0203</field>
+        <field name="name">Exportación de Servicios - Transporte de navieras</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0204" model="l10n_pe_edi.catalog.51">
+        <field name="code">0204</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Servicios a naves y aeronaves de bandera extranjera</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0205" model="l10n_pe_edi.catalog.51">
+        <field name="code">0205</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Servicios que conformen un Paquete Turístico</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0206" model="l10n_pe_edi.catalog.51">
+        <field name="code">0206</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Servicios complementarios al transporte de carga</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0207" model="l10n_pe_edi.catalog.51">
+        <field name="code">0207</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Suministro de energía eléctrica a favor de sujetos domiciliados en ZED</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0208" model="l10n_pe_edi.catalog.51">
+        <field name="code">0208</field>
+        <field
+            name="name"
+        >Exportación de Servicios - Prestación servicios realizados parcialmente en el extranjero</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0301" model="l10n_pe_edi.catalog.51">
+        <field name="code">0301</field>
+        <field
+            name="name"
+        >Operaciones con Carta de porte aéreo (emitidas en el ámbito nacional)</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0302" model="l10n_pe_edi.catalog.51">
+        <field name="code">0302</field>
+        <field name="name">Operaciones de Transporte ferroviario de pasajeros</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0303" model="l10n_pe_edi.catalog.51">
+        <field name="code">0303</field>
+        <field name="name">Operaciones de Pago de regalía petrolera</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_0401" model="l10n_pe_edi.catalog.51">
+        <field name="code">0401</field>
+        <field
+            name="name"
+        >Ventas no domiciliados que no califican como exportación</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_1001" model="l10n_pe_edi.catalog.51">
+        <field name="code">1001</field>
+        <field name="name">Operación Sujeta a Detracción</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_1002" model="l10n_pe_edi.catalog.51">
+        <field name="code">1002</field>
+        <field
+            name="name"
+        >Operación Sujeta a Detracción- Recursos Hidrobiológicos</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_1003" model="l10n_pe_edi.catalog.51">
+        <field name="code">1003</field>
+        <field
+            name="name"
+        >Operación Sujeta a Detracción- Servicios de Transporte Pasajeros</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_1004" model="l10n_pe_edi.catalog.51">
+        <field name="code">1004</field>
+        <field
+            name="name"
+        >Operación Sujeta a Detracción- Servicios de Transporte Carga</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <record id="l10n_pe_edi_cat51_2001" model="l10n_pe_edi.catalog.51">
+        <field name="code">2001</field>
+        <field name="name">Operación Sujeta a Percepción</field>
+        <field name="type">Factura, Boletas</field>
+    </record>
+    <!-- Catalog No. 52: Codigos de Leyenda -->
+    <record id="l10n_pe_edi_cat52_1000" model="l10n_pe_edi.catalog.52">
+        <field name="code">1000</field>
+        <field name="name">Monto en Letras</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_1002" model="l10n_pe_edi.catalog.52">
+        <field name="code">1002</field>
+        <field
+            name="name"
+        >Leyenda "TRANSFERENCIA GRATUITA DE UN BIEN Y/O SERVICIO PRESTADO GRATUITAMENTE"</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2000" model="l10n_pe_edi.catalog.52">
+        <field name="code">2000</field>
+        <field name="name">Leyenda “COMPROBANTE DE PERCEPCIÓN”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2001" model="l10n_pe_edi.catalog.52">
+        <field name="code">2001</field>
+        <field
+            name="name"
+        >Leyenda “BIENES TRANSFERIDOS EN LA AMAZONÍA REGIÓN SELVA PARA SER CONSUMIDOS EN LA MISMA"</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2002" model="l10n_pe_edi.catalog.52">
+        <field name="code">2002</field>
+        <field
+            name="name"
+        >Leyenda “SERVICIOS PRESTADOS EN LA AMAZONÍA  REGIÓN SELVA PARA SER CONSUMIDOS EN LA MISMA”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2003" model="l10n_pe_edi.catalog.52">
+        <field name="code">2003</field>
+        <field
+            name="name"
+        >Leyenda “CONTRATOS DE CONSTRUCCIÓN EJECUTADOS  EN LA AMAZONÍA REGIÓN SELVA”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2004" model="l10n_pe_edi.catalog.52">
+        <field name="code">2004</field>
+        <field name="name">Leyenda “Agencia de Viaje - Paquete turístico”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2005" model="l10n_pe_edi.catalog.52">
+        <field name="code">2005</field>
+        <field name="name">Leyenda “Venta realizada por emisor itinerante”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2006" model="l10n_pe_edi.catalog.52">
+        <field name="code">2006</field>
+        <field name="name">Leyenda "Operación sujeta a detracción"</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2007" model="l10n_pe_edi.catalog.52">
+        <field name="code">2007</field>
+        <field name="name">Leyenda "Operación sujeta al IVAP"</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2008" model="l10n_pe_edi.catalog.52">
+        <field name="code">2008</field>
+        <field
+            name="name"
+        >Leyenda: “VENTA EXONERADA DEL IGV-ISC-IPM. PROHIBIDA LA VENTA FUERA DE LA ZONA COMERCIAL DE TACNA”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2009" model="l10n_pe_edi.catalog.52">
+        <field name="code">2009</field>
+        <field
+            name="name"
+        >Leyenda: “PRIMERA VENTA DE MERCANCÍA IDENTIFICABLE ENTRE USUARIOS DE LA ZONA COMERCIAL”</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2010" model="l10n_pe_edi.catalog.52">
+        <field name="code">2010</field>
+        <field name="name">Restitucion Simplificado de Derechos Arancelarios</field>
+    </record>
+    <record id="l10n_pe_edi_cat52_2011" model="l10n_pe_edi.catalog.52">
+        <field name="code">2011</field>
+        <field
+            name="name"
+        >Leyenda “EXPORTACION DE SERVICIOS - DECRETO LEGISLATIVO Nº 919”</field>
+    </record>
+    <!-- Catalog No. 53: Codigos de Cargo o descuento -->
+    <record id="l10n_pe_edi_cat53_00" model="l10n_pe_edi.catalog.53">
+        <field name="code">00</field>
+        <field name="name">Descuentos que afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Item</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_01" model="l10n_pe_edi.catalog.53">
+        <field name="code">01</field>
+        <field
+            name="name"
+        >Descuentos que no afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Item</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_02" model="l10n_pe_edi.catalog.53">
+        <field name="code">02</field>
+        <field
+            name="name"
+        >Descuentos globales que afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_03" model="l10n_pe_edi.catalog.53">
+        <field name="code">03</field>
+        <field
+            name="name"
+        >Descuentos globales que no afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_04" model="l10n_pe_edi.catalog.53">
+        <field name="code">04</field>
+        <field
+            name="name"
+        >Descuentos globales por anticipos gravados que afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_05" model="l10n_pe_edi.catalog.53">
+        <field name="code">05</field>
+        <field name="name">Descuentos globales por anticipos exonerados</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_06" model="l10n_pe_edi.catalog.53">
+        <field name="code">06</field>
+        <field name="name">Descuentos globales por anticipos inafectos</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_45" model="l10n_pe_edi.catalog.53">
+        <field name="code">45</field>
+        <field name="name">FISE</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_46" model="l10n_pe_edi.catalog.53">
+        <field name="code">46</field>
+        <field name="name">Recargo al consumo y/o propinas</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_47" model="l10n_pe_edi.catalog.53">
+        <field name="code">47</field>
+        <field name="name">Cargos que afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Item</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_48" model="l10n_pe_edi.catalog.53">
+        <field name="code">48</field>
+        <field name="name">Cargos que no afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Item</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_49" model="l10n_pe_edi.catalog.53">
+        <field name="code">49</field>
+        <field
+            name="name"
+        >Cargos globales que afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_50" model="l10n_pe_edi.catalog.53">
+        <field name="code">50</field>
+        <field
+            name="name"
+        >Cargos globales que no afectan la base imponible del IGV/IVAP</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_51" model="l10n_pe_edi.catalog.53">
+        <field name="code">51</field>
+        <field name="name">Percepción venta interna</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_52" model="l10n_pe_edi.catalog.53">
+        <field name="code">52</field>
+        <field name="name">Percepción a la adquisición de combustible</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_53" model="l10n_pe_edi.catalog.53">
+        <field name="code">53</field>
+        <field
+            name="name"
+        >Percepción realizada al agente de percepción con tasa especial</field>
+        <field name="level">Global</field>
+    </record>
+    <record id="l10n_pe_edi_cat53_62" model="l10n_pe_edi.catalog.53">
+        <field name="code">62</field>
+        <field name="name">Retención del IGV</field>
+        <field name="level">Global</field>
+    </record>
+    <!-- Catalog No. 54: Codigos de Bien o servicio sujeto a detraccion -->
+    <record id="l10n_pe_edi_cat54_001" model="l10n_pe_edi.catalog.54">
+        <field name="code">001</field>
+        <field name="code_of">1</field>
+        <field name="name">Azúcar y melaza de caña</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_002" model="l10n_pe_edi.catalog.54">
+        <field name="code">002</field>
+        <field name="code_of">2</field>
+        <field name="name">Arroz</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_003" model="l10n_pe_edi.catalog.54">
+        <field name="code">003</field>
+        <field name="code_of">3</field>
+        <field name="name">Alcohol etílico</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_004" model="l10n_pe_edi.catalog.54">
+        <field name="code">004</field>
+        <field name="code_of">4</field>
+        <field name="name">Recursos hidrobiológicos</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_005" model="l10n_pe_edi.catalog.54">
+        <field name="code">005</field>
+        <field name="code_of">5</field>
+        <field name="name">Maíz amarillo duro</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_007" model="l10n_pe_edi.catalog.54">
+        <field name="code">007</field>
+        <field name="code_of">7</field>
+        <field name="name">Caña de azúcar</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_008" model="l10n_pe_edi.catalog.54">
+        <field name="code">008</field>
+        <field name="code_of">8</field>
+        <field name="name">Madera</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_009" model="l10n_pe_edi.catalog.54">
+        <field name="code">009</field>
+        <field name="code_of">9</field>
+        <field name="name">Arena y piedra.</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_010" model="l10n_pe_edi.catalog.54">
+        <field name="code">010</field>
+        <field name="code_of">10</field>
+        <field
+            name="name"
+        >Residuos, subproductos, desechos, recortes y desperdicios</field>
+        <field name="rate">15</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_011" model="l10n_pe_edi.catalog.54">
+        <field name="code">011</field>
+        <field name="code_of">11</field>
+        <field
+            name="name"
+        >Bienes gravados con el IGV, o renuncia a la exoneración</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_012" model="l10n_pe_edi.catalog.54">
+        <field name="code">012</field>
+        <field name="code_of">12</field>
+        <field name="name">Intermediación laboral y tercerización</field>
+        <field name="rate">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_013" model="l10n_pe_edi.catalog.54">
+        <field name="code">013</field>
+        <field name="code_of">40</field>
+        <field name="name">Animales vivos</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_014" model="l10n_pe_edi.catalog.54">
+        <field name="code">014</field>
+        <field name="code_of">13</field>
+        <field name="name">Carnes y despojos comestibles</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_015" model="l10n_pe_edi.catalog.54">
+        <field name="code">015</field>
+        <field name="code_of">41</field>
+        <field name="name">Abonos, cueros y pieles de origen animal</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_016" model="l10n_pe_edi.catalog.54">
+        <field name="code">016</field>
+        <field name="code_of">14</field>
+        <field name="name">Aceite de pescado</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_017" model="l10n_pe_edi.catalog.54">
+        <field name="code">017</field>
+        <field name="code_of">15</field>
+        <field
+            name="name"
+        >Harina, polvo y “pellets” de pescado, crustáceos, moluscos y demás invertebrados acuáticos</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_019" model="l10n_pe_edi.catalog.54">
+        <field name="code">019</field>
+        <field name="code_of">17</field>
+        <field name="name">Arrendamiento de bienes muebles</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_020" model="l10n_pe_edi.catalog.54">
+        <field name="code">020</field>
+        <field name="code_of">18</field>
+        <field name="name">Mantenimiento y reparación de bienes muebles</field>
+        <field name="rate">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_021" model="l10n_pe_edi.catalog.54">
+        <field name="code">021</field>
+        <field name="code_of">19</field>
+        <field name="name">Movimiento de carga</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_022" model="l10n_pe_edi.catalog.54">
+        <field name="code">022</field>
+        <field name="code_of">20</field>
+        <field name="name">Otros servicios empresariales</field>
+        <field name="rate">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_023" model="l10n_pe_edi.catalog.54">
+        <field name="code">023</field>
+        <field name="code_of">21</field>
+        <field name="name">Leche</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_024" model="l10n_pe_edi.catalog.54">
+        <field name="code">024</field>
+        <field name="code_of">22</field>
+        <field name="name">Comisión mercantil</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_025" model="l10n_pe_edi.catalog.54">
+        <field name="code">025</field>
+        <field name="code_of">23</field>
+        <field name="name">Fabricación de bienes por encargo</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_026" model="l10n_pe_edi.catalog.54">
+        <field name="code">026</field>
+        <field name="code_of">24</field>
+        <field name="name">Servicio de transporte de personas</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_027" model="l10n_pe_edi.catalog.54">
+        <field name="code">027</field>
+        <field name="code_of">25</field>
+        <field name="name">Servicio de transporte de carga</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_028" model="l10n_pe_edi.catalog.54">
+        <field name="code">028</field>
+        <field name="code_of">26</field>
+        <field name="name">Transporte de pasajeros</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_029" model="l10n_pe_edi.catalog.54">
+        <field name="code">029</field>
+        <field name="code_of" />
+        <field name="rate">0.0</field>
+        <field name="name">Algodón en rama sin desmontar</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_030" model="l10n_pe_edi.catalog.54">
+        <field name="code">030</field>
+        <field name="code_of">28</field>
+        <field name="name">Contratos de construcción</field>
+        <field name="rate">4</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_031" model="l10n_pe_edi.catalog.54">
+        <field name="code">031</field>
+        <field name="code_of">29</field>
+        <field name="name">Oro gravado con el IGV</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_032" model="l10n_pe_edi.catalog.54">
+        <field name="code">032</field>
+        <field name="code_of">30</field>
+        <field
+            name="name"
+        >Paprika y otros frutos de los generos capsicum o pimienta</field>
+        <field name="rate">10.0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_033" model="l10n_pe_edi.catalog.54">
+        <field name="code">033</field>
+        <field name="code_of" />
+        <field name="rate">0.0</field>
+        <field name="name">Espárragos</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_034" model="l10n_pe_edi.catalog.54">
+        <field name="code">034</field>
+        <field name="code_of">32</field>
+        <field name="name">Minerales metálicos no auríferos</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_035" model="l10n_pe_edi.catalog.54">
+        <field name="code">035</field>
+        <field name="code_of">33</field>
+        <field name="name">Bienes exonerados del IGV</field>
+        <field name="rate">1.5</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_036" model="l10n_pe_edi.catalog.54">
+        <field name="code">036</field>
+        <field name="code_of">34</field>
+        <field name="name">Oro y demás minerales metálicos exonerados del IGV</field>
+        <field name="rate">1.5</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_037" model="l10n_pe_edi.catalog.54">
+        <field name="code">037</field>
+        <field name="code_of">35</field>
+        <field name="name">Demás servicios gravados con el IGV</field>
+        <field name="rate">12</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_039" model="l10n_pe_edi.catalog.54">
+        <field name="code">039</field>
+        <field name="code_of">37</field>
+        <field name="name">Minerales no metálicos</field>
+        <field name="rate">10</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_040" model="l10n_pe_edi.catalog.54">
+        <field name="code">040</field>
+        <field name="code_of">38</field>
+        <field name="name">Bien inmueble gravado con IGV</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_041" model="l10n_pe_edi.catalog.54">
+        <field name="code">041</field>
+        <field name="code_of">39</field>
+        <field name="name">Plomo</field>
+        <field name="rate">15.0</field>
+    </record>
+    <record id="l10n_pe_edi_cat54_099" model="l10n_pe_edi.catalog.54">
+        <field name="code">099</field>
+        <field name="code_of">42</field>
+        <field name="name">Ley 30737</field>
+        <field name="rate">0.0</field>
+    </record>
+    <!-- Catalog No. 55: Codigos de Identificacion del item -->
+    <record id="l10n_pe_edi_cat55_3001" model="l10n_pe_edi.catalog.55">
+        <field name="code">3001</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Matrícula de la embarcación</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3002" model="l10n_pe_edi.catalog.55">
+        <field name="code">3002</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Nombre de la embarcación</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3003" model="l10n_pe_edi.catalog.55">
+        <field name="code">3003</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Tipo de especie vendida</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3004" model="l10n_pe_edi.catalog.55">
+        <field name="code">3004</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Lugar de descarga</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3005" model="l10n_pe_edi.catalog.55">
+        <field name="code">3005</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Fecha de descarga</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3006" model="l10n_pe_edi.catalog.55">
+        <field name="code">3006</field>
+        <field
+            name="name"
+        >Detracciones: Recursos Hidrobiológicos-Cantidad de especie vendida</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3050" model="l10n_pe_edi.catalog.55">
+        <field name="code">3050</field>
+        <field name="name">Transportre Terreste - Número de asiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3051" model="l10n_pe_edi.catalog.55">
+        <field name="code">3051</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Información de manifiesto de pasajeros</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3052" model="l10n_pe_edi.catalog.55">
+        <field name="code">3052</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Número de documento de identidad del pasajero</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3053" model="l10n_pe_edi.catalog.55">
+        <field name="code">3053</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Tipo de documento de identidad del pasajero</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3054" model="l10n_pe_edi.catalog.55">
+        <field name="code">3054</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Nombres y apellidos del pasajero</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3055" model="l10n_pe_edi.catalog.55">
+        <field name="code">3055</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Ciudad o lugar de destino - Ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3056" model="l10n_pe_edi.catalog.55">
+        <field name="code">3056</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Ciudad o lugar de destino - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3057" model="l10n_pe_edi.catalog.55">
+        <field name="code">3057</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Ciudad o lugar de origen - Ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3058" model="l10n_pe_edi.catalog.55">
+        <field name="code">3058</field>
+        <field
+            name="name"
+        >Transporte Terrestre - Ciudad o lugar de origen - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3059" model="l10n_pe_edi.catalog.55">
+        <field name="code">3059</field>
+        <field name="name">Transporte Terrestre - Fecha de inicio programado</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_3060" model="l10n_pe_edi.catalog.55">
+        <field name="code">3060</field>
+        <field name="name">Transporte Terrestre - Hora de inicio programado</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4000" model="l10n_pe_edi.catalog.55">
+        <field name="code">4000</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes-Paquete turístico: Código de país de emisión del pasaporte</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4001" model="l10n_pe_edi.catalog.55">
+        <field name="code">4001</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Código de país de residencia del sujeto no domiciliado</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4002" model="l10n_pe_edi.catalog.55">
+        <field name="code">4002</field>
+        <field name="name">Beneficio Hospedajes: Fecha de ingreso al país</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4003" model="l10n_pe_edi.catalog.55">
+        <field name="code">4003</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Fecha de Ingreso al Establecimiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4004" model="l10n_pe_edi.catalog.55">
+        <field name="code">4004</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes: Fecha de Salida del Establecimiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4005" model="l10n_pe_edi.catalog.55">
+        <field name="code">4005</field>
+        <field name="name">Beneficio Hospedajes: Número de Días de Permanencia</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4006" model="l10n_pe_edi.catalog.55">
+        <field name="code">4006</field>
+        <field name="name">Beneficio Hospedajes: Fecha de Consumo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4007" model="l10n_pe_edi.catalog.55">
+        <field name="code">4007</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes-Paquete turístico: Nombres y apellidos del huesped</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4008" model="l10n_pe_edi.catalog.55">
+        <field name="code">4008</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes-Paquete turístico: Tipo de documento de identidad del huesped</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4009" model="l10n_pe_edi.catalog.55">
+        <field name="code">4009</field>
+        <field
+            name="name"
+        >Beneficio Hospedajes-Paquete turístico: Número de documento de identidad del huesped</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4030" model="l10n_pe_edi.catalog.55">
+        <field name="code">4030</field>
+        <field
+            name="name"
+        >Carta Porte Aéreo:  Lugar de origen - Código de ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4031" model="l10n_pe_edi.catalog.55">
+        <field name="code">4031</field>
+        <field
+            name="name"
+        >Carta Porte Aéreo:  Lugar de origen - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4032" model="l10n_pe_edi.catalog.55">
+        <field name="code">4032</field>
+        <field
+            name="name"
+        >Carta Porte Aéreo:  Lugar de destino - Código de ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4033" model="l10n_pe_edi.catalog.55">
+        <field name="code">4033</field>
+        <field
+            name="name"
+        >Carta Porte Aéreo:  Lugar de destino - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4040" model="l10n_pe_edi.catalog.55">
+        <field name="code">4040</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Pasajero - Apellidos y Nombres</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4041" model="l10n_pe_edi.catalog.55">
+        <field name="code">4041</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Pasajero - Tipo de documento de identidad</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4042" model="l10n_pe_edi.catalog.55">
+        <field name="code">4042</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de origen - Código de ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4043" model="l10n_pe_edi.catalog.55">
+        <field name="code">4043</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de origen - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4044" model="l10n_pe_edi.catalog.55">
+        <field name="code">4044</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de destino - Código de ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4045" model="l10n_pe_edi.catalog.55">
+        <field name="code">4045</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Ciudad o lugar de destino - Dirección detallada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4046" model="l10n_pe_edi.catalog.55">
+        <field name="code">4046</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte:Número de asiento</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4047" model="l10n_pe_edi.catalog.55">
+        <field name="code">4047</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Hora programada de inicio de viaje</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4048" model="l10n_pe_edi.catalog.55">
+        <field name="code">4048</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Servicio transporte: Fecha programada de inicio de viaje</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4049" model="l10n_pe_edi.catalog.55">
+        <field name="code">4049</field>
+        <field
+            name="name"
+        >BVME transporte ferroviario: Pasajero - Número de documento de identidad</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4060" model="l10n_pe_edi.catalog.55">
+        <field name="code">4060</field>
+        <field
+            name="name"
+        >Regalía Petrolera: Decreto Supremo de aprobación del contrato</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4061" model="l10n_pe_edi.catalog.55">
+        <field name="code">4061</field>
+        <field name="name">Regalía Petrolera: Area de contrato (Lote)</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4062" model="l10n_pe_edi.catalog.55">
+        <field name="code">4062</field>
+        <field name="name">Regalía Petrolera: Periodo de pago - Fecha de inicio</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4063" model="l10n_pe_edi.catalog.55">
+        <field name="code">4063</field>
+        <field name="name">Regalía Petrolera: Periodo de pago - Fecha de fin</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_4064" model="l10n_pe_edi.catalog.55">
+        <field name="code">4064</field>
+        <field name="name">Regalía Petrolera: Fecha de Pago</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5000" model="l10n_pe_edi.catalog.55">
+        <field name="code">5000</field>
+        <field name="name">Proveedores Estado: Número de Expediente</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5001" model="l10n_pe_edi.catalog.55">
+        <field name="code">5001</field>
+        <field name="name">Proveedores Estado: Código de Unidad Ejecutora</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5002" model="l10n_pe_edi.catalog.55">
+        <field name="code">5002</field>
+        <field name="name">Proveedores Estado: N° de Proceso de Selección</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5003" model="l10n_pe_edi.catalog.55">
+        <field name="code">5003</field>
+        <field name="name">Proveedores Estado: N° de Contrato</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5010" model="l10n_pe_edi.catalog.55">
+        <field name="code">5010</field>
+        <field name="name">Numero de Placa</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5011" model="l10n_pe_edi.catalog.55">
+        <field name="code">5011</field>
+        <field name="name">Categoria</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5012" model="l10n_pe_edi.catalog.55">
+        <field name="code">5012</field>
+        <field name="name">Marca</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5013" model="l10n_pe_edi.catalog.55">
+        <field name="code">5013</field>
+        <field name="name">Modelo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5014" model="l10n_pe_edi.catalog.55">
+        <field name="code">5014</field>
+        <field name="name">Color</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5015" model="l10n_pe_edi.catalog.55">
+        <field name="code">5015</field>
+        <field name="name">Motor</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5016" model="l10n_pe_edi.catalog.55">
+        <field name="code">5016</field>
+        <field name="name">Combustible</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5017" model="l10n_pe_edi.catalog.55">
+        <field name="code">5017</field>
+        <field name="name">Form. Rodante</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5018" model="l10n_pe_edi.catalog.55">
+        <field name="code">5018</field>
+        <field name="name">VIN</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5019" model="l10n_pe_edi.catalog.55">
+        <field name="code">5019</field>
+        <field name="name">Serie/Chasis</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5020" model="l10n_pe_edi.catalog.55">
+        <field name="code">5020</field>
+        <field name="name">Año fabricacion</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5021" model="l10n_pe_edi.catalog.55">
+        <field name="code">5021</field>
+        <field name="name">Año modelo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5022" model="l10n_pe_edi.catalog.55">
+        <field name="code">5022</field>
+        <field name="name">Version</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5023" model="l10n_pe_edi.catalog.55">
+        <field name="code">5023</field>
+        <field name="name">Ejes</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5024" model="l10n_pe_edi.catalog.55">
+        <field name="code">5024</field>
+        <field name="name">Asientos</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5025" model="l10n_pe_edi.catalog.55">
+        <field name="code">5025</field>
+        <field name="name">Pasajeros</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5026" model="l10n_pe_edi.catalog.55">
+        <field name="code">5026</field>
+        <field name="name">Ruedas</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5027" model="l10n_pe_edi.catalog.55">
+        <field name="code">5027</field>
+        <field name="name">Carroceria</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5028" model="l10n_pe_edi.catalog.55">
+        <field name="code">5028</field>
+        <field name="name">Potencia</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5029" model="l10n_pe_edi.catalog.55">
+        <field name="code">5029</field>
+        <field name="name">Cilindros</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5030" model="l10n_pe_edi.catalog.55">
+        <field name="code">5030</field>
+        <field name="name">Ciliindrada</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5031" model="l10n_pe_edi.catalog.55">
+        <field name="code">5031</field>
+        <field name="name">Peso Bruto</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5032" model="l10n_pe_edi.catalog.55">
+        <field name="code">5032</field>
+        <field name="name">Peso Neto</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5033" model="l10n_pe_edi.catalog.55">
+        <field name="code">5033</field>
+        <field name="name">Carga Util</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5034" model="l10n_pe_edi.catalog.55">
+        <field name="code">5034</field>
+        <field name="name">Longitud</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5035" model="l10n_pe_edi.catalog.55">
+        <field name="code">5035</field>
+        <field name="name">Altura</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5036" model="l10n_pe_edi.catalog.55">
+        <field name="code">5036</field>
+        <field name="name">Ancho</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5060" model="l10n_pe_edi.catalog.55">
+        <field name="code">5060</field>
+        <field name="name">Gas Natural - Lectura Anterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5061" model="l10n_pe_edi.catalog.55">
+        <field name="code">5061</field>
+        <field name="name">Gas Natural - Lectura Actual</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5062" model="l10n_pe_edi.catalog.55">
+        <field name="code">5062</field>
+        <field
+            name="name"
+        >Gas Natural - Volumen consumido a Condiciones de lectura</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5063" model="l10n_pe_edi.catalog.55">
+        <field name="code">5063</field>
+        <field name="name">Gas Natural - Factor de correccion del volumen</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5064" model="l10n_pe_edi.catalog.55">
+        <field name="code">5064</field>
+        <field name="name">Gas Natural - Volumen a condiciones Estandares</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5065" model="l10n_pe_edi.catalog.55">
+        <field name="code">5065</field>
+        <field name="name">Gas Natural - Volumen facturado</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_5066" model="l10n_pe_edi.catalog.55">
+        <field name="code">5066</field>
+        <field
+            name="name"
+        >Gas Natural - Poder Calorifico Superior Promedio del Gas</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_6000" model="l10n_pe_edi.catalog.55">
+        <field name="code">6000</field>
+        <field
+            name="name"
+        >Comercialización de Oro:  Código Unico Concesión Minera</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_6001" model="l10n_pe_edi.catalog.55">
+        <field name="code">6001</field>
+        <field name="name">Comercialización de Oro:  N° declaración compromiso</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_6002" model="l10n_pe_edi.catalog.55">
+        <field name="code">6002</field>
+        <field
+            name="name"
+        >Comercialización de Oro:  N° Reg. Especial .Comerci. Oro</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_6003" model="l10n_pe_edi.catalog.55">
+        <field name="code">6003</field>
+        <field
+            name="name"
+        >Comercialización de Oro:  N° Resolución que autoriza Planta de Beneficio</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_6004" model="l10n_pe_edi.catalog.55">
+        <field name="code">6004</field>
+        <field name="name">Comercialización de Oro: Ley Mineral (% concent. oro)</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7000" model="l10n_pe_edi.catalog.55">
+        <field name="code">7000</field>
+        <field name="name">Gastos Art. 37 Renta:  Número de Placa</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7001" model="l10n_pe_edi.catalog.55">
+        <field name="code">7001</field>
+        <field name="name">Créditos Hipotecarios: Tipo de préstamo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7002" model="l10n_pe_edi.catalog.55">
+        <field name="code">7002</field>
+        <field name="name">Créditos Hipotecarios: Indicador de Primera Vivienda</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7003" model="l10n_pe_edi.catalog.55">
+        <field name="code">7003</field>
+        <field name="name">Créditos Hipotecarios: Partida Registral</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7004" model="l10n_pe_edi.catalog.55">
+        <field name="code">7004</field>
+        <field name="name">Créditos Hipotecarios: Número de contrato</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7005" model="l10n_pe_edi.catalog.55">
+        <field name="code">7005</field>
+        <field
+            name="name"
+        >Créditos Hipotecarios: Fecha de otorgamiento del crédito</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7006" model="l10n_pe_edi.catalog.55">
+        <field name="code">7006</field>
+        <field
+            name="name"
+        >Créditos Hipotecarios: Dirección del predio - Código de ubigeo</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7007" model="l10n_pe_edi.catalog.55">
+        <field name="code">7007</field>
+        <field
+            name="name"
+        >Créditos Hipotecarios: Dirección del predio - Dirección completa</field>
+    </record>
+    <record id="l10n_pe_edi_cat55_7008" model="l10n_pe_edi.catalog.55">
+        <field name="code">7008</field>
+        <field
+            name="name"
+        >Créditos Hipotecarios: Dirección del predio - Urbanización</field>
+    </record>
+    <!-- Catalog No. 56: Codigos de Tipo de servicio publico -->
+    <record id="l10n_pe_edi_cat56_1" model="l10n_pe_edi.catalog.56">
+        <field name="code">1</field>
+        <field name="name">Energía eléctrica</field>
+    </record>
+    <record id="l10n_pe_edi_cat56_2" model="l10n_pe_edi.catalog.56">
+        <field name="code">2</field>
+        <field name="name">Agua</field>
+    </record>
+    <record id="l10n_pe_edi_cat56_3" model="l10n_pe_edi.catalog.56">
+        <field name="code">3</field>
+        <field name="name">Cable</field>
+    </record>
+    <record id="l10n_pe_edi_cat56_4" model="l10n_pe_edi.catalog.56">
+        <field name="code">4</field>
+        <field name="name">Internet</field>
+    </record>
+    <record id="l10n_pe_edi_cat56_5" model="l10n_pe_edi.catalog.56">
+        <field name="code">5</field>
+        <field name="name">Otros servicios regulados por OSIPTEL</field>
+    </record>
+    <!-- Catalog No. 57: Codigos de Tipo de servicio publico - telecomunicaciones -->
+    <record id="l10n_pe_edi_cat57_1" model="l10n_pe_edi.catalog.57">
+        <field name="code">1</field>
+        <field name="name">Servicios Portadores</field>
+    </record>
+    <record id="l10n_pe_edi_cat57_2" model="l10n_pe_edi.catalog.57">
+        <field name="code">2</field>
+        <field name="name">Teleservicios o Servicios Finales</field>
+    </record>
+    <record id="l10n_pe_edi_cat57_3" model="l10n_pe_edi.catalog.57">
+        <field name="code">3</field>
+        <field name="name">Servicios de Difusión</field>
+    </record>
+    <record id="l10n_pe_edi_cat57_4" model="l10n_pe_edi.catalog.57">
+        <field name="code">4</field>
+        <field name="name">Servicios de valor añadido</field>
+    </record>
+    <!-- Catalog No. 58: Codigos de Tipo de medidor - recibo de luz -->
+    <record id="l10n_pe_edi_cat58_1" model="l10n_pe_edi.catalog.58">
+        <field name="code">1</field>
+        <field name="name">Trifásico</field>
+    </record>
+    <record id="l10n_pe_edi_cat58_2" model="l10n_pe_edi.catalog.58">
+        <field name="code">2</field>
+        <field name="name">Monofásico</field>
+    </record>
+    <!-- Catalog No. 59: Codigos de Medio de pago -->
+    <record id="l10n_pe_edi_cat59_001" model="l10n_pe_edi.catalog.59">
+        <field name="code">001</field>
+        <field name="code_of">1</field>
+        <field name="name">Depósito en cuenta</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_002" model="l10n_pe_edi.catalog.59">
+        <field name="code">002</field>
+        <field name="code_of">2</field>
+        <field name="name">Giro</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_003" model="l10n_pe_edi.catalog.59">
+        <field name="code">003</field>
+        <field name="code_of">3</field>
+        <field name="name">Transferencia de fondos</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_004" model="l10n_pe_edi.catalog.59">
+        <field name="code">004</field>
+        <field name="code_of">4</field>
+        <field name="name">Orden de pago</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_005" model="l10n_pe_edi.catalog.59">
+        <field name="code">005</field>
+        <field name="code_of">5</field>
+        <field name="name">Tarjeta de débito</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_006" model="l10n_pe_edi.catalog.59">
+        <field name="code">006</field>
+        <field name="code_of">6</field>
+        <field
+            name="name"
+        >Tarjeta de crédito emitida en el país por una empresa del sistema financiero</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_007" model="l10n_pe_edi.catalog.59">
+        <field name="code">007</field>
+        <field name="code_of">7</field>
+        <field
+            name="name"
+        >Cheques con la cláusula de "no negociable", "intransferibles", "no a la orden" u otra equivalente, a que se refiere el inciso g) del articulo 5° de la ley</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_008" model="l10n_pe_edi.catalog.59">
+        <field name="code">008</field>
+        <field name="code_of">8</field>
+        <field
+            name="name"
+        >Efectivo, por operaciones en las que no existe obligación de utilizar medio de pago</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_009" model="l10n_pe_edi.catalog.59">
+        <field name="code">009</field>
+        <field name="code_of">9</field>
+        <field name="name">Efectivo, en los demás casos</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_010" model="l10n_pe_edi.catalog.59">
+        <field name="code">010</field>
+        <field name="code_of">10</field>
+        <field name="name">Medios de pago usados en comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_011" model="l10n_pe_edi.catalog.59">
+        <field name="code">011</field>
+        <field name="code_of">11</field>
+        <field
+            name="name"
+        >Documentos emitidos por las edpymes y las cooperativas de ahorro y crédito no autorizadas a captar depósitos del público</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_012" model="l10n_pe_edi.catalog.59">
+        <field name="code">012</field>
+        <field name="code_of">12</field>
+        <field
+            name="name"
+        >Tarjeta de crédito emitida en el país o en el exterior por una empresa no perteneciente al sistema financiero, cuyo objeto principal sea la emisión y administración de tarjetas de crédito</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_013" model="l10n_pe_edi.catalog.59">
+        <field name="code">013</field>
+        <field name="code_of">3</field>
+        <field
+            name="name"
+        >Tarjetas de crédito emitidas en el exterior por empresas bancarias o financieras no domiciliadas</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_101" model="l10n_pe_edi.catalog.59">
+        <field name="code">101</field>
+        <field name="code_of">4</field>
+        <field name="name">Transferencias - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_102" model="l10n_pe_edi.catalog.59">
+        <field name="code">102</field>
+        <field name="code_of">15</field>
+        <field name="name">Cheques bancarios - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_103" model="l10n_pe_edi.catalog.59">
+        <field name="code">103</field>
+        <field name="code_of">16</field>
+        <field name="name">Orden de pago simple - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_104" model="l10n_pe_edi.catalog.59">
+        <field name="code">104</field>
+        <field name="code_of">17</field>
+        <field name="name">Orden de pago documentario - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_105" model="l10n_pe_edi.catalog.59">
+        <field name="code">105</field>
+        <field name="code_of">18</field>
+        <field name="name">Remesa simple - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_106" model="l10n_pe_edi.catalog.59">
+        <field name="code">106</field>
+        <field name="code_of">19</field>
+        <field name="name">Remesa documentaria - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_107" model="l10n_pe_edi.catalog.59">
+        <field name="code">107</field>
+        <field name="code_of">20</field>
+        <field name="name">Carta de crédito simple - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_108" model="l10n_pe_edi.catalog.59">
+        <field name="code">108</field>
+        <field name="code_of">21</field>
+        <field name="name">Carta de crédito documentario - comercio exterior</field>
+    </record>
+    <record id="l10n_pe_edi_cat59_999" model="l10n_pe_edi.catalog.59">
+        <field name="code">999</field>
+        <field name="code_of">22</field>
+        <field name="name">Otros medios de pago</field>
+    </record>
+</odoo>

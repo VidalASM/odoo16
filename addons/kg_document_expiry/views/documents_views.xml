@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documents_view_list_inherit" model="ir.ui.view">
+            <field name="name">documents list inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.documents_view_list"/>
+            <field name="arch" type="xml">
+                <field name="owner_id" position="after">
+                     <field name="expiry_date"/>
+                    <field name="document_type"/>
+                    <field name="notify_before"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="documents_view_form_inherit" model="ir.ui.view">
+            <field name="name">documents form inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_form"/>
+            <field name="arch" type="xml">
+                <field name="owner_id" position="after">
+                   <field name="expiry_date"/>
+                    <field name="document_type"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="documents_expiry_view_kanban_inherit" model="ir.ui.view">
+            <field name="name">documents kanban inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_kanban"/>
+            <field name="arch" type="xml">
+                <field name="owner_id" position="after">
+                    <field name="expiry_date"/>
+                    <field name="document_type"/>
+                    <field name="notify_before"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_documents_form">
+                    <field name="name">documents.form</field>
+                    <field name="model">documents.type</field>
+                    <field name="arch" type="xml">
+                        <form string="Project Template Form">
+                            <sheet>
+                                <group>
+                                    <field name="name" placeholder="Type Name"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="user_ids" options="{'no_create': True}" required="1" widget="many2many_tags"/>
+                                    </group>
+                                    <group>
+                                        <label for="notify_bfr" string="Notify Before"/>
+                                        <div>
+                                            <field name="notify_bfr" class="oe_inline"/>(Days)
+                                        </div>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+        </record>
+
+        <record model="ir.ui.view" id="documents_tree">
+            <field name="name">documents.type.tree</field>
+            <field name="model">documents.type</field>
+            <field name="arch" type="xml">
+                <tree string="documents type Tree">
+                     <field name="name"/>
+                    <field name="user_ids" widget="many2many_tags" required="1"/>
+                    <field name="notify_bfr" required="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="documents_type_menu_action" model="ir.actions.act_window">
+            <field name="name">Documents Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">documents.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Documents Type</p>
+            </field>
+        </record>
+        <menuitem id="documents_type_menu" parent="documents.Config" name="Document Type"
+                  action="documents_type_menu_action"/>
+    </data>
+</odoo>

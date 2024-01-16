@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_edi_form" model="ir.ui.view">
+        <field name="model">stock.picking</field>
+        <field name="name">stock.picking.edi.form</field>
+        <field name="inherit_id" ref="l10n_pe_edi_stock.view_picking_edi_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div//button[@name='action_send_delivery_guide']" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </xpath>
+            <xpath expr="//div//button[@name='action_send_delivery_guide']" position="after">
+                <button
+                    name="action_send_delivery_guide_pse"
+                    type="object"
+                    class="oe_link"
+                    string="Retry"
+                    attrs="{'invisible': [('l10n_pe_edi_status', 'not in', (False, 'to_send', 'to_cancel'))]}"/>
+            </xpath>
+            <xpath expr="//header//button[@name='action_send_delivery_guide']" position="attributes">
+                <attribute name="attrs">{'invisible':1}</attribute>
+            </xpath>
+            <xpath expr="//header//button[@name='action_send_delivery_guide']" position="after">
+                <button name="action_send_delivery_guide_pse" type="object"
+                    string="Generate Delivery Guide"
+                    attrs="{'invisible':['|', '|', '|',('state', '!=', 'done'), ('country_code', '!=', 'PE'), ('picking_type_code', '!=', 'outgoing'), ('l10n_pe_edi_status', '!=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='l10n_pe_edi_transport_type']" position="after">
+                <field name="l10n_pe_edi_sequence_id" attrs="{'invisible': [('l10n_pe_edi_transport_type', '=', False)],'readonly': [('l10n_pe_edi_status', '=', 'sent')]}" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+            <xpath expr="//field[@name='l10n_latam_document_number']" position="after">
+                <field name="l10n_pe_edi_pse_uid" readonly="1" invisible="1"/>
+                <field name="l10n_pe_edi_qr_text" readonly="1" invisible="1"/>
+                <field name="l10n_pe_edi_accepted_by_sunat" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

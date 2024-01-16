@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" position="inside">
+                    <button icon="fa-hourglass" attrs="{'invisible':['|', '|', ('edi_state','!=','to_send'),('l10n_pe_edi_pse_uid','!=',False),('state', '=', 'draft')]}">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Pending to</span>
+                            <span class="o_stat_text">SEND</span>
+                        </div>
+                    </button>
+                    <button class="text-warning" icon="fa-edit" attrs="{'invisible':['|', '|', ('edi_state','!=','to_send'),('l10n_pe_edi_pse_uid','=',False),('state', '=', 'draft')]}">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Signed by</span>
+                            <span class="o_stat_text">PSE</span>
+                        </div>
+                    </button>
+                    <button class="text-danger" icon="fa-check" attrs="{'invisible':['|', '|', '|', ('edi_state','!=','sent'),('l10n_pe_edi_accepted_by_sunat','=',True),('l10n_pe_edi_pse_uid','=',False),('state', '=', 'draft')]}">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Rejected by</span>
+                            <span class="o_stat_text">SUNAT</span>
+                        </div>
+                    </button>
+                    <button class="text-success" icon="fa-check" attrs="{'invisible':['|', '|', '|', ('edi_state','!=','sent'),('l10n_pe_edi_accepted_by_sunat','!=',True),('l10n_pe_edi_pse_uid','=',False),('state', '=', 'draft')]}">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Accepted by</span>
+                            <span class="o_stat_text">SUNAT</span>
+                        </div>
+                    </button>
+                </div>
+                <xpath expr="//field[@name='l10n_pe_edi_cancel_reason']" position="after">
+                    <field name="l10n_pe_edi_pse_uid" readonly="1"/>
+                    <field name="l10n_pe_edi_pse_cancel_uid" readonly="1"/>
+                    <field name="l10n_pe_edi_accepted_by_sunat" invisible="1"/>
+                    <field name="l10n_pe_edi_void_accepted_by_sunat" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='l10n_pe_edi_charge_reason']" position="after">
+                    <field name="l10n_pe_edi_rectification_ref_type" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('l10n_pe_edi_refund_reason', '=', False),('l10n_pe_edi_charge_reason', '=', False)]}"/>
+                    <field name="l10n_pe_edi_rectification_ref_number" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('l10n_pe_edi_refund_reason', '=', False),('l10n_pe_edi_charge_reason', '=', False)]}"/>
+                    <field name="l10n_pe_edi_rectification_ref_date" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('l10n_pe_edi_refund_reason', '=', False),('l10n_pe_edi_charge_reason', '=', False)]}"/>
+                </xpath>
+
+                <xpath expr="//page[@name='l10n_pe_edi']" position="inside">
+                    <group string="Credit Installments" name="payment_fee_group">
+                        <field name="l10n_pe_edi_payment_fee_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                            <tree editable="bottom">
+                                <field name="amount_total" sum="Total"/>
+                                <field name="date_due"/>
+                                <field name="currency_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Transport Documents" name="transport_group">
+                        <field name="l10n_pe_edi_transportref_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                            <tree editable="bottom">
+                                <field name="ref_type"/>
+                                <field name="ref_number"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

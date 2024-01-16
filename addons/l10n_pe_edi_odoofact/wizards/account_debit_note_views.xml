@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_debit_note" model="ir.ui.view">
+        <field name="name">account.debit.note.form.l10n_pe_edi_odoofact</field>
+        <field name="model">account.debit.note</field>
+        <field name="inherit_id" ref="account_debit_note.view_account_debit_note" />
+        <field name="arch" type="xml">
+            <field name="move_ids" position="after">
+                <field name="available_journal_ids" invisible="1" />
+            </field>
+            <field name="journal_id" position="attributes">
+                <attribute
+                    name="domain"
+                >[('id', 'in', available_journal_ids)]</attribute>
+            </field>
+            <field name="reason" position="before">
+                <field
+                    name="l10n_pe_edi_debit_type_id"
+                    options="{'no_open': True, 'no_create': True, 'no_create_edit': True}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>

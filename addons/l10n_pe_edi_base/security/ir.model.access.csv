@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_l10n_pe_edi_supplier,l10n_pe_edi.supplier,model_l10n_pe_edi_supplier,base.group_user,1,0,0,0
+access_l10n_pe_edi_supplier_manager,l10n_pe_edi.supplier.manager,model_l10n_pe_edi_supplier,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_shop,l10n_pe_edi.shop,model_l10n_pe_edi_shop,base.group_user,1,0,0,0
+access_l10n_pe_edi_shop_manager,l10n_pe_edi.shop.manager,model_l10n_pe_edi_shop,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_request_document_type,l10n_pe_edi.request.document.type,model_l10n_pe_edi_request_document_type,base.group_user,1,0,0,0
+access_l10n_pe_edi_request_document_type_manager,l10n_pe_edi.request.document.type.manager,model_l10n_pe_edi_request_document_type,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_request,l10n_pe_edi.request,model_l10n_pe_edi_request,base.group_user,1,0,0,0
+access_l10n_pe_edi_request_manager,l10n_pe_edi.request.manager,model_l10n_pe_edi_request,base.group_erp_manager,1,1,1,1
+access_l10n_pe_edi_request_log,l10n_pe_edi.request.log,model_l10n_pe_edi_request_log,base.group_user,1,0,0,0
+access_l10n_pe_edi_request_log_manager,l10n_pe_edi.request.log.manager,model_l10n_pe_edi_request_log,base.group_erp_manager,1,1,1,1

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+       <record model="ir.ui.view" id="workout_schedule_wizard">
+          <field name="name">Workout Schedule</field>
+          <field name="model">workout.schedule</field>
+          <field name="arch" type="xml">
+              <form string="workout schedule">
+                <group>
+                    <group>
+                        <field name="customer_id" required="1"/>
+                    </group>
+                    <group>
+                    </group>
+                    <group>
+                        <field name="workout_id"/>
+                        <field name="trainer_id" domain="[('trainer', '=', True)]"/>
+                    </group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="create_workout_schedule" string="Create" type="object" class="oe_highlight"/> or 
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+              </form>
+          </field>
+      </record>
+     
+      <record model="ir.actions.act_window" id="create_workout_schedule_action">
+          <field name="name">Workout Schedule</field>
+          <field name="res_model">workout.schedule</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+      </record>
+     
+
+    <menuitem id="create_workout_schedule_menu" name="Create Workout Schedule" parent="work_out_id" action="create_workout_schedule_action" sequence="2" groups = "gym_officer,gym_manager,gym_trainer"/>
+     
+  </data>
+</odoo>

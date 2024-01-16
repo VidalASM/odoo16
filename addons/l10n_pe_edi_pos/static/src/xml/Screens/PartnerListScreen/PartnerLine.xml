@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+  <t
+        t-name="PartnerLine"
+        t-inherit="point_of_sale.PartnerLine"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+    <xpath expr="//tr/td[2]" position="before">
+      <td>
+        <t t-esc="props.partner.vat or ''" />
+      </td>
+    </xpath>
+  </t>
+</templates>

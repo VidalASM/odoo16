@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"></field>
+        <field name="arch" type="xml">
+            <field name="seller_ids" position="after">
+                <field name="purchase_order_lines" context="{'default_product_tmpl_id': context.get('product_tmpl_id', active_id)}" nolabel="1">
+                    <tree string="Purchase Order Lines">
+                        <field name="partner_id"/>
+                        <field name="price_unit"/>
+                        <field name="product_qty" optional="show"/>
+                        <field name="qty_received" optional="hide"/>
+                        <field name="qty_invoiced" optional="hide"/>
+                        <field name="product_uom" optional="hide"/>
+                        <field name="price_subtotal" optional="hide"/>
+                        <field name="taxes_id" widget="many2many_tags" optional="show"/>
+                        <field name="price_total" optional="show"/>
+                        <field name="date_planned"/>
+                        <field name="order_id"/>
+                        <field name="state" optional="show"/>
+                    </tree>
+                </field>
+            </field>
+        </field>
+    </record>
+
+</odoo>

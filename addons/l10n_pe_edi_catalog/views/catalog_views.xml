@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="l10n_pe_edi_catalog_tmpl_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.tmpl.tree</field>
+        <field name="model">l10n_pe_edi.catalog.tmpl</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="code" />
+                <field name="name" />
+                <field name="complete_name" optional="hide" />
+                <field name="active" optional="hide" widget="boolean_toggle" />
+            </tree>
+        </field>
+    </record>
+    <!-- Catalog No. 03: Codigos de Tipo de unidades de medida comercial -->
+    <record id="l10n_pe_edi_catalog_03_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.03.tree</field>
+        <field name="model">l10n_pe_edi.catalog.03</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 03: Codigos de Tipo de unidades de medida comercial</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_03_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.03</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 07: Codigos de Tipo de afectacion del IGV -->
+    <record id="l10n_pe_edi_catalog_07_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.07.tree</field>
+        <field name="model">l10n_pe_edi.catalog.07</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 07: Codigos de Tipo de afectacion del IGV</attribute>
+            </xpath>
+            <xpath expr="field[@name='code']" position="after">
+                <field name="code_of" optional="hide" />
+                <field name="tribute_code" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_07_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.07</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 08: Codigos de Sistema de calculo del ISC -->
+    <record id="l10n_pe_edi_catalog_08_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.08.tree</field>
+        <field name="model">l10n_pe_edi.catalog.08</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 08: Codigos de Sistema de calculo del ISC</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_08_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.08</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 09: Codigos de Tipo de Nota de credito electronica -->
+    <record id="l10n_pe_edi_catalog_09_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.09.tree</field>
+        <field name="model">l10n_pe_edi.catalog.09</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 09: Codigos de Tipo de Nota de credito electronica</attribute>
+            </xpath>
+            <xpath expr="field[@name='code']" position="after">
+                <field name="code_of" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_09_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.09</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 10: Codigos de Tipo de Nota de debito electronica -->
+    <record id="l10n_pe_edi_catalog_10_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.10.tree</field>
+        <field name="model">l10n_pe_edi.catalog.10</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 10: Codigos de Tipo de Nota de debito electronica</attribute>
+            </xpath>
+            <xpath expr="field[@name='code']" position="after">
+                <field name="code_of" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_10_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.10</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 11: Codigos de Tipo de Valor de venta -->
+    <record id="l10n_pe_edi_catalog_11_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.11.tree</field>
+        <field name="model">l10n_pe_edi.catalog.11</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 11: Codigos de Tipo de Valor de venta</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_11_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.11</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 12: Codigos de Tipo de Documento relacionado tributario -->
+    <record id="l10n_pe_edi_catalog_12_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.12.tree</field>
+        <field name="model">l10n_pe_edi.catalog.12</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 12: Codigos de Tipo de Documento relacionado tributario</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_12_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.12</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 14: Codigos de Otro concepto tributarios -->
+    <record id="l10n_pe_edi_catalog_14_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.14.tree</field>
+        <field name="model">l10n_pe_edi.catalog.14</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 14: Codigos de Otro concepto tributarios</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_14_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.14</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 15: Codigos de Elemento adicionale en la factura y/o boleta de venta -->
+    <record id="l10n_pe_edi_catalog_15_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.15.tree</field>
+        <field name="model">l10n_pe_edi.catalog.15</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 15: Codigos de Elemento adicionale en la factura y/o boleta de venta</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_15_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.15</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 16: Codigos de Tipo de Precio de venta unitario -->
+    <record id="l10n_pe_edi_catalog_16_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.16.tree</field>
+        <field name="model">l10n_pe_edi.catalog.16</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 16: Codigos de Tipo de Precio de venta unitario</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_16_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.16</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 17: Codigos de Tipo de Operacion -->
+    <record id="l10n_pe_edi_catalog_17_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.17.tree</field>
+        <field name="model">l10n_pe_edi.catalog.17</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 17: Codigos de Tipo de Operacion</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_17_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.17</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 18: Codigos de Modalidad de traslado -->
+    <record id="l10n_pe_edi_catalog_18_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.18.tree</field>
+        <field name="model">l10n_pe_edi.catalog.18</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 18: Codigos de Modalidad de traslado</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_18_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.18</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 19: Codigos de Estado de item -->
+    <record id="l10n_pe_edi_catalog_19_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.19.tree</field>
+        <field name="model">l10n_pe_edi.catalog.19</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 19: Codigos de Estado de item</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_19_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.19</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 20: Codigos de Motivo de traslado -->
+    <record id="l10n_pe_edi_catalog_20_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.20.tree</field>
+        <field name="model">l10n_pe_edi.catalog.20</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 20: Codigos de Motivo de traslado</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_20_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.20</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 21: Codigos de Documento relacionado para la guia -->
+    <record id="l10n_pe_edi_catalog_21_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.21.tree</field>
+        <field name="model">l10n_pe_edi.catalog.21</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 21: Codigos de Documento relacionado para la guia</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_21_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.21</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 22: Codigos de Tipo de regimene de percepcion -->
+    <record id="l10n_pe_edi_catalog_22_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.22.tree</field>
+        <field name="model">l10n_pe_edi.catalog.22</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 22: Codigos de Tipo de regimene de percepcion</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_22_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.22</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 23: Codigos de Tipo de regimene de retencion -->
+    <record id="l10n_pe_edi_catalog_23_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.23.tree</field>
+        <field name="model">l10n_pe_edi.catalog.23</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 23: Codigos de Tipo de regimene de retencion</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_23_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.23</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 24: Codigos de Tarifa de servicio publico -->
+    <record id="l10n_pe_edi_catalog_24_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.24.tree</field>
+        <field name="model">l10n_pe_edi.catalog.24</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 24: Codigos de Tarifa de servicio publico</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_24_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.24</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 25: Codigos de Producto SUNAT -->
+    <record id="l10n_pe_edi_catalog_25_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.25.tree</field>
+        <field name="model">l10n_pe_edi.catalog.25</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 25: Codigos de Producto SUNAT</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_25_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.25</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 26: Codigos de Tipo de prestamo (credito hipotecario) -->
+    <record id="l10n_pe_edi_catalog_26_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.26.tree</field>
+        <field name="model">l10n_pe_edi.catalog.26</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 26: Codigos de Tipo de prestamo (credito hipotecario)</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_26_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.26</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 27: Codigos de Indicador de primera vivienda -->
+    <record id="l10n_pe_edi_catalog_27_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.27.tree</field>
+        <field name="model">l10n_pe_edi.catalog.27</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 27: Codigos de Indicador de primera vivienda</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_27_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.27</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 51: Codigos de Tipo de operacion -->
+    <record id="l10n_pe_edi_catalog_51_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.51.tree</field>
+        <field name="model">l10n_pe_edi.catalog.51</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 51: Codigos de Tipo de operacion</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_51_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.51</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 52: Codigos de Leyenda -->
+    <record id="l10n_pe_edi_catalog_52_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.52.tree</field>
+        <field name="model">l10n_pe_edi.catalog.52</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Catalog No. 52: Codigos de Leyenda</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_52_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.52</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 53: Codigos de Cargo o descuento -->
+    <record id="l10n_pe_edi_catalog_53_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.53.tree</field>
+        <field name="model">l10n_pe_edi.catalog.53</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 53: Codigos de Cargo o descuento</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_53_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.53</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 54: Codigos de Bien o servicio sujeto a detraccion -->
+    <record id="l10n_pe_edi_catalog_54_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.54.tree</field>
+        <field name="model">l10n_pe_edi.catalog.54</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 54: Codigos de Bien o servicio sujeto a detraccion</attribute>
+            </xpath>
+            <xpath expr="field[@name='code']" position="after">
+                <field name="code_of" optional="hide" />
+            </xpath>
+            <xpath expr="field[@name='complete_name']" position="after">
+                <field name="rate" optional="show" />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_54_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.54</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 55: Codigos de Identificacion del item -->
+    <record id="l10n_pe_edi_catalog_55_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.55.tree</field>
+        <field name="model">l10n_pe_edi.catalog.55</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 55: Codigos de Identificacion del item</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_55_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.55</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 56: Codigos de Tipo de servicio publico -->
+    <record id="l10n_pe_edi_catalog_56_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.56.tree</field>
+        <field name="model">l10n_pe_edi.catalog.56</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 56: Codigos de Tipo de servicio publico</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_56_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.56</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 57: Codigos de Tipo de servicio publico - telecomunicaciones -->
+    <record id="l10n_pe_edi_catalog_57_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.57.tree</field>
+        <field name="model">l10n_pe_edi.catalog.57</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 57: Codigos de Tipo de servicio publico - telecomunicaciones</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_57_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.57</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 58: Codigos de Tipo de medidor - recibo de luz -->
+    <record id="l10n_pe_edi_catalog_58_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.58.tree</field>
+        <field name="model">l10n_pe_edi.catalog.58</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 58: Codigos de Tipo de medidor - recibo de luz</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_58_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.58</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <!-- Catalog No. 59: Codigos de Medio de pago -->
+    <record id="l10n_pe_edi_catalog_59_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.catalog.59.tree</field>
+        <field name="model">l10n_pe_edi.catalog.59</field>
+        <field name="inherit_id" ref="l10n_pe_edi_catalog_tmpl_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="string"
+                >Catalog No. 59: Codigos de Medio de pago</attribute>
+            </xpath>
+            <xpath expr="field[@name='code']" position="after">
+                <field name="code_of" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_catalog_59_action" model="ir.actions.act_window">
+        <field name="res_model">l10n_pe_edi.catalog.59</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="1">
+    <record id="sale_tax_icbper" model="account.tax">
+        <field name="name">0.50 ICBPER</field>
+        <field name="description">ICBPER</field>
+        <field name="l10n_pe_edi_tax_code">9999</field>
+        <field name="l10n_pe_edi_unece_category">S</field>
+        <field name="amount_type">fixed</field>
+        <field name="amount">0.50</field>
+        <field name="type_tax_use">sale</field>
+        <field name="sequence">1</field>
+        <field name="tax_group_id" ref="l10n_pe.tax_group_icbper" />
+        <field
+            name="invoice_repartition_line_ids"
+            eval="[(5, 0, 0), (0, 0, {'factor_percent': 100, 'repartition_type': 'base'}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('l10n_pe.1_chart40189')})]"
+        />
+        <field
+            name="refund_repartition_line_ids"
+            eval="[(5, 0, 0), (0, 0, {'factor_percent': 100, 'repartition_type': 'base'}), (0, 0, {'factor_percent': 100, 'repartition_type': 'tax', 'account_id': ref('l10n_pe.1_chart40189')})]"
+        />
+    </record>
+</odoo>

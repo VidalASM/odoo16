@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ir_cron_send_invoices" model="ir.cron">
+        <field name="name">Invoices: Send to PSE/OSE</field>
+        <field name="model_id" ref="l10n_pe_edi_base.model_l10n_pe_edi_request" />
+        <field name="interval_number">20</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+        <field name="state">code</field>
+        <field name="code">model.cron_send_documents()</field>
+    </record>
+    <record id="ir_cron_verify_documents_per_day" model="ir.cron">
+        <field name="name">Verify electronic documents per day</field>
+        <field name="model_id" ref="l10n_pe_edi_base.model_l10n_pe_edi_request" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False" />
+        <field name="state">code</field>
+        <field name="code">model.cron_check_documents()</field>
+    </record>
+</odoo>

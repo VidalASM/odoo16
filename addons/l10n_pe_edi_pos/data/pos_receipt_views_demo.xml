@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="l10n_pe_edi_pos_receipt" model="pos.receipt">
+        <field name="name">L10nPeEdiPosReceipt</field>
+        <field
+            name="design_receipt"
+        ><![CDATA[<div class="pos-receipt">
+            <t t-if="receipt.company.logo">
+                <img class="pos-receipt-logo" t-att-src="receipt.company.logo" alt="Logo"/>
+                <br/>
+            </t>
+            <t t-if="!receipt.company.logo">
+                <h2 class="pos-receipt-center-align">
+                    <t t-esc="receipt.company.name" />
+                </h2>
+                <br/>
+            </t>
+            <div class="pos-receipt-contact">
+                <t t-set="invoice" t-value="pos.get_order()"/>
+                <t t-if='receipt.company.contact_address'>
+                    <div style="text-transform: uppercase;"><t t-esc='receipt.company.contact_address' /></div>
+                </t>
+
+                <t t-esc="pos.company.country.state_id"/>
+                <div class="pos-receipt-center-align" style="text-transform: uppercase;">
+                    <span t-if='pos.company.street'><t  t-esc='pos.company.street' />, </span>
+                    <span t-if='pos.company.district_id'><t t-esc="pos.company.district_id[1]" />- </span>
+                    <span t-if='pos.company.province_id'><t t-esc="pos.company.province_id[1]" />- </span>
+                    <span t-if='pos.company.state_id'><t t-esc="pos.company.state_id[1]"/></span>
+                </div>
+
+                <t t-if='receipt.company.vat'>
+                    <div style="font-size: 12px;font-weight: bold;" >RUC:<t t-esc='receipt.company.vat' /></div>
+                </t>
+
+                <t t-if='receipt.invoice.type_of_invoice_document'>
+                    <div style="font-size: 12px;font-weight: bold;"><t t-esc='receipt.invoice.type_of_invoice_document' /></div>
+                </t>
+
+                <t t-if='receipt.invoice.invoice_number'></t>
+                    <div style="font-size: 12px;font-weight: bold;"><t t-esc='receipt.invoice.invoice_number' /></div>
+                </t>
+                <t t-if="receipt.cashier">
+                    <div class="cashier">
+                        <div>--------------------------------</div>
+                        <div>Served by <t t-esc="receipt.cashier" /></div>
+                    </div>
+                </t>
+            </div>
+            <table  id="totals" style="width:100%; font-size:small; font-weight: normal;" >
+                <t t-set="partner" t-value="receipt.partner"/>
+                <t t-if="partner">
+                    <span  style="font-size: 12px;font-weight: bold;" >CLIENT</span>
+                    <tr t-if="partner.vat">
+                        <t t-if="partner.vat.length == 8">
+                            <th class="text-left" style="font-weight: normal; ">
+                                DNI : <t t-esc="partner.vat"/>
+                            </th>
+                        </t>
+                        <t t-if="partner.vat.length == 11">
+                            <th class="text-left" style="font-weight: normal; ">
+                                RUC : <t t-esc="partner.vat"/>
+                            </th>
+                        </t>
+                    </tr>
+                    <tr t-if="partner.name">
+                        <th style="font-weight: normal;" colspan="2" class="text-left">
+                            <t t-esc="partner.name"/>
+                        </th>
+                    </tr>
+
+                    <tr t-if="partner.street">
+                        <th style="font-weight: normal;" colspan="2" class="text-left">
+                            <span><t t-esc="partner.address"/></span>
+                        </th>
+                    </tr>
+                </t>
+
+                <tr>
+                    <t t-if='receipt.invoice.date_invoice'></t>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span style="font-size: 12px;font-weight: bold;">DATE INVOICE:</span> <t t-esc="receipt.invoice.date_invoice"/>
+                        </th>
+                    </t>
+                </tr>
+                <tr>
+                    <t t-if='receipt.invoice.invoice_date_due'></t>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span style="font-size: 12px;font-weight: bold;">DATE DUE:</span> <t t-esc="receipt.invoice.invoice_date_due"/>
+                        </th>
+                    </t>
+                </tr>
+                <tr>
+                    <t t-if='receipt.invoice.currency_name'></t>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span style="font-size: 12px;font-weight: bold;">CURRENCY:</span> <t t-esc="receipt.invoice.currency_name"/>
+                        </th>
+                    </t>
+                </tr>
+                    <tr>
+                    <t t-if='receipt.invoice.igv_percent'></t>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span style="font-size: 12px;font-weight: bold;">IGV:</span> <t t-esc="receipt.invoice.igv_percent"/>%
+                        </th>
+                    </t>
+                </tr>
+            </table>
+            <br/>
+            <table id="products_header" style="width:100%; font-size:small" class="soticket-table">
+                <tr style="border-top:1px dashed black; border-bottom:1px dashed black" class="top-dashed bottom-dashed">
+                    <th class="text-center">QTY.</th>
+                    <th class="text-center">DESCRIPTION</th>
+                    <th class="text-center">P.U.</th>
+                    <th class="text-center">TOTAL</th>
+                </tr>
+                <colgroup>
+                    <col width='15%' />
+                    <col width='45%' />
+                    <col width='20%' />
+                    <col width='20%' />
+                </colgroup>
+                <tbody>
+                    <t t-foreach="orderlines" t-as="line">
+                        <tr>
+                            <td class="pos-center-align">
+                                <t t-esc="line.get_quantity_str_with_unit()"/>
+                            </td>
+                            <td style="padding-top: 1%;padding-bottom: 1%;">
+                                <t t-esc="line.get_product().display_name"/>
+                                <t t-if="line.get_discount() > 0">
+                                    <div style="font-size: 12px;font-style: italic;color: #808080;">
+                                        <t t-esc="line.get_discount()"/>% discount
+                                    </div>
+                                </t>
+                                <t t-if="line.customerNote">
+                                    <div style="font-size: 14px;" t-esc="line.customerNote"/>
+                                </t>
+                            </td>
+                            <td><t t-esc="widget.pos.format_currency_no_symbol(line.price)"/></td>
+                            <td class="pos-center-align">
+                                <t t-esc="widget.pos.format_currency_no_symbol(line.get_display_price())"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <br />
+            <div style="border-top: 1px dashed black; font-size:small">
+                    <span>SUB-TOTAL</span>
+                <span t-esc="widget.pos.format_currency(receipt.total_without_tax)" class="pos-receipt-right-align"/>
+            </div>
+            <div style="border-top: 1px dashed black; font-size:small">
+                <span>DISCOUNT</span>
+                <span t-esc="widget.pos.format_currency(receipt.total_discount)"  class="pos-receipt-right-align"/>
+            </div>
+
+            <div style="border-top: 1px dashed black; font-size:small">
+                <span>IGV 18%</span>
+                <span t-esc="widget.pos.format_currency(receipt.total_tax)"  class="pos-receipt-right-align"/>
+            </div>
+            <div  style="border-top: 1px dashed black; font-size:small">
+                <span>TOTAL TO PAY</span>
+                <span t-esc='widget.pos.format_currency(receipt.total_with_tax)' class="pos-receipt-right-align"/>
+            </div>
+            <br />
+            <div style="text-align:lenf;font-size: small;">
+                <t t-if="receipt.invoice.amount_in_words">
+                    <span style="font-size: 12px;font-weight: bold;">AMOUNT IN LETTERS: </span>
+                    <span><t t-esc="receipt.invoice.amount_in_words" /></span>
+                </t>
+            </div>
+            <br />
+
+            <div t-if="receipt.invoice.invoice_number" style="text-align:lenf;font-size: small;">
+                <span style="font-size: 12px;font-weight: bold;">PAYMENT METHOD :</span>
+            </div>
+
+            <t t-foreach="receipt.paymentlines" t-as="line" t-key="line.cid">
+                <div>
+                    <t t-esc="line.name" />
+                    <span t-esc="widget.pos.format_currency_no_symbol(line.amount)" class="pos-receipt-right-align"/>
+                </div>
+            </t>
+
+            <br />
+            <div t-if="receipt.invoice.invoice_number" >
+                <span style="text-align:lenf;font-size: small;">CHANGE</span>
+                <span t-esc='widget.pos.format_currency(receipt.change)' class="pos-receipt-right-align"/>
+            </div>
+            <div class="pos-receipt-amount receipt-change">
+            </div>
+            <br/>
+
+            <t  t-if="receipt.invoice.invoice_number">
+                <div  class="text-left"  style="font-size:small">
+                    <strong>
+                    POLÍTICA DE CAMBIOS Y DEVOLUCIONES DE PRODUCTO<br/>
+                    Todo cambio o devolución de producto requiere la presentación del comprobante de compra dentro de los siete (7) días después de emitido.<br/>
+                    El producto debe ser devuelto en las mismas condiciones en las que fue recibido, no debe de presentar signos de haber sido usado y debe de contar con empaques originales, como cajas, bolsas y/o manuales entregados al momento de la venta.<br/>
+                    No se aceptan devoluciones de dinero.<br/>
+                    En caso el cliente desee cambiar el producto le será entregada una Nota de Crédito, la cual debe de hacer efectiva en un tiempo máximo de 3 meses después de emitida.<br/>
+                    No se aceptan cambios ni devoluciones de producto que haya tenido contacto con fluidos corporales como cánulas o sondas.<br/>
+                    Las sillas de ruedas de Liquidación por Campaña de Navidad, no son sujetas a cambio ni devolución.<br/>
+                    Gracias por su compra.<br/>
+                    </strong>
+                    <p  style="font-size:small">Printed representation of <span  style="font-size:small" t-esc="receipt.invoice.invoice_number"/>. Visit <strong><span  style="font-size:small" t-if="receipt.invoice.control_url" t-esc="receipt.invoice.control_url" />.</strong></p>
+                </div>
+            </t>
+            <div t-attf-id="qrcode_container">
+                <div id="qrcode"></div>
+                <!--<script type="text/javascript"> new QRCode(document.getElementById("qrcode_id"), qr_data);</script>-->
+                <script type="text/javascript">
+                    var barcode ="<t t-esc='receipt.invoice.barcode'/>";
+
+                    var qrcode = new QRCode('qrcode' , {
+                    text: barcode,
+                    width: 120,
+                    height: 120,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                    });
+                    qrcode.makeCode(barcode);
+
+                    $("#qrcode > img").css({"margin":"20px auto"});
+                </script>
+            </div>
+            <t  t-if="receipt.invoice.authorization_message">
+                <div class="text-left" style="font-size: small">
+                    <t t-esc="receipt.invoice.authorization_message"/>
+                </div>
+            </t>
+            <br/>
+            <div class="pos-receipt-order-data">
+                <div><t t-esc="receipt.name" /></div>
+                <div><t t-esc="receipt.date.localestring" /></div>
+            </div>
+        </div>]]></field>
+    </record>
+    <record id="pos_receipt_design2" model="pos.receipt">
+        <field name="name">Design 2</field>
+        <field
+            name="design_receipt"
+        ><![CDATA[<div class="pos-receipt">
+            <div class="pos-receipt-contact">
+                <t t-set="invoice" t-value="pos.get_order()"/>
+                <t t-if="receipt.company.contact_address">
+                    <div><t t-esc="receipt.company.contact_address" /></div>
+                </t>
+                <t t-if="receipt.company.phone">
+                    <div>Tel:<t t-esc="receipt.company.phone" /></div>
+                </t>
+                <t t-if="receipt.company.vat">
+                    <div><t t-esc="receipt.company.vat_label"/>:<t t-esc="receipt.company.vat" /></div>
+                </t>
+                <t t-if="receipt.company.email">
+                    <div><t t-esc="receipt.company.email" /></div>
+                </t>
+                <t t-if="receipt.company.website">
+                    <div><t t-esc="receipt.company.website" /></div>
+                </t>
+                <t t-if="receipt.header_html">
+                    <t t-out="receipt.header_html" />
+                </t>
+                <t t-if="!receipt.header_html and receipt.header">
+                    <div style="white-space:pre-line"><t t-esc="receipt.header" /></div>
+                </t>
+                <t t-if="receipt.cashier">
+                    <div class="cashier">
+                        <div>--------------------------------</div>
+                        <div>Served by <t t-esc="receipt.cashier" /></div>
+                    </div>
+                </t>
+            </div>
+            <br/>
+            <t t-if="receipt.header">
+                <div style='text-align:center; font-size:13px'>
+                    <t t-esc="receipt.header" />
+                </div>
+                <br />
+            </t>
+            <div>
+                <table class='receipt-orderlines' style="font-size:15px; border-style: double;
+            border-left: none;border-right: none;border-bottom: none;width: 100%;">
+                <colgroup>
+                    <col width='40%' />
+                    <col width='30%' />
+                    <col width='30%' />
+                </colgroup>
+                <tr style="border-bottom: 1px dashed black;">
+                    <th style="text-align:left;">Product</th>
+                    <th style="text-align:center;">Qty</th>
+                    <th style="text-align:center;">Amount</th>
+                </tr>
+                <tr t-foreach="orderlines" t-as="orderline">
+                    <td style="padding-top: 1%;padding-bottom: 1%;">
+                        <t t-esc="orderline.get_product().display_name"/>
+                        <t t-if="orderline.get_discount() > 0">
+                            <div style="font-size: 12px;font-style: italic;color: #808080;">
+                                <t t-esc="orderline.get_discount()"/>% discount
+                            </div>
+                        </t>
+                        <t t-if="orderline.customerNote">
+                            <div style="font-size: 14px;" t-esc="orderline.customerNote"/>
+                        </t>
+                    </td>
+                    <td class="pos-center-align">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                    <td class="pos-center-align">
+                        <t t-esc="widget.pos.format_currency(orderline.get_display_price())"/>
+                    </td>
+                </tr>
+                </table>
+            </div>
+            <br />
+            <div style="padding-top: 6px;">
+                <!-- Subtotal -->
+                <t t-set='taxincluded' t-value='Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001' />
+                <t t-if='!taxincluded'>
+                    <br/>
+                    <div style="font-weight: 700; font-size: 14px; border-top:1px dashed;"><span style="margin-left: 40%;">Subtotal : </span><span t-esc='widget.pos.format_currency(receipt.subtotal)' class="pos-receipt-right-align"/></div>
+                    <t t-foreach='receipt.tax_details' t-as='tax'>
+                        <div style="font-weight: 700; font-size: 14px;">
+                            <span style="margin-left: 40%;"><t t-esc='tax.name' /></span>
+                            <span t-esc='widget.pos.format_currency_no_symbol(tax.amount)' class="pos-receipt-right-align"/>
+                        </div>
+                    </t>
+                </t>
+                <!-- Total -->
+                <br/>
+                <div style="font-weight: 700; font-size: 14px;">
+                    <span style="margin-left: 40%;">TOTAL : </span>
+                    <span t-esc='widget.pos.format_currency(receipt.total_with_tax)' class="pos-receipt-right-align"/>
+                </div>
+
+            </div>
+
+            <div class='before-footer' />
+            <br/>
+            <br/>
+            <!-- Footer -->
+                        <div class="pos-receipt-order-data">
+                <div><t t-esc="receipt.name" /></div>
+                <t t-if="receipt.date.localestring">
+                    <div><t t-esc="receipt.date.localestring" /></div>
+                </t>
+                <t t-else="">
+                    <div><t t-esc="receipt.date.validation_date" /></div>
+                </t>
+            </div>
+
+            <br/><br/>
+            <div style="font-size: 14px; text-align: center;">
+                Thank You... Please Visit Again ...
+            </div>
+        </div>]]></field>
+    </record>
+    <record id="pos_receipt_design3" model="pos.receipt">
+        <field name="name">Design 3</field>
+        <field
+            name="design_receipt"
+        ><![CDATA[<div class="pos-receipt">
+            <div style="font-size:13px; text-align: center;">
+                <t t-esc="widget.pos.company.name"/><br />
+                Phone: <t t-esc="widget.pos.company.phone || ''"/><br />
+            </div>
+
+            <br/>
+            <div style="font-size:13px; text-align: center;">
+                Date :
+                <t t-if="order.formatted_validation_date">
+                    <t t-esc="order.formatted_validation_date"/>
+                </t>
+                <t t-else="">
+                    <t t-esc="order.validation_date"/>
+                </t>
+                <br />
+                Order : <t t-esc="order.name"/><br />
+            </div>
+            <br />
+            <div style="font-size:13px; text-align: center;">
+                Cashier :  <t t-esc='receipt.cashier' /><br />
+                <t t-if="receipt.partner.name">
+                Customer :  <t t-esc='receipt.partner.name' style="font-style: bold" />
+                </t>
+                <br />
+            </div>
+            <br/>
+            <t t-if="receipt.header">
+                <div style='text-align:center; font-size:13px'>
+                    <t t-esc="receipt.header" />
+                </div>
+                <br />
+            </t>
+            <div>
+                <table class='receipt-orderlines' style="font-size:15px; border-style: double;
+            border-left: none;border-right: none;border-bottom: none;width: 100%;">
+                <colgroup>
+                    <col width='40%' />
+                    <col width='30%' />
+                    <col width='30%' />
+                </colgroup>
+                <tr style="border-bottom: 1px dashed black;">
+                    <th style="text-align:left;">Product</th>
+                    <th style="text-align:center;">Qty</th>
+                    <th style="text-align:center;">Amount</th>
+                </tr>
+                <tr t-foreach="orderlines" t-as="orderline">
+                    <td style="padding-top: 1%;padding-bottom: 1%;">
+                        <t t-esc="orderline.get_product().display_name"/>
+                        <t t-if="orderline.get_discount() > 0">
+                            <div style="font-size: 12px;font-style: italic;color: #808080;">
+                                <t t-esc="orderline.get_discount()"/>% discount
+                            </div>
+                        </t>
+                        <t t-if="orderline.customerNote">
+                            <div style="font-size: 14px;" t-esc="orderline.customerNote"/>
+                        </t>
+                    </td>
+                    <td class="pos-center-align">
+                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+                    </td>
+                    <td class="pos-center-align">
+                        <t t-esc="widget.pos.format_currency(orderline.get_display_price())"/>
+                    </td>
+                </tr>
+                </table>
+            </div>
+            <br />
+            <div style="padding-top: 6px;">
+                <!-- Subtotal -->
+                <t t-set='taxincluded' t-value='Math.abs(receipt.subtotal - receipt.total_with_tax) &lt;= 0.000001' />
+                <t t-if='!taxincluded'>
+                    <br/>
+                    <div style="font-weight: 700; font-size: 14px; border-top:1px dashed;"><span style="margin-left: 40%;">Subtotal : </span><span t-esc='widget.pos.format_currency(receipt.subtotal)' class="pos-receipt-right-align"/></div>
+                    <t t-foreach='receipt.tax_details' t-as='tax'>
+                        <div style="font-weight: 700; font-size: 14px;">
+                            <span style="margin-left: 40%;"><t t-esc='tax.name' /></span>
+                            <span t-esc='widget.pos.format_currency_no_symbol(tax.amount)' class="pos-receipt-right-align"/>
+                        </div>
+                    </t>
+                </t>
+                <!-- Total -->
+                <br/>
+                <div style="font-weight: 700; font-size: 14px;">
+                    <span style="margin-left: 40%;">TOTAL : </span>
+                    <span t-esc='widget.pos.format_currency(receipt.total_with_tax)' class="pos-receipt-right-align"/>
+                </div>
+                <br/><br/>
+            </div>
+            <!-- Payment Lines -->
+            <t t-foreach='paymentlines' t-as='line'>
+                <div style="font-size: 14px;border-top:1px dashed;padding-top: 5px;">
+                    <span style="margin-left: 40%;"><t t-esc='line.name' /></span>
+                    <span t-esc='widget.pos.format_currency_no_symbol(line.get_amount())' class="pos-receipt-right-align"/>
+                </div>
+            </t>
+            <br/>
+            <div class="receipt-change" style="font-size: 14px;">
+            <span style="margin-left: 40%;">CHANGE : </span>
+                <span t-esc='widget.pos.format_currency(receipt.change)' class="pos-receipt-right-align"/>
+            </div>
+            <br/>
+            <!-- Extra Payment Info -->
+            <t t-if='receipt.total_discount'>
+                <div style="font-size: 14px; border-top:1px dashed;padding-top: 5px;">
+                    <span style="margin-left: 40%;">Discounts : </span>
+                    <span t-esc='widget.pos.format_currency(receipt.total_discount)' class="pos-receipt-right-align"/>
+                </div>
+            </t>
+            <t t-if='taxincluded'>
+                <t t-foreach='receipt.tax_details' t-as='tax'>
+                    <div style="font-size: 14px;">
+                        <span style="margin-left: 40%;"><t t-esc='tax.name' /></span>
+                        <span t-esc='widget.pos.format_currency_no_symbol(tax.amount)' class="pos-receipt-right-align"/>
+                    </div>
+                </t>
+                <div style="font-size: 14px;">
+                    <span style="margin-left: 40%;">Total Taxes : </span>
+                    <span t-esc='widget.pos.format_currency(receipt.total_tax)' class="pos-receipt-right-align"/>
+                </div>
+            </t>
+            <div class='before-footer' />
+            <!-- Footer -->
+            <div t-if='receipt.footer_html' style="text-align: center; font-size: 14px;">
+                <t t-raw='receipt.footer_html'/>
+            </div>
+            <div t-if='!receipt.footer_html and receipt.footer' style="text-align: center;font-size: 14px;">
+                <br/>
+                <t t-esc='receipt.footer'/>
+                <br/><br/>
+            </div>
+            <div class='after-footer' style="font-size: 14px;">
+                <t t-foreach='paymentlines' t-as='line'>
+                    <t t-if='line.ticket'>
+                        <br />
+                        <div class="pos-payment-terminal-receipt">
+                            <t t-raw='line.ticket'/>
+                        </div>
+                    </t>
+                </t>
+            </div>
+            <br/><br/>
+            <div style="font-size: 14px; text-align: center;">
+                Thank You... Please Visit Again ...
+            </div>
+        </div>]]></field>
+    </record>
+</odoo>

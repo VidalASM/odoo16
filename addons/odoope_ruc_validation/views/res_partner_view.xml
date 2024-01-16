@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_partner_form__view_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet" position="before">
+                <header>
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        nolabel="1"
+                        statusbar_visible="habido,nhabido"
+                        readonly="0"
+                    />
+                </header>
+                <field name="contributor_state" invisible="1" />
+                <div
+                    class="alert alert-success"
+                    role="alert"
+                    attrs="{'invisible': [('contributor_state', '=', False)]}"
+                >
+                    <strong>
+                        <field style="display:inline" name="alert_contributor_state" />
+                    </strong>
+                </div>
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                    attrs="{'invisible': ['|',('contributor_state','=',True),('alert_contributor_state','=',False)]}"
+                >
+                    <strong>
+                        <field style="display:inline" name="alert_contributor_state" />
+                    </strong>
+                </div>
+                <field name="alert_warning_vat" invisible="1" />
+                <div
+                    class="alert alert-warning"
+                    role="alert"
+                    attrs="{'invisible': [('alert_warning_vat', '=', False)]}"
+                >
+                    <span>
+                        <strong
+                        >NO CONNECTION OR THE DATA DOES NOT EXIST, PLEASE REGISTER THE DATA MANUALLY.</strong>
+                    </span>
+                </div>
+            </xpath>
+            <xpath
+                expr="//form//notebook//page[@name='sales_purchases']/group[@name='container_row_2']"
+                position="inside"
+            >
+                <group string="IAP Data" name="iap_data">
+                    <field name="remote_id" readonly="True" force_save="True" />
+                    <field
+                        name="alert_contributor_state"
+                        force_save="True"
+                        invisible="1"
+                    />
+                </group>
+            </xpath>
+            <div class="o_row" position="before">
+                <div class="o_row">
+                    <field
+                        name="commercial_name"
+                        placeholder="Commercial Name"
+                        attrs="{'invisible': [('is_company','=',False)]}"
+                    />
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>

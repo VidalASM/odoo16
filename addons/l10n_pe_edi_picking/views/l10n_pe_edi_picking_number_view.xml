@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="l10n_pe_edi_picking_number_view_form_inherit" model="ir.ui.view">
+        <field name="name">Picking Number inherit</field>
+        <field name="model">l10n_pe_edi.picking.number</field>
+        <field name="inherit_id" ref="l10n_pe_edi_odoofact.l10n_pe_edi_picking_number_view_form"/>
+        <field name="arch" type="xml">
+            <field name="type" position="after">
+                <field name="picking_id" domain="[('l10n_pe_edi_picking_name','!=',False),('l10n_pe_edi_picking_partner_id','=',partner_id)]"
+                    attrs="{'invisible': [('type','=','2')]}" context="{'e_picking_name': True}" options="{'no_create_edit': True, 'no_open': True}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

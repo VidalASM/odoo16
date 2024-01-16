@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ir_sequence_l10n_pe_edi_request" model="ir.sequence">
+        <field name="name">EDI PE request</field>
+        <field name="code">l10n_pe_edi.request</field>
+        <field name="prefix">EDI-</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False" />
+    </record>
+</odoo>

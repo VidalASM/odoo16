@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="credit_banner">
+        <div
+            style="width:100%; float:left"
+            t-attf-class="alert alert-{{'primary' if credit &gt; 20 else 'danger'}}"
+        >
+            <div style="width:85%; float:left">
+                <p>
+                    You have
+                    <t t-esc="credit" />
+                    credits left for consultations.
+                </p>
+            </div>
+            <div style="width:15%; float:left">
+                <a
+                    t-att-href="credit_url"
+                    class="btn btn-primary btn-sm float-right"
+                >Get Credits</a>
+            </div>
+        </div>
+    </template>
+</odoo>

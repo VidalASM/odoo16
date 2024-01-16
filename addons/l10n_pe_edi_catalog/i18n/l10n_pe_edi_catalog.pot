@@ -1,0 +1,718 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_edi_catalog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-04 16:08+0000\n"
+"PO-Revision-Date: 2023-01-04 16:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__active
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_tmpl__active
+msgid "Active"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_03_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_03
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_03_view_tree
+msgid "Catalog No. 03: Codigos de Tipo de unidades de medida comercial"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_07_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_07
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_07_view_tree
+msgid "Catalog No. 07: Codigos de Tipo de afectacion del IGV"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_08_view_tree
+msgid "Catalog No. 08: Codigos de Sistema de calculo del ISC"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_08_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_08
+msgid "Catalog No. 08: Codigos de Sistemas de calculo del ISC"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_09_view_tree
+msgid "Catalog No. 09: Codigos de Tipo de Nota de credito electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_09_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_09
+msgid "Catalog No. 09: Codigos de Tipo de Notas de credito electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_10_view_tree
+msgid "Catalog No. 10: Codigos de Tipo de Nota de debito electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_10_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_10
+msgid "Catalog No. 10: Codigos de Tipo de Notas de debito electronica"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_11_view_tree
+msgid "Catalog No. 11: Codigos de Tipo de Valor de venta"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_11_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_11
+msgid "Catalog No. 11: Codigos de Tipo de Valores de venta"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_12_view_tree
+msgid "Catalog No. 12: Codigos de Tipo de Documento relacionado tributario"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_12_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_12
+msgid "Catalog No. 12: Codigos de Tipo de Documentos relacionados tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_14_view_tree
+msgid "Catalog No. 14: Codigos de Otro concepto tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_14_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_14
+msgid "Catalog No. 14: Codigos de Otros conceptos tributarios"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_15_view_tree
+msgid ""
+"Catalog No. 15: Codigos de Elemento adicionale en la factura y/o boleta de "
+"venta"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_15_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_15
+msgid ""
+"Catalog No. 15: Codigos de Elementos adicionales en la factura y/o boleta de"
+" venta"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_16_view_tree
+msgid "Catalog No. 16: Codigos de Tipo de Precio de venta unitario"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_16_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_16
+msgid "Catalog No. 16: Codigos de Tipo de Precios de venta unitario"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_17_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_17
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_17_view_tree
+msgid "Catalog No. 17: Codigos de Tipo de Operacion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_18_view_tree
+msgid "Catalog No. 18: Codigos de Modalidad de traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_18_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_18
+msgid "Catalog No. 18: Codigos de Modalidades de traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_19_view_tree
+msgid "Catalog No. 19: Codigos de Estado de item"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_19_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_19
+msgid "Catalog No. 19: Codigos de Estados de item"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_20_view_tree
+msgid "Catalog No. 20: Codigos de Motivo de traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_20_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_20
+msgid "Catalog No. 20: Codigos de Motivos de traslado"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_21_view_tree
+msgid "Catalog No. 21: Codigos de Documento relacionado para la guia"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_21_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_21
+msgid "Catalog No. 21: Codigos de Documentos relacionados para la guia"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_22_view_tree
+msgid "Catalog No. 22: Codigos de Tipo de regimene de percepcion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_22_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_22
+msgid "Catalog No. 22: Codigos de Tipos de regimenes de percepcion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_23_view_tree
+msgid "Catalog No. 23: Codigos de Tipo de regimene de retencion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_23_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_23
+msgid "Catalog No. 23: Codigos de Tipos de regimenes de retencion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_24_view_tree
+msgid "Catalog No. 24: Codigos de Tarifa de servicio publico"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_24_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_24
+msgid "Catalog No. 24: Codigos de Tarifas de servicio publico"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_25_view_tree
+msgid "Catalog No. 25: Codigos de Producto SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_25_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_25
+msgid "Catalog No. 25: Codigos de Productos SUNAT"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_26_view_tree
+msgid "Catalog No. 26: Codigos de Tipo de prestamo (credito hipotecario)"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_26_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_26
+msgid "Catalog No. 26: Codigos de Tipos de prestamo (credito hipotecario)"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_27_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_27
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_27_view_tree
+msgid "Catalog No. 27: Codigos de Indicador de primera vivienda"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_51_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_51
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_51_view_tree
+msgid "Catalog No. 51: Codigos de Tipo de operacion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_52_view_tree
+msgid "Catalog No. 52: Codigos de Leyenda"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_52_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_52
+msgid "Catalog No. 52: Codigos de Leyendas"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_53_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_53
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_53_view_tree
+msgid "Catalog No. 53: Codigos de Cargo o descuento"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_54_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_54
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_54_view_tree
+msgid "Catalog No. 54: Codigos de Bien o servicio sujeto a detraccion"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_55_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_55
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_55_view_tree
+msgid "Catalog No. 55: Codigos de Identificacion del item"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_56_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_56
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_56_view_tree
+msgid "Catalog No. 56: Codigos de Tipo de servicio publico"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_57_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_57
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_57_view_tree
+msgid ""
+"Catalog No. 57: Codigos de Tipo de servicio publico - telecomunicaciones"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_58_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_58
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_58_view_tree
+msgid "Catalog No. 58: Codigos de Tipo de medidor - recibo de luz"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.actions.act_window,name:l10n_pe_edi_catalog.l10n_pe_edi_catalog_59_action
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_59
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_catalog.l10n_pe_edi_catalog_59_view_tree
+msgid "Catalog No. 59: Codigos de Medio de pago"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model,name:l10n_pe_edi_catalog.model_l10n_pe_edi_catalog_tmpl
+msgid "Catalog Template"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__code
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_tmpl__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__code_of
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__code_of
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__code_of
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__code_of
+msgid "Code Of"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__complete_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_tmpl__complete_name
+msgid "Complete Name"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_tmpl__name
+msgid "Description"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_03__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_09__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_10__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_11__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_12__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_14__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_15__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_16__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_17__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_18__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_19__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_20__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_21__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_25__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_26__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_27__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_52__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_55__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_56__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_57__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_58__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_59__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_53__level
+msgid "Level"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_08__rate
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_22__rate
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_23__rate
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_54__rate
+msgid "Rate"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_07__tribute_code
+msgid "Tribute Code"
+msgstr ""
+
+#. module: l10n_pe_edi_catalog
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_24__type
+#: model:ir.model.fields,field_description:l10n_pe_edi_catalog.field_l10n_pe_edi_catalog_51__type
+msgid "Type"
+msgstr ""

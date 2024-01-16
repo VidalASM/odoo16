@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_partner_form">
+        <field name="name">res.partner.view.form.inherit.l10n.pe.vat</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <sheet position="before">
+                <header>
+                    <button string="Update RUC/DNI" type="object" name="update_document" context="{'force_update':True}" />
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="ACTIVO,BAJA DE OFICIO" statusbar_colors="{'ACTIVO':'green','BAJA DE OFICIO':'red','BAJA PROVISIONAL':'red','SUSPENSION TEMPORAL':'red'}" />
+                </header>
+            </sheet>
+            <xpath expr="//div[@name='button_box']" position="after">
+				<widget name="web_ribbon" text="Habido"
+						attrs="{'invisible': ['|','|',('is_company','=',False),('condition','!=','HABIDO'),('active', '=', False)]}"/>
+				<widget name="web_ribbon" text="No Habido"
+						bg_color="bg-danger"
+						attrs="{'invisible': ['|','|','|',('is_company','=',False),('condition','=','HABIDO'),('condition','=',False),('active', '=', False)]}" />
+			         
+	        </xpath>
+            <xpath expr="//field[@name='category_id']" position="before">
+                <field name="condition" invisible="1" />
+            </xpath>
+			<xpath expr="//notebook/page/field[@name='child_ids']/form/sheet" position="before">
+				<header>
+					<button string="Update RUC/DNI" type="object" name="update_document" context="{'force_update':True}" attrs="{'invisible': [('type','!=', 'contact')]}"/>
+				</header>
+			</xpath>
+
+        </field>
+    </record>
+
+</odoo>

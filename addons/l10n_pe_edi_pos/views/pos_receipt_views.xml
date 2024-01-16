@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="pos_receipt_form" model="ir.ui.view">
+    <field name="name">pos.receipt.form</field>
+    <field name="model">pos.receipt</field>
+    <field name="arch" type="xml">
+      <form string="Receipt Designs">
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="design_receipt" widget="ace" options="{'mode': 'xml'}" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="pos_receipt_tree" model="ir.ui.view">
+    <field name="model">pos.receipt</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name" />
+      </tree>
+    </field>
+  </record>
+
+  <!-- Top menu item -->
+  <record id="action_pos_receipt" model="ir.actions.act_window">
+    <field name="name">Receipt Designs</field>
+    <field name="res_model">pos.receipt</field>
+    <field name="view_mode">tree,form</field>
+    <field name="target">current</field>
+  </record>
+
+  <menuitem
+        id="menu_pos_receipt"
+        parent="point_of_sale.menu_point_config_product"
+        action="action_pos_receipt"
+        sequence="50"
+    />
+</odoo>

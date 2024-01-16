@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="0">
+    <!-- Mail template are declared in a NOUPDATE block so users can freely customize/delete them -->
+    <!--Email template -->
+    <record id="email_template_edi_invoice" model="mail.template">
+        <field name="name">Electronic Invoice: Send by email</field>
+        <field name="model_id" ref="account.model_account_move" />
+        <field
+            name="email_from"
+        >{{ (object.invoice_user_id.email_formatted or user.email_formatted) }}</field>
+        <field name="partner_to">{{ object.partner_id.id }}</field>
+        <field
+            name="subject"
+        >{{object.l10n_latam_document_type_id.name}} {{object.name or 'n/a'}} | {{object.company_id.name}}</field>
+        <field name="body_html" type="html">
+            <div class="o_layout o_default_theme">
+                <table class="o_mail_wrapper">
+                    <tbody>
+                        <tr>
+                            <td
+                                class="o_mail_no_options o_mail_wrapper_td oe_structure"
+                            >
+                                <div
+                                    class="o_mail_block_title_sub"
+                                    data-snippet="s_mail_block_title_sub"
+                                    data-name="Title - Subtitle"
+                                >
+                                    <div class="o_mail_snippet_general">
+                                        <table
+                                            align="center"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            class="o_mail_table_styles"
+                                        >
+                                            <tbody>
+                                                <tr>
+                                                    <td
+                                                        class="o_mail_h_padding o_mail_v_padding o_mail_no_colorpicker"
+                                                    >
+                                                        <h2
+                                                            class="o_mail_no_margin o_default_snippet_text"
+                                                        >
+                                                            <t
+                                                                t-out="object.l10n_latam_document_type_id and object.l10n_latam_document_type_id.name or ''"
+                                                            >INVOICE</t>
+                                                            <t
+                                                                t-out="object.name or ''"
+                                                            >INV/2021/05/0005</t>
+                                                        </h2>
+                                                        <p
+                                                            class="o_mail_no_margin o_default_snippet_text"
+                                                        >
+                                                            Dear
+                                                            <t
+                                                                t-if="object.partner_id.parent_id"
+                                                            >
+                                                                <t
+                                                                    t-out="object.partner_id.name or ''"
+                                                                >Brandon Freeman</t>
+                                                                (
+                                                                <t
+                                                                    t-out="object.partner_id.parent_id.name or ''"
+                                                                >Azure Interior</t>
+                                                                ),
+                                                            </t>
+                                                            <t t-else="">
+                                                                <t
+                                                                    t-out="object.partner_id.name or ''"
+                                                                >Brandon Freeman</t>
+                                                                ,
+                                                            </t>
+                                                        </p>
+                                                        <p>
+                                                            Attached to this message is the
+                                                            <t t-if="object.name">
+                                                                <t
+                                                                    t-out="object.l10n_latam_document_type_id and object.l10n_latam_document_type_id.name or ''"
+                                                                >INVOICE</t>
+                                                                <strong
+                                                                    t-out="object.name or ''"
+                                                                >INV/2021/05/0005</strong>
+                                                            </t>
+                                                            <t t-else="">invoice</t>
+                                                            <t
+                                                                t-if="object.invoice_origin"
+                                                            >
+                                                                (with reference:
+                                                                <t
+                                                                    t-out="object.invoice_origin or ''"
+                                                                >SUB003</t>
+                                                                )
+                                                            </t>
+                                                        </p>
+                                                        <ul>
+                                                            <li>
+                                                                Date:
+                                                                <strong>
+                                                                    <t
+                                                                        t-out="object.invoice_date"
+                                                                    >03/04/2022</t>
+                                                                </strong>
+                                                            </li>
+                                                            <li>
+                                                                Due date:
+                                                                <strong>
+                                                                    <t
+                                                                        t-out="object.invoice_date_due or object.invoice_date"
+                                                                    >03/04/2022</t>
+                                                                </strong>
+                                                            </li>
+                                                            <li>
+                                                                Total amount:
+                                                                <strong
+                                                                    t-out="format_amount(object.amount_total, object.currency_id) or ''"
+                                                                >$ 143,750.00</strong>
+                                                            </li>
+                                                        </ul>
+                                                        <p
+                                                        >The electronic document in PDF and XML formats is attached to this message. The printed representation in PDF has the same validity as one issued in a traditional way.</p>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </field>
+        <field name="report_template" ref="account.account_invoices" />
+        <field
+            name="report_name"
+        >Invoice_{{(object.name or '').replace('/','_')}}{{object.state == 'draft' and '_draft' or ''}}</field>
+        <field name="lang">{{object.partner_id.lang}}</field>
+        <field name="auto_delete" eval="True" />
+    </record>
+</odoo>

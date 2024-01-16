@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="masive_picking_sending_view_form" model="ir.ui.view">
+        <field name="name">Masive Picking Sending</field>
+        <field name="model">masive.picking.sending</field>
+        <field name="arch" type="xml">
+            <form>
+                <p class="oe_grey">
+                    Send the selected pickings to SUNAT.
+                </p>
+                <footer>
+                    <button name="send_masive" string="Send" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_api_connect_multi_sunat" model="ir.actions.act_window">
+        <field name="name">Send to OSE/SUNAT</field>
+        <field name="res_model">masive.picking.sending</field>
+        <field name="binding_model_id" ref="model_stock_picking"/>
+        <field name="binding_view_types">list</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

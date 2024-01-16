@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documents_view_list_inherit" model="ir.ui.view">
+            <field name="name">documents list inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.documents_view_list"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="level_1" optional="hide"/>
+                    <field name="level_2" optional="hide"/>
+                    <field name="level_3" optional="hide"/>
+                    <field name="level_4" optional="hide"/>
+                    <field name="level_5" optional="hide"/>
+                </field>
+                <field name="owner_id" position="after">
+                    <field name="document_date"/>
+                    <field name="origin" optional="hide"/>
+                    <field name="number" optional="hide"/>
+                    <field name="issue" optional="hide"/>
+                    <field name="sender" optional="hide"/>
+                    <field name="file_id" optional="hide"/>
+                    <field name="social_reason" optional="hide"/>
+                    <field name="medium" optional="hide"/>
+                    <field name="file_amount" optional="hide"/>
+                    <field name="image_amount" optional="hide"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="documents_view_form_inherit" model="ir.ui.view">
+            <field name="name">documents form inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_form"/>
+            <field name="arch" type="xml">
+                <field name="create_uid" position="after">
+                    <field name="level_1"/>
+                    <field name="level_2"/>
+                    <field name="level_3"/>
+                    <field name="level_4"/>
+                    <field name="level_5"/>
+                    <field name="document_date"/>
+                    <field name="origin"/>
+                    <field name="number"/>
+                    <field name="issue"/>
+                    <field name="sender"/>
+                    <field name="file_id" invisible="1"/>
+                    <field name="social_reason"/>
+                    <field name="medium"/>
+                    <field name="file_amount"/>
+                    <field name="image_amount"/>
+                </field>
+                <field name="tag_ids" position="after">
+                    <field name="file_type"/>
+                    <field name="file_number"/>
+                    <field name="file_description"/>
+                    <field name="sgd_number"/>
+                    <field name="file_date_begin"/>
+                    <field name="file_date_end"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="documents_expiry_view_kanban_inherit" model="ir.ui.view">
+            <field name="name">documents kanban inherit</field>
+            <field name="model">documents.document</field>
+            <field name="inherit_id" ref="documents.document_view_kanban"/>
+            <field name="arch" type="xml">
+                <field name="owner_id" position="after">
+                    <field name="level_1"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Expedientes -->
+        <record model="ir.ui.view" id="project_documents_file_form">
+            <field name="name">documents.file.form</field>
+            <field name="model">documents.file</field>
+            <field name="arch" type="xml">
+                <form string="Project Template Form">
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="Nombre"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="type" />
+                                <field name="number" />
+                                <field name="description" />
+                            </group>
+                            <group>
+                                <field name="sgd_number" />
+                                <field name="date_begin" />
+                                <field name="date_end" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="documents_file_tree">
+            <field name="name">documents.file.tree</field>
+            <field name="model">documents.file</field>
+            <field name="arch" type="xml">
+                <tree string="documents type Tree">
+                     <field name="name"/>
+                    <field name="type"/>
+                    <field name="number"/>
+                    <field name="sgd_number"/>
+                    <field name="date_begin"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="documents_file_menu_action" model="ir.actions.act_window">
+            <field name="name">Documents file</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">documents.file</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Expedientes</p>
+            </field>
+        </record>
+        <menuitem id="documents_file_menu" parent="documents.Config" name="Expedientes"
+                  action="documents_file_menu_action"/>
+
+        <!-- Niveles -->
+        <record model="ir.ui.view" id="project_documents_level_form">
+            <field name="name">documents.level.form</field>
+            <field name="model">documents.level</field>
+            <field name="arch" type="xml">
+                <form string="Project Template Form">
+                    <sheet>
+                        <group>
+                            <field name="name" placeholder="Nombre"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="user_ids" options="{'no_create': True}" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <label for="parent" string="Padre"/>
+                                <div>
+                                    <field name="parent" class="oe_inline"/>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="documents_level_tree">
+            <field name="name">documents.level.tree</field>
+            <field name="model">documents.level</field>
+            <field name="arch" type="xml">
+                <tree string="documents type Tree">
+                     <field name="name"/>
+                    <field name="user_ids" widget="many2many_tags" required="0"/>
+                    <field name="parent" required="0"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="documents_level_menu_action" model="ir.actions.act_window">
+            <field name="name">Documents Level</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">documents.level</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Niveles</p>
+            </field>
+        </record>
+        <menuitem id="documents_level_menu" parent="documents.Config" name="Niveles"
+                  action="documents_level_menu_action"/>
+    </data>
+</odoo>

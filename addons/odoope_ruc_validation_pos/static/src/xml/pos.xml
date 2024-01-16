@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-extend="PartnerListScreenWidget">
+        <t t-jquery="table[class*='partner-list']" t-operation="replace">
+            <table class='partner-list'>
+                <thead>
+                    <tr>
+                        <th>RUC/DNI</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody class='partner-list-contents'>
+                </tbody>
+            </table>
+        </t> 
+    </t>
+
+    <t t-extend="PartnerLine">
+        <t t-jquery="tr[class*='partner-line']" t-operation="replace">
+            <tr class='partner-line' t-att-data-id='partner.id'>
+            <td><t t-esc='partner.vat || "" ' /></td>
+            <td><t t-esc='partner.name' /></td>
+            <td><t t-esc='partner.address' /></td>
+            <td><t t-esc='partner.phone or partner.mobile or ""' /></td>
+        </tr>
+        </t>
+    </t>
+</templates>

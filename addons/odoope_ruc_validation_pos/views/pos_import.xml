@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="odoope_ruc_validation_pos" name="Ruc Validation" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/odoope_ruc_validation_pos/static/src/js/Client/models.js"/>
+            <script type="text/javascript" src="/odoope_ruc_validation_pos/static/src/js/Client/ClientDetailsEdit.js"/>
+            <script type="text/javascript" src="/odoope_ruc_validation_pos/static/src/js/Client/ClientListScreen.js"/>
+        </xpath>
+    </template>
+</odoo>

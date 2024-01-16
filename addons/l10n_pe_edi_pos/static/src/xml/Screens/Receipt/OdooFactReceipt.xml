@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[contains(@t-if,'isTaxIncluded')][2]" position="replace">
+
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'cashier')]" position="after">
+            <br/>
+            <div class="pos-receipt-2order" style="font-size: 12px;">
+                <div><t t-esc="receipt.name" /></div>
+                <!-- <t t-if="receipt.date.validation_date">
+                    <div><t t-esc="receipt.date.validation_date" /></div>
+                </t>
+                <t t-else=""> -->
+                    <div><t t-esc="receipt.date.localestring" /></div>
+                <!-- </t> -->
+            </div>
+        </xpath>
+
+        <xpath expr="//div[contains(@class, 'orderlines')]" position="before">
+            <t t-set="partner" t-value="receipt.partner" />
+            <t t-if="partner" style="font-size: 10px;">
+                <span style="font-size: 12px;font-weight: bold;">CLIENT</span>
+                <tr t-if="partner.name">
+                    <th style="font-weight: normal;" colspan="2" class="text-left">
+                        <t t-esc="partner.name" />
+                    </th>
+                </tr>
+                <tr t-if="partner.vat">
+                    <t t-if="partner.vat.length == 8">
+                        <th class="text-left" style="font-weight: normal; ">
+                            DNI : <t t-esc="partner.vat" />
+                        </th>
+                    </t>
+                    <t t-if="partner.vat.length == 11">
+                        <th class="text-left" style="font-weight: normal; ">
+                            RUC : <t t-esc="partner.vat" />
+                        </th>
+                    </t>
+                </tr>
+
+                <tr t-if="partner.street">
+                    <th style="font-weight: normal;" colspan="2" class="text-left">
+                        <span><t t-esc="partner.address" /></span>
+                    </th>
+                </tr>
+                <br/>
+            </t>
+
+            <span style="font-size: 12px;font-weight: bold;">CONCEPTO</span>
+        </xpath>
+
+        <xpath expr="//t[contains(@t-if,'receipt.date.localestring')]/.." position="replace">
+
+            <div class="pos-receipt-order-data">
+                <div>Sin valor para efectos tributarios</div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-name="L10nPeEdiPosReceipt" owl="1">
+        <div class="pos-receipt">
+            <t t-if="receipt.company.logo">
+                <img
+                    class="pos-receipt-logo"
+                    t-att-src="receipt.company.logo"
+                    alt="Logo"
+                />
+                <br />
+            </t>
+            <t t-if="!receipt.company.logo">
+                <h2 class="pos-receipt-center-align">
+                    <t t-esc="receipt.company.name" />
+                </h2>
+                <br />
+            </t>
+            <div class="pos-receipt-contact">
+                <t t-set="invoice" t-value="pos.get_order()" />
+                <t t-if='receipt.company.contact_address'>
+                    <div style="text-transform: uppercase;"><t
+                            t-esc='receipt.company.contact_address'
+                        /></div>
+                </t>
+
+                <t t-esc="pos.company.country.state_id" />
+                <div
+                    class="pos-receipt-center-align"
+                    style="text-transform: uppercase;"
+                >
+                    <span t-if='pos.company.street'><t
+                            t-esc='pos.company.street'
+                        />, </span>
+                    <span t-if='pos.company.district_id'><t
+                            t-esc="pos.company.district_id[1]"
+                        />- </span>
+                    <span t-if='pos.company.province_id'><t
+                            t-esc="pos.company.province_id[1]"
+                        />- </span>
+                    <span t-if='pos.company.state_id'><t
+                            t-esc="pos.company.state_id[1]"
+                        /></span>
+                </div>
+
+                <t t-if='receipt.company.vat'>
+                    <div style="font-size: 12px;font-weight: bold;">RUC:<t
+                            t-esc='receipt.company.vat'
+                        /></div>
+                </t>
+
+                <t t-if='invoice.type_of_invoice_document'>
+                    <div style="font-size: 12px;font-weight: bold;"><t
+                            t-esc='invoice.type_of_invoice_document'
+                        /></div>
+                </t>
+
+                <t t-if='invoice.invoice_number'>
+                    <div style="font-size: 12px;font-weight: bold;"><t
+                            t-esc='invoice.invoice_number'
+                        /></div>
+                </t>
+                <t t-if="receipt.cashier">
+                    <div class="cashier">
+                        <div>--------------------------------</div>
+                        <div>Served by <t t-esc="receipt.cashier" /></div>
+                    </div>
+                </t>
+            </div>
+            <table
+                id="totals"
+                style="width:100%; font-size:small; font-weight: normal;"
+            >
+                <t t-set="partner" t-value="receipt.partner" />
+                <t t-if="partner">
+                    <span style="font-size: 12px;font-weight: bold;">CLIENT</span>
+                    <tr t-if="partner.vat">
+                        <t t-if="partner.vat.length == 8">
+                            <th class="text-left" style="font-weight: normal; ">
+                                DNI : <t t-esc="partner.vat" />
+                            </th>
+                        </t>
+                        <t t-if="partner.vat.length == 11">
+                            <th class="text-left" style="font-weight: normal; ">
+                                RUC : <t t-esc="partner.vat" />
+                            </th>
+                        </t>
+                    </tr>
+                    <tr t-if="partner.name">
+                        <th style="font-weight: normal;" colspan="2" class="text-left">
+                            <t t-esc="partner.name" />
+                        </th>
+                    </tr>
+
+                    <tr t-if="partner.street">
+                        <th style="font-weight: normal;" colspan="2" class="text-left">
+                            <span><t t-esc="partner.address" /></span>
+                        </th>
+                    </tr>
+                </t>
+
+                <tr>
+                    <t t-if='invoice.date_invoice'>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span
+                                style="font-size: 12px;font-weight: bold;"
+                            >DATE INVOICE:</span> <t t-esc="invoice.date_invoice" />
+                        </th>
+                    </t>
+                </tr>
+                <tr>
+                    <t t-if='invoice.invoice_date_due'>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span
+                                style="font-size: 12px;font-weight: bold;"
+                            >DATE DUE:</span> <t t-esc="invoice.invoice_date_due" />
+                        </th>
+                    </t>
+                </tr>
+                <tr>
+                    <t t-if='invoice.currency_name'>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span
+                                style="font-size: 12px;font-weight: bold;"
+                            >CURRENCY:</span> <t t-esc="invoice.currency_name" />
+                        </th>
+                    </t>
+                </tr>
+                    <tr>
+                    <t t-if='invoice.igv_percent'>
+                        <th style="font-weight: normal;" class="text-left" width="50%">
+                            <span
+                                style="font-size: 12px;font-weight: bold;"
+                            >IGV:</span> <t t-esc="invoice.igv_percent" />%
+                        </th>
+                    </t>
+                </tr>
+            </table>
+            <br />
+            <table
+                id="products_header"
+                style="width:100%; font-size:small"
+                class="soticket-table"
+            >
+                <tr
+                    style="border-top:1px dashed black; border-bottom:1px dashed black"
+                    class="top-dashed bottom-dashed"
+                >
+                    <th class="text-center">QTY.</th>
+                    <th class="text-center">DESCRIPTION</th>
+                    <th class="text-center">P.U.</th>
+                    <th class="text-center">TOTAL</th>
+                </tr>
+                <colgroup>
+                    <col width='15%' />
+                    <col width='45%' />
+                    <col width='20%' />
+                    <col width='20%' />
+                </colgroup>
+                <tbody>
+                    <t t-foreach="orderlines" t-as="line">
+                        <tr>
+                            <td class="pos-center-align">
+                                <t t-esc="line.get_quantity_str_with_unit()" />
+                            </td>
+                            <td style="padding-top: 1%;padding-bottom: 1%;">
+                                <t t-esc="line.get_product().display_name" />
+                                <t t-if="line.get_discount() > 0">
+                                    <div
+                                        style="font-size: 12px;font-style: italic;color: #808080;"
+                                    >
+                                        <t t-esc="line.get_discount()" />% discount
+                                    </div>
+                                </t>
+                                <t t-if="line.customerNote">
+                                    <div
+                                        style="font-size: 14px;"
+                                        t-esc="line.customerNote"
+                                    />
+                                </t>
+                            </td>
+                            <td><t
+                                    t-esc="widget.pos.format_currency_no_symbol(line.price)"
+                                /></td>
+                            <td class="pos-center-align">
+                                <t
+                                    t-esc="widget.pos.format_currency_no_symbol(line.get_display_price())"
+                                />
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <br />
+            <div style="border-top: 1px dashed black; font-size:small">
+                    <span>SUB-TOTAL</span>
+                <span
+                    t-esc="widget.pos.format_currency(receipt.total_without_tax)"
+                    class="pos-receipt-right-align"
+                />
+            </div>
+            <div style="border-top: 1px dashed black; font-size:small">
+                <span>DISCOUNT</span>
+                <span
+                    t-esc="widget.pos.format_currency(receipt.total_discount)"
+                    class="pos-receipt-right-align"
+                />
+            </div>
+
+            <div style="border-top: 1px dashed black; font-size:small">
+                <span>IGV 18%</span>
+                <span
+                    t-esc="widget.pos.format_currency(receipt.total_tax)"
+                    class="pos-receipt-right-align"
+                />
+            </div>
+            <div style="border-top: 1px dashed black; font-size:small">
+                <span>TOTAL TO PAY</span>
+                <span
+                    t-esc='widget.pos.format_currency(receipt.total_with_tax)'
+                    class="pos-receipt-right-align"
+                />
+            </div>
+            <br />
+            <div style="text-align:lenf;font-size: small;">
+                <t t-if="invoice.amount_in_words">
+                    <span
+                        style="font-size: 12px;font-weight: bold;"
+                    >AMOUNT IN LETTERS: </span>
+                    <span><t t-esc="invoice.amount_in_words" /></span>
+                </t>
+            </div>
+            <br />
+
+            <div
+                t-if="invoice.invoice_number"
+                style="text-align:lenf;font-size: small;"
+            >
+                <span style="font-size: 12px;font-weight: bold;">PAYMENT METHOD :</span>
+            </div>
+
+            <t t-foreach="receipt.paymentlines" t-as="line" t-key="line.cid">
+                <div>
+                    <t t-esc="line.name" />
+                    <span
+                        t-esc="widget.pos.format_currency_no_symbol(line.amount)"
+                        class="pos-receipt-right-align"
+                    />
+                </div>
+            </t>
+
+            <br />
+            <div t-if="invoice.invoice_number">
+                <span style="text-align:lenf;font-size: small;">CHANGE</span>
+                <span
+                    t-esc='widget.pos.format_currency(receipt.change)'
+                    class="pos-receipt-right-align"
+                />
+            </div>
+            <div class="pos-receipt-amount receipt-change">
+            </div>
+            <br />
+
+            <t t-if="invoice.invoice_number">
+                <div class="text-left" style="font-size:small">
+                    <p style="font-size:small">Printed representation of <span
+                            style="font-size:small"
+                            t-esc="invoice.invoice_number"
+                        />. Visit <strong><span
+                                style="font-size:small"
+                                t-if="invoice.control_url"
+                                t-esc="invoice.control_url"
+                            />.</strong></p>
+                </div>
+            </t>
+            <t t-if="invoice.barcode">
+                <div style="text-align:center;">
+                    <img
+                        t-att-src="invoice.barcode"
+                        style="width:120px;height:120px;"
+                    />
+                </div>
+            </t>
+            <t t-if="invoice.authorization_message">
+                <div class="text-left" style="font-size: small">
+                    <t t-esc="invoice.authorization_message" />
+                </div>
+            </t>
+            <br />
+            <div class="pos-receipt-order-data">
+                <div><t t-esc="receipt.name" /></div>
+                <div><t t-esc="receipt.date.localestring" /></div>
+            </div>
+        </div>
+
+    </t>
+
+</templates>

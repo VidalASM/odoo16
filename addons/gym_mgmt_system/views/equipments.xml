@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="action_gym_equipments" model="ir.actions.act_window">
+        <field name="name">Equipments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('gym_product','=','True')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Equipment!
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_equipment_form_inherit">
+        <field name="name">product.template.inherited</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="gym_product"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="membership_gym_form_period" model="ir.ui.view">
+        <field name="name">Membership Gym (variable period)</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="membership.membership_products_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='active']" position="after">
+                <field name="freeze_requests"/>
+                <field name="freeze_days"/>
+                <field name="session_fisio"/>
+                <field name="session_nutri"/>
+            </xpath>
+            <xpath expr="//field[@name='taxes_id']" position="after">
+                <field name="company_ids" widget="many2many_tags"/>
+                <field name="day_start"/>
+                <field name="day_finish"/>
+            </xpath>
+        </field>
+    </record>
+
+    <menuitem id="gym_management_root"
+              name="Gestión de Gimnasio"
+              sequence="10"/>
+
+
+    <menuitem id="gym_configuration_root"
+              name="Configuración"
+              parent="gym_management_root"
+              sequence="40"/>
+
+    <menuitem id="gym_equipments_menu"
+              name="Equipos"
+              parent="gym_configuration_root"
+              action="action_gym_equipments"
+              sequence="10"/>
+
+</odoo>

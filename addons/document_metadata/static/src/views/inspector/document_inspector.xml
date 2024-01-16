@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="documents.template" xml:space="preserve">
+    <t t-name="documents.DocumentsInspector.documentsInfo" t-inherit="documents.DocumentsInspector.documentsInfo"
+       t-inherit-mode="extension" owl="1">
+        <xpath expr="//table[tbody]" position="inside">
+                <!-- <t t-call="documents.DocumentsInspector.field">
+                        <t t-set="field">origin</t>
+                    <t t-set="additionalProps"/>
+                </t>
+                <t t-call="documents.DocumentsInspector.field">
+                        <t t-set="field">number</t>
+                    <t t-set="additionalProps"/>
+                </t> -->
+        </xpath>
+    </t>
+</templates>

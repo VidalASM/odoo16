@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_workouts_views_id">
+            <field name="name">Workout</field>
+            <field name="model">gym.workouts</field>
+            <field name="arch" type="xml">
+                <form string="gym workout form">
+                        <sheet>
+                            <group>
+                                <group>
+                                    <field name="name" required="1"/>
+                                    <field name="week_days_ids" widget="many2many_checkboxes" required="1"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page string="Exercises">
+                                    <field name="exercise_ids"/>
+                                </page>
+                            </notebook>
+                        </sheet>
+                    </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_workout_view_tree">
+            <field name="name">Workout tree</field>
+            <field name="model">gym.workouts</field>
+            <field name="arch" type="xml">
+                <tree string="muscle list">
+                        <field name="name"/>
+                        <field name="week_days_ids"/>
+                </tree>
+            </field>
+        </record>
+        
+
+       
+    </data>
+</odoo>        

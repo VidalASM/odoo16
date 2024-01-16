@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.l10n_pe_edi_odoofact</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="l10n_pe_edi_base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='active_electronic_invoicing']" position="after">
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="retention_nubefact"
+                    attrs="{'invisible': [('module_l10n_pe_edi_odoofact', '=', False)]}"
+                >
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Retention</span>
+                        <div class="text-muted">Data to configure for retention</div>
+                        <div class="content-group">
+                            <label for="l10n_pe_edi_min_amount_retention" />
+                            <field
+                                name="l10n_pe_edi_min_amount_retention"
+                                class="o_light_label"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="detraction_nubefact"
+                    attrs="{'invisible': [('module_l10n_pe_edi_odoofact', '=', False)]}"
+                >
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">Detraction</span>
+                        <div class="text-muted">Data to configure for detraction</div>
+                        <div class="content-group">
+                            <label for="l10n_pe_edi_min_amount_detraction" />
+                            <field
+                                name="l10n_pe_edi_min_amount_detraction"
+                                class="o_light_label"
+                            />
+                            <label for="l10n_pe_edi_detraction_payment_type_id" />
+                            <field
+                                name="l10n_pe_edi_detraction_payment_type_id"
+                                class="o_light_label"
+                                options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                            />
+                            <label for="l10n_pe_edi_detraction_bank_account_id" />
+                            <field
+                                name="l10n_pe_edi_company_partner_id"
+                                invisible="1"
+                            />
+                            <field
+                                name="l10n_pe_edi_detraction_bank_account_id"
+                                domain="[('partner_id','=', l10n_pe_edi_company_partner_id), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"
+                                class="o_light_label"
+                                options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <!-- <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    id="active_electronic_invoicing_pro"
+                >
+                    <div class="o_setting_left_pane">
+                        <field name="module_l10n_pe_edi_odoofact_pro" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="module_l10n_pe_edi_odoofact_pro" />
+                        <div
+                            class="bg-warning bg-opacity-25 text-muted"
+                            attrs="{'invisible': [('module_l10n_pe_edi_odoofact_pro', '=', True)]}"
+                        >In order to enable this option you must have the module l10n_pe_edi_odoofact_pro in your system</div>
+                        <div class="text-muted">Activate electronic invoicing pro.</div>
+                    </div>
+                </div> -->
+            </xpath>
+        </field>
+    </record>
+    <record id="res_config_settings_view_form_account" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.account.l10n_pe_edi_base</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='invoicing_settings']" position="after">
+                <h2>Peruvian Electronic Invoicing</h2>
+                <div
+                    class="row mt16 o_settings_container"
+                    id="redirect_einvoicing_settings"
+                >
+                    <div
+                        class="col-12 col-lg-6 o_setting_box"
+                        id="redirect_einvoicing_setting_options"
+                    >
+                        <div class="o_setting_left_pane" />
+                        <div class="o_setting_right_pane">
+                            <div
+                                class="text-muted"
+                            >Configuration options for the electronic invoice</div>
+                            <div class="mt8">
+                                <button
+                                    name="%(l10n_pe_edi_base.l10n_pe_edi_settings_action)d"
+                                    icon="fa-arrow-right"
+                                    type="action"
+                                    string="Redirect to settings"
+                                    class="btn-link"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

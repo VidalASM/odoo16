@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="gym_muscle">
+            <field name="name">muscle</field>
+            <field name="model">gym.muscle</field>
+            <field name="arch" type="xml">
+                <form string="gym muscle form">
+                    <sheet>
+                        <h2>
+                            <!--field name="no" nolable="1"/-->
+                        </h2>
+                        <group>
+                            <group>
+                                <field name="typeside" required="1"/>
+                                <field name="name" required="1"/>
+                                <field name="image" widget="image" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Exercises">
+                                <field name="exercise_category_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="gym_muscle_tree">
+            <field name="name">muscle tree</field>
+            <field name="model">gym.muscle</field>
+            <field name="arch" type="xml">
+                <tree string="muscle list">
+                    <!--field name="no"/-->
+                    <field name="typeside"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>        

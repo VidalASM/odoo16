@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <!-- Tabla 25: Convenios para evitar la doble Tributacion -->
+  <record id="l10n_pe_edi_tab25_00" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >00</field><field name="name">NINGUNO</field></record>
+  <record id="l10n_pe_edi_tab25_01" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >01</field><field name="name">CANADA</field></record>
+  <record id="l10n_pe_edi_tab25_02" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >02</field><field name="name">CHILE</field></record>
+  <record id="l10n_pe_edi_tab25_03" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >03</field><field
+            name="name"
+        >COMUNIDAD ANDINA DE NACIONES (CAN)</field></record>
+  <record id="l10n_pe_edi_tab25_04" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >04</field><field name="name">BRASIL</field></record>
+  <record id="l10n_pe_edi_tab25_05" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >05</field><field name="name">ESTADOS UNIDOS MEXICANOS</field></record>
+  <record id="l10n_pe_edi_tab25_06" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >06</field><field name="name">REPUBLICA DE COREA</field></record>
+  <record id="l10n_pe_edi_tab25_07" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >07</field><field name="name">CONFEDERACIÓN SUIZA</field></record>
+  <record id="l10n_pe_edi_tab25_08" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >08</field><field name="name">PORTUGAL</field></record>
+  <record id="l10n_pe_edi_tab25_09" model="l10n_pe_edi.table.25"><field
+            name="code"
+        >09</field><field name="name">OTROS</field></record>
+
+  <!-- Tabla 27: Tipo de Vinculacion economica -->
+  <record id="l10n_pe_edi_tab27_00" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >00</field><field name="name">Sin vinculación</field><field
+            name="description"
+        >Sin vinculación</field></record>
+  <record id="l10n_pe_edi_tab27_01" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >01</field><field name="name">Articulo 24° numeral 1</field><field
+            name="description"
+        >Una persona natural o jurídica posea más de treinta por ciento (30%) del capital de otra persona jurídica, directamente o por intermedio de un tercero</field></record>
+  <record id="l10n_pe_edi_tab27_02" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >02</field><field name="name">Articulo 24° numeral 2</field><field
+            name="description"
+        >Más del treinta por ciento (30%) del capital de dos (2) o más personas jurídicas pertenezca a una misma persona natural o jurídica, directamente o por intermedio de un tercero</field></record>
+  <record id="l10n_pe_edi_tab27_03" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >03</field><field name="name">Articulo 24° numeral 3</field><field
+            name="description"
+        >En cualesquiera de los casos anteriores, cuando la indicada proporción del capital pertenezca a cónyuges entre sí o a personas naturales vinculadas hasta el segundo grado de consanguinidad o afinidad</field></record>
+  <record id="l10n_pe_edi_tab27_04" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >04</field><field name="name">Articulo 24° numeral 4</field><field
+            name="description"
+        >El capital de dos (2) o más personas jurídicas pertenezca en más del treinta por ciento (30%) a socios comunes a éstas</field></record>
+  <record id="l10n_pe_edi_tab27_05" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >05</field><field name="name">Articulo 24° numeral 5</field><field
+            name="description"
+        >Las personas jurídicas o entidades cuenten con una o más directores, gerentes, administradores u otros directivos comunes, que tengan poder de decisión en los acuerdos financieros, operativos y/o comerciales que se adopten</field></record>
+  <record id="l10n_pe_edi_tab27_06" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >06</field><field name="name">Articulo 24° numeral 6</field><field
+            name="description"
+        >Dos o más personas naturales o jurídicas consoliden Estados Financieros</field></record>
+  <record id="l10n_pe_edi_tab27_07" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >07</field><field name="name">Articulo 24° numeral 7</field><field
+            name="description"
+        >Exista un contrato de colaboración empresarial con contabilidad independiente, en cuyo caso el contrato se considerará vinculado con aquellas partes contratantes que participen, directamente o por intermedio de un tercero, en mas del treinta por ciento (30%) en el patrimonio del contrato o cuando alguna de las partes contratantes tengan poder de decisión en los acuerdos financieros, comerciales u operativos que se adopten para el desarrollo del contrato, caso en el cual la parte contratante que ejerza el poder de decisión se encontrará vinculado con el contrato</field></record>
+  <record id="l10n_pe_edi_tab27_08" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >08</field><field name="name">Articulo 24° numeral 8</field><field
+            name="description"
+        >En el caso de un contrato de colaboración empresarial sin contabilidad independiente, la vinculación entre cada una de las partes integrantes del contrato y la contraparte deberá verificarse individualmente, aplicando algunos de los criterios de vinculación establecidos en este artículo (articulo 24° del reglamento del Impuesto a la Renta). Se entiende por contraparte a la persona natural o jurídica con las que las partes integrantes celebren alguna operación con el fin de alcanzar el objeto del contrato</field></record>
+  <record id="l10n_pe_edi_tab27_09" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >09</field><field name="name">Articulo 24° numeral 9</field><field
+            name="description"
+        >Exista un contrato de asociación en participación, en el que alguno de los asociados, directa o indirectamente, participe en mas del treinta por ciento (30%) en los resultados o en las utilidades de uno o varios negocios del asociante, en cuyo caso se considerará que existe vinculación entre el asociante y cada uno de sus asociados. También se considerará que existe vinculación cuando alguno de los asociados tenga poder de decisión en los aspectos financieros, comerciales u operativos en uno o varios negocios del asociante</field></record>
+  <record id="l10n_pe_edi_tab27_10" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >10</field><field name="name">Articulo 24° numeral 10</field><field
+            name="description"
+        >Una empresa no domiciliada tenga uno o mas establecimientos permanentes en el país, en cuyo caso existirá vinculación entre la empresa no domiciliada y cada uno de sus establecimientos permanentes y entre todos ellos entre si</field></record>
+  <record id="l10n_pe_edi_tab27_11" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >11</field><field name="name">Articulo 24° numeral 11</field><field
+            name="description"
+        >Una empresa domiciliada en territorio peruano tenga uno o mas establecimientos permanentes en el extranjero, en cuyo caso existirá vinculación entre la empresa domiciliada y cada uno de sus establecimientos permanentes</field></record>
+  <record id="l10n_pe_edi_tab27_12" model="l10n_pe_edi.table.27"><field
+            name="code"
+        >12</field><field name="name">Articulo 24° numeral 12</field><field
+            name="description"
+        >Una persona natural o jurídica ejerza influencia dominante en las decisiones de los órganos de administración de una o mas personas jurídicas o entidades. En tal situación, se considerará que las personas jurídicas o entidades influidas están vinculadas entre si y con la persona natural o jurídica que ejerce dicha influencia. Se entiende que una persona natural o jurídica ejerce influencia  dominante cuando, en la adopción del acuerdo, ejerce o controla la mayoría absoluta de votos para la toma de decisiones en los órganos de administración de la persona jurídica o entidad. En el caso de decisiones relacionadas con los asuntos mencionados en el artículo 126° de la Ley General de Sociedades, existirá influencia dominante de la persona natural o jurídica que, participando en la adopción del acuerdo, por si misma o con la intervención de votos de terceros, tiene en el acto de votación el mayor número de acciones suscritas con derecho a voto, siempre y cuando cuente con, al menos, el diez por ciento (10%) de las acciones suscritas con derecho a voto. También se otorgará el tratamiento de partes vinculadas cuando una persona, empresa o entidad domiciliada en el país realice, en el ejercicio gravable anterior, el ochenta por ciento (80%) o mas de sus ventas de bienes, prestación de servicios u otro tipo de operaciones, con una persona, empresa o entidad domiciliada en el país o con personas, empresas o entidades vinculadas entre si, domiciliadas en el país, siempre que tales operaciones, a su vez, representen por lo menos el treinta por ciento (30%) de las compras o adquisiciones de la otra parte en el mismo período. Tratándose de empresas que tengan actividades por períodos mayores a tres ejercicios gravables, tales porcentajes se calcularán teniendo en cuenta el porcentaje promedio de ventas o compras, según sea el caso, realizadas en los tres ejercicios gravables inmediatos anteriores. Lo dispuesto en este párrafo no será de aplicación a las operaciones que realicen las empresas que conforman la Actividad Empresarial del Estado, en las cuales la participación del Estado sea mayor al cincuenta por ciento (50%) del capital. La vinculación, de acuerdo a alguno de los criterios establecidos en este artículo, también operará cuando la transacción sea realizada utilizando personas o entidades interpuestas, domiciliadas o no en el país con el propósito de encubrir una transacción entre partes vinculadas</field></record>
+
+  <!-- Tabla 30: Clasificación de lo Bienes y Servicios adquiridos -->
+  <record id="l10n_pe_edi_tab30_01" model="l10n_pe_edi.table.30"><field
+            name="code"
+        >1</field><field
+            name="name"
+        >MERCADERIA, MATERIA PRIMA, SUMINISTRO, ENVASES Y EMBALAJES</field></record>
+  <record id="l10n_pe_edi_tab30_02" model="l10n_pe_edi.table.30"><field
+            name="code"
+        >2</field><field name="name">ACTIVO FIJO</field></record>
+  <record id="l10n_pe_edi_tab30_03" model="l10n_pe_edi.table.30"><field
+            name="code"
+        >3</field><field
+            name="name"
+        >OTROS ACTIVOS NO CONSIDERADOS EN LOS NUMERALES 1 Y 2</field></record>
+  <record id="l10n_pe_edi_tab30_04" model="l10n_pe_edi.table.30"><field
+            name="code"
+        >4</field><field
+            name="name"
+        >GASTOS DE EDUCACIÓN, RECREACIÓN, SALUD, CULTURALES. REPRESENTACIÓN, CAPACITACIÓN, DE VIAJE, MANTENIMIENTO DE VEHICULO Y  DE PREMIOS</field></record>
+  <record id="l10n_pe_edi_tab30_05" model="l10n_pe_edi.table.30"><field
+            name="code"
+        >5</field><field
+            name="name"
+        >OTROS GASTOS NO INCLUIDOS EN EL NUMERAL 4</field></record>
+
+  <!-- Tabla 31: Tipo de renta -->
+  <record id="l10n_pe_edi_tab31_00" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >00</field><field name="name">Bienes</field><field
+            name="description"
+        >Bienes</field></record>
+  <record id="l10n_pe_edi_tab31_01" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >01</field><field name="name">Art. 9° a) OCDE: 06</field><field
+            name="description"
+        >Arrendamiento de predios</field></record>
+  <record id="l10n_pe_edi_tab31_02" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >02</field><field name="name">Art. 9° a) OCDE: 06</field><field
+            name="description"
+        >Enajenación Inmuebles y derechos sobre inmuebles</field></record>
+  <record id="l10n_pe_edi_tab31_03" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >03</field><field name="name">Art. 9° b) OCDE: 12</field><field
+            name="description"
+        >Rentas de bienes situados en el país o derechos utilizados en el país, incluye enajenación.</field></record>
+  <record id="l10n_pe_edi_tab31_04" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >04</field><field name="name">Art. 9° b) OCDE: 12</field><field
+            name="description"
+        >Regalias: Bienes o derechos por los que pagan son utilizados país.</field></record>
+  <record id="l10n_pe_edi_tab31_05" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >05</field><field name="name">Art. 9° b) OCDE: 12</field><field
+            name="description"
+        >Regalias: Pagador de las regalías es domiciliado.</field></record>
+  <record id="l10n_pe_edi_tab31_06" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >06</field><field name="name">Art. 9° c) OCDE: 11</field><field
+            name="description"
+        >Por capitales,  intereses, comisiones, primas - operaciones financieras - capital utilizado en el país o el pagador sea un sujeto domiciliado. Originadas por fondos de cualquier tipo de entidad, por cesión a terceros de un capital, por operaciones de capitalización o por contratos de seguro de vida o invalidez que no tengan su origen en el trabajo personal.</field></record>
+  <record id="l10n_pe_edi_tab31_07" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >07</field><field name="name">Art. 9° d) OCDE: 10</field><field
+            name="description"
+        >Dividendos y cualquier otra forma de distribución de utilidades, cuando la empresa que los distribuye, pague y acredite se encuentre domiciliada en el país, o cuando el fondo de inversión, patrimonio fideicometido o fiduciario banacario, fondo de pensiones, que lo distribuya, pague o acredite, se encuentre constituido o establecido en el país</field></record>
+  <record id="l10n_pe_edi_tab31_08" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >08</field><field name="name">Art. 9° d) OCDE: 10</field><field
+            name="description"
+        >Los rendimientos de los ADR y GDRs que tengan como subyacentes acciones emitidas por empresas no domiciliadas</field></record>
+  <record id="l10n_pe_edi_tab31_09" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >09</field><field name="name">Art. 9° e) OCDE: 21</field><field
+            name="description"
+        >Originadas en actividades civiles, comerciales, empresariales o de cualquier índole, que se lleven a cabo en territorio nacional.</field></record>
+  <record id="l10n_pe_edi_tab31_10" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >10</field><field name="name">Art. 9° f) OCDE: 15</field><field
+            name="description"
+        >Originadas en el trabajo personal que lleven a cabo en el territorio nacional No comprende cuando se ingresa al país  temporalmente a efectuar: actos previos a la realización de inversiones extranjeras; actos destinados a supervisar o controlar la inversión o el negocio, tales como los de recolección de datos o información o la realización de entrevistas; actos relacionados con la contratación de personal local; actos relacionados con la firma de convenios o actos similares. </field></record>
+  <record id="l10n_pe_edi_tab31_11" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >11</field><field name="name">Art. 9° g) OCDE: 18</field><field
+            name="description"
+        >Rentas vitalicias y las pensiones que tengan su origen en el trabajo personal, pagadas por un sujeto domiciliada </field></record>
+  <record id="l10n_pe_edi_tab31_12" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >12</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la enajenación de acciones y participaciones representativas del capital,  cuando las empresas, que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field></record>
+  <record id="l10n_pe_edi_tab31_13" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >13</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la enajenación,  de  certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los  Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú.  Fuera de Bolsa</field></record>
+  <record id="l10n_pe_edi_tab31_14" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >14</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la redención o rescate de certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los  Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú.  Fuera de Bolsa</field></record>
+  <record id="l10n_pe_edi_tab31_15" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >15</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la enajenación de acciones y participaciones representativas del capital, acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú.  Dentro de Bolsa</field></record>
+  <record id="l10n_pe_edi_tab31_16" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >16</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la redención o rescate de  acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Dentro de Bolsa</field></record>
+  <record id="l10n_pe_edi_tab31_17" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >17</field><field name="name">Art. 9° h) OCDE: 13</field><field
+            name="description"
+        >Enajenación de los ADR’s  y GDR’s  que tengan como subyacente acciones emitidas por empresas domiciliadas en el país. </field></record>
+  <record id="l10n_pe_edi_tab31_18" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >18</field><field name="name">Art. 9° i) OCDE: 21</field><field
+            name="description"
+        >Las obtenidas por servicios digitales prestados a través del Internet o de cualquier adaptación o aplicación de los protocolos, plataformas o de la tecnología utilizada por Internet o cualquier otra red a través de la que se presten servicios equivalentes, cuando el servicio se utilice económicamente, use o consuma en el país</field></record>
+  <record id="l10n_pe_edi_tab31_19" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >19</field><field name="name">Art. 9° j) OCDE: 7</field><field
+            name="description"
+        >La obtenida por asistencia técnica, cuando ésta se utilice económicamente en el país</field></record>
+  <record id="l10n_pe_edi_tab31_20" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >20</field><field name="name">10 a) OCDE: 11</field><field
+            name="description"
+        >Los intereses de obligaciones, cuando la entidad emisora ha sido constituida en el país</field></record>
+  <record id="l10n_pe_edi_tab31_21" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >21</field><field name="name">10 b) OCDE: 16</field><field
+            name="description"
+        >Remuneracion pagada por Domiciliados; Sujeto miembro de un consejo directivo o adm.; Actuación en el Extranjero</field></record>
+  <record id="l10n_pe_edi_tab31_22" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >22</field><field name="name">10 c) OCDE: 19</field><field
+            name="description"
+        >Honorarios o remuneraciones del Sector Público Nacional por trabajos realizados en el exterior.</field></record>
+  <record id="l10n_pe_edi_tab31_23" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >23</field><field name="name">10 d) OCDE: 7</field><field
+            name="description"
+        >Resultados Proveniente de la contratación de IFD</field></record>
+  <record id="l10n_pe_edi_tab31_24" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >24</field><field name="name">10 d) OCDE: 7</field><field
+            name="description"
+        >Resultados  de IFD con cobertura destinados a la generación de RFP</field></record>
+  <record id="l10n_pe_edi_tab31_25" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >25</field><field name="name">10 d) OCDE: 7</field><field
+            name="description"
+        >Proveniente de la contratación de IFD sin cobertura destinados a la generación de RFP</field></record>
+  <record id="l10n_pe_edi_tab31_26" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >26</field><field name="name">10 d) OCDE: 7</field><field
+            name="description"
+        >IFD donde Activo subyacente sea referido al Tipo de Cambio Moneda extranjera. 180 dias. (La Dom es la prestadora del IFD, la No Dom es la que obtiene el resultado) </field></record>
+  <record id="l10n_pe_edi_tab31_27" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >27</field><field name="name">Art. 10° e) OCDE: 13</field><field
+            name="description"
+        >Las obtenidas por la enajenación indirecta de acciones y participaciones representativas del capital de personas jurídicas domiciliadas en el país, cuando la operación cumple las condiciones para ser gravadas en el Perú</field></record>
+  <record id="l10n_pe_edi_tab31_28" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >28</field><field name="name">Art. 10° e) OCDE: 13</field><field
+            name="description"
+        >Se incluye dentro de la enajenación de de empresas no domiciliadas en el país la enajenación de ADR´s (American Depositary Receipts) que tengan como subyacente a tales acciones.</field></record>
+  <record id="l10n_pe_edi_tab31_29" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >29</field><field name="name">Art. 10 f) OCDE: 10</field><field
+            name="description"
+        >Sujeto es el No Dom que distribuye  por la reducción de capital dentro de los 12 meses anteriores cuando hubiera aumentado su capital como consecuencia de nuevos aportes, de capitalización de créditos o de una reorganización</field></record>
+  <record id="l10n_pe_edi_tab31_30" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >30</field><field name="name">Art. 12 y 48°a) OCDE: 07 - 21</field><field
+            name="description"
+        >Actividades de Seguros 7% sobre las primas. Comisiones por  Reaseguros sobre personas y/o bienes radicados en el país</field></record>
+  <record id="l10n_pe_edi_tab31_31" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >31</field><field name="name">Art. 12 y 48°b)  OCDE: 8</field><field
+            name="description"
+        >Alquiler de Naves, 8% sobre Ingresos Brutos que perciban por dicha actividad</field></record>
+  <record id="l10n_pe_edi_tab31_32" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >32</field><field name="name">Art. 12 y 48° c) OCDE: 8</field><field
+            name="description"
+        >Alquiler de Aeronaves, 60% sobre Ingresos Brutos que perciban por dicha actividad</field></record>
+  <record id="l10n_pe_edi_tab31_33" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >33</field><field name="name">Art. 12 y 48° d) OCDE: 8</field><field
+            name="description"
+        >1% por el ingresos brutos por el transporte aéreo.</field></record>
+  <record id="l10n_pe_edi_tab31_34" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >34</field><field name="name">Art. 12 y 48° d) OCDE: 8</field><field
+            name="description"
+        >Excepto Otros transportes no aereos o maritimos que van por los ingresos de la parte prestada en el país</field></record>
+  <record id="l10n_pe_edi_tab31_35" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >35</field><field name="name">Art. 12 y 48° d) OCDE: 8</field><field
+            name="description"
+        >2% por el ingresos brutos por fletamiento o transporte marítimo. </field></record>
+  <record id="l10n_pe_edi_tab31_36" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >36</field><field name="name">Art. 12 y 48° d) OCDE: 24</field><field
+            name="description"
+        >Empresas por reciprocidad en lineas extranjeras con sedes en esos países</field></record>
+  <record id="l10n_pe_edi_tab31_37" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >37</field><field name="name">Art 12  y 48°e) OCDE: 07 - 21</field><field
+            name="description"
+        >Servicio portadores, teleservcios o finales, difusión y de valor añadido. Con excepcion de los Servicios Digitales según 4-A</field></record>
+  <record id="l10n_pe_edi_tab31_38" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >38</field><field name="name">Art 12  y 48° f) OCDE: 07 - 21</field><field
+            name="description"
+        >10%. sobre las remuneraciones brutas que obtengan por el suministro de noticias y, en general material informativo o gráfico, a personas o entidades domiciliadas o que utilicen dicho material en el país.</field></record>
+  <record id="l10n_pe_edi_tab31_39" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >39</field><field name="name">Art 12  y 48° g) OCDE: 07 - 21</field><field
+            name="description"
+        >para su utilización por personas naturales o jurídicas domiciliadas: 20% sobre los ingresos brutos que perciban por el uso de películas cinematográficas o para televisión, 'video tape', radionovelas, discos fonográficos, historietas gráficas y cualquier otro medio similar de proyección, reproducción, transmisión o difusión de imágenes o sonidos.</field></record>
+  <record id="l10n_pe_edi_tab31_40" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >40</field><field name="name">Art 12  y 48° h) OCDE: 8</field><field
+            name="description"
+        >en el país o desde el país al exterior y no presten el servicio de transporte 15% de los ingresos brutos que obtengan por dicho suministro.</field></record>
+  <record id="l10n_pe_edi_tab31_41" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >41</field><field name="name">Art 12  y 48° i) OCDE: 07 - 21</field><field
+            name="description"
+        >80% de los ingresos brutos que obtengan por el exceso de estadía de contenedores.</field></record>
+  <record id="l10n_pe_edi_tab31_42" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >42</field><field name="name">Art 12  y 48° j) OCDE: 07 - 21</field><field
+            name="description"
+        >20% de los ingresos brutos que obtengan los contribuyentes no domiciliados por la cesión de derechos para la retransmisión por televisión en el país de eventos en vivo realizados en el extranjero. </field></record>
+  <record id="l10n_pe_edi_tab31_43" model="l10n_pe_edi.table.31"><field
+            name="code"
+        >43</field><field name="name">Art. 13° OCDE: 15</field><field
+            name="description"
+        >Extranjeros que ingresan al país y cuentas con las siguientes calidades especificas a prestar servicios</field></record>
+
+  <!-- Tabla 32: Modalidad del servicio prestado por el sujeto no domiciliado -->
+  <record id="l10n_pe_edi_tab32_1" model="l10n_pe_edi.table.32"><field
+            name="code"
+        >1</field><field
+            name="name"
+        >SERVICIO PRESTADO INTEGRAMENTE EN EL PERÚ</field></record>
+  <record id="l10n_pe_edi_tab32_2" model="l10n_pe_edi.table.32"><field
+            name="code"
+        >2</field><field
+            name="name"
+        >SERVICIO PRESTADO PARTE EN EL PERÚ Y PARTE EN EL EXTRANJERO</field></record>
+  <record id="l10n_pe_edi_tab32_3" model="l10n_pe_edi.table.32"><field
+            name="code"
+        >3</field><field
+            name="name"
+        >SERVICIO PRESTADO EXCLUSIVAMENTE EN EL EXTRANJERO</field></record>
+
+  <!-- Tabla 33: Exoneraciones de operaciones de no domiciliados (ART. 19 DE LA LEY DEL IMPUESTO A LA RENTA) -->
+  <record id="l10n_pe_edi_tab33_1" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >1</field><field
+            name="name"
+        >Los intereses provenientes de créditos de fomento otorgados directamente o mediante proveedores o intermediarios financieros por organismos internacionales o instituciones gubernamentales extranjeras.</field></record>
+  <record id="l10n_pe_edi_tab33_2" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >2</field><field
+            name="name"
+        >Las rentas de los inmuebles de propiedad de organismos internacionales que les sirvan de sede. </field></record>
+  <record id="l10n_pe_edi_tab33_3" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >3</field><field
+            name="name"
+        >Las remuneraciones que perciban, por el ejercicio de su cargo en el país, los funcionarios y empleados considerados como tales dentro de la estructura organizacional de los gobiernos extranjeros, instituciones oficiales extranjeras y organismos internacionales, siempre que los convenios constitutivos así lo establezcan. </field></record>
+  <record id="l10n_pe_edi_tab33_4" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >4</field><field
+            name="name"
+        >Los ingresos brutos que perciben las representaciones deportivas nacionales de países extranjeros por sus actuaciones en el país.</field></record>
+  <record id="l10n_pe_edi_tab33_5" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >5</field><field
+            name="name"
+        >Las regalías por asesoramiento técnico, económico, financiero, o de otra índole, prestados desde el exterior por entidades estatales u organismos internacionales.</field></record>
+  <record id="l10n_pe_edi_tab33_6" model="l10n_pe_edi.table.33"><field
+            name="code"
+        >6</field><field
+            name="name"
+        >Los ingresos extranjeros por los espectáculos en vivo de teatro, zarzuela, conciertos de música clásica, ópera, opereta, ballet y folclor, calificados como espectáculos públicos culturales por el Instituto Nacional de Cultura, realizados en el país. brutos que perciben las representaciones de países. </field></record>
+
+  <!-- Tabla 35: Paises -->
+  <record id="l10n_pe_edi_tab35_9001" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9001</field><field name="name">BOUVET ISLAND</field></record>
+  <record id="l10n_pe_edi_tab35_9002" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9002</field><field name="name">COTE D'IVOIRE</field></record>
+  <record id="l10n_pe_edi_tab35_9003" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9003</field><field name="name">FALKLAND ISLANDS (MALVINAS)</field></record>
+  <record id="l10n_pe_edi_tab35_9004" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9004</field><field name="name">FRANCE, METROPOLITAN</field></record>
+  <record id="l10n_pe_edi_tab35_9005" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9005</field><field name="name">FRENCH SOUTHERN TERRITORIES</field></record>
+  <record id="l10n_pe_edi_tab35_9006" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9006</field><field name="name">HEARD AND MC DONALD ISLANDS</field></record>
+  <record id="l10n_pe_edi_tab35_9007" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9007</field><field name="name">MAYOTTE</field></record>
+  <record id="l10n_pe_edi_tab35_9008" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9008</field><field
+            name="name"
+        >SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS</field></record>
+  <record id="l10n_pe_edi_tab35_9009" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9009</field><field name="name">SVALBARD AND JAN MAYEN ISLANDS</field></record>
+  <record id="l10n_pe_edi_tab35_9010" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9010</field><field
+            name="name"
+        >UNITED STATES MINOR OUTLYING ISLANDS</field></record>
+  <record id="l10n_pe_edi_tab35_9011" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9011</field><field name="name">OTROS PAISES O LUGARES</field></record>
+  <record id="l10n_pe_edi_tab35_9013" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9013</field><field name="name">AFGANISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9017" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9017</field><field name="name">ALBANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9019" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9019</field><field name="name">ALDERNEY</field></record>
+  <record id="l10n_pe_edi_tab35_9023" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9023</field><field name="name">ALEMANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9026" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9026</field><field name="name">ARMENIA</field></record>
+  <record id="l10n_pe_edi_tab35_9027" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9027</field><field name="name">ARUBA</field></record>
+  <record id="l10n_pe_edi_tab35_9028" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9028</field><field name="name">ASCENCI?N</field></record>
+  <record id="l10n_pe_edi_tab35_9029" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9029</field><field name="name">BOSNIA-HERZEGOVINA</field></record>
+  <record id="l10n_pe_edi_tab35_9031" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9031</field><field name="name">BURKINA FASO</field></record>
+  <record id="l10n_pe_edi_tab35_9037" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9037</field><field name="name">ANDORRA</field></record>
+  <record id="l10n_pe_edi_tab35_9040" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9040</field><field name="name">ANGOLA</field></record>
+  <record id="l10n_pe_edi_tab35_9041" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9041</field><field name="name">ANGUILLA</field></record>
+  <record id="l10n_pe_edi_tab35_9043" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9043</field><field name="name">ANTIGUA Y BARBUDA</field></record>
+  <record id="l10n_pe_edi_tab35_9047" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9047</field><field name="name">ANTILLAS HOLANDESAS</field></record>
+  <record id="l10n_pe_edi_tab35_9053" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9053</field><field name="name">ARABIA SAUDITA</field></record>
+  <record id="l10n_pe_edi_tab35_9059" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9059</field><field name="name">ARGELIA</field></record>
+  <record id="l10n_pe_edi_tab35_9063" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9063</field><field name="name">ARGENTINA</field></record>
+  <record id="l10n_pe_edi_tab35_9069" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9069</field><field name="name">AUSTRALIA</field></record>
+  <record id="l10n_pe_edi_tab35_9072" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9072</field><field name="name">AUSTRIA</field></record>
+  <record id="l10n_pe_edi_tab35_9074" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9074</field><field name="name">AZERBAIJAN</field></record>
+  <record id="l10n_pe_edi_tab35_9077" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9077</field><field name="name">BAHAMAS</field></record>
+  <record id="l10n_pe_edi_tab35_9080" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9080</field><field name="name">BAHREIN</field></record>
+  <record id="l10n_pe_edi_tab35_9081" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9081</field><field name="name">BANGLADESH</field></record>
+  <record id="l10n_pe_edi_tab35_9083" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9083</field><field name="name">BARBADOS</field></record>
+  <record id="l10n_pe_edi_tab35_9087" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9087</field><field name="name">BELGICA</field></record>
+  <record id="l10n_pe_edi_tab35_9088" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9088</field><field name="name">BELICE</field></record>
+  <record id="l10n_pe_edi_tab35_9090" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9090</field><field name="name">BERMUDAS</field></record>
+  <record id="l10n_pe_edi_tab35_9091" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9091</field><field name="name">BELARUS</field></record>
+  <record id="l10n_pe_edi_tab35_9093" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9093</field><field name="name">MYANMAR</field></record>
+  <record id="l10n_pe_edi_tab35_9097" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9097</field><field name="name">BOLIVIA</field></record>
+  <record id="l10n_pe_edi_tab35_9101" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9101</field><field name="name">BOTSWANA</field></record>
+  <record id="l10n_pe_edi_tab35_9105" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9105</field><field name="name">BRASIL</field></record>
+  <record id="l10n_pe_edi_tab35_9108" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9108</field><field name="name">BRUNEI DARUSSALAM</field></record>
+  <record id="l10n_pe_edi_tab35_9111" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9111</field><field name="name">BULGARIA</field></record>
+  <record id="l10n_pe_edi_tab35_9115" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9115</field><field name="name">BURUNDI</field></record>
+  <record id="l10n_pe_edi_tab35_9119" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9119</field><field name="name">BUTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9127" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9127</field><field name="name">CABO VERDE</field></record>
+  <record id="l10n_pe_edi_tab35_9137" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9137</field><field name="name">CAIMAN,ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9141" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9141</field><field name="name">CAMBOYA</field></record>
+  <record id="l10n_pe_edi_tab35_9145" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9145</field><field name="name">CAMERUN,REPUBLICA UNIDA DEL</field></record>
+  <record id="l10n_pe_edi_tab35_9147" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9147</field><field name="name">CAMPIONE D?TALIA</field></record>
+  <record id="l10n_pe_edi_tab35_9149" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9149</field><field name="name">CANADA</field></record>
+  <record id="l10n_pe_edi_tab35_9155" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9155</field><field name="name">CANAL (NORMANDAS), ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9157" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9157</field><field name="name">CANTON Y ENDERBURRY</field></record>
+  <record id="l10n_pe_edi_tab35_9159" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9159</field><field name="name">SANTA SEDE</field></record>
+  <record id="l10n_pe_edi_tab35_9165" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9165</field><field name="name">COCOS (KEELING),ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9169" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9169</field><field name="name">COLOMBIA</field></record>
+  <record id="l10n_pe_edi_tab35_9173" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9173</field><field name="name">COMORAS</field></record>
+  <record id="l10n_pe_edi_tab35_9177" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9177</field><field name="name">CONGO</field></record>
+  <record id="l10n_pe_edi_tab35_9183" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9183</field><field name="name">COOK, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9187" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9187</field><field
+            name="name"
+        >COREA (NORTE), REPUBLICA POPULAR DEMOCRATICA DE</field></record>
+  <record id="l10n_pe_edi_tab35_9190" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9190</field><field name="name">COREA (SUR), REPUBLICA DE</field></record>
+  <record id="l10n_pe_edi_tab35_9193" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9193</field><field name="name">COSTA DE MARFIL</field></record>
+  <record id="l10n_pe_edi_tab35_9196" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9196</field><field name="name">COSTA RICA</field></record>
+  <record id="l10n_pe_edi_tab35_9198" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9198</field><field name="name">CROACIA</field></record>
+  <record id="l10n_pe_edi_tab35_9199" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9199</field><field name="name">CUBA</field></record>
+  <record id="l10n_pe_edi_tab35_9203" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9203</field><field name="name">CHAD</field></record>
+  <record id="l10n_pe_edi_tab35_9207" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9207</field><field name="name">CHECOSLOVAQUIA</field></record>
+  <record id="l10n_pe_edi_tab35_9211" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9211</field><field name="name">CHILE</field></record>
+  <record id="l10n_pe_edi_tab35_9215" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9215</field><field name="name">CHINA</field></record>
+  <record id="l10n_pe_edi_tab35_9218" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9218</field><field name="name">TAIWAN (FORMOSA)</field></record>
+  <record id="l10n_pe_edi_tab35_9221" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9221</field><field name="name">CHIPRE</field></record>
+  <record id="l10n_pe_edi_tab35_9229" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9229</field><field name="name">BENIN</field></record>
+  <record id="l10n_pe_edi_tab35_9232" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9232</field><field name="name">DINAMARCA</field></record>
+  <record id="l10n_pe_edi_tab35_9235" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9235</field><field name="name">DOMINICA</field></record>
+  <record id="l10n_pe_edi_tab35_9239" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9239</field><field name="name">ECUADOR</field></record>
+  <record id="l10n_pe_edi_tab35_9240" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9240</field><field name="name">EGIPTO</field></record>
+  <record id="l10n_pe_edi_tab35_9242" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9242</field><field name="name">EL SALVADOR</field></record>
+  <record id="l10n_pe_edi_tab35_9243" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9243</field><field name="name">ERITREA</field></record>
+  <record id="l10n_pe_edi_tab35_9244" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9244</field><field name="name">EMIRATOS ARABES UNIDOS</field></record>
+  <record id="l10n_pe_edi_tab35_9245" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9245</field><field name="name">ESPA?A</field></record>
+  <record id="l10n_pe_edi_tab35_9246" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9246</field><field name="name">ESLOVAQUIA</field></record>
+  <record id="l10n_pe_edi_tab35_9247" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9247</field><field name="name">ESLOVENIA</field></record>
+  <record id="l10n_pe_edi_tab35_9249" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9249</field><field name="name">ESTADOS UNIDOS</field></record>
+  <record id="l10n_pe_edi_tab35_9251" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9251</field><field name="name">ESTONIA</field></record>
+  <record id="l10n_pe_edi_tab35_9253" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9253</field><field name="name">ETIOPIA</field></record>
+  <record id="l10n_pe_edi_tab35_9259" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9259</field><field name="name">FEROE, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9267" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9267</field><field name="name">FILIPINAS</field></record>
+  <record id="l10n_pe_edi_tab35_9271" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9271</field><field name="name">FINLANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9275" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9275</field><field name="name">FRANCIA</field></record>
+  <record id="l10n_pe_edi_tab35_9281" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9281</field><field name="name">GABON</field></record>
+  <record id="l10n_pe_edi_tab35_9285" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9285</field><field name="name">GAMBIA</field></record>
+  <record id="l10n_pe_edi_tab35_9286" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9286</field><field name="name">GAZA Y JERICO</field></record>
+  <record id="l10n_pe_edi_tab35_9287" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9287</field><field name="name">GEORGIA</field></record>
+  <record id="l10n_pe_edi_tab35_9289" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9289</field><field name="name">GHANA</field></record>
+  <record id="l10n_pe_edi_tab35_9293" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9293</field><field name="name">GIBRALTAR</field></record>
+  <record id="l10n_pe_edi_tab35_9297" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9297</field><field name="name">GRANADA</field></record>
+  <record id="l10n_pe_edi_tab35_9301" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9301</field><field name="name">GRECIA</field></record>
+  <record id="l10n_pe_edi_tab35_9305" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9305</field><field name="name">GROENLANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9309" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9309</field><field name="name">GUADALUPE</field></record>
+  <record id="l10n_pe_edi_tab35_9313" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9313</field><field name="name">GUAM</field></record>
+  <record id="l10n_pe_edi_tab35_9317" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9317</field><field name="name">GUATEMALA</field></record>
+  <record id="l10n_pe_edi_tab35_9325" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9325</field><field name="name">GUAYANA FRANCESA</field></record>
+  <record id="l10n_pe_edi_tab35_9327" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9327</field><field name="name">GUERNSEY</field></record>
+  <record id="l10n_pe_edi_tab35_9329" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9329</field><field name="name">GUINEA</field></record>
+  <record id="l10n_pe_edi_tab35_9331" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9331</field><field name="name">GUINEA ECUATORIAL</field></record>
+  <record id="l10n_pe_edi_tab35_9334" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9334</field><field name="name">GUINEA-BISSAU</field></record>
+  <record id="l10n_pe_edi_tab35_9337" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9337</field><field name="name">GUYANA</field></record>
+  <record id="l10n_pe_edi_tab35_9341" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9341</field><field name="name">HAITI</field></record>
+  <record id="l10n_pe_edi_tab35_9345" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9345</field><field name="name">HONDURAS</field></record>
+  <record id="l10n_pe_edi_tab35_9348" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9348</field><field name="name">HONDURAS BRITANICAS</field></record>
+  <record id="l10n_pe_edi_tab35_9351" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9351</field><field name="name">HONG KONG</field></record>
+  <record id="l10n_pe_edi_tab35_9355" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9355</field><field name="name">HUNGRIA</field></record>
+  <record id="l10n_pe_edi_tab35_9361" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9361</field><field name="name">INDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9365" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9365</field><field name="name">INDONESIA</field></record>
+  <record id="l10n_pe_edi_tab35_9369" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9369</field><field name="name">IRAK</field></record>
+  <record id="l10n_pe_edi_tab35_9372" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9372</field><field name="name">IRAN, REPUBLICA ISLAMICA DEL</field></record>
+  <record id="l10n_pe_edi_tab35_9375" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9375</field><field name="name">IRLANDA (EIRE)</field></record>
+  <record id="l10n_pe_edi_tab35_9377" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9377</field><field name="name">ISLA AZORES</field></record>
+  <record id="l10n_pe_edi_tab35_9378" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9378</field><field name="name">ISLA DEL MAN</field></record>
+  <record id="l10n_pe_edi_tab35_9379" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9379</field><field name="name">ISLANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9380" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9380</field><field name="name">ISLAS CANARIAS</field></record>
+  <record id="l10n_pe_edi_tab35_9381" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9381</field><field name="name">ISLAS DE CHRISTMAS</field></record>
+  <record id="l10n_pe_edi_tab35_9382" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9382</field><field name="name">ISLAS QESHM</field></record>
+  <record id="l10n_pe_edi_tab35_9383" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9383</field><field name="name">ISRAEL</field></record>
+  <record id="l10n_pe_edi_tab35_9386" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9386</field><field name="name">ITALIA</field></record>
+  <record id="l10n_pe_edi_tab35_9391" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9391</field><field name="name">JAMAICA</field></record>
+  <record id="l10n_pe_edi_tab35_9395" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9395</field><field name="name">JONSTON, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9399" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9399</field><field name="name">JAPON</field></record>
+  <record id="l10n_pe_edi_tab35_9401" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9401</field><field name="name">JERSEY</field></record>
+  <record id="l10n_pe_edi_tab35_9403" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9403</field><field name="name">JORDANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9406" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9406</field><field name="name">KAZAJSTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9410" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9410</field><field name="name">KENIA</field></record>
+  <record id="l10n_pe_edi_tab35_9411" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9411</field><field name="name">KIRIBATI</field></record>
+  <record id="l10n_pe_edi_tab35_9412" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9412</field><field name="name">KIRGUIZISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9413" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9413</field><field name="name">KUWAIT</field></record>
+  <record id="l10n_pe_edi_tab35_9418" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9418</field><field name="name">LABUN</field></record>
+  <record id="l10n_pe_edi_tab35_9420" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9420</field><field
+            name="name"
+        >LAOS, REPUBLICA POPULAR DEMOCRATICA DE</field></record>
+  <record id="l10n_pe_edi_tab35_9426" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9426</field><field name="name">LESOTHO</field></record>
+  <record id="l10n_pe_edi_tab35_9429" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9429</field><field name="name">LETONIA</field></record>
+  <record id="l10n_pe_edi_tab35_9431" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9431</field><field name="name">LIBANO</field></record>
+  <record id="l10n_pe_edi_tab35_9434" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9434</field><field name="name">LIBERIA</field></record>
+  <record id="l10n_pe_edi_tab35_9438" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9438</field><field name="name">LIBIA</field></record>
+  <record id="l10n_pe_edi_tab35_9440" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9440</field><field name="name">LIECHTENSTEIN</field></record>
+  <record id="l10n_pe_edi_tab35_9443" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9443</field><field name="name">LITUANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9445" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9445</field><field name="name">LUXEMBURGO</field></record>
+  <record id="l10n_pe_edi_tab35_9447" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9447</field><field name="name">MACAO</field></record>
+  <record id="l10n_pe_edi_tab35_9448" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9448</field><field name="name">MACEDONIA</field></record>
+  <record id="l10n_pe_edi_tab35_9450" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9450</field><field name="name">MADAGASCAR</field></record>
+  <record id="l10n_pe_edi_tab35_9453" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9453</field><field name="name">MADEIRA</field></record>
+  <record id="l10n_pe_edi_tab35_9455" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9455</field><field name="name">MALAYSIA</field></record>
+  <record id="l10n_pe_edi_tab35_9458" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9458</field><field name="name">MALAWI</field></record>
+  <record id="l10n_pe_edi_tab35_9461" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9461</field><field name="name">MALDIVAS</field></record>
+  <record id="l10n_pe_edi_tab35_9464" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9464</field><field name="name">MALI</field></record>
+  <record id="l10n_pe_edi_tab35_9467" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9467</field><field name="name">MALTA</field></record>
+  <record id="l10n_pe_edi_tab35_9469" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9469</field><field name="name">MARIANAS DEL NORTE, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9472" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9472</field><field name="name">MARSHALL, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9474" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9474</field><field name="name">MARRUECOS</field></record>
+  <record id="l10n_pe_edi_tab35_9477" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9477</field><field name="name">MARTINICA</field></record>
+  <record id="l10n_pe_edi_tab35_9485" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9485</field><field name="name">MAURICIO</field></record>
+  <record id="l10n_pe_edi_tab35_9488" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9488</field><field name="name">MAURITANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9493" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9493</field><field name="name">MEXICO</field></record>
+  <record id="l10n_pe_edi_tab35_9494" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9494</field><field
+            name="name"
+        >MICRONESIA, ESTADOS FEDERADOS DE</field></record>
+  <record id="l10n_pe_edi_tab35_9495" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9495</field><field name="name">MIDWAY ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9496" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9496</field><field name="name">MOLDAVIA</field></record>
+  <record id="l10n_pe_edi_tab35_9497" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9497</field><field name="name">MONGOLIA</field></record>
+  <record id="l10n_pe_edi_tab35_9498" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9498</field><field name="name">MONACO</field></record>
+  <record id="l10n_pe_edi_tab35_9501" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9501</field><field name="name">MONTSERRAT, ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9505" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9505</field><field name="name">MOZAMBIQUE</field></record>
+  <record id="l10n_pe_edi_tab35_9507" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9507</field><field name="name">NAMIBIA</field></record>
+  <record id="l10n_pe_edi_tab35_9508" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9508</field><field name="name">NAURU</field></record>
+  <record id="l10n_pe_edi_tab35_9511" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9511</field><field name="name">NAVIDAD (CHRISTMAS), ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9517" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9517</field><field name="name">NEPAL</field></record>
+  <record id="l10n_pe_edi_tab35_9521" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9521</field><field name="name">NICARAGUA</field></record>
+  <record id="l10n_pe_edi_tab35_9525" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9525</field><field name="name">NIGER</field></record>
+  <record id="l10n_pe_edi_tab35_9528" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9528</field><field name="name">NIGERIA</field></record>
+  <record id="l10n_pe_edi_tab35_9531" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9531</field><field name="name">NIUE, ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9535" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9535</field><field name="name">NORFOLK, ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9538" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9538</field><field name="name">NORUEGA</field></record>
+  <record id="l10n_pe_edi_tab35_9542" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9542</field><field name="name">NUEVA CALEDONIA</field></record>
+  <record id="l10n_pe_edi_tab35_9545" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9545</field><field name="name">PAPUASIA NUEVA GUINEA</field></record>
+  <record id="l10n_pe_edi_tab35_9548" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9548</field><field name="name">NUEVA ZELANDA</field></record>
+  <record id="l10n_pe_edi_tab35_9551" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9551</field><field name="name">VANUATU</field></record>
+  <record id="l10n_pe_edi_tab35_9556" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9556</field><field name="name">OMAN</field></record>
+  <record id="l10n_pe_edi_tab35_9566" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9566</field><field name="name">PACIFICO, ISLAS DEL</field></record>
+  <record id="l10n_pe_edi_tab35_9573" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9573</field><field name="name">PAISES BAJOS</field></record>
+  <record id="l10n_pe_edi_tab35_9576" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9576</field><field name="name">PAKISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9578" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9578</field><field name="name">PALAU, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9579" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9579</field><field
+            name="name"
+        >TERRITORIO AUTONOMO DE PALESTINA.</field></record>
+  <record id="l10n_pe_edi_tab35_9580" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9580</field><field name="name">PANAMA</field></record>
+  <record id="l10n_pe_edi_tab35_9586" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9586</field><field name="name">PARAGUAY</field></record>
+  <record id="l10n_pe_edi_tab35_9589" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9589</field><field name="name">PERU</field></record>
+  <record id="l10n_pe_edi_tab35_9593" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9593</field><field name="name">PITCAIRN, ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9599" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9599</field><field name="name">POLINESIA FRANCESA</field></record>
+  <record id="l10n_pe_edi_tab35_9603" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9603</field><field name="name">POLONIA</field></record>
+  <record id="l10n_pe_edi_tab35_9607" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9607</field><field name="name">PORTUGAL</field></record>
+  <record id="l10n_pe_edi_tab35_9611" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9611</field><field name="name">PUERTO RICO</field></record>
+  <record id="l10n_pe_edi_tab35_9618" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9618</field><field name="name">QATAR</field></record>
+  <record id="l10n_pe_edi_tab35_9628" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9628</field><field name="name">REINO UNIDO</field></record>
+  <record id="l10n_pe_edi_tab35_9629" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9629</field><field name="name">ESCOCIA</field></record>
+  <record id="l10n_pe_edi_tab35_9633" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9633</field><field name="name">REPUBLICA ARABE UNIDA</field></record>
+  <record id="l10n_pe_edi_tab35_9640" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9640</field><field name="name">REPUBLICA CENTROAFRICANA</field></record>
+  <record id="l10n_pe_edi_tab35_9644" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9644</field><field name="name">REPUBLICA CHECA</field></record>
+  <record id="l10n_pe_edi_tab35_9645" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9645</field><field name="name">REPUBLICA DE SWAZILANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9646" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9646</field><field name="name">REPUBLICA DE TUNEZ</field></record>
+  <record id="l10n_pe_edi_tab35_9647" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9647</field><field name="name">REPUBLICA DOMINICANA</field></record>
+  <record id="l10n_pe_edi_tab35_9660" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9660</field><field name="name">REUNION</field></record>
+  <record id="l10n_pe_edi_tab35_9665" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9665</field><field name="name">ZIMBABWE</field></record>
+  <record id="l10n_pe_edi_tab35_9670" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9670</field><field name="name">RUMANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9675" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9675</field><field name="name">RUANDA</field></record>
+  <record id="l10n_pe_edi_tab35_9676" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9676</field><field name="name">RUSIA</field></record>
+  <record id="l10n_pe_edi_tab35_9677" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9677</field><field name="name">SALOMON, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9685" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9685</field><field name="name">SAHARA OCCIDENTAL</field></record>
+  <record id="l10n_pe_edi_tab35_9687" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9687</field><field name="name">SAMOA OCCIDENTAL</field></record>
+  <record id="l10n_pe_edi_tab35_9690" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9690</field><field name="name">SAMOA NORTEAMERICANA</field></record>
+  <record id="l10n_pe_edi_tab35_9695" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9695</field><field name="name">SAN CRISTOBAL Y NIEVES</field></record>
+  <record id="l10n_pe_edi_tab35_9697" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9697</field><field name="name">SAN MARINO</field></record>
+  <record id="l10n_pe_edi_tab35_9700" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9700</field><field name="name">SAN PEDRO Y MIQUELON</field></record>
+  <record id="l10n_pe_edi_tab35_9705" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9705</field><field name="name">SAN VICENTE Y LAS GRANADINAS</field></record>
+  <record id="l10n_pe_edi_tab35_9710" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9710</field><field name="name">SANTA ELENA</field></record>
+  <record id="l10n_pe_edi_tab35_9715" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9715</field><field name="name">SANTA LUCIA</field></record>
+  <record id="l10n_pe_edi_tab35_9720" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9720</field><field name="name">SANTO TOME Y PRINCIPE</field></record>
+  <record id="l10n_pe_edi_tab35_9728" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9728</field><field name="name">SENEGAL</field></record>
+  <record id="l10n_pe_edi_tab35_9731" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9731</field><field name="name">SEYCHELLES</field></record>
+  <record id="l10n_pe_edi_tab35_9735" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9735</field><field name="name">SIERRA LEONA</field></record>
+  <record id="l10n_pe_edi_tab35_9741" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9741</field><field name="name">SINGAPUR</field></record>
+  <record id="l10n_pe_edi_tab35_9744" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9744</field><field name="name">SIRIA, REPUBLICA ARABE DE</field></record>
+  <record id="l10n_pe_edi_tab35_9748" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9748</field><field name="name">SOMALIA</field></record>
+  <record id="l10n_pe_edi_tab35_9750" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9750</field><field name="name">SRI LANKA</field></record>
+  <record id="l10n_pe_edi_tab35_9756" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9756</field><field name="name">SUDAFRICA, REPUBLICA DE</field></record>
+  <record id="l10n_pe_edi_tab35_9759" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9759</field><field name="name">SUDAN</field></record>
+  <record id="l10n_pe_edi_tab35_9764" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9764</field><field name="name">SUECIA</field></record>
+  <record id="l10n_pe_edi_tab35_9767" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9767</field><field name="name">SUIZA</field></record>
+  <record id="l10n_pe_edi_tab35_9770" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9770</field><field name="name">SURINAM</field></record>
+  <record id="l10n_pe_edi_tab35_9773" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9773</field><field name="name">SAWSILANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9774" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9774</field><field name="name">TADJIKISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9776" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9776</field><field name="name">TAILANDIA</field></record>
+  <record id="l10n_pe_edi_tab35_9780" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9780</field><field name="name">TANZANIA, REPUBLICA UNIDA DE</field></record>
+  <record id="l10n_pe_edi_tab35_9783" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9783</field><field name="name">DJIBOUTI</field></record>
+  <record id="l10n_pe_edi_tab35_9786" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9786</field><field name="name">TERRITORIO ANTARTICO BRITANICO</field></record>
+  <record id="l10n_pe_edi_tab35_9787" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9787</field><field
+            name="name"
+        >TERRITORIO BRITANICO DEL OCEANO INDICO</field></record>
+  <record id="l10n_pe_edi_tab35_9788" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9788</field><field name="name">TIMOR DEL ESTE</field></record>
+  <record id="l10n_pe_edi_tab35_9800" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9800</field><field name="name">TOGO</field></record>
+  <record id="l10n_pe_edi_tab35_9805" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9805</field><field name="name">TOKELAU</field></record>
+  <record id="l10n_pe_edi_tab35_9810" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9810</field><field name="name">TONGA</field></record>
+  <record id="l10n_pe_edi_tab35_9815" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9815</field><field name="name">TRINIDAD Y TOBAGO</field></record>
+  <record id="l10n_pe_edi_tab35_9816" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9816</field><field name="name">TRISTAN DA CUNHA</field></record>
+  <record id="l10n_pe_edi_tab35_9820" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9820</field><field name="name">TUNICIA</field></record>
+  <record id="l10n_pe_edi_tab35_9823" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9823</field><field name="name">TURCAS Y CAICOS, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9825" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9825</field><field name="name">TURKMENISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9827" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9827</field><field name="name">TURQUIA</field></record>
+  <record id="l10n_pe_edi_tab35_9828" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9828</field><field name="name">TUVALU</field></record>
+  <record id="l10n_pe_edi_tab35_9830" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9830</field><field name="name">UCRANIA</field></record>
+  <record id="l10n_pe_edi_tab35_9833" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9833</field><field name="name">UGANDA</field></record>
+  <record id="l10n_pe_edi_tab35_9840" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9840</field><field name="name">URSS</field></record>
+  <record id="l10n_pe_edi_tab35_9845" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9845</field><field name="name">URUGUAY</field></record>
+  <record id="l10n_pe_edi_tab35_9847" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9847</field><field name="name">UZBEKISTAN</field></record>
+  <record id="l10n_pe_edi_tab35_9850" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9850</field><field name="name">VENEZUELA</field></record>
+  <record id="l10n_pe_edi_tab35_9855" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9855</field><field name="name">VIET NAM</field></record>
+  <record id="l10n_pe_edi_tab35_9858" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9858</field><field name="name">VIETNAM (DEL NORTE)</field></record>
+  <record id="l10n_pe_edi_tab35_9863" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9863</field><field name="name">VIRGENES, ISLAS (BRITANICAS)</field></record>
+  <record id="l10n_pe_edi_tab35_9866" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9866</field><field
+            name="name"
+        >VIRGENES, ISLAS (NORTEAMERICANAS)</field></record>
+  <record id="l10n_pe_edi_tab35_9870" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9870</field><field name="name">FIJI</field></record>
+  <record id="l10n_pe_edi_tab35_9873" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9873</field><field name="name">WAKE, ISLA</field></record>
+  <record id="l10n_pe_edi_tab35_9875" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9875</field><field name="name">WALLIS Y FORTUNA, ISLAS</field></record>
+  <record id="l10n_pe_edi_tab35_9880" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9880</field><field name="name">YEMEN</field></record>
+  <record id="l10n_pe_edi_tab35_9885" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9885</field><field name="name">YUGOSLAVIA</field></record>
+  <record id="l10n_pe_edi_tab35_9888" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9888</field><field name="name">ZAIRE</field></record>
+  <record id="l10n_pe_edi_tab35_9890" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9890</field><field name="name">ZAMBIA</field></record>
+  <record id="l10n_pe_edi_tab35_9895" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9895</field><field name="name">ZONA DEL CANAL DE PANAMA</field></record>
+  <record id="l10n_pe_edi_tab35_9896" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9896</field><field name="name">ZONA LIBRE OSTRAVA</field></record>
+  <record id="l10n_pe_edi_tab35_9897" model="l10n_pe_edi.table.35"><field
+            name="code"
+        >9897</field><field name="name">ZONA NEUTRAL (PALESTINA)</field></record>
+
+</odoo>

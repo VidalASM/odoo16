@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- This is a template extending the 'point_of_sale.ProductItem' template. -->
+    <t t-name="pw_discount_limit" t-inherit="point_of_sale.ProductItem" t-inherit-mode="extension" owl="1">
+        <!-- <xpath expr="//div[hasclass('product-img')]" position="inside">
+            <t t-if="props.product.product_discount_limit">
+                <span class="product_discount_limit position-absolute top-0 start-0 translate-middle"
+                      style="background-color: #7f82ac; padding: 2px 5px; border-radius: 2px; position: absolute; left: 0; top: 0;">
+                    <i class="fa fa-warning text-danger" style="color: red;"></i>
+                    <t t-esc="props.product.product_discount_limit"/>
+                </span>
+            </t>
+        </xpath> -->
+        <xpath expr="//div[hasclass('product-content')]" position="inside">
+            <div t-if="env.pos.config.restrict_discount" class="warehouse-info">
+                <!-- <div class="flex">
+                    <div class="warehouse total" title="Total">
+                        <i class="fa fa-dropbox" />
+                        <span t-attf-class="">
+                            <t t-esc="props.product.product_discount_limit" />
+                        </span>
+                    </div>
+                </div> -->
+                <div class="flex">
+                    <div class="warehouse">
+                        <span class="warehouse-name">
+                            MAX DESC: &#160;&#160;
+                        </span>
+                        <span t-attf-class="">
+                            <t t-esc="props.product.product_discount_limit" /> %
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</odoo>
+
+
+

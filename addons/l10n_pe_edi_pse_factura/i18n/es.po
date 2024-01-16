@@ -1,0 +1,564 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_edi_pse_factura
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-23 05:29+0000\n"
+"PO-Revision-Date: 2023-01-23 05:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.res_config_settings_form_inherit_l10n_pe_edi_pse_factura
+msgid "<span class=\"o_form_label mt16\">PSE Authorization</span>"
+msgstr "<span class=\"o_form_label mt16\">Autorización PSE</span>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.view_move_form
+msgid ""
+"<span class=\"o_stat_text\">Accepted by</span>\n"
+"                            <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Aceptado por</span>\n"
+"                            <span class=\"o_stat_text\">SUNAT</span>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.view_move_form
+msgid ""
+"<span class=\"o_stat_text\">Pending to</span>\n"
+"                            <span class=\"o_stat_text\">SEND</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Pendiente de</span>\n"
+"                            <span class=\"o_stat_text\">ENVIO</span>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.view_move_form
+msgid ""
+"<span class=\"o_stat_text\">Rejected by</span>\n"
+"                            <span class=\"o_stat_text\">SUNAT</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Rechazado por</span>\n"
+"                            <span class=\"o_stat_text\">SUNAT</span>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.view_move_form
+msgid ""
+"<span class=\"o_stat_text\">Signed by</span>\n"
+"                            <span class=\"o_stat_text\">PSE</span>"
+msgstr ""
+"<span class=\"o_stat_text\">Firmado por</span>\n"
+"                            <span class=\"o_stat_text\">PSE</span>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.res_config_settings_form_inherit_l10n_pe_edi_pse_factura
+msgid ""
+"<strong>PSE</strong> is an official SUNAT provider, you need an account in "
+"the PSE portal to use the services<br/>"
+msgstr ""
+"<strong>PSE</strong> es un proveedor autorizado por la SUNAT, necesitas una "
+"cuenta en el portal del PSE para usar los servicio<br/>"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_move_reversal
+msgid "Account Move Reversal"
+msgstr "Revocación de movimiento en cuenta"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_debit_note
+msgid "Add Debit Note wizard"
+msgstr "Asistente para agregar nota débito"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_invoice_id
+msgid "Downpayment Invoice"
+msgstr "Factura anticipo"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax__l10n_pe_edi_isc_type__02
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax_template__l10n_pe_edi_isc_type__02
+msgid "Application of the Fixed Amount"
+msgstr "Aplicación del Monto Fijo ( Sistema específico, bienes en el apéndice III, Apéndice IV, lit. B – T.U.O IGV e ISC)"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_transportref_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_transportref_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_transportref_ids
+msgid "Attached Despatchs"
+msgstr "Guias de Remisión Adjuntas"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move_line__l10n_pe_edi_downpayment_ref_type__03
+msgid "Boleta de venta"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"Cancellation is in progress in the government side (Void identifier: %s)."
+msgstr ""
+"La cancelación esta en proceso del lado del gobierno (Identificador de Baja:"
+" %s)."
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_res_company
+msgid "Companies"
+msgstr "Compañias"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__res_company__l10n_pe_edi_provider__conflux
+msgid "Conflux"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__create_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_payment_fee_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_payment_fee_ids
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_payment_fee_ids
+msgid "Credit Payment Fees"
+msgstr "Cuotas de Crédito"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_debit_note__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_edi_format__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_reversal__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax_template__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_mail_template__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_ref_number
+msgid "Downpayment Ref. Number"
+msgstr "Número de referencia de Anticipo"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_ref_type
+msgid "Downpayment Ref. Type"
+msgstr "Tipo de referencia de Anticipo"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_date
+msgid "Downpayment date"
+msgstr "Fecha de anticipo"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__date_due
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_accepted_by_sunat
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_accepted_by_sunat
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_accepted_by_sunat
+msgid "EDI Accepted by Sunat"
+msgstr "EDI Aceptado por la Sunat"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_edi_format
+msgid "EDI format"
+msgstr "Formato EDI"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company__l10n_pe_edi_provider
+msgid "Electronic Service Provider (ESP)"
+msgstr "Proveedor de Servicios Electrónicos (PSE)"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_mail_template
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Exception decoding JSON response: %s"
+msgstr "Excepción decodificando respuesta JSON %s"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Exception: %s"
+msgstr "Excepción: %s"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move_line__l10n_pe_edi_downpayment_ref_type__02
+msgid "Factura"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move_l10n_pe_transportref__ref_type__09
+msgid "GR REMITENTE"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move_l10n_pe_transportref__ref_type__31
+msgid "GR TRANSPORTISTA"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_debit_note__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_edi_format__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_reversal__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax_template__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_mail_template__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_config_settings__id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_sale_order_line__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_retention_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_retention_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_retention_type
+msgid "IGV Retention Type"
+msgstr "Tipo de Regimen de Retención"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax__l10n_pe_edi_isc_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax_template__l10n_pe_edi_isc_type
+msgid "ISC Type"
+msgstr "Tipo de ISC"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__move_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,help:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_invoice_id
+msgid "Invoices related to the advance regualization"
+msgstr "Facturas relacinadas a la regualizacion del anticipo"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line__l10n_pe_edi_downpayment_line
+msgid "Is Downpayment?"
+msgstr "¿Es Anticipo?"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_debit_note____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_edi_format____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_reversal____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_tax_template____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_mail_template____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_sale_order_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__write_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Missing LATAM document code."
+msgstr "El tipo de documento LATAM no ha sido configurado."
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__move_id
+msgid "Move"
+msgstr "Asiento Contable"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__ref_number
+msgid "Number Reference"
+msgstr "Número de referencia"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company__l10n_pe_edi_pse_client_id
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_config_settings__l10n_pe_edi_pse_client_id
+msgid "PSE Client ID"
+msgstr "PSE ID de Cliente"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_pse_cancel_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_pse_cancel_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_pse_cancel_uid
+msgid "PSE Identifier for Cancellation"
+msgstr "Identificador de Baja en PSE"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_company__l10n_pe_edi_pse_secret_key
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_res_config_settings__l10n_pe_edi_pse_secret_key
+msgid "PSE Secret Key"
+msgstr "PSE Clave Secreta"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_pse_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_pse_uid
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_pse_uid
+msgid "PSE Unique identifier"
+msgstr "Identificador unico en PSE"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Please put a cancel reason"
+msgstr "Indique un motivo de cancelación"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_rectification_ref_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_rectification_ref_date
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_rectification_ref_date
+msgid "Rectification - Invoice Date"
+msgstr "Rectificativa - Fecha de factura"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_rectification_ref_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_rectification_ref_type
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_rectification_ref_type
+msgid "Rectification - Invoice Type"
+msgstr "Rectificativa - Tipo de Factura"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_rectification_ref_number
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_rectification_ref_number
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_rectification_ref_number
+msgid "Rectification - Invoice number"
+msgstr "Rectificativa - Número de Factura"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax__l10n_pe_edi_isc_type__03
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax_template__l10n_pe_edi_isc_type__03
+msgid "Retail Price System"
+msgstr "Sistema de Precios de Venta al Público (Apéndice IV, lit. C – T.U.O IGV e ISC)"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de Pedido de Venta"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,help:l10n_pe_edi_pse_factura.field_res_company__l10n_pe_edi_provider
+msgid ""
+"Selector for the service we are going to use to report the "
+"invoices:DIGIFLOW: With the certified that digiflow provide you, user and "
+"password you will report the invoices to them.SUNAT: You will report the "
+"invoices directly to them using your own certified, user and password.IAP: "
+"This is an odoo service that will send the unsigned documents to a PSE and "
+"process their response."
+msgstr ""
+"Selector para el servicio que sera usado para reportar las "
+"facturas:DIGIFLOW: Con el certificado, usuario y contraseña que digiflow te "
+"ha proporcionado podrás enviar tus facturas con ese ellos.SUNAT: Reportaras "
+"los documentos directamente con ellos con tu propio certificado, usuario y "
+"contraseña.IAP: Este es el servicio de odoo que enviará los documentos sin "
+"firmar al PSE y procesara la respuesta de este."
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax__l10n_pe_edi_isc_type__01
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_tax_template__l10n_pe_edi_isc_type__01
+msgid "System to value"
+msgstr "Sistema al valor (Apéndice IV, lit. A – T.U.O IGV e ISC)"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move__l10n_pe_edi_retention_type__01
+msgid "Tasa 3%"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields.selection,name:l10n_pe_edi_pse_factura.selection__account_move__l10n_pe_edi_retention_type__02
+msgid "Tasa 6%"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Taxes need to be assigned on all invoice lines"
+msgstr "Todas las lineas deben tener impuestos asignado"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_tax_template
+msgid "Templates for Taxes"
+msgstr "Plantilla de impuestos"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "The EDI document failed to be cancelled"
+msgstr "Los documentos electrónicos fallaron al ser cancelados"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"The EDI document failed to be cancelled because the cancellation Void "
+"identifier is missing."
+msgstr ""
+"Los documentos electrónicos fallaron al ser cancelados ya que la cancelación"
+" no tiene definido un identificador único."
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "The EDI document failed to be cancelled for unknown reason."
+msgstr "El documento de facturación peruano fallo el proceso de cancelación debido a un problema desconocido."
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"The EDI document was successfully cancelled by the government (Void "
+"identifier: %s)."
+msgstr ""
+"El documento de facturación peruano ha sido cancelado correctamente por el "
+"SUNAT (Identificador de Baja: %s)."
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"The EDI document was successfully created and signed by the PSE.<br/>XML "
+"download link: %s<br/>PDF download link: %s"
+msgstr ""
+"El documento de facturación peruano fue creado y firmado correctamente por "
+"el PSE.<br/> Enlace de descarga XML: %s<br/>Enlace de descarga PDF: %s"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"The EDI document was successfully created and signed by the government."
+msgstr "El documento de facturación peruano fue creado y firmado correctamente por el SUNAT."
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "There's problems to connect with PSE Server"
+msgstr "Se encontraron problemas en conectar con el servidor del PSE"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_payment_fee__amount_total
+#: model_terms:ir.ui.view,arch_db:l10n_pe_edi_pse_factura.view_move_form
+msgid "Total"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move_l10n_pe_transportref__ref_type
+msgid "Type of despatch"
+msgstr "Tipo de Guia"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Url not provided"
+msgstr "Url no definida"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,help:l10n_pe_edi_pse_factura.field_account_tax__l10n_pe_edi_isc_type
+#: model:ir.model.fields,help:l10n_pe_edi_pse_factura.field_account_tax_template__l10n_pe_edi_isc_type
+msgid ""
+"Used in Selective Consumption Tax to indicate the type of calculation for "
+"the ISC."
+msgstr "Usado en el impuesto selectivo al consumo para indicar el tipo de calculo del ISC"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "VAT number is missing on company %s"
+msgstr "El numero de VAT no ha sido encontrado para la empresa %s"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid "Validation is in progress in the government side (identifier: %s)."
+msgstr ""
+"La validación esta en progreso en el lado del gobierno (Identificador: %s)"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_bank_statement_line__l10n_pe_edi_void_accepted_by_sunat
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_move__l10n_pe_edi_void_accepted_by_sunat
+#: model:ir.model.fields,field_description:l10n_pe_edi_pse_factura.field_account_payment__l10n_pe_edi_void_accepted_by_sunat
+msgid "Void EDI Accepted by Sunat"
+msgstr "Baja de EDI Aceptada por SUNAT"
+
+#. module: l10n_pe_edi_pse_factura
+#: code:addons/l10n_pe_edi_pse_factura/models/account_edi_format.py:0
+#, python-format
+msgid ""
+"You can't have more than one IGV tax per line to generate a legal invoice in"
+" Peru"
+msgstr "No es posible colocar mas de un impuesto IGV por linea para generar una factura legal en Perú"
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_move_l10n_pe_payment_fee
+msgid "account.move.l10n_pe_payment_fee"
+msgstr ""
+
+#. module: l10n_pe_edi_pse_factura
+#: model:ir.model,name:l10n_pe_edi_pse_factura.model_account_move_l10n_pe_transportref
+msgid "account.move.l10n_pe_transportref"
+msgstr ""

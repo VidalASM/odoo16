@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <report
+            id="gym_workout_wizards_report_id"
+            model="gym.workout"
+            string="Workout Report"
+            report_type="qweb-pdf"
+            menu="False"
+            name="gym_management.workout_report"
+            file="gym_management.workout_report"
+        />
+        
+        <template id="workout_report">
+                <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                            <div>
+                                <h2>
+                                    <span t-field = "doc.no"/>
+                                </h2>
+                            </div>
+                        <div class="row mt50 mb50">
+                            <div style="margin-top: 50px; margin-left: 18px;">
+                                <strong>Customer:</strong>  <span t-field="doc.customer"/>
+                            </div>
+                        </div>
+                        <div class="row mt50 mb50">
+                            <div style="margin-top: 50px; margin-left: 18px;">
+                                <strong>From Date:</strong>  <span t-field="doc.from_date"/>
+                                <strong style="margin-left:400px;">To Date:</strong>  <span t-field="doc.to_date"/>
+                            </div>
+                        </div>
+                        <div class="row mt50 mb50">
+                            <div style="margin-top: 50px; margin-left: 18px;">
+                                <h3>
+                                    <strong>Workout:</strong>  <span t-field="doc.workout_id"/>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="row mt50 mb50">
+                            <div style="margin-top: 50px; margin-left: 18px;">
+                                <h3>
+                                    <strong>List of Exercises</strong>
+                                </h3>
+                            </div>
+                        </div>
+                        <div>
+                            <table class="table table-condensed table-bordered" style="margin-top: 50px;">
+                                   <thead>
+                                       <tr style="border-top: 1px solid black;">
+                                           <th class="text-left" width="20%">Exercise</th>
+                                           <th class="text-left" width="20%">Exercise On</th>
+                                           <th class="text-left" width="30%">Equipement</th>
+                                           <th  class="text-left" width="30%">Description</th>
+                                           <th  class="text-left" width="30%">Affected Muscle</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                        <t t-foreach="doc.exercise_ids" t-as="row">
+                                            <tr>
+                                                <td><span t-esc='row.exercise_category_id.name'/></td>
+                                                <td><span t-esc='row.exercise_id.name'/></td>
+                                                <td><span t-esc='row.equipment_id.name'/></td>
+                                                <td><span t-field='row.description'/></td>
+                                                <td><span t-esc='row.muscles_id.name'/></td>
+                                            </tr>
+                                        </t>
+                                   </tbody>
+                               </table>
+                        </div>
+                        <div class="row mt50 mb50">
+                            <div style="margin-top: 50px; margin-left: 18px;">
+                                <h3>
+                                    <strong>Workout Days Status</strong>
+                                </h3>
+                            </div>
+                        </div>
+                        <div>
+                            <table class="table table-condensed table-bordered" style="margin-top: 50px;">
+                                   <thead>
+                                       <tr style="border-top: 1px solid black;">
+                                           <th class="text-left" width="20%">Date</th>
+                                           <th class="text-left" width="20%">Status</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody>
+                                        <t t-foreach="doc.day_ids" t-as="day">
+                                            <tr>
+                                                <td><span t-esc='day.day'/></td>
+                                                <td><span t-esc='day.state'/></td>
+                                            </tr>
+                                        </t>
+                                   </tbody>
+                               </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+

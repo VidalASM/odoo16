@@ -1,0 +1,261 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_vat_sunat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.3alpha1+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-14 17:15+0000\n"
+"PO-Revision-Date: 2022-03-14 17:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__activo
+msgid "ACTIVO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__anul_provi_-acto_ili
+msgid "ANUL.PROVI.-ACTO ILI"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__anulacion_-_acto_ili
+msgid "ANULACION - ACTO ILI"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__anulacion_-_error_su
+msgid "ANULACION - ERROR SU"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_company__annexed_locals
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_config_settings__annexed_locals
+msgid "Annexed Locals"
+msgstr "Locales Anexos"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__baja_de_oficio
+msgid "BAJA DE OFICIO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__baja_definitiva
+msgid "BAJA DEFINITIVA"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__baja_mult_inscr__y_o
+msgid "BAJA MULT.INSCR. Y O"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__baja_prov__por_oficio
+msgid "BAJA PROV. POR OFICIO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__baja_provisional
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__suspension_temporal
+msgid "BAJA PROVISIONAL"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model,name:l10n_pe_vat_sunat.model_res_company
+msgid "Companies"
+msgstr "Compañias"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_partner__condition
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_users__condition
+msgid "Condition"
+msgstr "Condición"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model,name:l10n_pe_vat_sunat.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model,name:l10n_pe_vat_sunat.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: l10n_pe_vat_sunat
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#, python-format
+msgid ""
+"Could not get data for RUC %s.\r\n"
+"Details: %s"
+msgstr ""
+"No se pudo obtener datos del RUC %s.\r\n"
+"Detalles: %s"
+
+#. module: l10n_pe_vat_sunat
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#, python-format
+msgid "DNI not found."
+msgstr "DNI no encontrado."
+
+#. module: l10n_pe_vat_sunat
+#: model_terms:ir.ui.view,arch_db:l10n_pe_vat_sunat.res_config_settings_view_form
+msgid "Data from SUNAT"
+msgstr "Datos de SUNAT"
+
+#. module: l10n_pe_vat_sunat
+#: model_terms:ir.ui.view,arch_db:l10n_pe_vat_sunat.res_config_settings_view_form
+msgid "Get annexed locals from SUNAT website"
+msgstr "Obtener locales anexos del portal SUNAT"
+
+#. module: l10n_pe_vat_sunat
+#: model_terms:ir.ui.view,arch_db:l10n_pe_vat_sunat.res_config_settings_view_form
+msgid "Get legal representives from SUNAT website"
+msgstr "Obtener representantes legales del portal SUNAT"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__habido
+msgid "HABIDO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__inhabilitado-vent_un
+msgid "INHABILITADO-VENT.UN"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_company__legal_representatives
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_config_settings__legal_representatives
+msgid "Legal Representatives"
+msgstr "Representantes Legales"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_aplicable
+msgid "NO APLICABLE"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__-
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_habido
+msgid "NO HABIDO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado
+msgid "NO HALLADO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_cerrado
+msgid "NO HALLADO CERRADO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_destinata
+msgid "NO HALLADO DESTINATA"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_fallecio
+msgid "NO HALLADO FALLECIO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_no_existe
+msgid "NO HALLADO NO EXISTE"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_nro_puert
+msgid "NO HALLADO NRO.PUERT"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_otros_mot
+msgid "NO HALLADO OTROS MOT"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_rechazado
+msgid "NO HALLADO RECHAZADO"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__no_hallado_se_mudo_d
+msgid "NO HALLADO SE MUDO D"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__num__interno_identif
+msgid "NUM. INTERNO IDENTIF"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__otros_obligados
+msgid "OTROS OBLIGADOS"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__pendiente
+msgid "PENDIENTE"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__state__pendiente_de_ini__de
+msgid "PENDIENTE DE INI. DE"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields.selection,name:l10n_pe_vat_sunat.selection__res_partner__condition__por_verificar
+msgid "POR VERIFICAR"
+msgstr ""
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.model.fields,field_description:l10n_pe_vat_sunat.field_res_partner__state
+msgid "Partner State"
+msgstr "Estado del Socio"
+
+#. module: l10n_pe_vat_sunat
+#: model:ir.actions.act_window,name:l10n_pe_vat_sunat.l10n_pe_vat_sunat_config_settings_action
+#: model:ir.ui.menu,name:l10n_pe_vat_sunat.sunat_settings
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: l10n_pe_vat_sunat
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#, python-format
+msgid "The DNI entered is incorrect"
+msgstr "El DNI ingresado es incorrecto"
+
+#. module: l10n_pe_vat_sunat
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#, python-format
+msgid "The RUC number '%s' have %d %s and it should be 11 characters."
+msgstr "El número de RUC '%s' tiene %d %s y debería tener 11 caracteres."
+
+#. module: l10n_pe_vat_sunat
+#: code:addons/extra-addons/pc/l10n_pe_vat_sunat/models/res_partner.py:0
+#: code:addons/l10n_pe_vat_sunat/models/res_partner.py:0
+#, python-format
+msgid "The RUC number '%s' should only have numeric characters."
+msgstr "El número de RUC '%s' debería tener solo caracteres numéricos"
+
+#. module: l10n_pe_vat_sunat
+#: model_terms:ir.ui.view,arch_db:l10n_pe_vat_sunat.view_partner_form
+msgid "Update RUC/DNI"
+msgstr "Actualizar RUC/DNI"

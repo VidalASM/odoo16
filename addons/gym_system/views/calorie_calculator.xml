@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_nutrition_calorie">
+            <field name="name">calorie</field>
+            <field name="model">gym.calorie</field>
+            <field name="arch" type="xml">
+                <form string="gym calorie form">
+                <sheet>
+                        <group>
+                            <group>
+                                <field name="name_id" required="1"/>
+                                <field name="age" required="1"/>
+                                <field name="height" required="1"/>
+                                <field name="gender"/>
+                                <field name="weight" required="1"/>
+                                <field name="bmr"/>
+                            </group>
+                        </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_calorie_tree">
+            <field name="name">calorie tree</field>
+            <field name="model">gym.calorie</field>
+            <field name="arch" type="xml">
+                <tree string="calorie list">
+                            <field name="name_id"/>
+                            <field name="age"/>
+                            <field name="height"/>
+                            <field name="gender"/>
+                            <field name="weight"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+      
+        
+
+
+       
+    </data>
+</odoo>        

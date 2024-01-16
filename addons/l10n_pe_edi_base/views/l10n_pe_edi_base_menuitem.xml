@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem
+        id="l10n_pe_edi_base_menu"
+        name="E-Documents"
+        groups=""
+        web_icon="l10n_pe_edi_base,static/description/icon.png"
+        sequence="55"
+    >
+        <menuitem
+            id="edocuments_type_board_menu"
+            name="Dashboard"
+            action="l10n_pe_edi_document_type_action_kanban"
+            sequence="1"
+        />
+        <menuitem id="edi_request_menu" name="EDI-Request" sequence="2">
+            <menuitem
+                id="edi_request_all_menu"
+                name="EDI-Request All"
+                action="l10n_pe_edi_request_invoice_action"
+                sequence="1"
+            />
+        </menuitem>
+        <menuitem
+            id="l10n_pe_edi_base_configuration_menu"
+            name="Configuration"
+            sequence="99"
+        >
+            <menuitem
+                id="l10n_pe_edi_settings_menu"
+                name="Settings"
+                action="l10n_pe_edi_settings_action"
+                groups="base.group_system"
+                sequence="0"
+            />
+            <menuitem
+                id="request_document_type_menu"
+                name="Request Document Type"
+                action="l10n_pe_edi_document_type_action"
+                sequence="1"
+            />
+            <menuitem
+                id="shop_menu"
+                name="Shops"
+                action="l10n_pe_edi_shop_action"
+                sequence="2"
+            />
+            <menuitem id="catalog_menu" name="Catalogs SUNAT" sequence="99">
+                <menuitem
+                    id="l10n_pe_edi_catalog_03_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_03_action"
+                    name="Catalog No. 03"
+                    sequence="3"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_07_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_07_action"
+                    name="Catalog No. 07"
+                    sequence="7"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_08_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_08_action"
+                    name="Catalog No. 08"
+                    sequence="8"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_09_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_09_action"
+                    name="Catalog No. 09"
+                    sequence="9"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_10_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_10_action"
+                    name="Catalog No. 10"
+                    sequence="10"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_11_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_11_action"
+                    name="Catalog No. 11"
+                    sequence="11"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_12_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_12_action"
+                    name="Catalog No. 12"
+                    sequence="12"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_14_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_14_action"
+                    name="Catalog No. 14"
+                    sequence="14"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_15_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_15_action"
+                    name="Catalog No. 15"
+                    sequence="15"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_16_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_16_action"
+                    name="Catalog No. 16"
+                    sequence="16"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_17_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_17_action"
+                    name="Catalog No. 17"
+                    sequence="17"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_18_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_18_action"
+                    name="Catalog No. 18"
+                    sequence="18"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_19_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_19_action"
+                    name="Catalog No. 19"
+                    sequence="19"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_20_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_20_action"
+                    name="Catalog No. 20"
+                    sequence="20"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_21_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_21_action"
+                    name="Catalog No. 21"
+                    sequence="21"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_22_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_22_action"
+                    name="Catalog No. 22"
+                    sequence="22"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_23_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_23_action"
+                    name="Catalog No. 23"
+                    sequence="23"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_24_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_24_action"
+                    name="Catalog No. 24"
+                    sequence="24"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_25_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_25_action"
+                    name="Catalog No. 25"
+                    sequence="25"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_26_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_26_action"
+                    name="Catalog No. 26"
+                    sequence="26"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_27_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_27_action"
+                    name="Catalog No. 27"
+                    sequence="27"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_51_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_51_action"
+                    name="Catalog No. 51"
+                    sequence="51"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_52_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_52_action"
+                    name="Catalog No. 52"
+                    sequence="52"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_53_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_53_action"
+                    name="Catalog No. 53"
+                    sequence="53"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_54_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_54_action"
+                    name="Catalog No. 54"
+                    sequence="54"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_55_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_55_action"
+                    name="Catalog No. 55"
+                    sequence="55"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_56_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_56_action"
+                    name="Catalog No. 56"
+                    sequence="56"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_57_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_57_action"
+                    name="Catalog No. 57"
+                    sequence="57"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_58_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_58_action"
+                    name="Catalog No. 58"
+                    sequence="58"
+                />
+                <menuitem
+                    id="l10n_pe_edi_catalog_59_menu"
+                    action="l10n_pe_edi_catalog.l10n_pe_edi_catalog_59_action"
+                    name="Catalog No. 59"
+                    sequence="59"
+                />
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

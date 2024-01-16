@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record model="ir.ui.view" id = "gym_equipment_form_view">
+            <field name="name">Equipment</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" placeholder="Asset Name" nolabel="1"/>
+                </field>
+                <field name="sale_ok" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="purchase_ok" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+
+                 <label for="sale_ok" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </label>
+                 <label for="purchase_ok" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </label>
+                 <field name="type" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </field>
+                 <field name="lst_price" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </field>
+                 <field name="standard_price" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </field>
+                 <field name="categ_id" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </field>
+                  <label for="standard_price" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                 </label>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_equipment_tree">
+            <field name="name">equipment tree</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="lst_price" position="replace">
+                    <field name="lst_price" invisible="1"/>
+                </field>
+                <field name="product_template_variant_value_ids" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>        

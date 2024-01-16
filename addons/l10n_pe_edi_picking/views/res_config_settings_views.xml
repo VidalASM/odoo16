@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.epicking</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='production_lot_info']" position="after">
+                <h2>Peruvian Electronic Picking </h2>
+                <div class="row mt16 o_settings_container" id="epicking_settings">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Send your electronic picking by PSE / OSE</span>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." role="img" aria-label="Values set here are company-specific." groups="base.group_multi_company"/>
+                            <div class="text-muted">
+                                Choose your PSE / OSE provider
+                            </div>
+                            <div class="content-group" id="einvoice_supplier">
+                                <div class="row mt16">
+                                    <label for="l10n_pe_edi_ose_id" class="col-lg-3 o_light_label"/>
+                                    <field name="l10n_pe_edi_ose_id" options="{'no_create': True}"/>
+                                    <field name="l10n_pe_edi_ose_code" invisible="True"/>
+                                    <label for="l10n_pe_edi_ose_url" class="col-lg-3 o_light_label"/>
+                                    <field name="l10n_pe_edi_ose_url"/>
+                                    <label for="l10n_pe_edi_ose_token" class="col-lg-3 o_light_label"/>
+                                    <field name="l10n_pe_edi_ose_token"/>
+                                </div>
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('l10n_pe_edi_ose_code','!=', 'odoofact')]}" id="odoofact">
+                                <div class="mt16">
+                                    <div>
+                                        <a  href="https://www.nubefact.com/registro" class="oe-link" target="_blank"><i class="fa fa-fw fa-arrow-right"/>Request an account</a>
+                                    </div>
+                                </div>
+                                <div class="mt16">
+                                    <div>
+                                        <a  href="https://www.operu.pe/manuales" class="oe-link" target="_blank"><i class="fa fa-fw fa-arrow-right"/>Follow the instructions</a>
+                                    </div>
+                                </div>
+                            </div>                               
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <span class="o_form_label">Configuration</span>
+                        <div class="content-group" attrs="{'invisible': [('l10n_pe_edi_ose_code','!=', 'odoofact')]}" id="odoofact_picking_configuration">
+                            <div class="mt16">
+                                <button name="%(stock.action_picking_type_list)d" icon="fa-arrow-right" type="action" string="Operation Types" class="btn-link"/>
+                            </div>  
+                        </div>
+                        <span class="o_form_label">Contacts</span>
+                        <div class="content-group" attrs="{'invisible': [('l10n_pe_edi_ose_code','!=', 'odoofact')]}" id="odoofact_picking_contacts">
+                            <div class="mt16">
+                                <field name="l10n_pe_edi_picking_partner_for_carrier_driver"/>
+                                <label for="l10n_pe_edi_picking_partner_for_carrier_driver" class="o_light_label"/>
+                            </div>
+                            <div class="mt16">
+                                <field name="l10n_pe_edi_picking_partner_for_starting_arrival_point"/>
+                                <label for="l10n_pe_edi_picking_partner_for_starting_arrival_point" class="o_light_label"/>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

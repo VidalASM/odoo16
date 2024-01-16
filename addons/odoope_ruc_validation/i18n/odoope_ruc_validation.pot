@@ -1,0 +1,220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* odoope_ruc_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-30 18:13+0000\n"
+"PO-Revision-Date: 2023-05-30 18:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid ""
+"<i class=\"fa fa-arrow-right\"/>\n"
+"                  Get unlimited token"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_partner_form__view_inherit
+msgid ""
+"<span><strong>NO CONNECTION OR THE DATA DOES NOT EXIST, PLEASE REGISTER THE "
+"DATA MANUALLY.</strong></span>"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.view_form_company_inherited
+msgid "API services (PE)"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__alert_contributor_state
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__alert_contributor_state
+msgid "Alert State"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__alert_warning_vat
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__alert_warning_vat
+msgid "Alert warning vat"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_company__l10n_pe_api_dni_connection
+msgid "Api DNI Connection"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_company__l10n_pe_api_ruc_connection
+msgid "Api RUC Connection"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields.selection,name:odoope_ruc_validation.selection__res_company__l10n_pe_api_dni_connection__consul_dni_api
+msgid "CONSULTA DNI API"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields.selection,name:odoope_ruc_validation.selection__res_company__l10n_pe_api_ruc_connection__consul_ruc_api
+msgid "CONSULTA RUC API"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model,name:odoope_ruc_validation.model_res_city
+msgid "City"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_partner_form__view_inherit
+msgid "Commercial Name"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model,name:odoope_ruc_validation.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model,name:odoope_ruc_validation.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model,name:odoope_ruc_validation.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__state
+msgid "Contributor Condition"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__country_id
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__country_id
+msgid "Country"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_company__l10n_pe_dni_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_config_settings__l10n_pe_dni_validation
+msgid "DNI Validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model,name:odoope_ruc_validation.model_l10n_pe_res_city_district
+msgid "District"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.view_form_company_inherited
+msgid "Dni validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid "Extract your client's data from SUNAT"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.credit_banner
+msgid "Get Credits"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields.selection,name:odoope_ruc_validation.selection__res_partner__state__habido
+msgid "Habido"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_partner_form__view_inherit
+msgid "IAP Data"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__commercial_name
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__commercial_name
+msgid "Name Commercial"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields.selection,name:odoope_ruc_validation.selection__res_partner__state__nhabido
+msgid "No Habido"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_company__l10n_pe_partner_token
+msgid "Partner token"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_company__l10n_pe_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_config_settings__l10n_pe_ruc_validation
+msgid "RUC Validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_config_settings__l10n_pe_partner_token
+msgid "RUC token"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid "RUC validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__remote_id
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__remote_id
+msgid "Remote ID"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.view_form_company_inherited
+msgid "Ruc validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid ""
+"Set a Partner service token to generate unlimited queries of RUC, DNI and "
+"Exchange Rate."
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_partner__contributor_state
+#: model:ir.model.fields,field_description:odoope_ruc_validation.field_res_users__contributor_state
+msgid "State"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid "Token"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.view_form_company_inherited
+msgid "Token validation"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.res_config_settings_view_form
+msgid "Validate the names and surnames of your contacts with DNI"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.credit_banner
+msgid "You have"
+msgstr ""
+
+#. module: odoope_ruc_validation
+#: model_terms:ir.ui.view,arch_db:odoope_ruc_validation.credit_banner
+msgid "credits left for consultations."
+msgstr ""

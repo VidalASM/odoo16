@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_nutrition_form_view">
+            <field name="name">nutrition</field>
+            <field name="model">gym.nutrition</field>
+            <field name="arch" type="xml">
+            <form string="gym nutrition form">
+                <sheet>
+                    <h2>
+                        <!--field name="no"/-->
+                    </h2>
+                    <group>
+                        <group>
+                            <field name="customer_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                     <notebook>
+                        <page string="Nutrition Plan">
+                            <field name="nutrition_ids">
+                                <tree editable='bottom'>
+                                    <field name="name"/>
+                                    <field name="energy"/>
+                                    <field name="unit_id"/>
+                                    <field name="protein"/>
+                                    <field name="carbohydrates"/>
+                                    <field name="fat"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_nutrition_tree">
+            <field name="name">nutrition tree</field>
+            <field name="model">gym.nutrition</field>
+            <field name="arch" type="xml">
+                <tree string="workout list">
+                    <field name="customer_id"/>
+                    <field name="nutrition_ids"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="nutrition_view_calendar" model="ir.ui.view">
+           <field name="name">gym.nutrition</field>
+           <field name="model">gym.nutrition</field>
+           <field name="arch" type="xml">
+               <calendar string="Hospital" color="date" date_start="date">
+                   <field name="date"/>
+                   <field name="date"/>
+               </calendar>
+           </field>
+       </record>
+       
+       <!--record model="ir.ui.view" id = "nutrition_overview_search">
+            <field name="name">food search</field>
+            <field name="model">gym.nutrition</field>
+            <field name="arch" type="xml">
+                <search>
+                       <field name="customer_id"/>
+                        <group>
+                         <filter name="customer name" string="search Customer by Name" filter_domain="[('customer_id','ilike', self)]" />
+                        </group>
+                    <field name="date"/>
+                       <group>
+                         <filter name="customer date" string="search customer by date" filter_domain="[('date','ilike', self)]" />
+                        </group>
+                       <group>
+                          <filter name="filtrname" string="Customer Name Group" context="{'group_by': 'customer_id'}"/>
+                          <filter name="filtr" string="Customer Date Group" context="{'group_by': 'date'}"/>
+                       </group>
+                </search>
+            </field>
+        </record-->
+        
+
+
+       
+    </data>
+</odoo>        

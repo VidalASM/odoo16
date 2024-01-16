@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record
+        id="l10n_pe_edi_request_document_type_01"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">01</field>
+        <field name="code_of">1</field>
+        <field name="name">FACTURA</field>
+        <field name="active">True</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_03"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">03</field>
+        <field name="code_of">2</field>
+        <field name="name">BOLETA</field>
+        <field name="active">True</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_07"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">07</field>
+        <field name="code_of">3</field>
+        <field name="name">NOTA DE CRÉDITO</field>
+        <field name="active">True</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_08"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">08</field>
+        <field name="code_of">4</field>
+        <field name="name">NOTA DE DÉBITO</field>
+        <field name="active">True</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_20"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">20</field>
+        <field name="code_of">0</field>
+        <field name="name">COMPROBANTE DE RETENCIÓN</field>
+        <field name="active">False</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_40"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">40</field>
+        <field name="code_of">0</field>
+        <field name="name">COMPROBANTE DE PERCEPCIÓN</field>
+        <field name="active">False</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_09"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">09</field>
+        <field name="code_of">7</field>
+        <field name="name">GUÍA DE REMISIÓN REMITENTE</field>
+        <field name="active">True</field>
+    </record>
+    <record
+        id="l10n_pe_edi_request_document_type_31"
+        model="l10n_pe_edi.request.document.type"
+    >
+        <field name="code">31</field>
+        <field name="code_of">8</field>
+        <field name="name">GUÍA DE REMISIÓN TRANSPORTISTA</field>
+        <field name="active">False</field>
+    </record>
+</odoo>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="exercise_action">
+            <field name="name">Partes del Cuerpo</field>
+            <field name="res_model">exercise.select</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="bmi_action">
+            <field name="name">Tu IMC</field>
+            <field name="res_model">gym.bim</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="calorie_action">
+            <field name="name">Tus Calorías</field>
+            <field name="res_model">gym.calorie</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="exercise_selection_action">
+            <field name="name">Ejercicio</field>
+            <field name="res_model">exercise.category.select</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="exercise_category_action">
+            <field name="name">Categoría de Ejercicio</field>
+            <field name="res_model">exercise.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="equipment_action">
+            <field name="name">Equipos</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="gym_workout_view_action">
+            <field name="name">Rutina</field>
+            <field name="res_model">gym.workouts</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ingredients_action">
+            <field name="name">Tus Ingredientes</field>
+            <field name="res_model">gym.ingredient</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="muscle_action">
+            <field name="name">Músculos</field>
+            <field name="res_model">gym.muscle</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="nutrition_action">
+            <field name="name">Tu Nutrición</field>
+            <field name="res_model">gym.nutrition</field>
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+        <record model="ir.actions.act_window" id="weight_entry_action">
+            <field name="name">Tu Peso Ingresado</field>
+            <field name="res_model">weight.entry</field>
+
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--record model="ir.actions.act_window" id="workout_schedule_report_action">
+            <field name="name">Workout Schedule Report</field>
+            <field name="res_model">workout.schedule.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record-->
+
+        <!--act_window id="workout_new_schedule_report_id"
+                    multi="True"
+                    key2="client_action_multi" name="new excercise"
+                    res_model="workout.schedule.report" src_model="gym.workout"
+                    view_mode="form" target="new"  /-->
+
+        <record model="ir.actions.act_window" id="workout_overview_action">
+            <field name="name">Agregar Entrenamiento</field>
+            <field name="res_model">gym.workout</field>
+
+            <field name="view_mode">tree,form,calendar</field>
+        </record>
+
+        <menuitem id="gym_id" name="Gimnasio"/>
+        <menuitem id="configuration_menu_id" name="Configuración" parent="gym_id" action="base.action_partner_form" sequence="2"/>
+        <menuitem id="exercise_menu_id" name="Ejercicio" parent="configuration_menu_id"/>
+        <menuitem id="print_report_menu" name="Reportes" parent="gym_id" sequence="10" groups = "gym_officer,gym_manager,gym_trainer"/>
+        <!--menuitem id="print_workout_schedule_report_menu" name="Print Workout Schedule" parent="print_report_menu" action="workout_schedule_report_action" sequence="1" /-->
+
+        <menuitem id="weight_id" name="Peso" parent="gym_id"/>
+        <menuitem id="weight_entry_id" name="Resumen de Entrada de Peso" parent="weight_id" action="weight_entry_action" />
+
+        <menuitem id="nutrition_menu_id" name="Nutrición" parent="gym_id"/>
+        <menuitem id="gym_nutrition_menu_id" name="Planes de Nutrición" parent="nutrition_menu_id" action="nutrition_action"/>
+
+        <menuitem id="muscle_exercise_id" name="Músculos" parent="exercise_menu_id" action="muscle_action" sequence="3" groups = "gym_officer,gym_manager"/>
+
+
+        <menuitem id="ingredient_menu_id" name="Ingredientes" parent="configuration_menu_id" action="ingredients_action" groups = "gym_officer,gym_manager,gym_trainer"/>
+
+
+        <menuitem id="work_out_id" name="Rutina" parent="gym_id" sequence="3"/>
+        <menuitem id="workouts_d_id" name="Rutinas" parent="work_out_id" action="gym_workout_view_action" sequence="1" groups = "gym_officer,gym_manager,gym_trainer"/>
+
+        <menuitem id="workout_overview_id" name="Horarios de Entrenamientos" parent="work_out_id" action="workout_overview_action" sequence="3" groups = "gym_officer,gym_manager,gym_trainer"/>
+
+        <menuitem id="equipment_show_id" name="Equipos" parent="configuration_menu_id" action="equipment_action"/>
+
+
+        <menuitem id="customer_id" name="Clientes" parent="gym_id" sequence = "1"/>
+        <menuitem id="customer_menu_id" name="Clientes" parent="customer_id" action="base.action_partner_form" groups="gym_officer,gym_trainer"/>
+        <menuitem id="exercise_category_id" name="Resumen del Ejercicio" parent="exercise_menu_id" action="exercise_category_action" sequence="4"/>
+
+        <menuitem id="exercise_select_id" name="Ejercicios" parent="exercise_menu_id" action="exercise_selection_action" sequence="2" groups = "gym_officer,gym_manager"/>
+        <menuitem id="daily_nutrition_id" name="Calculadora de Calorías Diarias" parent="nutrition_menu_id" action="calorie_action"/>
+        <menuitem id="bmi_nutrition_id" name="Cálculo del IMC" parent="nutrition_menu_id" action="bmi_action"/>
+
+        <menuitem id="Body_parts_id" name="Partes del Cuerpo" parent="exercise_menu_id" action="exercise_action" sequence="1"
+                  groups="gym_officer,gym_manager"/>
+    </data>
+</odoo>

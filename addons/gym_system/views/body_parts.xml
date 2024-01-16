@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="gym_exercise">
+            <field name="name">Body Parts</field>
+            <field name="model">exercise.select</field>
+            <field name="arch" type="xml">
+            <form string="Body Parts form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record model="ir.ui.view" id="gym_exercise_tree">
+            <field name="name">Body Parts</field>
+            <field name="model">exercise.select</field>
+            <field name="arch" type="xml">
+                <tree string="Body Parts list">
+                        <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+
+
+       
+    </data>
+</odoo>        

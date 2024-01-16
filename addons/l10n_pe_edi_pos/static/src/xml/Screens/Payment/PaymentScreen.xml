@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+  <t
+        t-name="PaymentScreen"
+        t-inherit="point_of_sale.PaymentScreen"
+        t-inherit-mode="extension"
+        owl="1"
+    >
+    <xpath expr="//div[hasclass('payment-controls')]" position="inside">
+    <t t-if="env.pos.config.l10n_pe_edi_send_invoice and env.pos.journals">
+        <div class="customer-button">
+            <t t-set="journals" t-value="env.pos.journals" />
+            <p class="title-category">Journal</p>
+            <t
+                        t-if="env.pos.get_order().get_selected_orderline().refunded_orderline_id"
+                    >
+              <t
+                            t-foreach="env.pos.journals"
+                            t-as="payment_journal_not_refunded"
+                            t-key="payment_journal_not_refunded.id"
+                        >
+                <t
+                                t-if="payment_journal_not_refunded.l10n_document_internal_type != 'invoice'"
+                            >
+                  <PaymentInvoiceJournal
+                                    paymentInvoiceJournal="payment_journal_not_refunded"
+                                />
+                </t>
+              </t>
+            </t>
+            <t t-else="">
+              <t
+                            t-foreach="env.pos.journals"
+                            t-as="payment_journal"
+                            t-key="payment_journal.id"
+                        >
+                <t t-if="payment_journal.l10n_document_internal_type == 'invoice'">
+                  <PaymentInvoiceJournal paymentInvoiceJournal="payment_journal" />
+                </t>
+              </t>
+            </t>
+        </div>
+    </t>
+    </xpath>
+    <xpath expr="//div[hasclass('payment-controls')]/div[1]" position="replace" />
+    <xpath expr="//div[hasclass('payment-controls')]" position="inside">
+      <t t-if="!env.pos.config.l10n_pe_edi_send_invoice">
+        <div
+                    t-if="env.pos.config.module_account"
+                    class="button js_invoice"
+                    t-att-class="{ highlight: currentOrder.is_to_invoice() }"
+                    t-on-click="toggleIsToInvoice"
+                >
+          <i class="fa fa-file-text-o" /> Invoice
+        </div>
+      </t>
+    </xpath>
+  </t>
+</templates>

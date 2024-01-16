@@ -1,0 +1,2417 @@
+18|Tambor de cincuenta y cinco galones (EUA)|TRUE
+19|Camión cisterna|TRUE
+26|Tonelada real|TRUE
+29|Libra por mil pies cuadrados|TRUE
+30|Día de potencia de caballos por tonelada métrica de aire seco|TRUE
+31|Pescar|TRUE
+32|Kilogramo por tonelada métrica seca del aire|TRUE
+36|Pie cúbico por minuto por pie cuadrado|TRUE
+44|Bolsa a granel de quinientos kilos|TRUE
+45|Bolsa a granel de trescientos kilos|TRUE
+46|Bolsa a granel de cincuenta libras|TRUE
+47|Bolso de cincuenta libras|TRUE
+48|Carga masiva|TRUE
+53|Kilogramo teórico|TRUE
+54|Tonelada teórica (UK)|TRUE
+62|Por ciento por 1000 horas|TRUE
+63|Tasa de fracaso en el tiempo|TRUE
+64|Libra por pulgada cuadrada, calíbre|TRUE
+66|Oersted|TRUE
+69|Escala específica de prueba|TRUE
+71|Voltios amperios por libra|TRUE
+72|Vatio por libra|TRUE
+73|Amperios por centímetro|TRUE
+76|Gauss|TRUE
+78|Kilogauss|TRUE
+84|Kilopound-force por pulgada cuadrada|TRUE
+90|Saybold segundo universal|TRUE
+92|Calorías por centímetro cúbico|TRUE
+93|Calorías por gramo|TRUE
+94|Unidad de curl|TRUE
+95|Veinte mil galones|TRUE
+96|Diez mil galones (US)|TRUE
+97|Diez kilos de tambor|TRUE
+98|Quince kilos de tambor|TRUE
+05|Ascensor|TRUE
+06|Pequeño aerosol|TRUE
+08|Montón de calor|TRUE
+10|Grupos|TRUE
+11|Equipos|TRUE
+13|Raciones|TRUE
+14|Shot|TRUE
+15|Palo, medida militar.|TRUE
+16|Tambor de 115 kilogramos|TRUE
+17|Tambor de cien libras|TRUE
+1A|Milla de carros|TRUE
+1B|Recuento de automóviles|TRUE
+1C|Conteo de locomotoras|TRUE
+1D|Caboose count|TRUE
+1E|Coche vacío|TRUE
+1F|Milla de tren|TRUE
+1G|Galón del uso del combustible (los EUA)|TRUE
+1H|Milla de caboose|TRUE
+1I| Tipo de interés fijo|TRUE
+1J|Tonelada milla|TRUE
+1K|Milla locomotora|TRUE
+1L|Recuento total de automóviles|TRUE
+1M|Milla total del coche|TRUE
+1X|Cuarto de milla|TRUE
+20| Contenedores de veinte pies|TRUE
+21| Contenedor de cuarenta pies|TRUE
+22|Decilitro por gramo|TRUE
+23|Gramo por centímetro cúbico|TRUE
+24|Libra teórica|TRUE
+25|Gramo por centímetro cuadrado|TRUE
+27|Tonelada teórica|TRUE
+28|Kilogramo por metro cuadrado|TRUE
+2A|Radián por segundo|TRUE
+2B|Radián por segundo cuadrado|TRUE
+2C|Roentgen|TRUE
+2G|Voltios CA|TRUE
+2H|Voltios CD|TRUE
+2I|Unidad térmica británica (tabla internacional) por hora|TRUE
+2J|Centímetro cúbico por segundo|TRUE
+2K|Pie cúbico por hora|TRUE
+2L|Pie cúbico por minuto|TRUE
+2M|Centímetro por segundo|TRUE
+2N|Decibel|TRUE
+2P|Kilobyte|TRUE
+2Q|Kilobecquerel|TRUE
+2R|Kilocurie|TRUE
+2U|Megagramo|TRUE
+2V|Megagrama por hora|TRUE
+2X|Metro por minuto|TRUE
+2Y|Milliroentgen|TRUE
+2Z|Milivoltio|TRUE
+33|Kilopascal por grtr|TRUE
+34|Kilopascal por milimetro|TRUE
+35|Milimetro por un segundo centimetro cuadrado|TRUE
+37|Onza por pie cuadrado|TRUE
+38|Onzas por pie cuadrado por 0,01 pulgadas|TRUE
+3B|Megajoule|TRUE
+3C|Manmonth|TRUE
+3E|Libra por libra de producto|TRUE
+3G|Libra por pieza de producto|TRUE
+3H|Kilogramo por kilogramo de producto|TRUE
+3I|Kilogramo por pedazo de producto|TRUE
+40|Mililitro por segundo|TRUE
+41|Mililitro por minuto|TRUE
+4B|Gorra|TRUE
+4C|Centistokes|TRUE
+4E|Veinte pack|TRUE
+4G|Microlitro|TRUE
+4H|Micra|TRUE
+4K|Miliamperio|TRUE
+4L|Megabyte|TRUE
+4M|Miligramo por hora|TRUE
+4N|Megabequerel|TRUE
+4O|Microfaradio|TRUE
+4P|Newton por metro|TRUE
+4Q|Onza pulgada|TRUE
+4R|Onza pie|TRUE
+4T|Picofaradio|TRUE
+4U|Libra por hora|TRUE
+4W|Tonelada (EUA) por hora|TRUE
+4X|Kilolitro por hora|TRUE
+56|Sitas|TRUE
+57|Malla|TRUE
+58| kilogramo neto|TRUE
+59|Parte por millón|TRUE
+5A|Barril por minuto|TRUE
+5B|Batch|TRUE
+5C|Galón (US) por mil|TRUE
+5E|Mmscf/day|TRUE
+5F|Libra por mil|TRUE
+5G|bomba|TRUE
+5H|Escenario|TRUE
+5I|Pies cúbicos estándar|TRUE
+5J|Caballos de potencia hidráulica|TRUE
+5K|Contar por minuto|TRUE
+5P|Nivel sísmico|TRUE
+5Q|Línea sísmica|TRUE
+60|Tanto por ciento en peso|TRUE
+61|Parte por mil millones (EUA)|TRUE
+74|Milipascal|TRUE
+77|Mili-pulgada|TRUE
+80|Libra por pulgada cuadrado absoluta|TRUE
+81|Henry|TRUE
+85|Pie libra-fuerza|TRUE
+87|Libra por pie cúbico|TRUE
+89|Poise|TRUE
+91|Stokes|TRUE
+A1|15 ° C calorías|TRUE
+A10|Amperio por metro cuadrado por joule segundo|TRUE
+A11|Ángstrom|TRUE
+A12|Unidad astronómica|TRUE
+A13|Attojoule|TRUE
+A14|Barn|TRUE
+A15|Barn por electrovoltio|TRUE
+A16|Barn por electrovoltio |TRUE
+A17|Barn por esteroradian|TRUE
+A18|Becquerel por kilogramo|TRUE
+A19|Becquerel por metro cúbico|TRUE
+A2|Amperio por centímetro|TRUE
+A20|Unidad térmica británica (tabla internacional) por segundo pie cuadrado grado rankine.|TRUE
+A21|Unidad térmica británica (tabla internacional) por libra grado rankine|TRUE
+A22|Unidad térmica británica (tabla internacional) por segundo pie grado rankine|TRUE
+A23|Unidad térmica británica (tabla internacional) por hora pie cuadrado grado rankine.|TRUE
+A24|Candela por metro cuadrado|TRUE
+A25|Caballo de vapor|TRUE
+A26|Culombio metro|TRUE
+A27|Culombio metro cuadrado por voltio|TRUE
+A28|Culombio por centímetro cúbico|TRUE
+A29|Culombio por metro cúbico|TRUE
+A3|Amperio por milímetro|TRUE
+A30|Culombio por milimetro cúbico|TRUE
+A31|Culombio por kilogramo-segundo|TRUE
+A32|Culombio por Mol|TRUE
+A33|Culombio por centímetro cuadrado|TRUE
+A34|Culombio por metro cuadrado|TRUE
+A35|Culombio por milímetro cuadrado|TRUE
+A36|Centimetro cúbico por Mol|TRUE
+A37|Decimetro cuadrado por Mol|TRUE
+A38|Cubic pooulo p|TRUE
+A39|Metro cúbico por kilogramo|TRUE
+A4|Amperio por centímetro cuadrado|TRUE
+A40|Metro cubbico por Mol|TRUE
+A41|Amperio por metro cuadrado|TRUE
+A42|Curie por kilogramo|TRUE
+A43|Tonelaje de peso muerto|TRUE
+A44|Decalitro|TRUE
+A45|Decámetro|TRUE
+A47|Decitex|TRUE
+A48|Grado rankine|TRUE
+A49|Negador|TRUE
+A5|Amperio metro cuadrado|TRUE
+A50|Dina segundo por centímetro cúbico|TRUE
+A51|Dina segundo por centímetro|TRUE
+A52|Dina segundo por centímetro a la quinta potencia|TRUE
+A53|Electrónvoltio|TRUE
+A54|Electrovoltio por metro|TRUE
+A55|Electrovoltio por metro cuadrado|TRUE
+A56|Electrovoltio metro cuadrado por kilogramo|TRUE
+A57|Ergio|TRUE
+A58|Erg por centímetro|TRUE
+A59|La cobertura de nubes 8-parte|TRUE
+A6|Amperio por metro cuadrado Kelvin cuadrado|TRUE
+A60|Erg por centímetro cúbico|TRUE
+A61|Erg por gramo|TRUE
+A62|Erg por segundo gramo|TRUE
+A63|Erg por segundo|TRUE
+A64|Erg por segundo centímetro cuadrado|TRUE
+A65|Erg por centímetro cuadrado segundo|TRUE
+A66|Erg centímetro cuadrado|TRUE
+A67|Erg centímetro cuadrado por gramo|TRUE
+A68|Exajoule|TRUE
+A69|Faradio por metro|TRUE
+A7|Amperio por milímetro cuadrado|TRUE
+A70|Femtojoule|TRUE
+A71|Femtómetro|TRUE
+A73|Pie por segundo al cuadrado|TRUE
+A74|Pie libra-fuerza por segundo|TRUE
+A75|Tonelada de carga|TRUE
+A76|Galón|TRUE
+A77|Gaussian CGS (Centímetro-Gram-Segundo sistema) unidad de desplazamiento|TRUE
+A78|Gaussiano CGS (Centímetro-Gram-Segundo sistema) unidad de corriente eléctrica|TRUE
+A79|Gaussian CGS (Centímetro-Gram-Segundo sistema) unidad de carga eléctrica|TRUE
+A8|Amperio segundo|TRUE
+A80|Gaussiano CGS (Centímetro-Gram-Segundo sistema) unidad de la fuerza del campo eléctrico|TRUE
+A81|Gaussian CGS (Centímetro-Gram-Segundo sistema) unidad de polarización eléctrica|TRUE
+A82|Gaussiano CGS (Centímetro-Gram-Segundo sistema) unidad de potencial eléctrico|TRUE
+A83|Gaussian CGS (Centímetro-Gram-Segundo sistema) unidad de magnetización|TRUE
+A84|GigaCulombio por metro cúbico|TRUE
+A85|Gigaelectrónvoltio|TRUE
+A86|Gigahertz|TRUE
+A87|GigaOhm|TRUE
+A88|GigaOhm metro|TRUE
+A89|Gigapascal|TRUE
+A9|Tarífa|TRUE
+A90|Gigawatt|TRUE
+A91|Grado centesimal|TRUE
+A93|Gramo por metro cúbico|TRUE
+A94|Gramo por Mol|TRUE
+A95|Gray|TRUE
+A96|Gray por segundo|TRUE
+A97|Hectopascal|TRUE
+A98|Henry por metro|TRUE
+A99|Bit|TRUE
+AA|Balón|TRUE
+AB|Paquete a granel|TRUE
+ACR|Acre|TRUE
+ACT|Actividad|TRUE
+AD|Byte|TRUE
+AE|Amperio por metro|TRUE
+AH|Minuto adicional|TRUE
+AI|Minuto y medio por llamada|TRUE
+AJ|policía|TRUE
+AK|Braza|TRUE
+AL|Línea de acceso|TRUE
+AMH|Amperio hora|TRUE
+AMP|Amperio|TRUE
+ANN|Año|TRUE
+AP|Libra de aluminio solamente|TRUE
+APZ|Onza troy u onza farmacéutica |TRUE
+AQ|Unidad del factir anti-hemofilico.|TRUE
+AR|supositorio|TRUE
+ARE|Are|TRUE
+AS|Variedad|TRUE
+ASM|Grado alcohólico en masa|TRUE
+ASU|Grado alcohólico volumétrico|TRUE
+ATM|Atmósfera estándar|TRUE
+ATT|Atmósfera técnica|TRUE
+AW|Relleno de polvo en viales|TRUE
+AWG|Calibre de alambre americano|TRUE
+AY|Montaje|TRUE
+AZ|Unidad térmica británica (tabla internacional) por libra|TRUE
+B0|Btu por pie cúbico|TRUE
+B1|Barril (EUA) por día|TRUE
+B10|Bits por segundo|TRUE
+B11|Joule por kilogramo kelvin|TRUE
+B12|Joule por metro|TRUE
+B13|Joule por metro cuadrado|TRUE
+B14|Joule por metro a la cuarta potencia|TRUE
+B15|Juole por Mol|TRUE
+B16|Juoule por Mol kelvin|TRUE
+B17|Crédito|TRUE
+B18|Segundos joule|TRUE
+B19|Dígito|TRUE
+B2|litera|TRUE
+B20|Joule metro cuadrado por kologramo|TRUE
+B21|Kelvin por watt|TRUE
+B22|Kiloamperio|TRUE
+B23|Kiloamperio por metro cuadrado|TRUE
+B24|Kiloamperio por metro|TRUE
+B25|Kilobecquerel por metrocúbico|TRUE
+B26|KiloCulombio|TRUE
+B27|KiloCulombio por metro cúbico|TRUE
+B28|KiloCulombio por metro cuadrado|TRUE
+B29|Kiloelectrónvoltio|TRUE
+B3|Libra de bateo|TRUE
+B30|Gibibit|TRUE
+B31|Kilogramo metro por segundo|TRUE
+B32|Kilogramo metro cuadrado|TRUE
+B33|Kilogramo metro cuadrado por segundo|TRUE
+B34|Kilogramo por decímetro cúbico|TRUE
+B35|Kilogramo por litro|TRUE
+B36|Calorías (termoquímicas) por gramo|TRUE
+B37|Kilogramo de fuerza|TRUE
+B38|Kilogramo-metro de la fuerza|TRUE
+B39|Kilogramo-fuerza del metro por segundo|TRUE
+B4|Barril, unidad imperial|TRUE
+B40|Kilogramo de fuerza por metro cuadrado|TRUE
+B41|Kilojoule por kelvin|TRUE
+B42|Kilojoule por kilogramo|TRUE
+B43|Kilojoule por kilogramo kelvin|TRUE
+B44|Kilojoule por Mol |TRUE
+B45|KiloMol|TRUE
+B46|KiloMol por metro cúbico|TRUE
+B47|Kilonewton|TRUE
+B48|Kilonewton metro|TRUE
+B49|KiloOhm|TRUE
+B5|palanquilla|TRUE
+B50|KiloOhm metro|TRUE
+B51|KiloLibra|TRUE
+B52|Kilosegundo|TRUE
+B53|Kilosiemens|TRUE
+B54|Kilosiemens por metro|TRUE
+B55|Kilovoltio por metro|TRUE
+B56|Kiloweber por metro|TRUE
+B57|Año luz|TRUE
+B58|Litro por Mol|TRUE
+B59|Lumen hora|TRUE
+B6|Bollo|TRUE
+B60|Lumen por metro cuadrado|TRUE
+B61|Luminosidad por watt|TRUE
+B62|Lumen segundo|TRUE
+B63|Hora de luz|TRUE
+B64|Segundo de luz|TRUE
+B65|Maxwell|TRUE
+B66|Megaamperio por metro cuadrado|TRUE
+B67|Megabecquerel por kilogramo|TRUE
+B68|Gigabit|TRUE
+B69|MegaCulombio por metro cúbico|TRUE
+B7|Ciclo|TRUE
+B70|MegaCulombio por metro cuadrado|TRUE
+B71|Megaelectrónvoltio|TRUE
+B72|Megagramo por metro cúbico|TRUE
+B73|Meganewton|TRUE
+B74|Meganewton metro|TRUE
+B75|MegaOhm|TRUE
+B76|MegaOhm metro|TRUE
+B77|Megasiemens por metro|TRUE
+B78|Megavoltio |TRUE
+B79|Megavoltio por metro|TRUE
+B8|Joule por metro cúbico|TRUE
+B80|Gigabit por segundo|TRUE
+B81|Reciprocidad del metro cuadrado, reciprocidad del segundo|TRUE
+B82|Pulgadas por pie lineal|TRUE
+B83|Metro a la cuarta potencia|TRUE
+B84|Microamperio|TRUE
+B85|Microbar|TRUE
+B86|MicroCulombio|TRUE
+B87|MicroCulombio por metro cúbico|TRUE
+B88|MicroCulombio por metro cuadrado|TRUE
+B89|Microfaradio por metro|TRUE
+B9|Batt|TRUE
+B90|Microhenry|TRUE
+B91|Microhenry por metro|TRUE
+B92|Micronewton|TRUE
+B93|Micronewton metro|TRUE
+B94|Micro Ohm|TRUE
+B95|MicroOhm metro|TRUE
+B96|Micropascal|TRUE
+B97|Microrradián|TRUE
+B98|Microsegundo|TRUE
+B99|Microsiemens|TRUE
+BAR|Bar [unidad de presión]|TRUE
+BB|Caja base|TRUE
+BFT|Tablero de pies|TRUE
+BH|Cepillo|TRUE
+BHP|Potencia al freno|TRUE
+BIL|Billon|TRUE
+BLD|Barril seco (EUA)|TRUE
+BLL|Barril (EUA)|TRUE
+BP|Tabledo de cien pies|TRUE
+BPM|Latidos por minuto|TRUE
+BQL|Becquerel|TRUE
+BTU|Unidad térmica británica (tabla internacional)|TRUE
+BUA|Bushel (EUA)|TRUE
+BUI|Bushel (UK)|TRUE
+BW|Peso base|TRUE
+BZ|Millones de BTUs|TRUE
+C0|Llamada|TRUE
+C1|Libra de producto compuesto (peso total)|TRUE
+C10|Milifaradio|TRUE
+C11|Miligalón|TRUE
+C12|Miligramo por metro|TRUE
+C13|MilliGray|TRUE
+C14|Milihenry|TRUE
+C15|Milijoule|TRUE
+C16|Milímetro por segundo|TRUE
+C17|Milímetro cuadrado por segundo|TRUE
+C18|MiliMol|TRUE
+C19|Mol por kilogramo|TRUE
+C2|Carset|TRUE
+C20|Milinewton|TRUE
+C21|Kibibit|TRUE
+C22|Milinewton por metro|TRUE
+C23|MiliOhm metro|TRUE
+C24|Milipascal segundo|TRUE
+C25|Milirradián|TRUE
+C26|Milisegundo|TRUE
+C27|Milisiemens|TRUE
+C28|MilliSievert|TRUE
+C29|Militesla|TRUE
+C3|Microvoltios por metro|TRUE
+C30|Milivoltio por metro|TRUE
+C31|Miliwatt|TRUE
+C32|Miliwatt por metro cuadrado|TRUE
+C33|Miliweber|TRUE
+C34|Mol|TRUE
+C35|Mol por decimetro cúbico|TRUE
+C36|Mol por metro cúbico|TRUE
+C37|Kilobits|TRUE
+C38|Mol por litro|TRUE
+C39|Nanoamperio|TRUE
+C4|partido de carga|TRUE
+C40|NanoCulombio|TRUE
+C41|Nanofaradio|TRUE
+C42|Nanofaradio por metro|TRUE
+C43|Nanohenry|TRUE
+C44|Nanohenry por metro|TRUE
+C45|Nanómetro|TRUE
+C46|NanoOhm metro|TRUE
+C47|Nanosegundo|TRUE
+C48|Nanotesla|TRUE
+C49|Nanowatt|TRUE
+C5|Costo|TRUE
+C50|Neperio|TRUE
+C51|Neperio por segundo|TRUE
+C52|Picómetro|TRUE
+C53|Newton metro segundo|TRUE
+C54|Newton metro cuadrado por kilogramo cuadrado|TRUE
+C55|Newton por metro cuadrado|TRUE
+C56|Newton por milimetro cuadrado|TRUE
+C57|Newton segundo|TRUE
+C58|Segundos newton por metro|TRUE
+C59|Octava|TRUE
+C6|celda|TRUE
+C60|Ohm centímetro|TRUE
+C61|Ohm metro|TRUE
+C62|Uno|TRUE
+C63|Pársec|TRUE
+C64|Pascal por kelvin|TRUE
+C65|Pascal segundo|TRUE
+C66|Segundos pascal por metro cúbico|TRUE
+C67|Segundos pascal por metro |TRUE
+C68|Petajoule|TRUE
+C69|Phon|TRUE
+C7|Centipoise|TRUE
+C70|Picoamperio|TRUE
+C71|PicoCulombio|TRUE
+C72|Picofaradio por metro|TRUE
+C73|Picohenry|TRUE
+C74|Kilobits por segundo|TRUE
+C75|Picowatt|TRUE
+C76|Picowatt  por metro cuadrado|TRUE
+C77|Calibre de libra|TRUE
+C78|Libra fuerza|TRUE
+C79|Kilovoltios horas amperios|TRUE
+C8|MilliCulombio por kilogramo|TRUE
+C80|Rad|TRUE
+C81|Radián|TRUE
+C82|Radianmetro cuadrado por Mol|TRUE
+C83|Rradian metro cuadrado por kilogramo|TRUE
+C84|Radían por metro|TRUE
+C85|Reciprocidad Ámstrong|TRUE
+C86|Reciprocidad del metro cúbico|TRUE
+C87|Reciprocidad metro cúbico por segundo|TRUE
+C88|Recíproco joule por metro cúbico|TRUE
+C89|Henry recíproco|TRUE
+C9|Grupo bobinas|TRUE
+C90|Recíproco Henry|TRUE
+C91|Recíprocidad de kelvin ó kelvin a la potencia menos 1|TRUE
+C92|Reciprocidad Metro|TRUE
+C93|Reciprocidad Metro cuadrado|TRUE
+C94|Reciprocidad Minuto|TRUE
+C95|Reciprocidad Mol|TRUE
+C96|Reciprocidad Pascal o pascal a la potencia menos 1 |TRUE
+C97|Reciprocidad Segundo|TRUE
+C98|Segundo recíproco por metro cúbico|TRUE
+C99|Reciprocidad Segundo por metro cuadrado|TRUE
+CCT|Capacidad de carga en toneladas métricas|TRUE
+CDL|Candela|TRUE
+CE|Cada mes|TRUE
+CEL|Grados celsius|TRUE
+CEN|Centenar|TRUE
+CG|Tarjeta|TRUE
+CGM|Centígramo|TRUE
+CK|Conector|TRUE
+CKG|Culombio por kilogramo|TRUE
+CLF|Cientos de hojas|TRUE
+CLT|Centilitro|TRUE
+CMK|Centímetro cuadrado|TRUE
+CMQ|Centímetro cúbico|TRUE
+CMT|Centímetro|TRUE
+CNP|Cientos de paquetes|TRUE
+CNT|Cental (UK)|TRUE
+COU|Culombio|TRUE
+CTG|Contenido en gramos|TRUE
+CTM|Quilatage métrico|TRUE
+CTN|Tonelada de contenido (métrica)|TRUE
+CUR|Curie|TRUE
+CWA|Hundred pound|TRUE
+CWI|Hundredweight|TRUE
+CZ|Combo|TRUE
+D03|Kilovatio hora por hora|TRUE
+D04|Lot [unidad de peso]|TRUE
+D1|Segundo recíproco por estereorradián|TRUE
+D10|Siemens por metro|TRUE
+D11|Mebibit|TRUE
+D12|Siemens metro cuadrado por Mol|TRUE
+D13|Sievert|TRUE
+D14|Yarda mil lineal|TRUE
+D15|Sone|TRUE
+D16|Centimetro cuadrado por erg|TRUE
+D17|Centimetro cuadrado por esteroradian erg|TRUE
+D18|Metro kelvin|TRUE
+D19|Metro cuadrado kelvin por watt.|TRUE
+D2|Segundo recíproco por estereorradián metro cuadrado|TRUE
+D20|Metro cuadrado por joule|TRUE
+D21|Metro cuadrado por kilogramo|TRUE
+D22|Metro cuadrado por Mol|TRUE
+D23|Gramo pluma (proteína)|TRUE
+D24|Metro cuadrado por esteroradian|TRUE
+D25|Metro cuadrado por esteroradian joule|TRUE
+D26|Metro cuadrado por voltiosegundo|TRUE
+D27|Estereorradían|TRUE
+D28|sifón|TRUE
+D29|Terahertz|TRUE
+D30|Terajoule|TRUE
+D31|Terawatt|TRUE
+D32|Terawatt hora |TRUE
+D33|Tesla|TRUE
+D34|Tex|TRUE
+D35|Calorías (termoquímicas)|TRUE
+D36|Megabit|TRUE
+D37|Calorías (termoquímicas) por gramo de kelvin|TRUE
+D38|Calorías (termoquímicas) por segundo centímetro kelvin|TRUE
+D39|Calorías (termoquímicas) por segundo centímetro cuadrado kelvin|TRUE
+D40|Mil litros|TRUE
+D41|Tonelada por metro cúbico|TRUE
+D42|Año tropical|TRUE
+D43|Unidad de masa atómica unificada|TRUE
+D44|Var|TRUE
+D45|Voltio cuadrado por kelvin cuadrado|TRUE
+D46|Voltioio-amperio|TRUE
+D47|Voltio por centímetro|TRUE
+D48|Voltio por Kelvin |TRUE
+D49|Millivoltio por Kelvin |TRUE
+D5|Kilogramo por centímetro cuadrado|TRUE
+D50|Voltio por metro|TRUE
+D51|Voltio por milímetro|TRUE
+D52|Watt por kelvin|TRUE
+D53|Watt por metro kelvin|TRUE
+D54|Watt por metro cuadrado|TRUE
+D55|Watt por metro cuadrado kelvin|TRUE
+D56|Watt por metro cuadrado kelvin a la cuarta potencia|TRUE
+D57|Watt por estereorradián|TRUE
+D58|Watt por estereorradián metro cuadrado|TRUE
+D59|Weber por metro|TRUE
+D6|Roentgen por segundo|TRUE
+D60|Weber por milímetro|TRUE
+D61|Minuto [unidad de ángulo]|TRUE
+D62|Segundo [unidad de ángulo]|TRUE
+D63|Libro|TRUE
+D64|bloquear|TRUE
+D65|Redondo|TRUE
+D66|casete|TRUE
+D67|Dólar por hora|TRUE
+D68|Número de palabras|TRUE
+D69|Pulgada a la cuarta potencia|TRUE
+D7|Sandwich|TRUE
+D70|Calorías (tabla internacional)|TRUE
+D71|Calorías (tabla internacional) por segundo centímetro kelvin|TRUE
+D72|Calorías (tabla internacional) por segundo centímetro cuadrado kelvin|TRUE
+D73|Joule metro cuadrado|TRUE
+D74|Kilogramo por Mol|TRUE
+D75|Calorías (tabla internacional) por gramo|TRUE
+D76|Calorías (tabla internacional) por gramo de kelvin|TRUE
+D77|MegaCulombio|TRUE
+D78|Megajoule por segundo|TRUE
+D79|Viga|TRUE
+D8|Draize score|TRUE
+D80|Microwatt|TRUE
+D81|Microtesla|TRUE
+D82|Microvoltio|TRUE
+D83|Milinewton metro|TRUE
+D85|Microwatt por metro cuadrado|TRUE
+D86|MiliCulombio|TRUE
+D87|MiliMol por kilogramo|TRUE
+D88|MiliCulombio por metro cúbico|TRUE
+D89|MiliCulombio por metro cuadrado|TRUE
+D9|Dina por centímetro cuadrado|TRUE
+D90|Metro cúbico (neta)|TRUE
+D91|Rem|TRUE
+D92|banda|TRUE
+D93|Segundo por metro cúbico|TRUE
+D94|Segundo por metro cúbico Radian|TRUE
+D95|Joule por gramo|TRUE
+D96|Libra bruta|TRUE
+D98|Libra masiva|TRUE
+D99|manga|TRUE
+DAA|Decar|TRUE
+DAD|Decena de días|TRUE
+DAY|Día|TRUE
+DB|Libra seca|TRUE
+DC|Disco (disco)|TRUE
+DD|Grado [unidad de ángulo]|TRUE
+DE|Acuerdo|TRUE
+DEC|Década|TRUE
+DG|Decigramo|TRUE
+DI|dispensador|TRUE
+DJ|Decagramo|TRUE
+DLT|Decilitro|TRUE
+DMA|Decámetro cúbico|TRUE
+DMK|Decímetro cuadrado |TRUE
+DMO|Kiloliter norma|TRUE
+DMQ|Decímetro cúbico|TRUE
+DMT|Decímetro|TRUE
+DN|Decinewton metro|TRUE
+DPC|Docenas de piezas|TRUE
+DPR|Docenas de pares|TRUE
+DPT|Peso de desplazamiento|TRUE
+DQ|registro de datos|TRUE
+DRA|Dram (EUA)|TRUE
+DRI|Dram (UK)|TRUE
+DRL|Docena de rodillos|TRUE
+DRM|Drachm (UK)|TRUE
+DS|monitor|TRUE
+DT|Tonelada seca|TRUE
+DTN|Decitonelada métrica|TRUE
+DU|dina|TRUE
+DWT|Pennyweight|TRUE
+Dx|Dina por centímetro|TRUE
+DY|Libro de directorio|TRUE
+DZN|Docena|TRUE
+DZP|Docena de paquete|TRUE
+E01|Newton por centímetro cuadrado|TRUE
+E07|Megawatt hora por hora|TRUE
+E08|Megavatios por hertz|TRUE
+E09|Miliamperio hora|TRUE
+E10|Día de grado|TRUE
+E11|Gigacalorie|TRUE
+E12|Mille|TRUE
+E14|Kilocaloría (tabla internacional)|TRUE
+E15|Kilocaloría (termoquímica) por hora|TRUE
+E16|Millón de btu (ti) por hora|TRUE
+E17|Pie cúbico por segundo|TRUE
+E18|Tonelada por hora|TRUE
+E19|Ping|TRUE
+E20|Megabit por segundo|TRUE
+E21|Shares|TRUE
+E22|Tue|TRUE
+E23|Neumático|TRUE
+E25|Unidad activa|TRUE
+E27|Dosis|TRUE
+E28|Tonelada seca de aire|TRUE
+E3|remolque|TRUE
+E30|Hebra|TRUE
+E31|Metro cuadrado por litro|TRUE
+E32|Litros por hora|TRUE
+E33|Por mil pies|TRUE
+E34|Gigabyte|TRUE
+E35|Terabyte|TRUE
+E36|Petabyte|TRUE
+E37|Pixel|TRUE
+E38|Megapíxeles|TRUE
+E39|Puntos por pulgada|TRUE
+E4|Kilo bruto|TRUE
+E40|Parte por cien mil|TRUE
+E41|Kilogramo-fuerza por milímetro cuadrado|TRUE
+E42|Kilogramo-fuerza por centímetro cuadrado|TRUE
+E43|Joule por centímetro cuadrado|TRUE
+E44|Metros kilogramo-fuerza por centímetro cuadrado|TRUE
+E45|MiliOhm|TRUE
+E46|Kilovatio hora por metro cúbico|TRUE
+E47|Kilovatio hora por kelvin|TRUE
+E48|Unidad de servicio|TRUE
+E49|Día de trabajo|TRUE
+E5|Tonelada métrica larga|TRUE
+E50|Unidad de cuenta|TRUE
+E51|Trabajo|TRUE
+E52|Run foot|TRUE
+E53|Prueba|TRUE
+E54|Viaje|TRUE
+E55|Utilizar|TRUE
+E56|Bien|TRUE
+E57|Zona|TRUE
+E58|Exabit por segundo|TRUE
+E59|Exbibyte|TRUE
+E60|Pebibyte|TRUE
+E61|Tebibyte|TRUE
+E62|Gibibyte|TRUE
+E63|Mebibyte|TRUE
+E64|Kibibyte|TRUE
+E65|Exbibit por metro|TRUE
+E66|Exbibit por metro cuadrado|TRUE
+E67|Exbibit por metro cúbico|TRUE
+E68|Gigabyte por segundo|TRUE
+E69|Gibibit por metro|TRUE
+E70|Gibibit por metro cuadrado|TRUE
+E71|Gibibit por metro cúbico|TRUE
+E72|Kibibit por metro|TRUE
+E73|Kibibit por metro cuadrado|TRUE
+E74|Kikibit por metro cúbico.|TRUE
+E75|Mebbit por metro.|TRUE
+E76|Mebbitt por metro cuadrado.|TRUE
+E77|Mebbit por metro cúbico. |TRUE
+E78|Petabit|TRUE
+E79|Pebibit por segundo.|TRUE
+E80|Pebibit por metro.|TRUE
+E81|Pebibit por metro cuadrado.|TRUE
+E82|Pebibit por metro cúbico.|TRUE
+E83|Tebibit.|TRUE
+E84|Tebibit por segundo|TRUE
+E85|Tebibit por metro.|TRUE
+E86|Tebibit por metro cúbico.|TRUE
+E87|Tebibit por metro cuadrado|TRUE
+E88|Bit por metro|TRUE
+E89|Bit por metro cuadrado|TRUE
+E90|Centímetro recíproco|TRUE
+E91|Día recíproco|TRUE
+E92|Decímetro cúbico por hora|TRUE
+E93|Kilogramo por hora|TRUE
+E94|KiloMol por segundo|TRUE
+E95|Mol por segundo|TRUE
+E96|Grado por segundo|TRUE
+E97|Mililitro por gadro celsius metro|TRUE
+E98|Grado celsius por kelvin|TRUE
+E99|Hectopascal por bar|TRUE
+EA|Elemento|TRUE
+EB|Casilla de correo electrónico|TRUE
+EP|Paquete de once|TRUE
+EQ|Galón equivalente|TRUE
+F01|Bit por metro cúbico|TRUE
+F02|Kelvin por kelvin|TRUE
+F03|Kilopascal por bar|TRUE
+F04|Milibar por bar|TRUE
+F05|Megapascal por bar|TRUE
+F06|Poise por bar|TRUE
+F07|Pascal por bar|TRUE
+F08|Miliamperio por pulgada|TRUE
+F1|Mil pies cúbicos por día|TRUE
+F10|Kelvin por hora|TRUE
+F11|Kelvin por minuto|TRUE
+F12|Kelvin por segundo|TRUE
+F13|Slug|TRUE
+F14|Gramo por kelvin|TRUE
+F15|Kilogramo por kelvin|TRUE
+F16|Miligramo por kelvin|TRUE
+F17|Libra fuerza por pie|TRUE
+F18|Kilogramo centímetro cuadrado|TRUE
+F19|Kilogramo milimetro cuadrado|TRUE
+F20|Libra pulgada cuadrada|TRUE
+F21|Libra fuerza pulgada|TRUE
+F22|Libra fuerza por pie entre amperio|TRUE
+F23|Gramo por decímetro cúbico|TRUE
+F24|Kilogramo por kiloMol|TRUE
+F25|Gramo por hertz|TRUE
+F26|Gramo por día|TRUE
+F27|Gramo por hora|TRUE
+F28|Gramo por minuto|TRUE
+F29|Gramo por segundo|TRUE
+F30|Kilogramo por día|TRUE
+F31|Kilogramo por minuto|TRUE
+F32|Miligramo por dia|TRUE
+F33|Miligramo por minuto|TRUE
+F34|Miligramo por segundo|TRUE
+F35|Gramo por día kelvin|TRUE
+F36|Gramo por hora kelvin|TRUE
+F37|Gramo por minuto kelvin|TRUE
+F38|Gramo por segundo kelvin|TRUE
+F39|Kilogramo por día kelvin|TRUE
+F40|Kilogramo por hora kelvin|TRUE
+F41|Kilogramo por minuto kelvin|TRUE
+F42|Kilogramo por segundo kelvin|TRUE
+F43|Miligramo por día kelvin|TRUE
+F44|Miligramo por hora kelvin|TRUE
+F45|Miligramo por minuto kelvin|TRUE
+F46|Miligramo por segundo kelvin|TRUE
+F47|Newton por milímetro|TRUE
+F48|Libra fuerza por pulgada|TRUE
+F49|Rod (Unidad de distancia)|TRUE
+F50|Micrómetro por kelvin|TRUE
+F51|Centímetro por kelvin|TRUE
+F52|Metro por kelvin|TRUE
+F53|Mililitro por kelvin|TRUE
+F54|MiliOhm por metro|TRUE
+F55|Ohm por milla (milla estatal)|TRUE
+F56|Ohm por kilómetro|TRUE
+F57|Miliamperio por libra-fuerza por pulgada cuadrada|TRUE
+F58|Bar recíproco|TRUE
+F59|Miliamperio por bar|TRUE
+F60|Grado celsius por bar|TRUE
+F61|Kelvin por bar|TRUE
+F62|Gramo por día bar|TRUE
+F63|Gramo por hora bar|TRUE
+F64|Gramo por minuto bar|TRUE
+F65|Gramo por segundo bar|TRUE
+F66|Kililogramo por día bar|TRUE
+F67|Kilogramo por hora bar|TRUE
+F68|Kilogramo por minuto bar|TRUE
+F69|Kilogramo por segundo bar|TRUE
+F70|Miligramo por día bar|TRUE
+F71|Miligramo por hora bar|TRUE
+F72|Miligramo por minuto bar|TRUE
+F73|Miligramo por segundo bar|TRUE
+F74|Gramo por bar|TRUE
+F75|Miligramo por bar|TRUE
+F76|Miliamperio por milímetro|TRUE
+F77|Pascal segundo por kelvin|TRUE
+F78|Pulgada de agua|TRUE
+F79|Pulgada de mercurio|TRUE
+F80|Caballos de fuerza de agua|TRUE
+F81|Bar por kelvin|TRUE
+F82|Hectopascal por kelvin|TRUE
+F83|Kilopascal por kelvin|TRUE
+F84|Milibar por kelvin|TRUE
+F85|Megapascal por kelvin|TRUE
+F86|Poise por kelvin|TRUE
+F87|Voltio por litro minuto|TRUE
+F88|Newton centímetro|TRUE
+F89|Newton metro por grados|TRUE
+F9|Fibra por centímetro cúbico de aire|TRUE
+F90|Newton metro por amperio|TRUE
+F91|Bar litro por segundo|TRUE
+F92|Bar metro cúbico por segundo|TRUE
+F93|Hectopascal litro por segundo|TRUE
+F94|Hectopascal metro cúbico por segundo|TRUE
+F95|Milibar litro por segundo|TRUE
+F96|Milibar metro cúbico por segundo|TRUE
+F97|Megapascal litro por segundo|TRUE
+F98|Megapascal metro cúbico por segundo|TRUE
+F99|Pascal litro por segundo|TRUE
+FAH|Grado fahrenheit|TRUE
+FAR|Farad|TRUE
+FB|campo|TRUE
+FBM|Medidor de fibra|TRUE
+FC|Mil pies cúbicos|TRUE
+FD|Millones de partículas por pie cúbico|TRUE
+FE|Pie de pista|TRUE
+FF|Cien metros cúbicos|TRUE
+FG|Parche transdérmico|TRUE
+FH|MicroMol|TRUE
+FIT|Fallas en el tiempo|TRUE
+FL|Flake ton|TRUE
+FM|Millones de pies cúbicos|TRUE
+FOT|Pie|TRUE
+FP|Libra por pie cuadrado|TRUE
+FR|Pie por minuto|TRUE
+FS|Pie por segundo|TRUE
+FTK|Pie cuadrado|TRUE
+FTQ|Pie cúbico|TRUE
+G01|Pascal metro cúbico por segundo|TRUE
+G04|Centímetro por bar|TRUE
+G05|Metro por bar |TRUE
+G06|Milímetro por bar |TRUE
+G08|Pulgada cuadrada por segundo|TRUE
+G09|Metro cuadrado por segundo kelvin|TRUE
+G10|Stokes por kelvin|TRUE
+G11|Gramo por centímetro cúbico bar|TRUE
+G12|Gramo por decímetro cúbico bar|TRUE
+G13|Gramo por litro bar|TRUE
+G14|Gramo por metro cúbico bar|TRUE
+G15|Gramo por mililitro bar|TRUE
+G16|Kilogramo por centímetro cúbico bar|TRUE
+G17|Kilogramo por litro bar|TRUE
+G18|Kilogramo por metro cúbico bar|TRUE
+G19|Newton metro por kilogramo|TRUE
+G2|Galón (EUA) por minuto|TRUE
+G20|Libra-fuerza pie por libra|TRUE
+G21|Taza (unidad de volumen)|TRUE
+G23|Peck|TRUE
+G24|Cucharada (estados unidos)|TRUE
+G25|Cucharilla (estados unidos)|TRUE
+G26|Estere|TRUE
+G27|Centímetro cúbico por kelvin|TRUE
+G28|Litro por kelvin|TRUE
+G29|Metro cúbico por kelvin|TRUE
+G3|Galón (RU) por minuto|TRUE
+G30|Mililitro por klevin|TRUE
+G31|Kilogramo por centímetro cúbico|TRUE
+G32|Onza (avoirdupois) por yarda cúbica|TRUE
+G33|Gramo por centímetro cúbico kelvin|TRUE
+G34|Gramo por decímetro cúbico kelvin|TRUE
+G35|Gramo por litro kelvin|TRUE
+G36|Gramo por metro cúbico kelvin|TRUE
+G37|Gramo por mililitro kelvin|TRUE
+G38|Kilogramo por centímetro cúbico kelvin|TRUE
+G39|Kilogramo por litro kelvin|TRUE
+G40|Kilogramo por metro cúbico kelvin|TRUE
+G41|Metro cuadrado por segundo bar|TRUE
+G42|Microsiemens por centímetro|TRUE
+G43|Microsiemens por metro|TRUE
+G44|Nanosiemens por centímetro|TRUE
+G45|Nanosiemens por metro|TRUE
+G46|Stokes por bar|TRUE
+G47|Centímetro cúbico por día|TRUE
+G48|Centímetro cúbico por hora|TRUE
+G49|Centímetro cúbico por minuto|TRUE
+G50|Galón por hora|TRUE
+G51|Litro por segundo|TRUE
+G52|Metro cúbico por día|TRUE
+G53|Metro cúbico por minuto|TRUE
+G54|Mililitro por día|TRUE
+G55|Mililitro por hora|TRUE
+G56|Pulgada cúbica por hora|TRUE
+G57|Pulgada cúbica por minuto|TRUE
+G58|Pulgada cúbica por segundo|TRUE
+G59|Miliamperio por litro minuto|TRUE
+G60|Voltio por bar|TRUE
+G61|Centímetro cúbico por día kelvin|TRUE
+G62|Centímetro cúbico por hora kelvin|TRUE
+G63|Centímetro cúbico por minuto kelvin|TRUE
+G64|Centímetro cúbico por segundo kelvin|TRUE
+G65|Litro por día kelvin|TRUE
+G66|Litro por hora kelvin|TRUE
+G67|Litro por minuto kelvin|TRUE
+G68|Litro por segundo kelvin|TRUE
+G69|Metro cúbico por día kelvin|TRUE
+G7|Hoja de microficha|TRUE
+G70|Metro cúbico por hora kelvin|TRUE
+G71|Metro cúbico por minuto kelvin|TRUE
+G72|Metro cúbico por segundo kelvin|TRUE
+G73|Mililitro por día kelvin|TRUE
+G74|Mililitro por hora kelvin|TRUE
+G75|Mililitro por minuto kelvin|TRUE
+G76|Mililitro por segundo kelvin|TRUE
+G77|Milímetro a la cuarta potencia |TRUE
+G78|Centímetro cúbico por día bar|TRUE
+G79|Centímetro cúbico por hora bar|TRUE
+G80|Centímetro cúbico por minuto bar|TRUE
+G81|Centímetro cúbico por segundo bar|TRUE
+G82|Litro por día bar|TRUE
+G83|Litro por hora bar|TRUE
+G84|Litro por minuto bar|TRUE
+G85|Litro por segundo bar|TRUE
+G86|Metro cúbico por día bar|TRUE
+G87|Metro cúbico por hora bar|TRUE
+G88|Metro cúbico por minuto bar|TRUE
+G89|Metro cúbico por segundo bar|TRUE
+G90|Mililitro por día bar|TRUE
+G91|Mililitro por hora bar|TRUE
+G92|Mililitro por minuto bar|TRUE
+G93|Mililitro por segundo bar|TRUE
+G94|Centímetro cúbico por bar|TRUE
+G95|Litro por bar|TRUE
+G96|Metro cúbico por bar|TRUE
+G97|Mililitro por bar |TRUE
+G98|Micro henry por kiloOhm|TRUE
+G99|Micro henry por Ohm|TRUE
+GB|Galón (EUA) por día|TRUE
+GBQ|Gigabecquerel|TRUE
+GC|Gramo por 100 gramos|TRUE
+Gd|Barril bruto|TRUE
+GDW|Gramo, peso seco|TRUE
+GE|Libra por galón (EUA)|TRUE
+GF|Gramo por metro (gramo por 100 centímetros)|TRUE
+GFI|Gramo de isótopo fisible|TRUE
+GGR|Grandioso|TRUE
+GH|Medio galón (US)|TRUE
+GIA|Gill (us)|TRUE
+GIC|Gramo, incluido el contenedor|TRUE
+GII|Gill (uk)|TRUE
+GIP|Grama, incluido el embalaje interior|TRUE
+GJ|Gramo por mililitro|TRUE
+GK|Gramo por kilogramo|TRUE
+GL|Gramo por litro|TRUE
+GLD|Galón seco (EUA)|TRUE
+GLI|Galón (UK)|TRUE
+GLL|Galón (EUA)|TRUE
+GM|Gramo por metro cuadrado|TRUE
+GN|Galón bruto|TRUE
+GO|Miligramo por metro cuadrado|TRUE
+GP|Miligramo por metro cúbico|TRUE
+GQ|Microgramo por metro cúbico|TRUE
+GRM|Gramo|TRUE
+GRN|Grano|TRUE
+GRO|Gross|TRUE
+GT|Tonelada bruta|TRUE
+GV|Gigajoule|TRUE
+GW|Galón por mil pies cúbicos|TRUE
+GWH|Gigawatt hora|TRUE
+GY|Patio grueso|TRUE
+GZ|Sistema de calibración|TRUE
+H03|Henry por kiloOhm|TRUE
+H04|Henry por Ohm|TRUE
+H05|Milihenry por kiloOhm|TRUE
+H06|Milihenry por Ohm|TRUE
+H07|Pascal segundo por bar|TRUE
+H08|Microbequerel|TRUE
+H09|Año recíproco|TRUE
+H1|Media página - electrónica|TRUE
+H10|Hora recíproca|TRUE
+H11|Mes recíproco|TRUE
+H12|Grado celsius por hora|TRUE
+H13|Grado celsius por minuto|TRUE
+H14|Grado celsius por segundo|TRUE
+H15|Centímetro cudrado por gramo|TRUE
+H16|Decámetro cuadrado|TRUE
+H18|Hectómetro cuadrado|TRUE
+H19|Hectómetro cúbico|TRUE
+H2|Medio litro|TRUE
+H20|Kilómetro cúbico|TRUE
+H21|Blanco|TRUE
+H22|Voltio pulgada cuadrada por libra fuerza|TRUE
+H23|Voltio por pulgada|TRUE
+H24|Voltio por microsegundo|TRUE
+H25|Por ciento por kelvin|TRUE
+H26|Ohm por metro|TRUE
+H27|Grado por metro|TRUE
+H28|Microfaradio por kilómetro|TRUE
+H29|Microgramo por litro|TRUE
+H30|Micrómetro cuadrado|TRUE
+H31|Amperio por kilogramo|TRUE
+H32|Amperio cuadrado segundo|TRUE
+H33|Faradio por kilómetro|TRUE
+H34|Hertz metro|TRUE
+H35|Kelvin metro por watt|TRUE
+H36|MegaOhm por kilómetro|TRUE
+H37|MegaOhm por metro|TRUE
+H38|Megaamperio|TRUE
+H39|Megahertz kilómetro|TRUE
+H40|Newton por amperio|TRUE
+H41|Newton metro watts elevado a la potencia menos 0.5|TRUE
+H42|Pascal por metro|TRUE
+H43|Siemens por centímetro|TRUE
+H44|TeraOhm|TRUE
+H45|Voltio segundo por metro|TRUE
+H46|Voltio por segundo|TRUE
+H47|Watt por metro cúbico|TRUE
+H48|Attofarad|TRUE
+H49|Centímetro por hora|TRUE
+H50|Reciprocidad del centimetro cúbico|TRUE
+H51|Decibel per kilometro|TRUE
+H52|Decibel per metro|TRUE
+H53|Kilogramo por bar|TRUE
+H54|Kilogramo por decímetro cúbico kelvin |TRUE
+H55|Kilogramo por decímetro cúbico bar|TRUE
+H56|Kilogramo por metro cuadrado segundo|TRUE
+H57|Pulgada por dos pi por radián|TRUE
+H58|Metro por voltio segundo|TRUE
+H59|Metro cuadrado por newton|TRUE
+H60|Metro cúbico por metro cúbico|TRUE
+H61|Milisiemens por centímetro|TRUE
+H62|Milivoltio por minuto|TRUE
+H63|Miligramo por centímetro cuadrado|TRUE
+H64|Miligramo por gramo|TRUE
+H65|Mililitro por metro cúbico|TRUE
+H66|Milímetro por año |TRUE
+H67|Milímetro por hora|TRUE
+H68|MiliMol por gram|TRUE
+H69|Picopascal por kilometro|TRUE
+H70|Picosegundo|TRUE
+H71|Por ciento al mes|TRUE
+H72|Por ciento por hectobar|TRUE
+H73|Por ciento por decakelvin|TRUE
+H74|Watt por metro|TRUE
+H75|Decapascal|TRUE
+H76|Gramo por milímetro|TRUE
+H77|Anchura del módulo|TRUE
+H78|Centímetro convencional de agua|TRUE
+H79|Escala francesa |TRUE
+H80|Unidad de bastidor|TRUE
+H81|Milímetro por minuto|TRUE
+H82|Punto grande|TRUE
+H83|Litro por kilogramo|TRUE
+H84|Gramos milímetro|TRUE
+H85|Semana recíproca|TRUE
+H87|Pieza|TRUE
+H88|MegaOhm kilómetro|TRUE
+H89|Por ciento por Ohmio|TRUE
+H90|Porcentaje por grado|TRUE
+H91|Por ciento por cada diez mil|TRUE
+H92|Ciento por cien mil|TRUE
+H93|Porcentaje por cien|TRUE
+H94|Por ciento por mil|TRUE
+H95|Por ciento por voltio|TRUE
+H96|Tanto por ciento por bar|TRUE
+H98|Por ciento por pulgada|TRUE
+H99|Por ciento por metro|TRUE
+HA|Madeja|TRUE
+HAR|hectárea|TRUE
+HBA|Hectobar |TRUE
+HBX|Ciento de cajas|TRUE
+HC|Conteo en cientos|TRUE
+HD|Media docena|TRUE
+HDW|Cien kilogramos, peso seco|TRUE
+HE|Centésima de un quilate|TRUE
+HEA|Cabeza|TRUE
+HF|Cien pies|TRUE
+HGM|Héctogramo|TRUE
+HH|Cien pies cúbicos|TRUE
+HI|Cien hojas|TRUE
+HIU|Unidad internacional de cien|TRUE
+HJ|Potencia métrica|TRUE
+HK|Cien kilogramos|TRUE
+HKM|Cien kilogramos, masa neta|TRUE
+HL|Cien pies (lineal)|TRUE
+HLT|Hectolitro|TRUE
+HM|Milla por hora (milla estatal)|TRUE
+HMQ|Millones de metros cúbicos|TRUE
+HMT|Hectómetro|TRUE
+HN|Milímetro convencional de mercurio|TRUE
+HO|Cien onzas troy|TRUE
+HP|Milímetro convencional de agua|TRUE
+HPA|Hectolitro de alcohol puro|TRUE
+HS|Cien pies cuadrados|TRUE
+HT|media hora|TRUE
+HTZ|Hertz|TRUE
+HUR|Hora|TRUE
+HY|Cien yardas|TRUE
+IA|Pulgada libra|TRUE
+IC|Contar por pulgada|TRUE
+IE|Personas|TRUE
+IF|Pulgadas de agua|TRUE
+II|Columna pulgada|TRUE
+IM|Impresión|TRUE
+INH|Pulgada|TRUE
+INK|Pulgada cuadrada|TRUE
+INQ|Pulgada cúbica|TRUE
+IP|póliza de seguros|TRUE
+ISD|Grado internacional de azúcar|TRUE
+IT|Recuento por centímetro|TRUE
+IU|Pulgada por segundo|TRUE
+IV|Pulgada por segundo al cuadrado|TRUE
+J10|Por ciento por milímetro|TRUE
+J12|Por mille por psi|TRUE
+J13|Grado api|TRUE
+J14|Grado baume (escala de origen)|TRUE
+J15|Grado baume (us pesado)|TRUE
+J16|Grado baume (luz de los EUA)|TRUE
+J17|Grado balling|TRUE
+J18|Grado brix|TRUE
+J19|Grado fahrenheit hora pie cuadrado por unidad térmica británica (termoquímico).|TRUE
+J2|Joule por kilogramo|TRUE
+J20|Grado fahrenheit por kelvin|TRUE
+J21|Grado fahrenheit por bar|TRUE
+J22|Grado fahrenheit hora pie cuadrado por unidad térmica británica (tabla internacional).|TRUE
+J23|Grado fahrenheit por hora|TRUE
+J24|Grado fahrenheit por minuto|TRUE
+J25|Grado fahrenheit por segundo|TRUE
+J26|Reciprocidad grado fahrenheit|TRUE
+J27|Grado oechsle|TRUE
+J28|Grado rankine por hora|TRUE
+J29|Grado rankine por minuto|TRUE
+J30|Grado rankine por segundo|TRUE
+J31|Grado twaddel.|TRUE
+J32|Micropoise|TRUE
+J33|Microgramo por kilogramo|TRUE
+J34|Microgramo por metro cúbico kelvin|TRUE
+J35|Microgramo por metro cúbico bar|TRUE
+J36|Microlitro por litro|TRUE
+J38|Baud|TRUE
+J39|Unidad térmica británica (significado)|TRUE
+J40|Unidad térmica británica (tabla internacional) pie por hora pie cuadrado grado fahrenheit.|TRUE
+J41|Unidad térmica británica (tabla internacional) pulgada por hora pie cuadrado grado fahrenheit.|TRUE
+J42|Unidad térmica británica (tabla internacional) pulgada por segundo pie cuadrado grado fahrenheit.|TRUE
+J43|Unidad térmica británica (tabla internacional) por libra grado fahrenheit|TRUE
+J44|Unidad térmica británica (tabla internacional) por minuto|TRUE
+J45|Unidad térmica británica (tabla internacional) por segundo|TRUE
+J46|Unidad térmica británica (termoquímico) pie por hora pie cuadrado grado fahrenheit.|TRUE
+J47|Unidad térmica británica (termoquímica) por hora|TRUE
+J48|Unidad térmica británica (termoquímico) pulgada por hora pie cuadrado grado fahrenheit.|TRUE
+J49|Unidad térmica británica (termoquímico) pulgada por segundo pie cuadrado grado fahrenheit.|TRUE
+J50|Unidad térmica británica (termoquímico) por libra grado fahrenheit|TRUE
+J51|Unidad térmica británica (termoquímica) por minuto|TRUE
+J52|Unidad térmica británica (termoquímica) por segundo|TRUE
+J53|Culombio metro cuadrado por kilogramo|TRUE
+J54|Megabaud|TRUE
+J55|Watt segundo|TRUE
+J56|Bar por bar|TRUE
+J57|Barril (uk petróleo)|TRUE
+J58|Barril (petróleo UK) por minuto|TRUE
+J59|Barril (petróleo UK) por día|TRUE
+J60|Barril (petróleo UK) por hora|TRUE
+J61|Barril (petróleo UK) por segundo|TRUE
+J62|Barril (petróleo estados unidos) por hora|TRUE
+J63|Barril (petróleo estados unidos) por segundo|TRUE
+J64|Bushel (UK) por día |TRUE
+J65|Bushel (UK) por hora|TRUE
+J66|Bushel (UK) por minuto|TRUE
+J67|Bushel (UK) por segundo|TRUE
+J68|Bushel (seco,estados unidos) por día|TRUE
+J69|Bushel (seco,estados unidos) por hora|TRUE
+J70|Bushel (seco,estados unidos) por minuto|TRUE
+J71|Bushel (seco,estados unidos) por segundo|TRUE
+J72|Centinewton metro|TRUE
+J73|Centipoise por kelvin|TRUE
+J74|Centipoise por bar|TRUE
+J75|Caloría|TRUE
+J76|Caloría (tabla internacional) por gramo gadro celsius|TRUE
+J78|Caloría (termoquímica) por centímetro segundo grado celsius|TRUE
+J79|Caloría (termoquímico) por gramo gadro celsius|TRUE
+J81|Caloría (termoquímica) por minuto|TRUE
+J82|Caloría (termoquímica) por segundo|TRUE
+J83|Clo|TRUE
+J84|Centímetro por segundo kelvin|TRUE
+J85|Centímetro por segundo bar|TRUE
+J87|Centímetro cúbico por metro cúbico|TRUE
+J89|Centímetro de mercurio|TRUE
+J90|Decímetro cúbico por día|TRUE
+J91|Decímetro cúbico por metro cúbico|TRUE
+J92|Decímetro cúbico por minuto|TRUE
+J93|Decímetro cúbico por segundo|TRUE
+J94|Dina centímetro|TRUE
+J95|Onza (fluido, UK) por día|TRUE
+J96|Onza (fluido, UK) por hora|TRUE
+J97|Onza (fluido, UK) por minuto|TRUE
+J98|Onza (fluido, UK) por segundo|TRUE
+J99|Onza (fluido, estados unidos) por día|TRUE
+JB|Jumbo|TRUE
+JE|Joule por kelvin|TRUE
+JK|Megajoule por kilogramo|TRUE
+JM|Megajoule por metro cúbico|TRUE
+JNT|Junta de tubería|TRUE
+Jo|Articulación|TRUE
+JOU|Joule|TRUE
+JPS|Cien metros|TRUE
+JWL|Número de joyas|TRUE
+K1|Demanda de kilowatt|TRUE
+K10|Onza (fluido, estados unidos) por hora|TRUE
+K11|Onza (fluido, estados unidos) por minuto|TRUE
+K12|Onza (fluido, estados unidos) por segundo|TRUE
+K13|Pie por grado fahrenheit|TRUE
+K14|Pie por hora|TRUE
+K15|Pie libra-fuerza por hora|TRUE
+K16|Pie libra-fuerza por minuto|TRUE
+K17|Pie por psi (libra por pulgada cuadrada)|TRUE
+K18|Pie por segundo grado fahrenheit|TRUE
+K19|Pie por segundo psi (libra por pulgada cuadrada)|TRUE
+K2|Kilovoltios amperios demanda reactiva|TRUE
+K20|Reciprocidad del pie cuadrado|TRUE
+K21|Pie cúbico por grado fahrenheit|TRUE
+K22|Pie cúbico por día|TRUE
+K23|Pie cúbico por psi (libra por pulgada cuadrada)|TRUE
+K24|Pie de agua|TRUE
+K25|Pie de mercurio|TRUE
+K26|Galón (UK) por día|TRUE
+K27|Galón (UK) por hora|TRUE
+K28|Galón (UK) por segundo|TRUE
+K3|Kilovoltio amperio hora reactivo|TRUE
+K30|Galón (líquido, EUA) por segundo|TRUE
+K31|Gramo-fuerza por centímetro cuadrado|TRUE
+K32|Gill (UK) por día|TRUE
+K33|Gill (UK) por hora|TRUE
+K34|Gill (UK) por minuto|TRUE
+K35|Gill (UK) por segundo|TRUE
+K36|Gill (estados unidos) por día|TRUE
+K37|Gill (estados unidos) por hora|TRUE
+K38|Gill (estados unidos) por minuto|TRUE
+K39|Gill (estados unidos) por segundo|TRUE
+K40|Aceleración estándar de la caída libre|TRUE
+K41|Grano por galón (EUA)|TRUE
+K42|Caballo de fuerza de caldera |TRUE
+K43|Caballo de fuerza (eléctrico)|TRUE
+K45|Pulgada por grado fahrenheit|TRUE
+K46|Pulgada por psi (libra por pulgada cuadrada)|TRUE
+K47|Pulgada por segundo grado fahrenheit|TRUE
+K48|Pulgada por segundo psi (libra por pulgada cuadrada)|TRUE
+K49|Reciprocidad de la pulgada cuadrada|TRUE
+K5|Kilovoltios amperios (reactivos)|TRUE
+K50|Kilobaud|TRUE
+K51|Kilocaloría (significado)|TRUE
+K52|Kilocaloría (tabla internacional) por hora metro grado celsius|TRUE
+K53|Kilocaloría (termoquímico)|TRUE
+K54|Kilocaloría (termoquímica) por minuto|TRUE
+K55|Kilocaloría (termoquímica) por segundo|TRUE
+K58|KiloMol por hora|TRUE
+K59|KiloMol por metro cúbico kelvin|TRUE
+K6|Kilolitro|TRUE
+K60|KiloMol por metro cúbico bar|TRUE
+K61|KiloMol por minuto|TRUE
+K62|Litro por litro|TRUE
+K63|Reciprocidad del litro|TRUE
+K64|Libra (avoirdupois) por grado fahrenheit|TRUE
+K65|Libra (avoirdupois) pie cuadrado|TRUE
+K66|Libra (avoirdupois) por día|TRUE
+K67|Libra por pie hora|TRUE
+K68|Libra por pie segundo|TRUE
+K69|Libra (avoirdupois) por pie cúbico grado fahrenheit|TRUE
+K70|Libra (avoirdupois) por pie cúbico psi|TRUE
+K71|Libra (avoirdupois) por galón (UK)|TRUE
+K73|Libra (avoirdupois) por hora grados fahrenheit|TRUE
+K74|Libra (avoirdupois) por hora libra-fuerza por pulgada cuadrada|TRUE
+K75|Libra (avoirdupois) por pulgada cúbica grado fahrenheit|TRUE
+K76|Libra (avoirdupois) por pulgada cúbica psi|TRUE
+K77|Libra (avoirdupois) por psi|TRUE
+K78|Libra (avoirdupois) por minuto|TRUE
+K79|Libra (avoirdupois) por minuto grados fahrenheit|TRUE
+K80|Libra (avoirdupois) por minuto libra-fuerza por pulgada cuadrada|TRUE
+K81|Libra (avoirdupois) por segundo|TRUE
+K82|Libra (avoirdupois)por segundo grados fahrenheit|TRUE
+K83|Libra (avoirdupois) por segundo libra-fuerza por pulgada cuadrada|TRUE
+K84|Libra por yarda cúbica |TRUE
+K85|Libra-fuerza por pie cuadrado|TRUE
+K86|Libra-fuerza por pulgada cuadrada grados fahrenheit|TRUE
+K87|Libra-fuerza por pulgada cuadrada pulgada cúbica por segundo|TRUE
+K88|Libra-fuerza por pulgada cuadrada litro por segundo|TRUE
+K89|Libra-fuerza por pulgada cuadrada metro cúbico por segundo|TRUE
+K90|Libra-fuerza por pulgada cuadrada yarda cúbica por segundo|TRUE
+K91|Libra-fuerza segundo por pie cuadrado|TRUE
+K92|Libra-fuerza segundo por pulgada cuadrada|TRUE
+K93|Reciprocidad psi|TRUE
+K94|Cuarto (líquido, UK) por día|TRUE
+K95|Cuarto (líquido, UK) por hora|TRUE
+K96|Cuarto (líquido, UK) por minuto|TRUE
+K97|Cuarto (líquido, UK) por segundo|TRUE
+K98|Cuarto (líquido, estados unidos) por día|TRUE
+K99|Cuarto (líquido, estados unidos) por hora|TRUE
+KA|Pastel|TRUE
+KAT|Katal|TRUE
+KB|Kilocaracter|TRUE
+KBA|Kilobar|TRUE
+KCC|Kilogramo de cloruro de colina|TRUE
+KD|Kilogram decimal|TRUE
+KDW|Kilogramo de peso neto drenado|TRUE
+KEL|Kelvin|TRUE
+KF|Kilopacket|TRUE
+KGM|Kilogramo|TRUE
+KGS|Kilogramo por segundo|TRUE
+KHY|Kilogramo de peróxido de hidrógeno|TRUE
+KHZ|Kilohertz|TRUE
+KI|Kilogramo por milímetro de ancho|TRUE
+KIC|Kilogramo, incluyendo el contenedor|TRUE
+KIP|Kilogramo, incluyendo el empaquetado interno|TRUE
+KJ|Kilosegmento|TRUE
+KJO|Kilojoule|TRUE
+KL|Kilogramo por metro|TRUE
+KLK|Porcentaje de material seco láctico|TRUE
+KLX|Kilolux|TRUE
+KMA|Kilogramo de metilamina|TRUE
+KMH|Kilómetro por hora|TRUE
+KMK|Kilómetro cuadrado|TRUE
+KMQ|Kilogramo por metro cúbico|TRUE
+KMT|Kilómetro|TRUE
+KNI|Kilogramo de nitrógeno|TRUE
+KNM|Kolonewton por metro cuadrado|TRUE
+KNS|Kilogram sustancia nombrada|TRUE
+KNT|Nudo|TRUE
+KO|Miliequivalentes de potasa cáustica por gramo de producto|TRUE
+KPA|Kilopascal|TRUE
+KPH|Kilogramo de hidróxido de potasio (potasa cáustica)|TRUE
+KPO|Kilogramo de óxido de potasio|TRUE
+KPP|Kilogramo de pentóxido de fósforo (anhídrido fosfórico)|TRUE
+KR|Kiloroentgen|TRUE
+KS|Mil libras por pulgada cuadrada|TRUE
+KSD|Kilogramo de sustancia 90% seco|TRUE
+KSH|Kilogramo de hidróxido de sodio (sodio cáustica)|TRUE
+KT|Kit|TRUE
+KTN|Kilotonelada Métrica|TRUE
+KUR|Kilogramo de uranio|TRUE
+KVA|Kilovoltio - amperio|TRUE
+KVR|Kilovar|TRUE
+KVT|Kilovoltio|TRUE
+KW|Kilogramo por milímetro|TRUE
+KWH|Kilowatt hora|TRUE
+KWN|Kilowatt hora por metro cúbico normalizado|TRUE
+KWO|Kilogramo de trióxido de tungsteno|TRUE
+KWS|Kilowatt hora por metro cúbico estándar|TRUE
+KWT|Kilowatt|TRUE
+KX|Mililitro por kilogramo|TRUE
+L10|Cuarto (líquido, estados unidos) por minuto|TRUE
+L11|Cuarto (líquido, estados unidos) por segundo|TRUE
+L12|Metro por segundo kelvin|TRUE
+L13|Metro por segundo bar|TRUE
+L14|Metro cuadrado hora grado celsius por kilocaloría (tabla internacional)|TRUE
+L15|Milipascal segundo por kelvin|TRUE
+L16|Milipascal segundo por bar|TRUE
+L17|Miligramo por metro cúbico kelvin|TRUE
+L18|Miligramo por metro cúbico bar|TRUE
+L19|Mililitro por litro|TRUE
+L2|Litro por minuto|TRUE
+L20|Reciprocidad del milimetro cúbico|TRUE
+L21|Milimetro cúbico por metro cúbico|TRUE
+L23|Mol por hora |TRUE
+L24|Mol por kilogramo kelvin|TRUE
+L25|Mol por kilogramo bar|TRUE
+L26|Mol por litreo kelvin|TRUE
+L27|Mol por litro bar|TRUE
+L28|Mol por metro cúbico kelvin|TRUE
+L29|Mol por metro cúbico bar|TRUE
+L30|Mol por minuto|TRUE
+L31|Milliroentgen aequivalent men|TRUE
+L32|Nanogramo por kilogramo|TRUE
+L33|Onza (avoirdupois) por día|TRUE
+L34|Onza (avoirdupois) por hora|TRUE
+L35|Onza (avoirdupois) por minuto|TRUE
+L36|Onza (avoirdupois) por segundo|TRUE
+L37|Onza (avoirdupois) por galón (UK)|TRUE
+L38|Onza (avoirdupois) por galón (EUA)|TRUE
+L39|Onza (avoirdupois) por pulgada cúbica|TRUE
+L40|Onza fuerza|TRUE
+L41|Onza (avoirdupois) fuerza pulgada|TRUE
+L42|Picosiemens por metro|TRUE
+L43|Peck (UK)|TRUE
+L44|Peck (UK) por día|TRUE
+L45|Peck (UK) por hora|TRUE
+L46|Peck (UK) por minuto|TRUE
+L47|Peck (UK) por segundo|TRUE
+L48|Peck (seco, estados unidos) por día|TRUE
+L49|Peck (seco, estados unidos) por hora|TRUE
+L50|Peck (seco, estados unidos) por minuto|TRUE
+L51|Peck (seco, estados unidos) por segundo|TRUE
+L52|Libra.fuerza por pulgada cuadrada por libra fuerza por pulgada cuadrada|TRUE
+L53|Pinta (UK) por día|TRUE
+L54|Pinta (UK) por hora|TRUE
+L55|Pinta (UK) por minuto|TRUE
+L56|Pinta (UK) por segundo|TRUE
+L57|Pinta (líquido, estados unidos) por día|TRUE
+L58|Pinta (líquido, estados unidos) por hora|TRUE
+L59|Pinta (líquido, estados unidos) por minuto|TRUE
+L60|Pinta (líquido, estados unidos) por segundo|TRUE
+L61|Pinta (US seco)|TRUE
+L62|Cuarto de galón (seco de los EUA)|TRUE
+L63|Slug por día|TRUE
+L64|Slug por pie segundo|TRUE
+L65|Slug por pie cúbico|TRUE
+L66|Slug por hora|TRUE
+L67|Slug por minuto|TRUE
+L68|Slug por segundo|TRUE
+L69|Tonelada por kelvin|TRUE
+L70|Tonelada por bar|TRUE
+L71|Tonelada por día|TRUE
+L72|Tonelada por día kelvin|TRUE
+L73|Tonelada por día bar|TRUE
+L74|Tonelada por hora kelvin|TRUE
+L75|Tonelada por hora bar|TRUE
+L76|Tonelada por metro cúbico kelvin|TRUE
+L77|Tonelada por metro cúbico bar|TRUE
+L78|Tonelada por minuto|TRUE
+L79|Tonelada por minuto kelvin|TRUE
+L80|Tonelada por minuto bar|TRUE
+L81|Tonelada por segundo|TRUE
+L82|Tonelada por segundo kelvin|TRUE
+L83|Tonelada por segundo bar|TRUE
+L84|Tonelada (flota UK)|TRUE
+L85|Tonelada larga por día|TRUE
+L86|Tonelada (flota estados unidos)|TRUE
+L87|Tonelada corta por grado fahrenheit|TRUE
+L88|Tonelada corta por día|TRUE
+L89|Tonelada corta por hora grados fahrenheit|TRUE
+L90|Tonelada corta por hora libra-fuerza por pulgada cuadrada|TRUE
+L91|Tonelada corta por psi|TRUE
+L92|Tonelada larga (UK) por yarda cúbica|TRUE
+L93|Tonelada corta (estados unidos) por yarda cúbica|TRUE
+L94|Tonelada fuerza|TRUE
+L95|Año común|TRUE
+L96|Año sideral|TRUE
+L98|Yarda por grado fahrenheit|TRUE
+L99|Yarda por psi (libra por pulgada cuadrada)|TRUE
+LA|Libra por pulgada cúbica |TRUE
+LAC|Porcentaje de exceso de lactosa|TRUE
+LBR|Libra|TRUE
+LBT|Troy pound|TRUE
+LC|Centímetro lineal|TRUE
+LD|Litro por día|TRUE
+LE|Lite|TRUE
+LEF|Hoja|TRUE
+LF|Pie lineal|TRUE
+LH|Hora de trabajo|TRUE
+LI|Pulgada lineal|TRUE
+LJ|Spray grande|TRUE
+LK|Enlazar|TRUE
+LM|Metro lineal|TRUE
+LN|Longitud|TRUE
+LO|Lote [unidad de adquisición]|TRUE
+LP|Libra líquida|TRUE
+LPA|Litro de alcohol puro|TRUE
+LR|Capa |TRUE
+LS|Suma global|TRUE
+LTN|Tonelada (UK) o tonelada larga (estados unidos)|TRUE
+LTR|Litro|TRUE
+LUB|Tonelada métrica, aceite lubricante|TRUE
+LUM|Lumen|TRUE
+LUX|Lux|TRUE
+LX|Yarda lineal por libra|TRUE
+LY|Yarda lineal|TRUE
+M0|cinta magnética|TRUE
+M1|Miligramo por litro|TRUE
+M10|Reciprocidad de la yarda cuadrada|TRUE
+M11|Yarda cúbica por grado fahrenheit|TRUE
+M12|Yarda cúbica por día|TRUE
+M13|Yarda cúbica por hora |TRUE
+M14|Yarda cúbica por psi (libra por pulgada cuadrada)|TRUE
+M15|Yarda cúbica por minuto|TRUE
+M16|Yarda cúbica por segundo|TRUE
+M17|Kilohertz metro|TRUE
+M18|Gigahertz metro|TRUE
+M19|Beaufort|TRUE
+M20|Recíproco de megakelvin ó megakelvin a la potencia menos 1|TRUE
+M21|Kilovoltio-amperio hora recíprocidad|TRUE
+M22|Milímetro por centímetro cuadrado minuto|TRUE
+M23|Newton por centímetro|TRUE
+M24|Ohm kilómetro|TRUE
+M25|Porcentaje por grado celsius|TRUE
+M26|GigaOhm por metro|TRUE
+M27|Megahertz metro|TRUE
+M29|Kilogramo por kilogramo|TRUE
+M30|voltio-amperio segundo recíprocidad|TRUE
+M31|Kilogramo por kilómetro|TRUE
+M32|Segundos pascal por litro|TRUE
+M33|MiliMol por litro|TRUE
+M34|Newton metro por metro cuadrado|TRUE
+M35|Milivoltio - amperio|TRUE
+M36|Mes de 30 días|TRUE
+M37|Actual 360|TRUE
+M38|Kilómetro por segundo cuadrado|TRUE
+M39|Centímetro por segundo cuadrado|TRUE
+M4|Valor monetario|TRUE
+M40|Yarda por segundo cuadrado|TRUE
+M41|Milímetro por segundo cuadrado|TRUE
+M42|Milla (milla estatal)  por segundo cuadrado|TRUE
+M43|Mil (unidad de Medida Militar)|TRUE
+M44|Revolución|TRUE
+M45|Grado por segundo cuadrado|TRUE
+M46|Revolución por minuto|TRUE
+M47|Circular Mil|TRUE
+M48|Milla cuadrada (basado en u.s survey foot)|TRUE
+M49|Cadena |TRUE
+M5|Microcurie|TRUE
+M50|Estadio|TRUE
+M51|Pie (Topografía UEA)|TRUE
+M52|Milla|TRUE
+M53|Metro por pascal|TRUE
+M55|Metro por radián|TRUE
+M56|Shake |TRUE
+M57|Milla por minuto|TRUE
+M58|Milla por segundo|TRUE
+M59|Metro por segundo pascal|TRUE
+M60|Metro por hora|TRUE
+M61|Pulgada por año|TRUE
+M62|Kilómetro por segundo|TRUE
+M63|Pulgada por minuto|TRUE
+M64|Yarda por segundo|TRUE
+M65|Yarda por minuto|TRUE
+M66|Yarda por hora|TRUE
+M67|Acre-pie|TRUE
+M68|Cordón|TRUE
+M69|Milla cúbica (reinounido)|TRUE
+M7|Micro-pulgada|TRUE
+M70|Unidad tradicional de capacidad de carga|TRUE
+M71|Metro cúbico por pascal (joules)|TRUE
+M72|Bel|TRUE
+M73|Kilogramo por metro cúbico pascal|TRUE
+M74|Kilogramo por pascal|TRUE
+M75|Kilolibra fuerza|TRUE
+M76|Poundal|TRUE
+M77|Kilogramo metro por segundo cuadrado|TRUE
+M78|Pond|TRUE
+M79|Pie cuadrado por hora|TRUE
+M80|Stokes por pascal|TRUE
+M81|Centímetro cuadrado por segundo|TRUE
+M82|Metro cuadrado por segundo pascal|TRUE
+M83|Denier|TRUE
+M84|Libra por yarda |TRUE
+M85|Tonelada, ensayo|TRUE
+M86|Libra Alemana|TRUE
+M87|Kilogramo por segundo pascal|TRUE
+M88|Tonelada por mes|TRUE
+M89|Tonelada por año|TRUE
+M9|Millones de btu por 1000 pies cúbicos|TRUE
+M90|Kilolibra por hora|TRUE
+M91|Libra por libra|TRUE
+M92|Libra fuerza pie|TRUE
+M93|Newton metro por radián|TRUE
+M94|Kilogramo metro|TRUE
+M95|Poundal pie|TRUE
+M96|Poundal pulgada|TRUE
+M97|Dina metro|TRUE
+M98|Kilogramo centímetro por segundo|TRUE
+M99|Gramo centímetro por segundo|TRUE
+MA|Máquina por unidad|TRUE
+MAH|Megavoltio amperio reactivo hora|TRUE
+MAL|Megalitro|TRUE
+MAM|Megametro|TRUE
+MAR|Megavar|TRUE
+MAW|Megawatt|TRUE
+MBE|Mil equivalente de ladrillo estándar|TRUE
+MBF|Mil pies de tabla|TRUE
+MBR|Milibar|TRUE
+MC|Microgramo|TRUE
+MCU|Milicurie|TRUE
+MD|Tonelada métrica seca al aire|TRUE
+MF|Miligramo por pie cuadrado por lado|TRUE
+MGM|Miligramo|TRUE
+MHZ|Megahertz|TRUE
+MIK|Milla cuadrada (milla estatal)|TRUE
+MIL|Mil|TRUE
+MIN|Minuto [unidad de tiempo]|TRUE
+MIO|Millon|TRUE
+MIU|Unidad internacional de millon|TRUE
+MK|Miligramo por pulgada cuadrada|TRUE
+MLD|Mil millones|TRUE
+MLT|Mililitro|TRUE
+MMK|Milímetro cuadrado|TRUE
+MMQ|Milímetro cúbico|TRUE
+MMT|Milímetro|TRUE
+MND|Kilogramo, peso seco|TRUE
+MON|Mes |TRUE
+MPA|Megapascal|TRUE
+MQ|Mil metros|TRUE
+MQH|Metro cúbico por hora|TRUE
+MQS|Metro cúbico por segundo|TRUE
+MSK|Metro por segundo cuadrado|TRUE
+MTK|Metro cuadrado|TRUE
+MTQ|Metro cúbico|TRUE
+MTR|Metro|TRUE
+MTS|Metro por segundo|TRUE
+MV|Número de mults|TRUE
+MVA|Megavoltio - amperio|TRUE
+MWH|Megawatt hora|TRUE
+N1|Pluma calórica|TRUE
+N10|Libra pie por segundo|TRUE
+N11|Libra pulgada por segundo|TRUE
+N12|Pferdestaerke|TRUE
+N13|Centímetro de mercurio (0°)|TRUE
+N14|Centímetro de agua (4°)|TRUE
+N15|Pie de agua (39.2 °f)|TRUE
+N16|Pulgada de mercurio (32 °f)|TRUE
+N17|Pulgada de mercurio (60 °f)|TRUE
+N18|Pulgada de agua (39.2 °f)|TRUE
+N19|Pulgada de agua (60 °f)|TRUE
+N2|número de líneas|TRUE
+N20|Kip por pulgada cuadrada|TRUE
+N21|Poundal por pie cuadrado|TRUE
+N22|Onza (avoirdupois) por pulgada cuadrada|TRUE
+N23|Metro convencional de agua|TRUE
+N24|Gramo por milímetro cuadrado|TRUE
+N25|Libra por yarda cuadrada|TRUE
+N26|Poundal por pulgada cuadrada|TRUE
+N27|Pie a la cuarta potencia |TRUE
+N28|Decímetro cúbico por kilogramo|TRUE
+N29|Pie cúbico por libra |TRUE
+N3|Impresión de punto|TRUE
+N30|Pulgada cúbica por libra|TRUE
+N31|Kilonewton por metro|TRUE
+N32|Poundal por pulgada|TRUE
+N33|Libra-fuerza por yarda|TRUE
+N34|Poundal segundo por pie cuadrado|TRUE
+N35|Poise por pascal|TRUE
+N36|Newton segundo por metro cuadrado|TRUE
+N37|Kilogramo por metro segundo|TRUE
+N38|Kilogramo por metro minuto|TRUE
+N39|Kilogramo por metro día|TRUE
+N40|Kilogramo por metro hora|TRUE
+N41|Gramo por centímetro segundo|TRUE
+N42|Poundal segundo por pulgada cuadrada|TRUE
+N43|Libra por pie minuto|TRUE
+N44|Libra por pie día|TRUE
+N45|Metro cúbico por segundo pascal|TRUE
+N46|Pie poundal|TRUE
+N47|Pulgada poundal|TRUE
+N48|Watt por centímetro cuadrado|TRUE
+N49|Watt por pulgada cuadrada|TRUE
+N50|Unidad térmica británica (tabla internacional) por pie cuadrado hora.|TRUE
+N51|Unidad térmica británica (termoquímica) por pie cuadrado hora.|TRUE
+N52|Unidad térmica británica (termoquímico) por pie cuadrado minuto.|TRUE
+N53|Unidad térmica británica (tabla internacional) por pie cuadrado segundo.|TRUE
+N54|Unidad térmica británica (termoquímica) por pie cuadrado segundo.|TRUE
+N55|Unidad térmica británica (tabla internacional) por pulgada cuadrada segundo.|TRUE
+N56|Caloría (termoquímica) por centímetro cuadrado minuto|TRUE
+N57|Caloría (termoquímica) por centímetro cuadrado segundo|TRUE
+N58|Unidad térmica británica (tabla internacional) por pie cúbico|TRUE
+N59|Unidad térmica británica (termoquímica) por pie cúbico|TRUE
+N60|Unidad térmica británica (tabla internacional) por grado fahrenheit|TRUE
+N61|Unidad térmica británica (termoquímico) por grado fahrenheit|TRUE
+N62|Unidad térmica británica (tabla internacional) por grado rankine|TRUE
+N63|Unidad térmica británica (termoquímico) por grado rankine|TRUE
+N64|Unidad térmica británica (termoquímico) por libra grado rankine|TRUE
+N65|Kilocaloría (tabla internacional) por gramo kelvin|TRUE
+N66|Unidad térmica británica (39 °f)|TRUE
+N67|Unidad térmica británica (59 °f)|TRUE
+N68|Unidad térmica británica (60 °f)|TRUE
+N69|Caloría (20 °c)|TRUE
+N70|Quad|TRUE
+N71|Termia (energía comercial)|TRUE
+N72|Termia (UEA)|TRUE
+N73|Unidad térmica británica (termoquímica) por libra|TRUE
+N74|Unidad térmica británica (tabla internacional) por hora pie cuadrado grado fahrenheit.|TRUE
+N75|Unidad térmica británica (termoquímico) por hora pie cuadrado grado farenheit.|TRUE
+N76|Unidad térmica británica (tabla internacional) por segundo pie cuadrado grado fahrenheit.|TRUE
+N77|Unidad térmica británica (termoquímico) por segundo pie cuadrado grado fahrenheit.|TRUE
+N78|Kilowatt por metro cuadrado kelvin|TRUE
+N79|Kelvin por pascal|TRUE
+N80|Watt por metro grado celsius|TRUE
+N81|Kilowatt por metro kelvin|TRUE
+N82|Kilowatt por metro grado celsius|TRUE
+N83|Metro por grado celsius metro|TRUE
+N84|Grado fahrenheit hora por unidad térmica británica (tabla internacional)|TRUE
+N85|Grado fahrenheit hora por unidad térmica británica (termoquímico)|TRUE
+N86|Grado fahrenheit segundo por unidad térmica británica (tabla internacional)|TRUE
+N87|Grago fahrenheit segundo por unidad térmica británica (termoquímico)|TRUE
+N88|Grado fahrenheit hora pie cuadrado por unidad térmica británica (tabla internacional) pulgada|TRUE
+N89|Grado fahrenheit hora pie cuadrado por unidad térmica británica (termoquímico) pulgada.|TRUE
+N90|Kilofaradio|TRUE
+N91|Joule recíproco|TRUE
+N92|Picosiemens|TRUE
+N93|Amperio por pascal|TRUE
+N94|Franklin|TRUE
+N95|Amperio minuto|TRUE
+N96|Biot|TRUE
+N97|Gilbert|TRUE
+N98|Voltio por pascal|TRUE
+N99|Picovoltio|TRUE
+NA|Miligramo por kilogramo|TRUE
+NAR|Número de artículos|TRUE
+NB|barcaza|TRUE
+NBB|Número de bobinas|TRUE
+NC|Carro|TRUE
+NCL|Número de celulas|TRUE
+ND|Barril neto|TRUE
+NE|Litro neto|TRUE
+NEW|Newton|TRUE
+NF|Mensaje|TRUE
+NG|Galón neto (us)|TRUE
+NH|Hora del mensaje|TRUE
+NI|Galón imperial neto|TRUE
+NIL|Nil|TRUE
+NIU|Número de unidades internacionales|TRUE
+NJ|Número de pantallas|TRUE
+NL|Carga|TRUE
+NM3|Metro cúbico normalizado|TRUE
+NMI|Milla náutica|TRUE
+NMP|Número de paquetes|TRUE
+NN|tren|TRUE
+NPR|Número de parejas|TRUE
+NPT|Número de partes|TRUE
+NQ|Mho|TRUE
+NR|Micromho|TRUE
+NT|Tonelada neta|TRUE
+NTT|Tonelada de registro neto|TRUE
+NV|vehículo|TRUE
+NY|Libra por tonelada métrica al aire seco|TRUE
+NX|Parte por mil|TRUE
+OA|Panel|TRUE
+ODE|Equvalente de agotamiento del ozona|TRUE
+Ohm|Ohm|TRUE
+ON|Onza por yarda cuadrada|TRUE
+ONZ|Onza (avoirdupois)|TRUE
+OP|Dos paquetes|TRUE
+OPM|Oscilaciones por minuto|TRUE
+OT|Hora extra|TRUE
+OZ|Onza AV|TRUE
+OZA|Onza líquida (estados unidos)|TRUE
+OZI|Onza líquida (UK)|TRUE
+P0|Página electrónica|TRUE
+P1|Tanto por ciento|TRUE
+P10|Culombio por metro|TRUE
+P11|Kiloweber|TRUE
+P12|Gamma|TRUE
+P13|Kilotesla|TRUE
+P14|Joule por segundo|TRUE
+P15|Joule por minuto|TRUE
+P16|Joule por hora|TRUE
+P17|Joule por día|TRUE
+P18|Kilojoule por segundo|TRUE
+P19|Kilojoule por minuto|TRUE
+P2|Libra por pie|TRUE
+P20|Kilojoule por hora|TRUE
+P21|Kilojoule por dia|TRUE
+P22|NanoOhm|TRUE
+P23|Ohm circular-mil por pie|TRUE
+P24|Kilohenry|TRUE
+P25|Lumen por pie cuadrado|TRUE
+P26|Foto|TRUE
+P27|Vela (medida)|TRUE
+P28|Candela por pulgada cuadrada|TRUE
+P29|Footlambert|TRUE
+P3|Tres paquetes|TRUE
+P30|Lambert|TRUE
+P31|Stilb |TRUE
+P32|Candela por pie cuadrado|TRUE
+P33|Kilocandela|TRUE
+P34|Milicandela|TRUE
+P35|Hefner-kerze|TRUE
+P36|Candela internacional|TRUE
+P37|Unidad térmica británica (tabla internacional) por pie cuadrado|TRUE
+P38|Unidad térmica británica (termoquímica) por pie cuadrado|TRUE
+P39|Caloría (termoquímica) por centímetro cuadrado|TRUE
+P4|paquete de cuatro|TRUE
+P40|Langley|TRUE
+P41|Década (logaritmica)|TRUE
+P42|Pascal por segundo cuadrado|TRUE
+P43|Bel por metro|TRUE
+P44|Libra Mol|TRUE
+P45|Libra de Mol por segundo|TRUE
+P46|Libra Mol por minuto|TRUE
+P47|KiloMol por kilogramo|TRUE
+P48|Libra de Mol por libra|TRUE
+P49|Newton metro cuadrado por amperio|TRUE
+P5|Paquete de cinco|TRUE
+P50|Metro weber|TRUE
+P51|Mol por kilogramo pascal |TRUE
+P52|Mol por metro cúbico pascal|TRUE
+P53|Unit por segundo|TRUE
+P54|MiliGray por segundo|TRUE
+P55|MicroGray por segundo|TRUE
+P56|NanoGray por segundo|TRUE
+P57|Gray por minuto|TRUE
+P58|MiliGray por minuto|TRUE
+P59|Microgray por minuto|TRUE
+P6|paquete de seis|TRUE
+P60|Nanogray por minuto|TRUE
+P61|Gray por hora|TRUE
+P62|MiliGray por hora|TRUE
+P63|Micro gray por hora|TRUE
+P64|Nanogray por hora|TRUE
+P65|Sievert por segundo|TRUE
+P66|MilliSievert por segundo|TRUE
+P67|MicroSievert por segundo|TRUE
+P68|NanoSievert por segundo|TRUE
+P69|Rem por segundo|TRUE
+P7|Paquete de siete|TRUE
+P70|Sievert por hora|TRUE
+P71|MilliSievert por hora|TRUE
+P72|Micro Sievert por hora|TRUE
+P73|NanoSievert por hora|TRUE
+P74|Sievert por minuto|TRUE
+P75|MilliSievert por minuto|TRUE
+P76|MicroSievert por minuto|TRUE
+P77|NanoSievert pominut |TRUE
+P78|Reciprocidad por segundo|TRUE
+P79|Pascal metro cuadrado por kilogramo|TRUE
+P8|Paquete de ocho|TRUE
+P80|Milipascal por metro.|TRUE
+P81|Kilopascal por metro.|TRUE
+P82|Hectopascal por metro.|TRUE
+P83|Admosfera estandar por metro.|TRUE
+P84|Admosfera tecnica por metro.|TRUE
+P85|Torr por metro.|TRUE
+P86|Psi por pulgada|TRUE
+P87|Metro cúbico por segundo de metro cuadrado|TRUE
+P88|Rhe|TRUE
+P89|Libra por metro cúbico de pulgada|TRUE
+P9|Nueve paquetes|TRUE
+P90|Libra-fuerza por pulgada cuadrada|TRUE
+P91|Permanente (0°c)|TRUE
+P92|Permanente (23°c)|TRUE
+P93|Byte por segundo|TRUE
+P94|Kilobyte por segundo|TRUE
+P95|Megabite por segundo|TRUE
+P96|Recíproco de la unidad si deriva voltio|TRUE
+P97|Reciprocidad de Radian|TRUE
+P98|Pascal a la suma de potencia de los números estequimetricos|TRUE
+P99|Mols por metro cúbico a la suma de potencia de los números estequimetricos|TRUE
+PAL|Pascal|TRUE
+PB|Par de la pulgada|TRUE
+PD|Almohadilla|TRUE
+PE|Libra equivalente|TRUE
+PFL|Litro de prueba |TRUE
+PGL|Galón de prueba|TRUE
+PI|Tono|TRUE
+PLA|Grado de platón |TRUE
+PM|Porcentaje de libra|TRUE
+PO|Libra por pulgada|TRUE
+PQ|Página por pulgada|TRUE
+PR|Par|TRUE
+PS|Libra fuerza por pulgada cuadrada|TRUE
+PT|Pinta (US)|TRUE
+PTD|Pinta seca (estados unidos)|TRUE
+PTI|Pint (uk)|TRUE
+PTL|Pinta líquida (estados unidos)|TRUE
+PTN|Parte|TRUE
+PV|Media pinta (US)|TRUE
+PW|Libra por pulgada de ancho|TRUE
+PY|Pico seco (EUA)|TRUE
+PZ|Peck dry (UK)|TRUE
+Q10|Joule por tesla|TRUE
+Q11|Erlang|TRUE
+Q12|Octeto|TRUE
+Q13|Octeto por segundo|TRUE
+Q14|Shannon|TRUE
+Q15|Hartley|TRUE
+Q16|Unidad natural de información |TRUE
+Q17|Shannon por segundo|TRUE
+Q18|Hartley por segundo |TRUE
+Q19|Unidad natural de información por segundo |TRUE
+Q20|Segundo por kilogramo|TRUE
+Q21|Watt metro cuadrado|TRUE
+Q22|Segundo por metro cúbicos de radianes |TRUE
+Q23|Weber a la potencia menos uno|TRUE
+Q24|Reciprocidad de Pulgada|TRUE
+Q25|Dioptría|TRUE
+Q26|Uno por uno|TRUE
+Q27|Newtons metros por metro|TRUE
+Q28|Kilograma por metro cuadrado pascal segundo|TRUE
+Q29|Microgramo por hectogramo|TRUE
+Q3|Comida|TRUE
+Q30|Ph (potencial de hidrogeno)|TRUE
+Q31|Kilojoule por gramo|TRUE
+Q32|Femtolitro|TRUE
+Q33|Picolitro|TRUE
+Q34|Nanolitro|TRUE
+Q35|Megawatts por minuto|TRUE
+Q36|Metro cuadrado por metro cúbico|TRUE
+Q37|Metro cúbico estándar por día|TRUE
+Q38|Metro cúbico estándar por hora|TRUE
+Q39|Metro cúbico normalizado por día|TRUE
+Q40|Metro cúbico normalizado por hora|TRUE
+Q41|Joule por metro cúbico normalizado|TRUE
+Q42|Joule por metro cúbico estándar|TRUE
+QA|Página-fascimil|TRUE
+QAN|Cuarto (de un año)|TRUE
+QB|Página, copia impresa|TRUE
+QD|Cuarta docena|TRUE
+QH|Un cuarto de hora|TRUE
+QK|Cuarto de kilogramo|TRUE
+QR|Mano de papel|TRUE
+QT|Cuarto (EUA)|TRUE
+QTD|Cuarto seco (estados unidos)|TRUE
+QTI|Cuarto (UK)|TRUE
+QTL|Cuarto de líquido (estadis unidos)|TRUE
+QTR|Cuarto|TRUE
+R1|Pica|TRUE
+R9|Mil metros cúbicos |TRUE
+RH|Hora de funcionamiento|TRUE
+RK|Medida métrica de rollo|TRUE
+RM|Resma|TRUE
+RN|Medida métrica de Hojas (resma)|TRUE
+ROM|Habitación|TRUE
+RP|Libra por resma|TRUE
+RPM|Revoluciones por minuto|TRUE
+RPS|Revoluciones por segundo|TRUE
+RS|Reiniciar|TRUE
+RT|Milla de toneladas de ingresos|TRUE
+RU|correr|TRUE
+S3|Pie cuadrado por segundo|TRUE
+S4|Metro cuadrado por segundo|TRUE
+S5|Sesenta cuartos de pulgada|TRUE
+S6|Sesión|TRUE
+S7|unidad de almacenamiento|TRUE
+S8|Unidad de publicidad estándar|TRUE
+SAN|Medio año|TRUE
+SCO|Puntuación|TRUE
+SCR|Escrúpulo|TRUE
+SD|Libra sólida|TRUE
+SE|Sección|TRUE
+SEC|Segundo [unidad de tiempo]|TRUE
+SET|Conjunto|TRUE
+SG|Segmento |TRUE
+SHT|Tonelada de envíos|TRUE
+SIE|Siemens|TRUE
+SK|Camión cisterna con división|TRUE
+SM3|Metro cúbico estándar|TRUE
+SMI|Milla (milla estatal)|TRUE
+SN|Barra cuadrada|TRUE
+SQ|Cuadrado|TRUE
+SQR|Cuadrado y techado|TRUE
+SR|Tira|TRUE
+SS|Medida métrica de hoja|TRUE
+SST|Estandar corto (7200 partidos)|TRUE
+STC|Palo|TRUE
+STI|Estone (UK)|TRUE
+STK|Palo, cigarrillo|TRUE
+STL|Litro estándar|TRUE
+STN|Tonelada (estados unidos) o tonelada corta (UK y estados unidos)|TRUE
+STW|Paja|TRUE
+SW|Número de madejas|TRUE
+SX|Envío|TRUE
+SYR|Jeringuilla|TRUE
+T0|Linea de telecomunicaciones en servicio|TRUE
+T1|Mil libras|TRUE
+T3|Mil pedazos|TRUE
+T4|Bolsa de mil|TRUE
+T5|Mil envolturas|TRUE
+T6|Mil galones (US)|TRUE
+T7|Impresión de mil|TRUE
+T8|Mil pulgadas lineales|TRUE
+TA|Décimo de pie cúbico|TRUE
+TAB|Tonelada de registro bruto|TRUE
+TAH|Kiloamperio-hora (milamperio-hora)|TRUE
+TAN|Número de acido total|TRUE
+TC|Camión|TRUE
+TD|Termico|TRUE
+TE|Totalizador|TRUE
+TF|Diez yardas cuadradas|TRUE
+TI|Mil pulgadas cuadradas|TRUE
+TIC|Tonelada métrica, incluido el contenedor|TRUE
+TIP|Tonelada métrica, incluido el embalaje interior|TRUE
+TJ|Mil centímetros cuadrados|TRUE
+TKM|Tonelada kilometro|TRUE
+TL|Mil pies (lineal)|TRUE
+TMS|Kilogramo de carne importada, menos despojos|TRUE
+TNE|Tonelada (tonelada métrica)|TRUE
+TP|Paquete de diez|TRUE
+TPI|Dientes por pulgada|TRUE
+TPR|Decenas de pares|TRUE
+TQ|Mil pies|TRUE
+TQD|Mil metros cúbicos por día |TRUE
+TR|Diez pies cuadrados|TRUE
+TRL|Trillones (eur)|TRUE
+Ts|Mil pies cuadrados|TRUE
+TSD|Tonelada de sustancia 90% seca|TRUE
+TSH|Tonelada de vapor por hora|TRUE
+TST|Decena de conjuntos|TRUE
+TT|Mil metros lineales|TRUE
+TTS|Decenas de millar de pegatinas|TRUE
+Tu|Contenedor externo|TRUE
+TV|Mil kilogramos|TRUE
+TW|Mil hojas|TRUE
+U1|Tratamiento |TRUE
+U2|Número de tabletas|TRUE
+UA|Torr|TRUE
+UB|Linea de telecomunicaciones en servicio promedio |TRUE
+UC|Puerto de telecomunicaciones |TRUE
+UD|Décimo minuto|TRUE
+UE|Hora de décimo|TRUE
+UF|Uso por línea de telecomunicaciones promedio|TRUE
+UH|Diez mil yardas|TRUE
+UM|Millón de unidades|TRUE
+UN|Newton metro|TRUE
+VA|Voltio-amperio por kilogramo|TRUE
+VLT|Voltio|TRUE
+VP|Volumen porcentual |TRUE
+VS|Visita|TRUE
+W2|Kilo húmedo |TRUE
+W4|Dos semanas|TRUE
+WA|Watt por kilogramo |TRUE
+WB|Libra húmeda|TRUE
+WCD|Cable|TRUE
+WE|Tonelada húmeda |TRUE
+WEB|Weber|TRUE
+WEE|Semana|TRUE
+WG|Galón de vino|TRUE
+WH|Rueda|TRUE
+WHR|Watt hora|TRUE
+WI|Peso por pulgada cuadrada|TRUE
+WM|Mes de trabajo |TRUE
+WR|Envolver|TRUE
+WSD|Estándar|TRUE
+WTT|Watt|TRUE
+WW|Mililitro de agua|TRUE
+X1|Cadena de gunter|TRUE
+X1A|Tambor de acero|TRUE
+X1B|Tambor de aluminio|TRUE
+X1D|Tambor contrachapado|TRUE
+X1F|Contenedor flexible|TRUE
+X1G|Tambor de fibra|TRUE
+X1w|Tambor de madera|TRUE
+X2C|Barril de madera|TRUE
+X3A|Bidón de acero|TRUE
+X3H|Bidón de plástico|TRUE
+X43|Bolsa de gran tamaño|TRUE
+X44|Bolsa de plastico|TRUE
+X4A|Caja de acero|TRUE
+X4B|Caja de aluminio|TRUE
+X4C|Caja de  madera natural|TRUE
+X4D|Caja de contrachapado|TRUE
+X4F|Caja de madera reconstituida|TRUE
+X4G|Caja de cartón|TRUE
+X4H|Caja de plástico|TRUE
+X5H|Bolsa de plástico tejido|TRUE
+X5L|Bolsa textil|TRUE
+X5M|Bolsa de papel|TRUE
+X6H|Recipiente de plástico, Contenedor compuesto.|TRUE
+X6P|Recipiente de vidrio, Contenedor compuesto.|TRUE
+X7A|Estuche para carro|TRUE
+X7B|Estuche de madera|TRUE
+X8A|Pallet de madera|TRUE
+X8B|Cajón de madera|TRUE
+X8C|Madera flejada|TRUE
+XAA|Contenedor intermedio  para gráneles de plástico rígido|TRUE
+XAB|Contenedor de fibra|TRUE
+XAC|Contenedor de papel|TRUE
+XAD|Contenedor de madera|TRUE
+XAE|Aerosol|TRUE
+XAF|Pallet modular con collares,  80cms * 60cms|TRUE
+XAG|Pallet o empaquetado|TRUE
+XAH|Pallet, 100cms X 110cms|TRUE
+XAI|Contenedor tipo concha|TRUE
+XAJ|Cono|TRUE
+XAL|Esféra|TRUE
+XAM|Ampolleta no protegida|TRUE
+XAP|Ampolleta protegida|TRUE
+XAT|Atomizador|TRUE
+XAV|Cápsula|TRUE
+XB4|Cinturón|TRUE
+XBA|Barril|TRUE
+XBB|Bobina|TRUE
+XBC|Cajón para botellas / Estante para botellas|TRUE
+XBD|Tablero|TRUE
+XBE|Flejado|TRUE
+XBF|Globo no protegido|TRUE
+XBG|Bolso|TRUE
+XBH|Manojo|TRUE
+XBI|Compartimiento|TRUE
+XBJ|Cubeta|TRUE
+XBK|Cesta|TRUE
+XBL|Paca comprimida|TRUE
+XBM|Cuenco|TRUE
+XBN|Paca no comprimida|TRUE
+XBO|Botella no-protegida y cilíndrica|TRUE
+XBP|Globo protegido|TRUE
+XBQ|Botella cilíndrica protegida|TRUE
+XBR|Barra|TRUE
+XBS|Botella, no-protegida en forma de bulbo|TRUE
+XBT|Rollo de tela|TRUE
+XBU|Butt|TRUE
+XBV|Botella de bulbo protegido|TRUE
+XBW|Caja para líquidos|TRUE
+XBX|Caja|TRUE
+XBY|Tablero, con fleje/ agrupados/ armados|TRUE
+XBZ|Barras, con fleje/ agrupados/ armados|TRUE
+XCA|Lata rectangular|TRUE
+XCB|Cajón para cerveza|TRUE
+XCC|Mantequera|TRUE
+XCD|Lata con mango y boquilla|TRUE
+XCE|Cesto tejido|TRUE
+XCF|Cofre|TRUE
+XCG|Contenedor tipo Jaula|TRUE
+XCH|Cajonera|TRUE
+XCI|Frasco|TRUE
+XCJ|Ataúd|TRUE
+XCK|Barrica|TRUE
+XCL|Espiral|TRUE
+XCM|Paquete de tarjetas|TRUE
+XCN|Contenedor, no especificado como equipo de transporte|TRUE
+XCO|Garrafón no protegido|TRUE
+XCP|Garrafón protegido|TRUE
+XCQ|Cartucho|TRUE
+XCR|Cajón|TRUE
+XCS|Estuche|TRUE
+XCT|Cartón|TRUE
+XCU|Vaso|TRUE
+XCV|Cubierta|TRUE
+XCW|Jaula estilo rodillo|TRUE
+XCX|Lata cilíndrica|TRUE
+XCY|Cilindro|TRUE
+XCZ|Lona|TRUE
+XDA|Cajón multicapa de plástico|TRUE
+XDB|Cajón de varias capas de madera|TRUE
+XDC|Cajón multicapa de cartón|TRUE
+XDG|Jaula, Según la clasificación de la compañía (Commonwealth Handling Equipment Pool (CHEP))|TRUE
+XDH|Caja, Según la clasificación de la compañía (CHEP), Eurobox|TRUE
+XDI|Tambor de hierro|TRUE
+XDJ|damajuana o garrafa, no protegido|TRUE
+XDK|Cajón a granel, cartón|TRUE
+XDL|Cajas de plástico|TRUE
+XDM|Cajones a granel de madera|TRUE
+XDN|Dispensador|TRUE
+XDP|damajuana o garrafa, protegido|TRUE
+XDR|Tambor|TRUE
+XDS|Bandeja de una capa sin cubierta y de plástico|TRUE
+XDT|Bandeja de una capa sin cubierta y de madera|TRUE
+XDU|Bandeja de una capa sin cubierta y  poliestireno|TRUE
+XDV|Bandeja de una capa sin cubierta y de cartón|TRUE
+XDW|Bandeja de dos capas sin tapa y con bandeja de plástico|TRUE
+XDX|Bandeja de dos capas sin cubierta y de madera|TRUE
+XDY|Bandeja de dos capas sin cubierta y de cartón|TRUE
+XEC|Bolsa de plástico|TRUE
+XED|Estuche, con pallet de base|TRUE
+XEE|Estuche, con pallet base de madera|TRUE
+XEF|Estuche, con pallet base de cartón|TRUE
+XEG|Estuche, con pallet base de plástico|TRUE
+XEH|Estuche, con pallet base de metal|TRUE
+XEI|Estuche isotérmico|TRUE
+XEN|Sobre|TRUE
+XFB|Bolsa flexible|TRUE
+XFC|Cajón para fruta|TRUE
+XFD|Cajón enmarcado|TRUE
+XFE|Tanque flexible|TRUE
+XFI|Firkin|TRUE
+XFL|Matraz|TRUE
+XFO|Cajón para zapatos|TRUE
+XFP|Caja auxiliar para película fotográfica|TRUE
+XFR|Marco|TRUE
+XFT|Contenedor para alimentos|TRUE
+XFW|Carro de cama plana|TRUE
+XFX|Bolsa flexible tipo contenedor|TRUE
+XGB|Botella para gas|TRUE
+XGI|Viga|TRUE
+XGL|Contenedor tipo galón|TRUE
+XGR|Recipiente de vidrio|TRUE
+XGU|Bandeja contenedor para apilar horizontalmente objetos planos|TRUE
+XGY|Costal de Yute|TRUE
+XGZ|Vigas con correas o agrupadas|TRUE
+XHA|Cesta con mango y de plástico|TRUE
+XHB|Cesta con mango y de madera|TRUE
+XHC|Cesta  con asa y de  cartón|TRUE
+XHG|Hogshead|TRUE
+XHN|Gancho|TRUE
+XHR|Cesto|TRUE
+XIA|Paquete con pantalla y de madera|TRUE
+XIB|Paquete  con pantalla y de cartón|TRUE
+XIC|Paquete con pantalla y de plástico|TRUE
+XID|Paquete con pantalla y de metal|TRUE
+XIE|Paquete de mostrador.|TRUE
+XIF|Envase para alimentos|TRUE
+XIG|Paquete envuelto en papel|TRUE
+XIH|Tambor de plástico|TRUE
+XIK|Paquete de cartón con los agujeros para botellas|TRUE
+XIL|Bandeja rígida con tapa y apilable (CEN TS 14482: 2002)|TRUE
+XIN|Lingote|TRUE
+XIZ|Lingotes  con correas/ agrupados|TRUE
+XJB|Bolsa jumbo|TRUE
+XJC|Bidón rectangular|TRUE
+XJG|Jarra|TRUE
+XJR|Tarro|TRUE
+XJT|Bolsa de yute|TRUE
+XJY|Bidón, cilíndrico|TRUE
+XKG|Barrilete|TRUE
+XKI|Kit (Conjunto de piezas)|TRUE
+XLE|Valijas|TRUE
+XLG|Bitacora|TRUE
+XLT|Lote|TRUE
+XLU|Caja de arrastre|TRUE
+XLV|Contenedor pequeño|TRUE
+XLZ|Registros  con fleje/ agrupados/ armados|TRUE
+XMA|Cajón metálico|TRUE
+XMB|Múltiplo de bolsas|TRUE
+XMC|Cajón para leche|TRUE
+XME|Contenedor de metal|TRUE
+XMR|Recipiente de metal|TRUE
+XMS|Saco milti-pared|TRUE
+XMT|Tapete|TRUE
+XMW|Contenedor envuelto en plástico|TRUE
+XMX|Caja pequeña de cerillos|TRUE
+XNA|No disponible|TRUE
+XNE|Sin empaque o no empaquetado|TRUE
+XNF|Sin empaque o no empaquetado, unidad simple|TRUE
+XNG|Sin empaque o no empaquetado, unidades múltiples|TRUE
+XNS|Caja nido|TRUE
+XNT|Red|TRUE
+XNU|Red de plástico con tubo|TRUE
+XNV|Red textil con tubo|TRUE
+XOA|Pallet, Según la clasificación de la compañía (Commonwealth Handling Equipment Pool (CHEP) 40 cm x 60 cm|TRUE
+XOB|Pallet, Según la clasificación de la compañía (Commonwealth Handling Equipment Pool (CHEP) 80 cm x 120 cm|TRUE
+XOC|Pallet, Según la clasificación de la compañía (Commonwealth Handling Equipment Pool (CHEP) 100 cm x 120 cm|TRUE
+XOD|Pallet, AS 4068-1993|TRUE
+XOE|Pallet, ISO T11|TRUE
+XOF|Plataforma, peso o dimensión no especificada|TRUE
+XOK|Bloque|TRUE
+XOT|Octabin|TRUE
+XP2|Charola|TRUE
+XPA|Cajetilla|TRUE
+XPB|Pallet, Caja combinada y abierta con caja y pallet.|TRUE
+XPC|Paquete postal|TRUE
+XPD|Pallet modular con collares (80cms * 100cms)|TRUE
+XPE|Pallet modular con collares (80cms * 120cms)|TRUE
+XPF|Corral|TRUE
+XPG|Placa|TRUE
+XPH|Cantaro|TRUE
+XPI|Pleca|TRUE
+XPJ|Canastilla|TRUE
+XPK|Paquete|TRUE
+XPL|Balde|TRUE
+XPN|Tablón|TRUE
+XPO|Bolsa pequeña|TRUE
+XPR|Contenedor de plástico|TRUE
+XPT|Maceta|TRUE
+XPU|Cacerola|TRUE
+XPV|Tubos, con fleje/ agrupados/ armados|TRUE
+XPX|Pallet|TRUE
+XPY|Placas con fleje/ agrupados/ armados|TRUE
+XPZ|Tablones con fleje/ agrupados/ armados|TRUE
+XQA|Tambor de acero con cabeza no desmontable|TRUE
+XQB|Tambor de  acero con cabeza extraíble|TRUE
+XQC|Tambor de aluminio con cabeza no extraíble|TRUE
+XQD|Tambor de aluminio con cabeza extraíble|TRUE
+XQF|Tambor, plástico con cabeza no desmontable|TRUE
+XQG|Tambor, plástico, cabeza extraíble|TRUE
+XQH|Barril de madera con tapón|TRUE
+XQJ|Barril de madera con cabeza desprendible|TRUE
+XQK|Bidón de acero con cabeza no desmontable|TRUE
+XQL|Bidón de acero con cabeza desmontable|TRUE
+XQM|Bidón de plástico con cabeza no desmontable|TRUE
+XQN|Bidón de plástico con cabeza extraíble|TRUE
+XQP|Caja de madera natural estándar|TRUE
+XQQ|Caja de madera natural con muros a prueba de filtraciones|TRUE
+XQR|Caja de plástico expandida|TRUE
+XQS|Caja de plástico sólida|TRUE
+XRD|Rod|TRUE
+XRG|Anillo|TRUE
+XRJ|Estante, Perchero para ropa|TRUE
+XRK|Estante|TRUE
+XRL|Carrete|TRUE
+XRO|Rollo|TRUE
+XRT|Red Roja|TRUE
+XRZ|Varillas  con fleje/ agrupados/ armados|TRUE
+XSA|Saco|TRUE
+XSB|Losa|TRUE
+XSC|Cajón poco profundo|TRUE
+XSD|Huso|TRUE
+XSE|Baúl|TRUE
+XSH|Bolsa pequeña hermética|TRUE
+XSI|Patín|TRUE
+XSK|Carcasa esqueleto|TRUE
+XSL|Hoja de deslizamiento|TRUE
+XSM|Hoja de metal|TRUE
+XSO|Carrete pequeño|TRUE
+XSP|Hoja de empaque de plástico|TRUE
+XSS|Cajón de acero|TRUE
+XSU|Maleta|TRUE
+XSV|Sobre de acero|TRUE
+XSW|Envoltorio|TRUE
+XSY|Manga|TRUE
+XSZ|Hojas  con fleje/ agrupados/ armados|TRUE
+XT1|Tableta|TRUE
+XTB|Tina|TRUE
+XTC|Caja para té|TRUE
+XTD|Tubo plegable|TRUE
+XTG|Contenedor de tanque genérico|TRUE
+XTI|Tierce|TRUE
+XTK|Tanque rectangular|TRUE
+XTL|Tina con tapa|TRUE
+XTN|Hojalata|TRUE
+XTO|Tonel|TRUE
+XTR|Maletero|TRUE
+XTS|Estructura|TRUE
+XTT|Bolsa de mano|TRUE
+XTU|Tubo|TRUE
+XTV|Tubo con boquilla|TRUE
+XTW|Pallet tricapa|TRUE
+XTY|Tanque cilíndrico|TRUE
+XTZ|Tubos  con fleje/ agrupados/ armados|TRUE
+XUC|Sin empaque|TRUE
+XUN|Unidad|TRUE
+XVA|Tanque|TRUE
+XVG|Tanque de gas (a 1,031 mbar y 15° C)|TRUE
+XVI|Frasco pequeño|TRUE
+XVK|Paquete transportable|TRUE
+XVL|Contenedor para líquidos a granel|TRUE
+XVN|Vehículo|TRUE
+XVO|Contenedor para sólido de partículas grandes a granel ("nódulos")|TRUE
+XVP|Envasado al vacío|TRUE
+XVQ|Tanque para Gas licuado (a temperatura / presión anormal)|TRUE
+XVR|Contenedor para sólidos de partículas granulares a granel (Granos)|TRUE
+XVS|Contenedor de chatarra a granel|TRUE
+XVY|Contenedor para sólido de partículas finas a granel ("polvos")|TRUE
+XWA|Contenedor de granel intermedio|TRUE
+XWB|Botella de mimbre|TRUE
+XWC|Contenedor intermedio para gráneles y de acero|TRUE
+XWD|Contenedor intermedio para gráneles y de aluminio|TRUE
+XWF|Contenedor intermedio para gráneles y de metal|TRUE
+XWG|Contenedor intermedio para gráneles y de acero presurizado menor a 10 kpa|TRUE
+XWH|Contenedor intermedio para gráneles y de aluminio, presurizado menor a 10 kpa|TRUE
+XWJ|Contenedor intermedio para gráneles y de metal con una presión de 10 kpa|TRUE
+XWK|Contenedor intermedio para gráneles y de acero para líquido|TRUE
+XWL|Contenedor intermedio para gráneles y de aluminio para líquido|TRUE
+XWM|Contenedor intermedio para gráneles y de metal para líquido|TRUE
+XWN|Contenedor intermedio para gráneles con tejido plástico sin capa con revestimiento|TRUE
+XWP|Contenedor intermedio para gráneles con tejido plástico y recubierto|TRUE
+XWQ|Contenedor intermedio para gráneles con tejido plástico con revestimiento|TRUE
+XWR|Contenedor intermedio para gráneles con tejido plástico, revestido y con forro|TRUE
+XWS|Contenedor intermedio para gráneles con película de plástico|TRUE
+XWT|Contenedor intermedio para gráneles textil sin capa / forro|TRUE
+XWU|Contenedor intermedio para gráneles de madera natural con forro interior|TRUE
+XWV|Contenedor intermedio para gráneles textil recubierto|TRUE
+XWW|Contenedor intermedio para gráneles textil con revestimiento|TRUE
+XWX|Contenedor intermedio para gráneles textil recubierto y con forro|TRUE
+XWY|Contenedor intermedio para gráneles contrachapado con revestimiento interior|TRUE
+XWZ|Contenedor intermedio para gráneles de madera reconstituida con revestimiento interior|TRUE
+XXA|Bolsa de tejido plástico, sin abrigo interior ni forro|TRUE
+XXB|Bolsa de tejido plástico a prueba de filtraciones|TRUE
+XXC|Bolsa de tejido plástico resistente al agua|TRUE
+XXD|Bolsa con película de plástico|TRUE
+XXF|Bolsa textil sin capa ni forro interior|TRUE
+XXG|Bolsa textil a prueba de filtraciones|TRUE
+XXH|Bolsa textil resistente al agua|TRUE
+XXJ|Bolsa de papel multi-pared|TRUE
+XXK|Bolsa de papel multi-pared, resistente al agua|TRUE
+XYA|Empaque compuesto, recipiente de plástico en tambor de acero|TRUE
+XYB|Empaque compuesto, recipiente de plástico en cajas de acero|TRUE
+XYC|Empaque compuesto, recipiente de plástico en tambor de aluminio|TRUE
+XYD|Empaque compuesto, recipiente de plástico en cajón de aluminio|TRUE
+XYF|Empaque compuesto, recipiente de plástico en caja de madera|TRUE
+XYG|Empaque compuesto, recipiente de plástico en tambor de madera contrachapada|TRUE
+XYH|Empaque compuesto, recipiente de plástico en caja de madera contrachapada|TRUE
+XYJ|Empaque compuesto, recipiente de plástico en tambor de fibra|TRUE
+XYK|Empaque compuesto, recipiente de plástico en caja de cartón|TRUE
+XYL|Empaque compuesto, recipiente de plástico en el tambor de plástico|TRUE
+XYM|Empaque compuesto, recipiente de plástico en caja de plástico sólido|TRUE
+XYN|Empaque compuesto, receptáculo de vidrio en tambor de acero|TRUE
+XYP|Empaque compuesto, receptáculo de vidrio en caja de cajas de acero|TRUE
+XYQ|Empaque compuesto, recipiente de vidrio en tambor de aluminio|TRUE
+XYR|Empaque compuesto, receptáculo de vidrio en caja de aluminio|TRUE
+XYS|Empaque compuesto, recipiente de vidrio en caja de madera|TRUE
+XYT|Empaque compuesto, recipiente de vidrio en tambor de madera contrachapada|TRUE
+Xyv|Empaque compuesto, recipiente de vidrio en el cesto de mimbre|TRUE
+XYW|Empaque compuesto, recipiente de vidrio en tambor de fibra|TRUE
+XYX|Empaque compuesto, recipiente de vidrio en caja de cartón|TRUE
+XYY|Empaque compuesto, recipiente de vidrio en paquete de plástico expandible|TRUE
+XYZ|Empaque compuesto, recipiente de vidrio en paquete de plástico sólido|TRUE
+XZA|Contenedor de granel intermedio, papel, multi-pared|TRUE
+XZB|Bolsa grande|TRUE
+XZC|Contenedor intermedio para gráneles de papel, multi-pared y resistente al agua|TRUE
+XZD|Contenedor intermedio para gráneles de plástico rígido, con equipo estructural para sólidos|TRUE
+XZF|Contenedor intermedio para gráneles de plástico rígido, autoportante para sólidos|TRUE
+XZH|Contenedor intermedio para gráneles de plástico rígido, autoportante y presurizado|TRUE
+XZJ|Contenedor intermedio para gráneles de plástico rígido, con equipo estructural para líquidos|TRUE
+XZK|Contenedor intermedio para gráneles de plástico rígido, autoportante, líquidos|TRUE
+XZL|Contenedor intermedio para gráneles, compuesto y de plástico rígido, sólidos|TRUE
+XZM|Contenedor intermedio para gráneles, compuesto y de plástico flexible, sólidos|TRUE
+XZN|Contenedor intermedio para gráneles, compuesto y de plástico rígido, presurizado|TRUE
+XZP|Contenedor intermedio para gráneles, compuesto y de plástico flexible, presurizado|TRUE
+XZQ|Contenedor intermedio para gráneles, compuesto y de plástico rígido, líquidos|TRUE
+XZR|Contenedor intermedio para gráneles, compuesto y de plástico flexible para líquidos|TRUE
+XZS|Contenedor intermedio para gráneles, compuesto|TRUE
+XZT|Contenedor intermedio para gráneles con tablero de fibras|TRUE
+XZU|Contenedor intermedio para gráneles flexible|TRUE
+XZV|Contenedor intermedio para gráneles de metal, distinto del acero|TRUE
+XZW|Contenedor intermedio para gráneles, de madera natural|TRUE
+XZX|Contenedor intermedio para gráneles, de contrachapado|TRUE
+XZY|Contenedor intermedio para gráneles, de madera reconstituida|TRUE
+YDK|Yarda cuadrada|TRUE
+YDQ|Yarda cúbica|TRUE
+YL|Cien yardas lineales|TRUE
+YRD|Yarda|TRUE
+YT|Diez yardas|TRUE
+Z1|Furgoneta|TRUE
+Z11|Contenedor colgante |TRUE
+Z5|Arrastre|TRUE
+Z6|Punto de conferencia|TRUE
+Z8|Página de noticias|TRUE
+ZP|Páginas|TRUE
+ZZ|Mutuamente definido|TRUE

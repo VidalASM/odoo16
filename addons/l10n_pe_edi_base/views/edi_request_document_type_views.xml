@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="l10n_oe_edi_document_type_view_form" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.request.document.type.form</field>
+        <field name="model">l10n_pe_edi.request.document.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code" />
+                            <field name="code_of" />
+                            <field name="name" />
+                            <field name="kanban_dashboard" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="l10n_oe_edi_document_type_view_tree" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.request.document.type.tree</field>
+        <field name="model">l10n_pe_edi.request.document.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" />
+                <field name="code_of" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="l10n_oe_edi_document_type_view_kanban" model="ir.ui.view">
+        <field name="name">l10n_pe_edi.request.document.type.kanban</field>
+        <field name="model">l10n_pe_edi.request.document.type</field>
+        <field name="arch" type="xml">
+            <kanban
+                class="oe_background_grey o_kanban_dashboard o_l10n_pe_edi_base_kanban"
+                create="0"
+                group_create="false"
+            >
+                <field name="code" />
+                <field name="code_of" />
+                <field name="name" />
+                <field name="kanban_dashboard" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="d-flex flex-column flex-fill">
+                            <t
+                                t-value="JSON.parse(record.kanban_dashboard.raw_value)"
+                                t-set="dashboard"
+                            />
+                            <t t-call="RequestDocumentTypeTop" />
+                            <div
+                                t-att-class="'container o_kanban_card_content' + (dashboard.is_sample_data ? ' o_sample_data' : '')"
+                            >
+                                <div class="row">
+                                    <t t-call="RequestDocumentTypeBody" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-name="RequestDocumentTypeTop">
+                        <div t-attf-class="o_kanban_card_header">
+                            <div class="o_kanban_card_header_title">
+                                <div class="o_primary">
+                                    <a
+                                        type="object"
+                                        name="get_request_action_doc_type"
+                                    ><field name="name" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <t t-name="RequestDocumentTypeBody">
+                        <div class="col-6 o_kanban_primary_left">
+                            <button
+                                class="btn btn-primary"
+                                name="get_request_not_send_action"
+                                type="object"
+                            >
+                                <span><t
+                                        t-esc="dashboard.number_not_send"
+                                    /> To Send</span>
+                            </button>
+                        </div>
+                        <div class="col-6 o_kanban_primary_right">
+                            <div t-if="dashboard.number_not_ose > 0" class="row">
+                                <div class="col-12">
+                                    <a name="get_request_not_ose_action" type="object">
+                                        <t t-esc="dashboard.number_not_ose" />
+                                        Not OSE
+                                    </a>
+                                </div>
+                            </div>
+                            <div t-if="dashboard.number_not_sunat > 0" class="row">
+                                <div class="col-12">
+                                    <a
+                                        name="get_request_not_sunat_action"
+                                        type="object"
+                                    >
+                                        <t t-esc="dashboard.number_not_sunat" />
+                                        Not SUNAT
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="l10n_pe_edi_document_type_action" model="ir.actions.act_window">
+        <field name="name">Document Type</field>
+        <field name="res_model">l10n_pe_edi.request.document.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="l10n_pe_edi_document_type_action_kanban" model="ir.actions.act_window">
+        <field name="name">E-Document Resume</field>
+        <field name="res_model">l10n_pe_edi.request.document.type</field>
+        <field name="view_mode">kanban</field>
+    </record>
+</odoo>

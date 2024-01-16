@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="edi_pe_pse" model="account.edi.format">
+            <field name="name">Peru PSE</field>
+            <field name="code">pe_pse</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.vat_sunat</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="100"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Contacts" string="Contacts" data-key="contacts" groups="account.group_account_manager">
+                    <h2>Data from SUNAT</h2>
+                    <div class="row mt16 o_settings_container" id="pay_invoice_online_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="annexed_locals"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="annexed_locals"/>
+                                <div class="text-muted">
+                                    Get annexed locals from SUNAT website
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="legal_representatives"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="legal_representatives"/>
+                                <div class="text-muted">
+                                    Get legal representives from SUNAT website
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="l10n_pe_vat_sunat_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'contacts'}</field>
+    </record>
+    
+    <!-- <menuitem name="Configuration" parent="contacts.res_partner_menu_config" groups="account.group_account_manager" id="sunat_configuration" sequence="10"/> -->
+    <menuitem name="Settings" parent="contacts.res_partner_menu_config" groups="base.group_system" id="sunat_settings" sequence="0" action="l10n_pe_vat_sunat_config_settings_action"/>
+
+</odoo>

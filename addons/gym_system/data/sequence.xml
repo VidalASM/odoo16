@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data >
+        <record id="workout_list" model="ir.sequence">
+            <field name="name">Workout Schedule</field>
+            <field name="code">gym.workout</field>
+            <field name="prefix">WSCH</field>
+            <field name="padding">3</field>
+        </record>
+        <record id="gym_ingredient" model = "ir.sequence">
+            <field name="name">Gym Ingredient</field>
+            <field name="code">gym.ingredient</field>
+            <field name="prefix">INGRD</field>
+            <field name="padding">3</field>
+        </record>
+        <record id="muscle_id" model = "ir.sequence">
+            <field name="name">Gym Muscle</field>
+            <field name="code">gym.muscle</field>
+            <field name="prefix">MUSC</field>
+            <field name="padding">3</field>
+        </record>
+        <record id="nutrition_id" model = "ir.sequence">
+            <field name="name">Nutrition</field>
+            <field name="code">gym.nutrition</field>
+            <field name="prefix">NUTR</field>
+            <field name="padding">3</field>
+        </record>
+    </data>
+</odoo>

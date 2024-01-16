@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+       <record model="ir.ui.view" id="workout_wizard">
+          <field name="name">rate change</field>
+          <field name="model">wizard.weight</field>
+          <field name="arch" type="xml">
+              <form string="workout">
+               <separator string="This wizard add workout."/>
+                <group>
+                    <group>
+                        <field name="date" required="1"/>
+                        <field name="weight" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="weight_add" string="OK" type="object" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+              </form>
+          </field>
+      </record>
+     
+      <record model="ir.actions.act_window" id="wizard_workout_entry_action">
+          <field name="name">workout excercise</field>
+          <field name="res_model">wizard.weight</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+      </record>
+
+
+
+     
+  </data>
+</odoo>

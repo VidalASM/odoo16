@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="gym_weight_entry_form_view">
+            <field name="name">weight entry</field>
+            <field name="model">weight.entry</field>
+            <field name="arch" type="xml">
+                <form string="gym weight entry form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer_id" required="1"/>
+                                <field name="date" required="1"/>
+                                <field name="weight" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="gym_weight_entry_tree">
+            <field name="name">weight entry tree</field>
+            <field name="model">weight.entry</field>
+            <field name="arch" type="xml">
+                <tree string="weight entry list">
+                    <field name="customer_id"/>
+                    <field name="date"/>
+                    <field name="weight"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>        

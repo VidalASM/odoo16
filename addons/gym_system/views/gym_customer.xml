@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id = "gym_inquiry_form_view">
+            <field name="name">gym Customer</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="company_type" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </field>
+                <field name="name" position="replace">
+                    <br/>
+                    <field name="name" required="1" placeholder="Name....."/>
+                </field>
+                <xpath expr="//form/sheet/notebook/page[3]" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[2]" position="after">
+                    <page string="Gym Trainer">
+                        <group>
+                            <group>
+                                <field name="trainer"/>
+                                <field name="trainer_type"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            
+            </field>
+        </record>
+
+ 
+    </data>
+</odoo>

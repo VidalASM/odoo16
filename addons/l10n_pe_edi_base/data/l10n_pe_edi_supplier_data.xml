@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="l10n_pe_edi_supplier_nubefact" model="l10n_pe_edi.supplier">
+        <field name="code">odoofact</field>
+        <field name="name">Nubefact</field>
+        <field name="control_url">https://www.nubefact.com/buscar</field>
+        <field name="resume_url">http://www.odoofact.pe/edi/submit_resume</field>
+        <field
+            name="authorization_message"
+        >Issued by a SUPPLIER Authorized by SUNAT through Intendance Resolution Num.034-005-0005315</field>
+    </record>
+    <record id="l10n_pe_edi_supplier_odoofact" model="l10n_pe_edi.supplier">
+        <field name="code">odoofact</field>
+        <field name="name">Odoofact</field>
+        <field name="control_url">https://odoo.pse.pe/buscar</field>
+        <field name="resume_url">http://www.odoofact.pe/edi/submit_resume</field>
+        <field
+            name="authorization_message"
+        >Issued by a SUPPLIER Authorized by SUNAT through Intendance Resolution Num.034-005-0005315</field>
+    </record>
+</odoo>

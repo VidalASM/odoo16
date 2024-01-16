@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form.l10n_pe_edi_odoofact</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field
+                    name="l10n_pe_edi_product_code_id"
+                    options="{'no_create': 1, 'no_create_edit': 1, 'no_open': 1}"
+                />
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="before">
+                <field
+                    name="l10n_pe_edi_detraction_type_id"
+                    options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>

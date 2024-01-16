@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="dms_file_tag_assets_frontend" inherit_id="web.assets_backend">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/ksc_dms/static/src/js/kms_dms.js"/>
+        </xpath>
+    </template>
+</odoo>
+
+
+
+

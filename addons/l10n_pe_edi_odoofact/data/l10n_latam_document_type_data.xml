@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="l10n_pe.document_type01" model="l10n_latam.document.type">
+        <field name="type_of">1</field>
+    </record>
+    <record id="l10n_pe.document_type02" model="l10n_latam.document.type">
+        <field name="type_of">2</field>
+    </record>
+    <record id="l10n_pe.document_type07" model="l10n_latam.document.type">
+        <field name="type_of">3</field>
+    </record>
+    <record id="l10n_pe.document_type07b" model="l10n_latam.document.type">
+        <field name="type_of">3</field>
+    </record>
+    <record id="l10n_pe.document_type08" model="l10n_latam.document.type">
+        <field name="type_of">4</field>
+    </record>
+    <record id="l10n_pe.document_type08b" model="l10n_latam.document.type">
+        <field name="type_of">4</field>
+    </record>
+</odoo>
