@@ -49,6 +49,8 @@
         'views/measurement_history.xml',
         'views/workout_plan.xml',
         'views/trainers.xml',
+        'report/workout_plan_reports.xml',
+        'report/workout_plan_template.xml',
     ],
     'installable': True,
     'application': False,
