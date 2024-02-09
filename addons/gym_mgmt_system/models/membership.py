@@ -53,6 +53,15 @@ class GymMembership(models.Model):
     membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía',
                                      compute="_compute_membership_date_to",
                                      help='Date until which membership remains active.')
+    journal_id = fields.Many2one(
+        'account.journal',
+        string='Journal',
+        store=True, readonly=False,
+        required=True,
+        states={'draft': [('readonly', False)]},
+        check_company=True,
+        domain="[('type', '=', 'sale')]",
+    )
 
     _sql_constraints = [
         ('membership_date_greater',
@@ -95,20 +104,31 @@ class GymMembership(models.Model):
         return res
     
     def create_membership_invoice(self):
-        invoice_list = self.member.create_membership_invoice(self.membership_scheme, self.membership_fees)
+        sale_order = self.env['sale.order'].create({
+            'partner_id': self.member.id,
+        })
+        self.env['sale.order.line'].create({
+            'order_id': sale_order.id,
+            'name': self.membership_scheme.name,
+            'product_id': self.membership_scheme.id,
+            'price_unit': self.membership_fees,
+            'product_uom_qty': 1,
+        })
+        self.sale_order_id = sale_order.id
+        # invoice_list = self.member.create_membership_invoice(self.membership_scheme, self.membership_fees)
 
-        search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
-        form_view_ref = self.env.ref('account.view_move_form', False)
-        tree_view_ref = self.env.ref('account.view_move_tree', False)
+        # search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
+        # form_view_ref = self.env.ref('account.view_move_form', False)
+        # tree_view_ref = self.env.ref('account.view_move_tree', False)
 
-        return  {
-            'domain': [('id', 'in', invoice_list.ids)],
-            'name': 'Membership Invoices',
-            'res_model': 'account.move',
-            'type': 'ir.actions.act_window',
-            'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
-            'search_view_id': search_view_ref and [search_view_ref.id],
-        }
+        # return  {
+        #     'domain': [('id', 'in', invoice_list.ids)],
+        #     'name': 'Membership Invoices',
+        #     'res_model': 'account.move',
+        #     'type': 'ir.actions.act_window',
+        #     'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
+        #     'search_view_id': search_view_ref and [search_view_ref.id],
+        # }
 
 
 class SaleConfirm(models.Model):
@@ -116,6 +136,8 @@ class SaleConfirm(models.Model):
 
     def action_confirm(self):
         """ membership  created directly from sale order confirmed """
+        res = super(SaleConfirm, self).action_confirm()
+
         product = self.env['product.product'].search([
             ('membership_date_from', '!=', False),
             ('id', '=', self.order_line.product_id.id)])
@@ -126,6 +148,5 @@ class SaleConfirm(models.Model):
                  'membership_scheme': self.order_line.product_id.id,
                  'sale_order_id': self.id,
                  }])
-
-        res = super(SaleConfirm, self).action_confirm()
+            
         return res

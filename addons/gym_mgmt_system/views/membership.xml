@@ -21,6 +21,7 @@
                             <field name="member"/>
                             <field name="membership_scheme"/>
                             <field name="paid_amount"/>
+                            <field name="journal_id"/>
                         </group>
                         <group>
                             <field name="membership_fees"/>

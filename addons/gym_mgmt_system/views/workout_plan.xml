@@ -34,11 +34,16 @@
                         <page string="Exercise List" name="exercise_list">
                             <field name="workout_plan_option_ids">
                                 <tree editable="bottom">
+                                    <field name="rep_b"/>
+                                    <field name="rep_c"/>
                                     <field name="exercise_id"/>
                                     <field name="name"/>
                                     <field name="equipment_ids"/>
                                     <field name="sets"/>
                                     <field name="repeat"/>
+                                    <field name="rep_m"/>
+                                    <field name="rep_r"/>
+                                    <field name="rep_p"/>
                                 </tree>
                             </field>
                         </page>
@@ -65,6 +70,7 @@
                         </h1>
                     </div>
                     <group col="4" colspan="6">
+                        <field name="assign_to"/>
                         <field name="from_date"/>
                         <field name="to_date"/>
                     </group>
@@ -75,6 +81,19 @@
                     <field name="message_ids"/>
                 </div>
             </form>
+        </field>
+    </record>
+
+    <record id="view_my_workout_plan_tree" model="ir.ui.view">
+        <field name="name">my.workout.plan.tree</field>
+        <field name="model">my.workout.plan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="payment_term_id"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <field name="assign_to"/>
+            </tree>
         </field>
     </record>
 
@@ -95,8 +114,8 @@
         <field name="name">My Workout Plan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">my.workout.plan</field>
-        <field name="view_mode">kanban,form</field>
-        <field name="domain">[('assign_to.user_id', '=', uid)]</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="domain">[]</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 My Workout Plan!

@@ -70,6 +70,11 @@ class WorkoutPlanOption(models.Model):
                                     domain="[('gym_product', '!=',False)]")
     sets = fields.Integer(string="Sets")
     repeat = fields.Integer(string="Repeticiones")
+    rep_b = fields.Integer(string="B")
+    rep_c = fields.Integer(string="C")
+    rep_m = fields.Integer(string="M")
+    rep_r = fields.Integer(string="R")
+    rep_p = fields.Integer(string="P")
 
 
 class WorkoutDays(models.Model):
