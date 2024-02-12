@@ -18,13 +18,13 @@ class ResPartner(models.Model):
 
     firstname = fields.Char("First name", index=True)
     lastname = fields.Char("Last name", index=True)
-    name = fields.Char(
-        compute="_compute_name",
-        inverse="_inverse_name_after_cleaning_whitespace",
-        required=False,
-        store=True,
-        readonly=False,
-    )
+    # name = fields.Char(
+    #     compute="_compute_name",
+    #     inverse="_inverse_name_after_cleaning_whitespace",
+    #     required=False,
+    #     store=True,
+    #     readonly=False,
+    # )
 
     @api.model_create_multi
     def create(self, vals_list):

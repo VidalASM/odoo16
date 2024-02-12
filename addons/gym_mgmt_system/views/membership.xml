@@ -7,6 +7,7 @@
             <form>
                 <header>
                     <button string="Confirmar Membresia" type="object" name="create_membership_invoice" />
+                    <button string="Abrir Contrato" type="object" name="open_sale_order" />
                     <field name="state" widget="statusbar"
                            options="{'clickable':'1'}"/>
                 </header>
@@ -22,6 +23,8 @@
                             <field name="membership_scheme"/>
                             <field name="paid_amount"/>
                             <field name="journal_id"/>
+                            <field name="adendum"/>
+                            <field name="restrictions"/>
                         </group>
                         <group>
                             <field name="membership_fees"/>
@@ -77,4 +80,23 @@
             parent="gym_member_root"
             action="action_gym_membership"
             sequence="30"/>
+
+    <!-- sale order -->
+    <record id="view_order_form_view" model="ir.ui.view">
+        <field name="name">sale.order.form.mebership</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Membresìas" attrs="{'invisible': [('is_contract','!=',True)]}">
+                    <!-- <group col="4"> -->
+                        <field name="membership_ids"/>
+                    <!-- </group> -->
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="is_contract"/>
+            </xpath>
+        </field>
+    </record>
 </odoo>

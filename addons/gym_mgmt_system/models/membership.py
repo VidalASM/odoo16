@@ -23,6 +23,18 @@
 from odoo import api, fields, models, _
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
+import logging
+
+_logger = logging.getLogger(__name__)
+
+try:
+    from num2words import num2words
+except ImportError:
+    _logger.warning(
+        "The num2words python library is not installed, amount-to-text features won't "
+        "be fully available."
+    )
+    num2words = None
 
 class GymMembership(models.Model):
     _name = "gym.membership"
@@ -44,6 +56,8 @@ class GymMembership(models.Model):
     sale_order_id = fields.Many2one('sale.order', string='Orden de venta',
                                     ondelete='cascade', copy=False,
                                     readonly=False)
+    # sale_order_ids = fields.One2many(
+    #     'sale.order', 'membership_id', 'Ordenes de venta')
     invoice_id = fields.Many2one('account.move', string='Factura',
                                     ondelete='cascade', copy=False,
                                     readonly=False)
@@ -62,6 +76,8 @@ class GymMembership(models.Model):
         check_company=True,
         domain="[('type', '=', 'sale')]",
     )
+    adendum = fields.Text("Adendum")
+    restrictions = fields.Text("Restricciones")
 
     _sql_constraints = [
         ('membership_date_greater',
@@ -103,9 +119,27 @@ class GymMembership(models.Model):
         res = super(GymMembership, self).create(vals)
         return res
     
+    def open_sale_order(self):
+        # record = self.env['sale.order'].browse(self.sale_order_id.id)
+        # share_link = record.get_base_url() + record._get_share_url(redirect=True)
+        # return {
+        #     'type': 'ir.actions.act_url',
+        #     'target': 'new',
+        #     'url': share_link,
+        # }
+        order_id = self.sale_order_id
+        # return order_id.action_preview_sale_order()
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'new',
+            'url': order_id.get_portal_url(),
+        }
+    
     def create_membership_invoice(self):
         sale_order = self.env['sale.order'].create({
             'partner_id': self.member.id,
+            'is_contract': True,
         })
         self.env['sale.order.line'].create({
             'order_id': sale_order.id,
@@ -115,6 +149,7 @@ class GymMembership(models.Model):
             'product_uom_qty': 1,
         })
         self.sale_order_id = sale_order.id
+        self.state = 'confirm'
         # invoice_list = self.member.create_membership_invoice(self.membership_scheme, self.membership_fees)
 
         # search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
@@ -130,23 +165,42 @@ class GymMembership(models.Model):
         #     'search_view_id': search_view_ref and [search_view_ref.id],
         # }
 
+    def _get_amount_in_words(self):
+        """Transform the amount to text"""
+        if num2words is None:
+            logging.getLogger(__name__).warning(
+                "The library 'num2words' is missing, cannot render textual amounts."
+            )
+            return ""
+        amount_base = self.membership_scheme.membership_interval_qty
+
+        lang_code = self.env.context.get("lang") or self.env.user.lang
+        lang = self.env["res.lang"].search([("code", "=", lang_code)])
+        words = num2words(amount_base, lang=lang.iso_code)
+        return words.upper()
+
 
 class SaleConfirm(models.Model):
     _inherit = "sale.order"
+
+    # membership_id = fields.Many2one('gym.membership', 'Membresía', ondelete='cascade', index=True)
+    is_contract = fields.Boolean(string="Es membresìa", default=False)
+    membership_ids = fields.One2many(
+        'gym.membership', 'sale_order_id', 'Membresías')
 
     def action_confirm(self):
         """ membership  created directly from sale order confirmed """
         res = super(SaleConfirm, self).action_confirm()
 
-        product = self.env['product.product'].search([
-            ('membership_date_from', '!=', False),
-            ('id', '=', self.order_line.product_id.id)])
-        for record in product:
-            self.env['gym.membership'].create([
-                {'member': self.partner_id.id,
-                 'membership_date_from': record.membership_date_from,
-                 'membership_scheme': self.order_line.product_id.id,
-                 'sale_order_id': self.id,
-                 }])
+        # product = self.env['product.product'].search([
+        #     ('membership_date_from', '!=', False),
+        #     ('id', '=', self.order_line.product_id.id)])
+        # for record in product:
+        #     self.env['gym.membership'].create([
+        #         {'member': self.partner_id.id,
+        #          'membership_date_from': record.membership_date_from,
+        #          'membership_scheme': self.order_line.product_id.id,
+        #          'sale_order_id': self.id,
+        #          }])
             
         return res

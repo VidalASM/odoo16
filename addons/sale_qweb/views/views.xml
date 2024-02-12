@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <template id="sale_order_portal_qweb" inherit_id="sale.sale_order_portal_content">
+
+      <xpath
+        expr="//div[@id='introduction']"
+        position="replace"
+      >
+        <style>
+          body {
+            background-color: red;
+          }
+          h1 {
+            color: black;
+          }
+          #contrato p {
+              text-align: justify;
+          }
+          #title-table td, #title-table tr {
+            border: none;
+          }
+          #title-table .left {
+            width:66%;
+          }
+          #title-table .right {
+            width:33%;
+            text-align: center;
+            vertical-align:miggle;
+          }
+          #contrato-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            width: 100%;
+            margin: 20px auto;
+          }
+          #contrato-table .first {
+            text-align: center;
+            vertical-align:top;
+            font-size: 12px;
+            height: 45px;
+          }
+          #contrato-table .left {
+            -webkit-border-top-left-radius: 15px;
+            -moz-border-radius-topleft: 15px;
+            border-top-left-radius: 15px;
+            width:40%;
+          }
+          #contrato-table .right {
+            -webkit-border-top-right-radius: 15px;
+            -moz-border-radius-topright: 15px;
+            border-top-right-radius: 15px;
+            width:40%;
+          }
+          #contrato-table th,
+          #contrato-table td {
+            border: 1px solid black;
+            text-align: center;
+          }
+          #contrato-table .dni {
+            text-align: left;
+            vertical-align:top;
+            font-size: 10px;
+          }
+          #contrato-table .visa,
+          #contrato-table .mc {
+            text-align: left;
+            vertical-align:top;
+            font-size: 10px;
+            width:45px;
+          }
+          #contrato-table .second {
+            height: 45px;
+          }
+          #contrato-table .third {
+            height: 35px;
+          }
+          #contrato-table .third td {
+            text-align: left;
+            font-weight: bold;
+          }
+          #contrato-table .info {
+            background-color: #BDBDBD;
+            text-transform: uppercase;
+          }
+          #contrato-table .last-name {
+            text-align: center;
+            vertical-align:top;
+            font-size: 10px;
+          }
+          #contrato-table .name {
+            text-align: center;
+            vertical-align:top;
+            font-size: 10px;
+            width:55px;
+          }
+          #contrato-table .mini {
+            font-size: 10px;
+            font-weight: bold;
+          }
+          #contrato-table .alter {
+            font-size: 10px;
+            font-weight: bold;
+          }
+          #contrato-table .alter .gender {
+            font-size: 14px;
+            font-weight: bold;
+          }
+          #contrato-table .email {
+            width:25%;
+          }
+          #contrato-table .last td {
+            text-align: center;
+            vertical-align:top;
+            font-size: 10px;
+            font-weight: bold;
+            height: 45px;
+          }
+          #contrato-table td.last-first {
+            text-align: left;
+          }
+        </style>
+
+        <!-- Intro -->
+        <div id="introduction" t-attf-class="pb-2 pt-3 #{'card-header bg-white' if report_type == 'html' else ''}">
+          
+          <!-- row -->
+          <div class="row">
+              <table id="title-table" class="table table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="left"><h4>CONTRATO PRESTACIÓN DE SERVICIO</h4><h3>PLAN REGULAR</h3></td>
+                    <!-- <td class="right"><img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="logo-revo"/></td> -->
+                    <td class="right"><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- row -->
+          
+        </div>
+      </xpath>
+
+      <xpath
+        expr="//div[@id='informations']"
+        position="replace"
+      >
+          <!-- row -->
+          <div class="row">
+              <t t-set="invoices" t-value="sale_order.invoice_ids.filtered(lambda i: i.state not in ['draft', 'cancel'])"/>
+              <t t-set="payments_vals" t-value="invoices.mapped('invoice_payments_widget')"/>
+              <t t-set="efectivo" t-value="0"/>
+              <t t-set="visa" t-value="0"/>
+              <t t-set="mastercard" t-value="0"/>
+              <t t-foreach="invoices" t-as="i">
+                <t t-set="content" t-value="i.invoice_payments_widget['content']"/>
+                <t t-foreach="content" t-as="c">
+                  <t t-if="c['journal_name'] == 'EFECTIVO'">
+                    <t t-set="efectivo" t-value="efectivo + c['amount']"/>
+                  </t>
+                  <t t-if="c['journal_name'] == 'VISA'">
+                    <t t-set="visa" t-value="visa + c['amount']"/>
+                  </t>
+                  <t t-if="c['journal_name'] == 'MASTERCARD'">
+                    <t t-set="mastercard" t-value="mastercard + c['amount']"/>
+                  </t>
+                </t>
+              </t>          
+              <table id="contrato-table">
+                <tbody>
+                  <tr class="first">
+                    <td class="left" colspan="3" scope="col">N°. Boleta / Factura <t t-foreach="invoices" t-as="i"><br/> <span t-field="i.name"/></t> </td>
+                    <td colspan="2" scope="col">Fecha de Factura <t t-foreach="invoices" t-as="i"><br/> <span t-field="i.invoice_date"/></t> </td>
+                    <td class="right" colspan="2" scope="col">Sede <t><br/> <span t-field="sale_order.company_id.name"/></t> </td>
+                  </tr>
+                  <tr class="second">
+                    <td class="dni" colspan="2">N° de Codigo - DNI <t><br/> <span t-field="sale_order.partner_id.vat"/></t> </td>
+                    <td class="dni">Pago efectivo <t><br/> <span t-esc="efectivo"/></t> </td>
+                    <td class="visa">Visa <t><br/> <span t-esc="visa"/></t> </td>
+                    <td class="mc">Mastercard <t><br/> <span t-esc="mastercard"/></t> </td>
+                    <td colspan="2">Nuevo <input type="checkbox"/> Renovación <input type="checkbox"/> Transferencia <input type="checkbox"/> Migración <input type="checkbox"/></td>
+                  </tr>
+                  <tr class="third">
+                    <td class="info" colspan="4">Informacion Personal</td>
+                    <td class="fecha" colspan="3">Fecha de Inicio: <span t-esc="sale_order.membership_ids[0].membership_date_from.strftime('%d/%m/%Y')"/> </td>
+                  </tr>
+                  <tr class="four">
+                    <td colspan="2">DNI <input type="checkbox"/>   CE <input type="checkbox"/>   Pasaporte <input type="checkbox"/></td>
+                    <td rowspan="2" colspan="2" class="last-name">1er Apellido <t><br/> <span t-field="sale_order.partner_id.lastname"/></t> </td>
+                    <td rowspan="2" class="last-name">2do Apellido <t><br/> <span t-field="sale_order.partner_id.lastname2"/></t> </td>
+                    <td rowspan="2" colspan="2" class="name">Nombre(s) <t><br/> <span t-field="sale_order.partner_id.firstname"/></t> </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">N° <span t-field="sale_order.partner_id.vat"/></td>
+                  </tr>
+                  <tr class="mini">
+                    <td colspan="1">Sexo</td>
+                    <td colspan="1">Fecha de Nacimiento</td>
+                    <td colspan="3">Estado Civil</td>
+                    <td colspan="2" class="email">Correo Electrónico</td>
+                  </tr>
+                  <tr class="alter">
+                    <td class="gender">F <input type="checkbox"/> M <input type="checkbox"/></td>
+                    <td colspan="1"> <span t-field="sale_order.partner_id.birthdate_date"/></td>
+                    <td colspan="3">Soltero <input type="checkbox"/> Casado <input type="checkbox"/> Union Libre <input type="checkbox"/> Separado <input type="checkbox"/> Viudo <input type="checkbox"/></td>
+                    <td colspan="2"> <span t-field="sale_order.partner_id.email"/> </td>
+                  </tr>
+                  <tr class="last">
+                    <td class="last-first" colspan="3">Direccion residencia <t><br/> <span t-field="sale_order.partner_id.street"/></t> </td>
+                    <td>Ciudad <t><br/> <span t-field="sale_order.partner_id.city_id.name"/></t> </td>
+                    <td>Distrito Civil <t><br/> <span t-field="sale_order.partner_id.l10n_pe_district.name"/></t> </td>
+                    <td>Telefono Fijo <t><br/> <span t-field="sale_order.partner_id.phone"/></t> </td>
+                    <td>Telefono Celular <t><br/> <span t-field="sale_order.partner_id.mobile"/></t> </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <!-- row -->
+          
+          <!-- contrato -->
+          <div id="contrato">
+            <p>REVO FITNESS E.I.R.L. RUC N° 20610478507 y con domicilio principal en Calle Paucarpata 302 interior 201, distrito, provincia y departamento de Arequipa, a quien en lo sucesivo se denominará REVO SPORT (la sede); debidamente representado por su Gerente Manuel Oswaldo Ramos Cruz con DNI N° 42002857 y la otra parte <u><span t-field="sale_order.partner_id.name"/></u> con DNI N° <u><span t-field="sale_order.partner_id.vat"/></u>, persona que en adelante será denominado como EL USUARIO. El cumplimiento del presente documento es obligatorio para EL USUARIO, y el incumplimiento del mismo podrá resultar en las medidas correctivas establecidas en los términos y condiciones de su Membresía.</p>
+            <p>PRIMERA: El presente contrato tiene por objeto lo siguiente, REVO SPORT suministra a EL USUARIO, los servicios de gimnasio con sujeción al “Reglamento Interno General de Servicios” (ANEXO 01) y a los reglamentos especificos establecidos para las distintas actividades del gimnasio; zona cardiovascular, zona de musculación, sport cycling, clases grupales, en los términos y condiciones del plan seleccionado <u><span t-esc="sale_order.order_line[0].name"/></u>, entre otros que resulten aplicables.</p>
+            <p>SEGUNDA: El presente contrato tendrá una duración de <u><span t-esc="sale_order.membership_ids[0]._get_amount_in_words()"/></u> (<u><span t-esc="sale_order.membership_ids[0].membership_scheme.membership_interval_qty"/></u>) días, contados a partir del momento en que se active su PLAN es decir desde el: <u><span t-esc="sale_order.membership_ids[0].membership_date_from.strftime('%d/%m/%Y')"/></u> al <u><span t-esc="sale_order.membership_ids[0].membership_date_to.strftime('%d/%m/%Y')"/></u>; , conforme al pago de la misma; REVO SPORT, no se hace responsable por recuperación de tiempo de afiliación por inasistencias de EL USUARIO después de que este haya iniciado su plan.</p>
+            <p>TERCERA: EL USUARIO se obliga al pago oportuno del plan escogido a la fecha de este contrato abona (S/. <u><span t-esc="sale_order.membership_ids[0].membership_fees"/></u>) soles ; al momento de suscribir el presente contrato. Pago que le confiere el derecho personal al uso de las instalaciones y equipos de REVO SPORT conforme al plan seleccionado. REVO SPORT podrá modificar el alcance del plan e incrementar sus valores tiempo, sin restricción alguna, en la factura y/o boleta de venta de cobro que emitida por REVO SPORT constará el plan escogido por EL USUARIO, correspondiente al valor, la cual formará parte integral del presente contrato. REVO SPORT, por ningun motivo reembolsará a EL USUARIO diferencias en cuotas o inscripciones ya pagadas. LEY Nº 29571.- Código de protección y defensa del consumidor; segundo párrafo del artículo 104 de la Ley.: El proveedor es exonerado de responsabilidad administrativa si logra acreditar la existencia de una causa objetiva, justificada y no previsible que configure ruptura del nexo causal por caso fortuito o fuerza mayor, de hecho determinante de un tercero o de la imprudencia del propio consumidor afectado.</p>
+            <p>CUARTO: EL USUARIO deberá respetar y firmar el anexo correspondiente de acuerdo con el perfil que le corresponda.</p>
+            <p>QUINTO: EL USUARIO conoce y respeta que es parte integral del presente contrato los siguientes anexos: ANEXO 01: Reglamento Interno General de Servicios, ANEXO 02: Historial Familiar, ANEXO 03: Consentimiento Menor de Edad, ANEXO 04 política de privacidad y protección de datos personales, ANEXO 05 Formulario derechos arco.</p>
+            <p>SEXTO: Se entenderá que se encuentra debidamente notificado EL USUARIO cuando REVO SPORT publique en las redes sociales o a través de un letrero dentro de las instalaciones cualquier cambio o modificación de horario, clases grupales o cualquier servicio que brinde.</p>
+            <p>SEPTIMO</p>
+            <p>OCTAVO</p>
+            <p>NOVENA: PROTECCIÓN DE DATOS PERSONALES: El Usuario autoriza el tratamiento de datos personales y sensibles a REVO FITNESS E.I.R.L., siendo este último el titular del Banco de Datos Personales. Dichos datos se usarán para la prestación y comercialización de productos y servicios del Gimnasio, el envío de promociones de productos y servicios de terceros con quienes el Gimnasio tenga o llegue a tener un acuerdo comercial, el cobro automático de los conceptos detallados en este Acuerdo, la gestión de acceso del Usuario al Local, la elaboración de perfiles de consumo, estadísticas y políticas corporativas, y todo lo relacionado a este Acuerdo, así como el envío de promociones del Gimnasio incluso a Usuarios con planes cancelados. Los datos serán almacenados en el Banco de Datos denominado “Clientes” con código de inscripción N° RNPDP-PJP N° 13114 en el Registro Nacional de Protección de Datos Personales del Ministerio de Justicia, por el periodo que sea requerido para la ejecución contractual y las finalidades antes descritas. Asimismo, el Usuario autoriza que sus datos personales y sensibles divulgados bajo el presente Acuerdo sean compartidos, para fines de control de acceso, atención a solicitudes, y gestión de beneficios especiales para el Usuario en otros locales comerciales bajo la marca REVO SPORT en el territorio peruano. El Gimnasio garantiza el cumplimiento de la confidencialidad y el tratamiento seguro de los datos del Usuario, para lo cual cuenta con procesos de seguridad apropiados conforme a la regulación vigente, con el fin de evitar la pérdida, mal uso, acceso no autorizado, o robo de datos. En caso el Usuario necesite información adicional o desee ejercer cualquiera de sus derechos establecidos en la Ley N° 29733 y su Reglamento, puedo contactarse con el correo electrónico datospersonales@gmail.com. La Política de Protección de Datos Personales de REVO SPORT se encuentra en el correo enviado a su correo electrónico, la misma que el Usuario declara haber leído y aceptado mediante la suscripción de este acuerdo.</p>
+            <p>ADENDUM: <u><span t-esc="sale_order.membership_ids[0].adendum"/></u></p>
+            <p>RESTRICCIONES: <u><span t-esc="sale_order.membership_ids[0].restrictions"/></u></p>
+          </div>
+          
+          <div id="firmas">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <td rowspan="3"><img src="https://place-hold.it/250x100?text=Firma%20Imagen" alt="firma-imagen"/></td>
+                  <td>FIRMA EL USUARIO:__________________</td>
+                  <td>ASESOR COMERCIAL:__________________</td>
+                </tr>
+                <tr>
+                  <td>Nombres y Apellidos <t><br/> <span t-field="sale_order.partner_id.name"/></t> </td>
+                  <td>Nombres y Apellidos <span t-field="sale_order.user_id.name"/></td>
+                </tr>
+                <tr>
+                  <td>Documento (DNI) <span t-field="sale_order.partner_id.vat"/></td>
+                  <td>Fecha de venta: <span t-field="sale_order.date_order"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+      </xpath>
+
+      <xpath
+        expr="//section[@id='details']"
+        position="replace"
+      >
+
+      </xpath>
+
+      <xpath
+        expr="//section[@id='terms']"
+        position="replace"
+      >
+        <section t-if="not is_html_empty(sale_order.note)" id="terms" class="mt-5">
+            <hr class="mt-0 mb-1"/>
+            <!--<t t-if="sale_order.terms_type == 'html'">-->
+                <!-- Note is plain text. This ensures a clickable link  -->
+                <!--<t t-set="tc_url" t-value="'%s/terms' % (sale_order.get_base_url())"/>-->
+                <!--<em>Terms &amp; Conditions: <a href="/terms"><t t-out="tc_url"/></a></em>-->
+            <!--</t>-->
+            <t t-if="sale_order.terms_type == 'html'">
+                <div id="footer">
+                    <table class="table table-borderless">
+                      <tbody>
+                        <tr class="text-center">
+                          <td><img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="revo-logo-footer"/></td>
+                          <td><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td>
+                        </tr>
+                        <tr class="text-center">
+                          <td>
+                            <p>Calle Paucarpata N° 302, Int. 201 Arequipa - Arequipa - Arequipa</p>
+                            <p>Sucursales: Av. Dolores N° 163, Int. 101 J.L. Bustamante y Rivero - Arequipa - Arequipa</p>
+                            <p>Calle Miguel Grau N° 110, Int. A Cerro Colorado - Arequipa - Arequipa</p>
+                            <p>Fundo Tahuaycani Grande Tablada 6, Lote 1, Int. 102 Sachaca - Arequipa - Arequipa</p>
+                            <p>Fundo Tahuaycani Grande Tablada 6, Lote 1, Int. 102 Sachaca - Arequipa - Arequipa</p>
+                            <p>Calle Arturo Ibañez 105, Lote 101 - Jacobo Hunter - Arequipa - Arequipa</p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </t>
+            <t t-else="">
+                <em t-field="sale_order.note"/>
+            </t>
+        </section>
+      </xpath>
+
+     </template>
+
+</odoo>
