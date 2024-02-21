@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_my_gym_report"  model="report.paperformat">
+    <field name="name">Gym My Report Paper</field>
+    <field name="default" eval="True" />
+    <field name="format">custom</field>
+    <field name="page_height">297</field>
+    <field name="page_width">210</field>
+    <field name="orientation">Landscape</field>
+    <field name="margin_top">10.00</field>
+    <field name="margin_bottom">10.00</field>
+    <field name="margin_left">7.0</field>
+    <field name="margin_right">7.0</field>
+    <field name="header_line" eval="False" />
+    <field name="header_spacing">35</field>
+    <field name="dpi">125</field>
+    </record>
+
+    <record id="action_report_my_workout_plan" model="ir.actions.report">
+    <field name="name">My Workout Plan</field>
+    <field name="model">my.workout.plan</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">gym_mgmt_system.report_my_workout_plan</field>
+    <field name="report_file">gym_mgmt_system.report_my_workout_plan</field>
+    <field name="binding_model_id" ref="model_my_workout_plan"/>
+    <field name="paperformat_id" ref="gym_mgmt_system.paperformat_my_gym_report" />
+    <field name="binding_type">report</field>
+    </record>
+
+</odoo>

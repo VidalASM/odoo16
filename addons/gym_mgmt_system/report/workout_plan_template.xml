@@ -6,8 +6,2065 @@
            <t t-call="web.external_layout">
                <div class="page">
                    <div class="oe_structure"/>
-                   <h2>workout plan</h2>
-                   <p><span t-field="o.name"/></p>
+                     <style>
+                      #headera {
+                        height: 75px;
+                        background-color: black;
+                        color: white;
+                        padding: 20px 0 20px 0;
+                        text-align: center;
+                        vertical-align: middle;
+                        font-size: 14px;
+                      }
+                      #headera h1 span {
+                        color: yellow;
+                      }
+                      .page {
+                        background-color: yellow;
+                      }
+                      <!--table a-->
+                      #tablea {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                      }
+                      #tablea th,
+                      #tablea td {
+                        border: 1px solid black;
+                      }
+                      #tablea td {
+                        height: 25px;
+                      }
+                      <!--table b-->
+                      #tableb {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                      }
+                      #tableb th,
+                      #tableb td {
+                        border: 1px solid black;
+                      }
+                      #tableb td {
+                        height: 25px;
+                      }
+                      <!-- Master -->
+                      table.master {
+                        width: 100%;
+                      }
+                      table .first {
+                        vertical-align:top;
+                        padding: 15px 10px 15px 10px;
+                      }
+                      table .first h3 {
+                        text-align: center;
+                        vertical-align:bottom;
+                        text-transform: uppercase;
+                      }
+                      <!--table c-->
+                      #tablec {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                      }
+                      #tablec th,
+                      #tablec td {
+                        border: 1px solid black;
+                      }
+                      #tablec td {
+                        height: 25px;
+                      }
+                      <!--table d-->
+                      #tabled {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                      }
+                      #tabled th,
+                      #tabled td {
+                        border: 1px solid black;
+                      }
+                      #tabled td {
+                        height: 20px;
+                      }
+                      <!--table e-->
+                      #tablee {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                        margin-top: 25px;
+                      }
+                      #tablee th,
+                      #tablee td {
+                        border: 1px solid black;
+                      }
+                      #tablee td {
+                        height: 25px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                      }
+                      #tablee td.campo {
+                        width: 40%;
+                      }
+                      #tablee td.center {
+                        text-align: center;
+                      }
+                      <!-- Table F-->
+                      #tablef {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                        margin-top: 25px;
+                      }
+                      #tablef th,
+                      #tablef td {
+                        border: 1px solid black;
+                      }
+                      #tablef td {
+                        height: 25px;
+                      }
+                      #tablef td.text-area {
+                        text-align: left;
+                        vertical-align:top;
+                        height:150px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                      }
+                      <!-- TABLE G -->
+                      #tableg {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                        margin-top: 25px;
+                      }
+                      #tableg th,
+                      #tableg td {
+                        border: 1px solid black;
+                      }
+                      #tableg td {
+                        height: 25px;
+                        text-align: center;
+                      }
+                      <!-- TABLA H -->
+                      #tableh {
+                        width: 100%;
+                        margin-top: 25px;
+                      }
+                      #tableh td {
+                        height: 25px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                      }
+                      <!--TABLA I-->
+                      
+                      <!-- MISC -->
+                      .tabla-white {
+                        background-color: white;
+                        border: 1px solid black;
+                        padding: 10px 5px;
+                      }
+                      .tabla-white td {
+                        height: 25px;
+                      }
+                      .tabla-stripe td {
+                        border-bottom: 1px solid black;
+                        border-collapse: collapse;
+                      }
+                      .tabla-data {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                        <!--margin-top: 25px;-->
+                        margin-bottom: 25px;
+                      }
+                      .tabla-data th,
+                      .tabla-data td {
+                        border: 1px solid black;
+                      }
+                      .tabla-data td {
+                        height: 25px;
+                      }
+                      .t-h {
+                        text-transform: uppercase;
+                        text-align: center;
+                      }
+                      .t-c {
+                        text-align: center;
+                      }
+                      .t-b {
+                        font-weight: bold;
+                      }
+                      <!--fin misc-->
+                      .table-100 {
+                        width: 100%;
+                      }
+                      .table-50 {
+                        width: 50%;
+                      }
+                      .table-30 {
+                        width: 30%;
+                      }
+                      .table-70 {
+                        width: 70%;
+                      }
+                      .al-top td {
+                        vertical-align:top;
+                      }
+                      <!--tabla fondo-->
+                      .table-bottom {
+                        margin-top: 15px;
+                        border-collapse: collapse;
+                      }
+                      .table-bottom td {
+                        font-weight: bold;
+                        height: 55px;
+                        border: 1px solid black;
+                        text-align: center;
+                      }
+                    </style>
+                   <!-- HEADER -->
+                   <div id="headera">
+                     <!--<h1><span t-field="o.name"/></h1>-->
+                     <h1><span>Programa</span> de entrenamiento</h1>
+                   </div>
+                   
+                   <table class="master">
+                     <tr>
+                       <td class="first">
+                         <!-- TABLA A -->
+                         <table id="tablea">
+                           <tr>
+                             <td>Fecha:</td>
+                             <td>IMC:</td>
+                           </tr>
+                           <tr>
+                             <td>Peso:</td>
+                             <td>Edad:</td>
+                           </tr>
+                           <tr>
+                             <td>Talla:</td>
+                             <td>M.Muscular:</td>
+                           </tr>
+                           <tr>
+                             <td>% Grasa:</td>
+                             <td>Peso obj:</td>
+                           </tr>
+                           <tr>
+                             <td colspan="2">Grasa Viceral</td>
+                           </tr>
+                         </table>
+                         <!-- FIN TABLA A -->
+                         
+                         <h3>Control Diario</h3>
+                         
+                         <!-- TABLA D -->
+                          <table id="tabled">
+                            <tr>
+                              <td class="t-b" colspan="7">Mes 1:</td>
+                            </tr>
+                            <tr>
+                              <td>01</td>
+                              <td>02</td>
+                              <td>03</td>
+                              <td>04</td>
+                              <td>05</td>
+                              <td>06</td>
+                              <td>07</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>08</td>
+                              <td>09</td>
+                              <td>10</td>
+                              <td>11</td>
+                              <td>12</td>
+                              <td>13</td>
+                              <td>14</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>15</td>
+                              <td>16</td>
+                              <td>17</td>
+                              <td>18</td>
+                              <td>19</td>
+                              <td>20</td>
+                              <td>21</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>22</td>
+                              <td>23</td>
+                              <td>24</td>
+                              <td>25</td>
+                              <td>26</td>
+                              <td>27</td>
+                              <td>28</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>29</td>
+                              <td>30</td>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td class="t-b" colspan="7">Mes 2:</td>
+                            </tr>
+                            <tr>
+                              <td>01</td>
+                              <td>02</td>
+                              <td>03</td>
+                              <td>04</td>
+                              <td>05</td>
+                              <td>06</td>
+                              <td>07</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>08</td>
+                              <td>09</td>
+                              <td>10</td>
+                              <td>11</td>
+                              <td>12</td>
+                              <td>13</td>
+                              <td>14</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>15</td>
+                              <td>16</td>
+                              <td>17</td>
+                              <td>18</td>
+                              <td>19</td>
+                              <td>20</td>
+                              <td>21</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>22</td>
+                              <td>23</td>
+                              <td>24</td>
+                              <td>25</td>
+                              <td>26</td>
+                              <td>27</td>
+                              <td>28</td>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td>29</td>
+                              <td>30</td>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                            <tr>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                              <td/>
+                            </tr>
+                          </table>
+                         <!-- FIN TABLA D -->
+                         
+                         <!-- TABLA E -->
+                         <table id="tablee">
+                           <tr>
+                             <td colspan="2" class="center">Fase Introductoria</td>
+                           </tr>
+                           <tr>
+                             <td>1. Estiramiento</td>
+                             <td class="campo"/>
+                           </tr>
+                           <tr>
+                             <td>2. Movimiento Articular</td>
+                             <td class="campo"/>
+                           </tr>
+                           <tr>
+                             <td>3. Serie de Aproximacion</td>
+                             <td class="campo"/>
+                           </tr>
+                         </table>
+                         <!-- FIN TABLA E -->
+                         
+                         <!-- TABLA F -->
+                         <table id="tablef">
+                           <tr>
+                             <td class="text-area">Responsable:</td>
+                           </tr>
+                         </table>
+                         <!-- FIN TABLA F -->
+                       </td>
+                       <td class="first">
+                          <!-- TABLA B -->
+                           <table id="tableb">
+                             <tr>
+                               <td>Nombre:</td>
+                               <td>DNI:</td>
+                             </tr>
+                             <tr>
+                               <td>Genero:</td>
+                               <td>Cel:</td>
+                             </tr>
+                             <tr>
+                               <td>Objetivo:</td>
+                               <td>Cel:</td>
+                             </tr>
+                             <tr>
+                               <td>Proximo Control:</td>
+                               <td>PF       | Grupal:       </td>
+                             </tr>
+                             <tr>
+                               <td colspan="2">Apto:</td>
+                             </tr>
+                           </table>
+                           <!-- FIN TABLA B -->
+                           
+                           <h3>Programa de Fuerza</h3>
+                           
+                           <!-- TABLA G -->
+                           <table id="tableg">
+                             <tr>
+                               <td>1</td>
+                               <td>2</td>
+                               <td>3</td>
+                               <td>4</td>
+                               <td>5</td>
+                               <td>6</td>
+                               <td>7</td>
+                             </tr>
+                             <tr>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                             </tr>
+                             <tr>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                             </tr>
+                             <tr>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                             </tr>
+                             <tr>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                               <td/>
+                             </tr>
+                           </table>
+                           <!-- FIN TABLA G -->
+                           
+                           <!-- TABLA H -->
+                           <table id="tableh">
+                             <tr>
+                               <td>NIVEL</td>
+                               <td>Novato <input type="checkbox"/></td>
+                               <td>Intermedio <input type="checkbox"/></td>
+                               <td>Avanzado <input type="checkbox"/></td>
+                             </tr>
+                           </table>
+                           <!-- FIN TABLA H -->
+
+                          <table class="al-top table-100">
+                            <tr>
+                              <td>
+                                <table class="tabla-white table-100">
+                                  <tr>
+                                    <td colspan="2">Factores de Riesgo</td>
+                                  </tr>
+                                  <tr>
+                                    <td>Hipertension</td>
+                                    <td><input type="checkbox"/></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Diabetes</td>
+                                    <td><input type="checkbox"/></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Enfer. Pulmonares</td>
+                                    <td><input type="checkbox"/></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Otros</td>
+                                    <td><input type="checkbox"/></td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td>
+                                <table class="tabla-white tabla-stripe table-100">
+                                  <tr><td class="t-b t-c">Observaciones Entrenador</td></tr>
+                                  <tr><td/></tr>
+                                  <tr><td/></tr>
+                                  <tr><td/></tr>
+                                  <tr><td/></tr>
+                                  <tr><td/></tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                          
+                          <!--observaciones fisioterapia-->
+                          
+                          <h3>Observaciones Fisioterapia</h3>
+                          <table class="tabla-white tabla-stripe table-100">
+                            <tr><td/></tr>
+                            <tr><td/></tr>
+                            <tr><td/></tr>
+                            <tr><td/></tr>
+                            <tr><td/></tr>
+                          </table>
+                          
+                          
+                          <!--tabla % hombre-mujer -->
+                          <table class="table-bottom table-100">
+                            <tr>
+                              <td colspan="2">% GRASA HOMBRES</td>
+                              <td colspan="2">% GRASA MUJERES</td>
+                            </tr>
+                            <tr>
+                              <td>menor 10%</td><td>BAJO</td>
+                              <td>menor 18%</td><td>BAJO</td>
+                            </tr>
+                            <tr>
+                              <td>10% - 20%</td><td>NORMAL</td>
+                              <td>18%-28%</td><td>NORMAL</td>
+                            </tr>
+                            <tr>
+                              <td>mayor 21%</td><td>ALTO</td>
+                              <td>mayor 29%</td><td>ALTO</td>
+                            </tr>
+                          </table>
+                           
+                           
+                       </td>
+                       <td class="first">
+                         <!-- TABLA C -->
+                         <table class="tabla-data">
+                           <tr>
+                             <td class="t-h t-c t-b" colspan="3">Programa Cardiovascular</td>
+                           </tr>
+                           <tr>
+                             <td class="t-b t-c">Tipo</td>
+                             <td class="t-b t-c">PF</td>
+                             <td class="t-b t-c">T</td>
+                           </tr>
+                           <tr>
+                             <td class="t-b">1. Trotadora</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td class="t-b">2. Eliptica</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td class="t-b">3. Bicicleta</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td class="t-b">4. Escaladora</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td/>
+                             <td/>
+                             <td/>
+                           </tr>
+                         </table>
+                         <!-- FIN TABLA C -->
+                         
+                         <!-- CLASES GRUPALES -->
+                         <table class="tabla-data">
+                           <tr>
+                             <td class="t-h t-c t-b" colspan="3">Programa de Clases Grupales</td>
+                           </tr>
+                           <tr>
+                             <td class="t-h">CLASE</td>
+                             <td class="t-h">PF</td>
+                             <td class="t-h">T</td>
+                           </tr>
+                           <tr>
+                             <td>REVOO COMBAT</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>FULL BODY</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>BAILE - FLOLKLORE</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>KETTLEBELL</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>PILATES</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>CYCLING</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>BOX</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>CROSS REVO</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                           <tr>
+                             <td>E. FUNCIONAL</td>
+                             <td/>
+                             <td/>
+                           </tr>
+                         </table>
+                         <!-- fin CLASES GRUPALESr -->
+                         
+                         <!-- PATOLOGIAS -->
+                         <table class="al-top table-100">
+                           <tr>
+                             <td>
+                               <!--patologias-->
+                               <table class="tabla-data table-100">
+                                 <tr>
+                                   <td class="t-c t-b" colspan="2">PATOLOGIAS</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Escoliosis</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Cifosis</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Hiperlordosis</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Valgo Rodillas</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Recurvatum</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Hiperlaxitud</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Varo Rodillas</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Escapula Alada</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Rectificacion Lumbar</td>
+                                   <td>__</td>
+                                 </tr>
+                                 <tr>
+                                   <td/>
+                                   <td/>
+                                 </tr>
+                               </table>
+                             </td>
+                             <td>
+                               <!--leyenda-->
+                               <table class="tabla-data table-100">
+                                 <tr>
+                                   <td class="t-c t-b" colspan="2">LEYENDA</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Pectoral</td>
+                                   <td>(P)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Dorsal</td>
+                                   <td>(D)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Deltoides</td>
+                                   <td>(DE)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Biceps</td>
+                                   <td>(BB)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Antebrazo</td>
+                                   <td>(AN)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Antebrazo</td>
+                                   <td>(AN)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Triceps</td>
+                                   <td>(BT)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Trapecio</td>
+                                   <td>(T)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Cuadriceps</td>
+                                   <td>(C)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Isquitibiales</td>
+                                   <td>(IS)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Gluteo</td>
+                                   <td>(GL)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Pantorrilla</td>
+                                   <td>(PA)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Abdominales</td>
+                                   <td>(AB)</td>
+                                 </tr>
+                                 <tr>
+                                   <td>Lumbar</td>
+                                   <td>(L)</td>
+                                 </tr>
+                               </table>
+                             </td>
+                           </tr>
+                         </table>
+                         
+                         
+                         <table class="table-100">
+                           <tr>
+                             <td>
+                               <img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="revo-logo-footer"/>
+                             </td>
+                           </tr>
+                         </table>
+                         
+                         
+                       </td>
+                     </tr>
+                   </table>
+                   
+                  <!-- salto de pagina -->
+                  <p style="page-break-before:always;"> </p>
+                    
+               </div>
+               <div class="page">
+                   <div class="oe_structure"/>
+                    <style>
+                      .sides {
+                        padding: 10px 5px;
+                        width:50%;
+                      }
+                      td.side-left {
+                        background-color: white;
+                        height: 400px;
+                        vertical-align: top;
+                      }
+                      td.side-right {
+                        background-color: white;
+                        height: 400px;
+                        vertical-align: top;
+                      }
+                      .master .superior {
+                        height: 50px;
+                        background-color: yellow;
+                        color: black;
+                        padding: 20px 0 20px 0;
+                        border: 1px solid black;
+                        <!--margin-top: 20px;-->
+                      }
+                      .superior h3 {
+                        text-align: center;
+                        vertical-align: middle;
+                        font-weight: bold;
+                        font-size: 32px;
+                      }
+                      <!--TABLA PEQ-->
+                      .pectoral {
+                        background-color: white;
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        overflow: hidden;
+                        padding 5px 10px;
+                        margin: 10px 5px;
+                      }
+                      .pectoral th,
+                      .pectoral td {
+                        border: 1px solid black;
+                      }
+                      .pectoral td {
+                        height: 25px;
+                      }
+                      <!-- quarter styles -->
+                      .quarter {
+                        vertical-align: top;
+                        width: 450px;
+                      }
+                      .q-h.bg-y.tc {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                      }
+                      .q-h {
+                        font-weight: bold;
+                        color: black;
+                      }
+                      .bg-y {
+                        background-color: yellow;
+                      }
+                      .bg-w {
+                        background-color: white;
+                      }
+                      .tc {
+                        text-align: center;
+                      }
+                      .tuc {
+                        text-transform: uppercase;
+                      }
+                    </style>
+                     <!-- TABLA PAGINA B B -->
+                     <table class="master">
+                       <tr>
+                         <td class="sides side-left">
+                           <div class="superior"><h3>Superior</h3></div>
+                           <!-- TABLA AA -->
+                           <table>
+                             <tr>
+                               <td class="quarter">
+                                 <!--tabla pectoral 1era-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Pectoral</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h">PLANO HORIZONTAL</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>APERTURA</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla pectoral 2da-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PLANO INCLINADO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>APERTURA</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla pectoral 3ra-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PLANO DECLINADO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>APERTURA</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla dorlsales 1era-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Dorsales</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h">JALÓN FRONTAL</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>FRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">REMO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>FRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">EXTENSION</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>PRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla deltoides 1era-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Deltoides</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h">JPRESS VERTICAL</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>PRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                    <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">ELEVACION</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>LATERAL</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>FRONTAL</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POSTERIOR</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                               </td>
+                               <td class="quarter">
+                                 <!--tabla triceps-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td>B</td>
+                                     <td>C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Triceps</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td class="q-h">PLANO HORIZONTAL</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>EXTENSION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PLANO VERTICAL</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="2"/>
+                                     <td rowspan="2"/>
+                                     <td>EXTENSION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PLANO INCLINADO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="2"/>
+                                     <td rowspan="2"/>
+                                     <td>EXTENSION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PRESS</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla bicep-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td>B</td>
+                                     <td>C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Bícep</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h">CURL DE PIE</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PREDICADOR</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="2"/>
+                                     <td rowspan="2"/>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">PLANO INCLINADO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="2"/>
+                                     <td rowspan="2"/>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla antebrazos-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td>B</td>
+                                     <td>C</td>
+                                     <td colspan="6" class="q-h bg-y tc">Antebrazos</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="5"/>
+                                     <td rowspan="5"/>
+                                     <td/>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                     <td class="q-h tc bg-y">M</td>
+                                     <td class="q-h tc bg-y">L</td>
+                                     <td class="q-h tc bg-y">P</td>
+                                   </tr>
+                                   <tr>
+                                     <td>SUPINACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PRONACION</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>NEUTRO</td>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla trapecio-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td>B</td>
+                                     <td>C</td>
+                                     <td colspan="4" class="q-h bg-y tc">Trapecio</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h">REMO AL MENTON</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h">ENCOGIMIENTO</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                               </td>
+                             </tr>
+                           </table>
+                           <!-- FIN TABLA AA -->
+                         </td>
+                         <td class="sides side-right">
+                          <div class="superior"><h3>Inferior</h3></div>
+                          <!-- TABLA AB -->
+                          <table>
+                            <tr>
+                              <td class="quarter">
+                                <!--tabla cuadriceps-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">Cuádriceps</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td class="q-h bg-y tuc">extensión</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>ZANCADA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla squat-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">Squat</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td>LIBRE</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MANCUERNA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQ. SMITH</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla prensa-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">Prensa</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td>HACK</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>ANGULO DE 45°</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>ANGULO DE 90°</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>ANGULO DE 180°</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla isquiotibiales-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">Isquiotibiales</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td class="q-h bg-y tuc">flexión</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>SENTADO</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>HORIZONTAL</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>DE PIE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla peso muerto-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">peso muerto</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td>LIBRE</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MANCUERNA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA SMITH</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla gluteos-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">Gluteos</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="5"/>
+                                     <td rowspan="5"/>
+                                     <td class="q-h bg-y tuc">extension de cadera</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>SMITH</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla abductorr / aductor-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">ABDUCTOR / ADUCTOR</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="4"/>
+                                     <td rowspan="4"/>
+                                     <td>LIBRE</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                              </td>
+                              <td class="quarter">
+                                <!--tabla abdominales-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">Abdominales</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="7"/>
+                                     <td rowspan="7"/>
+                                     <td class="q-h bg-y tuc">superior</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>COLCHONETA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>BANCA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>BANCA / BOSU</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                <!--tabla inferiores-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">inferiores</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="5"/>
+                                     <td rowspan="5"/>
+                                     <td>COLCHONETA</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>BANCA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla oblicuos-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">oblicuos</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="5"/>
+                                     <td rowspan="5"/>
+                                     <td>COLCHONETA</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>POLEA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MANCUERNA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla isometricos-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">isométricos</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="5"/>
+                                     <td rowspan="5"/>
+                                     <td class="q-h bg-y tuc">plancha</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>LATERAL</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>HORIZONTAL</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>PLANK</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td/>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla lumbares-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td class="q-h bg-y tuc">lumbares</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="3"/>
+                                     <td rowspan="3"/>
+                                     <td>COLCHONETA</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>BANCA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>BALON / BOSU</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                                 
+                                 <!--tabla pantorrillas-->
+                                 <table class="pectoral">
+                                   <tr>
+                                     <td class="tc">B</td>
+                                     <td class="tc">C</td>
+                                     <td colspan="3" class="q-h bg-y tc">pantorrillas</td>
+                                   </tr>
+                                   <tr>
+                                     <td rowspan="6"/>
+                                     <td rowspan="6"/>
+                                     <td class="q-h bg-y tuc">sentado</td>
+                                     <td class="q-h tc">S</td>
+                                     <td class="q-h tc">R</td>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td class="bg-y">DE PIE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>MAQUINA</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                   <tr>
+                                     <td>LIBRE</td>
+                                     <td/>
+                                     <td/>
+                                   </tr>
+                                 </table>
+                              </td>
+                            </tr>
+                          </table>
+                          <!-- FIN TABLA AB -->
+                         </td>
+                       </tr>
+                     </table>
+                     
+                  <!-- salto de pagina -->
+                  <p style="page-break-before:always;"> </p>
+                    
                </div>
            </t>
        </t>

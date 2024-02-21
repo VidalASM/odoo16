@@ -51,6 +51,8 @@
         'views/trainers.xml',
         'report/workout_plan_reports.xml',
         'report/workout_plan_template.xml',
+        'report/my_workout_plan_reports.xml',
+        'report/my_workout_plan_template.xml',
     ],
     'installable': True,
     'application': False,
