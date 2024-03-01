@@ -6,8 +6,9 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Confirmar Membresia" type="object" name="create_membership_invoice" />
-                    <button string="Abrir Contrato" type="object" name="open_sale_order" />
+                    <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'confirm'), ('paid_amount','=','membership_fees')]}"/>
+                    <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': [('state', '!=', 'confirm')]}"/>
                     <field name="state" widget="statusbar"
                            options="{'clickable':'1'}"/>
                 </header>
@@ -21,23 +22,39 @@
                         <group>
                             <field name="member"/>
                             <field name="membership_scheme"/>
-                            <field name="paid_amount"/>
                             <field name="journal_id"/>
+                            <field name="paid_amount"/>
                             <field name="adendum"/>
-                            <field name="restrictions"/>
                         </group>
                         <group>
                             <field name="membership_fees"/>
                             <field name="sale_order_id" readonly="0"/>
                             <field name="invoice_id" readonly="0"/>
-                            <label for="membership_date_from" string="Membership Duration"/>
+                            <label for="membership_date_from" string="Fecha de Inicio"/>
                             <div class="o_row">
                                 <field name="membership_date_from" required="1"/>
                                 -
                                 <field name="membership_date_to" required="1"/>
                             </div>
+                            <field name="state_contract"/>
                         </group>
                     </group>
+                    <notebook modifiers="{}">
+                        <page string="Otra información" modifiers="{}">
+                            <group modifiers="{}">
+                                <group string="Información de ventas" name="sales_person" modifiers="{}">
+                                    <field name="company_id"/>
+                                    <field name="restrictions"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Freezes">
+                            <field name="freeze_ids" readonly="False" modifiers="{}"/>
+                        </page>
+                        <page string="Transferencias">
+                            <field name="transfer_ids" readonly="False" modifiers="{}"/>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>

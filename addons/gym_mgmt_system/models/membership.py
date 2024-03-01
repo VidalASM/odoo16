@@ -36,40 +36,40 @@ except ImportError:
     )
     num2words = None
 
+PAYMENT_STATUS = [
+    ('not_paid', 'Not Paid'),
+    ('paid', 'Paid'),
+    ('partial', 'Partially Paid'),
+    ('reversed', 'Reversed'),
+]    
+
 class GymMembership(models.Model):
     _name = "gym.membership"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Gym Membership"
     _rec_name = "reference"
 
-    reference = fields.Char(string='Referencia', required=True,
-                            readonly=True, default=lambda self: _('New'))
-    member = fields.Many2one('res.partner', string='Socio', required=True,
-                             tracking=True,
-                             domain="[('gym_member', '!=',False)]")
-    membership_scheme = fields.Many2one('product.product',
-                                        string='Esquema de membresía',
-                                        required=True, tracking=True)
-    paid_amount = fields.Integer(string="Monto pagado", tracking=True)
-    membership_fees = fields.Float(string="Cuotas de membresía", tracking=True,
-                                   related="membership_scheme.list_price")
-    sale_order_id = fields.Many2one('sale.order', string='Orden de venta',
-                                    ondelete='cascade', copy=False,
-                                    readonly=False)
+    reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
+    member = fields.Many2one('res.partner', string='Socio', required=True, tracking=True, domain="[('gym_member', '!=',False)]")
+    membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=True)
+    paid_amount = fields.Float(string="Monto pagado", tracking=True, compute="_compute_amount")
+    membership_fees = fields.Float(string="Precio", tracking=True, related="membership_scheme.list_price")
+    sale_order_id = fields.Many2one('sale.order', string='Orden de venta', ondelete='cascade', copy=False, readonly=False)
     # sale_order_ids = fields.One2many(
     #     'sale.order', 'membership_id', 'Ordenes de venta')
-    invoice_id = fields.Many2one('account.move', string='Factura',
-                                    ondelete='cascade', copy=False,
-                                    readonly=False)
-    membership_date_from = fields.Date(string='Fecha de inicio de la membresía',
-                                       default=datetime.today(),
-                                       help='Date from which membership becomes active.')
-    membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía',
-                                     compute="_compute_membership_date_to",
-                                     help='Date until which membership remains active.')
+    invoice_id = fields.Many2one('account.move', string='Factura', ondelete='cascade', copy=False, readonly=False)
+    # invoice_pay_status = fields.Selection(
+    #     selection=INVOICE_STATUS,
+    #     string="Invoice Status",
+    #     compute='_compute_invoice_status',
+    #     store=True)
+    membership_date_from = fields.Date(string='Fecha de inicio de la membresía', default=datetime.today(), 
+        help='Date from which membership becomes active.')
+    membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía', compute="_compute_membership_date_to", 
+        help='Date until which membership remains active.')
     journal_id = fields.Many2one(
         'account.journal',
-        string='Journal',
+        string='Tipo Doc.',
         store=True, readonly=False,
         required=True,
         states={'draft': [('readonly', False)]},
@@ -77,7 +77,13 @@ class GymMembership(models.Model):
         domain="[('type', '=', 'sale')]",
     )
     adendum = fields.Text("Adendum")
-    restrictions = fields.Text("Restricciones")
+    restrictions = fields.Html("Restricciones", related="membership_scheme.description")
+    state_contract = fields.Selection(string='Estado de Contrato', 
+        selection=[('active', 'Activo'), ('inactive', 'Inactivo'), ('freezing', 'Freezing'),('pending', 'Pendiente'),],default='pending')
+    freeze_ids = fields.One2many(comodel_name='membership.freeze', inverse_name='contract_id', string='Freezers', ondelete='cascade')
+    transfer_ids = fields.One2many(comodel_name='membership.transfer', inverse_name='contract_id', string='Transeferencias')
+    company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False,
+        default=lambda self: self.env.company)
 
     _sql_constraints = [
         ('membership_date_greater',
@@ -89,6 +95,15 @@ class GymMembership(models.Model):
         ('confirm', 'Confirm'),
         ('cancelled', 'Cancelled')
     ], default='draft', string='Status')
+
+    @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
+    def _compute_amount(self):
+        """ to get the total of paids """
+        for rec in self:
+            if rec.invoice_id:
+                rec.paid_amount = rec.invoice_id.amount_total - rec.invoice_id.amount_residual
+            else:
+                rec.paid_amount = 0.0
 
     @api.depends('membership_scheme', 'membership_date_from')
     def _compute_membership_date_to(self):
@@ -120,16 +135,11 @@ class GymMembership(models.Model):
         return res
     
     def open_sale_order(self):
-        # record = self.env['sale.order'].browse(self.sale_order_id.id)
-        # share_link = record.get_base_url() + record._get_share_url(redirect=True)
-        # return {
-        #     'type': 'ir.actions.act_url',
-        #     'target': 'new',
-        #     'url': share_link,
-        # }
-        order_id = self.sale_order_id
-        # return order_id.action_preview_sale_order()
         self.ensure_one()
+        order_id = self.sale_order_id
+        if order_id and order_id.state == 'draft':
+            order_id.action_quotation_sent()
+        order_id.write({'state': 'sent'})
         return {
             'type': 'ir.actions.act_url',
             'target': 'new',
@@ -137,33 +147,36 @@ class GymMembership(models.Model):
         }
     
     def create_membership_invoice(self):
-        sale_order = self.env['sale.order'].create({
-            'partner_id': self.member.id,
-            'is_contract': True,
-        })
-        self.env['sale.order.line'].create({
-            'order_id': sale_order.id,
-            'name': self.membership_scheme.name,
-            'product_id': self.membership_scheme.id,
-            'price_unit': self.membership_fees,
-            'product_uom_qty': 1,
-        })
-        self.sale_order_id = sale_order.id
-        self.state = 'confirm'
-        # invoice_list = self.member.create_membership_invoice(self.membership_scheme, self.membership_fees)
+        invoice_list = self.member.create_membership_invoice(self.membership_scheme, self.membership_fees)
 
-        # search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
-        # form_view_ref = self.env.ref('account.view_move_form', False)
-        # tree_view_ref = self.env.ref('account.view_move_tree', False)
+        search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
+        form_view_ref = self.env.ref('account.view_move_form', False)
+        tree_view_ref = self.env.ref('account.view_move_tree', False)
 
-        # return  {
-        #     'domain': [('id', 'in', invoice_list.ids)],
-        #     'name': 'Membership Invoices',
-        #     'res_model': 'account.move',
-        #     'type': 'ir.actions.act_window',
-        #     'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
-        #     'search_view_id': search_view_ref and [search_view_ref.id],
-        # }
+        return  {
+            'domain': [('id', 'in', invoice_list.ids)],
+            'name': 'Membership Invoices',
+            'res_model': 'account.move',
+            'type': 'ir.actions.act_window',
+            'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
+            'search_view_id': search_view_ref and [search_view_ref.id],
+        }
+    
+    def create_membership_sale(self):
+        if self.state == 'draft' and not self.sale_order_id:
+            sale_order = self.env['sale.order'].create({
+                'partner_id': self.member.id,
+                'is_contract': True,
+            })
+            self.env['sale.order.line'].create({
+                'order_id': sale_order.id,
+                'name': self.membership_scheme.name,
+                'product_id': self.membership_scheme.id,
+                'price_unit': self.membership_fees,
+                'product_uom_qty': 1,
+            })
+            self.sale_order_id = sale_order.id
+            self.state = 'confirm'
 
     def _get_amount_in_words(self):
         """Transform the amount to text"""
@@ -204,3 +217,31 @@ class SaleConfirm(models.Model):
         #          }])
             
         return res
+
+class MembershipFreeze(models.Model):
+    _name = "membership.freeze"
+
+    number_freeze = fields.Char(string='Nro de Solicitud')
+    cause = fields.Char(string='Motivo del freeze')
+    date_freeze = fields.Date(string='Fecha registrada')
+    start_date = fields.Date(string='Desde')
+    end_date = fields.Date(string='Reinicio')
+    quantity_days = fields.Integer(string='Valor en días')
+    contract_id = fields.Many2one(comodel_name='gym.membership', string='Contrato',ondelete='cascade')
+    counter_id = fields.Many2one(comodel_name='res.users', string="Por", ondelete='cascade')
+    is_force = fields.Selection(string='Forzado', selection=[('si', 'Si'), ('no', 'No')], default='no')
+    state_freeze = fields.Boolean(string='Estado', default=False)
+    sede_id = fields.Many2one(string='Sede', related='contract_id.company_id')
+
+class MembershipTransfer(models.Model):
+    _name = "membership.transfer"
+
+    number_transfer = fields.Char(string='Nro de Solicitud')
+    client_id = fields.Many2one('res.partner', string='Socio a transferir',ondelete='cascade')
+    client2_id = fields.Many2one('res.partner', string='Socio emisor',ondelete='cascade')
+    contract_id = fields.Many2one('gym.membership', string='Contrato origen',ondelete='cascade')
+    contract2_id = fields.Many2one(comodel_name='gym.membership', string='Contrato destino',ondelete='cascade')
+    reason_transfer = fields.Char(string='Motivo de la transferencia')
+    date_transfer = fields.Date(string='Fecha de la transferencia')
+    days_transferred = fields.Integer(string='Días transferidos')
+    currente_transfer = fields.Date(string='Vigente desde')

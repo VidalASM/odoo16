@@ -38,6 +38,7 @@
         'security/ir.model.access.csv',
         'data/data.xml',
         'wizard/assign_workout.xml',
+        'wizard/automatic_payment.xml',
         'views/equipments.xml',
         'views/members.xml',
         'views/report.xml',
@@ -55,7 +56,7 @@
         'report/my_workout_plan_template.xml',
     ],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
     'license': 'LGPL-3',
 }

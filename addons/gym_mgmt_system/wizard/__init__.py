@@ -21,3 +21,4 @@
 #
 ###################################################################################
 from . import assign_workout
+from . import automatic_payment

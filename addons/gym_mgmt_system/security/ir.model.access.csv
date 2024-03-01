@@ -1,6 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_workout_plan_wizard,account.workout.plan.wizard,model_workout_plan_wizard,,1,1,1,1
+access_select_payment_mode_wizard,account.select.payment.mode.wizard,model_select_payment_mode_wizard,,1,1,1,1
+access_select_payment_mode_wizard_line,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,,1,1,1,1
 
 
 hr.access_hr_employee_trainer,hr.employee user,model_hr_employee,gym_mgmt_system.group_gym_trainer,1,1,1,0
@@ -14,6 +16,14 @@ access_res_partner_member,res.partner,model_res_partner,gym_mgmt_system.group_gy
 access_gym_membership_operator,account.gym.membership,model_gym_membership,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_gym_membership_trainer,account.gym.membership,model_gym_membership,gym_mgmt_system.group_gym_trainer,1,0,0,0
 access_gym_membership_member,account.gym.membership,model_gym_membership,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_membership_freeze_operator,account.membership.freeze,model_membership_freeze,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_membership_freeze_trainer,account.membership.freeze,model_membership_freeze,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_membership_freeze_member,account.membership.freeze,model_membership_freeze,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_membership_transfer_operator,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_membership_transfer_trainer,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_membership_transfer_member,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_member,1,0,0,0
 
 access_measurement_history_operator,account.measurement.history,model_measurement_history,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_measurement_history_trainer,account.measurement.history,model_measurement_history,gym_mgmt_system.group_gym_trainer,1,1,1,1
@@ -54,9 +64,7 @@ access_my_workout_plan_trainer,account.my.workout.plan,model_my_workout_plan,gym
 access_my_workout_plan_member,account.my.workout.plan,model_my_workout_plan,gym_mgmt_system.group_gym_member,1,0,0,0
 
 access_workout_plan_wizard_trainer,account.workout.plan.wizard,model_workout_plan_wizard,gym_mgmt_system.group_gym_trainer,1,0,0,0
-
-
-
-
+access_select_payment_mode_wizard_user,account.select.payment.mode.wizard,model_select_payment_mode_wizard,gym_mgmt_system.group_gym_operator,1,0,0,0
+access_select_payment_mode_wizard_line_user,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,gym_mgmt_system.group_gym_operator,1,0,0,0
 
 
