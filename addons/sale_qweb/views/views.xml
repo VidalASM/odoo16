@@ -3,10 +3,7 @@
 
      <template id="sale_order_portal_qweb" inherit_id="sale.sale_order_portal_content">
 
-      <xpath
-        expr="//div[@id='introduction']"
-        position="replace"
-      >
+      <xpath expr="//div[@id='introduction']" position="replace">
         <style>
           body {
             background-color: red;
@@ -131,8 +128,8 @@
                 <tbody>
                   <tr>
                     <td class="left"><h4>CONTRATO PRESTACIÓN DE SERVICIO</h4><h3>PLAN REGULAR</h3></td>
-                    <!-- <td class="right"><img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="logo-revo"/></td> -->
-                    <td class="right"><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td>
+                    <td class="right"><img src="https://s.holacliente.com/doc12022024065015.png" alt="logo-revo"/></td>
+                    <!-- <td class="right"><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td> -->
                   </tr>
                 </tbody>
               </table>
@@ -142,10 +139,7 @@
         </div>
       </xpath>
 
-      <xpath
-        expr="//div[@id='informations']"
-        position="replace"
-      >
+      <xpath expr="//div[@id='informations']" position="replace">
           <!-- row -->
           <div class="row">
               <t t-set="invoices" t-value="sale_order.invoice_ids.filtered(lambda i: i.state not in ['draft', 'cancel'])"/>
@@ -227,9 +221,13 @@
             <p>CUARTO: EL USUARIO deberá respetar y firmar el anexo correspondiente de acuerdo con el perfil que le corresponda.</p>
             <p>QUINTO: EL USUARIO conoce y respeta que es parte integral del presente contrato los siguientes anexos: ANEXO 01: Reglamento Interno General de Servicios, ANEXO 02: Historial Familiar, ANEXO 03: Consentimiento Menor de Edad, ANEXO 04 política de privacidad y protección de datos personales, ANEXO 05 Formulario derechos arco.</p>
             <p>SEXTO: Se entenderá que se encuentra debidamente notificado EL USUARIO cuando REVO SPORT publique en las redes sociales o a través de un letrero dentro de las instalaciones cualquier cambio o modificación de horario, clases grupales o cualquier servicio que brinde.</p>
-            <p>SEPTIMO</p>
-            <p>OCTAVO</p>
-            <p>NOVENA: PROTECCIÓN DE DATOS PERSONALES: El Usuario autoriza el tratamiento de datos personales y sensibles a REVO FITNESS E.I.R.L., siendo este último el titular del Banco de Datos Personales. Dichos datos se usarán para la prestación y comercialización de productos y servicios del Gimnasio, el envío de promociones de productos y servicios de terceros con quienes el Gimnasio tenga o llegue a tener un acuerdo comercial, el cobro automático de los conceptos detallados en este Acuerdo, la gestión de acceso del Usuario al Local, la elaboración de perfiles de consumo, estadísticas y políticas corporativas, y todo lo relacionado a este Acuerdo, así como el envío de promociones del Gimnasio incluso a Usuarios con planes cancelados. Los datos serán almacenados en el Banco de Datos denominado “Clientes” con código de inscripción N° RNPDP-PJP N° 13114 en el Registro Nacional de Protección de Datos Personales del Ministerio de Justicia, por el periodo que sea requerido para la ejecución contractual y las finalidades antes descritas. Asimismo, el Usuario autoriza que sus datos personales y sensibles divulgados bajo el presente Acuerdo sean compartidos, para fines de control de acceso, atención a solicitudes, y gestión de beneficios especiales para el Usuario en otros locales comerciales bajo la marca REVO SPORT en el territorio peruano. El Gimnasio garantiza el cumplimiento de la confidencialidad y el tratamiento seguro de los datos del Usuario, para lo cual cuenta con procesos de seguridad apropiados conforme a la regulación vigente, con el fin de evitar la pérdida, mal uso, acceso no autorizado, o robo de datos. En caso el Usuario necesite información adicional o desee ejercer cualquiera de sus derechos establecidos en la Ley N° 29733 y su Reglamento, puedo contactarse con el correo electrónico datospersonales@gmail.com. La Política de Protección de Datos Personales de REVO SPORT se encuentra en el correo enviado a su correo electrónico, la misma que el Usuario declara haber leído y aceptado mediante la suscripción de este acuerdo.</p>
+            <p>SEPTIMO: EL USUARIO será el único responsable del cuidado de sus objetos personales dentro de las instalaciones de REVO SPORT conforme se encuentra estipulado en el ANEXO 01 (reglamento interno general de servicios).</p>
+            <p>OCTAVO: EL USUARIO se obligue al total cumplimiento del REGLAMENTO INTERNO, caso contrario se verá en la obligación de separar al usuario del establecimiento de manera definitiva.</p>
+            <p>NOVENO: PROTECCIÓN DE DATOS PERSONALES: El Usuario autoriza el tratamiento de datos personales y sensibles a REVO FITNESS E.I.R.L., siendo este último el titular del Banco de Datos Personales. Dichos datos se usarán para la prestación y comercialización de productos y servicios de REVO SPORT, el envío de promociones de productos y servicios de terceros con quienes REVO SPORT tenga o llegue a tener un acuerdo comercial, el cobro automático de los conceptos detallados en este Acuerdo, la gestión de acceso del Usuario a la sede, la elaboración de perfiles de consumo, estadísticas y políticas corporativas, y todo lo relacionado a este Acuerdo, así como el envío de promociones de REVO SPORT incluso a Usuarios con planes cancelados. Los datos serán almacenados en el Banco de Datos denominado “Clientes” con código de inscripción RNPDP-P-JP Nº26439 y RNPDP-P-JP Nº26440, en el Registro Nacional de Protección de Datos Personales del Ministerio de Justicia, por el periodo que sea requerido para la ejecución contractual y las finalidades antes descritas. Asimismo, el Usuario autoriza que sus datos personales y sensibles divulgados bajo el presente Acuerdo sean compartidos, para fines de control de acceso, atención a solicitudes, y gestión de beneficios especiales para el Usuario en otras sedes comerciales bajo la marca REVO SPORT en el territorio peruano. REVO SPORT garantiza el cumplimiento de la confidencialidad y el tratamiento seguro de los datos del Usuario, para lo cual cuenta con procesos de seguridad apropiados conforme a la regulación vigente, con el fin de evitar la pérdida, mal uso, acceso no autorizado, o robo de datos. En caso el Usuario necesite información adicional o desee ejercer cualquiera de sus derechos establecidos en la Ley N° 29733 y su Reglamento, puedo contactarse con el correo electrónico datospersonales@gmail.com. La Política de Protección de Datos Personales de REVO SPORT se encuentra en el correo enviado a su correo electrónico, la misma que el Usuario declara haber leído y aceptado mediante la suscripción de este acuerdo.</p>
+            <p>NOVENO PRIMERO: CASO FORTUITO Y FUERZA MAYOR.- Las partes convienen que será de aplicación lo establecido en el artículo 1315 del Código Civil que regula los eximentes de responsabilidad por “Caso Fortuito o Fuerza Mayor”, en consecuencia si en la vigencia del presente contrato se presentara un acontecimiento por Caso Fortuito o Fuerza Mayor es decir nuevamente se pues presentar un rebrote por pandemia, emergencia sanitaria, cualquier otra enfermedad asi como la suspensión del servicio por las disposiciones que el Estado dictamine, el usuario libera a REVO SPORT de cualquier obligación pendiente de ejecución en virtud del artículo antes referido.</p>
+            <p>REVO SPORT en el caso de alguna situación sanitaria, activaría los protocolos establecidos por el Estado, por lo que será de obligatorio cumplimiento para todos los Usuarios las disposiciones establecidas.</p>
+            <p>DECIMO: TERMINACIÓN. - Este contrato quedara resuelto de manera automática de pleno derecho en cualquier momento y sin lugar a devolución de dinero, en caso del Incumplimiento de cualquier obligación derivada del presente contrato por parte de EL USUARIO.</p>
+            <p>DECIMO PRIMERO: ESTIPULACIONES ANTERIORES. - Las partes contratantes manifiestan que el presente contrato de prestación de servicios constituyen un acuerdo mutuo, completo y total de su objetivo y reemplazara cualquier otro acuerdo verbal o escrito celebrado con anterioridad. Para constancia se firma en dos (02) ejemplares del mismo tenor, el día <span t-esc="sale_order.membership_ids[0].membership_date_from.strftime('%d')"/> del mes <span t-esc="sale_order.membership_ids[0].membership_date_from.strftime('%B')"/> de <span t-esc="sale_order.membership_ids[0].membership_date_from.strftime('%Y')"/>.</p>
             <p>ADENDUM: <u><span t-esc="sale_order.membership_ids[0].adendum"/></u></p>
             <p>RESTRICCIONES: <u><span t-esc="sale_order.membership_ids[0].restrictions"/></u></p>
           </div>
@@ -238,8 +236,8 @@
             <table class="table table-borderless">
               <tbody>
                 <tr>
-                  <td rowspan="3"><img src="https://place-hold.it/250x100?text=Firma%20Imagen" alt="firma-imagen"/></td>
-                  <td>FIRMA EL USUARIO:__________________</td>
+                  <td rowspan="3"><img src="https://s.holacliente.com/doc12022024065032.png" alt="firma-imagen"/></td>
+                  <td>FIRMA EL USUARIO: <t t-if="sale_order.signature"><img t-att-src="image_data_uri(sale_order.signature)" style="max-height: 6rem; max-width: 100%;"/></t></td>
                   <td>ASESOR COMERCIAL:__________________</td>
                 </tr>
                 <tr>
@@ -256,17 +254,11 @@
 
       </xpath>
 
-      <xpath
-        expr="//section[@id='details']"
-        position="replace"
-      >
+      <xpath expr="//section[@id='details']" position="replace">
 
       </xpath>
 
-      <xpath
-        expr="//section[@id='terms']"
-        position="replace"
-      >
+      <xpath expr="//section[@id='terms']" position="replace">
         <section t-if="not is_html_empty(sale_order.note)" id="terms" class="mt-5">
             <hr class="mt-0 mb-1"/>
             <!--<t t-if="sale_order.terms_type == 'html'">-->
@@ -279,8 +271,8 @@
                     <table class="table table-borderless">
                       <tbody>
                         <tr class="text-center">
-                          <td><img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="revo-logo-footer"/></td>
-                          <td><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td>
+                          <td><img src="https://s.holacliente.com/doc12022024065015.png" alt="revo-logo-footer"/></td>
+                          <!-- td><img t-if="sale_order.company_id.logo" height="100" t-att-src="'data:image/png;base64,%s' %sale_order.company_id.logo"/></td -->
                         </tr>
                         <tr class="text-center">
                           <td>

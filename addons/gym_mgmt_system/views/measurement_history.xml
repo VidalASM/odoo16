@@ -14,67 +14,287 @@
                             <field name="date"/>
                         </group>
                     </group>
-                    <group>
-                        <group name="group_lots_and_weight" string="Measurements">
-                            <label for="weight"/>
-                            <div class="o_row" name="weight">
-                                <field name="weight"/>
-                                <field name="weight_uom_name"/>
-                            </div>
-                            <label for="height"/>
-                            <div class="o_row" name="height">
-                                <field name="height"/>
-                                <field name="height_uom_name"/>
-                            </div>
-                            <field name="bmi"/>
-                            <field name="bmr"/>
-                        </group>
-                    </group>
-                    <group name="body_measurement" string="Body Measurements">
-                        <group>
+                    
+                    <notebook modifiers="{}">
+                        <page string="Análisis Inbody">
                             <group>
-                                <label for="neck"/>
-                                <div class="o_row" name="neck">
-                                    <field name="neck"/>
-                                    <field name="height_uom_name"/>
-                                </div>
-                                <label for="biceps"/>
-                                <div class="o_row" name="biceps">
-                                    <field name="biceps"/>
-                                    <field name="height_uom_name"/>
-                                </div>
-                                <label for="calf"/>
-                                <div class="o_row" name="calf">
-                                    <field name="calf"/>
-                                    <field name="height_uom_name"/>
-                                </div>
-                                <label for="hips"/>
-                                <div class="o_row" name="hips">
-                                    <field name="hips"/>
-                                    <field name="height_uom_name"/>
-                                </div>
+                                <group name="body_composition_analysis" string="Análisis de Composición Corporal">
+                                    <label for="tbw" string="Agua Corporal Total (L)"/>
+                                    <div class="o_row" name="tbw">
+                                        <field name="tbw"/>
+                                        ( <field name="tbw_lower_limit"/> - <field name="tbw_upper_limit"/> )
+                                    </div>
+                                    <label for="protein" string="Proteínas (kg)"/>
+                                    <div class="o_row" name="protein">
+                                        <field name="protein"/>
+                                        ( <field name="protein_lower_limit"/> - <field name="protein_upper_limit"/> )
+                                    </div>
+                                    <label for="minerals" string="Minerales (kg)"/>
+                                    <div class="o_row" name="minerals">
+                                        <field name="minerals"/>
+                                        ( <field name="minerals_lower_limit"/> - <field name="minerals_upper_limit"/> )
+                                    </div>
+                                    <label for="bfm" string="Masa Grasa Corporal (kg)"/>
+                                    <div class="o_row" name="bfm">
+                                        <field name="bfm"/>
+                                        ( <field name="bfm_lower_limit"/> - <field name="bfm_upper_limit"/> )
+                                    </div>
+                                    <label for="weight" string="Peso (kg)"/>
+                                    <div class="o_row" name="weight">
+                                        <field name="weight"/>
+                                        ( <field name="weight_lower_limit"/> - <field name="weight_upper_limit"/> )
+                                    </div>
+
+                                    <!-- <group string="Cantidad total de agua en el cuerpo"> -->
+                                        <!-- <label for="tbw" string="Agua Corporal Total (L)"/>
+                                        <div class="o_row" name="tbw">
+                                            <field name="tbw"/>
+                                            ( <field name="tbw_lower_limit"/> - <field name="tbw_upper_limit"/> )
+                                        </div> -->
+                                        <!-- <group name="tbw1" string=""/> -->
+                                        <!-- <group> -->
+                                            <!-- <label for="tbw1" string="Cantidad total de agua en el cuerpo"/> -->
+                                            <!-- <div class="o_row" name="tbw1"> -->
+                                                <!-- <field name="tbw" invisible="0"/> -->
+                                                <!-- <p>Cantidad total de agua en el cuerpo</p> -->
+                                            <!-- </div> -->
+                                        <!-- </group> -->
+                                        <!-- <label>Para producir los músculos <input type="text" /></label> -->
+                                        <!-- <button class="oe_stat_button" name="tbw" type="object" string="Cantidad total de agua en el cuerpo">
+                                            <field name="tbw"/>
+                                        </button>                                     -->
+                                        <!-- <button name="tbw" string="Upgrade" type="object" class="btn btn-primary me-1"/>
+                                        <br/>
+                                        <button name="protein" string="Para producir los músculos" type="object" class="btn btn-primary me-1"/> -->
+                                    <!-- </group> -->
+                                    <!-- </group> -->
+                                </group>
+                                <group name="muscle_fat_analysis" string="Análisis de Músculo-Grasa">
+                                    <label for="weight" string="Peso (kg)"/>
+                                    <div class="o_row" name="weight">
+                                        <field name="weight"/>
+                                        85 = <field name="weight_lower_limit"/> - 115 = <field name="weight_upper_limit"/>
+                                    </div>
+                                    <label for="smm" string="MME (kg)"/>
+                                    <div class="o_row" name="smm">
+                                        <field name="smm"/>
+                                        90 = <field name="smm_lower_limit"/> - 110 = <field name="smm_upper_limit"/>
+                                    </div>
+                                    <label for="bfm" string="Masa Grasa Corporal (kg)"/>
+                                    <div class="o_row" name="bfm">
+                                        <field name="bfm"/>
+                                        80 = <field name="bfm_lower_limit"/> - 160 = <field name="bfm_upper_limit"/>
+                                    </div>
+                                </group>
+                                <group name="muscle_fat_analysis" string="Análisis de Obesidad">
+                                    <label for="bmi" string="IMC (kg/m2)"/>
+                                    <div class="o_row" name="bmi">
+                                        <field name="bmi"/>
+                                        17.1 = <field name="bmi_lower_limit"/> - 24.4 = <field name="bmi_upper_limit"/>
+                                    </div>
+                                    <label for="pbf" string="PGC (%)"/>
+                                    <div class="o_row" name="pbf">
+                                        <field name="pbf"/>
+                                        10 = <field name="pbf_lower_limit"/> - 20 = <field name="pbf_upper_limit"/>
+                                    </div>
+                                </group>
+                                <group name="-" string="-">
+                                </group>
+                                <group name="muscle_fat_analysis" string="Análisis de Masa Grama Segmental">
+                                    <label for="ffm_right_arm" />
+                                    <div class="o_row" name="ffm_right_arm">
+                                        <field name="ffm_right_arm"/> - Porcentaje <field name="ffm_right_arm_per"/>
+                                    </div>
+                                    <label for="ffm_left_arm" />
+                                    <div class="o_row" name="ffm_left_arm">
+                                        <field name="ffm_left_arm"/> - Porcentaje <field name="ffm_left_arm_per"/>
+                                    </div>
+                                    <label for="ffm_trunk" />
+                                    <div class="o_row" name="ffm_trunk">
+                                        <field name="ffm_trunk"/> - Porcentaje <field name="ffm_trunk_per"/>
+                                    </div>
+                                    <label for="ffm_right_leg" />
+                                    <div class="o_row" name="ffm_right_leg">
+                                        <field name="ffm_right_leg"/> - Porcentaje <field name="ffm_right_leg_per"/>
+                                    </div>
+                                    <label for="ffm_left_leg" />
+                                    <div class="o_row" name="ffm_left_leg">
+                                        <field name="ffm_left_leg"/> - Porcentaje <field name="ffm_left_leg_per"/>
+                                    </div>
+                                </group>
+                                <group name="muscle_fat_analysis" string="Análisis de Grasa Segmental">
+                                    <label for="bfm_right_arm" />
+                                    <div class="o_row" name="bfm_right_arm">
+                                        <field name="bfm_right_arm"/> - Porcentaje <field name="bfm_right_arm_per"/>
+                                    </div>
+                                    <label for="bfm_left_arm" />
+                                    <div class="o_row" name="bfm_left_arm">
+                                        <field name="bfm_left_arm"/> - Porcentaje <field name="bfm_left_arm_per"/>
+                                    </div>
+                                    <label for="bfm_trunk" />
+                                    <div class="o_row" name="bfm_trunk">
+                                        <field name="bfm_trunk"/> - Porcentaje <field name="bfm_trunk_per"/>
+                                    </div>
+                                    <label for="bfm_right_leg" />
+                                    <div class="o_row" name="bfm_right_leg">
+                                        <field name="bfm_right_leg"/> - Porcentaje <field name="bfm_right_leg_per"/>
+                                    </div>
+                                    <label for="bfm_left_leg" />
+                                    <div class="o_row" name="bfm_left_leg">
+                                        <field name="bfm_left_leg"/> - Porcentaje <field name="bfm_left_leg_per"/>
+                                    </div>
+                                </group>
                             </group>
-                        </group>
-                        <group>
+                        </page>
+                        
+                        <page string="Puntuación Inbody">
                             <group>
-                                <label for="chest"/>
-                                <div class="o_row" name="chest">
-                                    <field name="chest"/>
-                                    <field name="height_uom_name"/>
-                                </div>
-                                <label for="waist"/>
-                                <div class="o_row" name="waist">
-                                    <field name="waist"/>
-                                    <field name="height_uom_name"/>
-                                </div>
-                                <label for="thighs"/>
-                                <div class="o_row" name="thighs">
-                                    <field name="thighs"/>
-                                    <field name="height_uom_name"/>
-                                </div>
+                                <group name="muscle_fat_analysis" string="Control de Peso">
+                                    <field name="inbody_score"/>
+                                    <field name="target_score"/>
+                                    <field name="weight_control"/>
+                                    <field name="bfm_control"/>
+                                    <field name="ffm_control"/>
+                                </group>
+                                <group name="obesity_analysis" string="Evaluación de Obesidad">
+                                    <label for="ffm" />
+                                    <div class="o_row" name="ffm">
+                                        <field name="ffm"/>
+                                        ( <field name="ffm_lower_limit"/> - <field name="ffm_upper_limit"/> )
+                                    </div>
+                                    <label for="whr" />
+                                    <div class="o_row" name="whr">
+                                        <field name="whr"/>
+                                        ( <field name="whr_lower"/> - <field name="whr_upper"/> )
+                                    </div>
+                                    <label for="obesity" />
+                                    <div class="o_row" name="obesity">
+                                        <field name="obesity"/>
+                                        ( <field name="obesity_lower"/> - <field name="obesity_upper"/> )
+                                    </div>
+                                    <label for="obesityc" />
+                                    <div class="o_row" name="obesityc">
+                                        <field name="obesityc"/>
+                                        ( <field name="obesityc_lower"/> - <field name="obesityc_upper"/> )
+                                    </div>
+                                    <label for="bmr" />
+                                    <div class="o_row" name="bmr">
+                                        <field name="bmr"/>
+                                        ( <field name="bmr_lower"/> - <field name="bmr_upper"/> )
+                                    </div>
+                                </group>
+                                <group name="-" string="-">
+                                    <field name="systolic"/>
+                                    <field name="diastolic"/>
+                                    <field name="pulse"/>
+                                    <field name="ma_pressure"/>
+                                    <field name="pulse_pressure"/>
+                                    <field name="rate_pressure"/>
+                                </group>
+                                <group name="-" string="-">
+                                    <field name="systolic2"/>
+                                    <field name="diastolic2"/>
+                                    <field name="pulse2"/>
+                                    <field name="ma2_pressure"/>
+                                    <field name="pulse2_pressure"/>
+                                    <field name="rate2_pressure"/>
+                                </group>                             
+                                <group name="research_parameter" string="Parámetros de Investigación">
+                                    <field name="vfl"/>
+                                    <field name="mca"/>
+                                    <field name="growth"/>
+                                    <field name="smi"/>
+                                    <field name="calorie"/>
+                                    <field name="smm_wt"/>
+                                    <field name="ffmi"/>
+                                    <field name="fmi"/>                             
+                                </group>
+                                <group name="impedance" string="Impedancia">
+                                    <field name="impedance_20_ra"/>
+                                    <field name="impedance_20_la"/>
+                                    <field name="impedance_20_tr"/>
+                                    <field name="impedance_20_rl"/>
+                                    <field name="impedance_20_ll"/>
+                                    <field name="impedance_100_ra"/>
+                                    <field name="impedance_100_la"/>
+                                    <field name="impedance_100_tr"/>
+                                    <field name="impedance_100_rl"/>
+                                    <field name="impedance_100_ll"/>                              
+                                </group>
                             </group>
-                        </group>
-                    </group>
+                        </page>
+
+                        <page string="Otra información" modifiers="{}">
+                            <group>
+                                <group name="group_lots_and_weight" string="Measurements">
+                                    <label for="weight"/>
+                                    <div class="o_row" name="weight">
+                                        <field name="weight"/>
+                                        <field name="weight_uom_name"/>
+                                    </div>
+                                    <label for="height"/>
+                                    <div class="o_row" name="height">
+                                        <field name="height"/>
+                                        <field name="height_uom_name"/>
+                                    </div>
+                                    <field name="bmi"/>
+                                    <field name="bmr"/>
+                                </group>
+                            </group>
+                            
+                            <group name="body_measurement" string="Body Measurements">
+                                <group>
+                                    <group>
+                                        <label for="neck"/>
+                                        <div class="o_row" name="neck">
+                                            <field name="neck"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="biceps"/>
+                                        <div class="o_row" name="biceps">
+                                            <field name="biceps"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="calf"/>
+                                        <div class="o_row" name="calf">
+                                            <field name="calf"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="hips"/>
+                                        <div class="o_row" name="hips">
+                                            <field name="hips"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label for="chest"/>
+                                        <div class="o_row" name="chest">
+                                            <field name="chest"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="waist"/>
+                                        <div class="o_row" name="waist">
+                                            <field name="waist"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="thighs"/>
+                                        <div class="o_row" name="thighs">
+                                            <field name="thighs"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                    </group>
+                                </group>
+                            </group>
+                        </page>
+                        <!-- <page string="Freezes">
+                            <field name="freeze_ids" readonly="False" modifiers="{}"/>
+                        </page>
+                        <page string="Transferencias">
+                            <field name="transfer_ids" readonly="False" modifiers="{}"/>
+                        </page> -->
+                    </notebook>
 
                 </sheet>
                 <div class="oe_chatter">

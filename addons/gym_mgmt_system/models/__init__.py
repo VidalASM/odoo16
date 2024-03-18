@@ -30,3 +30,4 @@ from . import trainer_skill
 from . import membership
 from . import measurement_history
 from . import workout_plan
+from . import crm

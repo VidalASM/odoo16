@@ -67,4 +67,4 @@ access_workout_plan_wizard_trainer,account.workout.plan.wizard,model_workout_pla
 access_select_payment_mode_wizard_user,account.select.payment.mode.wizard,model_select_payment_mode_wizard,gym_mgmt_system.group_gym_operator,1,0,0,0
 access_select_payment_mode_wizard_line_user,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,gym_mgmt_system.group_gym_operator,1,0,0,0
 
-
+crm_draw_manager,crm.draw.manager,model_crm_draw,gym_mgmt_system.group_gym_operator,1,1,1,1

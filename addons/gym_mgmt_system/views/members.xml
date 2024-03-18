@@ -18,11 +18,35 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="906" type="action" groups="gym_mgmt_system.group_gym_member" icon="fa-credit-card">
+                    <field string="Purchases" name="purchase_order_count" widget="statinfo"/>
+                </button>
+            </div>
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="gym_member" />
+                <field name="state_client" />
                 <field name="measurement_count" invisible="1"/>
                 <field name="membership_count" invisible="1"/>
             </xpath>
+            <xpath expr="//field[@name='image_1920']" position="attributes">
+                <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
+            </xpath>
+            <field name="mobile" position="attributes">
+                <attribute name="attrs">{'required': True}</attribute>
+            </field>
+            <field name="street" position="attributes">
+                <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
+            </field>
+            <field name="birthdate_date" position="attributes">
+                <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
+            </field>
+            <field name="gender" position="attributes">
+                <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
+            </field>
         </field>
     </record>
 

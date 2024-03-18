@@ -45,6 +45,7 @@
                                 <group string="Información de ventas" name="sales_person" modifiers="{}">
                                     <field name="company_id"/>
                                     <field name="restrictions"/>
+                                    <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates" groups="base.group_no_one"/>
                                 </group>
                             </group>
                         </page>

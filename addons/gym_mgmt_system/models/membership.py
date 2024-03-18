@@ -66,7 +66,7 @@ class GymMembership(models.Model):
     membership_date_from = fields.Date(string='Fecha de inicio de la membresía', default=datetime.today(), 
         help='Date from which membership becomes active.')
     membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía', compute="_compute_membership_date_to", 
-        help='Date until which membership remains active.')
+        help='Date until which membership remains active.', store=True)
     journal_id = fields.Many2one(
         'account.journal',
         string='Tipo Doc.',
@@ -84,6 +84,9 @@ class GymMembership(models.Model):
     transfer_ids = fields.One2many(comodel_name='membership.transfer', inverse_name='contract_id', string='Transeferencias')
     company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False,
         default=lambda self: self.env.company)
+    opportunity_id = fields.Many2one(
+        'crm.lead', string='Oportunidad', check_company=True,
+        domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
 
     _sql_constraints = [
         ('membership_date_greater',
@@ -108,22 +111,23 @@ class GymMembership(models.Model):
     @api.depends('membership_scheme', 'membership_date_from')
     def _compute_membership_date_to(self):
         """ to get membership_date_to """
-        res = self.membership_date_from
-        templ = self.membership_scheme.product_tmpl_id
-        if templ.membership_type == "variable":
-            delta = templ.membership_interval_qty
-            date = fields.Date.from_string(self.membership_date_from)
-            if templ.membership_interval_unit == "days":
-                res = date + timedelta(days=delta)
-            elif templ.membership_interval_unit == "weeks":
-                res = date + timedelta(weeks=delta)
-            elif templ.membership_interval_unit == "months":
-                res = date + relativedelta(months=delta)
-            elif templ.membership_interval_unit == "years":
-                res = date + relativedelta(years=delta)
-            
-        # date_to = self.membership_scheme._get_next_date(self.membership_date_from, qty=1)
-        self.membership_date_to = res
+        for rec in self:
+            res = rec.membership_date_from
+            templ = rec.membership_scheme.product_tmpl_id
+            if templ.membership_type == "variable":
+                delta = templ.membership_interval_qty
+                date = fields.Date.from_string(rec.membership_date_from)
+                if templ.membership_interval_unit == "days":
+                    res = date + timedelta(days=delta)
+                elif templ.membership_interval_unit == "weeks":
+                    res = date + timedelta(weeks=delta)
+                elif templ.membership_interval_unit == "months":
+                    res = date + relativedelta(months=delta)
+                elif templ.membership_interval_unit == "years":
+                    res = date + relativedelta(years=delta)
+                
+            # date_to = rec.membership_scheme._get_next_date(rec.membership_date_from, qty=1)
+            rec.membership_date_to = res
 
     @api.model
     def create(self, vals):

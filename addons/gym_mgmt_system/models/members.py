@@ -37,6 +37,10 @@ class MemberPartner(models.Model):
                                       compute='_compute_membership_count')
     measurement_count = fields.Integer('measurement_count',
                                        compute='_compute_measurement_count')
+    state_client = fields.Selection(string='Estado Contrato',
+        selection=[ ('1', 'Alianzado'), ('2', 'Espontáneo'), ('3', 'Invitado Espontáneo'),
+                    ('4', 'Reinscripción'), ('5', 'Renovación'),('8', 'Invitado Referido'),('9', 'No atendido'),
+                    ('happybirthday',u'Cumpleañeros de este mes'),('all', 'Todos') ], default='all', required=True)
 
     def _compute_membership_count(self):
         """ number of membership for gym members """
