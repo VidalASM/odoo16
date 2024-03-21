@@ -21,6 +21,8 @@
                     <group>
                         <group>
                             <field name="member"/>
+                            <field name="age" invisible="1"/>
+                            <field name="gender" invisible="1"/>
                             <field name="membership_scheme"/>
                             <field name="journal_id"/>
                             <field name="paid_amount"/>
@@ -66,6 +68,57 @@
         </field>
     </record>
 
+    <record id="view_gym_membership_pivot" model="ir.ui.view">
+        <field name="name">gym.membership.pivot</field>
+        <field name="model">gym.membership</field>
+        <field name="arch" type="xml">
+            <pivot string="Gym Membership" sample="1">
+                <field name="membership_date_from" type="row"/>
+                <!-- <field name="gender" type="row"/> -->
+                <!-- <field name="age" type="row"/> -->
+                <!-- <field name="age" type="col"/> -->
+                <field name="membership_fees" type="measure"/>
+                <!-- <field name="paid_amount" type="measure"/> -->
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_gym_membership_filter" model="ir.ui.view">
+        <field name="name">gym.membership.select</field>
+        <field name="model">gym.membership</field>
+        <field name="arch" type="xml">
+            <search string="Search Membership">
+                <field name="reference" string="Membresia"
+                        filter_domain="[
+                            '|', '|' , '|', '|',
+                            ('reference', 'ilike', self), ('membership_scheme', 'ilike', self),
+                            ('sale_order_id', 'ilike', self), ('invoice_id', 'ilike', self),
+                            ('member', 'child_of', self)]"/>
+                <field name="member" operator="child_of"/>
+                <field name="journal_id"/>
+                <field name="membership_date_from" string="Period"/>
+                <filter string="Inicio - Ultimo Mes" name="last_month"
+                    domain="[('membership_date_from', '>=', context_today().strftime('%Y-%m-01')),
+                    ('membership_date_from', '&lt;', (context_today()+relativedelta(months=1)).strftime('%Y-%m-01'))]"
+                    help="Show all records which has begin is current month"/>
+                <filter string="Vencimiento - Ultimo Mes" name="due_month"
+                    domain="[('membership_date_to', '>=', context_today().strftime('%Y-%m-01')),
+                    ('membership_date_to', '&lt;', (context_today()+relativedelta(months=1)).strftime('%Y-%m-01'))]"
+                    help="Show all records which has date due is current month"/>
+                <separator/>
+                <filter name="membership_date" string="Fecha de Inicio" date="membership_date_from"/>
+                <filter name="membership_due" string="Fecha de Vencimiento" date="membership_date_to"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                    <separator/>
+                    <filter string="Fecha de Inicio" name="membershipdate" context="{'group_by': 'membership_date_from'}"/>
+                    <filter string="Fecha de Vencimiento" name="membershipdue" context="{'group_by': 'membership_date_to'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
      <record id="view_membership_tree" model="ir.ui.view">
         <field name="name">gym.membership.tree</field>
         <field name="model">gym.membership</field>
@@ -76,6 +129,8 @@
                 <field name="membership_scheme"/>
                 <field name="membership_fees"/>
                 <field name="state"/>
+                <field name="membership_date_from"/>
+                <field name="membership_date_to"/>
             </tree>
         </field>
     </record>
@@ -84,7 +139,8 @@
         <field name="name">Membership</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">gym.membership</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">tree,form,kanban,pivot,graph</field>
+        <field name="search_view_id" ref="view_gym_membership_filter"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first Membership!

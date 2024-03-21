@@ -50,10 +50,12 @@ class GymMembership(models.Model):
     _rec_name = "reference"
 
     reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
-    member = fields.Many2one('res.partner', string='Socio', required=True, tracking=True, domain="[('gym_member', '!=',False)]")
-    membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=True)
-    paid_amount = fields.Float(string="Monto pagado", tracking=True, compute="_compute_amount")
-    membership_fees = fields.Float(string="Precio", tracking=True, related="membership_scheme.list_price")
+    member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, domain="[('gym_member', '!=',False)]")
+    age = fields.Integer("Edad", related="member.age", store=True)
+    gender = fields.Selection("Género", related="member.gender", store=True)
+    membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=4)
+    paid_amount = fields.Float(string="Monto pagado", tracking=4, compute="_compute_amount")
+    membership_fees = fields.Float(string="Precio", tracking=4, related="membership_scheme.list_price", store=True)
     sale_order_id = fields.Many2one('sale.order', string='Orden de venta', ondelete='cascade', copy=False, readonly=False)
     # sale_order_ids = fields.One2many(
     #     'sale.order', 'membership_id', 'Ordenes de venta')
@@ -63,15 +65,15 @@ class GymMembership(models.Model):
     #     string="Invoice Status",
     #     compute='_compute_invoice_status',
     #     store=True)
-    membership_date_from = fields.Date(string='Fecha de inicio de la membresía', default=datetime.today(), 
+    membership_date_from = fields.Date(string='Fecha de inicio de la membresía', tracking=5, default=datetime.today(), 
         help='Date from which membership becomes active.')
-    membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía', compute="_compute_membership_date_to", 
+    membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía', tracking=5, compute="_compute_membership_date_to", 
         help='Date until which membership remains active.', store=True)
     journal_id = fields.Many2one(
         'account.journal',
         string='Tipo Doc.',
         store=True, readonly=False,
-        required=True,
+        required=True, tracking=4,
         states={'draft': [('readonly', False)]},
         check_company=True,
         domain="[('type', '=', 'sale')]",
@@ -79,7 +81,8 @@ class GymMembership(models.Model):
     adendum = fields.Text("Adendum")
     restrictions = fields.Html("Restricciones", related="membership_scheme.description")
     state_contract = fields.Selection(string='Estado de Contrato', 
-        selection=[('active', 'Activo'), ('inactive', 'Inactivo'), ('freezing', 'Freezing'),('pending', 'Pendiente'),],default='pending')
+        selection=[('active', 'Activo'), ('inactive', 'Inactivo'), ('freezing', 'Freezing'),('pending', 'Pendiente'),],
+        tracking=3, default='pending')
     freeze_ids = fields.One2many(comodel_name='membership.freeze', inverse_name='contract_id', string='Freezers', ondelete='cascade')
     transfer_ids = fields.One2many(comodel_name='membership.transfer', inverse_name='contract_id', string='Transeferencias')
     company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False,
@@ -97,7 +100,7 @@ class GymMembership(models.Model):
         ('draft', 'Draft'),
         ('confirm', 'Confirm'),
         ('cancelled', 'Cancelled')
-    ], default='draft', string='Status')
+    ], default='draft', tracking=2, string='Status')
 
     @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
     def _compute_amount(self):

@@ -30,7 +30,8 @@
     'website': "https://www.cybrosys.com",
     'description': "GYM Management System",
     'depends': [
-        'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm',
+        'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 
+        'partner_contact_birthdate', 'partner_contact_gender',
     ],
     'images': ['static/description/banner.png'],
     'data': [
@@ -51,6 +52,7 @@
         'views/workout_plan.xml',
         'views/trainers.xml',
         'views/crm.xml',
+        'wizard/upgrade_crm_lead.xml',
         'report/workout_plan_reports.xml',
         'report/workout_plan_template.xml',
         'report/my_workout_plan_reports.xml',

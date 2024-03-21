@@ -575,9 +575,9 @@
                            <table id="tableh">
                              <tr>
                                <td>NIVEL</td>
-                               <td>Novato <input type="checkbox"/></td>
-                               <td>Intermedio <input type="checkbox"/></td>
-                               <td>Avanzado <input type="checkbox"/></td>
+                               <td>Novato <input type="checkbox" t-att-checked="plan.x_studio_nivel == 'Novato'"/></td>
+                               <td>Intermedio <input type="checkbox" t-att-checked="plan.x_studio_nivel == 'Intermedio'"/></td>
+                               <td>Avanzado <input type="checkbox" t-att-checked="plan.x_studio_nivel == 'Avanzado'"/></td>
                              </tr>
                            </table>
                            <!-- FIN TABLA H -->
@@ -610,7 +610,7 @@
                               <td>
                                 <table class="tabla-white tabla-stripe table-100">
                                   <tr><td class="t-b t-c">Observaciones Entrenador</td></tr>
-                                  <tr><td/></tr>
+                                  <tr><td class="box-observaciones"><span t-esc="plan.x_studio_entrenador"/></td></tr>
                                   <tr><td/></tr>
                                   <tr><td/></tr>
                                   <tr><td/></tr>
@@ -624,7 +624,7 @@
                           
                           <h3>Observaciones Fisioterapia</h3>
                           <table class="tabla-white tabla-stripe table-100">
-                            <tr><td/></tr>
+                            <tr><td class="box-observaciones"><span t-esc="plan.x_studio_observaciones"/></td></tr>
                             <tr><td/></tr>
                             <tr><td/></tr>
                             <tr><td/></tr>
@@ -873,7 +873,7 @@
                          <table class="table-100">
                            <tr>
                              <td>
-                               <img src="https://place-hold.it/250x100?text=Revo%20Sport%20Logo" alt="revo-logo-footer"/>
+                               <img src="https://s.holacliente.com/doc12022024065015.png" alt="revo-logo-footer"/>
                              </td>
                            </tr>
                          </table>
