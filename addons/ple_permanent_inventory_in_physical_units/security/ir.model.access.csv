@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ple_permanent_inventory_physical_units,ple.permanent.inventory.physical.units,model_ple_permanent_inventory_physical_units,account.group_account_user,1,1,1,1
+access_ple_stock_products_valuation,ple.stock.products.valuation,model_ple_stock_products_valuation,account.group_account_user,1,1,1,1
+access_ple_permanent_inventory_units_final,ple.permanent.inventory.units.final,model_ple_stock_products_valuation_final,account.group_account_user,1,1,1,1
+access_ple_permanent_inventory_units_final_wizard,update.opening.wizard,model_update_opening_wizard,"",1,1,1,1
+access_sunat_operation_wizard,sunat.operation.wizard,model_sunat_operation_wizard,"",1,1,1,1

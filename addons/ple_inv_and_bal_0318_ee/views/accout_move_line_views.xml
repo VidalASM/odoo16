@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="account_move_line_tree_view_inherit_ple_inv_and_bal_0318" model="ir.ui.view">
+        <field name="name">account.move.line.tree.view_inherit.ple_inv_and_bal_0318</field>
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="date_maturity" position="after">
+                <field name="efemd_ple_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

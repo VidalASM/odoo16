@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="account_move_form_view_inherit_aditional_document" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.aditional.document</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_info_group']" position="inside">
+                <field name="aditional_document_reference"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

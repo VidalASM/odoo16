@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="payment_methods_codes_001" model="payment.methods.codes">
+            <field name="code">001</field>
+            <field name="description">Depósito en cuenta</field>
+        </record>
+
+        <record id="payment_methods_codes_002" model="payment.methods.codes">
+            <field name="code">002</field>
+            <field name="description">Giro</field>
+        </record>
+
+        <record id="payment_methods_codes_003" model="payment.methods.codes">
+            <field name="code">003</field>
+            <field name="description">Transferencia de fondos</field>
+        </record>        
+
+        <record id="payment_methods_codes_004" model="payment.methods.codes">
+            <field name="code">004</field>
+            <field name="description">Orden de pago</field>
+        </record>
+
+        <record id="payment_methods_codes_005" model="payment.methods.codes">
+            <field name="code">005</field>
+            <field name="description">Tarjeta de débito</field>
+        </record>
+
+        <record id="payment_methods_codes_006" model="payment.methods.codes">
+            <field name="code">006</field>
+            <field name="description">Tarjeta de crédito emitida en el país por una empresa del sistema financiero</field>
+        </record>
+
+        <record id="payment_methods_codes_007" model="payment.methods.codes">
+            <field name="code">007</field>
+            <field name="description">Cheques con la cláusula de "NO NEGOCIABLE", "INTRANSFERIBLES", "NO A LA ORDEN" u otra equivalente, a que se refiere el inciso g) del artículo 5° de la ley</field>
+        </record>
+
+        <record id="payment_methods_codes_008" model="payment.methods.codes">
+            <field name="code">008</field>
+            <field name="description">Efectivo, por operaciones en las que no existe obligación de utilizar medio de pago</field>
+        </record>
+
+        <record id="payment_methods_codes_009" model="payment.methods.codes">
+            <field name="code">009</field>
+            <field name="description">Efectivo, en los demás casos</field>
+        </record>
+
+        <record id="payment_methods_codes_010" model="payment.methods.codes">
+            <field name="code">010</field>
+            <field name="description">Medios de pago usados en comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_011" model="payment.methods.codes">
+            <field name="code">011</field>
+            <field name="description">Documentos emitidos por las EDPYMES y las cooperativas de ahorro y crédito no autorizadas a captar depósitos del público</field>
+        </record>
+
+        <record id="payment_methods_codes_012" model="payment.methods.codes">
+            <field name="code">012</field>
+            <field name="description">Tarjeta de crédito emitida en el país o en el exterior por una empresa no perteneciente al sistema financiero, cuyo objeto principal sea la emisión y administración de tarjetas de crédito</field>
+        </record>
+
+        <record id="payment_methods_codes_013" model="payment.methods.codes">
+            <field name="code">013</field>
+            <field name="description">Tarjetas de crédito emitidas en el exterior por empresas bancarias o financieras no domiciliadas</field>
+        </record>
+
+        <record id="payment_methods_codes_101" model="payment.methods.codes">
+            <field name="code">101</field>
+            <field name="description">Transferencias – Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_102" model="payment.methods.codes">
+            <field name="code">102</field>
+            <field name="description">Cheques bancarios - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_103" model="payment.methods.codes">
+            <field name="code">103</field>
+            <field name="description">Orden de pago simple - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_104" model="payment.methods.codes">
+            <field name="code">104</field>
+            <field name="description">Orden de pago documentario - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_105" model="payment.methods.codes">
+            <field name="code">105</field>
+            <field name="description">Remesa simple - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_106" model="payment.methods.codes">
+            <field name="code">106</field>
+            <field name="description">Remesa documentaria - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_107" model="payment.methods.codes">
+            <field name="code">107</field>
+            <field name="description">Carta de crédito simple - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_108" model="payment.methods.codes">
+            <field name="code">108</field>
+            <field name="description">Carta de crédito documentario - Comercio exterior</field>
+        </record>
+
+        <record id="payment_methods_codes_999" model="payment.methods.codes">
+            <field name="code">999</field>
+            <field name="description">Otros medios de pago</field>
+        </record>
+
+    </data>
+</odoo>

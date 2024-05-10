@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_invoice_a4_preprinted">
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+    </template>
+
+    <template id="report_invoice_a4_preprinted_content_footer">
+        <link href="/invoice_a4_preprinted_format/static/src/css/main.css" rel="stylesheet"/>
+        <table class="table_total_data_product">
+            <tr style= "height: 25px;">
+                <td style="width: 85%; font-size: 11px;">
+                    <strong class="invisible">Valor Parcial</strong>
+                </td>
+                <td class="text-right o_price_total" style="text-align: right; width: 15%; font-size: 11px;">
+                    <span class="text-nowrap" t-field="o.amount_total"/>
+                </td>
+            </tr>
+            <tr style= "height: 25px;">
+                <td style="width: 85%;">
+                    <div class="total_write" name="total_write_classic_invoice_pdf" style="clear:left; text-align:left; margin-bottom:10px; font-size: 11px;">
+                        <strong class="invisible">Total a Pagar GS: (iva) </strong>
+                        <t t-esc="o._amount_to_text().title()"/>
+                    </div>
+                </td>
+                <td class="text-right o_price_total" style="text-align: right; width: 15%; font-size: 11px;">
+                    <span class="text-nowrap" t-field="o.amount_total"/>
+                </td>
+            </tr>
+            <tr style= "height: 23px;">
+                <td style="width: 85%; font-size: 11px">
+                    <div class="total_info">
+                        
+                    </div>
+                </td>
+                <td style="width: 15%; text-align: right; font-size: 11px;">
+                    <strong class="invisible">Total:</strong> 
+                    <t>
+                        <span class="text-end o_price_total" t-esc="o.calculate_iva()" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                    </t>
+                </td>
+            </tr>
+        </table>
+    </template>
+
+    <template id="tax_groups_totals">
+        <t t-foreach="o.tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+            <div>
+                <span class="invisible">Total de impuesto</span>
+                <span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/>:
+                <span class="text-nowrap" t-esc="amount_by_group['tax_group_amount']"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_invoice_a4_preprinted_content_header">
+        <link href="/invoice_a4_preprinted_format/static/src/css/main.css" rel="stylesheet"/>
+        <div class="table-container-invoice-preprinted-header-client">
+            <table class="table-header">
+            </table>
+            <table class="data-client-1">
+                <tr style="width:100%;">
+                    <td style="width:7%;">
+                        <strong class="invisible" style="margin-left:3px;">FECHA</strong>
+                    </td>
+                    <td style="width:2%;text-align:left;">
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                    <td style="padding-left:3px;width:50%;">
+                        <t t-if="o.invoice_date" t-esc="o.invoice_date"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:3px;">
+                        <strong class="invisible">CLIENTE</strong>
+                    </td>
+                    <td>
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                        <td style="padding-left:3px;">
+                        <t t-if="o.partner_id.name" t-esc="o.partner_id.name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:3px;">
+                        <strong class="invisible">DIRECCIÓN</strong>
+                    </td>
+                    <td>
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                    <td style="padding-left:3px;">
+                        <t name="district_partner" t-if="o.partner_id.street" t-esc="o.partner_id.street"/>,
+                        <t t-if="o.partner_id.city_id.name" t-esc="o.partner_id.city_id.name"/>,
+                        <t t-if="o.partner_id.state_id.name" t-esc="o.partner_id.state_id.name"/>,
+                        <t t-if="o.partner_id.country_id.name" t-esc="o.partner_id.country_id.name"/>
+                    </td>
+                </tr>
+            </table>
+            <table class="data-client-2">
+                <tr style="width:100%;">
+                    <td style="padding-left:3px;width:50%;">
+                        <strong class="invisible">CON. VTA.</strong>
+                    </td>
+                    <td style="width:2%;text-align:left;">
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                    <td style="padding-left:3px;">
+                        <t t-if="o.invoice_payment_term_id" t-esc="o.invoice_payment_term_id.name"/>
+                        <t t-elif="o.invoice_date_due > o.invoice_date">Crédito</t>
+                        <t t-else="">Contado</t>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:3px;">
+                        <strong class="invisible">RUC</strong>
+                    </td>
+                    <td>
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                    <td style="padding-left:3px;">
+                        <t t-if="o.partner_id.vat" t-esc="o.partner_id.vat"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:3px;">
+                        <strong class="invisible">TELEFONO</strong>
+                    </td>
+                    <td>
+                        <strong class="invisible" style="font-weight:800;">:</strong>
+                    </td>
+                    <td style="padding-left:3px;">
+                        <t t-if="o.partner_id.phone" t-esc="o.partner_id.phone"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_invoice_a4_preprinted">
+        <t t-call="invoice_a4_preprinted_format.external_layout_invoice_a4_preprinted">
+            <div class="header" t-att-style="report_header_style">
+                <div class="o_clean_header" style="width: 99%; height: 100%;">
+                    <div class="content" style="width: 100%; height: 100%; float: left">
+                        <div class="content-left" style="width:48%; float: left">
+                            <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content_header">
+                            </t>
+                        </div>
+                        <div class="content-right" style="width:48%; float: right">
+                            <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content_header">
+                            </t>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div class="page" style="width: 99%; float: left">
+                <div class="content" style="width: 100%; height: 100%; float: left">
+                    <div class="content-left" style="width:48%; float: left">
+                        <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content">
+                        </t>
+                    </div>
+                    <div class="content-right" style="width:48%; float: right">
+                        <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content">
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="footer last-page" style="bottom: 0; left: 0; width:99%; float: left;">
+                <div>   
+                    <div style="width:48%; float: left; bottom:0; vertical-align: bottom;">
+                        <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content_footer">
+                        </t>
+                    </div>
+                    <div style="width:48%; float: right; bottom:0; vertical-align: bottom;">
+                        <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted_content_footer">
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_invoice_a4_preprinted_content">
+        <link href="/invoice_a4_preprinted_format/static/src/css/main.css" rel="stylesheet"/>
+        <div style="width: 100%;">
+            <table class="table_info">
+                <tr>
+                    <th name="th_code">
+                        <span class="invisible">Codigo</span>
+                    </th>
+                    <th name="th_name">
+                        <span class="invisible">Nombre</span>
+                    </th>
+                    <th name="th_quantity">
+                        <span class="invisible">Cant</span>
+                    </th>
+                    <th name="th_priceunit">
+                        <span class="invisible">Precio Unitario</span>
+                    </th>
+                    <th name="th_exempt">
+                        <span class="invisible">Exenta</span>
+                    </th>
+                    <th name="th_taxed">
+                        <span class="invisible">Gravadas</span>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table class="table_data_product">
+                <t t-set="current_subtotal" t-value="0"/>
+                <t t-set="lines" t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+                <t t-set="move_line_index" t-value="1"/>
+                <t t-set="add_line" t-value="0"/>
+                <t t-foreach="lines" t-as="line">
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"/>
+                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"/>
+
+                    <tr>
+                        <t t-if="line.display_type == 'product'" name="account_invoice_line_accountable">
+                            <td class="text-center">
+                                <span t-esc="line.product_id.default_code"/>
+                            </td>
+                            <td name="account_invoice_line_name" class="text-left">
+                                <span t-field="line.product_id.name" t-options="{'widget': 'text'}"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="line.quantity"/>
+                            </td>
+                            <td t-attf-class="text-right" style="text-align: right;">
+                                <span class="text-nowrap" t-field="line.price_unit" t-options="{'widget': 'text'}"/>
+                            </td>
+                            <td class="text-center">
+                                <span>0</span>
+                            </td>
+                            <td class="text-right o_price_total" style="text-align: right;">
+                                <span class="text-nowrap" t-field="line.price_total"/>
+                            </td>
+
+                        </t>
+                        <t t-if="line.display_type == 'line_section'">
+                            <td colspan="99">
+                                <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                            </td>
+                            <t t-set="current_section" t-value="line"/>
+                            <t t-set="current_subtotal" t-value="0"/>
+                        </t>
+                        <t t-if="line.display_type == 'line_note'">
+                            <td colspan="99">
+                                <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                            </td>
+                        </t>
+                        <t t-set="add_line" t-value="add_line+1"/>
+                    </tr>
+                </t>
+
+            </table>
+        </div>
+    </template>
+
+
+
+    <template id="report_invoice_a4_preprinted_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                <t t-call="invoice_a4_preprinted_format.report_invoice_a4_preprinted" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

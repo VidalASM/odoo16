@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_inherit_ruc_validation_sunat" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit.ruc_validation_sunat</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="first_and_last_name.res_partner_form_view_inherit_first_and_last_name"/>
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <button name="action_ruc_validation_sunat" string="Consulta SUNAT" type="object"
+                        help="Este botón realiza una consulta en SUNAT de los datos del documento ingresado, y auto completa la información de este formulario con los datos que encuentra en 'Consulta RUC SUNAT'"/>
+            </field>
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name="ruc_sunat" string="Ficha RUC">
+                    <group>
+                        <group>
+                            <field name="type_contributor_sunat"/>
+                            <field name="document_type_sunat_id"/>
+                            <field name="date_inscription_sunat"/>
+                            <field name="state_contributor_sunat"/>
+                            <field name="condition_contributor_sunat"/>
+                            <field name="system_emission_sunat"/>
+                            <field name="system_account_sunat"/>
+                            <field name="emissor_date_sunat"/>
+                            <field name="document_electronic_sunat"/>
+                            <field name="ple_date_sunat"/>
+                            <field name="type_document_sunat"/>
+                            <field name="number_document_sunat"/>
+                        </group>
+                        <group>
+                            <field name="date_start_activity_sunat"/>
+                            <field name="office_sunat"/>
+                            <field name="foreign_activity_commerce_sunat"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="activity_economic_ids"/>
+                            <field name="document_pay_ids"/>
+                        </group>
+                        <group>
+                            <field name="system_electronic_ids"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_company_form_view_inherit_ruc_validation_sunat_yaros" model="ir.ui.view">
+        <field name="name">res.company.form.view.inherit.ruc_validation_sunat_yaros</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div" position="after">
+                <group>
+                    <field name="token_api_ruc" password="True" attrs="{'invisible': [('country_id', '!=', %(base.pe)d)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

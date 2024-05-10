@@ -3,7 +3,8 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_workout_plan_wizard,account.workout.plan.wizard,model_workout_plan_wizard,,1,1,1,1
 access_select_payment_mode_wizard,account.select.payment.mode.wizard,model_select_payment_mode_wizard,,1,1,1,1
 access_select_payment_mode_wizard_line,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,,1,1,1,1
-
+access_freeze_wizard,freeze.wizard,model_freeze_wizard,,1,1,1,1
+access_transfer_wizard,transfer.wizard,model_transfer_wizard,,1,1,1,1
 
 hr.access_hr_employee_trainer,hr.employee user,model_hr_employee,gym_mgmt_system.group_gym_trainer,1,1,1,0
 hr.access_hr_employee_member,hr.employee user,model_hr_employee,gym_mgmt_system.group_gym_member,1,0,0,0
@@ -69,3 +70,7 @@ access_select_payment_mode_wizard_line_user,account.select.payment.mode.wizard.l
 
 crm_draw_manager,crm.draw.manager,model_crm_draw,gym_mgmt_system.group_gym_operator,1,1,1,1
 "access_crm_lead_upgrade","access.crm.lead.upgrade","model_crm_lead_upgrade","base.group_system",1,1,1,0
+
+access_tutor_type_trainer,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_tutor_type_operator,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_tutor_type_member,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_member,1,0,0,0

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_0308">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-out='0'/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0308.external_layout_ple_0308">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0308/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title">
+                            <strong>
+                                FORMATO 3.8: LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 31 -
+                                VALORES"
+                            </strong>
+                        </div>
+
+                        <div style="width: 100% !important;" class="subtitle">                         
+                            <strong>EJERCICIO : </strong>                        
+                            <span t-esc="doc.date_end.strftime('%Y')"/>
+                            <br/>            
+                            <strong>RUC : </strong>
+                            <span t-field="company.partner_id.vat"/>
+                            <br/>    
+                            <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL : </strong>
+                            <span t-field="company.partner_id.name"/>      
+                        </div>
+                        <br/>
+
+                        <table class="table_inv_bal_0305">
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;" colspan="2">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL DEL EMISOR</strong>
+                                </th>
+                                <th style="text-align: center;" colspan="3">
+                                    <strong>TÍTULO</strong>
+                                </th>
+                                <th style="text-align: center;" colspan="3">
+                                    <strong>VALOR EN LIBROS</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;">
+                                    <strong>TIPO</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>NÚMERO</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>DENOMINACIÓN</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>VALOR NOMINAL UNITARIO</strong>
+                                </th>
+                                <th style="text-align: center">
+                                    <strong>CANTIDAD</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>COSTO TOTAL</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>PROVISION TOTAL</strong>
+                                </th>
+                                <th style="text-align: center">
+                                    <strong>TOTAL NETO</strong>
+                                </th>
+                            </tr>
+                            <t t-set="total_provision" t-value="float(0)"/>
+                            <t t-set="total_neto" t-value="float(0)"/>
+                            <t t-set="partner_id_temp" t-value="None"/>
+                            <tr t-foreach="doc.line_ids.filtered(lambda x: x.transmitter_name).sorted(key=lambda x: x.transmitter_name)" t-as="line"
+                                class="part_table_0305">
+                                <t t-if="line.partner_id != partner_id_temp or partner_id_temp is None">
+                                    <t t-set="partner_id_temp" t-value="line.partner_id"/>
+                                    <t t-set="total_title_provision_initial_balance"
+                                       t-value="float(doc.set_sum_total_title_provision(partner_id_temp)) + float(line.total_title_provision)"/>
+                                    <t t-set="total_neto_camp"
+                                       t-value="round(float(line.total_title_costs)) + total_title_provision_initial_balance"/>
+
+                                    <th style="text-align: center; font-weight: lighter">
+                                        <t t-esc="line.type_document_transmitter"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.number_document_transmitter"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.transmitter_name"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.title_code"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="'{:,}'.format(float(line.title_unit_value))"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.total_amount_value"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="'{:,}'.format(round(float(line.total_title_costs)))"/>
+                                    </th>
+                                    <t t-if="total_title_provision_initial_balance">
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-if="total_title_provision_initial_balance >= 0">
+                                                <t t-esc="'{:,}'.format(round(float(total_title_provision_initial_balance)))"/>
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="'({:,})'.format(round(abs(float(total_title_provision_initial_balance))))"/>
+                                            </t>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="'{:,}'.format(round(float(total_neto_camp)))"/>
+                                        </th>
+                                        <t t-set="total_provision"
+                                           t-value="total_provision + float(total_title_provision_initial_balance)"/>
+                                        <t t-set="total_neto"
+                                           t-value="total_neto + total_neto_camp"/>
+                                    </t>
+                                    <t t-else="">
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="''"/>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="'{:,}'.format(round(float(total_neto_camp)))"/>
+                                        </th>
+                                        <t t-set="total_provision"
+                                           t-value="total_provision"/>
+                                        <t t-set="total_neto"
+                                           t-value="total_neto + total_neto_camp"/>
+                                    </t>
+                                </t>
+                            </tr>
+                            <tr>
+                                <td colspan="7" style="border: 0px; text-align: right;">
+                                    <strong style="font-weight: bold;">TOTALES</strong>
+                                </td>
+                                <td class="mount_final_0305">
+                                    <t t-if="total_provision >= 0">
+                                        <t t-esc="'{:,}'.format(round(float(total_provision)))"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'({:,})'.format(round(abs(float(total_provision))))"/>
+                                    </t>
+                                </td>
+                                <td class="mount_final_0305">
+                                    <t t-esc="'{:,}'.format(round(float(total_neto)))"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

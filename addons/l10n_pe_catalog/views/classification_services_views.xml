@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="classification_services_tree" model="ir.ui.view">
+        <field name="name">classification.services.tree</field>
+        <field name="model">classification.services</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="classification_services_form" model="ir.ui.view">
+        <field name="name">classification.services.form</field>
+        <field name="model">classification.services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <data>
+        <record id="classification_services_action" model="ir.actions.act_window">
+            <field name="name">[30] Clasificación de los bienes y servicios adquiridos</field>
+            <field name="res_model">classification.services</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+
+    <menuitem 
+        id="menu_code_aduana_anexo"
+        name="[30] Clasificación de los bienes y servicios adquiridos"
+        action="classification_services_action"
+        parent="localization_menu.menu_anexo_3"
+    />
+
+</odoo>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_ple_0324">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0324.external_layout_ple_0324">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0324/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+                        <div class="title_324">
+                            <strong>3.24 LIBRO DE INVENTARIOS Y BALANCES - ESTADO DE RESULTADOS INTEGRALES</strong>
+                        </div>
+                        <div style="width: 100% !important;" class="subtitle_324">
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                            </div>
+                            <span t-esc="doc.date_end.strftime('%Y')"/>
+                            <br/>
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.vat"/>
+                            <br/>
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+                        <table class="table_1_324">
+                            <tr class="part_table">
+                                <th colspan="1" rowspan="1">
+                                    <strong>DESCRIPCION</strong>
+                                </th>
+                                <th colspan="1" rowspan="1">
+                                    <strong>EJERCICIO O PERIODO</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_one">
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <tr t-foreach="line.eri_ple_id.parent_ids" t-as="parent_id">
+                                    <t t-if="parent_id.code == '5D01ST' and not line.financial_state_code in ['5D01ST', '5D02ST', '5D03ST', '5D04ST', '']">
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="line.description"/>
+                                        </th>
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                        </th>
+                                    </t>
+                                </tr>                                  
+                            </tr>                            
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <t t-if="line.financial_state_code == '5D01ST'">
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <strong>
+                                            <t t-esc="line.description"/>
+                                        </strong>
+                                    </th>
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                    </th>
+                                </t>                                    
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line" class="part_tree">
+                                <t t-if="line.financial_state_code == '5D01ST' and '5D01ST' != doc.line_ids.sorted(key=lambda x: x.sequence)[-1].financial_state_code">
+                                    <th></th>
+                                    <th></th>
+                                </t>
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <tr t-foreach="line.eri_ple_id.parent_ids" t-as="parent_id">
+                                    <t t-if="parent_id.code == '5D02ST' and not line.financial_state_code in ['5D01ST', '5D02ST', '5D03ST', '5D04ST', '']">
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="line.description"/>
+                                        </th>
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                        </th>
+                                    </t>
+                                </tr>                                
+                            </tr>                            
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <t t-if="line.financial_state_code == '5D02ST'">
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <strong>
+                                            <t t-esc="line.description"/>
+                                        </strong>
+                                    </th>
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                    </th>
+                                </t>                                    
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line" class="part_tree">
+                                <t t-if="line.financial_state_code == '5D02ST' and '5D02ST' != doc.line_ids.sorted(key=lambda x: x.sequence)[-1].financial_state_code">
+                                    <th></th>
+                                    <th></th>
+                                </t>
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <tr t-foreach="line.eri_ple_id.parent_ids" t-as="parent_id">
+                                    <t t-if="parent_id.code == '5D03ST' and not line.financial_state_code in ['5D01ST', '5D02ST', '5D03ST', '5D04ST', '']">
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="line.description"/>
+                                        </th>
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                        </th>
+                                    </t>
+                                </tr>                                
+                            </tr>                            
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <t t-if="line.financial_state_code == '5D03ST'">
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <strong>
+                                            <t t-esc="line.description"/>
+                                        </strong>
+                                    </th>
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                    </th>
+                                </t>                                    
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line" class="part_tree">
+                                <t t-if="line.financial_state_code == '5D03ST' and '5D03ST' != doc.line_ids.sorted(key=lambda x: x.sequence)[-1].financial_state_code">
+                                    <th></th>
+                                    <th></th>
+                                </t>
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <tr t-foreach="line.eri_ple_id.parent_ids" t-as="parent_id">
+                                    <t t-if="parent_id.code == '5D04ST' and not line.financial_state_code in ['5D01ST', '5D02ST', '5D03ST', '5D04ST', '']">
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="line.description"/>
+                                        </th>
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                        </th>
+                                    </t>
+                                </tr>                                  
+                            </tr>                            
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <t t-if="line.financial_state_code == '5D04ST'">
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <strong>
+                                            <t t-esc="line.description"/>
+                                        </strong>
+                                    </th>
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                    </th>
+                                </t>                                    
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line" class="part_tree">
+                                <t t-if="line.financial_state_code == '5D04ST' and '5D04ST' != doc.line_ids.sorted(key=lambda x: x.sequence)[-1].financial_state_code">
+                                    <th></th>
+                                    <th></th>
+                                </t>
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <tr t-foreach="line.eri_ple_id.parent_ids" t-as="parent_id">
+                                    <t t-if="parent_id.code == '' and not line.financial_state_code in ['5D01ST', '5D02ST', '5D03ST', '5D04ST', '']">
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;"> 
+                                            <t t-esc="line.description"/>
+                                        </th>
+                                        <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                            <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                        </th>
+                                    </t>
+                                </tr>                                   
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line">
+                                <t t-if="line.financial_state_code == ''">
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <strong>
+                                            <t t-esc="line.description"/>
+                                        </strong>
+                                    </th>
+                                    <th style="border: 2px solid black; font-weight: lighter; text-align: center; white-space:nowrap;">
+                                        <t t-esc="'{:,}'.format(round(float(line.credit)*-1))"/>
+                                    </th>
+                                </t>                                    
+                            </tr>
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.sequence)" t-as="line" class="part_tree">
+                                <t t-if="line.financial_state_code == '' and '' != doc.line_ids.sorted(key=lambda x: x.sequence)[-1].financial_state_code">
+                                    <th></th>
+                                    <th></th>
+                                </t>
+                            </tr> 
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

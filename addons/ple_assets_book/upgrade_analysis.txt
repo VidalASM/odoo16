@@ -1,0 +1,4 @@
+---Models in module 'ple_assets_book'---
+REF FUNCTION _calculate_columns_AC_to_AD
+---Fields in module 'ple_assets_book'---
+---XML records in module 'ple_assets_book'---

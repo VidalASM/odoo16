@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_batch_payment_inherit_txt_suppliers" model="ir.ui.view">
+        <field name="name">account.batch.payment.inherit.txt.suppliers</field>
+        <field name="model">account.batch.payment</field>
+        <field name="inherit_id" ref="account_batch_payment.view_batch_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="journal_temporal_code" invisible="1"/>
+                <button name="generate_txt_suppliers" class="oe_highlight" string="Generar txt" type="object"
+                        attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['11', '02', '03', '09'])]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="journal_temporal_code" invisible="1"/>
+                <field name="process_type" attrs="{'invisible':[ ('journal_temporal_code', '!=', '11')]}"/>
+                <field name="future_date" attrs="{'invisible':[ ('journal_temporal_code', '!=', '11')]}"/>
+                <field name="executing_schedule" attrs="{'invisible':[ ('journal_temporal_code', '!=', '11')]}"/>
+                <field name="validate_belonging" attrs="{'invisible':[ ('journal_temporal_code', '!=', '11')]}"/>
+                <field name="txt_filename_bank" invisible="1"/>
+                <label string="Reporte_bank .TXT" for="txt_binary_bank"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['11', '02', '03', '09'])]}"/>
+                <field name="txt_binary_bank" filename="txt_filename_bank" readonly="1" nolabel="1"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['11', '02', '03', '09'])]}"/>
+
+                <field name="txt_filename_scotia" invisible="1"/>
+                <label string="Pago .TXT" for="txt_binary_scotia"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['09'])]}"/>
+                <field name="txt_binary_scotia" filename="txt_filename_scotia" readonly="1" nolabel="1"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['09'])]}"/>
+
+                <field name="txt_filename_scotia_zip" invisible="1"/>
+                <label string="Pago .ZIP" for="txt_binary_scotia_zip"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['09'])]}"/>
+                <field name="txt_binary_scotia_zip" filename="txt_filename_scotia_zip" readonly="1" nolabel="1"
+                       attrs="{'invisible':[ ('journal_temporal_code', 'not in', ['09'])]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='payment_method_id']" position="after">
+                <field name="process_type_itb" attrs="{'invisible':[ ('journal_temporal_code', '!=', '03')]}"/>
+                <field name="future_date_itb" attrs="{'invisible':[ ('process_type_itb', '!=', '1')]}"/>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_bank_inherit_txt_suppliers_account" model="ir.ui.view">
+        <field name="name">view.res.bank.inherit.txt_suppliers_account</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_id']" position="after">
+                <field name="bank_id_related" invisible="1"/>
+                <field name="company_code" attrs="{'invisible':[ ('bank_id_related', '!=', '03')]}"/>
+                <field name="service_code" attrs="{'invisible':[ ('bank_id_related', '!=', '03')]}"/>
+                <field name="account_type" attrs="{'invisible':[ ('bank_id_related', '!=', '03')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form_payment_detractions" model="ir.ui.view">
+        <field name="name">view.partner.property.form.payment.detractions</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_ids']" position="replace">
+                <field name="bank_ids" nolabel="1" colspan="2">
+                    <tree editable="bottom">
+                        <field name="sequence" widget="handle"/>
+                        <field name="bank_id"/>
+                        <field name="acc_number"/>
+                        <field name="cci"/>
+                        <field name="account_type"/>
+                        <field name="acc_holder_name" invisible="1"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

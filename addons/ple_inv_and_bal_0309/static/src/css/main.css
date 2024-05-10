@@ -1,0 +1,51 @@
+th{
+    padding: 0 10px 0 10px;
+}
+
+.title{
+    font-size: 17px !important;
+    font-family: Arial !important;
+}
+
+.subtitle{
+    font-size: 15px !important;
+    font-family: Arial !important;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.subtitle div{
+    display: flex;
+    font-weight: normal;
+    flex-direction: column;
+}
+
+.table_inv_bal_0309 {
+    float: left;
+    width: 100% !important;
+    border-collapse: collapse;
+}
+
+table {
+    border: 1px solid white !important;
+}
+
+.table_inv_bal_0309 td, 
+.table_inv_bal_0309 th {
+    border: 1px solid black;
+}
+
+.color {
+  color: red;
+}
+
+.mount_final_0309{
+    text-align: center;
+}
+
+.text_totales {
+    text-align: right;
+    padding-right: 10px;
+    border-bottom: 1px white !important;
+    border-left: 1px white !important;
+}

@@ -1,0 +1,39 @@
+<odoo>
+
+  <record id="stock_picking_form_view_inherit" model="ir.ui.view">
+    <field name="name">stock.picking.form.extend</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form" />
+    <field name="arch" type="xml">
+
+      <xpath expr="//field[@name='backorder_id']" position="after">
+        <field name="select_options" />
+      </xpath>
+
+      <xpath expr="//group[@name='other_infos']" position="before">
+        <group string="Shipping Information">
+          <field name="weight" />
+          <field name="gross_weight" />
+          <field name="volume"/>
+        </group>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="stock_picking_enterprise_form_view_inherit" model="ir.ui.view">
+    <field name="name">stock.picking.enterprise.form.extend</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="l10n_pe_edi_stock.view_picking_edi_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='l10n_pe_edi_observation']" position="attributes">
+        <attribute name="string">Atención</attribute>
+      </xpath>
+      <xpath expr="//field[@name='l10n_pe_edi_observation']" position="after">
+        <field name="transport_agency"/>
+      </xpath>
+    </field>
+  </record>
+
+
+
+</odoo>

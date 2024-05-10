@@ -1,0 +1,3 @@
+---Models in module 'pos_serie_correlative'---
+---Fields in module 'pos_serie_correlative'---
+---XML records in module 'pos_serie_correlative'---

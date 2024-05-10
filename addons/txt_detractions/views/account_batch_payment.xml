@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_batch_payment_inherit_txt_detractions" model="ir.ui.view">
+        <field name="name">account.batch.payment.inherit.txt.detractions</field>
+        <field name="model">account.batch.payment</field>
+        <field name="inherit_id" ref="account_batch_payment.view_batch_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="payment_method_line_detraction" invisible="1"/>
+                <field name="payment_method_name" invisible="1"/>
+                <button name="generate_detraction" class="oe_highlight" string="Generar detracción" type="object"
+                        attrs="{'invisible':['|', ('payment_method_name', 'not in', ['Detracción', 'Autodetracción']),('state', '!=', 'sent')]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="payment_method_line_detraction"/>
+                <field name="lot_number" attrs="{'readonly': [('state', '=', 'reconciled')]}"/>
+                <field name="txt_filename" invisible="1"/>
+                <label string="Reporte .TXT" for="txt_binary"
+                       attrs="{'invisible':[ ('payment_method_name', 'not in', ['Detracción', 'Autodetracción'])]}"/>
+                <field name="txt_binary" filename="txt_filename" readonly="1" nolabel="1"
+                       attrs="{'invisible':[('payment_method_name', 'not in', ['Detracción', 'Autodetracción'])]}"/>
+            </xpath>
+            <xpath expr="//tree" position="replace">
+                <tree string="Payments" editable="bottom" decoration-muted="state == 'draft'">
+                    <field name="name" readonly="1"/>
+                    <field name="date" readonly="1"/>
+                    <field name="partner_id" readonly="1"/>
+                    <field name="ref" readonly="1"/>
+                    <field name="amount" total="Total" readonly="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <field name="detractions_constancy_number"/>
+                </tree>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

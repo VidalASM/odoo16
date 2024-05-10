@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="l10n_latam.identification.type" id="l10n_pe.it_DNI">
+            <field name="doc_length">8</field>
+            <field name="doc_type">numeric</field>
+            <field name="exact_length">exact</field>
+            <field name="nationality">national</field>
+        </record>
+
+        <record model='l10n_latam.identification.type' id='l10n_pe.it_NDTD'>
+            <field name="doc_length">15</field>
+            <field name="doc_type">other</field>
+            <field name="exact_length">maximum</field>
+            <field name="nationality">foreign</field>
+        </record>
+
+        <record model="l10n_latam.identification.type" id="l10n_latam_base.it_fid">
+            <field name="description">Foreign Card</field>
+            <field name="doc_length">12</field>
+            <field name="doc_type">alphanumeric</field>
+            <field name="exact_length">maximum</field>
+            <field name="nationality">both</field>
+        </record>
+
+        <record model="l10n_latam.identification.type" id="l10n_pe.it_RUC">
+            <field name="description">Unique Taxpayer Registry</field>
+            <field name="doc_length">11</field>
+            <field name="doc_type">numeric</field>
+            <field name="exact_length">exact</field>
+            <field name="nationality">national</field>
+        </record>
+
+        <record model="l10n_latam.identification.type" id="l10n_latam_base.it_pass">
+            <field name="description">Passport</field>
+            <field name="doc_length">12</field>
+            <field name="doc_type">alphanumeric</field>
+            <field name="exact_length">maximum</field>
+            <field name="nationality">both</field>
+        </record>
+
+        <record model="l10n_latam.identification.type" id="l10n_pe.it_DIC">
+            <field name="description">Diplomatic Identity Card</field>
+            <field name="doc_length">15</field>
+            <field name="doc_type">alphanumeric</field>
+            <field name="exact_length">maximum</field>
+            <field name="nationality">both</field>
+        </record>
+
+        <record model="l10n_latam.identification.type" id="l10n_pe.it_IDCR">
+            <field name="description">Identity document of the country of residence</field>
+        </record>
+
+    </data>
+</odoo>

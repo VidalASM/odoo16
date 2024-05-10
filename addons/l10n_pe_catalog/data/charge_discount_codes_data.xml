@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="charge_discount_codes_00" model="charge.discount.codes">
+            <field name="description">Descuentos que afectan la base imponible del IGV</field>
+            <field name="code">00</field>
+        </record>
+
+        <record id="charge_discount_codes_01" model="charge.discount.codes">
+            <field name="description">Descuentos que no afectan la base imponible del IGV</field>
+            <field name="code">01</field>
+        </record>
+
+        <record id="charge_discount_codes_02" model="charge.discount.codes">
+            <field name="description">Descuentos globales que afectan la base imponible del IGV</field>
+            <field name="code">02</field>
+        </record>
+
+        <record id="charge_discount_codes_03" model="charge.discount.codes">
+            <field name="description">Descuentos globales que no afectan la base imponible del IGV</field>
+            <field name="code">03</field>
+        </record>
+
+        <record id="charge_discount_codes_45" model="charge.discount.codes">
+            <field name="description">FISE</field>
+            <field name="code">45</field>
+        </record>
+
+        <record id="charge_discount_codes_46" model="charge.discount.codes">
+            <field name="description">Recargo al consumo y/o propinas</field>
+            <field name="code">46</field>
+        </record>
+
+        <record id="charge_discount_codes_47" model="charge.discount.codes">
+            <field name="description">Cargos que afectan la base impnible del IGV</field>
+            <field name="code">47</field>
+        </record>
+
+        <record id="charge_discount_codes_04" model="charge.discount.codes">
+            <field name="description">Descuentos globales por anticipos gravados que afectan la base imponible del
+                IGV/IVAP
+            </field>
+            <field name="code">04</field>
+        </record>
+
+        <record id="charge_discount_codes_05" model="charge.discount.codes">
+            <field name="description">Descuentos globales por anticipos exonerados</field>
+            <field name="code">05</field>
+        </record>
+
+        <record id="charge_discount_codes_06" model="charge.discount.codes">
+            <field name="description">Descuentos globales por anticipos inafectos</field>
+            <field name="code">06</field>
+        </record>
+
+        <record id="charge_discount_codes_07" model="charge.discount.codes">
+            <field name="description">Factor de compensación - Decreto de urgencia N. 010-2004</field>
+            <field name="code">07</field>
+        </record>
+
+        <record id="charge_discount_codes_20" model="charge.discount.codes">
+            <field name="description">Anticipo de ISC</field>
+            <field name="code">20</field>
+        </record>
+
+        <record id="charge_discount_codes_48" model="charge.discount.codes">
+            <field name="description">Cargos que no afectan la base imponible del IGV/IVAP</field>
+            <field name="code">48</field>
+        </record>
+
+        <record id="charge_discount_codes_49" model="charge.discount.codes">
+            <field name="description">Cargos globales que afectan la base imponible del IGV/IVAP</field>
+            <field name="code">49</field>
+        </record>
+
+        <record id="charge_discount_codes_50" model="charge.discount.codes">
+            <field name="description">Cargos globales que no afectan la base imponible del IGV/IVAP</field>
+            <field name="code">50</field>
+        </record>
+
+        <record id="charge_discount_codes_51" model="charge.discount.codes">
+            <field name="description">Percepción venta interna</field>
+            <field name="code">51</field>
+        </record>
+
+        <record id="charge_discount_codes_52" model="charge.discount.codes">
+            <field name="description">Percepción a la adquisición de combustible</field>
+            <field name="code">52</field>
+        </record>
+
+        <record id="charge_discount_codes_53" model="charge.discount.codes">
+            <field name="description">Percepción realizada al agente de percepción con tasa especial</field>
+            <field name="code">53</field>
+        </record>
+
+        <record id="charge_discount_codes_54" model="charge.discount.codes">
+            <field name="description">Factor de aportación - Decreto de urgencia N. 010-2004</field>
+            <field name="code">54</field>
+        </record>
+
+        <record id="charge_discount_codes_61" model="charge.discount.codes">
+            <field name="description">Retención de renta por anticipos</field>
+            <field name="code">61</field>
+        </record>
+
+        <record id="charge_discount_codes_62" model="charge.discount.codes">
+            <field name="description">Retención del IGV</field>
+            <field name="code">62</field>
+        </record>
+
+        <record id="charge_discount_codes_63" model="charge.discount.codes">
+            <field name="description">Rentención de renta de segunda categoría</field>
+            <field name="code">63</field>
+        </record>
+
+    </data>
+</odoo>

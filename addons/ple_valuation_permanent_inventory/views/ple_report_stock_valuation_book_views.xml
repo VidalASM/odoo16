@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_valuation_permament_inventory_inherit_ple_report_stock_valuation_book_units_form_view" model="ir.ui.view">
+        <field name="name">ple.valuation.permament.inventory.inherit.ple_permanent_inventory_physical_units_form_view</field>
+        <field name="model">ple.permanent.inventory.physical.units</field>
+        <field name="inherit_id" ref="ple_permanent_inventory_in_physical_units.ple_permanent_inventory_physical_units_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_rollback']" position="after">
+                <button name="action_generate_report_valued" string="Generar Reporte valorizado" type="object"
+                        attrs="{'invisible':[('status_permanent','!=','draft_perm')]}" />
+                <button name="action_rollback_permanent" string="Regresar a Borrador Reporte valorizado"
+                        attrs="{'invisible':[('status_permanent','!=','load_perm')]}"
+                        type="object"/>
+            </xpath>
+            <xpath expr="//field[@name='txt_binary']" position="after">
+                <field name="xls_filename_valued" invisible="1"/>
+                <field name="xls_binary_valued" filename="xls_filename_valued" readonly="1"/>
+                <field name="txt_filename_valued" invisible="1"/>
+                <field name="txt_binary_valued" filename="txt_filename_valued" readonly="1"/>
+                <field name="status_permanent" invisible="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="charge_discount_codes_form_view" model="ir.ui.view">
+        <field name="name">charge.discount.codes.form.view</field>
+        <field name="model">charge.discount.codes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="charge_discount_codes_tree_view" model="ir.ui.view">
+        <field name="name">charge.discount.codes.tree.view</field>
+        <field name="model">charge.discount.codes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_charge_discount_codes" model="ir.actions.act_window">
+        <field name="name">[53] Códigos de cargos o descuentos</field>
+        <field name="res_model">charge.discount.codes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id="catalog_charge_discount_codes_menu_localization"
+        name="[53] Códigos de cargos o descuentos"
+        parent="catalogos_sunat_menu_localization"
+        sequence="53"
+        action="action_charge_discount_codes"
+    />
+
+</odoo>

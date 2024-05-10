@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--template id="assets_format_efact" name="format_efact" inherit_id="web.report_assets_common">
+            <xpath expr="." position="inside">
+                <link href="/l10n_pe_format_efact/static/src/css/main.css" rel="stylesheet"/>
+            </xpath>
+        </template-->
+
+        <template id="external_layout_format_efactura_A4">
+            <link href="/l10n_pe_format_efact/static/src/css/main.css" rel="stylesheet"/>
+            <div t-attf-class="article o_report_layout_standard " t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-raw="0"/>
+            </div>
+
+            <div t-attf-class="header o_company_#{o.company_id.id}_layout" t-att-style="report_header_style">
+                <link href="/l10n_pe_format_efact/static/src/css/main.css" rel="stylesheet"/>
+                <div class="data_container_header" style="position: absolute;">
+                    <table class="data_company">
+                        <thead style="border:none; ">
+                            <tr style="border:none; ">
+                                <th style="width:55%; border:none; ">
+                                    <link href="/l10n_pe_format_efact/static/src/css/main.css" rel="stylesheet"/>
+                                    <div class="img_div">
+
+                                        <t t-if="o.company_id.logo">
+                                            <img class="logo" t-if="o.company_id.logo"
+                                                 t-att-src="image_data_uri(o.company_id.logo)" alt="Logo"/>
+                                        </t>
+                                        <br/>
+                                        <span t-esc="o.company_id.name" style="font-size:15px;"/>
+                                        <br/>
+                                        <span t-esc="o.company_id.street.title()" style="font-size:10px;"/>,
+                                        <span t-esc="o.company_id.city" style="font-size:10px;"/>,
+                                        <span t-esc="o.company_id.state_id.name" style="font-size:10px;"/>,
+                                        <span t-esc="o.company_id.zip" style="font-size:10px;"/>,
+                                        <span t-esc="o.company_id.country_id.name" style="font-size:10px;"/>
+                                        <span style="font-size:10px;">,Teléfono:</span>
+                                        <span t-esc="o.company_id.phone" style="font-size:10px;"/>
+                                    </div>
+                                </th>
+                                <th style="width:10%; border:none; "></th>
+                                <th style="border:none; ">
+                                    <link href="/l10n_pe_format_efact/static/src/css/main.css" rel="stylesheet"/>
+                                        <div class="ruc_efact" style="width:85%">
+                                            <div class="text_ruc">
+                                                RUC:
+                                                <t t-esc="o.company_id.vat"/>
+                                            </div>
+                                            <div t-if="o.l10n_latam_document_type_id.report_name" class="text_report">
+                                                <span t-esc="o.l10n_latam_document_type_id.report_name.upper()"/>
+                                            </div>
+                                            <span class="text_num">
+                                                N°
+                                                <t t-esc="o.name.replace(' ','')"/>
+                                            </span>
+                                        </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div t-attf-class="footer o_company_#{o.company_id.id}_layout"
+                 style="width:100%;height:100%; float:none;margin-left:20px;">
+                <div style="width:10%;float:left;vertical-align:top;text-align:center;">
+
+                </div>
+                <div style="width:80%;float:left; text-align:center;">
+                    Representación Impresa de la Factura Electrónica
+                    <br/>
+                    Podrá ser consultado en:
+                    <t t-esc="o.company_id.website" class="oe_inline"/>
+                    <br/>
+                    Autorizado mediante Resolución: N°0190050000886/SUNAT
+                </div>
+                <div style="width:10%;float:left;vertical-align:top;text-align:right;">
+                    <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.create_data_qr_code(), 100, 100)"/>
+                </div>
+
+            </div>
+
+        </template>
+        <template id="report_format_efact_A4">
+            <t t-call="l10n_pe_format_efact.external_layout_format_efactura_A4">
+                <br/>
+
+                <table class="" style="width:100%;font-size:12px;margin-right:10px; border: white !important">
+
+                    <tr style="width:90%; border:none;">
+                        <td style="vertical-align: top;width:5%;text-align:left; border:none;">
+                            <strong>SEÑOR(ES)</strong>
+                        </td>
+                        <td style="vertical-align: top;width:40%;text-align:left; border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.partner_id.name">
+                                <span t-field="o.partner_id.name"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                        <td style="vertical-align: top;width:2%;text-align:left; border:none;"></td>
+                        <td style="vertical-align: top;width:16%;text-align:left; border:none;">
+                            <strong>FECHA EMISIÓN</strong>
+                        </td>
+                        <td style="vertical-align: top;width:30%;text-align:left; border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.invoice_date">
+                                <span t-field="o.invoice_date"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+
+                    </tr>
+                    <tr style="border:none;">
+                        <td style="border:none;">
+                            <strong>R.U.C.</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.partner_id.vat">
+                                <span t-field="o.partner_id.vat"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;">
+                            <strong>VENDEDOR</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.invoice_user_id.name">
+                                <span t-field="o.invoice_user_id.name"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr style="border:none;">
+                        <td style="border:none;">
+                            <strong>DIRECCIÓN</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.partner_id.street">
+                                <t t-esc="o.partner_id.street.title()"/>,
+                                <span t-field="o.partner_id.l10n_pe_district.name"/>,
+                                <span t-field="o.partner_id.city_id.name"/>,
+                                <span t-field="o.partner_id.state_id.name"/>,
+                                <span t-field="o.partner_id.zip"/>,
+                                <span t-field="o.partner_id.country_id.name"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                        <td style="border:none;"></td>
+
+                        <td style="border:none;">
+                            <strong>PED V.</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.invoice_origin">
+                                <span t-field="o.invoice_origin"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+
+                    </tr>
+                    <tr style="border:none;">
+                        <td style="border:none;">
+                            <strong>MONEDA</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.currency_id.currency_unit_label">
+                                <span t-field="o.currency_id.currency_unit_label"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;">
+                            <strong>GUIA REM</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.carrier_ref_number">
+                                <span t-field="o.carrier_ref_number"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                    </tr>
+
+                    <tr style="border:none; ">
+                        <td style="border:none;"></td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;">
+                            <strong>ORDEN DE COMPRA</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.ref">
+                                <span t-field="o.ref"/>
+                            </t>
+                            <t t-else="">
+                                <t/>
+                            </t>
+                        </td>
+                    </tr>
+
+                    <tr style="border:none;">
+                        <td style="border:none;"></td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;"></td>
+                        <td style="border:none;">
+                            <strong>FORMA DE PAGO</strong>
+                        </td>
+                        <td style="border:none;">
+                            <strong>:</strong>
+                            <t t-if="o.invoice_date == o.invoice_date_due">
+                                AL CONTADO
+                            </t>
+                            <t t-elif="o.invoice_payment_term_id">
+
+                                <t t-foreach="o.invoice_payment_term_id.line_ids" t-as="move_line">
+
+                                    <t t-if="move_line.value in 'balance' and move_line.days==0">
+                                        AL CONTADO
+                                    </t>
+                                    <t t-elif="move_line.value in 'balance' and move_line!=0">
+                                        AL CREDITO - F/.
+                                        <t t-esc="move_line.days"/>
+                                        DIAS
+                                    </t>
+                                    <t t-else="">
+                                        <t/>
+                                    </t>
+                                </t>
+                            </t>
+                            <t t-elif="o.invoice_date != o.invoice_date_due and not invoice_payment_term_i">
+                                AL CREDITO - F/.
+                                <t t-if="invoice_date and invoice_date_due">
+                                    <t t-esc="o.resdays()"/>
+                                </t>
+                                <t t-else="">
+
+                                </t>
+                                DIAS
+                            </t>
+                            <t t-else="">
+                            </t>
+                        </td>
+                    </tr>
+                </table>
+                <br style="height:1px;"/>
+
+                <table style="width: 100%;table-layout: fixed;border:1px solid black;font-family:Arial;font-size:12px;padding:0;border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="width: 8%;text-align:center;border: 1px solid;">
+                                <strong>CODIGO</strong>
+                            </th>
+                            <th style="width: 32%;text-align:center;border: 1px solid;">
+                                <strong>DESCRIPCIÓN</strong>
+                            </th>
+                            <th style="width: 5%;text-align:center;border: 1px solid;font-size:10px;">
+                                <strong>UNIDAD</strong>
+                            </th>
+                            <th style="width: 8%;text-align:center;border: 1px solid;">
+                                <strong>CANTIDAD</strong>
+                            </th>
+                            <th style="width: 10%;text-align:center;border: 1px solid;">
+                                <strong>VALOR UNITARIO</strong>
+                            </th>
+                            <th style="width: 10%;text-align:center;border: 1px solid;">
+                                <strong>VALOR BRUTO</strong>
+                            </th>
+                            <th style="width: 5%;text-align:center;border: 1px solid;font-size:10px;">
+                                <strong>DSCTO.</strong>
+                            </th>
+                            <th style="width: 11%;text-align:center;border: 1px solid;">
+                                <strong>IMPORTE</strong>
+                            </th>
+                            <th style="width: 11%;text-align:center;border: 1px solid;">
+                                <strong>PRECIO UNIT (Inc. IGV)</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th style="height:1px;border-right:0;"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-right:0;border-left:0"></th>
+                        <th style="height:1px;border-left:0;border-bottom:0"></th>
+
+
+                    </tbody>
+                </table>
+
+                <table style="width: 100%;table-layout: fixed;border:1px solid black;font-family:Arial;padding:0;border-collapse: collapse;height:0;">
+                    <tbody style="height:0;">
+                        <t t-set="invoice_line_ids" t-value="1"/>
+                        <t t-set="lines" t-value="o.invoice_line_ids.filtered(lambda x: x.quantity)"/>
+                        <tr t-foreach="lines" t-as="line"
+                            style="border-collapse:collapse;height:0;">
+                            <t t-if="not line.product_id">
+                                <td t-att-colspan="9" style="width: 100%;font-size:12px;font-weight:3px;background:#D3D3D3;text-align:left;border-right: 1px;border-left:1px;   word-wrap:break-word;height:0;">
+                                    <span t-field="line.name"/>
+                                </td>
+                            </t>
+                            <t t-else="">
+                                <td style="width: 8%;font-size:12px;text-align:left;border-collapse: collapse;border-right: 1px;font-size:12px;word-wrap:break-word;height:0;">
+                                    <span t-field="line.product_id.default_code"/>
+                                </td>
+                                <td style="width: 32%;height:0%;font-size:14px;border-collapse:collapse;text-align:left;margin-left:4px;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <span t-field="line.product_id.name"/>
+                                </td>
+                                <td style="width: 5%;height:0%;font-size:12px;border-collapse:collapse;text-align:center;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <span t-field="line.product_uom_id.l10n_pe_edi_measure_unit_code"/>
+                                </td>
+                                <td style="width: 8%;height:0%;font-size:12px;border-collapse:collapse;text-align:center;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <span t-field="line.quantity"/>
+                                </td>
+                                <td style="width: 10%;height:0%;font-size:12px;border-collapse:collapse;text-align:right; margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <t t-set="decimal_precision"
+                                       t-value="request.env['decimal.precision'].precision_get('Product Price')"/>
+                                    <t t-esc="line.account_value_unit"
+                                       t-options='{"widget": "float", "precision": decimal_precision}'/>
+                                </td>
+                                <td style="width: 10%;height:0%;font-size:12px;border-collapse:collapse;text-align:right;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <t t-if="line.quantity>0 and line.account_value_unit>0">
+                                        <t t-set="brute_val" t-value="line.quantity*line.price_unit"/>
+                                        <t t-esc="brute_val" t-options='{"widget": "float", "precision": 2}'/>
+                                    </t>
+                                    <t t-else="">
+                                    </t>
+                                </td>
+                                <td style="width: 5%;height:0%;font-size:12px;border-collapse:collapse;text-align:right;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <t t-set="discount_1"
+                                       t-value="line.quantity*line.price_unit*(line.discount/100)"/>
+                                    <t t-esc="discount_1" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                                <td style="width: 11%;height:0%;font-size:12px;border-collapse:collapse;text-align:right;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <t t-set="amount"
+                                       t-value="line.quantity*line.price_unit-(line.discount/100)"/>
+                                    <t t-esc="amount" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+
+                                <td style="width: 11%;font-size:12px;border-collapse:collapse;text-align:right;margin:0;padding:0;word-wrap:break-word;border-left:1px solid;height:0;">
+                                    <t t-if="line.price_unit>0">
+                                        <span t-field="line.price_unit"/>
+                                    </t>
+                                </td>
+                            </t>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br/>
+                <div>
+                    <strong style="font-size:12px">INFORMACIÓN ADICIONAL:</strong>
+                    <div t-if="o.company_id.additional_information"
+                         style="font-size:9px;max-width:700px;height:auto;word-break: break-word;">
+                        <t t-raw="o.company_id.additional_information"/>
+                    </div>
+                    <div style="border: 1px solid black;word-wrap: break-word;">
+                        <strong>Son:</strong>
+                        <t t-esc="o._amount_to_text().title()"/>
+                    </div>
+                </div>
+                <br/>
+                <div style="float:none;">
+                    <div style="float:left;">
+                        <t t-if="o.invoice_date == o.invoice_date_due">
+                        </t>
+                        <t t-elif="o.invoice_payment_term_id">
+                            <t t-set="iteration_q" t-value="1"/>
+                            <t t-foreach="o.invoice_payment_term_id.line_ids" t-as="move_line">
+                                <t t-if="move_line.value in 'balance' and move_line.days==0">
+                                </t>
+                                <t t-elif="move_line.value in 'balance' and move_line!=0">
+                                    <table style="border: 1px solid black;width:250px;border-collapse: collapse;border-width:1px;font-family:Arial;">
+                                        <tr>
+                                            <td style="border:1px solid black;font-size:12px">
+                                                <strong>N°Cuotas</strong>
+                                            </td>
+                                            <td style="border:1px solid black;font-size:12px">
+                                                <strong>Fecha Venc.</strong>
+                                            </td>
+                                            <td style="border:1px solid black;font-size:12px">
+                                                <strong>Importe Neto</strong>
+                                            </td>
+                                            <td style="border:1px solid black;font-size:12px">
+                                                <strong>Mon</strong>
+                                            </td>
+                                        </tr>
+                                        <tr t-foreach="o.line_ids" t-as="aml">
+                                            <t t-if="aml.debit>0 and not aml.l10n_pe_is_detraction_retention">
+                                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                                    <t t-esc="iteration_q"/>
+                                                </td>
+                                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                                    <span t-field="aml.date_maturity"/>
+                                                </td>
+                                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                                    <t t-if="o.currency_id.name=='PEN'">
+                                                        <span t-field="aml.debit"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span t-field="aml.amount_currency"/>
+                                                    </t>
+                                                </td>
+                                                <td style="border:1px solid black;font-size:10px;text-align:right;">
+                                                    <span t-field="o.currency_id.name"/>
+                                                </td>
+                                                <t t-set="iteration_q" t-value="iteration_q+1"/>
+                                            </t>
+                                        </tr>
+                                    </table>
+                                    <br/>
+                                    <p style="font-size:12px;width:360px;">
+                                        Nota: Fechas de vencimiento e importes netos son referenciales
+                                        para uso interno de
+                                        <t t-esc="o.company_id.name"/>
+                                    </p>
+                                </t>
+                                <t t-else="">
+                                    <t/>
+                                </t>
+                            </t>
+                        </t>
+                        <t t-elif="o.invoice_date != o.invoice_date_due and not invoice_payment_term_id">
+                            <table style="border: 1px solid black;width:250px;border-collapse: collapse;border-width:1px;font-family:Arial;">
+                                <tr>
+                                    <td style="border:1px solid black;font-size:12px">
+                                        <strong>N°Cuotas</strong>
+                                    </td>
+                                    <td style="border:1px solid black;font-size:12px">
+                                        <strong>Fecha Venc.</strong>
+                                    </td>
+                                    <td style="border:1px solid black;font-size:12px">
+                                        <strong>Importe Neto</strong>
+                                    </td>
+                                    <td style="border:1px solid black;font-size:12px">
+                                        <strong>Mon</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <t>
+                                        <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                            <t t-set="one" t-value="1"/>
+                                            <t t-esc="one"/>
+                                        </td>
+                                        <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                            <span t-field="o.invoice_date_due"/>
+                                        </td>
+                                        <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                            <span t-field="o.amount_total"/>
+                                        </td>
+                                        <td style="border:1px solid black;font-size:10px;text-align:right;">
+                                            <span t-field="o.currency_id.name"/>
+                                        </td>
+
+                                    </t>
+                                </tr>
+                            </table>
+                            <br/>
+                            <p style="font-size:12px;width:360px;">
+                                Nota: Fechas de vencimiento e importes netos son referenciales
+                                para uso interno de
+                                <t t-esc="o.company_id.name"/>
+                            </p>
+
+                        </t>
+                        <t t-else="">
+                        </t>
+                        <div t-if="o.narration" style="display:block;float:left;text-align: left;width: 100%; font-size:12px">
+                            <span t-field="
+                                o.narration" />
+                        </div> 
+                    </div>
+                    <div style="float:right;font-size:12px;">
+                        <table style="border: 1px solid black;width:300px; float: left;border-collapse: collapse;border-width:1px;font-family:Arial;">
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px">
+                                    <strong>Sub Total</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.subtotal()" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left;">
+                                    <strong>Total Descuentos</strong>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.total_discount()" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px">
+                                    <strong>Total Gravado</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact1()-o.total_discount()"
+                                       t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left;">
+                                    <strong>Total Inafecto</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact2()" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px">
+                                    <strong>Total Exonerado</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact3()" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left;">
+                                    <strong>Total Gratuito</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact4()" t-options='{"widget": "float", "precision": 2}'/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left;">
+                                    <strong>Total Exportación</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact5()" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left;">
+                                    <strong>Total IGV 18%</strong>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right;">
+                                    <t t-esc="o.currency_id.symbol"/>
+                                    <t t-esc="o.efact1()*0.18" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left">
+                                    <strong>Total --</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right">
+                                    <t t-esc="o.amount_total" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:1px solid black;font-size:12px;text-align:left">
+                                    <strong>Total a Cancelar</strong>
+                                    <t t-esc="o.currency_id.name"/>
+                                </td>
+                                <td style="border:1px solid black;font-size:12px;text-align:right">
+                                    <t t-esc="o.amount_residual" t-options='{"widget": "float", "precision": 2}'/>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+        <template id="report_l10n_pe_format_efact">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="l10n_pe_format_efact.report_format_efact_A4" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

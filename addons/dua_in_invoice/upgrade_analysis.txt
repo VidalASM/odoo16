@@ -1,0 +1,3 @@
+---Models in module 'dua_in_invoice'---
+---Fields in module 'dua_in_invoice'---
+---XML records in module 'dua_in_invoice'---

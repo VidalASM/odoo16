@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="ple_inv_and_bal_08_form_view" model="ir.ui.view">
+        <field name="name">ple.report.inv.bal.08.form.view</field>
+        <field name="model">ple.report.inv.bal.08</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_generate_initial_balances_308" string="Calcular saldo inicial" type="object"
+                            states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                            <field name="financial_statements_catalog"/>
+                            <field name="eeff_presentation_opportunity"/>
+                        </group>
+                        <group string="Reportes" name="ple_inv_bal_08">
+                            <field name="xls_filename" invisible="1"/>
+                            <label string="Reporte Excel" for="xls_binary"/>
+                            <field name="xls_binary" filename="xls_filename" readonly="1" nolabel="1"/>
+                            <field name="txt_filename" invisible="1"/>
+                            <label string="Reporte .TXT 3.8" for="txt_binary"/>
+                            <field name="txt_binary" filename="txt_filename" readonly="1" nolabel="1"/>
+                            <field name="pdf_filename" invisible="1"/>
+                            <label string="Reporte .PDF 3.8" for="pdf_binary"/>
+                            <field name="pdf_binary" filename="pdf_filename" readonly="1" nolabel="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Saldo inicial" name="line_ids">
+                            <field name="line_initial_ids"/>
+                        </page>
+                    </notebook>
+                    <field name="error_dialog" class="errorbox" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_report_inv_bal_08_tree_view" model="ir.ui.view">
+        <field name="name">ple.report.inv.bal.08.tree.view</field>
+        <field name="model">ple.report.inv.bal.08</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_report_inv_bal_action_8" model="ir.actions.act_window">
+        <field name="name">3.8 Inversiones Mobiliarias</field>
+        <field name="res_model">ple.report.inv.bal.08</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="ple_inv_and_bal_one_form_view_inherit_0308" model="ir.ui.view">
+        <field name="name">ple.inv.and.bal.one.form.view.inherit.0308</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="inherit_id" ref="ple_inv_and_bal_0302.ple_inv_and_bal_302_sale_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='ple_inv_bal']" position="after">
+                <group string="Reporte 3.8 - Inversiones Inmobiliarias" name="ple_inv_bal_08">
+                    <field name="xls_filename_8" invisible="1"/>
+                    <label string="Reporte Excel" for="xls_binary_8"/>
+                    <field name="xls_binary_8" filename="xls_filename_8" readonly="1" nolabel="1"/>
+
+                    <field name="txt_filename_8" invisible="1"/>
+                    <label string="Reporte .TXT 3.8" for="txt_binary_8"/>
+                    <field name="txt_binary_8" filename="txt_filename_8" readonly="1" nolabel="1"/>
+
+                    <field name="pdf_filename_8" invisible="1"/>
+                    <label string="Reporte .PDF 3.8" for="pdf_binary_8"/>
+                    <field name="pdf_binary_8" filename="pdf_filename_8" readonly="1" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--TABLA 27: TIPO DE VINCULACION ECONOMICA-->
+        <record id="link_economic_00" model="link.economic">
+            <field name="code">00</field>
+            <field name="name">SIN VINCULACION</field>
+            <field name="description">Sin Vinculación</field>
+            <field name="law"> </field>
+        </record>
+        <record id="link_economic_01" model="link.economic">
+            <field name="code">01</field>
+            <field name="name">PERSONA NATURAL CON VINCULACIÓN MÁS DEL 30%</field>
+            <field name="description">Una persona natural o jurídica posea más de treinta por ciento (30%) del capital de otra persona jurídica, directamente o por intermedio de un tercero</field>
+            <field name="law">Articulo 24° numeral 1</field>
+        </record>
+        <record id="link_economic_02" model="link.economic">
+            <field name="code">02</field>
+            <field name="name">MÁS DEL 30% DE MÁS DE DOS PERSONAS JURÍDICAS</field>
+            <field name="description">Más del treinta por ciento (30%) del capital de dos (2) o más personas jurídicas pertenezca a una misma persona natural o jurídica, directamente o por intermedio de un tercero</field>
+            <field name="law">Articulo 24° numeral 2</field>
+        </record>
+        <record id="link_economic_03" model="link.economic">
+            <field name="code">03</field>
+            <field name="name">CUALESQUIERA DE LOS CASOS ANTERIORES (01 Y 02) CUANDO LA INDICADA PROPORCIÓN DEL CAPITAL PERTENEZCA A CÓNYUGES ENTRE SÍ</field>
+            <field name="description">En cualesquiera de los casos anteriores, cuando la indicada proporción del capital pertenezca a cónyuges entre sí o a personas naturales vinculadas hasta el segundo grado de consanguinidad o afinidad</field>
+            <field name="law">Articulo 24° numeral 3</field>
+        </record>
+        <record id="link_economic_04" model="link.economic">
+            <field name="code">04</field>
+            <field name="name">EL CAPITAL DE DOS O MÁS PERSONAS JURÍDICAS QUE PERTENEZCAN EN MÁS DEL 30% A SOCIOS COMUNES A ESTAS </field>
+            <field name="description">El capital de dos (2) o más personas jurídicas pertenezca en más del treinta por ciento (30%) a socios comunes a éstas</field>
+            <field name="law">Articulo 24° numeral 4</field>
+        </record>
+        <record id="link_economic_05" model="link.economic">
+            <field name="code">05</field>
+            <field name="name">PERSONAS JURÍDICAS O ENTIDADES QUE CUENTEN CON UNO O MÁS DIRECTORES, ENTRE OTROS QUE TENGAN DECISIÓN EN LOS EEFF</field>
+            <field name="description">Las personas jurídicas o entidades cuenten con una o más directores, gerentes, administradores u otros directivos comunes, que tengan poder de decisión en los acuerdos financieros, operativos y/o comerciales que se adopten</field>
+            <field name="law">Articulo 24° numeral 5</field>
+        </record>
+        <record id="link_economic_06" model="link.economic">
+            <field name="code">06</field>
+            <field name="name">DOS O MÁS PERSONAS NATURALES O JURÍDICAS CONSOLIDEN EEFF</field>
+            <field name="description">Dos o más personas naturales o jurídicas consoliden Estados Financieros</field>
+            <field name="law">Articulo 24° numeral 6</field>
+        </record>
+        <record id="link_economic_07" model="link.economic">
+            <field name="code">07</field>
+            <field name="name">CONTRATO DE COLABORACIÓN CON CONTABILIDAD INDEPENDIENTE</field>
+            <field name="description">Exista un contrato de colaboración empresarial con contabilidad independiente, en cuyo caso el contrato se considerará vinculado con aquellas partes contratantes que participen, directamente o por intermedio de un tercero, en mas del treinta por ciento (30%) en el patrimonio del contrato o cuando alguna de las partes contratantes tengan poder de decisión en los acuerdos financieros, comerciales u operativos que se adopten para el desarrollo del contrato, caso en el cual la parte contratante que ejerza el poder de decisión se encontrará vinculado con el contrato</field>
+            <field name="law">Articulo 24° numeral 7</field>
+        </record>
+        <record id="link_economic_08" model="link.economic">
+            <field name="code">08</field>
+            <field name="name">CONTRATO DE COLABORACIÓN SIN CONTABILIDAD INDEPENDIENTE</field>
+            <field name="description">En el caso de un contrato de colaboración empresarial sin contabilidad independiente, la vinculación entre cada una de las partes integrantes del contrato y la contraparte deberá verificarse individualmente, aplicando algunos de los criterios de vinculación establecidos en este artículo (articulo 24° del reglamento del Impuesto a la Renta). Se entiende por contraparte a la persona natural o jurídica con las que las partes integrantes celebren alguna operación con el fin de alcanzar el objeto del contrato</field>
+            <field name="law">Articulo 24° numeral 8</field>
+        </record>
+        <record id="link_economic_09" model="link.economic">
+            <field name="code">09</field>
+            <field name="name">CONTRATO DE ASOCIACIÓN EN PARTICIPACIÓN</field>
+            <field name="description">Exista un contrato de asociación en participación, en el que alguno de los asociados, directa o indirectamente, participe en mas del treinta por ciento (30%) en los resultados o en las utilidades de uno o varios negocios del asociante, en cuyo caso se considerará que existe vinculación entre el asociante y cada uno de sus asociados. También se considerará que existe vinculación cuando alguno de los asociados tenga poder de decisión en los aspectos financieros, comerciales u operativos en uno o varios negocios del asociante</field>
+            <field name="law">Articulo 24° numeral 9</field>
+        </record>
+        <record id="link_economic_10" model="link.economic">
+            <field name="code">10</field>
+            <field name="name">EMPRESA NO DOMICILIADA QUE TENGA UNO O MÁS ESTABLECIMIENTOS PERMANENTES EN EL PAÍS </field>
+            <field name="description">Una empresa no domiciliada tenga uno o mas establecimientos permanentes en el país, en cuyo caso existirá vinculación entre la empresa no domiciliada y cada uno de sus establecimientos permanentes y entre todos ellos entre si</field>
+            <field name="law">Articulo 24° numeral 10</field>
+        </record>
+        <record id="link_economic_11" model="link.economic">
+            <field name="code">11</field>
+            <field name="name">EMPRESA DOMICILIADA EN TERRITORIO PERUANO QUE TENGA MÁS DE DOS ESTABLECIMIENTOS PERMANENTES EN EL EXTRANJERO</field>
+            <field name="description">Una empresa domiciliada en territorio peruano tenga uno o mas establecimientos permanentes en el extranjero, en cuyo caso existirá vinculación entre la empresa domiciliada y cada uno de sus establecimientos permanentes</field>
+            <field name="law">Articulo 24° numeral 11</field>
+        </record>
+        <record id="link_economic_12" model="link.economic">
+            <field name="code">12</field>
+            <field name="name">PERSONA NATURAL O JURÍDICA QUE EJERZA INFLUENCIA DOMINANTE EN LAS DECISIONES DE LOS ÓRGINAS DE ADMINISTRACIÓN</field>
+            <field name="description">Una persona natural o jurídica ejerza influencia dominante en las decisiones de los órganos de administración de una o mas personas jurídicas o entidades. En tal situación, se considerará que las personas jurídicas o entidades influidas están vinculadas entre si y con la persona natural o jurídica que ejerce dicha influencia. Se entiende que una persona natural o jurídica ejerce influencia  dominante cuando, en la adopción del acuerdo, ejerce o controla la mayoría absoluta de votos para la toma de decisiones en los órganos de administración de la persona jurídica o entidad. En el caso de decisiones relacionadas con los asuntos mencionados en el artículo 126° de la Ley General de Sociedades, existirá influencia dominante de la persona natural o jurídica que, participando en la adopción del acuerdo, por si misma o con la intervención de votos de terceros, tiene en el acto de votación el mayor número de acciones suscritas con derecho a voto, siempre y cuando cuente con, al menos, el diez por ciento (10%) de las acciones suscritas con derecho a voto. También se otorgará el tratamiento de partes vinculadas cuando una persona, empresa o entidad domiciliada en el país realice, en el ejercicio gravable anterior, el ochenta por ciento (80%) o mas de sus ventas de bienes, prestación de servicios u otro tipo de operaciones, con una persona, empresa o entidad domiciliada en el país o con personas, empresas o entidades vinculadas entre si, domiciliadas en el país, siempre que tales operaciones, a su vez, representen por lo menos el treinta por ciento (30%) de las compras o adquisiciones de la otra parte en el mismo período. Tratándose de empresas que tengan actividades por períodos mayores a tres ejercicios gravables, tales porcentajes se calcularán teniendo en cuenta el porcentaje promedio de ventas o compras, según sea el caso, realizadas en los tres ejercicios gravables inmediatos anteriores. Lo dispuesto en este párrafo no será de aplicación a las operaciones que realicen las empresas que conforman la Actividad Empresarial del Estado, en las cuales la participación del Estado sea mayor al cincuenta por ciento (50%) del capital. La vinculación, de acuerdo a alguno de los criterios establecidos en este artículo, también operará cuando la transacción sea realizada utilizando personas o entidades interpuestas, domiciliadas o no en el país con el propósito de encubrir una transacción entre partes vinculadas</field>
+            <field name="law">Articulo 24° numeral 12</field>
+        </record>
+
+
+
+        <!--TABLA 32: MODALIDAD DEL SERVICIO PRESTADO POR EL SUJETO NO DOMICILIADO-->
+        <record id="link_servicetaken_1" model="service.taken">
+            <field name="code">1</field>
+            <field name="desctiption">SERVICIO PRESTADO INTEGRAMENTE EN EL PERÚ</field>
+        </record>
+        <record id="link_servicetaken_2" model="service.taken">
+            <field name="code">2</field>
+            <field name="desctiption">SERVICIO PRESTADO PARTE EN EL PERÚ Y PARTE EN EL EXTRANJERO</field>
+        </record>
+        <record id="link_servicetaken_3" model="service.taken">
+            <field name="code">3</field>
+            <field name="desctiption">SERVICIO PRESTADO EXCLUSIVAMENTE EN EL EXTRANJERO</field>
+        </record>
+
+
+
+        <!--TABLA 33: EXONERACIONES DE OPERACIONES DE NO DOMICILIADOS (ART. 19 DE LA LEY DEL IMPUESTO A LA RENTA)-->
+        <record id="link_nodomicilied_1" model="exoneration.nodomicilied">
+            <field name="code">1</field>
+            <field name="name">INTERESES PROVENIENTES DE FUENTE EXTRANJERA</field>
+            <field name="description">Los intereses provenientes de créditos de fomento otorgados directamente o mediante proveedores o intermediarios financieros por organismos internacionales o instituciones gubernamentales extranjeras.</field>
+        </record>
+        <record id="link_nodomicilied_2" model="exoneration.nodomicilied">
+            <field name="code">2</field>
+            <field name="name">RENTAS DE INMUEBLES INTERNACIONESL</field>
+            <field name="description">Las rentas de los inmuebles de propiedad de organismos internacionales que les sirvan de sede.</field>
+        </record>
+        <record id="link_nodomicilied_3" model="exoneration.nodomicilied">
+            <field name="code">3</field>
+            <field name="name">REMUNERACIONES EXTRANJERAS</field>
+            <field name="description">Las remuneraciones que perciban, por el ejercicio de su cargo en el país, los funcionarios y empleados considerados como tales dentro de la estructura organizacional de los gobiernos extranjeros, instituciones oficiales extranjeras y organismos internacionales, siempre que los convenios constitutivos así lo establezcan.</field>
+        </record>
+        <record id="link_nodomicilied_4" model="exoneration.nodomicilied">
+            <field name="code">4</field>
+            <field name="name">INGRESOS POR REPRESENTACIONES DEPORTIVAS EN EL EXTRANJERO</field>
+            <field name="description">Los ingresos brutos que perciben las representaciones deportivas nacionales de países extranjeros por sus actuaciones en el país.</field>
+        </record>
+        <record id="link_nodomicilied_5" model="exoneration.nodomicilied">
+            <field name="code">5</field>
+            <field name="name">REGALÍAS PRESTADAS DESDE EL EXTRANJERO</field>
+            <field name="description">Las regalías por asesoramiento técnico, económico, financiero, o de otra índole, prestados desde el exterior por entidades estatales u organismos internacionales.</field>
+        </record>
+        <record id="link_nodomicilied_6" model="exoneration.nodomicilied">
+            <field name="code">6</field>
+            <field name="name">INGRESOS POR REPRESENTACIONES CULTURALES EN EL EXTRANJERO</field>
+            <field name="description">Los ingresos extranjeros por los espectáculos en vivo de teatro, zarzuela, conciertos de música clásica, ópera, opereta, ballet y folclor, calificados como espectáculos públicos culturales por el Instituto Nacional de Cultura, realizados en el país. brutos que perciben las representaciones de países.</field>
+        </record>
+
+
+
+        <!--TABLA 31: TIPO DE RENTA-->
+        <record id="link_typerent_00" model="type.rent">
+            <field name="code">00</field>
+            <field name="name">Bienes</field>
+            <field name="description">Bienes</field>
+            <field name="law"> </field>
+            <field name="ocde"> </field>
+        </record>
+        <record id="link_typerent_01" model="type.rent">
+            <field name="code">01</field>
+            <field name="name">Arrendamiento de predios</field>
+            <field name="description">Arrendamiento de predios</field>
+            <field name="law">Art. 9° a)</field>
+            <field name="ocde">6</field>
+        </record>
+        <record id="link_typerent_02" model="type.rent">
+            <field name="code">02</field>
+            <field name="name">Enajenación de inmuelbes y derechos sobre inmuebles</field>
+            <field name="description">Enajenación Inmuebles y derechos sobre inmuebles</field>
+            <field name="law">Art. 9° a)</field>
+            <field name="ocde">6</field>
+        </record>
+        <record id="link_typerent_03" model="type.rent">
+            <field name="code">03</field>
+            <field name="name">Rentas de bienes situados en el país o derechos utilizados en el país, incluye enajenación.</field>
+            <field name="description">Rentas de bienes situados en el país o derechos utilizados en el país, incluye enajenación.</field>
+            <field name="law">Art. 9° b)</field>
+            <field name="ocde">12</field>
+        </record>
+        <record id="link_typerent_04" model="type.rent">
+            <field name="code">04</field>
+            <field name="name">Regalias: Bienes o derechos por los que pagan son utilizados país.</field>
+            <field name="description">Regalias: Bienes o derechos por los que pagan son utilizados país.</field>
+            <field name="law">Art. 9° b)</field>
+            <field name="ocde">12</field>
+        </record>
+        <record id="link_typerent_05" model="type.rent">
+            <field name="code">05</field>
+            <field name="name">Regalias: Pagador de las regalías es domiciliado.</field>
+            <field name="description">Regalias: Pagador de las regalías es domiciliado.</field>
+            <field name="law">Art. 9° b)</field>
+            <field name="ocde">12</field>
+        </record>
+        <record id="link_typerent_06" model="type.rent">
+            <field name="code">06</field>
+            <field name="name">Operaciones de instrumentos financieros (capitalizaciones, intereeses, comisiones, primas)</field>
+            <field name="description">Por capitales, intereses, comisiones, primas - operaciones financieras - capital utilizado en el país o el pagador sea un sujeto domiciliado. Originadas por fondos de cualquier tipo de entidad, por cesión a terceros de un capital, por operaciones de capitalización o por contratos de seguro de vida o invalidez que no tengan su origen en el trabajo personal.</field>
+            <field name="law">Art. 9° c)</field>
+            <field name="ocde">11</field>
+        </record>
+        <record id="link_typerent_07" model="type.rent">
+            <field name="code">07</field>
+            <field name="name">Dividendos y cualquier otra forma de distribución de utilidades</field>
+            <field name="description">Dividendos y cualquier otra forma de distribución de utilidades, cuando la empresa que los distribuye, pague y acredite se encuentre domiciliada en el país, o cuando el fondo de inversión, patrimonio fideicometido o fiduciario banacario, fondo de pensiones, que lo distribuya, pague o acredite, se encuentre constituido o establecido en el país</field>
+            <field name="law">Art. 9° d)</field>
+            <field name="ocde">10</field>
+        </record>
+        <record id="link_typerent_08" model="type.rent">
+            <field name="code">08</field>
+            <field name="name">Los rendimientos de los ADR y GDRs que tengan como subyacentes acciones emitidas por empresas no domiciliadas</field>
+            <field name="description">Los rendimientos de los ADR y GDRs que tengan como subyacentes acciones emitidas por empresas no domiciliadas</field>
+            <field name="law">Art. 9° d)</field>
+            <field name="ocde">10</field>
+        </record>
+        <record id="link_typerent_09" model="type.rent">
+            <field name="code">09</field>
+            <field name="name">Actividades civiles, comerciales, empresariales o cualquier índole, prestado en el territorio nacional</field>
+            <field name="description">Originadas en actividades civiles, comerciales, empresariales o de cualquier índole, que se lleven a cabo en territorio nacional.</field>
+            <field name="law">Art. 9° e)</field>
+            <field name="ocde">21</field>
+        </record>
+        <record id="link_typerent_10" model="type.rent">
+            <field name="code">10</field>
+            <field name="name">Actividades de trabajo de personal prestado en el territorio nacional - No comprende algunas actividades</field>
+            <field name="description">Originadas en el trabajo personal que lleven a cabo en el territorio nacional No comprende cuando se ingresa al país temporalmente a efectuar: actos previos a la realización de inversiones extranjeras; actos destinados a supervisar o controlar la inversión o el negocio, tales como los de recolección de datos o información o la realización de entrevistas; actos relacionados con la contratación de personal local; actos relacionados con la firma de convenios o actos similares.</field>
+            <field name="law">Art. 9° f)</field>
+            <field name="ocde">15</field>
+        </record>
+        <record id="link_typerent_11" model="type.rent">
+            <field name="code">11</field>
+            <field name="name">Rentas vitalicias y las pensiones que tengan su origen en el trabajo personal, pagadas por un sujeto domiciliado</field>
+            <field name="description">Rentas vitalicias y las pensiones que tengan su origen en el trabajo personal, pagadas por un sujeto domiciliada</field>
+            <field name="law">Art. 9° g)</field>
+            <field name="ocde">18</field>
+        </record>
+        <record id="link_typerent_12" model="type.rent">
+            <field name="code">12</field>
+            <field name="name">Las obtenidas por la enajenación de acciones y participaciones representativas del capital, cuando las empresas, que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="description">Las obtenidas por la enajenación de acciones y participaciones representativas del capital, cuando las empresas, que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_13" model="type.rent">
+            <field name="code">13</field>
+            <field name="name">Las obtenidas por la enajenación,  de certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="description">Las obtenidas por la enajenación,  de certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_14" model="type.rent">
+            <field name="code">14</field>
+            <field name="name">Las obtenidas por la redención o rescate de certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="description">Las obtenidas por la redención o rescate de certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando los Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Fuera de Bolsa</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_15" model="type.rent">
+            <field name="code">15</field>
+            <field name="name">Las obtenidas por la enajenación de acciones y participaciones representativas del capital, acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Dentro de Bolsa</field>
+            <field name="description">Las obtenidas por la enajenación de acciones y participaciones representativas del capital, acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Dentro de Bolsa</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_16" model="type.rent">
+            <field name="code">16</field>
+            <field name="name">Las obtenidas por la redención o rescate de acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Dentro de Bolsa</field>
+            <field name="description">Las obtenidas por la redención o rescate de acciones de inversión, certificados, títulos, bonos y papeles comerciales, valores representativos de cédulas hipotecarias, obligaciones al portador u otros valores al portador y otros valores mobiliarios cuando las empresas, sociedades, Fondos de Inversión, Fondos Mutuos de Inversión en Valores o Patrimonios Fideicometidos que los hayan emitido estén constituidos o establecidos en el Perú. Dentro de Bolsa</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_17" model="type.rent">
+            <field name="code">17</field>
+            <field name="name">Enajenación de los ADR’s y GDR’s que tengan como subyacente acciones emitidas por empresas domiciliadas en el país.</field>
+            <field name="description">Enajenación de los ADR’s y GDR’s que tengan como subyacente acciones emitidas por empresas domiciliadas en el país.</field>
+            <field name="law">Art. 9° h)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_18" model="type.rent">
+            <field name="code">18</field>
+            <field name="name">Servicios digitales prestados a través del internet</field>
+            <field name="description">Las obtenidas por servicios digitales prestados a través del Internet o de cualquier adaptación o aplicación de los protocolos, plataformas o de la tecnología utilizada por Internet o cualquier otra red a través de la que se presten servicios equivalentes, cuando el servicio se utilice económicamente, use o consuma en el país</field>
+            <field name="law">Art. 9° i)</field>
+            <field name="ocde">21</field>
+        </record>
+        <record id="link_typerent_19" model="type.rent">
+            <field name="code">19</field>
+            <field name="name">La obtenida por asistencia técnica, cuando ésta se utilice económicamente en el país</field>
+            <field name="description">La obtenida por asistencia técnica, cuando ésta se utilice económicamente en el país</field>
+            <field name="law">Art. 9° j)</field>
+            <field name="ocde">7</field>
+        </record>
+        <record id="link_typerent_20" model="type.rent">
+            <field name="code">20</field>
+            <field name="name">Los intereses de obligaciones, cuando la entidad emisora ha sido constituida en el país</field>
+            <field name="description">Los intereses de obligaciones, cuando la entidad emisora ha sido constituida en el país</field>
+            <field name="law">10 a)</field>
+            <field name="ocde">11</field>
+        </record>
+        <record id="link_typerent_21" model="type.rent">
+            <field name="code">21</field>
+            <field name="name">Remuneracion pagada por Domiciliados; Sujeto miembro de un consejo directivo o adm.; Actuación en el Extranjero</field>
+            <field name="description">Remuneracion pagada por Domiciliados; Sujeto miembro de un consejo directivo o adm.; Actuación en el Extranjero</field>
+            <field name="law">10 b)</field>
+            <field name="ocde">16</field>
+        </record>
+        <record id="link_typerent_22" model="type.rent">
+            <field name="code">22</field>
+            <field name="name">Honorarios o remuneraciones del Sector Público Nacional por trabajos realizados en el exterior.</field>
+            <field name="description">Honorarios o remuneraciones del Sector Público Nacional por trabajos realizados en el exterior.</field>
+            <field name="law">10 c)</field>
+            <field name="ocde">19</field>
+        </record>
+        <record id="link_typerent_23" model="type.rent">
+            <field name="code">23</field>
+            <field name="name">Resultados Proveniente de la contratación de IFD</field>
+            <field name="description">Resultados Proveniente de la contratación de IFD</field>
+            <field name="law">10 d)</field>
+            <field name="ocde">7</field>
+        </record>
+        <record id="link_typerent_24" model="type.rent">
+            <field name="code">24</field>
+            <field name="name">Resultados de IFD con cobertura destinados a la generación de RFP</field>
+            <field name="description">Resultados de IFD con cobertura destinados a la generación de RFP</field>
+            <field name="law">10 d)</field>
+            <field name="ocde">7</field>
+        </record>
+        <record id="link_typerent_25" model="type.rent">
+            <field name="code">25</field>
+            <field name="name">Proveniente de la contratación de IFD sin cobertura destinados a la generación de RFP</field>
+            <field name="description">Proveniente de la contratación de IFD sin cobertura destinados a la generación de RFP</field>
+            <field name="law">10 d)</field>
+            <field name="ocde">7</field>
+        </record>
+        <record id="link_typerent_26" model="type.rent">
+            <field name="code">26</field>
+            <field name="name">IFD donde Activo subyacente sea referido al Tipo de Cambio Moneda extranjera. 180 dias. (La Dom es la prestadora del IFD, la No Dom es la que obtiene el resultado)</field>
+            <field name="description">IFD donde Activo subyacente sea referido al Tipo de Cambio Moneda extranjera. 180 dias. (La Dom es la prestadora del IFD, la No Dom es la que obtiene el resultado)</field>
+            <field name="law">10 d)</field>
+            <field name="ocde">7</field>
+        </record>
+        <record id="link_typerent_27" model="type.rent">
+            <field name="code">27</field>
+            <field name="name">Las obtenidas por la enajenación indirecta de acciones y participaciones representativas del capital de personas jurídicas domiciliadas en el país, cuando la operación cumple las condiciones para ser gravadas en el Perú</field>
+            <field name="description">Las obtenidas por la enajenación indirecta de acciones y participaciones representativas del capital de personas jurídicas domiciliadas en el país, cuando la operación cumple las condiciones para ser gravadas en el Perú</field>
+            <field name="law">Art. 10° e)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_28" model="type.rent">
+            <field name="code">28</field>
+            <field name="name">Se incluye dentro de la enajenación de de empresas no domiciliadas en el país la enajenación de ADR´s (American Depositary Receipts) que tengan como subyacente a tales acciones.</field>
+            <field name="description">Se incluye dentro de la enajenación de de empresas no domiciliadas en el país la enajenación de ADR´s (American Depositary Receipts) que tengan como subyacente a tales acciones.</field>
+            <field name="law">Art. 10° e)</field>
+            <field name="ocde">13</field>
+        </record>
+        <record id="link_typerent_29" model="type.rent">
+            <field name="code">29</field>
+            <field name="name">Sujeto es el No Dom que distribuye por la reducción de capital dentro de los 12 meses anteriores cuando hubiera aumentado su capital como consecuencia de nuevos aportes, de capitalización de créditos o de una reorganización</field>
+            <field name="description">Sujeto es el No Dom que distribuye por la reducción de capital dentro de los 12 meses anteriores cuando hubiera aumentado su capital como consecuencia de nuevos aportes, de capitalización de créditos o de una reorganización</field>
+            <field name="law">Art. 10 f)</field>
+            <field name="ocde">10</field>
+        </record>
+        <record id="link_typerent_30" model="type.rent">
+            <field name="code">30</field>
+            <field name="name">"Actividades de Seguros 7% sobre las primas.
+                Comisiones por Reaseguros sobre personas y/o bienes radicados en el país"</field>
+            <field name="description">"Actividades de Seguros 7% sobre las primas.
+                Comisiones por Reaseguros sobre personas y/o bienes radicados en el país"</field>
+            <field name="law">Art. 12 y 48°a)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_31" model="type.rent">
+            <field name="code">31</field>
+            <field name="name">Alquiler de Naves, 8% sobre Ingresos Brutos que perciban por dicha actividad</field>
+            <field name="description">Alquiler de Naves, 8% sobre Ingresos Brutos que perciban por dicha actividad</field>
+            <field name="law">Art. 12 y 48°b)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_32" model="type.rent">
+            <field name="code">32</field>
+            <field name="name">Alquiler de Aeronaves, 60% sobre Ingresos Brutos que perciban por dicha actividad</field>
+            <field name="description">Alquiler de Aeronaves, 60% sobre Ingresos Brutos que perciban por dicha actividad</field>
+            <field name="law">Art. 12 y 48° c)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_33" model="type.rent">
+            <field name="code">33</field>
+            <field name="name">1% por el ingresos brutos por el transporte aéreo.</field>
+            <field name="description">1% por el ingresos brutos por el transporte aéreo.</field>
+            <field name="law">Art. 12 y 48° d)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_34" model="type.rent">
+            <field name="code">34</field>
+            <field name="name">Excepto Otros transportes no aereos o maritimos que van por los ingresos de la parte prestada en el país</field>
+            <field name="description">Excepto Otros transportes no aereos o maritimos que van por los ingresos de la parte prestada en el país</field>
+            <field name="law">Art. 12 y 48° d)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_35" model="type.rent">
+            <field name="code">35</field>
+            <field name="name">2% por el ingresos brutos por fletamiento o transporte marítimo.</field>
+            <field name="description">2% por el ingresos brutos por fletamiento o transporte marítimo.</field>
+            <field name="law">Art. 12 y 48° d)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_36" model="type.rent">
+            <field name="code">36</field>
+            <field name="name">Empresas por reciprocidad en lineas extranjeras con sedes en esos países</field>
+            <field name="description">Empresas por reciprocidad en lineas extranjeras con sedes en esos países</field>
+            <field name="law">Art. 12 y 48° d)</field>
+            <field name="ocde">24</field>
+        </record>
+        <record id="link_typerent_37" model="type.rent">
+            <field name="code">37</field>
+            <field name="name">Servicio portadores, teleservcios o finales, difusión y de valor añadido. Con excepcion de los Servicios Digitales según 4-A</field>
+            <field name="description">Servicio portadores, teleservcios o finales, difusión y de valor añadido. Con excepcion de los Servicios Digitales según 4-A</field>
+            <field name="law">Art 12 y 48°e)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_38" model="type.rent">
+            <field name="code">38</field>
+            <field name="name">10%. sobre las remuneraciones brutas que obtengan por el suministro de noticias y, en general material informativo o gráfico, a personas o entidades domiciliadas o que utilicen dicho material en el país.</field>
+            <field name="description">10%. sobre las remuneraciones brutas que obtengan por el suministro de noticias y, en general material informativo o gráfico, a personas o entidades domiciliadas o que utilicen dicho material en el país.</field>
+            <field name="law">Art 12 y 48° f)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_39" model="type.rent">
+            <field name="code">39</field>
+            <field name="name">Para su utilización por personas naturales o jurídicas domiciliadas: 20% sobre los ingresos brutos que perciban por el uso de películas cinematográficas o para televisión, "video tape", radionovelas, discos fonográficos, historietas gráficas y cualquier otro medio similar de proyección, reproducción, transmisión o difusión de imágenes o sonidos.</field>
+            <field name="description">para su utilización por personas naturales o jurídicas domiciliadas: 20% sobre los ingresos brutos que perciban por el uso de películas cinematográficas o para televisión, "video tape", radionovelas, discos fonográficos, historietas gráficas y cualquier otro medio similar de proyección, reproducción, transmisión o difusión de imágenes o sonidos.</field>
+            <field name="law">Art 12 y 48° g)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_40" model="type.rent">
+            <field name="code">40</field>
+            <field name="name">en el país o desde el país al exterior y no presten el servicio de transporte 15% de los ingresos brutos que obtengan por dicho suministro.</field>
+            <field name="description">en el país o desde el país al exterior y no presten el servicio de transporte 15% de los ingresos brutos que obtengan por dicho suministro.</field>
+            <field name="law">Art 12 y 48° h)</field>
+            <field name="ocde">8</field>
+        </record>
+        <record id="link_typerent_41" model="type.rent">
+            <field name="code">41</field>
+            <field name="name">80% de los ingresos brutos que obtengan por el exceso de estadía de contenedores.</field>
+            <field name="description">80% de los ingresos brutos que obtengan por el exceso de estadía de contenedores.</field>
+            <field name="law">Art 12 y 48° i)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_42" model="type.rent">
+            <field name="code">42</field>
+            <field name="name">20% de los ingresos brutos que obtengan los contribuyentes no domiciliados por la cesión de derechos para la retransmisión por televisión en el país de eventos en vivo realizados en el extranjero.</field>
+            <field name="description">20% de los ingresos brutos que obtengan los contribuyentes no domiciliados por la cesión de derechos para la retransmisión por televisión en el país de eventos en vivo realizados en el extranjero.</field>
+            <field name="law">Art 12 y 48° j)</field>
+            <field name="ocde">07 - 21</field>
+        </record>
+        <record id="link_typerent_43" model="type.rent">
+            <field name="code">43</field>
+            <field name="name">Extranjeros que ingresan al país y cuentas con las siguientes calidades especificas a prestar servicios</field>
+            <field name="description">Extranjeros que ingresan al país y cuentas con las siguientes calidades especificas a prestar servicios</field>
+            <field name="law">Art. 13°</field>
+            <field name="ocde">15</field>
+        </record>
+
+    </data>
+</odoo>

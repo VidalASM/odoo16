@@ -1,0 +1,15 @@
+{
+    "name": "Fix native sale sequence",
+    "version": "16.0.0.0.0",
+    "author": "Ganemo",
+    "website": "https://www.ganemo.co",
+    "live_test_url": "https://www.ganemo.co",
+    "summary": "This module is used to fix the native odoo error with the sequence",
+    "category": "Accounting",
+    "depends": ["account"],
+    "installable": True,
+    "auto_install": False,
+    "license": "Other proprietary",
+    "currency": "USD",
+    "price": 0.00,
+}

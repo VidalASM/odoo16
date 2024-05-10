@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+       <!-- Change Format Invoices-->
+        <template id="report_invoice_document_inherit_add_district" inherit_id="account.report_invoice_document">
+            <xpath expr="//address" position="replace">
+                <t t-if="o.partner_id">
+                    <t t-if="o.partner_id.name" t-esc="o.partner_id.name"/>,
+                    <br></br>
+                    <t name="partner_street_id" t-if="o.partner_id.street" t-esc="o.partner_id.street"/>,
+                    <t t-if="o.partner_id.city_id and o.partner_id.city_id.name" t-esc="o.partner_id.city_id.name"/>,
+                    <t t-if="o.partner_id.state_id and o.partner_id.state_id.name" t-esc="o.partner_id.state_id.name"/>,
+                    <t t-if="o.partner_id.country_id and o.partner_id.country_id.name" t-esc="o.partner_id.country_id.name"/>
+                </t>
+            </xpath>
+
+        </template>
+
+        <template id="inherit_invoice_external_standard" inherit_id="web.external_layout_standard">
+            <xpath expr="//div[@name='company_address']" position="replace">
+                <t t-if="company">
+                    <div class="col-8" name="company_address" style="font-size:17px;">
+                        <t t-if="company.name" t-esc="company.name.upper()"/><br/>
+                        <t t-if="company.street" name="company_id_street" t-esc="company.street.upper()"/><br/>
+                        <t t-if="company.partner_id and company.partner_id.l10n_pe_district and company.partner_id.l10n_pe_district.name" t-esc="company.partner_id.l10n_pe_district.name.upper()"/>,
+                        <t t-if="company.city" t-esc="company.city.upper()"/>,
+                        <t t-if="company.state_id and company.state_id.name" t-esc="company.state_id.name.upper()"/>,
+                        <t t-if="company.country_id and company.country_id.name" t-esc="company.country_id.name.upper()"/><br/>
+                        <t t-if="company.vat and company.partner_id and company.partner_id.l10n_latam_identification_type_id" t-esc="company.partner_id.l10n_latam_identification_type_id.name.upper() + ': ' + company.partner_id.vat"/>
+                    </div>
+                </t>
+                <t t-else="">
+                    <div class="col-8" name="company_address">
+                        <span t-if="company.company_details" t-field="company.company_details"/>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+</odoo>

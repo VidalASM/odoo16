@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_change_by_type_tree_view" model="ir.ui.view">
+        <field name="name">account.change.by.type.tree.view</field>
+        <field name="model">account.change.by.type</field>
+        <field name="arch" type="xml">
+            <tree string="Cambio Cuenta" editable="bottom">
+                <field name="journal_id"/>
+                <field name="currency_id"/>
+                <field name="sale_account_id"/>
+                <field name="purchase_account_id"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_change_by_type_action" model="ir.actions.act_window">
+        <field name="name">Cambio Cuenta</field>
+        <field name="res_model">account.change.by.type</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="account_change_by_type_tree_view"/>
+    </record>
+
+    <menuitem id="account_account_change_by_type_menu"
+              name="Cambiar cuenta factura"
+              parent="account.account_account_menu"
+              action="account_change_by_type_action"
+    />
+
+     <record model="ir.rule" id="model_account_change_by_type_ir_rule">
+        <field name="name">model_account_change_by_type multi-company</field>
+        <field name="model_id" ref="model_account_change_by_type"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="account_move_form_view_inherit_automatic_account_change" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.automatic_account_change</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_origin" position="after">
+                <field name="pay_sell_force_account_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_picking_view_form_inherit_l10n_pe_delivery_note_ple" model="ir.ui.view">
+        <field name="name">stock.picking.view.form.inherit.l10n_pe_delivery_note_ple</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="backorder_id" position="after">
+                <field name="picking_number"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--template id="assets_common_304" name="ple_inv_and_bal_0304 assets" inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link href="/ple_inv_and_bal_0304/static/src/css/main.css" rel="stylesheet"/>
+        </xpath>
+    </template-->
+
+    <template id="external_layout_ple_0304">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0304.external_layout_ple_0304">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0304/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div style="font-size: 17px;font-family: Arial;">
+                            <strong>FORMATO 3.4: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 14 -
+                                CUENTAS POR COBRAR A ACCIONISTAS (O SOCIOS) Y PERSONAL"
+                            </strong>
+                        </div>
+
+                        <div style="width: 100% !important;font-size: 15px;font-family: Arial;">
+                            <strong>EJERCICIO :&amp;nbsp;</strong><span style="margin-left:5px;"
+                                t-esc="doc.date_end.strftime('%Y')" />
+                            <br/>                            
+                            <strong>RUC :&amp;nbsp;</strong><span
+                                style="display: inline-block;margin-left:5px;"
+                                t-field="company.partner_id.vat" />                                                      
+                            <br/>                            
+                            <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong><span
+                                    style="display: inline-block;margin-left:5px;" t-field="company.partner_id.name" />                            
+                        </div>
+
+                        <br/>
+
+                        <table class="table_inv_bal_0304">
+                            <tr>
+                                <th style="text-align: center;border: 1px solid;" colspan="3">
+                                    <strong>INFORMACIÓN DEL ACCIONISTA, SOCIO O PERSONAL</strong>
+                                </th>
+                                <th style="text-align: center; border:1px solid;">
+                                    <strong style="color:red">MONTO DE LA</strong>
+                                </th>
+                                <th style="text-align: center; border:1px solid; ">
+                                    <strong>FECHA DE</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table_0304">
+                                <th style="text-align: center; border:1px solid" colspan="2" width="59px">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+                                <th
+                                    style="text-align: center; white-space:nowrap; border:1px solid;">
+                                    <strong>APELLIDOS Y NOMBRES,</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border: 1px solid;" rowspan="2">
+                                    <strong style="color:red">CUENTA POR COBRAR</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border:1px solid; ">
+                                    <strong>INICIO DE</strong>
+                                </th>
+
+
+                            </tr>
+                            <tr class="part_table_0304">
+                                <th style="text-align: center; white-space:nowrap;border: 1px solid;">
+                                    <strong>TIPO (TABLA 2)</strong>
+                                </th>
+                                <th style="text-align: center;border: 1px solid;width: 13%">
+                                    <strong>NÚMERO</strong>
+                                </th>
+                                <th
+                                    style="text-align: center; white-space:nowrap; border:1px solid;">
+                                    <strong>DENOMINACIÓN O RAZÓN SOCIAL</strong>
+                                </th>
+                                <th
+                                    style="text-align: center; white-space:nowrap; border:1px solid;">
+                                    <strong>LA OPERACIÓN</strong>
+                                </th>
+
+
+                            </tr>
+
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.name_client)" t-as="line" class="part_table_0304">
+                                <t t-if="line.valor == 1">
+                                    <th style="text-align: center; white-space:nowrap;font-weight: lighter;">
+                                        <t t-esc="line.doc_type"/>
+                                    </th>
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.doc_num"/>
+                                    </th>
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.name_client"/>
+                                    </th>
+                                    <t t-if="line.mont == 0">
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="'0,00'"/>
+                                        </th>
+                                    </t>
+                                    <t t-else="">
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="'{:,}'.format(round(float(line.mont)))"/>
+                                        </th>
+                                    </t>
+                                    <th style="text-align:center">
+                                        <t t-esc="line.date_ref"/>
+                                    </th>
+                                </t>
+                            </tr>
+                            <tr>
+                                <th style="border: none;"></th>
+                                <th style="border: none;"></th>
+                                <th style="border: none; text-align: center;">
+                                    <strong style="color:red">SALDO FINAL</strong>
+                                    <strong>TOTAL</strong>
+                                </th>
+                                <th class="mount_final_0304" style="border: 1px solid; text-align:center">
+                                    <t t-esc="'{:,}'.format(round(float(doc.total_mount)))"/>
+                                </th>
+                                <th style="border: none;"></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record id="res_bank_bcp" model="res.bank">
+            <field name="name">Banco de Crédito del Peru</field>
+            <field name="bic">BCPLPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">02</field>
+        </record>
+        <record id="res_bank_falabella" model="res.bank">
+            <field name="name">Banco Falabella Peru</field>
+            <field name="bic">FALACLRM</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">54</field>
+        </record>
+        <record id="res_bank_banbif" model="res.bank">
+            <field name="name">Banco Interamericano de Finanzas - BANBIF</field>
+            <field name="bic">BIFSPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">38</field>
+        </record>
+        <record id="res_bank_interbank" model="res.bank">
+            <field name="name">BANCO INTERNACIONAL DEL PERU - INTERBANK</field>
+            <field name="bic">BINPPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">03</field>
+        </record>
+        <record id="res_bank_pichincha" model="res.bank">
+            <field name="name">Banco Pichincha del Perú</field>
+            <field name="bic">FINAPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">35</field>
+        </record>
+        <record id="res_bank_continental" model="res.bank">
+            <field name="name">BBVA Banco Continental</field>
+            <field name="bic">BBVAESMM</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">11</field>
+        </record>
+        <record id="res_bank_citibank" model="res.bank">
+            <field name="name">CITIBANK DEL PERU</field>
+            <field name="bic">CITIPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">07</field>
+        </record>
+        <record id="res_bank_scotiabank" model="res.bank">
+            <field name="name">SCOTIABANK PERU</field>
+            <field name="bic">BSUDPEPL</field>
+            <field name="country" ref="base.pe"/>
+            <field name="sunat_bank_code">09</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="l10n_latam_document_type_tree_view_inherit_purchase_document_type_validation" model="ir.ui.view">
+        <field name="name">l10n_latam.document.type.tree.view.inherit.purchase_document_type_validation</field>
+        <field name="model">l10n_latam.document.type</field>
+        <field name="inherit_id" ref="l10n_latam_invoice_document.view_document_type_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="edit">1</attribute>
+                <attribute name="create">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="l10n_latam_document_type_form_view_inherit_purchase_document_type_validation" model="ir.ui.view">
+        <field name="name">l10n_latam.document.type.form.view.inherit.purchase_document_type_validation</field>
+        <field name="model">l10n_latam.document.type</field>
+        <field name="inherit_id" ref="l10n_latam_invoice_document.view_document_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="edit">1</attribute>
+                <attribute name="create">1</attribute>
+            </xpath>
+            <xpath expr="//group" position="after">
+                <group attrs="{'invisible': [('country_id', '!=', %(base.pe)d)]}">
+                    <group string="Serie">
+                        <field name="prefix_length_validation"/>
+                        <field name="prefix_long" attrs="{'invisible': [('prefix_length_validation', 'in', [False, 'no_validation'])]}"/>
+                        <field name="prefix_validation"/>
+                    </group>
+                    <group string="Correlativo">
+                        <field name="correlative_length_validation"/>
+                        <field name="correlative_long" attrs="{'invisible': [('correlative_length_validation', 'in', [False, 'no_validation'])]}"/>
+                        <field name="correlative_validation"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_move_form_view_inherit_purchase_document_type_validation" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.purchase_document_type_validation</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="l10n_latam_invoice_document.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="invoice_user_id" position="after">
+                <field name="l10n_pe_sunat_code" invisible="1"/>
+                <field name="internal_type" invisible="1"/>
+            </field>
+            <xpath expr="//notebook" position='before'>
+                <field name="error_dialog" class="infobox" attrs="{'invisible': [('error_dialog','in', [False,''])]}"/>
+            </xpath>
+            <field name="l10n_latam_document_number" position="replace">
+                <field name="l10n_latam_document_number"
+                    attrs="{'invisible': ['|', ('l10n_latam_use_documents', '=', False), ('l10n_latam_manual_document_number', '=', False), '|', '|', ('l10n_latam_use_documents', '=', False), ('highest_name', '!=', False), ('state', '!=', 'draft')],
+                    'required': [('partner_id', '!=', False), ('l10n_latam_use_documents', '=', True), '|', ('l10n_latam_manual_document_number', '=', True), ('highest_name', '=', False)],
+                    'readonly': [('posted_before', '=', True), ('state', '!=', 'draft')]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

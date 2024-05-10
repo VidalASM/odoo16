@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ple_inv_bal_line_initial_balances_07_tree_view" model="ir.ui.view">
+        <field name="name">ple.inv.bal.line.initial.balances.07.tree</field>
+        <field name="model">ple.inv.bal.line.initial.balances.07</field>
+        <field name="arch" type="xml">
+            <tree string="Saldo inicial" create="false">
+                <field name="product_id" invisible="1"/>
+                <field name="default_code" invisible="1"/>
+                <field name="product_description"/>
+                <field name="quantity_product_hand"/>
+                <field name="product_udm"/>
+                <field name="standard_price"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

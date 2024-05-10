@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_igv_afectation_type_all_users,igv_afectation_type,model_igv_afectation_type,,1,0,0,0
+access_igv_afectation_type_account_user,igv_afectation_type,model_igv_afectation_type,account.group_account_user,1,1,1,1
+access_igv_afectation_type_account_manager,igv_afectation_type,model_igv_afectation_type,account.group_account_manager,1,1,1,1
+
+access_charge_discount_codes_all_users,charge.discount.codes,model_charge_discount_codes,,1,0,0,0
+access_charge_discount_codes_account_user,charge.discount.codes,model_charge_discount_codes,account.group_account_user,1,1,1,1
+access_charge_discount_codes_account_manager,charge.discount.codes,model_charge_discount_codes,account.group_account_manager,1,1,1,1
+
+access_payment_methods_codes_all_users,payment.methods.codes,model_payment_methods_codes,,1,0,0,0
+access_payment_methods_codes_account_user,payment.methods.codes,model_payment_methods_codes,account.group_account_user,1,1,1,1
+access_payment_methods_codes_account_manager,payment.methods.codes,model_payment_methods_codes,account.group_account_manager,1,1,1,1
+
+access_classification_services_invoice,classification.services,model_classification_services,,1,1,1,1

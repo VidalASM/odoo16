@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_311">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_report_pdf_0311">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0311_0314.external_layout_ple_311">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0311_0314/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="ple_inv_bal_03_title">
+                            <strong>FORMATO 3.11: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 41 - REMUNERACIONES POR PAGAR"</strong>
+                        </div>
+
+                        <div style="width: 100% !important; white-space: nowrap;" class="ple_inv_bal_03_subtitle">
+                            <div><strong>EJERCICIO :&amp;nbsp;</strong></div><span t-esc="doc.date_end.strftime('%Y')"/><br/>
+                            <div><strong>RUC :&amp;nbsp;</strong></div><div t-field="company.partner_id.vat"/><br/>
+                            <div><strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong></div><div t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+
+                        <table class="ple_inv_bal_03_table_1">
+                            <tr class="part_table">
+                                <th style="text-align: center; border-bottom: 0px;" colspan="2">
+                                    <strong>CUENTA Y SUBCUENTA</strong>
+                                </th>
+                                <th style="text-align: center; border-bottom: 0px;" colspan="4">
+                                    <strong>TRABAJADOR</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3" width="120px">
+                                    <strong>SALDO FINAL</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table">
+                                <th style="text-align: center; border-top: 0px;" colspan="2" width="45px">
+                                    <strong>REMUNERACIONES POR PAGAR</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap;" rowspan="2" width="120px">
+                                    <strong>CÓDIGO</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-bottom: 0px;">
+                                    <strong>APELLIDOS Y</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;" colspan="2">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+
+
+                            </tr>
+                            <tr class="part_table">
+                                <th style="text-align: center; white-space:nowrap;"  width="85px">
+                                    <strong>CÓDIGO</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>DENOMINACIÓN</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;">
+                                    <strong>NOMBRES</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;" width="125px">
+                                    <strong>TIPO (TABLA 2)</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;" width="120px">
+                                    <strong>NUMERO</strong>
+                                </th>
+
+                            </tr>
+
+                            <t t-set="total" t-value="float(0)"/>
+                            <tr t-foreach="doc.line_ids_311" t-as="line" class="part_one">
+
+                                <th style="text-align: center; white-space:nowrap;font-weight: lighter; border-top: 5px;">
+                                    <t t-esc="(line.account).replace('.','')"/>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="line.name"/>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="line.vat"/>
+                                </th>
+
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="line.partner"/>
+                                </th>
+
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="line.l10n_latam_identification_type_id"/>
+                                </th>
+
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="line.vat"/>
+                                </th>
+
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                    <t t-esc="'{:.2f}'.format(round(float(line.balance),2))"/>
+                                </th>
+
+                                <t t-set="total" t-value="total + float(line.balance)"/>
+                            </tr>
+
+                            <tr class="end_part_0303">
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;text-align: center;">
+                                    <strong class="ple_inv_bal_03_color">TOTAL</strong>
+                                </th>
+                                <th class="mount_final_0303">
+                                    <t t-esc="'{:.2f}'.format(round(total,2))"/>
+                                </th>
+                                <th style="border: 0px;"></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

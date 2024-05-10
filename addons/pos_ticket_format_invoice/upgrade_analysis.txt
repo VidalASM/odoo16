@@ -1,0 +1,3 @@
+---Models in module 'pos_ticket_format_invoice'---
+---Fields in module 'pos_ticket_format_invoice'---
+---XML records in module 'pos_ticket_format_invoice'---

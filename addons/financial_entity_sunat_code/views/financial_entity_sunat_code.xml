@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.ui.view" id="financial_entity_sunat_code_form">
+        <field name="name">financial_entity_sunat_code</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form"/>
+        <field name="arch" type="xml">
+            <field name="bic" position="after">
+                <field name="sunat_bank_code"/>
+            </field>
+        </field>
+    </record>
+</odoo>

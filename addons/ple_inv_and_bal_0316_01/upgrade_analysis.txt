@@ -1,0 +1,4 @@
+---Models in module 'ple_inv_and_bal_0316_01'---
+---Fields in module 'ple_inv_and_bal_0316_01'---
+---XML records in module 'ple_inv_and_bal_0316_01'---
+--- change user_type_id to account_type in ple_inv_bal_16_01.py

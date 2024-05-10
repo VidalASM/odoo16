@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_315">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0315.external_layout_ple_315">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0315/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="ple_inv_bal_0315_title">
+                            <strong>FORMATO 3.15: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 49 -
+                                GANANCIAS DIFERIDAS"
+                            </strong>
+                        </div>
+
+                        <div style="width: 100% !important;" class="ple_inv_bal_0315_subtitle">
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                            </div>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                            <br/>
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.vat"/>
+                            <br/>
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+
+                        <table class="ple_inv_bal_0315_table_1">
+                            <tr class="part_table">
+                                <th style="text-align: center;" colspan="1" rowspan="1">
+                                    <strong>CONCEPTO</strong>
+                                </th>
+                                <th style="text-align: center;" colspan="1" rowspan="1">
+                                    <strong>NÚMERO DE COMPROBANTE DE PAGO RELACIONADO</strong>
+                                </th>
+                                <th style="text-align: center;" colspan="1" rowspan="1">
+                                    <strong>SALDO FINAL</strong>
+                                </th>
+                            </tr>
+
+                            <t t-set="total" t-value="float(0)"/>
+                            <tr t-foreach="doc.generate_data_report_315()" t-as="line" class="part_one">
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                                    <t t-esc="line['ref']"/>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                                    <t t-if="line['serial_number_payment'] and line['related_payment_voucher']">
+                                        <t t-esc="line['serial_number_payment']"/>-<t t-esc="line['related_payment_voucher']"/>
+                                    </t>
+                                    <t t-else="">
+                                    </t>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                                    <t t-esc="'{:,}'.format(round(float(line['outstanding_balance']),2))"/>
+                                </th>
+                                <t t-set="total" t-value="total + float(line['outstanding_balance'])"/>
+                            </tr>
+
+                            <tr class="end_part_0315">
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px; text-align: center;">
+                                    <strong>SALDO TOTAL</strong>
+                                </th>
+                                <th class="mount_final_0315">
+                                    <t t-esc="'{:,}'.format(round(total,2))"/>
+                                </th>
+                                <th style="border: 0px;"></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

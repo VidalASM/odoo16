@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_form_view_inherit_account_origin_invoice" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.account_origin_invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="purchase_document_type_validation.account_move_form_view_inherit_purchase_document_type_validation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='reversed_entry_id']" position="replace"/>
+            <xpath expr="//field[@name='debit_origin_id']" position="replace"/>
+            <xpath expr="//page[@name='other_info']" position="after">
+                <page name="document_refund_invoice" string="Documento Rectificado"
+                 attrs="{'invisible': [('internal_type', 'not in',['debit_note','credit_note'])]}">
+                    <group>
+                        <group>
+                            <field name="reversed_entry_id" attrs="{'invisible': [('reversed_entry_id', '=', False)]}"/>
+                            <field name="debit_origin_id" attrs="{'invisible': [('debit_origin_id', '=', False)]}"/>
+                            <field name="origin_move_id" options="{'no_create_edit': True}" attrs="{'invisible': ['|', ('reversed_entry_id', '!=', False), ('debit_origin_id', '!=', False)]}"/>
+                            <field name="origin_number" attrs="{'required': [('l10n_pe_sunat_code', 'in', ['07', '08'])]}"/>
+                            <field name="origin_invoice_date" attrs="{'required': [('l10n_pe_sunat_code', 'in', ['07', '08'])]}"/>
+                        </group>
+                        <group>
+                            <field name="origin_l10n_latam_document_type_id" attrs="{'required': [('l10n_pe_sunat_code', 'in', ['07', '08'])]}"/>
+                            <field name="sunat_origin_code"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

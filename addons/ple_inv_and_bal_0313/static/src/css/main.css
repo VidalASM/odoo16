@@ -1,0 +1,38 @@
+.ple_inv_bal_0313_title{
+    font-size: 17px !important;
+    font-family: Arial !important;
+}
+
+.ple_inv_bal_0313_subtitle{
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+.ple_inv_bal_0313_subtitle div{
+    display: inline-block !important;
+}
+
+.company_left {
+    text-align: left;
+    margin-left: -39.5%;
+}
+
+.ple_inv_bal_0313_table_1 {
+    float: left;
+    border-collapse: collapse;
+    width: 100%!important;
+}
+.ple_inv_bal_0313_table_1 .part_table th{
+    border: 1px solid black;
+}
+.ple_inv_bal_0313_table_1 .part_one th{
+    border: 1px solid black;
+}
+.ple_inv_bal_0313_table_1 .end_part_0313 .mount_final_0313{
+    text-align: center;
+    border: 1px solid black;
+}
+
+.ple_inv_bal_0313_color {
+  color: red;
+}

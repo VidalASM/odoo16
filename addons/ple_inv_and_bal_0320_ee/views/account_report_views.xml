@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="view_account_report_line_form_inherit" model="ir.ui.view">
+        <field name="name">account.report.line.form.inherit</field>
+        <field name="model">account.report.line</field>
+        <field name="inherit_id" ref="account_reports.account_report_line_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="attributes">
+                <attribute name="col">3</attribute>
+            </xpath>
+            <xpath expr="//group[2]" position="after">
+                <group string="3.1 PLE Inventarios y Balances">
+                    <field name="re_item" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_report_form_inherit" model="ir.ui.view">
+        <field name="name">account.report.form.inherit</field>
+        <field name="model">account.report</field>
+        <field name="inherit_id" ref="account_reports.account_report_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[3]/group/group[2]" position="after">
+                <group string="Generación del TXT">
+                    <field name="allow_txt_generation"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

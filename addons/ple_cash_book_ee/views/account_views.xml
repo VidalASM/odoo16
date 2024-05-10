@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_payment_register_view_form_inherit_ple_cash_book_ee" model="ir.ui.view">
+        <field name="name">account.payment.register.view.form.inherit.ple_cash_book_ee</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="ple_cash_book.account_payment_register_view_form_inherit_ple_cash_book"/>
+        <field name="arch" type="xml">
+            <field name="means_payment_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+    <record id="account_payment_view_form_inherit_ple_cash_book_ee" model="ir.ui.view">
+        <field name="name">account.payment.view.form.inherit.ple_cash_book_ee</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="ple_cash_book.account_payment_view_form_inherit_ple_cash_book"/>
+        <field name="arch" type="xml">
+            <field name="means_payment_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+    <record id="account_bank_statement_line_view_form_inherit_ple_cash_book_ee" model="ir.ui.view">
+        <field name="name">account.bank.statement.line.view.form.inherit.ple_cash_book_ee</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="account_accountant.view_bank_statement_line_tree_bank_rec_widget"/>
+        <field name="arch" type="xml">
+            <field name="account_number" position="after">
+                <field name="means_payment_id" optional="hidden"/>
+            </field>
+        </field>
+    </record>
+</odoo>

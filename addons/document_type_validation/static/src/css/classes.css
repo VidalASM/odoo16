@@ -1,0 +1,14 @@
+span.infobox{
+    border-color:#ebccd1;
+    background: #f2dede no-repeat 10px 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    font-weight: bold;
+    color: #a94442;
+    padding: 8px 10px 10px 64px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    width: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}

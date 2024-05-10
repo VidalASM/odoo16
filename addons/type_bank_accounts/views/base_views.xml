@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_employee_form_view_inherit_type_bank_accounts" model="ir.ui.view">
+        <field name="name">hr.employee.form.view.inherit.type_bank_accounts</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_account_id']" position="replace">
+                <field name="bank_account_id" context="{'default_partner_id': address_home_id}" string="Numero de cuenta haberes"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_bank_form_view_inherit_type_bank_accounts" model="ir.ui.view">
+        <field name="name">res.partner.bank.form.view.type_bank_accounts</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='acc_holder_name']" position="after">
+                <field name="type_bank_code"/>
+                <field name="cci"/>
+            </xpath>
+            <xpath expr="//field[@name='acc_type']" position="attributes">
+                <attribute name="invisible">0</attribute>>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_form_inherit_bank_view" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.bank.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information']" position="inside">
+                    <group string="Pagos">
+                        <field name="account_salary_bank"/>
+                        <field name="type_salary_bank"/>
+                        <field name="account_cts_bank"/>
+                        <field name="type_cts_bank"/>
+                    </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

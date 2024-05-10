@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="account_payment_term_form_view_inherit_payment_term_lines_extension" model="ir.ui.view">
+        <field name="name">account.payment.term.form.view.inherit.payment_term_lines_extension</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="account.view_payment_term_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']/tree" position="replace" >
+                <tree string="Payment Terms">
+                    <field name="value" string="Due Type"/>
+                    <field name="value_amount" attrs="{'invisible': [('value', '=', 'balance')]}" digits="[2, 2]"/>
+                    <field name="months"/>
+                    <field name="days"/>
+                    <field name="end_month" widget="boolean_toggle"/>
+                    <field name="days_after" attrs="{'invisible': [('end_month','=', False)]}"/>
+                    <field name="discount_percentage"/>
+                    <field name="discount_days"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_payment_term_line_form_view_inherit_payment_term_lines_extension" model="ir.ui.view">
+        <field name="name">account.payment.term.line.form.view.inherit.payment_term_lines_extension</field>
+        <field name="model">account.payment.term.line</field>
+        <field name="inherit_id" ref="payment_term_lines.account_payment_term_line_form_view_inherit_payment_term_lines"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/group/field[@name='discount_days']" position="after">
+                <field name="factor_round" attrs="{'invisible':[('value','=','balance')]}"/>
+            </xpath>
+            <xpath expr="//group[@name='group_fields']" position="after">
+                <br/>
+                <br/>
+                <h1>Cuentas Contables</h1>
+                <br/>
+                <br/>
+                <field name="term_extension">
+                    <tree string="Accounting Accounts" editable="top" no_open="True">
+                        <field name="currency" style="width: 100px !important" optional="hide"/>
+                        <field name="ledger_account"
+                               domain="[('related_user_account_name','in', ('asset_receivable', 'asset_current'))]"
+                               filter_domain="[('related_user_account_name','in', ('asset_receivable', 'asset_current'))]"
+                               style="width: 1000px !important" optional="hide"/>
+
+                        <field name="ledger_account_payable"
+                               domain="[('related_user_account_name','in', ('liability_payable', 'liability_current'))]"
+                               filter_domain="[('related_user_account_name','in', ('liability_payable', 'liability_current'))]"
+                               style="width: 500px !important" optional="hide"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

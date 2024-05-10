@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_layout_invoice_ticket">
+            <div class="article doc_report_layout_standard" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-call="web.address_layout"/>
+                <t t-raw="0"/>
+            </div>
+        </template>
+
+        <template id="report_invoice_document_tickets">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="pos_ticket_format_invoice.external_layout_invoice_ticket">
+                        <link rel="stylesheet" href="/pos_ticket_format_invoice/static/src/css/main.css"/>
+                        <div class="pos-receipt-print-ticket">
+
+                            <t t-if="o.company_id.logo">
+                                <img class="pos-receipt-logo" t-if="o.company_id.logo"
+                                     t-att-src="image_data_uri(o.company_id.logo)" alt="Logo"/>
+                            </t>
+
+                            <div class="pos-receipt-contact">
+                                <div t-if="o.company_id.name">
+                                    <t t-esc="o.company_id.name"/>
+                                </div>
+                                <div style="font-size: 10px;" t-if="o.company_id.street">
+                                    <t t-esc="o.company_id.street"/>
+                                </div>
+                                <div name="company_complement" style="font-size: 10px;">
+                                    <span name="company_city"><t t-if="o.company_id.city" t-esc="o.company_id.city"/></span>,
+                                    <span name="company_state"><t t-if="o.company_id.state_id.name" t-esc="o.company_id.state_id.name"/></span>,
+                                    <span name="company_country"><t t-if="o.company_id.country_id.name" t-esc="o.company_id.country_id.name"/></span>
+                                </div>
+                                <div t-if="o.company_id.email">
+                                    <t t-esc="o.company_id.email"/>
+                                </div>
+                                <div t-if="o.company_id.phone">
+                                    <t t-esc="o.company_id.phone"/>
+                                </div>
+                                <div style="font-size: 10px;" t-if="o.company_id.vat">
+                                    RUC N°
+                                    <t t-esc="o.company_id.vat"/>
+                                </div>
+                                <div t-if="o.l10n_latam_document_type_id.report_name or o.name">
+                                    <t t-esc="o.l10n_latam_document_type_id.report_name"/>
+                                    <t t-esc="o.name.replace(' ','')"/>
+                                </div>
+                                <div style="font-size: 10px;" t-if="o.invoice_date">
+                                    <strong>F. Emisión:</strong>
+                                    <span t-field="o.invoice_date"/>&amp;nbsp;&amp;nbsp;
+                                    <strong t-if="o.create_date">Hora:</strong>
+                                    <span t-field="o.create_date" t-options='{"format": "H:mm:ss"}'/>&amp;nbsp;&amp;nbsp;
+                                    <strong t-if="o.invoice_date_due">F.V.:</strong>
+                                    <span t-if="o.invoice_date_due" t-field="o.invoice_date_due"/>
+                                </div>
+                            </div>
+
+                            <table class="table-pos-receipt-vendor">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                        </th>
+                                        <th>
+                                        </th>
+                                        <th>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Forma de Pago</strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-if="o.invoice_payment_term_id.name">
+                                                <t t-esc="o.invoice_payment_term_id.name"/>
+                                            </t>
+                                            <t t-else="">
+                                                Pago al Contado
+                                            </t>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Cajero</strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="o.invoice_user_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.journal_id.address_point_emission">
+                                        <td>
+                                            <strong>Dirección punto de emisión</strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="o.journal_id.address_point_emission"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-pos-receipt-customer">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                        </th>
+                                        <th>
+                                        </th>
+                                        <th>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Cliente</strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="o.partner_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <t t-if="o.partner_id.l10n_latam_identification_type_id.name == 'Non-Domiciled Tax Document'">
+                                                <strong>Documento de impuestos no domiciliado</strong>
+                                            </t>
+                                            <t t-else="">
+                                                <strong>
+                                                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name"/>
+                                                </strong>
+                                            </t>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="o.partner_id.vat"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>
+                                                Teléfono/Móvil
+                                            </strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t t-esc="o.partner_id.phone"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Direccion</strong>
+                                        </td>
+                                        <td>:</td>
+                                        <td>
+                                            <t name="partner_street" t-if="o.partner_id.street" t-esc="o.partner_id.street"/>,
+                                            <t name="partner_city" t-if="o.partner_id.city_id.name" t-esc="o.partner_id.city_id.name"/>,
+                                            <t name="partner_state" t-if="o.partner_id.state_id.name" t-esc="o.partner_id.state_id.name"/>,
+                                            <t name="partner_country" t-if="o.partner_id.country_id.name" t-esc="o.partner_id.country_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table-ticket">
+                                <thead>
+                                    <tr>
+                                        <th name="th_quantity" class="text-center">
+                                            <span>Cantidad</span>
+                                        </th>
+                                        <th name="th_description" class="text-left">
+                                            <span>Descripcion</span>
+                                        </th>
+                                        <th name="th_priceunit" class="text-center">
+                                            <span>P. Unit.</span>
+                                        </th>
+                                        <th name="th_subtotal" style="text-align: right;">
+                                            <span groups="account.group_show_line_subtotals_tax_excluded">Total</span>
+                                            <span groups="account.group_show_line_subtotals_tax_included">Total</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="invoice_tbody">
+                                    <t t-set="current_subtotal" t-value="0"/>
+                                    <t t-set="lines"
+                                       t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+
+                                    <t t-foreach="lines" t-as="line">
+                                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"
+                                           groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"
+                                           groups="account.group_show_line_subtotals_tax_included"/>
+
+                                        <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                            <t t-if="line.display_type not in ['line_note', 'line_section']" name="account_invoice_line_accountable">
+
+                                                <td name="account_invoice_line_quantity" class="text-center">
+                                                    <span t-field="line.quantity"/>
+                                                </td>
+
+                                                <td name="account_invoice_line_name" class="text-left">
+                                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                                </td>
+
+                                                <td name="account_invoice_line_price_unit" t-attf-class="text-center">
+                                                    <span class="text-nowrap" t-field="line.price_unit"/>
+                                                </td>
+
+                                                <td name="account_invoice_line_price_total" class="o_price_total" style="text-align: right;">
+                                                    <span class="text-nowrap" t-field="line.price_subtotal"
+                                                          groups="account.group_show_line_subtotals_tax_excluded"/>
+                                                    <span class="text-nowrap" t-field="line.price_total"
+                                                          groups="account.group_show_line_subtotals_tax_included"/>
+                                                </td>
+
+                                            </t>
+
+                                            <t t-if="line.display_type == 'line_section'">
+                                                <td colspan="99">
+                                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                                </td>
+                                                <t t-set="current_section" t-value="line"/>
+                                                <t t-set="current_subtotal" t-value="0"/>
+                                            </t>
+
+                                            <t t-if="line.display_type == 'line_note'">
+                                                <td colspan="99">
+                                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                                </td>
+                                            </t>
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                            <table class="table-ticket-foot" style="border-color: #fff;">
+
+                                <tr class="border-black o_subtotal">
+                                    <td>
+                                        <strong>Subtotal</strong>
+                                    </td>
+                                    <td class="text-right" style="text-align: right;">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </td>
+                                </tr>
+
+                                <t t-set="tax_totals" t-value="o.tax_totals"/>
+                                <!--
+                                    Foreach to display a list of tax groups with the related amounts.
+
+                                    ARGUMENTS:
+                                    - tax_totals: dict in the form generated by account.move's _get_tax_totals.
+                                    - subtotal_to_show: The subtotal we need to render the groups from
+                                -->
+                                <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+
+                                    <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+                                    <t t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]"
+                                       t-as="amount_by_group">
+                                        <tr>
+                                            <t t-if="len(tax_totals['groups_by_subtotal'][subtotal_to_show]) > 1">
+                                                <td>
+                                                    <span t-esc="amount_by_group['tax_group_name']"/>
+                                                    <span class="text-nowrap">on
+                                                        <t t-esc="amount_by_group['formatted_tax_group_base_amount']"/>
+                                                    </span>
+                                                </td>
+                                                <td class="text-right o_price_total" style="text-align: right;">
+                                                    <span class="text-nowrap"
+                                                          t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                                                </td>
+                                            </t>
+                                            <t t-else="">
+                                                <td>
+                                                    <span class="text-nowrap"
+                                                          t-esc="amount_by_group['tax_group_name']"/>
+                                                </td>
+                                                <td class="text-right o_price_total" style="text-align: right;">
+                                                    <span class="text-nowrap"
+                                                          t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                                                </td>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                </t>
+
+                                <tr class="border-black o_total">
+                                    <td>
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right" style="text-align: right;">
+                                        <span class="text-nowrap" t-field="o.amount_total"/>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <div class="total_write" name="total_write_post_ticket_format_invoice">
+                                <strong>Son:</strong>
+                                <t t-esc="o._amount_to_text().title()"/>
+                            </div>
+                            <div class="pos-receipt-final">
+                                <div t-if="o.narration">
+                                    <span t-field="o.narration"/>
+                                </div>
+                                <div t-if="o.company_id.additional_information">
+                                    <t t-raw="o.company_id.additional_information"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

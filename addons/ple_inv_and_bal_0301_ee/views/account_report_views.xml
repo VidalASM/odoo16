@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="account_financial_html_report_line_form_inherit_ple_inv_and_bal_0301_ee" model="ir.ui.view">
+        <field name="name">account.report.line.form.inherit.ple_inv_and_bal_0301_ee</field>
+        <field name="model">account.report.line</field>
+        <field name="inherit_id" ref="ple_inv_and_bal_0320_ee.view_account_report_line_form_inherit" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='re_item']" position="after">
+                <field name="eeff_ple_ids" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

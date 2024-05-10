@@ -36,6 +36,12 @@ CURRENCY = {
 class AccountMove(models.Model):
     _inherit = "account.move"
 
+    l10n_latam_document_type_id = fields.Many2one(
+        'l10n_latam.document.type', string='Document Type', readonly=False, #auto_join=True, index='btree_not_null',
+        # states={'posted': [('readonly', True)]}, 
+        # compute='_compute_l10n_latam_document_type', inverse='_inverse_latam_document_type', store=True
+        )
+
     # ==== Business fields ====
     l10n_pe_edi_shop_id = fields.Many2one(
         comodel_name="l10n_pe_edi.shop",
@@ -210,6 +216,11 @@ class AccountMove(models.Model):
         compute="_compute_l10n_pe_edi_tax_totals",
         tracking=True,
     )
+
+    @api.onchange("l10n_latam_available_document_type_ids")
+    def _onchange_l10n_latam_available_document_type_ids(self):
+        if self.l10n_latam_available_document_type_ids:
+            self.l10n_latam_document_type_id = self.l10n_latam_available_document_type_ids[0].id
 
     @api.onchange("l10n_pe_edi_odoofact_operation_type")
     def _onchange_l10n_pe_edi_odoofact_operation_type(self):
@@ -555,15 +566,21 @@ class AccountMove(models.Model):
     def _inverse_l10n_latam_document_number(self):
         pass
 
-    @api.depends("move_type", "journal_id")
+    @api.depends("move_type", "journal_id", "l10n_latam_available_document_type_ids")
     def _compute_l10n_latam_document_type(self):
+        document_types = self.env['l10n_latam.document.type'].search([])
         for move in self.filtered(lambda x: x.state == "draft"):
-            if move.journal_id:
+            if move.journal_id and move.journal_id.l10n_latam_document_type_id:
                 move.l10n_latam_document_type_id = (
                     move.journal_id.l10n_latam_document_type_id
                 )
-            else:
-                move.l10n_latam_document_type_id = False
+            elif move.l10n_latam_available_document_type_ids:
+                # move.l10n_latam_document_type_id = document_types #and document_types[0].id
+                move.l10n_latam_document_type_id = move.l10n_latam_available_document_type_ids[0].id
+    
+    @api.depends("move_type", "journal_id", "l10n_latam_available_document_type_ids", "l10n_latam_document_type_id")
+    def _inverse_latam_document_type(self):
+        print("-------------inverse-------------------")
 
     def _l10n_pe_edi_get_formatted_sequence(self, number=0):
         return "%s-%06d" % (self.journal_id.code, number)

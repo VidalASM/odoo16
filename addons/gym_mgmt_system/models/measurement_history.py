@@ -21,6 +21,7 @@
 #############################################################################
 
 from odoo import api, fields, models
+from datetime import timedelta
 
 
 class MeasurementHistory(models.Model):
@@ -36,6 +37,11 @@ class MeasurementHistory(models.Model):
             'product.template']._get_weight_uom_name_from_ir_config_parameter()
 
     member = fields.Many2one('res.partner', string='Socio', tracking=True, required=True, domain="[('gym_member', '!=',False)]")
+    membership = fields.Many2one('gym.membership', string='Membresía', tracking=True, required=False)
+    order_id = fields.Many2one('sale.order', string='Orden de Venta', tracking=True, required=False)
+    date_start = fields.Datetime('Inicio de la cita', required=True)
+    date_end = fields.Datetime(string='Finaliza')
+    user_id = fields.Many2one('res.users', 'Responsable', required=True)
     gender = fields.Selection([
         ('male', 'Masculino'),
         ('female', 'Femenino'),
@@ -152,6 +158,24 @@ class MeasurementHistory(models.Model):
     smm_wt = fields.Float('SMM/WT', digits='Stock Weight', store=True)
     ffmi = fields.Float('FFMI (Fat Free Mass Index)', digits='Stock Weight', store=True)
     fmi = fields.Float('FMI (Fat Mass Index)', digits='Stock Weight', store=True)
+    
+    @api.onchange('member')
+    def onchange_member(self):
+        for rec in self:
+            rec.gender = rec.member.gender
+            rec.age = rec.member.age
+            return {'domain': {'membership': [('member', '=', rec.member.id)], 'order_id': [('partner_id', '=', rec.member.id)]}}
+    
+    @api.onchange('membership')
+    def onchange_membership(self):
+        for rec in self:
+            rec.order_id = rec.membership.sale_order_id
+    
+    @api.onchange('date_start')
+    def onchange_date_start(self):
+        for rec in self:
+            rec.date_end = rec.date_start + timedelta(minutes=20)
+            rec.date = rec.date_start.date()
 
     @api.depends('weight', 'height')
     def compute_display_name(self):

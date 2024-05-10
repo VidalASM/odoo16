@@ -1,0 +1,13 @@
+---Models in module 'checkout_balance'---
+DEL model account.checkout.balance.report (AbstractModel)
+NEW model account.checkout.balance.report.handler (AbstractModel)
+---Fields in module 'checkout_balance'---
+checkout_balance    / type_group (selection)      : DEL selection_key: 'default'
+checkout_balance    / type_group (selection)      : NEW selection_key: 'nature'
+---XML records in module 'checkout_balance'---
+DEL ir.ui.view: checkout_balance.account_group_form_view_inherit_checkout_balance
+NEW ir.ui.view: checkout_balance.view_account_group_form
+NEW account.report: checkout_balance.checkout_balance_report
+---Template records in module 'checkout_balance'---
+DEL checkout_balance.line_caret_options_inherit_checkout_balance
+NEW checkout_balance.main_template_checkout_balance

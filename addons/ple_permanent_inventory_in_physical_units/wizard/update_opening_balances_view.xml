@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="update_opening_wizard_view_form" model="ir.ui.view">
+        <field name="name">update.opening.wizard.form</field>
+        <field name="model">update.opening.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group class="oe_title">
+                    <field name="borrower_id"/>
+                </group>
+                <footer>
+                    <button name="update_opening_balances" string="Aceptar" type="object"
+                            confirm="¿Estás seguro de que quieres continuar?" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_update_opening_wizard_action" model="ir.actions.act_window">
+        <field name="name">Trasladar saldo final</field>
+        <field name="res_model">update.opening.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="update_opening_wizard_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="update_opening_2_wizard_view_form" model="ir.ui.view">
+        <field name="name">update.opening.wizard.form</field>
+        <field name="model">update.opening.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group class="oe_title">
+                    <field name="borrower_id"/>
+                </group>
+                <footer>
+                    <button name="update_opening_balances_2" string="Aceptar" type="object"
+                            confirm="¿Estás seguro de que quieres continuar?" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_update_opening_2_wizard_action" model="ir.actions.act_window">
+        <field name="name">Trasladar costo final</field>
+        <field name="res_model">update.opening.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="update_opening_2_wizard_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <record id="options_wizard_view_form" model="ir.ui.view">
+        <field name="name">update.opening.wizard.form</field>
+        <field name="model">update.opening.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Will you transfer cost or final balance from the previous month?">
+
+                <footer>
+                    <button name="%(action_update_opening_2_wizard_action)d"
+                            string="Trasladar costo final del mes anterior"
+                            type="action" context="{'default_permanent_id': context.get('default_permanent_id',False)}"
+                            class="btn-primary"/>
+                    <button name="%(action_update_opening_wizard_action)d"
+                            string="Trasladar saldo final del mes anterior"
+                            type="action"
+                            context="{'default_permanent_id': context.get('default_permanent_id', False)}"
+                            class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="options_opening_wizard_action" model="ir.actions.act_window">
+        <field name="name">¿Trasladara costo o saldo final del mes anterior?</field>
+        <field name="res_model">update.opening.wizard</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="options_wizard_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="account_asset_form_view_inherit_merch_and_model_asset" model="ir.ui.view">
+        <field name="name">account.asset.form.view.inherit.merch_and_model_asset</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <field name="acquisition_date" position="after">
+                <field name="asset_brand" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="asset_model" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="asset_series" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_form_view_inherit_l10n_pe_sire_sunat" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.l10n_pe_sire_sunat</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="ple_sale_book.account_move_form_view_inherit_ple_sale_book"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ple_its_declared']" position="after">
+                <field name="l10n_pe_is_complement_sire"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

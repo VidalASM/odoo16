@@ -1,0 +1,3 @@
+---Models in module 'txt_detractions'---
+---Fields in module 'txt_detractions'---
+---XML records in module 'txt_detractions'---

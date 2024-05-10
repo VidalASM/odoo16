@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- wizard action on res.partner -->
+        <act_window id="freeze_wizard_action"
+            name="Crear Congelamiento"
+            binding_model="gym.membership"
+            res_model="freeze.wizard"
+            view_mode="form" target="new"
+            groups="gym_mgmt_system.group_gym_operator"/>
+
+        <!-- wizard view -->
+        <record id="freeze_wizard_view" model="ir.ui.view">
+            <field name="name">Freeze Wizard Membership</field>
+            <field name="model">freeze.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Congelamiento">
+                    <div>
+                        Llene el siguiente formulario para validar el congelamiento.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="number_freeze"/>
+                            <field name="counter_id"/>
+                            <field name="contract_id"/>
+                            <field name="is_force"/>
+                        </group>
+                        <group>
+                            <field name="cause"/>
+                            <field name="date_freeze"/>
+                            <field name="start_date"/>
+                            <field name="quantity_days"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Freezear" name="create_freeze" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+</odoo>

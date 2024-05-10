@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ple_report_purchase,ple.report.purchase,model_ple_report_purchase,account.group_account_user,1,1,1,1
+access_ple_report_purchase_line_link_economic,link.economic,model_link_economic,,1,1,1,1
+access_ple_report_purchase_line_type_rent,type.rent,model_type_rent,,1,1,1,1
+access_ple_report_purchase_line_service_taken,service.taken,model_service_taken,,1,1,1,1
+access_ple_report_purchase_exoneration_nodomicilied,exoneration.nodomicilied,model_exoneration_nodomicilied,,1,1,1,1

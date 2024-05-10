@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_advance_payment_inv_form_view_inherit_separate_sale_order_invoice_line" model="ir.ui.view">
+        <field name="name">sale.advance.payment.inv.form.view.inherit.separate_sale_order_invoice_line</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='advance_payment_method']" position="after">
+                <field name="split_order_lines" attrs="{'invisible': [('advance_payment_method', '!=', 'delivered')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

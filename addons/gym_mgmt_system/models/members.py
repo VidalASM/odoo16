@@ -29,6 +29,15 @@ class GymMember(models.Model):
     _description = "Gym Member"
 
 
+class TutorType(models.Model):
+    _name = "tutor.type"
+    _inherit = ["mail.thread", 'mail.activity.mixin']
+    _description = "Tipo de Parentesco"
+
+    name = fields.Char(string='Nombre')
+    description = fields.Text(string='Descripción')
+
+
 class MemberPartner(models.Model):
     _inherit = 'res.partner'
 
@@ -38,9 +47,15 @@ class MemberPartner(models.Model):
     measurement_count = fields.Integer('measurement_count',
                                        compute='_compute_measurement_count')
     state_client = fields.Selection(string='Estado Contrato',
-        selection=[ ('1', 'Alianzado'), ('2', 'Espontáneo'), ('3', 'Invitado Espontáneo'),
-                    ('4', 'Reinscripción'), ('5', 'Renovación'),('8', 'Invitado Referido'),('9', 'No atendido'),
-                    ('happybirthday',u'Cumpleañeros de este mes'),('all', 'Todos') ], default='all', required=True)
+        selection=[ ('1', 'Alianzado'), ('2', 'Espontáneo'), ('3', 'Invitado Espontáneo'),('4', 'Reinscripción'), ('5', 'Renovación'),
+                    ('6', 'Activo'),('7', 'Bloqueado'),('8', 'Invitado Referido'),('9', 'No atendido'),
+                    ('happybirthday',u'Cumpleañeros de este mes'),('all', 'Todos'), ], default='all', required=True)
+    # Apoderado
+    has_tutor = fields.Boolean(string='Tiene Apoderado?', default=False)
+    tutor_id = fields.Many2one('res.partner', string='Apoderado')
+    tutor_relation = fields.Many2one('tutor.type', string='Parentesco')
+    # Hijos
+    child_ids = fields.One2many(comodel_name='res.partner', inverse_name='tutor_id', string='Hijos')
 
     def _compute_membership_count(self):
         """ number of membership for gym members """

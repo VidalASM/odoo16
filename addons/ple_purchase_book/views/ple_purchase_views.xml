@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="ple_report_purchase_tree_view" model="ir.ui.view">
+        <field name="name">ple.report.purchase.tree</field>
+        <field name="model">ple.report.purchase</field>
+        <field name="arch" type="xml">
+            <tree string="Reporte de Purchase">
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_report_purchase_form_view" model="ir.ui.view">
+        <field name="name">ple.report.purchase.form.view</field>
+        <field name="model">ple.report.purchase</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group string="Reportes PLE" id="ple_purchase">
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                        </group>
+                        <group>
+                            <group string="Formato 8.1" colspan="8">
+                                <field name="xls_filename_8_1" invisible="1"/>
+                                <field name="xls_binary_8_1" filename="xls_filename_8_1" readonly="1" string="Reporte Excel"/>
+                                <field name="txt_filename_8_1" invisible="1"/>
+                                <field name="txt_binary_8_1" filename="txt_filename_8_1" readonly="1" string="Reporte TXT"/>
+                            </group>
+                            <group string="Formato 8.2" colspan="8">
+                                <field name="xls_filename_8_2" invisible="1"/>
+                                <field name="xls_binary_8_2" filename="xls_filename_8_2" readonly="1" string="Reporte Excel"/>
+                                <field name="txt_filename_8_2" invisible="1"/>
+                                <field name="txt_binary_8_2" filename="txt_filename_8_2" readonly="1" string="Reporte TXT"/>
+                            </group>
+                        </group>
+                    </group>
+                    <field name="error_dialog" class="errorbox" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                    <field name="error_dialog_8_2" class="errorbox" attrs="{'invisible': [('error_dialog_8_2', '=', 'False')]}"/>
+                    <notebook>
+                        <page string="Comprobantes" invisible="1">
+                            <field name="move_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_report_purchase_action" model="ir.actions.act_window">
+        <field name="name">Reporte PLE Purchase</field>
+        <field name="res_model">ple.report.purchase</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_ple_purchase" 
+        name="Registro de Compras" 
+        parent="ple_sale_book.menu_ple_pe_monthly" 
+        action="ple_report_purchase_action" 
+        sequence="2"
+    />
+    
+</odoo>

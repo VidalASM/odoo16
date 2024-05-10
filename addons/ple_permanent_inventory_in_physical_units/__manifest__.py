@@ -1,0 +1,35 @@
+{
+    'name': 'Libro kardex en unidades físicas PLE - SUNAT (Perú)',
+    'version': '16.0.2.1.12',
+    'author': 'Ganemo',
+    'website': 'https://www.ganemo.co/ple',
+    'summary': 'Permanent inventory book in physical units (kardex)',
+    'category': 'Accounting',
+    'depends': [
+        'ple_sale_book',
+        'purchase_stock',
+        'sale_stock',
+        'stock_account',
+        'l10n_pe_delivery_note_ple',
+        'purchase_document_type_validation',
+        'account_move_date_from_stock',
+        'product_unspsc',
+        'l10n_pe_edi',
+        'tributary_address_extension',
+        'invoice_type_document_extension'
+    ],
+    'data': [
+        'data/queries_data.xml',
+        'wizard/update_opening_balances_view.xml',
+        'wizard/update_operation_sunat.xml',
+        'views/ple_permanent_inventory_physical_units_views.xml',
+        'views/base_views.xml',
+        'views/stock_valuation_layer_view.xml',
+        'security/ir.model.access.csv',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'license': 'Other proprietary',
+    'currency': 'USD',
+    'price': 399.00
+}

@@ -1,0 +1,1 @@
+from . import test_invoice_type_document_extension

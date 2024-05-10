@@ -1,0 +1,1 @@
+from . import no_res_currency_rate

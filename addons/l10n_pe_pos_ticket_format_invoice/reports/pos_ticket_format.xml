@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="pos_ticket_format_invoice_inherit_l10n_pe"
+              inherit_id="pos_ticket_format_invoice.report_invoice_document_tickets">
+
+        <xpath expr="//span[@name='company_city']" position="before">
+            <span>
+                <t t-if="o.company_id.partner_id.l10n_pe_district.name"
+                   t-esc="o.company_id.partner_id.l10n_pe_district.name"/>
+            </span>
+        </xpath>
+
+        <xpath expr="//t[@name='partner_street']" position="after">
+            <t t-if="o.partner_id.l10n_pe_district.name"
+               t-esc="o.partner_id.l10n_pe_district.name"/>,
+        </xpath>
+
+        <xpath expr="//div[@name='total_write_post_ticket_format_invoice']" position="after">
+            <div t-if="o.create_data_qr_code()" class="qr_code_invoice">
+                <img class="border border-dark rounded"
+                     t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.create_data_qr_code(), 100, 100)"/>
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

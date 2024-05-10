@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ple_inv_and_bal_301_sale_form_view" model="ir.ui.view">
+        <field name="name">ple.ple_inv_and_bal_301.report.sale.form.view</field>
+        <field name="model">ple.report.inv.bal</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_generate_initial_balances_301" string="Calcular saldo inicial" type="object"
+                            states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                            <field name="financial_statements_catalog"/>
+                            <field name="eeff_presentation_opportunity"/>
+                        </group>
+                        <group string="Reportes" name="ple_inv_bal">
+                            <field name="xls_filename" invisible="1"/>
+                            <label string="Reporte Excel" for="xls_binary"/>
+                            <field name="xls_binary" filename="xls_filename" readonly="1" nolabel="1"/>
+                            <field name="txt_filename" invisible="1"/>
+                            <label string="Reporte .TXT 3.1" for="txt_binary"/>
+                            <field name="txt_binary" filename="txt_filename" readonly="1" nolabel="1"/>
+                            <field name="pdf_filename" invisible="1"/>
+                            <label string="Reporte .PDF 3.1" for="pdf_binary"/>
+                            <field name="pdf_binary" filename="pdf_filename" readonly="1" nolabel="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Saldo inicial" name="line_ids">
+                            <field name="line_initial_ids"/>
+                        </page>
+                    </notebook>
+                    <field name="error_dialog" class="errorbox" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_report_inv_bal_tree_view" model="ir.ui.view">
+        <field name="name">ple.report.inv.bal.tree.view</field>
+        <field name="model">ple.report.inv.bal</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_report_inv_bal_action" model="ir.actions.act_window">
+        <field name="name">3.1 Estado de Situación financiera</field>
+        <field name="res_model">ple.report.inv.bal</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_ple_inv_bal_3__1"
+              name="3.1 Estado de Situación financiera"
+              parent="ple_sale_book.menu_ple_inv_bal"
+              action="ple_report_inv_bal_action"
+              sequence="31"
+    />
+</odoo>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_0309">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-out='0'/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0309.external_layout_ple_0309">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0309/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title">
+                            <strong>
+                                FORMATO 3.9 LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 34 -
+                                INTANGIBLES
+                            </strong>
+                        </div>
+
+                        <div class="subtitle">
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                                <span t-esc="doc.date_end.strftime('%Y')"/>
+                            </div>
+                            
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                                <span t-field="company.partner_id.vat"/>
+                            </div>
+                            
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                                <span t-field="company.partner_id.name"/>
+                            </div>
+                        </div>
+
+                        <table class="table_inv_bal_0309">
+                            <tr class="table_head_0309">
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>FECHA DE INICIO DE OPERACIÓN</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>DESCRIPCIÓN DEL INTANGIBLE</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>TIPO DE INTANGIBLE (TABLA 7)</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>VALOR CONTABLE DEL INTANGIBLE</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>AMORTIZACIÓN CONTABLE ACUMULADA</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="3">
+                                    <strong>VALOR NETO CONTABLE DEL INTANGIBLE</strong>
+                                </th>
+                            </tr>
+                            <tbody>
+                                <t t-set="total_1" t-value="0.00"/>
+                                <t t-set="total_2" t-value="0.00"/>
+                                <t t-set="total_3" t-value="0.00"/>
+                                <tr t-foreach="doc.line_ids_309" t-as="line" class="table_body_0309">
+                                    <t t-if="line.ple_selection =='investment_active_intangible_3_9'">
+                                        <th style="text-align: center; font-weight: lighter">
+                                            <span t-field="line.operation_date"
+                                                  t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="line.name_aml"/>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-esc="round(line.balance)"/>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-if="line.balance_amortization &lt; 0">
+                                                (<t t-esc="abs(round(line.balance_amortization))"/>)
+                                            </t>
+                                            <t t-else="">
+                                                <t t-esc="abs(round(line.balance_amortization))"/>
+                                            </t>
+                                        </th>
+
+                                        <th style="text-align:center;font-weight: lighter">
+                                            <t t-set="total" t-value="line.balance + (line.balance_amortization)"/>
+                                            <t t-esc="round(total)"/>
+                                        </th>
+
+                                        <t t-set="total_1" t-value="total_1 + line.balance"/>
+                                        <t t-set="total_2" t-value="total_2 + line.balance_amortization"/>
+                                        <t t-set="total_3" t-value="total_3 + total"/>
+                                    </t>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text_totales">
+                                        <strong style="font-weight: bold;">TOTALES</strong>
+                                    </td>
+                                    <td colspan="1" class="mount_final_0309">
+                                        <t t-esc="round(total_1)"/>
+                                    </td>
+                                    <td colspan="1" class="mount_final_0309">
+                                        <t t-if="total_2 &lt; 0">
+                                            (<t t-esc="abs(round(total_2))"/>)
+                                        </t>
+                                        <t t-else="">
+                                            <t t-esc="abs(round(total_2))"/>
+                                        </t>
+                                    </td>
+                                    <td colspan="1" class="mount_final_0309">
+                                        <t t-esc="abs(round(total_3))"/>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

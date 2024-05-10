@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <record id="ple_inv_bal_one_line_initial_balances_form_view" model="ir.ui.view">
+        <field name="name">ple.inv.bal.one.line.initial.balances.form.view</field>
+        <field name="model">ple.inv.bal.one.line.initial.balances</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="accounting_account"/>
+                        <field name="type_currency"/>
+                        <field name="debit_balance"/>
+                        <field name="credit_balance"/>
+                    </group>
+                    <notebook>
+                        <page string="Cuentas">
+                            <field name="account_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_inv_bal_one_line_initial_balances_tree_view" model="ir.ui.view">
+    <field name="name">ple.inv.bal.one.line.initial.balances.tree.view</field>
+    <field name="model">ple.inv.bal.one.line.initial.balances</field>
+        <field name="arch" type="xml">
+            <tree create="false">
+                <field name="accounting_account"/>
+                <field name="type_currency"/>
+                <field name="debit_balance"/>
+                <field name="credit_balance"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

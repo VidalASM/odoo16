@@ -1,0 +1,20 @@
+---Models in module 'payment_term_lines'---
+change model account.payment.term.line.extension from payment_term_lines_extension
+
+---Fields in module 'payment_term_lines'---
+payment_term_lines / account.account / related_user_account_name (Selection) : NEW
+
+payment_term_lines / account.account / related_user_account_name (Selection): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line / factor_round (Float): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line / currency (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line / ledger_account (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line / ledger_account_payable (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line / term_extension (One2many): module change from payment_term_lines_extension
+
+payment_term_lines / account.payment.term.line.extension / payment_term_line_id (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line.extension / currency (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line.extension / ledger_account (Many2one): module change from payment_term_lines_extension
+payment_term_lines / account.payment.term.line.extension / ledger_account_payable (Many2one): module change from payment_term_lines_extension
+
+---XML records in module 'payment_term_lines'---
+NEW ir.ui.view: payment_term_lines.view_payment_term_line_extension_form

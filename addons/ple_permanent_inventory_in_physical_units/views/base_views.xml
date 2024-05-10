@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="product_template_form_view_inherit_ple_stock_valuation_book" model="ir.ui.view">
+        <field name="name">product.template.form.view.inherit.ple_stock_valuation_book</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='invoicing']/group[@name='accounting']" position="before">
+                <group name="others">
+                    <field name="stock_catalog"/>
+                    <field name="stock_type"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_type_form_view_inherit_ple_stock_valuation_book" model="ir.ui.view">
+        <field name="name">stock.picking.type.form.view.inherit.ple_stock_valuation_book</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='warehouse_id']" position="after">
+                <field name="ple_reason_id"/>
+                <field name="ple_revert_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_picking_form_view_inherit_ple_stock_valuation_book" model="ir.ui.view">
+        <field name="name">stock.picking.form.view.inherit.ple_stock_valuation_book</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <field name="backorder_id" position="after">
+                <field name="type_operation_sunat"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="stock_picking_form_view_inherit_ple_permanent_inventory" model="ir.ui.view">
+        <field name="name">stock.picking.form.view.inherit_permanent_inventory</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="l10n_pe_delivery_note_ple.stock_picking_view_form_inherit_l10n_pe_delivery_note_ple"/>
+        <field name="arch" type="xml">
+            <field name="picking_number" position="replace">
+                <field name="picking_number"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="stock_location_form_view_inherit_ple_stock_valuation_book" model="ir.ui.view">
+        <field name="name">stock.location.form.view.inherit.ple_stock_valuation_book</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='return_location']" position="after">
+                <field name="correlative"/>
+            </xpath>
+            <xpath expr="//field[@name='usage']" position="after">
+                <field name="storehouse_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_form_view_inherit_ple_stock_valuation_book" model="ir.ui.view">
+        <field name="name">stock.move.form.view.inherit.ple_stock_valuation_book</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_form"/>
+        <field name="arch" type="xml">
+            <group name="linked_group" position="after">
+                <newline>
+                <group name="stock_valuation" string="Stock Valuation">
+                    <field name="product_qty"/>
+                    <field name="stock_valuation_layer_ids"/>
+                    <field name="move_line_ids"/>
+                </group>
+                </newline>
+            </group>
+        </field>
+    </record>
+</odoo>

@@ -9,9 +9,16 @@
                     <group>
                         <group name="member" string="Details">
                             <field name="member"/>
-                            <field name="gender"/>
-                            <field name="age"/>
+                            <field name="gender" invisible="0"/>
+                            <field name="age" invisible="0"/>
+                            <field name="membership"/>
+                            <field name="order_id"/>
+                        </group>
+                        <group name="schedule" string="Horario">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
                             <field name="date"/>
+                            <field name="user_id"/>
                         </group>
                     </group>
                     
@@ -307,6 +314,19 @@
         </field>
     </record>
 
+    <record id="view_measurement_history_calendar" model="ir.ui.view">
+        <field name="name">measurement.history.calendar</field>
+        <field name="model">measurement.history</field>
+        <field name="arch" type="xml">
+            <calendar string="Citas" date_start="date_start" date_stop="date_end">
+                <field name="user_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="member"/>
+            </calendar>
+        </field>
+    </record>
+
     <record id="view_measurement_history_tree" model="ir.ui.view">
         <field name="name">measurement.history.tree</field>
         <field name="model">measurement.history</field>
@@ -320,12 +340,11 @@
         </field>
     </record>
 
-
     <record id="action_measurement_history" model="ir.actions.act_window">
         <field name="name">Measurement History</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">measurement.history</field>
-        <field name="view_mode">tree,form,kanban</field>
+        <field name="view_mode">calendar,tree,form,kanban</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create your first Measurement History!
@@ -339,4 +358,10 @@
             parent="gym_member_root"
             action="action_measurement_history"
             sequence="40"/>
+
+    <menuitem
+            id="menu_measurement_history_root"
+            name="Agenda Area Salud"
+            action="action_measurement_history"
+            sequence="11"/>
 </odoo>

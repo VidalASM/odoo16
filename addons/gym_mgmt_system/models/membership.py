@@ -20,7 +20,7 @@
 #
 #############################################################################
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models, _, Command
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import logging
@@ -90,6 +90,20 @@ class GymMembership(models.Model):
     opportunity_id = fields.Many2one(
         'crm.lead', string='Oportunidad', check_company=True,
         domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
+    #Si este contratro fue transferido entonces modificara la fecha de inicio.
+    days_transferred = fields.Integer()
+    
+    # Discount autorization
+    discount = fields.Float(
+        string="Descuento (%)",
+        digits='Discount',
+        store=True
+    )
+    authorize_user = fields.Many2one(comodel_name='res.users', string="Autoriza", 
+                                     states={'draft': [('readonly', False)], 'confirm': [('readonly', True)]}, ondelete='cascade')
+    addendum = fields.Char(string='Adenda', required=False)
+    # Anexo 3
+    sign_request_ids = fields.One2many(comodel_name='sign.request', inverse_name='membership', string='Anexos')
 
     _sql_constraints = [
         ('membership_date_greater',
@@ -101,6 +115,7 @@ class GymMembership(models.Model):
         ('confirm', 'Confirm'),
         ('cancelled', 'Cancelled')
     ], default='draft', tracking=2, string='Status')
+    type_contract = fields.Selection([('1', 'Nuevo'), ('2', 'Renovación'),('3','Traspaso'),('4','Invitado'),('5','Referido')], string="Tipo de Contrato")
 
     @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
     def _compute_amount(self):
@@ -111,15 +126,17 @@ class GymMembership(models.Model):
             else:
                 rec.paid_amount = 0.0
 
-    @api.depends('membership_scheme', 'membership_date_from')
+    @api.depends('membership_scheme', 'membership_date_from', 'freeze_ids')
     def _compute_membership_date_to(self):
         """ to get membership_date_to """
         for rec in self:
             res = rec.membership_date_from
             templ = rec.membership_scheme.product_tmpl_id
-            if templ.membership_type == "variable":
+            date = fields.Date.from_string(rec.membership_date_from)
+            if rec.type_contract == '3':
+                res = date + timedelta(days=rec.days_transferred)
+            elif templ.membership_type == "variable":
                 delta = templ.membership_interval_qty
-                date = fields.Date.from_string(rec.membership_date_from)
                 if templ.membership_interval_unit == "days":
                     res = date + timedelta(days=delta)
                 elif templ.membership_interval_unit == "weeks":
@@ -128,6 +145,9 @@ class GymMembership(models.Model):
                     res = date + relativedelta(months=delta)
                 elif templ.membership_interval_unit == "years":
                     res = date + relativedelta(years=delta)
+            
+            contract_days_freeze = sum(rec.freeze_ids.mapped('quantity_days')) if rec.freeze_ids else 0
+            res += timedelta(days=contract_days_freeze)
                 
             # date_to = rec.membership_scheme._get_next_date(rec.membership_date_from, qty=1)
             rec.membership_date_to = res
@@ -198,6 +218,45 @@ class GymMembership(models.Model):
         lang = self.env["res.lang"].search([("code", "=", lang_code)])
         words = num2words(amount_base, lang=lang.iso_code)
         return words.upper()
+    
+    # Enviar contrato de apoderado
+    def send_parent_signature(self):
+        self.ensure_one()
+        # request = self.env['sign.send.request']
+        sign_request = self.env['sign.send.request'].create({
+            'set_sign_order': False, 
+            'template_id': 12, 
+            'signer_ids': [[0, 'virtual_3', {'role_id': 1, 'partner_id': self.member.tutor_id.id, 'mail_sent_order': 1}]], 
+            'signer_id': False, 
+            'signers_count': 1, 
+            'has_default_template': True, 
+            'subject': 'Solicitud de firma - ANEXO 3.pdf (v3)', 
+            'filename': 'ANEXO 3.pdf (v3)', 
+            'cc_partner_ids': [[6, False, []]], 
+            'message_cc': False, 
+            'attachment_ids': [[6, False, []]], 
+            'message': False, 
+            'refusal_allowed': False, 
+            'membership': self.id
+
+            # 'template_id': 12,
+            # 'filename': 'Petición de firma',
+            # 'subject': 'Solicitud de firma - ANEXO 3.pdf (v3)',
+            # 'message': '',
+            # 'message_cc': '',
+            # 'signer_id': self.member.tutor_id.id,
+        })
+        # self.env['sign.send.request.signer'].create({
+        #     'role_id': 4,
+        #     'partner_id': self.member.tutor_id.id,
+        #     'sign_send_request_id': sign_request.id,
+        # })
+        sign_request.send_request()
+
+    def print_invoice(self):
+        """ to override for each type of models that will use this composer."""
+        self.ensure_one()
+        return self.env.ref('l10n_pe_edi_odoofact.invoice_ticket_80').report_action(self.invoice_id)
 
 
 class SaleConfirm(models.Model):

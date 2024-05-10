@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* checkout_balance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 09:58+0000\n"
+"PO-Revision-Date: 2023-09-06 09:58+0000\n"
+"Last-Translator: Leo Daniel Flores Sánchez <leo.dev.ganemo@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: checkout_balance
+#: model:ir.model,name:checkout_balance.model_account_group
+msgid "Account Group"
+msgstr "Grupo de cuenta"
+
+#. module: checkout_balance
+#: model:ir.model.fields.selection,name:checkout_balance.selection__account_group__type_group__balance
+msgid "Balance"
+msgstr ""
+
+#. module: checkout_balance
+#: model:ir.model.fields.selection,name:checkout_balance.selection__account_group__type_group__both
+msgid "Both Incomes"
+msgstr "Ambos resultados"
+
+#. module: checkout_balance
+#: model:ir.model,name:checkout_balance.model_account_checkout_balance_report_handler
+msgid "Checkout Balance Custom Handler"
+msgstr ""
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#: model:account.report,name:checkout_balance.checkout_balance_report
+#: model:ir.actions.client,name:checkout_balance.action_account_report_checkout_balance
+#: model:ir.ui.menu,name:checkout_balance.menu_action_account_report_checkout_balance
+#, python-format
+msgid "Checkout x Account"
+msgstr "Comprobación x Cuenta"
+
+#. module: checkout_balance
+#: model:account.report.column,name:checkout_balance.trial_balance_report_credit
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: checkout_balance
+#: model:account.report.column,name:checkout_balance.trial_balance_report_debit
+msgid "Debit"
+msgstr "Débito"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "EERR by Function"
+msgstr "EERR por función"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "EERR by Nature"
+msgstr "EERR por naturaleza"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "End Balance"
+msgstr "Balance final"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "General Balance"
+msgstr "Balance general"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "General Ledger"
+msgstr "Libro mayor"
+
+#. module: checkout_balance
+#: model:ir.model.fields,field_description:checkout_balance.field_account_group__type_group
+msgid "Group Type"
+msgstr "Tipo de grupo"
+
+#. module: checkout_balance
+#: model:ir.model.fields.selection,name:checkout_balance.selection__account_group__type_group__function
+msgid "Income by Function"
+msgstr "Resultado por función"
+
+#. module: checkout_balance
+#: model:ir.model.fields.selection,name:checkout_balance.selection__account_group__type_group__nature
+msgid "Income by Nature"
+msgstr "Resultado por naturaleza"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr "Saldo inicial"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "Journal Items"
+msgstr "Apuntes contables"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "Open Account Group"
+msgstr "Abrir grupo de cuenta"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "Result of the Exercise or Period"
+msgstr "Resultado del ejercicio o periodo"
+
+#. module: checkout_balance
+#: model:ir.model.fields,help:checkout_balance.field_account_group__type_group
+msgid ""
+"The attribute filled in this field determines in which column of the trial "
+"balance the balance will appear"
+msgstr ""
+"El atributo que complete en este campo, determina en qué columna del balance"
+" de comprobación aparecerá el saldo"
+
+#. module: checkout_balance
+#. odoo-python
+#: code:addons/checkout_balance/models/account_checkout_balance_report.py:0
+#, python-format
+msgid "Totals"
+msgstr "Totales"

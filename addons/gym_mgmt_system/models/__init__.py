@@ -31,3 +31,4 @@ from . import membership
 from . import measurement_history
 from . import workout_plan
 from . import crm
+from . import sign_request

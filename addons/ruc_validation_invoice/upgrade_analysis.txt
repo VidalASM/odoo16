@@ -1,0 +1,3 @@
+---Models in module 'ruc_validation_invoice'---
+---Fields in module 'ruc_validation_invoice'---
+---XML records in module 'ruc_validation_invoice'---

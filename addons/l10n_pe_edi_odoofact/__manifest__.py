@@ -40,6 +40,8 @@
         "views/account_move_views.xml",
         "views/report_invoice.xml",
         "views/res_config_settings_views.xml",
+        "data/ticket_paperformat.xml",
+        "views/ticket_invoice.xml",
     ],
     "external_dependencies": {
         "python": [

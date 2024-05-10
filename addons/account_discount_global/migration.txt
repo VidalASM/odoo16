@@ -1,0 +1,4 @@
+Fecha : 21/12/2021
+    Cambios :
+    **views/account_move
+        - Se cambió "amount_untaxed" por tax_totals_json

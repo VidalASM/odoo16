@@ -1,0 +1,8 @@
+---Models in module 'aditional_document_reference'---
+Del account_edi  move to l10n_pe_edocument_complement
+Del init _refactor_xml  move to l10n_pe_edocument_complement
+---Fields in module 'aditional_document_reference'---
+---XML records in module 'aditional_document_reference'---
+Del data/2.1/*  move to l10n_pe_edocument_complement
+-- Depends in module 'aditional_document_reference' --
+New account

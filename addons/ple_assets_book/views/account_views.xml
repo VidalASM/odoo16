@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="account_asset_form_view_inherit_ple_assets_book" model="ir.ui.view">
+        <field name="name">account.asset.form.view.inherit.ple_assets_book</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="merch_and_model_asset.account_asset_form_view_inherit_merch_and_model_asset"/>
+        <field name="arch" type="xml">
+            <field name="asset_series" position="after">
+                <field name="asset_catalog_code" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="asset_code" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="asset_cubso_osce"/>
+                <field name="fixed_asset_type" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="fixed_asset_state" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="depreciation_method" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="authorization_number_method_change" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+                <field name="asset_rate" attrs="{'invisible': [('asset_type', '!=', 'purchase')]}"/>
+
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="l10n_latam_identification_type_form_view_inherit_l10n_pe_catalog" model="ir.ui.view">
+        <field name="name">l10n_latam.identification.type.form.view.inherit.l10n_pe_catalog</field>
+        <field name="model">l10n_latam.identification.type</field>
+        <field name="inherit_id" ref="document_type_validation.l10n_latam_identification_type_form_view_document_type_validation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="l10n_pe_vat_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="l10n_latam_identification_type_tree_view_inherit_l10n_pe_catalog" model="ir.ui.view">
+        <field name="name">l10n_latam.identification.type.tree.view.inherit.l10n_pe_catalog</field>
+        <field name="model">l10n_latam.identification.type</field>
+        <field name="inherit_id" ref="document_type_validation.l10n_latam_identification_type_tree_view_inherit_document_type_validation"/>
+        <field name="arch" type="xml">
+            <field name="active" position="before">
+                <field name="l10n_pe_vat_code"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.page {
+    font-family:"Calibri", sans-serif;
+    font-size: 9pt !important;
+    line-height: 1.2 !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.mg {
+    margin-top: 3mm !important;
+    margin-bottom: 7mm !important;
+}
+
+.mot-div {
+    margin-top: 2mm;
+    line-height: 2;
+}
+
+.cot-hor tbody tr:last-child td:last-child {
+    line-height: 1.2 !important;
+}
+
+.ttrans{
+    color: transparent;
+}
+
+.ttrans span {
+    color: black;
+}
+
+.page {
+    font-family:"Calibri", sans-serif;
+    font-size: 9pt !important;
+    line-height: 0.9;
+}
+
+.row_dates {
+    width: 100%;
+    margin-top: 5mm;
+    display: flex;
+    flex-direction: row;
+}
+
+.row_dates > div {
+    display: inline-block !important;
+}
+
+.row_dates .date_donee {
+    margin-left: 0;
+}
+
+.row_dates .date_donee span{
+    padding-left: 3.5mm;
+}
+
+.row_dates .date_start {
+    margin-left: 15mm;
+}
+
+.row_dates .date_start span{
+    padding-left: 1.5mm;
+}
+
+.row_dates .customer_order {
+    margin-left: 12.9mm;
+}
+
+.row_dates .customer_order span{
+    padding-left: 3.5mm;
+}
+
+.text-center {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border: none !important;
+}
+
+td, th, tr, tbody, thead, tfoot {
+    border: none !important;
+}
+
+table tr td {
+    word-wrap: break-word;
+}
+
+.table-general {
+    margin-top: 5mm;
+    display: inline-block !important;
+    vertical-align: top;
+    height: 94.5px !important;
+}
+
+.table-general tr{
+    height: 5mm !important;
+}
+
+.partida {
+    width: 45% !important;
+}
+
+.llegada {
+    margin-left: 18.5mm;
+    width: 45% !important;
+}
+
+.destinatario {
+    width: 45% !important;
+}
+
+.transporte {
+    width: 45% !important;
+    margin-left: 18.5mm;
+}
+
+.motivo-general {
+    margin-top: 5mm;
+    display: inline-block !important;
+    vertical-align: top;
+}
+
+.motivo-tras {
+    width: 45% !important;
+}
+
+.cot_hor {
+    width: 45% !important;
+    margin-left: 18.5mm;
+}
+
+.main_table {
+    width: 100%;
+    margin-top: 9mm !important;
+    height: 129mm;
+    border-spacing: 0 !important;
+    border-collapse: collapse;
+}
+
+.main_table tbody tr {
+    line-height: 1 !important;
+    height: 5mm !important;
+}
+
+.main_table td {
+    text-align: center;
+}
+
+.main_table th {
+    height: 5mm;
+    text-align: center !important;
+}
+
+.item-td {
+    height: 5mm !important;
+    width: 10mm;
+    padding-left: 2mm !important;
+    text-align: left !important;
+}
+
+.item-td span {
+    padding-left: 2mm;
+}
+
+.cod-td {
+    height: 5mm !important;
+    width: 27mm;
+}
+
+.desc-td {
+    height: 5mm !important;
+    width: 115mm;
+    text-align: left !important;
+    padding-left: 2mm !important;
+}
+
+.desc-td span {
+    padding-left: 5mm;
+}
+
+.lot-td {
+    height: 5mm !important;
+    width: 20mm;
+    text-align: right !important;
+}
+
+.lot-td span {
+    margin-right: -4mm;
+}
+
+.umed-td {
+    height: 5mm !important;
+    width: 15mm;
+}
+
+.umed-td span {
+    padding-left: 5mm;
+    margin-right: -3.5mm;
+}
+
+.cant-td {
+    height: 5mm !important;
+    width: 15mm;
+    padding-left: 4.5mm;
+    text-align: right !important;
+}
+
+.cant-td span {
+    padding-left: 1mm;
+    margin-right: -3mm;
+}
+
+.total-td {
+    height: 5mm;
+    padding-left: 5mm;
+    text-align: right !important;
+}
+
+.total-td span {
+    padding-top: 1mm;
+    margin-right: -2mm !important;
+    margin-bottom: -1mm !important;
+}
+
+.transportista {
+    width: 35.5%;
+}
+
+.comprobante {
+    width: 20.2%;
+    margin-left: 5mm;
+}
+
+.agencia {
+    width: 39.2%;
+    margin-left: 5mm;
+}
+
+.consolidado {
+    width: 27.2%;
+}
+
+.incoterm {
+    width: 10%;
+    margin-left: 5mm;
+}
+
+.vendedor {
+    text-align: center;
+    width: 13.3%;
+    margin-left: 5mm;
+}
+
+.notas {
+    width: 42.1%;
+    margin-left: 5mm;
+}
+
+.pen_div {
+    margin-top: 6.5mm !important;
+    margin-bottom: 2mm !important;
+}
+
+.suc {
+    padding-left: 20px !important;
+}

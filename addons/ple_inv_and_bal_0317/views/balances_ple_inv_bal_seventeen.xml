@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_addition_deduction_tree_view" model="ir.ui.view">
+        <field name="name">ple.addition.deduction.tree.view</field>
+        <field name="model">ple.addition.deduction</field>
+        <field name="arch" type="xml">
+            <tree editable="top" create="1" delete="1" multi_edit="1">
+                <field name="transfers_additions_selection"/>
+                <field name="trial_balances_catalog_id"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_transfers_cancellations_tree_view" model="ir.ui.view">
+        <field name="name">ple.transfers.cancellations.tree.view</field>
+        <field name="model">ple.transfers.cancellations</field>
+        <field name="arch" type="xml">
+            <tree editable="top" create="1" delete="1" multi_edit="1">
+                <field name="transfers_cancellations_selection"/>
+                <field name="trial_balances_catalog_id"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_initial_balances_seveenten_tree_view" model="ir.ui.view">
+        <field name="name">ple.initial.balances.seveenten.tree.view</field>
+        <field name="model">ple.initial.balances.seveenten</field>
+        <field name="arch" type="xml">
+            <tree editable="top" create="1" delete="1" multi_edit="1">
+                <field name="trial_balances_catalog_id"/>
+                <field name="name"/>
+                <field name="debit"/>
+                <field name="credit"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

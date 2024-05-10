@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ple_report_cash_bank,ple.report.cash.bank,model_ple_report_cash_bank,account.group_account_user,1,1,1,1
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- wizard action on res.partner -->
+        <act_window id="transfer_wizard_action"
+            name="Crear Transferencia"
+            binding_model="gym.membership"
+            res_model="transfer.wizard"
+            view_mode="form" target="new"
+            groups="gym_mgmt_system.group_gym_operator"/>
+
+        <!-- wizard view -->
+        <record id="transfer_wizard_view" model="ir.ui.view">
+            <field name="name">Transfer Wizard Membership</field>
+            <field name="model">transfer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Traspaso">
+                    <!-- <div>
+                        Llene el siguiente formulario para validar la transferencia.
+                    </div> -->
+                    <group>
+                        <group>
+                            <field name="client_id"/>
+                            <field name="number_transfer"/>
+                            <field name="reason_transfer"/>
+                            <field name="contract_id"/>
+                        </group>
+                        <group>
+                            <field name="date_transfer"/>
+                            <field name="days_transferred"/>
+                            <field name="discount"/>
+                            <field name="authorize_user"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Crear Traspaso" name="create_transfer" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+</odoo>

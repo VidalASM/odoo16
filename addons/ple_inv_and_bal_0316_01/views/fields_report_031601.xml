@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report_ple_031601_fields_tree" model="ir.ui.view">
+        <field name="name">view.report.ple.3.16.1.fields.tree</field>
+        <field name="model">report.ple.031601.fields</field>
+        <field name="arch" type="xml">
+            <tree string="Fields Report 3.16.1" editable="bottom">
+                <field name="social_reason"/>
+                <field name="identification_number"/>
+                <field name="document_type"/>
+                <field name="partition_type_code"/>
+                <field name="participations_number"/>
+                <field name="participations_percentage"/>
+                <field name="date_incorporation_partner"/>
+                <field name="is_member"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
+
+

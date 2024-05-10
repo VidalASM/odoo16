@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="igv_afectation_type_gravado_operacion_onerosa" model="igv.afectation.type">
+            <field name="description">Gravado - Operación Onerosa</field>
+            <field name="code">10</field>
+        </record>
+
+        <record id="igv_afectation_type_retiro_premio" model="igv.afectation.type">
+            <field name="description">Gravado - Retiro por premio</field>
+            <field name="code">11</field>
+        </record>
+
+        <record id="igv_afectation_type_retiro_donacion" model="igv.afectation.type">
+            <field name="description">Gravado - Retiro por donación</field>
+            <field name="code">12</field>
+        </record>
+
+        <record id="igv_afectation_type_retiro" model="igv.afectation.type">
+            <field name="description">Gravado - Retiro</field>
+            <field name="code">13</field>
+        </record>
+
+        <record id="igv_afectation_type_gravado_retiro_publicidad" model="igv.afectation.type">
+            <field name="description">Gravado - Retiro por publicidad</field>
+            <field name="code">14</field>
+        </record>
+
+        <record id="igv_afectation_type_gravado_bonificaciones" model="igv.afectation.type">
+            <field name="description">Gravado - Bonificaciones</field>
+            <field name="code">15</field>
+        </record>
+
+        <record id="igv_afectation_type_gravado_retiro_entrega_trabajadores" model="igv.afectation.type">
+            <field name="description">Gravado - Retiro por entrega a trabajadores</field>
+            <field name="code">16</field>
+        </record>
+
+        <record id="igv_afectation_type_gravado_IVAP" model="igv.afectation.type">
+            <field name="description">Gravado - IVAP</field>
+            <field name="code">17</field>
+        </record>
+
+        <record id="igv_afectation_type_exonerado_operacion_onerosa" model="igv.afectation.type">
+            <field name="description">Exonerado - Operación Onerosa</field>
+            <field name="code">20</field>
+        </record>
+
+        <record id="igv_afectation_type_exonerado_transferencia_gratuita" model="igv.afectation.type">
+            <field name="description">Exonerado - Transferencia Gratuita</field>
+            <field name="code">21</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_operacion_onerosa" model="igv.afectation.type">
+            <field name="description">Inafecto - Operación Onerosa</field>
+            <field name="code">30</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro_bonificacion" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro por Bonificación</field>
+            <field name="code">31</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro</field>
+            <field name="code">32</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro_muestras_medicas" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro por Muestras Médicas</field>
+            <field name="code">33</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro_convenio_colectivo" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro por Convenio Colectivo</field>
+            <field name="code">34</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro_premio" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro por premio</field>
+            <field name="code">35</field>
+        </record>
+
+        <record id="igv_afectation_type_inafecto_retiro_publicidad" model="igv.afectation.type">
+            <field name="description">Inafecto - Retiro por publicidad</field>
+            <field name="code">36</field>
+        </record>
+
+        <record id="igv_afectation_type_exportacion" model="igv.afectation.type">
+            <field name="description">Exportación</field>
+            <field name="code">40</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem 
+        id="menu_localization" 
+        name="Localización" 
+        web_icon="localization_menu,static/description/icon.png"
+    />
+
+    <menuitem 
+        id="menu_hr_sub_localization"
+        name="Localización"
+        parent="menu_localization"
+        sequence="1"
+    />
+    <menuitem 
+        id="menu_localization_spot"
+        name="SPOT"
+        parent="menu_localization"
+        sequence="2"
+    />
+    <menuitem 
+        id="menu_localization_ple"
+        name="PLE"
+        parent="menu_localization"
+        sequence="3"
+    />
+    <menuitem 
+        id="menu_localization_invoicing"
+        name="Facturación"
+        parent="menu_localization"
+        sequence="4"
+    />
+    <menuitem id="menu_hr_localization_datos_nomina"
+        name="Datos nómina"
+        parent="menu_localization"
+        sequence="5"
+    />
+
+    <menuitem 
+        id="menu_hr_information_plame"
+        name="Información Plame"
+        parent="menu_hr_sub_localization"
+        sequence="1"
+    />
+    <menuitem 
+        id="menu_hr_information_mintra"
+        name="Información Mintra"
+        parent="menu_hr_sub_localization"
+        sequence="2"
+    />
+    <menuitem 
+        id="menu_anexo_3"
+        name="Tablas Paramétrica Anexo N°3"
+        parent="menu_localization_ple"
+    />
+
+</odoo>

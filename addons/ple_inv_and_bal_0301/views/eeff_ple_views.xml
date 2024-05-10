@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="eeff_ple_form_view" model="ir.ui.view">
+        <field name="name">eeff.ple.form.view</field>
+        <field name="model">eeff.ple</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                        <field name="eeff_type"/>
+                        <field name="parent_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="eeff_ple_tree_view" model="ir.ui.view">
+        <field name="name">eeff.ple.tree.view</field>
+        <field name="model">eeff.ple</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="code"/>
+                <field name="description"/>
+                <field name="eeff_type"/>
+                <field name="parent_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="eeff_ple_search_view" model="ir.ui.view">
+        <field name="name">eeff.ple.search.view</field>
+        <field name="model">eeff.ple</field>
+        <field name="arch" type="xml">
+            <search>
+                <field string="Código" name="code"/>
+                <field string="Descripción" name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_eeff_ple" model="ir.actions.act_window">
+        <field name="name">Catálogo EEFF PLE Sunat</field>
+        <field name="res_model">eeff.ple</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="eeff_ple_menu_localization"
+              name="Catálogo EEFF PLE Sunat"
+              parent="account.account_account_menu"
+              action="action_eeff_ple"
+    />
+
+</odoo>

@@ -1,0 +1,4 @@
+---Models in module 'L10N_PE_FORMAT_GUIDE'---
+---Fields in module 'L10N_PE_FORMAT_GUIDE'---
+move_line_ids           / stock.move.line                   / stock.move.line.product_uom_qty -> stock.move.line.reserved_uom_qty
+---XML records in module 'L10N_PE_FORMAT_GUIDE'---

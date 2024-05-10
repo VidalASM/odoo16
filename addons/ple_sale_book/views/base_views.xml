@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem 
+        id="menu_ple_pe_root" 
+        name="Informes PLE" 
+        web_icon="ple_sale_book,static/description/icon.png" 
+        groups="account.group_account_user"
+    />
+    <menuitem 
+        id="menu_ple_pe_monthly" 
+        name="PLE Mensual" 
+        parent="menu_ple_pe_root"
+    />
+    <menuitem 
+        id="menu_ple_pe_yearly" 
+        name="PLE Anual" 
+        parent="menu_ple_pe_root"
+    />
+    <menuitem 
+        id="menu_ple_inv_bal" 
+        name="PLE Inventarios y Balances" 
+        parent="menu_ple_pe_root"
+    />
+    <record id="account_account_tag_ple_action" model="ir.actions.act_window">
+        <field name="name">Account Tags</field>
+        <field name="res_model">account.account.tag</field>
+        <field name="search_view_id" ref="account.account_tag_view_search"/>
+    </record>
+    <menuitem id="account_tag_menu" parent="menu_ple_pe_root" action="account_account_tag_ple_action"/>
+    <record id="res_company_form_view_inherit_ple_sale_book" model="ir.ui.view">
+        <field name="name">res.company.form.view.inherit.ple_sale_book</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="before">
+                <field name="ple_type_contributor"/>
+            </field>
+        </field>
+    </record>
+    <record id="uom_uom_form_view_inherit_ple_sale_book" model="ir.ui.view">
+        <field name="name">uom.uom.form.view.inherit.ple_sale_book</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='uom_type']" position="after">
+                    <field name="l10n_pe_edi_measure_unit_code"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

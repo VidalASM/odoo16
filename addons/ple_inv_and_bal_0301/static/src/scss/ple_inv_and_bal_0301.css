@@ -1,0 +1,98 @@
+.title_0301 {
+    width: 100%;
+    font-family: Arial;
+    font-size: 17px;
+}
+.subtitle_0301 {
+    width: 100%;
+    font-family: Arial;
+    font-size: 15px;
+}
+.subtitle_0301 div {
+    display: inline-block;
+}
+.div_one {
+    width: 45%;
+}
+.div_one .table_one {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+}
+.div_one .table_one thead tr th:nth-child(1) {
+    width: 30%;
+    border: 2px solid;
+}
+.div_one .table_one thead tr th:nth-child(2) {
+    width: 15%;
+    border: 2px solid;
+    text-align: center;
+}
+.div_one .table_one tbody {
+    font-family: Arial;
+    font-size: 13px;
+}
+.div_one .table_one tbody tr .table_one_td_type_one {
+    vertical-align: top;
+    padding: 5px;
+    border: 0px;
+}
+.div_one .table_one tbody tr .table_one_td_type_two {
+    vertical-align: top;
+    padding: 5px;
+    border: 2px solid;
+}
+.div_one .table_one tbody tr .table_one_td_type_three {
+    vertical-align: top;
+    padding: 5px;
+    text-align: right;
+    border: 2px solid;
+}
+.div_one .table_one tbody tr .table_one_td_type_four {
+    vertical-align: top;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid;
+}  
+.table_two {
+    width: 50%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    float: right;
+}
+.table_two thead tr th:nth-child(1) {
+    width: 30%;
+    border: 2px solid;
+}
+.table_two thead tr th:nth-child(2) {
+    width: 15%;
+    border: 2px solid;
+    text-align: center;
+}
+.table_two tbody {
+    font-family: Arial;
+    font-size: 13px;
+}
+.table_two tbody tr .table_two_td_type_one {
+    vertical-align: top;
+    padding: 5px;
+    border: 0px;
+}
+.table_two tbody tr .table_two_td_type_two {
+    vertical-align: top;
+    padding: 5px;
+    border: 2px solid;
+}
+.table_two tbody tr .table_two_td_type_three {
+    vertical-align: top;
+    padding: 5px;
+    text-align: right;
+    border: 2px solid;
+}
+.table_two tbody tr .table_two_td_type_four {
+    vertical-align: top;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid;
+}

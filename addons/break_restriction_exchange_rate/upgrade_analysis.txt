@@ -1,0 +1,5 @@
+---Models in module 'break_restriction_exchange_rate'---
+---Fields in module 'break_restriction_exchange_rate'---
+---XML records in module 'break_restriction_exchange_rate'---
+
+Nota: Add Check if exist constrain in my module

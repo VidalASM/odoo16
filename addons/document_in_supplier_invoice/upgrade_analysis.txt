@@ -1,0 +1,3 @@
+---Models in module 'document_in_supplier_invoice'---
+---Fields in module 'document_in_supplier_invoice'---
+---XML records in module 'document_in_supplier_invoice'---

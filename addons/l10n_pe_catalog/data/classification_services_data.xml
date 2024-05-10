@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record id="classification_services_codes_01" model="classification.services">
+            <field name="description">Mercadería, Matería Prima, Suministro, Envases y Embalajes</field>
+            <field name="code">1</field>
+        </record>
+
+        <record id="classification_services_codes_02" model="classification.services">
+            <field name="description">Activo Fijo</field>
+            <field name="code">2</field>
+        </record>
+
+        <record id="classification_services_codes_03" model="classification.services">
+            <field name="description">Otros Activos no considerados en los numerales 1 y 2</field>
+            <field name="code">3</field>
+        </record>
+
+        <record id="classification_services_codes_04" model="classification.services">
+            <field name="description">Gastos de educación, recreación, salud, culturales, representación, capacitación,
+                de viaje, mantenimiento de vehículo y de premios.
+            </field>
+            <field name="code">4</field>
+        </record>
+        <record id="classification_services_codes_05" model="classification.services">
+            <field name="description">Otros gastos no incluidos en el numeral 4</field>
+            <field name="code">5</field>
+        </record>
+
+
+    </data>
+</odoo>

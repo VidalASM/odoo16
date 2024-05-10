@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_317">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance_seventeen">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0317.external_layout_ple_317">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0317/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title_iab317">
+                            <strong>FORMATO 3.17: "LIBRO DE INVENTARIOS Y BALANCES - BALANCE DE COMPROBACIÓN"</strong>
+                        </div>
+
+                        <div class="subtitle_iab317">
+                            <div><strong>EJERCICIO :&amp;nbsp;</strong></div><span t-esc="doc.date_end.strftime('%Y')"/><br/>
+                            <div><strong>RUC :&amp;nbsp;</strong></div><div t-field="company.partner_id.vat"/><br/>
+                            <div><strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong></div><div t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+                        <t t-set="valor" t-value="values_lines"/>
+                        <table class="table_report_iab317">
+                            <thead>
+                                <tr>
+                                    <th>CUENTA Y SUBCUENTA CONTABLE</th>
+                                    <th>SALDOS INICIALES</th>
+                                    <th>MOVIMIENTOS</th>
+                                    <th>SALDOS FINALES</th>
+                                    <th>SALDOS FINALES DEL BALANCE GENERAL</th>
+                                    <th>SALDOS FINALES DEL ESTADO DE PÉRDIDAS Y GANANCIAS POR FUNCIÓN</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <table class="table_report_2iab317">
+                            <thead>
+                                <tr>
+                                    <th scope="col">CÓDIGO</th>
+                                    <th scope="col">DENOMINACIÓN</th>
+                                    <th scope="col">DEUDOR</th>
+                                    <th scope="col">ACREEDOR</th>
+                                    <th scope="col">DEBE</th>
+                                    <th scope="col">HABER</th>
+                                    <th scope="col">DEUDOR</th>
+                                    <th scope="col">ACREEDOR</th>
+                                    <th scope="col">ACTIVO</th>
+                                    <th scope="col">PASIVO Y PATRIMONIO</th>
+                                    <th scope="col">PÉRDIDAS</th>
+                                    <th scope="col">GANANCIAS</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="valor" t-as="line">
+                                    <td><t t-esc="line['code']" /></td>
+                                    <td><t t-esc="line['name']" /></td>
+                                    <td><t t-esc="line['initial_debit']" /></td>
+                                    <td><t t-esc="line['initial_credit']" /></td>
+                                    <td><t t-esc="line['movement_debit']" /></td>
+                                    <td><t t-esc="line['movement_credit']" /></td>
+                                    <td><t t-esc="line['higher_sum_debit']" /></td>
+                                    <td><t t-esc="line['higher_sum_credit']" /></td>
+                                    <td><t t-esc="line['active_balance_account']" /></td>
+                                    <td><t t-esc="line['passive_balance_account']" /></td>
+                                    <td><t t-esc="line['result_losses']" /></td>
+                                    <td><t t-esc="line['result_earnings']" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table_report_3iab317">
+                            <tfoot>
+                                <tr>
+                                    <th><strong>TOTALES</strong></th>
+                                    <th><t t-esc="sum_initial_debit" /></th>
+                                    <th><t t-esc="sum_initial_credit" /></th>
+                                    <th><t t-esc="sum_movement_debit" /></th>
+                                    <th><t t-esc="sum_movement_credit" /></th>
+                                    <th><t t-esc="sum_higher_sum_credit" /></th>
+                                    <th><t t-esc="sum_balance_of_december_debtor" /></th>
+                                    <th><t t-esc="sum_active_balance_account" /></th>
+                                    <th><t t-esc="sum_passive_balance_account" /></th>
+                                    <th><t t-esc="sum_result_losses" /></th>
+                                    <th><t t-esc="sum_result_earnings" /></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <table class="table_report_4iab317">
+                            <tfoot>
+                                <tr>
+                                    <th><strong>RESULTADO DEL EJERCICIO O PERIODO</strong></th>
+                                    <t t-if="sum_active_balance_account == sum_passive_balance_account">
+                                        <th>0.00</th>
+                                        <th>0.00</th>
+                                    </t>
+                                    <t t-else="">
+                                        <th><t t-esc="exercise_active_account" /></th>
+                                        <th><t t-esc="exercise_passive_account" /></th>
+                                    </t>
+                                    <th><t t-esc="exercise_result_losses" /></th>
+                                    <th><t t-esc="exercise_result_earnings" /></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <table class="table_report_5iab317">
+                            <tfoot>
+                                <tr>
+                                    <th><strong>TOTALES</strong></th>
+                                    <t t-if="sum_active_balance_account == sum_passive_balance_account">
+                                        <th><t t-esc="sum_active_balance_account" /></th>
+                                        <th><t t-esc="sum_passive_balance_account" /></th>
+                                    </t>
+                                    <t t-else="">
+                                        <th><t t-esc="total_active_balance_account" /></th>
+                                        <th><t t-esc="total_passive_balance_account" /></th>
+                                    </t>
+                                    <th><t t-esc="total_result_losses" /></th>
+                                    <th><t t-esc="total_result_earnings" /></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<odoo>
+
+    <template id="pe_ubl_2_1_common_line_inherit_l10n_pe_edocument" inherit_id="l10n_pe_edi.pe_ubl_2_1_common_line">
+        <xpath expr="//*[name()='cac:PricingReference']" position="after">
+            <t t-if="line.origin_address and line.destiny_address and line.product_id.service_detail">
+                <t xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+                    <cac:Delivery>
+                        <cac:Despatch>
+                            <cbc:Instructions
+                                    t-esc="line.product_id.service_detail"/>
+                            <cac:DespatchAddress>
+                                <cbc:ID t-esc="line.origin_address.l10n_pe_district.code"/>
+                                <cac:AddressLine>
+                                    <cbc:Line
+                                            t-esc="str(line.origin_address.street + ', ' + line.origin_address.l10n_pe_district.name + ', ' + line.origin_address.city_id.name + ', ' + line.origin_address.state_id.name + ', ' + line.origin_address.country_id.name)[:200]"/>
+                                </cac:AddressLine>
+                            </cac:DespatchAddress>
+                        </cac:Despatch>
+                    </cac:Delivery>
+                    <cac:Delivery>
+                        <cac:DeliveryTerms>
+                            <cbc:ID>01</cbc:ID>
+                            <cbc:Amount currencyID="PEN" t-esc="line.reference_value_transportation_service"/>
+                        </cac:DeliveryTerms>
+                    </cac:Delivery>
+                    <cac:Delivery>
+                        <cac:DeliveryTerms>
+                            <cbc:ID>02</cbc:ID>
+                            <cbc:Amount currencyID="PEN" t-esc="line.reference_value_effective_load"/>
+                        </cac:DeliveryTerms>
+                    </cac:Delivery>
+                    <cac:Delivery>
+                        <cac:DeliveryTerms>
+                            <cbc:ID>03</cbc:ID>
+                            <cbc:Amount currencyID="PEN" t-esc="line.reference_value_on_nominal_payload"/>
+                        </cac:DeliveryTerms>
+                    </cac:Delivery>
+                    <cac:Delivery>
+                        <cac:DeliveryLocation>
+                            <cac:Address>
+                                <cbc:ID t-esc="line.destiny_address.l10n_pe_district.code"/>
+                                <cac:AddressLine>
+                                    <cbc:Line
+                                            t-esc="str(line.destiny_address.street + ', ' + line.destiny_address.l10n_pe_district.name + ', ' + line.destiny_address.city_id.name + ', ' + line.destiny_address.state_id.name + ', ' + line.destiny_address.country_id.name)[:200]"/>
+                                </cac:AddressLine>
+                            </cac:Address>
+                        </cac:DeliveryLocation>
+                    </cac:Delivery>
+                </t>
+            </t>
+        </xpath>
+
+    </template>
+
+</odoo>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="external_layout_ple_313">
+    <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+      t-att-data-oe-id="doc and doc.id"
+      t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+      <t t-call="web.address_layout" />
+      <t t-raw="0" />
+    </div>
+  </template>
+
+  <template id="print_status_finance">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="doc">
+        <t t-call="ple_inv_and_bal_0313.external_layout_ple_313">
+          <div class="page">
+            <link href="/ple_inv_and_bal_0313/static/src/css/main.css" rel="stylesheet" />
+            <t t-if="not company">
+              <!-- Multicompany -->
+              <t t-if="company_id">
+                <t t-set="company" t-value="company_id" />
+              </t>
+              <t t-elif="doc and 'company_id' in doc">
+                <t t-set="company" t-value="doc.company_id.sudo()" />
+              </t>
+              <t t-else="else">
+                <t t-set="company" t-value="res_company" />
+              </t>
+            </t>
+
+            <div class="ple_inv_bal_0313_title">
+              <strong>FORMATO 3.13: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA
+                CUENTA 46 -
+                CUENTAS POR PAGAR DIVERSAS"
+              </strong>
+            </div>
+
+            <div style="width: 100% !important;" class="ple_inv_bal_0313_subtitle">
+              <div>
+                <strong>EJERCICIO :&amp;nbsp;</strong>
+              </div>
+              <span t-esc="doc.date_end.strftime('%Y')" />
+              <br />
+              <div>
+                <strong>RUC :&amp;nbsp;</strong>
+              </div>
+              <div t-field="company.partner_id.vat" />
+              <br />
+              <div>
+                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+              </div>
+              <div class="company_left" t-field="company.partner_id.name" />
+            </div>
+            <br />
+
+            <table class="ple_inv_bal_0313_table_1">
+              <tr class="part_table">
+                <th style="text-align: center;" colspan="3" rowspan="1">
+                  <strong>INFORMACIÓN DE TERCEROS</strong>
+                </th>
+                <th style="text-align: center;" colspan="1" rowspan="3" width="180px">
+                  <strong>DESCRIPCIÓN DE LA OBLIGACIÓN</strong>
+                </th>
+                <th style="text-align: center;" colspan="1" rowspan="3">
+                  <strong>FECHA DE EMISIÓN DEL COMPROBANTE DE PAGO O FECHA DE INICIO DE LA OPERACIÓN
+                  </strong>
+                </th>
+                <th style="text-align: center;" colspan="1" rowspan="3" width="170px">
+                  <strong>MONTO PENDIENTE DE PAGO</strong>
+                </th>
+              </tr>
+              <tr class="part_table">
+                <th style="text-align: center;" colspan="2" rowspan="1" width="500px">
+                  <strong>DOCUMENTO DE IDENTIDAD</strong>
+                </th>
+                <th style="text-align: center;" colspan="1" rowspan="2" width="485px">
+                  <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL</strong>
+                </th>
+              </tr>
+              <tr class="part_table">
+                <th style="text-align: center;" colspan="1" rowspan="1">
+                  <strong>TIPO (TABLA 2)</strong>
+                </th>
+                <th style="text-align: center;" colspan="1" rowspan="1" width="120px">
+                  <strong>NÚMERO</strong>
+                </th>
+              </tr>
+
+              <t t-set="total" t-value="float(0)" />
+              <tr t-foreach="doc.generate_data_report_313()" t-as="line" class="part_one">
+
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="line['type_document_third']" />
+                </th>
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="line['tax_identification_number']" />
+                </th>
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="line['business_name']" />
+                </th>
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="line['document_name']" />
+                </th>
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="datetime.date.strftime(line['date_issue'], '%d/%m/%Y')" />
+                </th>
+                <th style="text-align: center; white-space:nowrap; font-weight: lighter;">
+                  <t t-esc="'{:,}'.format(round(line['provision_amount'],2))" />
+                </th>
+                <t t-set="total" t-value="total + float(line['provision_amount'])" />
+              </tr>
+              <tr class="end_part_0313">
+                <th colspan="4" style="border: 0px;" />
+                <th style="border: 0px; text-align: center;">
+                  <strong>SALDO TOTAL</strong>
+                </th>
+                <th class="mount_final_0313">
+                  <t t-esc="'{:,}'.format(round(total,2))" />
+                </th>
+                <th style="border: 0px;" />
+              </tr>
+            </table>
+
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_inherit_rent_4ta" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit.rent_4ta</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="tributary_address_extension.res_partner_form_view_inherit_tributary_address_extension"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='annexed_establishment']" position="after">
+                <field name="double_taxation" groups="hr.group_hr_user"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

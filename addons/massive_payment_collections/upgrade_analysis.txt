@@ -1,0 +1,3 @@
+---Models in module 'massive_payment_collections'---
+---Fields in module 'massive_payment_collections'---
+---XML records in module 'massive_payment_collections'---

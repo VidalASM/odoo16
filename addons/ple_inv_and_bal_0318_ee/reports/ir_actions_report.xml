@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_header_ple_3_18" model="ir.actions.report">
+        <field name="name">Report Header PLE 3.18</field>
+        <field name="model">account.report</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">ple_inv_and_bal_0318_ee.report_header_ple_3_18</field>
+        <field name="report_file">ple_inv_and_bal_0318_ee.report_header_ple_3_18</field>
+    </record>
+
+</odoo>

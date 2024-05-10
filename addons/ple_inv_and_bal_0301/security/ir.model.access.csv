@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eeff_ple_all_users,eeff_ple,model_eeff_ple,,1,0,0,0
+access_eeff_ple_account_user,eeff_ple,model_eeff_ple,account.group_account_user,1,1,1,1
+access_eeff_ple_account_manager,eeff_ple,model_eeff_ple,account.group_account_manager,1,1,1,1
+
+access_ple_report_inv_bal,ple.report.inv.bal,model_ple_report_inv_bal,account.group_account_user,1,1,1,1
+access_ple_report_inv_bal_line,ple.report.inv.bal.line,model_ple_report_inv_bal_line,account.group_account_user,1,1,1,1
+access_ple_inv_bal_line_initial_balances,ple.inv.bal.line.initial.balances,model_ple_inv_bal_line_initial_balances,account.group_account_user,1,1,1,1

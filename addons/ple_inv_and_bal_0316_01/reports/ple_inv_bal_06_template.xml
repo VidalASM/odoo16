@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_0316_01">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0316_01.external_layout_ple_0316_01">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0306/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title">
+                            <strong>
+                                FORMATO 3.16: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE
+                                LA CUENTA 50 - CAPITAL"
+                            </strong>
+                        </div>
+
+                        <div class="subtitle">
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                                <span class="company_data" t-esc="doc.date_end.strftime('%Y')"/>
+                            </div>
+                            
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                                <span class="company_data" t-field="company.partner_id.vat"/>
+                            </div>
+                            
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                                <span class="company_data" t-field="company.partner_id.name"/>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <strong>DETALLE DE LA PARTICIPACIÓN ACCIONARIA O PARTICIPACIONES SOCIALES:</strong>
+                        <table style="text-align: left; border: 1px solid black; width: 60%!important;">
+                            <tr>
+                                <th style="text-align: left; border: 1px solid black;" width="50%">
+                                    <strong>CAPITAL SOCIAL O PARTICIPACIONES SOCIALES AL 31.12</strong>
+                                </th>
+                                <th
+                                    style="font-weight: lighter; width: 15%!important; border: 1px solid black; padding-left: 10px;"
+                                    width="20%%">
+                                    <t t-if="doc.line_ids_316_01">
+                                        <t t-esc="abs(doc.line_ids_316_01[0].balance)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'0'"/>
+                                    </t>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align: left; border: 1px solid black;" width="59px">
+                                    <strong>VALOR NOMINAL POR ACCIÓN O PARTICIPACIÓN SOCIAL</strong>
+                                </th>
+                                <th
+                                    style="font-weight: lighter; width: 15%!important; border: 1px solid black; padding-left: 10px;"
+                                    width="20%%">
+                                    <t t-esc="1"/>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align: left; border: 1px solid black;" width="59px">
+                                    <strong>NÚMERO DE ACCIONES O PARTICIPACIONES SOCIALES SUSCRITAS</strong>
+                                </th>
+                                <th
+                                    style="font-weight: lighter; width: 15%!important; border: 1px solid black; padding-left: 10px;"
+                                    width="20%%">
+                                    <t t-if="doc.line_ids_316_01">
+                                        <t t-esc="abs(doc.line_ids_316_01[0].balance)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'0'"/>
+                                    </t>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th
+                                    style="text-align: left; border: 1px solid black;"
+                                    width="59px">
+                                    <strong>NÚMERO DE ACCIONES O PARTICIPACIONES SOCIALES PAGADAS</strong>
+                                </th>
+                                <th
+                                    style="font-weight: lighter; width: 15%!important; border: 1px solid black; padding-left: 10px;"
+                                    width="20%%">
+                                    <t t-if="doc.line_ids_316_01">
+                                        <t t-esc="abs(doc.line_ids_316_01[0].balance)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'0'"/>
+                                    </t>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th
+                                    style="text-align: left; border: 1px solid black;"
+                                    width="59px">
+                                    <strong>NÚMERO DE ACCIONISTAS O SOCIOS</strong>
+                                </th>
+                                <th
+                                    style="font-weight: lighter; width: 15%!important; border: 1px solid black; padding-left: 10px;"
+                                    width="20%%">
+                                    <t t-if="company.is_member_indicator">
+                                        <t t-esc="len(company.lines_report_0316.search([('is_member', '=', True), ('id', 'in', company.lines_report_0316.ids)]))"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'0'"/>
+                                    </t>
+                                </th>
+                            </tr>
+                        </table>
+
+                        <br/>
+
+                        <table class="table_inv_bal_0305">
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;" colspan="2">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL DEL ACCIONISTA O SOCIO</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>TIPO DE ACCIONES</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>NÚMERO DE ACCIONES O DE PARTICIPACIONES SOCIALES</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>PORCENTAJE TOTAL DE PARTICIPACIÓN</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table_0305">
+                                <th
+                                    style="text-align: center; white-space:nowrap;padding: 10px; margin: 10px;">
+                                    <strong>TIPO (TABLA 2)</strong>
+                                </th>
+                                <th style="text-align: center; padding: 10px; margin: 10px;">
+                                    <strong>NÚMERO</strong>
+                                </th>
+                            </tr>
+                            <t t-set="total1" t-value="int(0)"/>
+                            <t t-set="total2" t-value="float(0)"/>
+                            <tr t-foreach="company.lines_report_0316" t-as="line" class="part_table_0305">
+                                <t t-if="line.is_member">
+                                    <th style="text-align: center; white-space:nowrap;font-weight: lighter; border-top: 5px;">
+                                        <t t-esc="line.document_type.l10n_pe_vat_code"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.identification_number"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.social_reason.name"/>
+                                    </th>
+
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="line.partition_type_code" />
+                                    </th>
+
+                                    <th style="text-align:center">
+                                        <t t-esc="line.participations_number"/>
+                                    </th>
+                                    <t t-set="total1" t-value="total1 + float(line.participations_number.replace(',',''))"/>
+
+                                    <th style="text-align:center">
+                                        <t t-esc="line.participations_percentage"/>
+                                    </th>
+
+                                    <t t-set="total2" t-value="total2 + float(line.participations_percentage)"/>
+                                </t>
+                            </tr>
+                            <tr>
+                                <td colspan="4"
+                                    style="border-left: 1px solid #ffffff; border-bottom: 1px solid #ffffff; text-align: right;">
+                                    <strong style="font-weight: bold;" >TOTALES </strong>
+                                </td>
+                                <td class="mount_final_0305" style="text-align: center;">
+                                    <t t-esc="int(total1)"/>
+                                </td>
+
+                                <td class="mount_final_0305" style="text-align: center;">
+                                    <t t-esc="'{:.2f}'.format(float(total2))"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_operation_sunat_form" model="ir.ui.view">
+            <field name="name">sunat.operation.wizard.form</field>
+            <field name="model">sunat.operation.wizard</field>
+            <field name="arch" type="xml">
+                <form string="TIPO DE OPERACIÓN - SUNAT">
+                    <group>
+                        <group>
+                            <field name="operation_sunat"/>
+                        </group>
+                    </group>
+
+                    <footer>
+                        <button string="Aplicar" name="print_default" type="object" class="oe_highlight" data-hotkey="q"/>
+                        <button string="Cancelar" class="btn btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_operation_sunat" model="ir.actions.act_window">
+            <field name="name">Tipo de Operación - Sunat</field>
+            <field name="groups_id" eval="[(4, ref('account.group_account_user'))]"/>
+            <field name="res_model">sunat.operation.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_operation_sunat_form"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="stock_account.model_stock_valuation_layer"/>
+            <field name="binding_view_types">list</field>
+        </record>
+
+    </data>
+</odoo>

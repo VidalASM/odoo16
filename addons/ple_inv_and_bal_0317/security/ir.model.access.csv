@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_code_trial_balances,trial.balances.catalog,model_trial_balances_catalog,account.group_account_user,1,1,1,1
+access_ple_report_inv_bal_seventeen,ple.report.inv.bal.seventeen,model_ple_report_inv_bal_seventeen,account.group_account_user,1,1,1,1
+access_ple_transfers_cancellations,ple.transfers.cancellations,model_ple_transfers_cancellations,account.group_account_user,1,1,1,1
+access_ple_addition_deduction,ple.addition.deduction,model_ple_addition_deduction,account.group_account_user,1,1,1,1
+access_ple_initial_balances,ple.initial.balances.seveenten,model_ple_initial_balances_seveenten,account.group_account_user,1,1,1,1

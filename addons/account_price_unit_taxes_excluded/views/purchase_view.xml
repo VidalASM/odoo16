@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="purchase_order_form_view_inherit_account_price_unit_taxes_excluded" model="ir.ui.view">
+        <field name="name">purchase.order.form.view.inherit_account_price_unit_taxes_excluded</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='product_uom']" position="after">
+                <field name="account_value_unit"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

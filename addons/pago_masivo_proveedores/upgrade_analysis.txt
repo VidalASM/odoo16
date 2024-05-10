@@ -1,0 +1,3 @@
+---Models in module 'pago_masivo_proveedores'---
+---Fields in module 'pago_masivo_proveedores'---
+---XML records in module 'pago_masivo_proveedores'---

@@ -1,0 +1,35 @@
+{
+    'name': 'Catálogos SUNAT',
+    'version': '16.0.1.0.0',
+    'author': 'Ganemo',
+    'website': 'https://www.ganemo.co',
+    'live_test_url': 'https://www.ganemo.co/demo',
+    'summary': 'Create the catalogs established by Peruvian legislation.',
+    'category': 'All',
+    'depends': [
+        'document_type_validation',
+        'localization_menu',
+        'l10n_pe',
+        'purchase_document_type_validation'
+    ],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/charge_discount_codes_data.xml',
+        'data/document_type_data.xml',
+        'data/l10n_latam_document_type_data.xml',
+        'data/classification_services_data.xml',
+        'data/payment_methods_codes_data.xml',
+        'views/account_views.xml',
+        'views/charge_discount_codes_views.xml',
+        'views/l10n_latam_identification_type_views.xml',
+        'views/product_template_views.xml',
+        'views/classification_services_views.xml',
+        'views/payment_methods_codes_views.xml',
+        'views/l10n_latam_document_type_views.xml',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'license': 'Other proprietary',
+    'currency': 'USD',
+    'price': 0.00
+}

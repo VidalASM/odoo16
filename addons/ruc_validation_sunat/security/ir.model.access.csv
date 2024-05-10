@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_activity_economic_sunat,activity_economic_sunat,model_activity_economic_sunat,,1,1,1,1
+access_document_pay_sunat,document_pay_sunat,model_document_pay_sunat,,1,1,1,1
+access_system_electronic_sunat,system_electronic_sunat,model_system_electronic_sunat,,1,1,1,1
+access_pattern_sunat,pattern_sunat,model_pattern_sunat,,1,1,1,1

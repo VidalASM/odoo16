@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="account_move_form_view_inherit_dua_in_invoice" model="ir.ui.view">
+        <field name="name">account.move.form.view.inherit.dua_in_invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="purchase_document_type_validation.account_move_form_view_inherit_purchase_document_type_validation"/>
+        <field name="arch" type="xml">
+            <field name="l10n_latam_document_type_id" position="after">
+                <field name="year_aduana"
+                       attrs="{'invisible': [('l10n_pe_sunat_code', 'not in', ['50', '52'])], 'required': [('l10n_pe_sunat_code', 'in', ['50', '52'])]}"/>
+                <field name="code_aduana"
+                       attrs="{'invisible': [('l10n_pe_sunat_code', 'not in', ['50', '52'])], 'required': [('l10n_pe_sunat_code', 'in', ['50', '52'])]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

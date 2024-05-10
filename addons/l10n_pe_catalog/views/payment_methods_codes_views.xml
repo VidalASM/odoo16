@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_methods_codes_form_view" model="ir.ui.view">
+        <field name="name">payment.methods.codes.form.view</field>
+        <field name="model">payment.methods.codes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_methods_codes_tree_view" model="ir.ui.view">
+        <field name="name">payment.methods.codes.tree.view</field>
+        <field name="model">payment.methods.codes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_payment_methods_codes" model="ir.actions.act_window">
+        <field name="name">[59] Códigos de medios de pago</field>
+        <field name="res_model">payment.methods.codes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id="catalog_payment_methods_codes_menu_localization"
+        name="[59] Códigos de medios de pago"
+        parent="catalogos_sunat_menu_localization"
+        sequence="59"
+        action="action_payment_methods_codes"
+    />
+
+</odoo>

@@ -1,0 +1,29 @@
+.title_320{
+    font-size: 17px;
+    font-family: Arial;
+}
+.subtitle_320{
+    font-size: 15px;
+    font-family: Arial;
+}
+.subtitle_320 div{
+    display: inline-block;
+}
+.table_1_320 {
+    float: left;
+    border-collapse: collapse;
+    width: 100%!important;
+}
+.table_1_320 .part_table th{
+    border: 2px solid black;
+    font-weight: lighter;
+    text-align: center;
+}
+.table_1_320 .part_one th{
+    border: 0px !important;
+    padding: 5px;
+}
+.table_1_320 .part_tree th{
+    border: 2px solid black;
+    padding: 5px;
+}

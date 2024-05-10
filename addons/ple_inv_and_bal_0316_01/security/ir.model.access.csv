@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ple_report_inv_bal_16_1,ple.report.inv.bal.16.1,model_ple_report_inv_bal_16_1,account.group_account_user,1,1,1,1
+access_ple_report_inv_bal_line_16,ple.report.inv.bal.line.06,model_ple_report_inv_bal_line_16_1,account.group_account_user,1,1,1,1
+access_report_ple_031601_fields,report.ple.031601.fields,model_report_ple_031601_fields,account.group_account_user,1,1,1,1

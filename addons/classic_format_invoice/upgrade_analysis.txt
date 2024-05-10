@@ -1,0 +1,9 @@
+---Models in module 'classic_format_invoice'---
+
+---Fields in module 'classic_format_invoice'---
+
+---XML records in module 'classic_format_invoice'---
+DELETE report: report_invoice_document_inherit_sale_delete
+
+---Depends in module 'classic_format_invoice'---
+update technical name base_address_city -> base_address_extended

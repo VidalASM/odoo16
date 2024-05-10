@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="l10n_latam_document_type_form_view_inherit_ruc_validation_invoice" model="ir.ui.view">
+        <field name="name">l10n_latam.document.type.form.view.inherit.ruc_validation_invoice</field>
+        <field name="model">l10n_latam.document.type</field>
+        <field name="inherit_id" ref="purchase_document_type_validation.l10n_latam_document_type_form_view_inherit_purchase_document_type_validation"/>
+        <field name="arch" type="xml">
+            <field name="correlative_validation" position="after">
+                <field name="require_validation_ruc"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

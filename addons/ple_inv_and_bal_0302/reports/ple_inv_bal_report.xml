@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_print_status_finance_0302" model="report.paperformat">
+        <field name="name">Status Finance</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">7</field>
+        <field name="margin_bottom">7</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report 
+        id="action_print_status_finance_0302"
+        string="Status Finance"
+        model="ple.report.inv.bal.one"
+        report_type="qweb-pdf"
+        name="ple_inv_and_bal_0302.print_status_finance_0302"
+        file="ple_inv_and_bal_0302.print_status_finance_0302"/>
+
+    <record id="ple_inv_and_bal_0302.action_print_status_finance_0302" model="ir.actions.report">
+        <field name="paperformat_id" ref="ple_inv_and_bal_0302.paperformat_print_status_finance_0302"/>
+    </record>
+</odoo>
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_0306">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0306.external_layout_ple_0306">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0306/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title">
+                            <strong>
+                                FORMATO 3.6: LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 19 -
+                                PROVISIÓN PARA CUENTAS DE COBRANZA DUDOSA"
+                            </strong>
+                        </div>
+
+                        <div style="width: 100% !important;" class="subtitle">
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                            </div>
+                            <span t-esc="doc.date_end.strftime('%Y')"/>
+                            <br/>
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.vat"/>
+                            <br/>
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                            </div>
+                            <div t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+
+                        <table class="table_inv_bal_0305">
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;" colspan="3">
+                                    <strong>INFORMACIÓN DE DEUDORES</strong>
+                                </th>
+                                <th style="text-align: center;" colspan="3">
+                                    <strong>CUENTA POR COBRAR PROVISIONADA</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;" colspan="2" width="59px">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>NÚMERO DEL DOCUMENTO</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>FECHA DE EMISIÓN DEL COMPROBANTE DE PAGO O FECHA DE INICIO</strong>
+                                </th>
+                                <th style="text-align: center;" rowspan="2">
+                                    <strong>MONTO</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table_0305">
+                                <th style="text-align: center;">
+                                    <strong>TIPO (TABLA 2)</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>NÚMERO</strong>
+                                </th>
+                            </tr>
+                            <t t-set="total" t-value="float(0)"/>
+                            <tr t-foreach="doc.line_final_ids.sorted(key=lambda x: x.business_name)" t-as="line" class="part_table_0305">
+                                <th style="text-align: center; white-space:nowrap;font-weight: lighter; border-top: 5px;">
+                                    <t t-esc="line.type_document_debtor"/>
+                                </th>
+
+                                <th style="text-align:center;font-weight: lighter">
+                                    <t t-esc="line.tax_identification_number"/>
+                                </th>
+
+                                <th style="text-align:center;font-weight: lighter">
+                                    <t t-esc="line.business_name"/>
+                                </th>
+
+                                <th style="text-align:center;font-weight: lighter">
+                                    <t t-if="line.number_document and line.number_serie" t-esc="line.number_serie + line.number_document"/>
+                                </th>
+
+                                <th style="text-align:center">
+                                    <t t-if="line.date_of_issue" t-esc="line.date_of_issue"/>
+                                </th>
+
+                                <t t-if="line.provision_amount == 0">
+                                    <th style="text-align:center;font-weight: lighter">
+                                        <t t-esc="'0,00'"/>
+                                    </th>
+                                </t>
+                                <t t-else="">
+                                    <th style="tname_clientext-align:center;font-weight: lighter">
+                                        <t t-esc="'{:,}'.format(round(float(line.provision_amount)))"/>
+                                    </th>
+                                </t>
+                                <t t-set="total" t-value="total + float(line.provision_amount)"/>
+                            </tr>
+                            <tr>
+                                <td colspan="5" style="border: none; text-align: right;">
+                                    <strong style="font-weight: bold;" >MONTO TOTAL PROVISIONADO </strong>
+                                </td>
+                                <td class="mount_final_0305">
+                                    <t t-esc="'{:,}'.format(round(float(total)))"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

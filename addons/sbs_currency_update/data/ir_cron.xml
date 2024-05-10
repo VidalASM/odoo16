@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+    <record id="sbs_currency_updater_res_currency_cron" model="ir.cron">
+        <field name="name">SBS - Currency Update</field>
+        <field name="model_id" ref="model_res_currency"/>
+        <field name="state">code</field>
+        <field name="code">model._action_sbs_currency_update()</field>
+        <field name='interval_number'>1</field>
+        <field name='interval_type'>days</field>
+        <field name="active" eval="True"/>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="True"/>
+        <field name="nextcall" eval="(DateTime.now() + timedelta(days=0)).strftime('%Y-%m-%d 23:25:00')"/>
+    </record>
+
+</odoo>

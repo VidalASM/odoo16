@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="view_ple_inv_bal_inherit_0302" model="ir.ui.view">
+        <field name="name">ple.inv.bal.inherit.0302.form.view</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="inherit_id" ref="ple_inv_and_bal_0302.ple_inv_and_bal_302_sale_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='ple_inv_bal']" position="after">
+                <group string="Reportes 3.3 - Cuentas por Cobrar Comerciales - Terceros y Relacionadas" name="ple_inv_bal_03">
+                    <field name="m2o_ple_report_inv_bal_03" invisible="1"/>
+
+                    <field name="xls_filename_03" invisible="1"/>
+                    <label string="Reporte Excel" for="xls_binary_03"/>
+                    <field name="xls_binary_03" filename="xls_filename_03" readonly="1" nolabel="1"/>
+
+                    <field name="txt_filename_03" invisible="1"/>
+                    <label string="Reporte .TXT 3.3" for="txt_binary_03"/>
+                    <field name="txt_binary_03" filename="txt_filename_03" readonly="1" nolabel="1"/>
+
+                    <field name="pdf_filename_03" invisible="1"/>
+                    <label string="Reporte .PDF 3.3" for="pdf_binary_03"/>
+                    <field name="pdf_binary_03" filename="pdf_filename_03" readonly="1" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

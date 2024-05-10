@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_account_journal_form_inherit_pos_ticket_format_invoice" model="ir.ui.view">
+        <field name="name">view.account.journal.form.inherit.pos_ticket_format_invoice</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='advanced_settings']" position="inside">
+                <group string="Dirección punto de emisión">
+                    <field name="address_point_emission"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

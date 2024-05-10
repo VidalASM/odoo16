@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="external_layout_invoice_classic">
+            <div t-attf-class="article o_report_layout_standard" t-att-data-oe-model="o and o._name"
+                 t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                <t t-out="0"/>
+            </div>
+        </template>
+
+        <template id="report_invoice_classic">
+            <t t-call="classic_format_invoice.external_layout_invoice_classic">
+                <div t-attf-class="header o_company_#{o.company_id.id}_layout" t-att-style="report_header_style" >
+                    <div class="o_clean_header" >
+                        <div class="print-container-invoice-classic-header">
+                            <table class="table-print-invoice-classic-header">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3"/>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="width:20%;border:hidden;text-align: left; vertical-align: top;">
+                                            <div style="display: flex; justify-content: left; align-items: left;">
+                                                <t t-if="o.company_id.logo">
+                                                    <img class="logo" style="max-width: 94%; max-height: 60%; object-fit: contain;"
+                                                         t-if="o.company_id.logo"
+                                                         t-att-src="image_data_uri(o.company_id.logo)"
+                                                         alt="Logo"/>
+                                                </t>
+                                            </div>
+
+                                        </td>
+                                        <td style="width:50%;vertical-align: top;border: hidden">
+
+                                            <div class="info">
+                                                <div>
+                                                    <t t-if="o.company_id.name" >
+                                                        <span t-esc="o.company_id.name"
+                                                            style="font-weight:normal;font-size:14px;" />
+                                                    </t>
+                                                </div>
+                                                <div>
+                                                    <span style="font-weight:normal;font-size:14px;">Dirección:</span>
+                                                    <t t-if="o.company_id.street.title()"
+                                                       name="company_street_title">
+                                                        <span t-esc="o.company_id.street.title()"
+                                                            style="font-weight:normal;font-size:14px;" />,</t>
+                                                    <t t-if="o.company_id.city">
+                                                        <span t-esc="o.company_id.city"
+                                                            style="font-weight:normal;font-size:14px;" />,</t>
+                                                    <t t-if="o.company_id.state_id.name">
+                                                        <span t-esc="o.company_id.state_id.name"
+                                                            style="font-weight:normal;font-size:14px;" />,</t>
+                                                    <t t-if="o.company_id.country_id.name">
+                                                        <span t-esc="o.company_id.country_id.name"
+                                                            style="font-weight:normal;font-size:14px;" />
+                                                    </t>
+                                                </div>
+                                                <div>
+                                                    <span style="font-weight:normal;font-size:14px;">Contacto:</span>
+                                                    <t t-if="o.company_id.phone">
+                                                        <span t-esc="o.company_id.phone"
+                                                            style="font-weight:normal;font-size:14px;" />
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td
+                                            style="width:30%;vertical-align:top;border:hidden">
+                                            <p class="ruc">
+                                                <t t-if="o.company_id.partner_id.l10n_latam_identification_type_id.name">
+                                                    <span t-esc="o.company_id.partner_id.l10n_latam_identification_type_id.name"
+                                                          style="font-weight:bold;"/>:
+                                                </t>
+                                                <t t-if="o.company_id.vat">
+                                                    <span t-esc="o.company_id.vat" style="font-weight:bold;"/>
+                                                </t>
+                                                <br/>
+                                                <t t-if="o.l10n_latam_document_type_id.report_name">
+                                                    <t t-if="((o.l10n_latam_document_type_id.report_name).upper()).replace(' ','')=='FACTURAELECTR&#211;NICA'">
+                                                        <span class="letter_reportname_1"
+                                                              t-esc="o.l10n_latam_document_type_id.report_name.upper()"/>
+                                                    </t>
+                                                    <t t-elif="((o.l10n_latam_document_type_id.report_name).replace(' ','')).upper()=='NOTADECR&#201;DITOBOLETAELECTR&#211;NICA' or  ((o.l10n_latam_document_type_id.report_name).replace(' ', '')).upper() =='NOTADED&#201;BITOBOLETAELECTR&#211;NICA'">
+                                                        <span class="letter_reportname_2"
+                                                              t-esc="o.l10n_latam_document_type_id.report_name.upper()"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span class="letter_reportname_3"
+                                                              t-esc="o.l10n_latam_document_type_id.report_name.upper()"/>
+                                                    </t>
+                                                </t>
+                                                <br/>
+                                                <t t-if="o.name">
+                                                    <span style="font-weight:bold;">N°</span>
+                                                    <span t-esc="o.name.replace(' ','')"
+                                                          style="font-weight:bold;"/>
+                                                </t>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="page"
+                    style="margin-top:-10px;">
+                    <link href="/classic_format_invoice/static/src/css/main.css" rel="stylesheet"/>
+                    <div class="client_data">
+                        <div class="client_data_1">
+                            <div class="row">
+                                <div class="label" >
+                                    <strong>CLIENTE</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-if="o.partner_id.parent_id" t-esc="o.partner_id.parent_id.name">,
+                                    </t>
+                                    <t t-if="o.partner_id.name" t-esc="o.partner_id.name"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label" >
+                                    <strong
+                                        t-if="o.partner_id.l10n_latam_identification_type_id.name"
+                                        t-esc="o.partner_id.l10n_latam_identification_type_id.name"/>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-if="o.partner_id.vat" t-esc="o.partner_id.vat"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label" >
+                                    <strong>DIRECCIÓN</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t name="district_partner" t-if="o.partner_id.street"
+                                        t-esc="o.partner_id.street"/>,
+                                    <t t-if="o.partner_id.city_id.name"
+                                        t-esc="o.partner_id.city_id.name"/>,
+                                    <t t-if="o.partner_id.state_id.name"
+                                        t-esc="o.partner_id.state_id.name"/>,
+                                    <t t-if="o.partner_id.country_id.name"
+                                        t-esc="o.partner_id.country_id.name"/>
+                                </div>
+                            </div>
+                           <div class="row">
+                                <div class="label">
+                                    <strong>MONEDA</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-esc="o.currency_id.name.upper()"/>
+                                    <t t-if="o.currency_id.currency_unit_label"
+                                        t-esc="o.currency_id.currency_unit_label.upper()"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong>ORDEN DE VENTA</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-if="o.invoice_origin" t-esc="o.invoice_origin" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong >VENDEDOR</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-if="o.invoice_user_id.name" t-esc="o.invoice_user_id.name" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong>ORDEN DE COMPRA</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                    <t t-if="o.ref" t-esc="o.ref" />
+                                </div>
+                            </div>
+                            <t t-if="o.partner_id and o.partner_shipping_id and o.partner_id == o.partner_shipping_id">
+                            <div class="row">
+                                <div class="label">
+                                    <strong>&#8193;</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">&#8193;</strong>
+                                </div>
+                                <div class="data">
+                                   <strong>&#8193;</strong>
+                                </div>
+                            </div>
+                            </t>
+                            <t t-else="">
+                            <div class="row">
+                                <div class="label">
+                                    <strong>DIRECCION DE ENTREGA</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">&#8193;</strong>
+                                </div>
+                                <div class="data">
+                                   <t name="partner_shipping_address"
+                                           t-if="o.partner_shipping_id.street"
+                                           t-esc="o.partner_shipping_id.street"/>,
+                                        <t t-if="o.partner_shipping_id.city_id.name"
+                                           t-esc="o.partner_shipping_id.city_id.name"/>,
+                                        <t t-if="o.partner_shipping_id.state_id.name"
+                                           t-esc="o.partner_shipping_id.state_id.name"/>,
+                                        <t t-if="o.partner_shipping_id.country_id.name"
+                                           t-esc="o.partner_shipping_id.country_id.name"/>
+                                </div>
+                            </div>
+                            </t>
+                        </div>
+                        <div class="client_data_2">
+                            <div class="row">
+                                <div class="label">
+                                    <strong>FECHA DE EMISIÓN</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                     <t t-if="o.invoice_date" t-esc="o.invoice_date"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong>FECHA DE VENCIMIENTO</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                     <t t-if="o.invoice_date_due" t-esc="o.invoice_date_due"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong>FORMA DE PAGO</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                     <t t-if="o.invoice_date and o.invoice_date_due and o.invoice_date == o.invoice_date_due">
+                                        AL CONTADO
+                                    </t>
+
+                                    <t t-elif="o.invoice_date and o.invoice_date_due and (o.invoice_date != o.invoice_date_due) and not o.invoice_payment_term_id">
+                                        AL CREDITO - F/.
+                                        <span t-esc="o.resdays()"/>
+                                        DIAS
+                                    </t>
+                                    <t t-elif="o.invoice_payment_term_id">
+
+                                        <t t-foreach="o.invoice_payment_term_id.line_ids" t-as="move_line">
+
+                                            <t t-if="move_line.value in 'balance' and move_line.days==0 and move_line.months==0">
+                                                AL CONTADO
+                                            </t>
+                                            <t t-if="move_line.value in 'balance' and move_line.days==0 and move_line.months!=0">
+                                                AL CREDITO - F/.
+                                                <t t-set="totaldays" t-value="move_line.months*30"/>
+                                                <t t-esc="totaldays"/>
+                                                DIAS
+                                            </t>
+                                            <t t-elif="move_line.value in 'balance' and move_line!=0">
+                                                AL CREDITO - F/.
+                                                <t t-esc="move_line.days"/>
+                                                DIAS
+                                            </t>
+                                            <t t-else="">
+                                                <t/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <strong>N° DE GUIA(S)</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                     <t t-if="o.carrier_ref_number" t-esc="o.carrier_ref_number"/>
+                                </div>
+                            </div>
+                            <div class="row" name="another_document_type">
+                                <div class="label">
+                                    <strong>OTRO TIPO DE DOCUMENTO</strong>
+                                </div>
+                                <div class="separator">
+                                    <strong style="font-weight: 800;">:</strong>
+                                </div>
+                                <div class="data">
+                                     <t t-if="o.aditional_document_reference" t-esc="o.aditional_document_reference"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:left;">
+                    </div>
+                    <div style="width: 100%;">
+                        <table class="table-info">
+                            <tr>
+                                <th style="width: 6%;text-align:center;">
+                                    <span>Itm</span>
+                                </th>
+                                <th style="width: 10%text-align:center;" name="th_quantity">
+                                    <span>Cantidad</span>
+                                </th>
+                                <th style="width: 44%;text-align:left;" name="th_description">
+                                    <span>Descripción</span>
+                                </th>
+                                <th style="width: 12.5%;text-align:center;">
+                                    <span>Und</span>
+                                </th>
+                                <th style="width: 12.5%;text-align:right;" name="th_priceunit">
+                                    <span>P. Unit.</span>
+                                </th>
+                                <th style="width: 15%;text-align:right;" name="th_subtotal">
+                                    <span>Total</span>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table class="table_data_product_cfi" style="font-size:13px;">
+
+                            <t t-set="current_subtotal" t-value="0"/>
+                            <t t-set="lines"
+                               t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
+                            <t t-set="move_line_index" t-value="1"/>
+                            <t t-set="add_line" t-value="0"/>
+                            <t t-foreach="lines" t-as="line">
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"/>
+                                <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"/>
+
+                                <tr>
+                                    <t t-if="line.display_type == 'product'"
+                                       name="account_invoice_line_accountable">
+                                        <td class="text-center">
+                                            <span t-esc="move_line_index"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                        <td name="account_invoice_line_name" class="text-left">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="line.product_uom_id.name"/>
+                                        </td>
+                                        <td t-attf-class="text-right" style="text-align: right;">
+                                            <span class="text-nowrap" t-field="line.price_unit"/>
+                                        </td>
+                                        <td class="text-right o_price_total" style="text-align: right;">
+                                            <span class="text-nowrap" t-field="line.price_subtotal"/>
+                                        </td>
+                                        <t t-set="move_line_index" t-value="move_line_index+1"/>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_section'">
+                                        <td colspan="99">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                        <t t-set="current_section" t-value="line"/>
+                                        <t t-set="current_subtotal" t-value="0"/>
+                                    </t>
+                                    <t t-if="line.display_type == 'line_note'">
+                                        <td colspan="99">
+                                            <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                        </td>
+                                    </t>
+                                    <t t-set="add_line" t-value="add_line+1"/>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                    <br/>
+
+                    <div style="display:block;clear:left;width:100%;" name="total_content">
+                        <div name="payment_terms_content"
+                             style="display:block;float:left;width:55%;vertical-align:top;">
+                            <div class="total_write" name="total_write_classic_invoice_pdf"
+                                 style="clear:left;text-align:center;margin-bottom:10px;">
+                                <strong>Son:</strong>
+                                <t t-esc="o._amount_to_text().title()"/>
+                            </div>
+                            <div style="clear:left;text-align:justify;">
+                                <span t-if="o.invoice_payment_term_id.note"
+                                    t-esc="o.invoice_payment_term_id.note"/>
+                            </div>
+                            <t t-if="o.invoice_payment_term_id">
+                                <t t-if="o.invoice_payment_term_id.display_on_invoice">
+                                    <t t-if="o.invoice_payment_term_id.line_ids and o.invoice_date">
+                                        <t t-set="iteration_q" t-value="1"/>
+                                        <t t-if="o.invoice_payment_term_id.line_ids and len(o.invoice_payment_term_id.line_ids)==1 and o.invoice_payment_term_id.line_ids.value in 'balance' and o.invoice_payment_term_id.line_ids.days==0">
+                                            <div class="border_detr_ret">
+                                                <table style="width:100%;font-size:12px;">
+                                                    <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                                    <tr>
+                                                        <td class="detraction_retention_content_1">
+                                                            <span>1</span>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="o.invoice_date"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <span t-if="o.currency_id.symbol"
+                                                                t-esc="o.currency_id.symbol"/>
+                                                            <span t-esc="o.amount_total"
+                                                                t-options='{"widget": "float", "precision": 2}'/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-foreach="o.invoice_payment_term_id.line_ids" t-as="move_line">
+                                                <t t-if="move_line.value in 'balance' and move_line.days==0">
+                                                    <div class="border_detr_ret">
+                                                        <table style="width:100%;font-size:12px;">
+                                                            <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                                            <t t-foreach="o.line_ids" t-as="aml">
+                                                                <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.debit>0">
+                                                                    <td class="detraction_retention_content_1">
+                                                                        <t t-esc="iteration_q"/>
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_2">
+                                                                        <span t-field="aml.date_maturity"/>
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_3">
+
+                                                                        <span t-field="aml.amount_currency"/>
+
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_4">
+                                                                        <span t-field="o.currency_id.name"/>
+                                                                    </td>
+                                                                    <t t-set="iteration_q" t-value="iteration_q+1"/>
+                                                                </tr>
+                                                            </t>
+                                                        </table>
+                                                    </div>
+                                                </t>
+                                                <t t-elif="move_line.value=='balance' and move_line!=0">
+                                                    <div class="border_detr_ret">
+                                                        <table style="width:100%;font-size:12px;">
+                                                            <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                                            <t t-foreach="o.line_ids" t-as="aml">
+                                                                <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.debit>0 and o.invoice_date!=aml.date_maturity">
+                                                                    <td class="detraction_retention_content_1">
+                                                                        <t t-esc="iteration_q"/>
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_2">
+                                                                        <span t-field="aml.date_maturity"/>
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_3">
+                                                                        <span t-field="aml.amount_currency"/>
+
+                                                                    </td>
+                                                                    <td class="detraction_retention_content_4">
+                                                                        <span t-field="o.currency_id.name"/>
+                                                                    </td>
+                                                                    <t t-set="iteration_q" t-value="iteration_q+1"/>
+                                                                </tr>
+                                                            </t>
+                                                        </table>
+                                                    </div>
+                                                </t>
+                                                <t t-else=""/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+
+                                    </t>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <t t-if="o.invoice_date and o.invoice_date_due">
+                                    <div class="border_detr_ret">
+                                        <table style="width:100%;font-size:12px;">
+                                            <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                            <tr>
+                                                <td class="detraction_retention_content_1">
+                                                    <span>1</span>
+                                                </td>
+                                                <td class="detraction_retention_content_2">
+                                                    <t t-if="o.invoice_date == o.invoice_date_due">
+                                                        <span t-field="o.invoice_date"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span t-field="o.invoice_date_due"/>
+                                                    </t>
+                                                </td>
+                                                <td class="detraction_retention_content_3">
+                                                    <span t-field="o.amount_total"/>
+                                                </td>
+                                                <td class="detraction_retention_content_4">
+                                                    <span t-field="o.currency_id.name"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </t>
+                            </t>
+                        </div>
+
+                        <div class="info_group_total">
+
+                            <table class="table_group_total">
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <br/>
+
+                                        <div class="total">
+                                            <div class="total_info">
+                                                <strong>Subtotal</strong>
+                                            </div>
+                                            <div class="total_info">
+                                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                                    <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
+                                                        <div>
+                                                            <span class="text-nowrap"
+                                                                t-esc="amount_by_group[0]"/>
+                                                        </div>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <div>
+                                                            <span t-esc="amount_by_group[0]"/>
+                                                            <span class="text-nowrap">de
+                                                                <t t-esc="amount_by_group[4]"/>
+                                                            </span>
+                                                        </div>
+                                                    </t>
+                                                </t>
+                                            </div>
+                                            <div class="total_info">
+                                                <strong>Total</strong>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <br/>
+                                        <div class="total"
+                                             style="text-align: right; margin-right: 8px; height: 100%;">
+                                            <div class="total_info">
+                                                <span t-field="o.amount_untaxed"/>
+                                            </div>
+                                            <div class="total_info">
+                                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                                    <t t-if="len(o.line_ids.filtered(lambda line: line.tax_line_id)) in [0, 1] and o.amount_untaxed == amount_by_group[2]">
+                                                        <div>
+                                                            <span class="text-nowrap"
+                                                                t-esc="amount_by_group[3]"/>
+                                                        </div>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <div>
+
+                                                            <t t-if="len(amount_by_group[4])>13">
+                                                                <br/>
+                                                            </t>
+                                                            <span class="text-nowrap"
+                                                                t-esc="amount_by_group[3]"/>
+                                                        </div>
+                                                    </t>
+                                                </t>
+                                            </div>
+
+                                            <div class="total_info">
+                                                <span class="text-nowrap" t-field="o.amount_total"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div t-if="o.narration" style="display:block;float:left;text-align: left;width: 100%;">
+                        <span t-field="
+                            o.narration" />
+                    </div>
+                    <table style="width:100%;margin-top:20px;border:hidden;"
+                        name="table_additional_information">
+                        <tr>
+                            <td>
+                                <div t-if="o.company_id.additional_information" name="content_extra"
+                                    style="display:block;clear:left;width:100%;">
+                                    <div class="text_company">
+                                        <div class="additional-info">
+                                            <t t-if="o.company_id.additional_information" t-raw="o.company_id.additional_information"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div t-attf-class="footer o_background_footer">
+                    <div class="text-center">
+                        <div t-if="report_type == 'pdf'" class="text-muted">
+                            Esta es la página N°
+                            <span class="page"/>
+                            de
+                            <span class="topage"/>
+                            páginas que contiene esta factura en total
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="text-center">
+                        <t t-esc="o.company_id.report_footer"/>
+                    </div>
+                </div>
+
+            </t>
+        </template>
+
+        <template id="box_payment_retraction_detraction">
+            <tr>
+                <td class="detraction_retention_1">
+                    <strong>N°Cuotas</strong>
+                </td>
+                <td class="detraction_retention_2">
+                    <strong>Fecha Venc.</strong>
+                </td>
+                <td class="detraction_retention_3">
+                    <strong>Importe Neto</strong>
+                </td>
+                <td class="detraction_retention_4">
+                    <strong>Mon</strong>
+                </td>
+            </tr>
+        </template>
+
+        <template id="report_invoice_classic_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="lang"
+                       t-value="o.invoice_user_id.sudo().lang if o.move_type in ('in_invoice', 'in_refund') else o.partner_id.lang"/>
+                    <t t-call="classic_format_invoice.report_invoice_classic" t-lang="lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

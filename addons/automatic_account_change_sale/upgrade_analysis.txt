@@ -1,0 +1,3 @@
+---Models in module 'automatic_account_change_sale'---
+---Fields in module 'automatic_account_change_sale'---
+---XML records in module 'automatic_account_change_sale'---

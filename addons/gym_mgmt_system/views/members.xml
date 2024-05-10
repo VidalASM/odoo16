@@ -18,11 +18,11 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <div name="button_box" position="inside">
+            <!-- <div name="button_box" position="inside">
                 <button class="oe_stat_button" name="906" type="action" groups="gym_mgmt_system.group_gym_member" icon="fa-credit-card">
                     <field string="Purchases" name="purchase_order_count" widget="statinfo"/>
                 </button>
-            </div>
+            </div> -->
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="gym_member" />
                 <field name="state_client" />
@@ -47,6 +47,14 @@
             <field name="email" position="attributes">
                 <attribute name="attrs">{'required': [('state_client','in',('1','4','5'))]}</attribute>
             </field>
+            <xpath expr="//field[@name='gender']" position="after">
+                <field name="has_tutor" />
+                <field name="tutor_id" attrs="{'invisible': [('has_tutor','!=',True)]}"/>
+                <field name="tutor_relation" attrs="{'invisible': [('has_tutor','!=',True)]}"/>
+                <separator string="Hijos" />
+                <field name="child_ids" />
+            </xpath>
+
         </field>
     </record>
 
@@ -61,13 +69,13 @@
                 <div>
                     <ul>
                         <li t-if="record.gym_member.raw_value">
-                            Gym Member
+                            Socio
                             <field name="gym_member" invisible="1" />
                             <li>
-                                <div class="oe_title" style="color:Brown;font-size: 15px;">Memberships :
+                                <div class="oe_title" style="color:Brown;font-size: 15px;">Membresías :
                                         <field name="membership_count"/>
                                 </div>
-                                <div class="oe_title" style="color:Brown;font-size: 15px;">Measurements :
+                                <div class="oe_title" style="color:Brown;font-size: 15px;">Citas :
                                         <field name="measurement_count"/>
                                 </div>
                             </li>

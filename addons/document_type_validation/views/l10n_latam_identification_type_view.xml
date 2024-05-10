@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="l10n_latam_identification_type_form_view_document_type_validation" model="ir.ui.view">
+        <field name="name">l10n_latam.identification.type.form.view.document_type_validation</field>
+        <field name="model">l10n_latam.identification.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="is_vat"/>
+                        </group>
+                        <group>
+                            <field name="country_id"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="doc_length"/>
+                            <field name="exact_length"/>
+                        </group>
+                        <group>
+                            <field name="doc_type"/>
+                            <field name="nationality"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_latam_identification_type_tree_view_inherit_document_type_validation" model="ir.ui.view">
+        <field name="name">l10n_latam.identification.type.tree.view.inherit.document_type_validation</field>
+        <field name="model">l10n_latam.identification.type</field>
+        <field name="inherit_id" ref="l10n_latam_base.view_l10n_latam_identification_type_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="/tree" position="attributes">
+                <attribute name="create">1</attribute>
+                <attribute name="edit">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_l10n_latam_identification_type_document_type_validation" model="ir.actions.act_window">
+        <field name="name">Identification Type</field>
+        <field name="res_model">l10n_latam.identification.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_latam_base.view_l10n_latam_identification_type_search"/>
+        <field name="domain">['|', ('active', '=', True), ('active', '=', False)]</field>
+        <field name="context">{"search_default_active":1}</field>
+    </record>
+
+    <menuitem action="action_l10n_latam_identification_type_document_type_validation"
+              id="l10n_latam_base.menu_l10n_latam_identification_type"
+              parent="contacts.res_partner_menu_config"/>
+
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_form_inherit_ruc_validation_invoice" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.ruc_validation_invoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <button name="action_ruc_validation_sunat" type="object" string="Consulta RUC"
+                        attrs="{'invisible': ['|', ('move_type', 'not in', ['in_invoice', 'in_refund']), ('state', '!=', 'draft')]}"/>
+            </field>
+            <xpath expr="//field[@name='payment_reference']" position="before">
+                <field name="related_require_validation_ruc" invisible="True"/>
+                <field name="active_and"
+                       attrs="{'invisible': ['|', ('related_require_validation_ruc', '=', False), ('move_type', 'not in', ['in_invoice', 'in_refund'])], 'readonly': [('state', '!=', 'draft')]}"
+                       widget="state_selection"/>
+            </xpath>
+            <page name="other_info" position="inside">
+                <group>
+                    <field name="message_response" readonly="True" attrs="{'invisible': [('move_type', 'not in', ['in_invoice', 'in_refund'])]}"/>
+                </group>
+            </page>
+        </field>
+    </record>
+
+</odoo>

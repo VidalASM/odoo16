@@ -1,0 +1,3 @@
+---Models in module 'l10n_pe_classic_format_picking'---
+---Fields in module 'l10n_pe_classic_format_picking'---
+---XML records in module 'l10n_pe_classic_format_picking'---

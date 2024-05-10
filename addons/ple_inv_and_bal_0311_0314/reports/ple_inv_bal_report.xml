@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="paperformat_print_report_pdf_0311_0314" model="report.paperformat">
+        <field name="name">Status Finance</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">7</field>
+        <field name="margin_bottom">7</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_print_report_pdf_0311" model="ir.actions.report">
+        <field name="name">Status Finance</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ple_inv_and_bal_0311_0314.print_report_pdf_0311</field>
+        <field name="report_file">ple_inv_and_bal_0311_0314.print_report_pdf_0311</field>
+        <field name="paperformat_id" ref="ple_inv_and_bal_0311_0314.paperformat_print_report_pdf_0311_0314"/>
+    </record>
+
+    <record id="ple_inv_and_bal_0311_0314.action_print_report_pdf_0311" model="ir.actions.report">
+        <field name="paperformat_id" ref="ple_inv_and_bal_0311_0314.paperformat_print_report_pdf_0311_0314"/>
+    </record>
+
+    <record id="action_print_report_pdf_0314" model="ir.actions.report">
+        <field name="name">Status Finance</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ple_inv_and_bal_0311_0314.print_report_pdf_0314</field>
+        <field name="report_file">ple_inv_and_bal_0311_0314.print_report_pdf_0314</field>
+        <field name="paperformat_id" ref="ple_inv_and_bal_0311_0314.paperformat_print_report_pdf_0311_0314"/>
+    </record>
+
+    <record id="ple_inv_and_bal_0311_0314.action_print_report_pdf_0314" model="ir.actions.report">
+        <field name="paperformat_id" ref="ple_inv_and_bal_0311_0314.paperformat_print_report_pdf_0311_0314"/>
+    </record>
+</odoo>
+

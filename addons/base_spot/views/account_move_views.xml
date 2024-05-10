@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_move_form_view_inherit_base_spot" model="ir.ui.view">
+        <field name="name">account.move.spot.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group" position="after">
+                <group name="info_voucher" attrs="{'invisible': [('move_type', 'not in', ['in_invoice','in_refund'])]}">
+                    <group>
+                        <field name="detraction_id"/>
+                        <field name="retention_id"/>
+                    </group>
+                    <group>
+                        <field name="operation_type_detraction"/>
+                        <field name="voucher_payment_date"/>
+                        <field name="voucher_number"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

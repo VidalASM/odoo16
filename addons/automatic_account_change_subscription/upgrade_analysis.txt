@@ -1,0 +1,5 @@
+---Models in module 'automatic_account_change_subscription'---
+new model order.sale
+del model sale.subscription
+---Fields in module 'automatic_account_change_subscription'---
+---XML records in module 'automatic_account_change_subscription'---

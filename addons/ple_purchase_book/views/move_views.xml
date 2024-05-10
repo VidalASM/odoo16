@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="invoice_supplier_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="base_spot.account_move_form_view_inherit_base_spot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='exchange_rate_div']" position="after">
+                <field name="is_nodomicilied"/>
+            </xpath>
+            <xpath expr="//page[@name='other_info']/group" position="after">
+                <group>
+                    <group attrs="{'invisible': ['|','|',('move_type', 'in', 'out_invoice'), ('move_type', 'in', 'out_refund'), ('move_type', 'in', 'out_receipt')]}">
+                        <field name="igv_withholding_indicator"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="bool_pay_invoice"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='other_info']" position="before">
+                <page string="No Domiciliado"
+                      attrs="{'invisible': [('is_nodomicilied', '=', False)]}">
+                    <group>
+                        <field name="inv_serie"/>
+                        <field name="inv_correlative"/>
+                        <field name="inv_type_document"/>
+                        <field name="inv_year_dua_dsi"/>
+                        <field name="inv_retention_igv"/>
+                    </group>
+                    <group>
+                        <field name="linkage_id"/>
+                        <field name="hard_rent"/>
+                        <field name="deduccion_cost"/>
+                        <field name="neto_rent"/>
+                        <field name="retention_rate"/>
+                        <field name="tax_withheld"/>
+                        <field name="cdi"/>
+                        <field name="exoneration_nodomicilied_id"/>
+                        <field name="type_rent_id"/>
+                        <field name="taken_id"/>
+                        <field name="application_article"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='retention_id']" position="after">
+                <field name="types_goods_services_id" widget='selection'/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="link_economic_form" model="ir.ui.view">
+        <field name="name">link.economic.form</field>
+        <field name="model">link.economic</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="law"/>
+                    </group>
+                    <field name="description" placeholde="Descripción"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_country_tree_view_inherit_ple_purchase_book" model="ir.ui.view">
+        <field name="name">res.country.tree.view.inherit.ple_purchase_book</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="l10n_pe_sunat_code"/>
+            </field>
+        </field>
+    </record>
+    
+</odoo>

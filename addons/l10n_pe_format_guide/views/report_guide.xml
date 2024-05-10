@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_blank_report_guide">
+        <div t-attf-class="article o_report_layout_standard " t-att-data-oe-model="o and o._name"
+            t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="report_guide">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="l10n_pe_format_guide.external_layout_blank_report_guide">
+                    <div class="page">
+                        <link href="/l10n_pe_format_guide/static/src/css/main.css" rel="stylesheet" />
+                        <div class="w-100">
+                            <div class="row_dates ttrans">
+                                <!-- Fecha de Emision -->
+                                <div class="date_donee">
+                                    FECHA DE EMISIÓN
+                                    <span t-if="doc.mod_date_done()" t-esc="doc.mod_date_done()"/>
+                                </div>
+                                <!-- Fecha de Inicio de Traslado -->
+                                <div class="date_start">
+                                    FECHA INICIO DE TRASLADO
+                                    <span t-if="doc.l10n_pe_edi_departure_start_date" t-field="doc.l10n_pe_edi_departure_start_date"/>
+                                </div>
+                                <!-- Orden de Compra Cliente -->
+                                <div class="customer_order">
+                                    ORDEN DE COMPRA CLIENTE
+                                    <span t-if="doc.sale_id.client_order_ref" t-field="doc.sale_id.client_order_ref"/>
+                                </div>
+                            </div>
+
+                            <!-- Informacion partida-->
+                            <div class="w-100 mg">
+                                <table class="table-general partida">
+                                    <colgroup>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- HEAD -->
+                                            <td class="text-center ttrans" colspan="10">DOMICILIO DE PARTIDA</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="3"></td>
+                                            <td colspan="7"><span t-if="doc.company_id.partner_id.street" t-field="doc.company_id.partner_id.street"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="5"></td>
+                                            <td colspan="5"><span t-if="doc.concatenated_fields_starting_point()" t-esc="doc.concatenated_fields_starting_point()"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="4"></td>
+                                            <td colspan="6"><span t-if="doc.company_id.partner_id.zip" t-field="doc.company_id.partner_id.zip"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td lass="ttrans" colspan="2"></td>
+                                            <td colspan="8"><span t-if="doc.company_id.partner_id.country_id.name" t-field="doc.company_id.partner_id.country_id.name"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- Informacion llegada-->
+                                <table class="table-general llegada">
+                                    <colgroup>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- HEAD -->
+                                            <td class="text-center" colspan="10"></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="3"></td>
+                                            <td colspan="7"><span t-if="doc.partner_id.street" t-field="doc.partner_id.street"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="4"></td>
+                                            <td colspan="6"><span t-if="doc.concatenated_fields_arrival()" t-esc="doc.concatenated_fields_arrival()"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="4"></td>
+                                            <td colspan="6"><span t-if="doc.partner_id.zip" t-field="doc.partner_id.zip"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="2"></td>
+                                            <td colspan="2"><span t-if="doc.partner_id.country_id.name" t-field="doc.partner_id.country_id.name"></span></td>
+                                            <td class="ttrans" colspan="3"></td>
+                                            <td colspan="3"><span t-if="doc.cod_client_sucur" t-field="doc.cod_client_sucur"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="w-100">
+                                <table class="table-general destinatario">
+                                    <colgroup>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- HEAD -->
+                                            <td class="text-center ttrans" colspan="10">DESTINATARIO</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="3">R. SOCIAL/NOMBRE:</td>
+                                            <td colspan="7"><span t-if="doc.partner_id.parent_id.name" t-field="doc.partner_id.parent_id.name"/></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="4">RUC/DNI/CE:</td>
+                                            <td colspan="6"><span class="pl-3" t-if="doc.partner_id.vat" t-field="doc.partner_id.vat"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="3">ATENCIÓN:</td>
+                                            <td colspan="7"><span t-if="doc.l10n_pe_edi_observation" t-field="doc.l10n_pe_edi_observation"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table-general transporte">
+                                    <colgroup>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                        <col width="10%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <!-- HEAD -->
+                                            <td class="text-center ttrans" colspan="10">UNIDAD DE TRANSPORTE / CONDUCTOR</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="4">VEHÍCULO/MARCA:</td>
+                                            <td colspan="6"><span t-if="doc.l10n_pe_edi_vehicle_id.name" t-field="doc.l10n_pe_edi_vehicle_id.name"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="3">PLACA:</td>
+                                            <td colspan="7"><span t-if="doc.l10n_pe_edi_vehicle_id.license_plate" t-field="doc.l10n_pe_edi_vehicle_id.license_plate"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="ttrans" colspan="4">CERT. DE INSP. MTC:</td>
+                                            <td colspan="6"><span t-if="doc.l10n_pe_edi_operator_id.l10n_pe_edi_mtc_number" t-field="doc.l10n_pe_edi_operator_id.l10n_pe_edi_mtc_number"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="5">LICENCIA DE CONDUCIR:</td>
+                                            <td colspan="5"><span t-if="doc.l10n_pe_edi_vehicle_id.operator_id.l10n_pe_edi_authorization_number" t-field="doc.l10n_pe_edi_vehicle_id.operator_id.l10n_pe_edi_authorization_number"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="w-100 mot-div">
+                                <table class="motivo-general motivo-tras">
+                                    <colgroup>
+                                        <col width="50%"/>
+                                        <col width="50%"/>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">MOTIVO DE TRASLADO:</td>
+                                            <td colspan="1"><span t-if="doc.l10n_pe_edi_reason_for_transfer" t-field="doc.l10n_pe_edi_reason_for_transfer"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">MOTIVO DE TRASLADO MOA</td>
+                                            <td colspan="1"><span t-if="doc.select_options" t-field="doc.select_options"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general cot_hor">
+                                    <colgroup>
+                                        <col width="55%"/>
+                                        <col width="45%"/>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">COTIZACIÓN/ORDEN/REFERENCIA</td>
+                                            <td colspan="1"><span t-if="doc.origin" t-field="doc.origin"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">HORARIO DE ATENCIÓN ALMACEN</td>
+                                            <td colspan="1" style="line-height: 1.2 !important;"><span t-if="doc.partner_id.x_studio_horario_atencin_almacn" t-field="doc.partner_id.x_studio_horario_atencin_almacn"></span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <table class="main_table" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th class="item-td ttrans">ITEM</th>
+                                        <th class="cot-td ttrans">CODIGO</th>
+                                        <th class="desc-td ttrans">DESCRIPCION</th>
+                                        <th class="lot-td ttrans">LOTE</th>
+                                        <th class="umed-td ttrans">U.MED.</th>
+                                        <th class="cant-td ttrans">CANT.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="total" t-value="0.0"/>
+                                    <tr t-foreach="doc.move_line_ids_without_package" t-as="line">
+                                        <td class="item-td"><span t-esc="line_index + 1"/></td>
+                                        <td class="cod-td"><span t-field="line.product_id.default_code"/></td>
+                                        <td class="desc-td"><span t-field="line.product_id.name"/></td>
+                                        <td class="lot-td"><span t-field="line.lot_id.name"/></td>
+                                        <td class="umed-td"><span t-field="line.product_uom_id.name"/></td>
+                                        <td class="cant-td">
+                                            <span t-field="line.qty_done"/>
+                                            <t t-set="total" t-value="total+line.qty_done"/>
+                                        </td>
+                                    </tr>
+                                    <tr style="height:100% !important;">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="total-td"><span t-esc="'%.4f'%(total)"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="w-100 pen_div">
+                                <table class="motivo-general transportista">
+                                    <colgroup>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td class="ttrans text-center" colspan="5">TRANSPORTISTA</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td colspan="3"><span t-if="doc.l10n_pe_edi_operator_id.name" t-field="doc.l10n_pe_edi_operator_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1"></td>
+                                            <td colspan="4"><span t-if="doc.l10n_pe_edi_operator_id.street" t-field="doc.l10n_pe_edi_operator_id.street"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="1"></td>
+                                            <td colspan="4"><span t-if="doc.l10n_pe_edi_operator_id.vat" t-field="doc.l10n_pe_edi_operator_id.vat"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general comprobante">
+                                    <colgroup>
+                                        <col width="25%"/>
+                                        <col width="25%"/>
+                                        <col width="25%"/>
+                                        <col width="25%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td class="ttrans text-center" colspan="4">COMPROBANTE DE PAGO</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="1"></td>
+                                            <td colspan="3"><span t-if="doc.transfer_document_type_id.name" t-field="doc.transfer_document_type_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td colspan="2"><span t-if="doc.get_payment_proof_doc_num()" t-esc="doc.get_payment_proof_doc_num()"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general agencia">
+                                    <colgroup>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                        <col style="width: 20%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td class="ttrans text-center" colspan="5">AGENCIA TRANSPORTE</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">SOC</td>
+                                            <td colspan="4"><span t-if="doc.transport_agency.name" t-field="doc.transport_agency.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">RUC</td>
+                                            <td colspan="2"><span t-if="doc.transport_agency.vat" t-field="doc.transport_agency.vat"/></td>
+                                            <td class="suc" colspan="2"><span t-if="doc.transport_agency.parent_id.name" t-field="doc.transport_agency.parent_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">DIR</td>
+                                            <td colspan="4"><span t-if="doc.transport_agency.street" t-field="doc.transport_agency.street"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="w-100 last-div">
+                                <table class="motivo-general consolidado">
+                                    <colgroup>
+                                        <col width="30%"/>
+                                        <col width="70%"/>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <td class="ttrans text-center" colspan="2">CONSOLIDADO DE MEDIDAS DE PESO</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">PESO NETO</td>
+                                            <td colspan="1"><span t-if="doc.weight" t-field="doc.weight"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">PESO BRUTO</td>
+                                            <td colspan="1"><span t-if="doc.gross_weight" t-field="doc.gross_weight"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">VOLUMEN</td>
+                                            <td colspan="1"><span t-if="doc.volume" t-field="doc.volume"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general incoterm">
+                                    <thead>
+                                        <td class="text-center ttrans">INCOTERM</td>
+                                    </thead>
+                                    <tbody>
+                                        <td>
+                                            <span t-if="doc.sale_id.incoterm" t-field="doc.sale_id.incoterm"/>
+                                        </td>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general vendedor">
+                                    <thead>
+                                        <td class="ttrans text-center">VENDEDOR</td>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="text-center" t-if="doc.sale_id.user_id.name" t-field="doc.sale_id.user_id.name"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table class="motivo-general notas">
+                                    <colgroup>
+                                        <col style="width: 15%"/>
+                                        <col style="width: 85%"/>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ttrans" colspan="1">NOTAS:</td>
+                                            <td colspan="1">
+                                                <span class="pl-2" t-if="doc.note" t-field="doc.note"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

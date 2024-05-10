@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_payment_term_form_inherit_payment_term_lines" model="ir.ui.view">
+        <field name="name">view.payment.term.form.inherit.payment_term_lines</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="account.view_payment_term_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='line_ids']//tree/field[@name='discount_days']" position="after">
+                <field name="l10n_pe_is_detraction_retention" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_payment_term_line_form_view_inherit_payment_term_lines" model="ir.ui.view">
+        <field name="name">account.payment.term.line.form.view.inherit.payment_term_lines</field>
+        <field name="model">account.payment.term.line</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Payment Terms" editable="bottom" create="false">
+                <h1>Tipo de Plaza</h1>
+                <group name="group_fields">
+                    <group>
+                        <field name="value" string="Due Type"/>
+                        <field name="value_amount" string="Due Amount" attrs="{'invisible': [('value', '=', 'balance')]}" digits="[2, 2]"/>
+                        <field name="months" string="Months"/>
+                        <field name="days" string="Days"/>
+                    </group>
+                    <group>
+                        <field name="end_month" string="End Month" widget="boolean_toggle"/>
+                        <field name="days_after" string="Days After" attrs="{'invisible': [('end_month','=', False)]}"/>
+                        <field name="discount_percentage" string="Discount Percentage"/>
+                        <field name="discount_days" string="Discount Days"/>
+                        <field name="l10n_pe_is_detraction_retention"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+</odoo>

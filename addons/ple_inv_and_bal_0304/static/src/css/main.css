@@ -1,0 +1,31 @@
+.title{
+    font-size: 17px !important;
+    font-family: Arial !important;
+}
+
+.subtitle{
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+.subtitle div{
+    display: inline-block;
+}
+
+.table_inv_bal_0304{
+    float: left;
+    width: 100%!important;
+}
+
+.color {
+  color: red;
+}
+
+.mount_final_0304{
+    text-align: center;
+    border: 1px black solid;
+}
+.part_table_0304 th {
+    border: 1px black solid;
+}
+

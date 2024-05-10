@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_report_assets_book_form_view" model="ir.ui.view">
+        <field name="name">ple_report_assets_book_form_view</field>
+        <field name="model">ple.report.assets.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group string="Reportes PLE" id="ple_cash_bank">
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                        </group>
+                        <group>
+                            <group string="Revaluados y No revaluados">
+                                <field name="xls_filename_assets_1" invisible="1"/>
+                                <label string="Reporte Excel" colspan="2" for="xls_binary_assets_1"/>
+                                <field name="xls_binary_assets_1" filename="xls_filename_assets_1" readonly="1"
+                                       nolabel="1"/>
+                                <field name="txt_filename_assets_1" invisible="1"/>
+                                <label string="Reporte TXT" colspan="2" for="txt_binary_assets_1"/>
+                                <field name="txt_binary_assets_1" filename="txt_filename_assets_1" readonly="1"
+                                       nolabel="1"/>
+                            </group>
+                            <group string="Diferencia de cambio">
+                                <field name="xls_filename_assets_2" invisible="1"/>
+                                <label string="Reporte Excel" colspan="2" for="xls_binary_assets_2"/>
+                                <field name="xls_binary_assets_2" filename="xls_filename_assets_2" readonly="1"
+                                       nolabel="1"/>
+                                <field name="txt_filename_assets_2" invisible="1"/>
+                                <label string="Reporte TXT" colspan="2" for="txt_binary_assets_2"/>
+                                <field name="txt_binary_assets_2" filename="txt_filename_assets_2" readonly="1"
+                                       nolabel="1"/>
+                            </group>
+                            <group string="Arrendamiento Financiero">
+                                <field name="xls_filename_assets_3" invisible="1"/>
+                                <label string="Reporte Excel" colspan="2" for="xls_binary_assets_3"/>
+                                <field name="xls_binary_assets_3" filename="xls_filename_assets_3" readonly="1"
+                                       nolabel="1"/>
+                                <field name="txt_filename_assets_3" invisible="1"/>
+                                <label string="Reporte TXT" colspan="2" for="txt_binary_assets_3"/>
+                                <field name="txt_binary_assets_3" filename="txt_filename_assets_3" readonly="1"
+                                       nolabel="1"/>
+                            </group>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_report_assets_book_view_tree" model="ir.ui.view">
+        <field name="name">ple.report.assets.book.tree</field>
+        <field name="model">ple.report.assets.book</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_report_assets_book_action" model="ir.actions.act_window">
+        <field name="name">Activos Fijos</field>
+        <field name="res_model">ple.report.assets.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_ple_assets_book" parent="ple_sale_book.menu_ple_pe_yearly" action="ple_report_assets_book_action"
+              sequence="1"/>
+
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ple_report_cash_bank_view_tree" model="ir.ui.view">
+        <field name="name">ple.report.cash.bank.tree</field>
+        <field name="model">ple.report.cash.bank</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="ple_report_purchase_form_view" model="ir.ui.view">
+        <field name="name">ple_report_purchase_view_form</field>
+        <field name="model">ple.report.cash.bank</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group string="Reportes PLE" id="ple_cash_bank">
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Efectivo">
+                            <field name="xls_filename_cash" invisible="1"/>
+                            <label string="Reporte Excel" for="xls_binary_cash"/>
+                            <field name="xls_binary_cash" filename="xls_filename_cash" readonly="1" nolabel="1"/>
+                            <field name="txt_filename_cash" invisible="1"/>
+                            <label string="Reporte TXT" for="txt_binary_cash"/>
+                            <field name="txt_binary_cash" filename="txt_filename_cash" readonly="1" nolabel="1"/>
+                        </group>
+                        <group string="Cuentas corrientes">
+                            <field name="xls_filename_bank" invisible="1"/>
+                            <label string="Reporte Excel" for="xls_binary_bank"/>
+                            <field name="xls_binary_bank" filename="xls_filename_bank" readonly="1" nolabel="1"/>
+                            <field name="txt_filename_bank" invisible="1"/>
+                            <label string="Reporte TXT" for="txt_binary_bank"/>
+                            <field name="txt_binary_bank" filename="txt_filename_bank" readonly="1" nolabel="1"/>
+                        </group>
+                    </group>
+                    <field name="error_dialog" class="errorbox" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                    <notebook>
+                        <page string="Comprobantes" invisible="1">
+                            <field name="move_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ple_report_cash_bank_action" model="ir.actions.act_window">
+        <field name="name">Libro Caja y Bancos</field>
+        <field name="res_model">ple.report.cash.bank</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem 
+        id="menu_ple_cash_bank" 
+        name="Libro Caja y Bancos" 
+        parent="ple_sale_book.menu_ple_pe_monthly" 
+        action="ple_report_cash_bank_action" 
+        sequence="5"
+    />
+</odoo>

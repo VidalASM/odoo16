@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="ir_rule_ple_report_base_multi_company" model="ir.rule">
+        <field name="name">Ple report base - Multi company rule</field>
+        <field name="model_id" ref="ple_sale_book.model_ple_report_base"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

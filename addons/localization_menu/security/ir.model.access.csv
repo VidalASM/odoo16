@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_spot_retention_invoice,account.spot.retention,localization_menu.model_account_spot_retention,account.group_account_invoice,1,1,1,1
+access_account_spot_detraction_invoice,account.spot.detraction,localization_menu.model_account_spot_detraction,account.group_account_invoice,1,1,1,1
+access_code_aduana_invoice,code.aduana,localization_menu.model_code_aduana,account.group_account_invoice,1,1,1,1

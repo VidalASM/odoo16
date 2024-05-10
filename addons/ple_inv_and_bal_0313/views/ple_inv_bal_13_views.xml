@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_inv_and_bal_313_sale_form_view" model="ir.ui.view">
+        <field name="name">ple.ple_inv_and_bal_313.report.sale.form.view</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="inherit_id" ref="ple_inv_and_bal_0302.ple_inv_and_bal_302_sale_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='ple_inv_bal']" position="after">
+                <group string="Reporte 3.13 - Cuentas por Pagar Diversas - Terceros y Relacionadas"
+                       name="ple_inv_bal_0313">
+                    <field name="xls_filename_313" invisible="1"/>
+                    <label string="Reporte Excel" for="xls_binary_313"/>
+                    <field name="xls_binary_313" filename="xls_filename_313" readonly="1" nolabel="1"/>
+
+                    <field name="txt_filename_313" invisible="1"/>
+                    <label string="Reporte .TXT 3.13" for="txt_binary_313"/>
+                    <field name="txt_binary_313" filename="txt_filename_313" readonly="1" nolabel="1"/>
+
+                    <field name="pdf_filename_313" invisible="1"/>
+                    <label string="Reporte .PDF 3.13" for="pdf_binary_313"/>
+                    <field name="pdf_binary_313" filename="pdf_filename_313" readonly="1" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

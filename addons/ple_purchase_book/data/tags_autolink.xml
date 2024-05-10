@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <function name="automated_links" model="account.account.tag"/>
+    
+    <function name="automated_creation" model="account.journal"/>
+
+</odoo>

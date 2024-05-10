@@ -1,0 +1,3 @@
+---Models in module 'rent_4ta'---
+---Fields in module 'rent_4ta'---
+---XML records in module 'rent_4ta'---

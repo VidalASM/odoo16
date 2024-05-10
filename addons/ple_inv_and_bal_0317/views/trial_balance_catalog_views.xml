@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_anexo_trial_balances"
+                  name="Inventarios y Balances - PLE"
+                  parent="localization_menu.menu_localization_ple"
+        />
+
+        <record id="view_code_aduana_form" model="ir.ui.view">
+            <field name="name">trial.balances.catalog</field>
+            <field name="model">trial.balances.catalog</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_code_aduana_tree" model="ir.ui.view">
+            <field name="name">trial.balances.catalog</field>
+            <field name="model">trial.balances.catalog</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="code_trial_balances_action" model="ir.actions.act_window">
+            <field name="name">[3.17] Balance de comprobación</field>
+            <field name="res_model">trial.balances.catalog</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_code_trial_balances"
+                  name="[3.17] Balance de comprobación"
+                  action="code_trial_balances_action"
+                  parent="menu_anexo_trial_balances"
+        />
+
+        <record id="account_account_form_view_inherit_ple_inv_and_bal_0317" model="ir.ui.view">
+        <field name="name">account.account.form.view.inherit.ple_inv_and_bal_0317</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <field name="deprecated" position="after">
+                <field name="trial_balances_catalog_id"/>
+            </field>
+        </field>
+    </record>
+
+    </data>
+</odoo>

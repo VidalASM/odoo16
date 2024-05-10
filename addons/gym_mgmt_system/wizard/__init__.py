@@ -23,3 +23,5 @@
 from . import assign_workout
 from . import automatic_payment
 from . import upgrade_crm_lead
+from . import freeze_wizard
+from . import transfer_wizard

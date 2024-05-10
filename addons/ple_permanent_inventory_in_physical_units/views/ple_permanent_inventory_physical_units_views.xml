@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_permanent_inventory_physical_units_form_view" model="ir.ui.view">
+        <field name="name">ple.permanent.inventory.physical.units.form.view</field>
+        <field name="model">ple.permanent.inventory.physical.units</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_calc_balance" string="Calcular Saldo Inicial"
+                            type="object" states='draft'
+                    />
+                    <button name="action_generate_report" string="Generar Reporte" type="object"
+                            attrs="{'invisible':[('validation_calc_balance','==',False)]}"
+                    />
+                    <button name="%(options_opening_wizard_action)d"
+                            string="Trasladar costo/saldo final del mes anterior"
+                            type="action" context="{'default_permanent_id': {'default_permanent_id':id}}"/>
+
+                    <button name="calculate_products_final" string="Calcular saldo final"
+                            attrs="{'invisible':[('validation_generate_report','==',False)]}"
+                            type="object"/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                            <field name="validation_calc_balance" invisible="1"/>
+                            <field name="validation_generate_report" invisible="1"/>
+                        </group>
+                        <group string="Reportes PLE" id="ple_sale">
+                            <field name="xls_filename" invisible="1"/>
+                            <field name="xls_binary" filename="xls_filename" readonly="1"/>
+                            <field name="txt_filename" invisible="1"/>
+                            <field name="txt_binary" filename="txt_filename" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="stock_product_units_valuation" string="Saldo Inicial">
+                            <field name="list_val_units"/>
+                        </page>
+                        <page name="final_products" string="Saldo Final">
+                            <field name="list_val_unit_final"/>
+                        </page>
+                    </notebook>
+                    <field name="error_dialog" class="errorbox" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ple_permanent_inventory_physical_units_tree_view" model="ir.ui.view">
+        <field name="name">ple.permanent.inventory.physical.units.tree.view</field>
+        <field name="model">ple.permanent.inventory.physical.units</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_permanent_inventory_physical_units_action" model="ir.actions.act_window">
+        <field name="name">Inventario Permanente en Unidades Fisicas y Valorizadas</field>
+        <field name="res_model">ple.permanent.inventory.physical.units</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_ple_permanent_inventory_physical_units" name="Inventario Permanente - Kardex"
+              parent="ple_sale_book.menu_ple_pe_monthly" action="ple_permanent_inventory_physical_units_action"
+              sequence="7"/>
+
+    <record id="ple_stock_product_valuation_view_tree" model="ir.ui.view">
+        <field name="name">ple.stock.product.valuation.view.tree</field>
+        <field name="model">ple.stock.products.valuation</field>
+        <field name="arch" type="xml">
+            <tree string="Saldo inicial" editable="bottom">
+                <field name="product_id" invisible="1"/>
+                <field name="code_exist" invisible="1"/>
+                <field name="product_valuation"/>
+                <field name="quantity_product_hand"/>
+                <field name="udm_product"/>
+                <field name="standard_price"/>
+                <field name="total_value"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ple_stock_products_valuation_final_view_tree" model="ir.ui.view">
+        <field name="name">ple.stock.products.valuation.final.view.tree</field>
+        <field name="model">ple.stock.products.valuation.final</field>
+        <field name="arch" type="xml">
+            <tree string="Saldo final" editable="bottom">
+                <field name="product_id" invisible="1"/>
+                <field name="code_exist" invisible="1"/>
+                <field name="product_valuation"/>
+                <field name="quantity_product_hand"/>
+                <field name="udm_product"/>
+                <field name="standard_price"/>
+                <field name="total_value"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

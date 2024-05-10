@@ -1,0 +1,23 @@
+---Models in module 'payment_term_lines_extension'---
+    change model account.payment.term.line.extension to payment_term_lines
+    add _onchange_account_id to change when choose invoice_payment_term_id and currency_id
+
+---Fields in module 'payment_term_lines_extension'---
+payment_term_lines_extension / account.account / related_user_account_name (Selection) : NEW
+payment_term_lines_extension / account.account / related_user_account_name (Char) : DEL
+
+payment_term_lines_extension / account.account / related_user_account_name (Selection): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line / factor_round (Float): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line / currency (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line / ledger_account (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line / ledger_account_payable (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line / term_extension (One2many): module change to payment_term_lines
+
+payment_term_lines_extension / account.payment.term.line.extension / payment_term_line_id (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line.extension / currency (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line.extension / ledger_account (Many2one): module change to payment_term_lines
+payment_term_lines_extension / account.payment.term.line.extension / ledger_account_payable (Many2one): module change to payment_term_lines
+
+---XML records in module 'payment_term_lines_extension'---
+NEW ir.ui.view: account.view_payment_term_form
+DEL ir.ui.view: account.view_payment_term_line_form

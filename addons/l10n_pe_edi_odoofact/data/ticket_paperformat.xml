@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_invoice_ticket_80" model="report.paperformat">
+        <field name="name">Ticket Factura 80 mm</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">400</field>
+        <field name="page_width">80</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+        id="invoice_ticket_80"
+        model="account.move"
+        string="Factura/Boleta Ticket 80 mm"
+        report_type="qweb-pdf"
+        name="l10n_pe_edi_odoofact.report_invoice_ticket_80"
+        file="l10n_pe_edi_odoofact.report_invoice_ticket_80"
+        attachment="(object.state in ('open','in_payment','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        print_report_name="(object._get_report_base_filename())"
+    />
+
+    <report
+        id="payment_ticket_80"
+        model="account.payment"
+        string="Recibo de Pago 80 mm"
+        report_type="qweb-pdf"
+        name="l10n_pe_edi_odoofact.report_payment_ticket_80"
+        file="l10n_pe_edi_odoofact.report_payment_ticket_80"
+        attachment="(object.state in ('posted','sent','reconciled')) and ((object.name or '').replace('/','')+'.pdf')"
+        print_report_name="('Recibo-de-Pago-' + (object.name or 'Borrador'))"
+    />    
+
+    <record id="invoice_ticket_80" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_invoice_ticket_80"/>
+    </record>
+
+    <record id="payment_ticket_80" model="ir.actions.report">
+        <field name="paperformat_id" ref="paperformat_invoice_ticket_80"/>
+    </record>
+</odoo>

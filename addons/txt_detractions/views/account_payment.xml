@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_payment_txt_detractions" model="ir.ui.view">
+        <field name="name">account.payment.txt.detractions</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="reference_invoice"/>
+                <field name="detractions_constancy_number"/>
+                <field name="filter_detraction" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_bank_id']" position="after">
+                    <button name="calculate_detractions" string="Calcular Detracción" icon="fa-plus-square" type="object" attrs="{'invisible':[('filter_detraction', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='date']" position="before">
+                <field name="destination_account_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

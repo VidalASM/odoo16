@@ -31,7 +31,7 @@
     'description': "GYM Management System",
     'depends': [
         'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 
-        'partner_contact_birthdate', 'partner_contact_gender',
+        'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact',
     ],
     'images': ['static/description/banner.png'],
     'data': [
@@ -53,6 +53,8 @@
         'views/trainers.xml',
         'views/crm.xml',
         'wizard/upgrade_crm_lead.xml',
+        'wizard/freeze_wizard_views.xml',
+        'wizard/transfer_wizard_views.xml',
         'report/workout_plan_reports.xml',
         'report/workout_plan_template.xml',
         'report/my_workout_plan_reports.xml',

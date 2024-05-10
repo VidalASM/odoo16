@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ple_inv_and_bal_311_314_sale_form_view" model="ir.ui.view">
+        <field name="name">ple.ple_inv_and_bal_312.report.sale.form.view</field>
+        <field name="model">ple.report.inv.bal.one</field>
+        <field name="inherit_id" ref="ple_inv_and_bal_0302.ple_inv_and_bal_302_sale_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='ple_inv_bal']" position="after">
+                <group string="Reporte 3.11 - Remuneraciones y Participaciones por Pagar" name="ple_inv_bal_0311" sequence="15">
+                    <field name="xls_filename_311" invisible="1"/>
+                    <label string="Reporte Excel" for="xls_binary_311"/>
+                    <field name="xls_binary_311" filename="xls_filename_311" readonly="1" nolabel="1"/>
+
+                    <field name="txt_filename_311" invisible="1"/>
+                    <label string="Reporte .TXT 3.11" for="txt_binary_311"/>
+                    <field name="txt_binary_311" filename="txt_filename_311" readonly="1" nolabel="1"/>
+
+                    <field name="pdf_filename_311" invisible="1"/>
+                    <label string="Reporte .PDF 3.11" for="pdf_binary_311"/>
+                    <field name="pdf_binary_311" filename="pdf_filename_311" readonly="1" nolabel="1"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//group[@name='ple_inv_bal_0311']" position="after">
+                <group string="Reporte 3.14 - Beneficios Sociales de los Trabajadores" name="ple_inv_bal_0314" sequence="14">
+                    <field name="xls_filename_314" invisible="1"/>
+                    <label string="Reporte Excel" for="xls_binary_314"/>
+                    <field name="xls_binary_314" filename="xls_filename_314" readonly="1" nolabel="1"/>
+
+                    <field name="txt_filename_314" invisible="1"/>
+                    <label string="Reporte .TXT 3.14" for="txt_binary_314"/>
+                    <field name="txt_binary_314" filename="txt_filename_314" readonly="1" nolabel="1"/>
+
+                    <field name="pdf_filename_314" invisible="1"/>
+                    <label string="Reporte .PDF 3.14" for="pdf_binary_314"/>
+                    <field name="pdf_binary_314" filename="pdf_filename_314" readonly="1" nolabel="1"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

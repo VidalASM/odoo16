@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+    <function name="_verifcate_contrainst" model="res.currency.rate"/>
+</odoo>

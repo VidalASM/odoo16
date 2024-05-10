@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_302">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance_0302">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0302.external_layout_ple_302">
+                    <div class="page">
+                        <link href="/ple_inv_and_bal_0302/static/src/css/main.css" rel="stylesheet"/>
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="title_iab302">
+                            <strong>FORMATO 3.2: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 10 - CAJA Y BANCOS"</strong>
+                        </div>
+
+                        <div class="subtitle_iab302">
+                            <strong>EJERCICIO :&amp;nbsp;</strong><span t-esc="doc.date_end.strftime('%Y')"/><br/>
+                            <strong>RUC :&amp;nbsp;</strong><div t-field="company.partner_id.vat"/><br/>
+                            <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL
+                                :&amp;nbsp;</strong><span t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+
+                        <table class="table_report_iab302">
+                            <thead>
+                                <tr>
+                                    <th>CUENTA CONTABLE DIVISIONARIA</th>
+                                    <th>REFERENCIA DE LA CUENTA</th>
+                                    <th>SALDO CONTABLE FINAL</th>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        <table class="table_report_2iab302">
+                            <thead>
+                                <tr>
+                                    <th scope="col">CÓDIGO</th>
+                                    <th scope="col">DENOMINACIÓN</th>
+                                    <th scope="col">ENTIDAD FINANCIERA</th>
+                                    <th scope="col">NÚMERO DE LA CUENTA</th>
+                                    <th scope="col">TIPO DE MONEDA</th>
+                                    <th scope="col">DEUDOR</th>
+                                    <th scope="col">ACREEDOR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.line_final_ids" t-as="line">
+                                    <t t-if="0.00 >= line.credit_balance or line.debit_balance >= 0.00 and line.bic">
+                                        <td><t t-esc="line.accounting_account" /></td>
+                                        <td><t t-esc="line.bank_account_name" /></td>
+                                        <td style="text-align: center;"><t t-esc="line.bic" /></td>
+                                        <td><t t-esc="line.account_bank_code" /></td>
+                                        <td style="text-align: center;"><t t-esc="line.type_currency" /></td>
+                                        <td style="text-align: center;"><t t-esc="'{:,}'.format(round(float(line.debit_balance)))" /></td>
+                                        <td style="text-align: center;"><t t-esc="'{:,}'.format(round(float(line.credit_balance)))" /></td>
+                                    </t>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table_report_3iab302">
+                            <tfoot>
+                                <tr>
+                                    <th><strong>TOTALES</strong></th>
+                                    <t t-set="sumat" t-value="0"/>
+                                    <t t-foreach="doc.line_ids" t-as="line">
+                                        <t t-if="line.credit_balance >= 0.01 or line.debit_balance >= 0.01 and line.bic">
+                                            <t t-set="sumat" t-value="sumat + float(line.debit_balance)"/>
+                                        </t>
+                                    </t>
+                                    <th><t t-esc="'{:,}'.format(round(float(sumat)))"/></th>
+                                    <t t-set="sumat" t-value="0"/>
+                                    <t t-foreach="doc.line_ids" t-as="line">
+                                        <t t-if="0.00 >= line.credit_balance or line.debit_balance >= 0.01 and line.bic">
+                                            <t t-set="sumat" t-value="sumat + float(line.credit_balance)"/>
+                                        </t>
+                                    </t>
+                                    <th><t t-esc="'{:,}'.format(round(float(sumat)))"/></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

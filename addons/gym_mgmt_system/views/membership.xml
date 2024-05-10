@@ -1,5 +1,28 @@
 <?xml version="1.0"?>
 <odoo>
+    <record id="sign_request_membership_view_form" model="ir.ui.view">
+        <field name="name">sign.request.membership.form</field>
+        <field name="model">sign.request</field>
+        <field name="inherit_id" ref="sign.sign_request_view_form"/>
+        <field name="arch" type="xml">
+            <field name="request_item_ids" position="before">
+                <field name="membership"/>
+                <field name="membership_date_to"/>
+            </field>
+        </field>
+    </record>
+    
+    <record id="sign_send_request_membership_view_form" model="ir.ui.view">
+        <field name="name">sign.send.request.membership.form</field>
+        <field name="model">sign.send.request</field>
+        <field name="inherit_id" ref="sign.sign_send_request_view_form"/>
+        <field name="arch" type="xml">
+            <field name="set_sign_order" position="after">
+                <field name="membership"/>
+            </field>
+        </field>
+    </record>
+
     <record id="view_membership_form" model="ir.ui.view">
         <field name="name">gym.membership.form</field>
         <field name="model">gym.membership</field>
@@ -9,6 +32,8 @@
                     <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                     <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'confirm'), ('paid_amount','=','membership_fees')]}"/>
                     <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': [('state', '!=', 'confirm')]}"/>
+                    <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm')]}"/>
+                    <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': [('invoice_id', '=', False)]}"/>
                     <field name="state" widget="statusbar"
                            options="{'clickable':'1'}"/>
                 </header>
@@ -39,6 +64,8 @@
                                 <field name="membership_date_to" required="1"/>
                             </div>
                             <field name="state_contract"/>
+                            <field name="type_contract"/>
+                            <field name="days_transferred" attrs="{'invisible': [('type_contract', '!=', '3')]}"/>
                         </group>
                     </group>
                     <notebook modifiers="{}">
@@ -49,13 +76,47 @@
                                     <field name="restrictions"/>
                                     <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates" groups="base.group_no_one"/>
                                 </group>
+                                <group string="Adenda" name="addendum" modifiers="{}">
+                                    <field name="discount"/>
+                                    <field name="authorize_user"/>
+                                    <field name="addendum" help="Number of addendum, previously autorized" groups="base.group_no_one"/>
+                                </group>
                             </group>
                         </page>
                         <page string="Freezes">
-                            <field name="freeze_ids" readonly="False" modifiers="{}"/>
+                            <field name="freeze_ids" readonly="True" modifiers="{}">
+                                <tree>
+                                    <field name="number_freeze"/>
+                                    <field name="cause"/>
+                                    <field name="date_freeze"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="quantity_days"/>
+                                    <field name="state_freeze"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Transferencias">
                             <field name="transfer_ids" readonly="False" modifiers="{}"/>
+                        </page>
+                        <page string="Anexos">
+                            <!-- <field name="sign_request_ids" readonly="False" modifiers="{}"/> -->
+                            <field name="sign_request_ids">
+                                <tree>
+                                    <field name="reference"/>
+                                    <field name="state"/>
+                                    <field name="request_item_ids"/>
+                                    <field name="progress"/>
+                                    <field name="create_date"/>
+                                    <field name="membership_date_to"/>
+                                    <!-- <field name="activity_exception_decoration" widget="activity_exception" modifiers="{'readonly': true}"/>
+                                    <button name="unlink" string="Stop Sharing" type="object" modifiers="{'invisible': [['state', 'not in', ['shared']]]}"/>
+                                    <button name="get_completed_document" string="Descargar" type="object" modifiers="{'invisible': [['state', 'not in', ['signed']]]}"/>
+                                    <button name="go_to_signable_document" string="firmar" type="object" modifiers="{'invisible': ['|', ['need_my_signature', '=', false], ['state', '!=', 'sent']]}"/>
+                                    <button name="send_signature_accesses" string="Reenviar" type="object" modifiers="{'invisible': '['|', ('state', '!=', 'sent'), ('create_uid', '!=', uid)]'}"/>
+                                    <button name="send_signature_accesses" string="Reenviar" type="object" modifiers="{'invisible': '['|', ('state', '!=', 'sent'), ('create_uid', '=', uid)]'}"/> -->
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>

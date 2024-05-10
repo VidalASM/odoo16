@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="tax_report_ple_sale_14" model="account.report">
+        <field name="name">Resumen Registro de Ventas PLE</field>
+        <field name="root_report_id" ref="account.generic_tax_report"/>
+        <field name="country_id" ref="base.pe"/>
+        <field name="filter_fiscal_position" eval="True"/>
+        <field name="availability_condition">country</field>
+        <field name="column_ids">
+            <record id="tax_report_ple_sale_14_balance" model="account.report.column">
+                <field name="name">Balance</field>
+                <field name="expression_label">balance</field>
+            </record>
+        </field>
+        <field name="line_ids">
+            <record id="tax_report_line_parent_line_report_ple_sale_14" model="account.report.line">
+                <field name="name">RESUMEN REGISTRO DE VENTAS PLE</field>
+                <field name="children_ids">
+                    <record id="ple_sale_base_exp" model="account.report.line">
+                        <field name="name">Valor facturado de la exportación</field>
+                        <field name="code">M14_13</field>
+                        <field name="sequence">2</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_base_exp_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_EXP</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_base_og" model="account.report.line">
+                        <field name="name">Base imponible de la operación gravada</field>
+                        <field name="code">M14_14</field>
+                        <field name="sequence">3</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_base_og_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_OG</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_base_ogd" model="account.report.line">
+                        <field name="name">Descuento de la base imponible</field>
+                        <field name="code">M14_15</field>
+                        <field name="sequence">4</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_base_ogd_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_OGD</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_og" model="account.report.line">
+                        <field name="name">Monto total del IGV y/o IPM</field>
+                        <field name="code">M14_16</field>
+                        <field name="sequence">5</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_og_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_OG</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_ogd" model="account.report.line">
+                        <field name="name">Descuento del IGV y/o IPM</field>
+                        <field name="code">M14_17</field>
+                        <field name="sequence">6</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_ogd_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_OGD</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_oe" model="account.report.line">
+                        <field name="name">Importe total de la operación exonerada</field>
+                        <field name="code">M14_18</field>
+                        <field name="sequence">7</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_oe_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_OE</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_ou" model="account.report.line">
+                        <field name="name">Importe total de la operación inafecta</field>
+                        <field name="code">M14_19</field>
+                        <field name="sequence">8</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_ou_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_OU</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_isc" model="account.report.line">
+                        <field name="name">Importe total del ISC</field>
+                        <field name="code">M14_20</field>
+                        <field name="sequence">9</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_isc_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_ISC</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_base_ivap" model="account.report.line">
+                        <field name="name">Base imponible de la operación gravada con el IVAP</field>
+                        <field name="code">M14_21</field>
+                        <field name="sequence">10</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_base_ivap_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_BASE_IVAP</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_ivap" model="account.report.line">
+                        <field name="name">Impuesto a las ventas de arroz pilado</field>
+                        <field name="code">M14_22</field>
+                        <field name="sequence">11</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_ivap_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_IVAP</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_base_other" model="account.report.line">
+                        <field name="name">otros conceptos, tributos y cargos</field>
+                        <field name="code">M14_24</field>
+                        <field name="sequence">12</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_base_other_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_OTHER</field>
+                            </record>
+                        </field>
+                    </record>
+                    <record id="ple_sale_tax_icbp" model="account.report.line">
+                        <field name="name">Impuesto consumo de bolsas de plástico</field>
+                        <field name="code">M14_23</field>
+                        <field name="sequence">13</field>
+                        <field name="expression_ids">
+                            <record id="ple_sale_tax_icbp_tag" model="account.report.expression">
+                                <field name="label">balance</field>
+                                <field name="engine">tax_tags</field>
+                                <field name="formula">S_TAX_ICBP</field>
+                            </record>
+                        </field>
+                    </record>
+                </field>
+            </record>
+        </field>
+    </record>
+</odoo>

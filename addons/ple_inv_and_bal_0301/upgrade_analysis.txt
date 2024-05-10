@@ -1,0 +1,4 @@
+---Models in module 'ple_inv_and_bal_0301'---
+---Fields in module 'ple_inv_and_bal_0301'---
+---XML records in module 'ple_inv_and_bal_0301'---
+---Reports in the t-field="company.partner_id.name"---

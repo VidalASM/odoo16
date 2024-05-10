@@ -1,0 +1,4 @@
+
+---Models in module 'SEPARATE_SALE_ORDER_INVOICE_LINE'---
+---Fields in module 'SEPARATE_SALE_ORDER_INVOICE_LINE'---
+---XML records in module 'SEPARATE_SALE_ORDER_INVOICE_LINE'---

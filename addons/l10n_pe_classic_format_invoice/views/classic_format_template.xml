@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="l10n_pe_external_layout_invoice_classic" inherit_id="classic_format_invoice.report_invoice_classic">
+        <xpath expr="//t[@name='company_street_title']" position="after">
+            <t t-if="o.company_id.partner_id.l10n_pe_district.name">
+                <span t-esc="o.company_id.partner_id.l10n_pe_district.name"
+                    style="font-weight:normal;font-size:12px;" />,</t>
+        </xpath>
+    </template>
+
+    <template id="l10n_pe_report_invoice_classic" inherit_id="classic_format_invoice.report_invoice_classic">
+
+        <xpath expr="//t[@name='district_partner']" position="after">
+            ,
+            <t t-if="o.partner_id.l10n_pe_district.name" t-esc="o.partner_id.l10n_pe_district.name"/>
+        </xpath>
+        <xpath expr="//t[@name='partner_shipping_address']" position="after">
+            <t t-if="o.partner_shipping_id.l10n_pe_district.name" t-esc="o.partner_shipping_id.l10n_pe_district.name"/>,
+        </xpath>
+
+        <!-- Payment_terms pe -->
+        <xpath expr="//div[@name='payment_terms_content']" position="replace">
+            <div name="payment_terms_content" style="display:block;float:left;width:55%;vertical-align:top;">
+                <div class="total_write" name="total_write_classic_invoice_pdf"
+                     style="clear:left;text-align:center;margin-bottom:10px;">
+                    <strong>Son:</strong>
+                    <t t-esc="o._amount_to_text().title()"/>
+                </div>
+                <t t-if="o.invoice_payment_term_id">
+                    <t t-if="o.invoice_payment_term_id.display_on_invoice">
+                        <div style="clear:left;text-align:justify;">
+                            <span t-if="o.invoice_payment_term_id.name" t-esc="o.invoice_payment_term_id.name"/>
+                        </div>
+                        <t t-if="o.invoice_payment_term_id.line_ids and o.invoice_date">
+                            <t t-set="iteration_q" t-value="1"/>
+                            <t t-if="len(o.invoice_payment_term_id.line_ids)==1 and o.invoice_payment_term_id.line_ids.value in 'balance' and o.invoice_payment_term_id.line_ids.days==0">
+                                <div class="border_detr_ret">
+                                    <table style="width:100%;font-size:12px;">
+                                        <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                        <tr>
+                                            <td class="detraction_retention_content_1">
+                                                <span>1</span>
+                                            </td>
+                                            <td class="detraction_retention_content_2">
+                                                <span t-field="o.invoice_date"/>
+                                            </td>
+                                            <td class="detraction_retention_content_3">
+                                                <span t-field="o.amount_total"/>
+                                            </td>
+                                            <td class="detraction_retention_content_4">
+                                                <span t-field="o.currency_id.name"/>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <t t-foreach="o.invoice_payment_term_id.line_ids" t-as="move_line">
+                                    <t t-if="move_line.value in 'balance' and move_line.days==0">
+                                        <div class="border_detr_ret">
+                                            <table style="width:100%;font-size:12px;">
+                                                <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                                <t t-set="bool_detraction" t-value="0"/>
+                                                <t t-set="bool_product" t-value="0"/>
+                                                <t t-set="bool_entry" t-value="0"/>
+                                                <t t-foreach="o.line_ids" t-as="x">
+                                                    <t t-if="x.l10n_pe_is_detraction_retention">
+                                                        <t t-set="bool_detraction" t-value="1"/>
+                                                    </t>
+                                                    <t t-if="x.product_id.l10n_pe_withhold_code">
+                                                        <t t-set="bool_product" t-value="1"/>
+                                                    </t>
+                                                </t>
+                                                <t t-if="bool_detraction==1 and bool_product==1">
+                                                    <t t-set="bool_entry" t-value="1"/>
+                                                </t>
+                                                <t t-set="bank_operation" t-value="0"/>
+                                                <t t-foreach="o.line_ids" t-as="aml">
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and bool_entry==1 and aml.l10n_pe_is_detraction_retention and json.loads(aml.move_id.tax_totals_json)['amount_total']*o.exchange_rate >= 700">
+                                                        <t t-set="bank_operation" t-value="1"/>
+                                                        <td class="detraction_retention_content_1">
+                                                            <span>DETRACCIÓN</span>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <t t-if="aml.debit !='' and aml.debit !=' '">
+                                                                    <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                    <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.l10n_pe_is_detraction_retention and o.agent_retention">
+                                                        <td class="detraction_retention_content_1">
+                                                            <span>RETENCIÓN</span>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <t t-if="aml.debit !='' and aml.debit !=' '">
+                                                                    <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                    <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.debit>0 and not aml.l10n_pe_is_detraction_retention">
+                                                        <td class="detraction_retention_content_1">
+                                                            <t t-esc="iteration_q"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                        <t t-set="iteration_q" t-value="iteration_q+1"/>
+                                                    </tr>
+                                                </t>
+                                            </table>
+                                        </div>
+                                    </t>
+                                    <t t-elif="move_line.value=='balance' and move_line!=0">
+                                        <div class="border_detr_ret">
+                                            <table style="width:100%;font-size:12px;">
+                                                <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                                <t t-set="bool_detraction" t-value="0"/>
+                                                <t t-set="bool_product" t-value="0"/>
+                                                <t t-set="bool_entry" t-value="0"/>
+                                                <t t-foreach="o.line_ids" t-as="x">
+                                                    <t t-if="x.l10n_pe_is_detraction_retention">
+                                                        <t t-set="bool_detraction" t-value="1"/>
+                                                    </t>
+                                                    <t t-if="x.product_id.l10n_pe_withhold_code">
+                                                        <t t-set="bool_product" t-value="1"/>
+                                                    </t>
+                                                </t>
+                                                <t t-if="bool_detraction==1 and bool_product==1">
+                                                    <t t-set="bool_entry" t-value="1"/>
+                                                </t>
+                                                <t t-set="bank_operation" t-value="0"/>
+                                                <t t-foreach="o.line_ids" t-as="aml">
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and bool_entry==1 and aml.l10n_pe_is_detraction_retention and json.loads(aml.move_id.tax_totals_json)['amount_total']*o.exchange_rate >= 700">
+                                                        <t t-set="bank_operation" t-value="1"/>
+                                                        <td class="detraction_retention_content_1">
+                                                            <span>DETRACCIÓN</span>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <t t-if="aml.debit !='' and aml.debit !=' '">
+                                                                    <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                    <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.l10n_pe_is_detraction_retention and o.agent_retention">
+                                                        <td class="detraction_retention_content_1">
+                                                            <span>RETENCIÓN</span>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <t t-if="aml.debit !='' and aml.debit !=' '">
+                                                                    <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                    <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                                </t>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr t-if="aml.account_id.account_type == 'asset_receivable' and aml.debit>0 and not aml.l10n_pe_is_detraction_retention and o.invoice_date!=aml.date_maturity">
+                                                        <td class="detraction_retention_content_1">
+                                                            <t t-esc="iteration_q"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_2">
+                                                            <span t-field="aml.date_maturity"/>
+                                                        </td>
+                                                        <td class="detraction_retention_content_3">
+                                                            <t t-if="o.currency_id.name=='PEN'">
+                                                                <span t-if="o.currency_id.symbol" t-esc="o.currency_id.symbol"/>
+                                                                <span t-esc="'{0:,.2f}'.format(float(aml.debit))"/>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span t-field="aml.amount_currency"/>
+                                                            </t>
+                                                        </td>
+                                                        <td class="detraction_retention_content_4">
+                                                            <span t-field="o.currency_id.name"/>
+                                                        </td>
+                                                        <t t-set="iteration_q" t-value="iteration_q+1"/>
+                                                    </tr>
+                                                </t>
+                                            </table>
+                                        </div>
+                                        <br/>
+
+                                    </t>
+                                    <t t-else="">
+                                        <t/>
+                                    </t>
+                                </t>
+                            </t>
+                        </t>
+                        <t t-else="">
+                        </t>
+                    </t>
+                </t>
+                <t t-else="">
+                    <t t-if="o.invoice_date and o.invoice_date_due">
+                        <div class="border_detr_ret">
+                            <table style="width:100%;font-size:12px;">
+                                <t t-call="classic_format_invoice.box_payment_retraction_detraction"/>
+                                <tr>
+                                    <td class="detraction_retention_content_1">
+                                        <span>1</span>
+                                    </td>
+                                    <td class="detraction_retention_content_2">
+                                        <t t-if="o.invoice_date == o.invoice_date_due">
+                                            <span t-field="o.invoice_date"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="o.invoice_date_due"/>
+                                        </t>
+                                    </td>
+                                    <td class="detraction_retention_content_3">
+                                        <span t-field="o.amount_total"/>
+                                    </td>
+                                    <td class="detraction_retention_content_4">
+                                        <span t-field="o.currency_id.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br/>
+                    </t>
+                    <t t-else=""/>
+                </t>
+                <div style="clear:left;text-align:justify;">
+                    <span t-if="o.invoice_payment_term_id.note"
+                          t-esc="o.invoice_payment_term_id.note"/>
+            </div>
+            </div>
+        </xpath>
+
+        <!-- QR -->
+        <xpath expr="//table[@name='table_additional_information']/tr/td/div[@name='content_extra']" position="replace">
+            <div class="company_qr_text" > 
+                <div class="text_company">
+                    <div style="font-size:4px !important">
+                        <t t-if="o.company_id.additional_information"
+                            t-out="o.company_id.additional_information"
+                            style="font-size:4px !important" />
+                    </div>
+                </div>
+                 <div class="qr_company">
+                    <div>
+                        <img style="margin-left:7px;margin-top:7px;"
+                             class="border border-gray rounded"
+                             t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o.create_data_qr_code(), 120, 120)"/>
+                    </div>
+                </div>
+            </div>
+
+        </xpath>
+    </template>
+</odoo>

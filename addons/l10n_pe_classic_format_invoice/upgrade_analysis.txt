@@ -1,0 +1,10 @@
+---Models in module 'l10n_pe_classic_format_invoice'---
+ aditional_document_reference/account_edi moved into l10n_pe_classic_format_invoice
+ carrier_reference_number_invoice/account_edi moved into l10n_pe_classic_format_invoice
+
+---Fields in module 'l10n_pe_classic_format_invoice'---
+ carrier_reference_number_invoice/models/product_template moved into l10n_pe_classic_format_invoice
+
+---XML records in module 'l10n_pe_edocument_complement'---
+ aditional_document_reference/data/2.1/edi_templates moved into l10n_pe_classic_format_invoice
+ carrier_reference_number_invoice/data/2.1/edi_templates moved into l10n_pe_classic_format_invoice

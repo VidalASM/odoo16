@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_report_header_ple_3_18">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="report_header_ple_3_18">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0318_ee.external_layout_report_header_ple_3_18">
+                    <div class="page">
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+                        <link href="/ple_inv_and_bal_0318_ee/static/src/css/main.css" rel="stylesheet" type="text/scss"/>
+                        <div class="header_report_ple_3_18">
+                            <div>
+                                <strong>FORMATO 3.18: "LIBRO DE INVENTARIOS Y BALANCES - ESTADO DE FLUJOS DE EFECTIVO" (1)</strong>
+                            </div>
+                            <div>
+                                <strong>EJERCICIO :&amp;nbsp;</strong>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                            </div>
+                            <div>
+                                <strong>RUC :&amp;nbsp;</strong>
+                                <span t-esc="company.partner_id.vat"/>
+                            </div>
+                            <div>
+                                <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                                <span t-esc="company.partner_id.name"/>
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <function name="update_queries_functions_permanent" model="ple.permanent.inventory.physical.units"/>
+</odoo>

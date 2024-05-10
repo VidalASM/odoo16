@@ -1,0 +1,41 @@
+th{
+    padding: 0 10px 0 10px;
+}
+
+.title{
+    font-size: 17px !important;
+    font-family: Arial !important;
+}
+
+.subtitle{
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+.subtitle div{
+    display: inline-block !important;
+}
+
+.company_left {
+    text-align: left;
+    margin-left: -40.5%;
+}
+
+.table_inv_bal_0305{
+    float: left;
+    width: 100%!important;
+    border-color: white;
+}
+
+.color {
+  color: red;
+}
+
+.mount_final_0305{
+    text-align: center;
+    border: 1px black solid;
+}
+.part_table_0305 th {
+    border: 1px black solid;
+}
+

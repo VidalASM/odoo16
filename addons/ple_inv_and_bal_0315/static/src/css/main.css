@@ -1,0 +1,33 @@
+.ple_inv_bal_0315_title{
+    font-size: 17px !important;
+    font-family: Arial !important;
+}
+
+.ple_inv_bal_0315_subtitle{
+    font-size: 15px !important;
+    font-family: Arial !important;
+}
+
+.ple_inv_bal_0315_subtitle div{
+    display: inline-block;
+}
+
+.ple_inv_bal_0315_table_1 {
+    float: left;
+    border-collapse: collapse;
+    width: 100%!important;
+}
+.ple_inv_bal_0315_table_1 .part_table th{
+    border: 1px solid black;
+}
+.ple_inv_bal_0315_table_1 .part_one th{
+    border: 1px solid black;
+}
+.ple_inv_bal_0315_table_1 .end_part_0315 .mount_final_0315{
+    text-align: center;
+    border: 1px solid black;
+}
+
+.ple_inv_bal_0315_color {
+  color: red;
+}

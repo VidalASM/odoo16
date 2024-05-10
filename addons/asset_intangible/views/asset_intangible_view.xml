@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="asset_intangible_form_view" model="ir.ui.view">
+        <field name="name">asset.intangible.form.view</field>
+        <field name="model">asset.intangible</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="bool_asset_intagible"/>
+                        <field name="operation_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="asset_intangible_tree_view" model="ir.ui.view">
+        <field name="name">asset.intangible.tree.view</field>
+        <field name="model">asset.intangible</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="bool_asset_intagible"/>
+                <field name="operation_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="asset_intangible_search_view" model="ir.ui.view">
+        <field name="name">asset.intangible.search.view</field>
+        <field name="model">asset.intangible</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Asset / Intangible"/>
+                <field name="bool_asset_intagible" string="is the asset / intangible active"/>
+                <filter string="Asset/Intangible" name="name"/>
+                <filter string="is the asset/intangible active" name="bool_asset_intagible"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_asset_intangible" model="ir.actions.act_window">
+        <field name="name">Asset / Intangible</field>
+        <field name="res_model">asset.intangible</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_administrator_asset_intangible"
+              parent="account.menu_finance_entries"
+              name="Administration"
+              sequence="3"/>
+    <menuitem id="menu_action_asset_intangible"
+              name="Asset / Intangible"
+              action="action_asset_intangible"
+              parent="asset_intangible.menu_administrator_asset_intangible"
+              groups="account.group_account_readonly"
+              sequence="1"/>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="main_template_checkout_balance" inherit_id="account_reports.main_template" primary="True">
+        <xpath expr="//div[hasclass('o_account_reports_page')]" position="attributes">
+            <attribute name="class" add="o_account_trial_balance_report" separator=" "/>
+        </xpath>
+    </template>
+
+    <record id="checkout_balance_report" model="account.report">
+        <field name="name">Checkout x Account</field>
+        <field name="filter_journals" eval="True"/>
+        <field name="filter_analytic" eval="True"/>
+        <field name="filter_growth_comparison" eval="False"/>
+        <field name="filter_multi_company">selector</field>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_hierarchy">by_default</field>
+        <field name="default_opening_date_filter">this_month</field>
+        <field name="search_bar" eval="True"/>
+        <field name="custom_handler_model_id" ref="model_account_checkout_balance_report_handler"/>
+        <field name="main_template">checkout_balance.main_template_checkout_balance</field>
+        <field name="column_ids">
+            <record id="trial_balance_report_debit" model="account.report.column">
+                <field name="name">Debit</field>
+                <field name="expression_label">debit</field>
+                <field name="figure_type">monetary</field>
+            </record>
+            <record id="trial_balance_report_credit" model="account.report.column">
+                <field name="name">Credit</field>
+                <field name="expression_label">credit</field>
+                <field name="figure_type">monetary</field>
+            </record>
+        </field>
+    </record>
+
+    <record id="action_account_report_checkout_balance" model="ir.actions.client">
+        <field name="name">Checkout x Account</field>
+        <field name="tag">account_report</field>
+        <field name="context" eval="{'report_id': ref('checkout_balance.checkout_balance_report')}"/>
+    </record>
+
+    <menuitem id="menu_action_account_report_checkout_balance" name="Checkout x Account" action="checkout_balance.action_account_report_checkout_balance" parent="account_reports.account_reports_audit_reports_menu" groups="account.group_account_user"/>
+
+</odoo>

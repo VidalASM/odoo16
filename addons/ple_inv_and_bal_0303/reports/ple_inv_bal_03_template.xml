@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_ple_0303">
+        <div class="article doc_report_layout_standard" t-att-data-oe-model="doc and doc._name"
+             t-att-data-oe-id="doc and doc.id"
+             t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+    </template>
+
+    <template id="print_status_finance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="ple_inv_and_bal_0303.external_layout_ple_0303">
+                    <div class="page">
+
+                        <t t-if="not company">
+                            <!-- Multicompany -->
+                            <t t-if="company_id">
+                                <t t-set="company" t-value="company_id"/>
+                            </t>
+                            <t t-elif="doc and 'company_id' in doc">
+                                <t t-set="company" t-value="doc.company_id.sudo()"/>
+                            </t>
+                            <t t-else="else">
+                                <t t-set="company" t-value="res_company"/>
+                            </t>
+                        </t>
+
+                        <div class="ple_inv_bal_03_title">
+                            <strong>FORMATO 3.3: "LIBRO DE INVENTARIOS Y BALANCES - DETALLE DEL SALDO DE LA CUENTA 12 -
+                                CLIENTES
+                            </strong>
+                        </div>
+
+                        <div style="width: 100% !important;" class="ple_inv_bal_03_subtitle">
+                            <strong>EJERCICIO :&amp;nbsp;</strong>
+                            <span t-esc="doc.date_end.strftime('%Y')"/>
+                            <br/>
+                            <strong>RUC :&amp;nbsp;</strong>
+                            <span t-field="company.partner_id.vat"/>
+                            <br/>
+                            <strong>APELLIDOS Y NOMBRES, DENOMINACIÓN O RAZÓN SOCIAL :&amp;nbsp;</strong>
+                            <span t-field="company.partner_id.name"/>
+                        </div>
+                        <br/>
+
+                        <table class="ple_inv_bal_03_table_1">
+                            <tr class="part_table">
+                                <th style="text-align: center;" colspan="3">
+                                    <strong>INFORMACIÓN DEL CLIENTE</strong>
+                                </th>
+                                <th style="text-align: center; border-bottom: 0px;">
+                                    <strong class="ple_inv_bal_03_color">MONTO DE LA</strong>
+                                </th>
+                                <th style="text-align: center; border-bottom: 0px;">
+                                    <strong>FECHA DE EMISIÓN</strong>
+                                </th>
+                            </tr>
+                            <tr class="part_table">
+                                <th style="text-align: center;" colspan="2" width="59px">
+                                    <strong>DOCUMENTO DE IDENTIDAD</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-bottom: 0px;">
+                                    <strong>APELLIDOS Y NOMBRES,</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;" rowspan="2">
+                                    <strong class="ple_inv_bal_03_color">CUENTA POR COBRAR</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-bottom: 0px; border-top: 0px;">
+                                    <strong>DEL COMPROBANTE</strong>
+                                </th>
+
+
+                            </tr>
+                            <tr class="part_table">
+                                <th style="text-align: center; white-space:nowrap;">
+                                    <strong>TIPO (TABLA 2)</strong>
+                                </th>
+                                <th style="text-align: center;">
+                                    <strong>NÚMERO</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;">
+                                    <strong>DENOMINACIÓN O RAZÓN SOCIAL</strong>
+                                </th>
+                                <th style="text-align: center; white-space:nowrap; border-top: 0px;">
+                                    <strong>DE PAGO</strong>
+                                </th>
+
+                            </tr>
+
+                            <tr t-foreach="doc.line_ids.sorted(key=lambda x: x.valor)" t-as="line" class="part_one">
+                                <t t-if="line.valor == 1">
+                                    <th style="text-align: center; white-space:nowrap;font-weight: lighter; border-top: 5px;">
+                                        <t t-esc="line.doc_type"/>
+                                    </th>
+                                    <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                        <t t-esc="line.doc_num"/>
+                                    </th>
+                                    <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                        <t t-esc="line.name_client"/>
+                                    </th>
+                                    <t t-if="line.mont == 0">
+                                        <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                            <t t-esc="'0,00'"/>
+                                        </th>
+                                    </t>
+                                    <t t-else="">
+                                        <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                            <t t-esc="'{:,}'.format(round(float(line.mont)))"/>
+                                        </th>
+                                    </t>
+                                    <th style="text-align: center; white-space:nowrap; font-weight: lighter; border-top: 0px;">
+                                        <t t-esc="line.date_ref"/>
+                                    </th>
+                                </t>
+                            </tr>
+
+                            <tr class="end_part_0303">
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;"></th>
+                                <th style="border: 0px;text-align: center;">
+                                    <strong class="ple_inv_bal_03_color">SALDO FINAL</strong>
+                                    <strong>TOTAL</strong>
+                                </th>
+                                <th class="mount_final_0303">
+                                    <t t-esc="'{:,}'.format(round(float(doc.total_mount)))"/>
+                                </th>
+                                <th style="border: 0px;"></th>
+                            </tr>
+                        </table>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

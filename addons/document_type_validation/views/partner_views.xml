@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_inherit_document_type_validation" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit.document_type_validation</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <field name="error_dialog" class="infobox" attrs="{'invisible': [('error_dialog','in', [False,''])]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

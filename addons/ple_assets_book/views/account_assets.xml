@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="account_asset_form_view_inherit" model="ir.ui.view">
+        <field name="name">account.asset.form.view.inherit</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='main_page']//group//group[2]" position="after">
+                <group string="7.4 - Libro de activos fijos - Arrendamiento Financiero" attrs="{'invisible': [('state', '=', 'model')]}">
+                    <field name="contract_number" attrs="{'invisible': [('state', '=', 'model')]}"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//group[@name='asset_values']" position="after">
+                <group string="Programa de depreciación existente" groups="base.group_no_one" attrs="{'invisible': [('state', '=', 'model')]}">
+                    <field name="first_depreciation_date_import" string="Primera fecha de depreciación"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

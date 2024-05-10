@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_sire_electronic_register" name="Reporte SIRE" sequence="2" groups="account.group_account_readonly,account.group_account_invoice" parent="account.menu_finance_reports">
+        <menuitem id="menu_sire_electronic_register_sale" name="Reporte RVIE" action="sire_sale_wizard_action" sequence="1"/>
+        <menuitem id="menu_sire_electronic_register_purchase_national" name="Reporte RCE - Compras nacionales" action="sire_purchase_national_wizard_action" sequence="2"/>
+        <menuitem id="menu_sire_electronic_register_purchase_not_domiciled" name="Reporte RCE - Compras no domiciliadas" action="sire_purchase_not_domiciled_wizard_action" sequence="3"/>
+    </menuitem>
+
+</odoo>

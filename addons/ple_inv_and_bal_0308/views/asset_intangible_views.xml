@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="asset_intangiible_form_view_inherit_ple_inv_and_bal_0308" model="ir.ui.view">
+        <field name="name">asset.intangible.form.view.inherit.ple_inv_and_bal_0308</field>
+        <field name="model">asset.intangible</field>
+        <field name="inherit_id" ref="asset_intangible.asset_intangible_form_view"/>
+        <field name="arch" type="xml">
+               <xpath expr="//group" position="after">
+                <group name="ple_inv_bal_0308_group" string="3.8 Inversiones Mobiliarias">
+                    <field name="title_code"/>
+                    <field name="title_unit_value"/>
+                    <field name="total_amount_value"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_ple_report_ledger_form" model="ir.ui.view">
+        <field name="name">ple.report.ledger.form</field>
+        <field name="model">ple.report.ledger</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group string="Reportes PLE" id="ple_cash_bank">
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                        </group>
+                        <group>
+                            <field name="xls_filename_ledger" invisible="1"/>
+                            <field name="xls_binary_ledger" filename="xls_filename_ledger" readonly="1" string="Reporte Excel"/>
+                            <field name="txt_filename_ledger" invisible="1"/>
+                            <field name="txt_binary_ledger" filename="txt_filename_ledger" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_ple_report_ledger_tree" model="ir.ui.view">
+        <field name="name">ple.report.ledger.tree</field>
+        <field name="model">ple.report.ledger</field>
+        <field name="arch" type="xml">
+            <tree string="Libro Mayor">
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="ple_report_ledger_action" model="ir.actions.act_window">
+        <field name="name">Libro Mayor</field>
+        <field name="res_model">ple.report.ledger</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem 
+        id="menu_ple_ledger" 
+        name="Libro Mayor" 
+        parent="ple_sale_book.menu_ple_pe_monthly" 
+        action="ple_report_ledger_action" 
+        sequence="4"
+    />
+</odoo>

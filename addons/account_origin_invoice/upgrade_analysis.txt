@@ -1,0 +1,4 @@
+---Models in module 'account_origin_invoice'---
+---Fields in module 'account_origin_invoice'---
+---XML records in module 'account_origin_invoice'---
+---XML change attr in the page document_refund_invoice-----

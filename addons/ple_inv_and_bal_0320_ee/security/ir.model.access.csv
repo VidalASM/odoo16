@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wizard_report_txt_ple_3_20,wizard.report.txt.ple.3.20,model_wizard_report_txt_ple_3_20,account.group_account_user,1,1,1,1

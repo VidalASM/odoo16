@@ -1,0 +1,8 @@
+
+---Models in module 'PLE_INV_AND_BAL_0317'---
+account                 / account.account                   /account.account_type -> account.account
+---Fields in module 'PLE_INV_AND_BAL_0317'---
+account                 / account.account                   / account.account.user_type_id  -> account.account.account_type
+account                 / account.account                   / account.account_type.include_initial_balance -> account.account.include_initial_balance
+account                 / account.account                   / account.account_type.id -> account.account.account_type
+---XML records in module 'PLE_INV_AND_BAL_0317'---

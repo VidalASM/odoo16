@@ -1,0 +1,94 @@
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_DNI
+msgid "DNI"
+msgstr "DNI"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_pass
+msgid "Passport"
+msgstr "Pasaporte"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_pass
+msgid "Passport"
+msgstr "Pasaporte"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_latam_base.it_vat
+msgid "VAT"
+msgstr "RUC"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_latam_base.it_vat
+msgid "Unique Taxpayer Registry"
+msgstr "Reg. Único de Contribuyentes"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_NDTD
+msgid "Non-Domiciled Tax Document"
+msgstr "Documento de impuestos no domiciliado"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_NDTD
+msgid "Document without RUC from another country"
+msgstr "Documento de Impuestos no domicialiado"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_latam_base.it_fid
+msgid "Foreign ID"
+msgstr "Carnet de Extranjería"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_latam_base.it_fid
+msgid "Foreign Card"
+msgstr "Carnet de Extranjería"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_DIC
+msgid "Diplomatic Identity Card"
+msgstr "Ced. Diplomática de identidad"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_DIC
+msgid "Diplomatic Identity Card"
+msgstr "Ced. Diplomática de identidad"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_IDCR
+msgid "Identity document of the country of residence"
+msgstr "Doc. Trib. No Domiciliado. sin RUC"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_IDCR
+msgid "Identity document of the country of residence"
+msgstr "Doc. Trib. No Domiciliado. sin RUC"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_TIN
+msgid "Tax Identification Number"
+msgstr "Número de identificación de impuestos"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_TIN
+msgid "TIN – Doc Trib PP.NN"
+msgstr "Número de identificación de impuestos"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_IN
+msgid "Identification Number"
+msgstr "Número de identificación"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_IN
+msgid "IN - Doc Trib PP. JJ"
+msgstr "Número de identificación"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,name:l10n_pe.it_TAM
+msgid "TAM"
+msgstr "TAM"
+
+#. module: l10n_pe_catalog
+#: model:l10n_latam.identification.type,description:l10n_pe.it_TAM
+msgid "Andean Immigration Card"
+msgstr "Tarjeta de Inmigración Andina"

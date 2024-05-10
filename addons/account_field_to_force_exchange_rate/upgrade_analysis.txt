@@ -1,0 +1,3 @@
+---Models in module 'account_exchange_currency'---
+---Fields in module 'account_exchange_currency'---
+---XML records in module 'account_exchange_currency'---

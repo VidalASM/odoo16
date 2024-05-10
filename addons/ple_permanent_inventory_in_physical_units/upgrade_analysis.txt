@@ -1,0 +1,5 @@
+---Models in module 'ple_permanent_inventory_in_physical_units'---
+---Fields in module 'ple_permanent_inventory_in_physical_units'---
+---XML records in module 'ple_permanent_inventory_in_physical_units'---
+ple_permanent_inventory_physical_units_views
+El notebook definido en el XML se encontraba contenido dentro de un group. Se removio el group.

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="rent_4ta_files_form_view" model="ir.ui.view">
+        <field name="name">rent.4ta.files.form.view</field>
+        <field name="model">rent.4ta.files</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_files" string="Generar Archivos Plame" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="company_id"/>
+                        <field name="ps4_filename" invisible="1"/>
+                        <field name="ps4_binary" filename="ps4_filename" readonly="1"/>
+                        <field name="quarter_filename" invisible="1"/>
+                        <field name="quarter_binary" filename="quarter_filename" readonly="1"/>
+                    </group>
+                    <field name="error_dialog" class="errorbox" style="color:#FF0000;" attrs="{'invisible': [('error_dialog', '=', False)]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="rent_4ta_files_tree_view" model="ir.ui.view">
+        <field name="name">rent.4ta.files.tree.view</field>
+        <field name="model">rent.4ta.files</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_rent_4ta_files" model="ir.actions.act_window">
+        <field name="name">Archivos renta 4ta</field>
+        <field name="res_model">rent.4ta.files</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_rent_4ta"
+              name="Renta de 4ta"
+              parent="account.menu_finance_reports"
+              groups="hr.group_hr_user"
+    />
+
+    <menuitem id="menu_rent_4ta_files"
+              name="Archivos renta 4ta"
+              parent="rent_4ta.menu_rent_4ta"
+              sequence="1"
+              action="action_rent_4ta_files"
+              groups="hr.group_hr_user"
+    />
+
+</odoo>

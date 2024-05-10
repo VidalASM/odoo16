@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <template id="header_report_invoices_set_type_document" inherit_id="account.report_invoice_document">
+            <xpath expr="//t[@t-set='address']/div[@t-if='o.partner_id.vat']" position="replace">
+                <div t-if="o.partner_id.vat" class="mt16">
+                    <t t-esc="o.partner_id.l10n_latam_identification_type_id.name or 'N° de documento'"/>: <span t-field="o.partner_id.vat"/>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_standard_inherit_print_document_type_invoice" inherit_id="report_vat_position.external_layout_standard_inherit_report_vat_position">
+            <xpath expr="//div[@name='company_vat']" position="replace">
+                <div name="company_vat" class="col-6">
+                    <span t-if="company.vat" class="list-inline-item"><t t-esc="company.partner_id.l10n_latam_identification_type_id.name or 'N° de documento'"/>: <span t-field="company.vat"/></span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_boxed_inherit_print_document_type_invoice" inherit_id="report_vat_position.external_layout_boxed_inherit_report_vat_position">
+            <xpath expr="//div[@name='company_vat']" position="replace">
+                <div name="company_vat" class="mb4">
+                    <span t-if="company.vat" class="list-inline-item"><t t-esc="company.partner_id.l10n_latam_identification_type_id.name or 'N° de documento'"/>: <span t-field="company.vat"/></span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_background_inherit_print_document_type_invoice" inherit_id="report_vat_position.external_layout_background_inherit_report_vat_position">
+            <xpath expr="//div[@name='company_vat']" position="replace">
+                <div t-if="company.vat" name="company_vat">
+                    <span t-if="company.vat" class="list-inline-item"><t t-esc="company.partner_id.l10n_latam_identification_type_id.name or 'N° de documento'"/>: <span t-field="company.vat"/></span>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_bold_inherit_report_vat_position" inherit_id="web.external_layout_bold">
+            <!-- header -->
+            <xpath expr="//span[@t-field='company.company_details']" position="before">
+                <span t-if="company.vat" class="list-inline-item">
+                    <t t-esc="company.partner_id.l10n_latam_identification_type_id.name or 'N° de documento'"/>: <span t-field="company.vat"/>
+                </span>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

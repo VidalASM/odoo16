@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ple_report_diary_view_tree" model="ir.ui.view">
+        <field name="name">ple.report.diary.tree</field>
+        <field name="model">ple.report.diary</field>
+        <field name="arch" type="xml">
+            <tree string="Libro Diario">
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="company_id"/>
+                <field name="date_ple"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_ple_report_diary_form" model="ir.ui.view">
+        <field name="name">ple.report.diary.form</field>
+        <field name="model">ple.report.diary</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate_excel" string="Generar Reporte" type="object" states='draft'/>
+                    <button name="action_close" string="Declarar a SUNAT" states='load' type="object"/>
+                    <button name="action_rollback" string="Regresar a Borrador" states='load,closed' type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group string="Reportes PLE" id="ple_cash_bank">
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="state_send"/>
+                            <field name="date_ple"/>
+                        </group>
+                    </group>                    
+                    <group>
+                        <group string="Diario">
+                            <field name="xls_filename_diary" invisible="1"/>
+                            <field name="xls_binary_diary" filename="xls_filename_diary" readonly="1" string="Reporte Excel"/>
+                            <field name="txt_filename_diary" invisible="1"/>
+                            <field name="txt_binary_diary" filename="txt_filename_diary" readonly="1"/>
+                            <field name="txt_filename_diary1" invisible="1"/>
+                            <field name="txt_binary_diary1" filename="txt_filename_diary1" readonly="1"/>
+                            <field name="txt_filename_diary2" invisible="1"/>
+                            <field name="txt_binary_diary2" filename="txt_filename_diary2" readonly="1"/>
+                        </group>
+                        <group string="Diario simplificado">
+                            <field name="txt_filename_diary3" invisible="1"/>
+                            <field name="txt_binary_diary3" filename="txt_filename_diary3" readonly="1"/>
+                            <field name="txt_filename_diary4" invisible="1"/>
+                            <field name="txt_binary_diary4" filename="txt_filename_diary4" readonly="1"/>
+                            <field name="txt_filename_diary5" invisible="1"/>
+                            <field name="txt_binary_diary5" filename="txt_filename_diary5" readonly="1"/>
+                        </group>
+                    </group>
+                    <field name="error_dialog_5_3" class="errorbox" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ple_report_diary_action" model="ir.actions.act_window">
+        <field name="name">Libro Diario</field>
+        <field name="res_model">ple.report.diary</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem 
+        id="menu_ple_diary" 
+        name="Libro Diario" 
+        parent="ple_sale_book.menu_ple_pe_monthly" 
+        action="ple_report_diary_action" 
+        sequence="3"
+    />
+</odoo>
