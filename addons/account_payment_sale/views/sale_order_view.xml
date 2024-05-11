@@ -9,9 +9,17 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_cancel']" position="before">
+                <button string="Facturar" name="%(action_view_payment_sale_wizard)d" type="action" class="btn-primary" icon="fa-rocket" states="draft"/>
+            </xpath>
             <field name="payment_term_id" position="after">
+                <!-- Desactivamos el campo, debido a que ahora se elige desde un wizard -->
                 <field
-                    name="payment_mode_id"
+                    name="payment_mode_id" required="0" invisible="1"
+                    options="{'no_open': True, 'no_create': True}"
+                />
+                <field
+                    name="journal_id" required="1" invisible="0"
                     options="{'no_open': True, 'no_create': True}"
                 />
             </field>

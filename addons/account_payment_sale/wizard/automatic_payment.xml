@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="select_payment_sale_wizard" model="ir.ui.view">
+        <field name="name">select.payment.sale.wizard.view</field>
+        <field name="model">select.payment.sale.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Elegir modo de pago">
+                <sheet>
+                    <group>
+                        <field name="order_id" invisible="1" force_save="1"/>
+                        <field name="journal_id" invisible="1"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="amount_total"/>
+                        <field name="amount_diff"/>
+                    </group>
+                    <group>
+                        <field name="date_invoice"/>
+                        <!-- <field name="reference"/> -->
+                        <field name="partner_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Detalle">
+                            <field name="line_ids" nolabel="1" >
+                                <tree editable="bottom">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="payment_mode_id" options="{'no_create': 1}"/>
+                                    <field name="communication"/>
+                                    <field name="amount" sum="Total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button string="Procesar pagos" name="action_process_sale" 
+                        type="object" class="btn-primary" icon="fa-gear"/>
+                    <button string="Cerrar" name="cancel" special="cancel" class="oe_link oe_inline"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_payment_sale_wizard" model="ir.actions.act_window">
+        <field name="name">Asistente de pagos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">select.payment.sale.wizard</field>
+        <field name="view_mode">form</field>
+        <!-- <field name="view_id" ref="select_payment_mode_wizard"/> -->
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -16,6 +16,15 @@ class SaleOrder(models.Model):
         check_company=True,
         domain="[('payment_type', '=', 'inbound'), ('company_id', '=', company_id)]",
     )
+    journal_id = fields.Many2one(
+        'account.journal',
+        string='Tipo Doc.',
+        store=True, readonly=False,
+        required=True, tracking=4,
+        states={'draft': [('readonly', False)]},
+        check_company=True,
+        domain="[('type', '=', 'sale')]",
+    )
 
     @api.depends("partner_id")
     def _compute_payment_mode(self):

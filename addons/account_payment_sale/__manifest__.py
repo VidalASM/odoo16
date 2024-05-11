@@ -11,6 +11,12 @@
     "author": "Akretion, " "Tecnativa, " "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/bank-payment",
     "depends": ["sale", "account_payment_partner"],
-    "data": ["views/sale_order_view.xml", "views/sale_report_templates.xml"],
+    "data": [
+		"security/security.xml",
+		"security/ir.model.access.csv",
+        'wizard/automatic_payment.xml',
+        "views/sale_order_view.xml", 
+        "views/sale_report_templates.xml"
+    ],
     "auto_install": True,
 }
