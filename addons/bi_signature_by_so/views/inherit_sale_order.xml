@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_sale_order_signature_inherited">
+        <field name="name">view.sale.order.signature.inherited</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="person_signature" widget="signature"/>
+                <field name="note"/>
+            </xpath>
+        </field>
+    </record>
+    </data> 
+</odoo>
