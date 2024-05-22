@@ -21,6 +21,7 @@
 #############################################################################
 
 from odoo import fields, models, api
+from datetime import datetime, timedelta
 
 
 class GymMember(models.Model):
@@ -56,7 +57,9 @@ class MemberPartner(models.Model):
     tutor_relation = fields.Many2one('tutor.type', string='Parentesco')
     # Hijos
     child_ids = fields.One2many(comodel_name='res.partner', inverse_name='tutor_id', string='Hijos')
-
+    # Referidos
+    referred_ids = fields.One2many(comodel_name='referred.record', inverse_name='partner_id', string='Invitados Referidos')
+    
     def _compute_membership_count(self):
         """ number of membership for gym members """
         for rec in self:
@@ -69,13 +72,38 @@ class MemberPartner(models.Model):
             rec.measurement_count = rec.env['measurement.history'].search_count(
                 [('member.id', '=', rec.id)])
 
-#    @api.onchange('gym_member')
-#    def _onchange_gym_member(self):
-#        """ select sale person to assign workout plan """
-#        if self.gym_member:
-#            return {
-#                'warning': {
-#                    'title': 'Warning!',
-#                    'message': 'select sale person (sales & purchase) '
-#                               'to assign workout plan'}
-#            }
+    # @api.onchange('gym_member')
+    # def _onchange_gym_member(self):
+    #     """ select sale person to assign workout plan """
+    #     if self.gym_member:
+    #         return {
+    #             'warning': {
+    #                 'title': 'Warning!',
+    #                 'message': 'select sale person (sales & purchase) '
+    #                            'to assign workout plan'}
+    #         }
+
+class ReferredRecord(models.Model):
+    _name = 'referred.record'
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+
+    name = fields.Char(string='Nombre', required=True, copy=False, readonly=True, index=True, default=lambda self:'Nuevo')
+    description = fields.Text(string='Descripción')
+    date = fields.Date(string='Fecha', default=(lambda self: fields.datetime.now() - timedelta(hours=5)), required=True)
+    quantity_days = fields.Integer(string='Número de Días', default=30)
+    partner_id = fields.Many2one(comodel_name='res.partner', string='Socio', ondelete='cascade', required=True)
+    contract_id = fields.Many2one(comodel_name='gym.membership', string='Membresía', ondelete='cascade', required=True)
+    referred_id = fields.Many2one(comodel_name='res.partner', string='Invitado / Referido', ondelete='cascade', required=True)
+    counter_id = fields.Many2one(comodel_name='res.users', string="Por", index=True, default=lambda self: self.env.user)
+    company_id = fields.Many2one(comodel_name='res.company', string='Sede', store=True, readonly=True, default=lambda self: self.env.company)
+    state = fields.Selection(string='Estado', selection=[('activa', 'Activo'), ('inactiva', 'Inactivo')], default="activa")
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', 'Nuevo') == 'Nuevo':
+            if 'partner_id' in vals and 'contract_id' in vals:
+                contract = self.env['gym.membership'].browse(vals['contract_id'])
+                vals['name'] = (contract.name if contract else '') #+ ' - ' + (partner.name if partner else '')
+        result = super(ReferredRecord, self).create(vals)
+        return result
+     

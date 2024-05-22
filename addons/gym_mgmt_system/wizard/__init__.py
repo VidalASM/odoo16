@@ -25,3 +25,4 @@ from . import automatic_payment
 from . import upgrade_crm_lead
 from . import freeze_wizard
 from . import transfer_wizard
+from . import attendace_wizard

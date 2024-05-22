@@ -1,11 +1,65 @@
 <?xml version="1.0"?>
 <odoo>
+    <!-- Creacion del wizard postpone-->
+    <record id="meeting_postpone_wizard" model="ir.ui.view">
+        <field name="name">meeting wizard postpone</field>
+        <field name="model">meeting.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de reprogramación">
+            <sheet>
+                <div class = "oe_title">
+                    <label for="cause" class="oe_edit_only" string="Motivo de la postergación">Motivo</label>
+                    <h1>
+                        <field name="cause"/>
+                    </h1>
+                </div>
+                <separator string="Detalles de la postergación"/>
+                <group string="Reprogramación">
+                    <field name="meeting_id" options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"/>
+                    <field name="user_id"/>
+                    <field name="date_postpone"/>
+                    <field name="start_date_new"/>
+                    <field name="end_date_new"/>
+                </group>
+                <footer>
+                    <button name="create_postpone" string="Reprogramar" type="object" class="btn-primary" />
+                    <button string="Cancelar" class="btn-default" special="cancel" />
+                </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_view_wizard" model="ir.actions.act_window">
+        <field name="name">Asistente de reprogramación</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">meeting.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="meeting_postpone_wizard"/>
+        <field name="target">new</field>
+    </record>
+    
     <record id="view_measurement_history_form" model="ir.ui.view">
         <field name="name">measurement.history.form</field>
         <field name="model">measurement.history</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="action" name="%(action_view_wizard)d" string="Postergar" class="oe_stat_button" icon="fa-clock-o"/>
+                        <button name="toggle_is_attend" type="object" class="oe_stat_button" icon="fa-edit">
+                                <field name="is_attend" widget="boolean_button" options='{"terminology": {
+                                                                        "string_true": "Asistió",
+                                                                        "hover_true": "¿No Asistió?",
+                                                                        "string_false": "Sin asistir",
+                                                                        "hover_false": "¿Asistió?"
+                                                                    }}'/>
+                        </button>
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
                     <group>
                         <group name="member" string="Details">
                             <field name="member"/>
@@ -294,6 +348,17 @@
                                     </group>
                                 </group>
                             </group>
+                        </page>
+                        <page string="Postergaciones">
+                            <field name="postpone_ids">
+                                <tree string="Citas pospuestas">
+                                    <field name="cause"/>
+                                    <field name="date_postpone"/>
+                                    <field name="start_date"/>
+                                    <field name="start_date_new"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
                         </page>
                         <!-- <page string="Freezes">
                             <field name="freeze_ids" readonly="False" modifiers="{}"/>

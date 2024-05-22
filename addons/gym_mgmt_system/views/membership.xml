@@ -100,6 +100,16 @@
                         <page string="Transferencias">
                             <field name="transfer_ids" readonly="False" modifiers="{}"/>
                         </page>
+                        <page string="Asistencias" attrs="{'invisible': [('state', '=', 'cancelled')]}">
+                            <field name="attendance_ids" readonly="True">
+                                <tree string="Asistencias">
+                                    <field name="company_id"/>
+                                    <field name="date_record"/>
+                                    <field name="time_stay" string="Duración (min)"/>
+                                    <field name="date_end"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="Anexos">
                             <!-- <field name="sign_request_ids" readonly="False" modifiers="{}"/> -->
                             <field name="sign_request_ids">

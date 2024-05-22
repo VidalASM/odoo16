@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- wizard action on res.partner -->
+        <act_window id="attendace_wizard_action"
+            name="Marcar asistencia"
+            binding_model="gym.membership"
+            res_model="attendace.wizard"
+            view_mode="form" target="new"
+            groups="gym_mgmt_system.group_gym_operator"/>
+
+        <!-- wizard view -->
+        <record id="attendace_wizard_view" model="ir.ui.view">
+            <field name="name">Attendance Register Wizard</field>
+            <field name="model">attendace.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Marcar asistencia">
+                    <div class="alert alert-info oe_edit_only" role="alert" attrs="{'invisible': [('update_message', '=', False)]}">
+                        <field name="update_message" nolabel="1" readonly="1"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <center>
+                                <field name="image" widget="image" options="{'size': [200, 200]}"/>
+                            </center>
+                        </div>
+                        <div class="col-sm-8">
+                            <group>
+                                <field name="vat" placeholder="Documento identidad" required="True"/>
+                                <field name="partner_id" readonly="1"/>
+                                <field name="contract_id" attrs="{'invisible': [('partner_id','=',False)]}" options="{'no_open': True, 'no_create': True, 'no_create_edit': True}"/>
+                            </group>
+
+                            <h4 attrs="{'invisible': [('partner_id','=',False)]}">
+                                <field name="info"/>
+                                <field name="days_end" invisible="1"/>
+                                <div attrs="{'invisible': ['|',('partner_id','=',False),('days_end','&gt;=','30')]}">
+                                    <font color="#ff0000">Advertencia! Quedan <field name="days_end" style="width: 15px" readonly="1"/> días!</font>
+                                </div>
+                                <div attrs="{'invisible': ['|',('contract_id','=',False),('count_referred','=',0)]}">
+                                    <font color="#000099">Referidos en el mes actual: <field name="count_referred" readonly="1"/></font>
+                                </div>
+                            </h4>
+
+                            <h4 class="row">
+                                <div class="col-sm-3" attrs="{'invisible':[('contract_id','=',False)]}"><label for="plan" string="Plan: "/></div>
+                                <div class="col-sm-9" attrs="{'invisible':[('contract_id','=',False)]}"><field name="plan" readonly="1"/></div>
+                                <div class="col-sm-3" attrs="{'invisible':[('contract_id','=',False)]}"><label for="state" string="Estado: "/></div>
+                                <div class="col-sm-3" attrs="{'invisible':[('contract_id','=',False)]}"><field name="state" readonly="1"/></div>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <button type="object" name="attendance_record" string="Marcar asistencia" class="btn-primary" attrs="{'invisible':[('contract_id','=',False)]}"/>
+                        <button type="object" name="attendance_record_out" string="Marcar salida" class="btn-danger" attrs="{'invisible':[('contract_id','=',False)]}"/>
+                        <button string="Cancelar" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_create_attendance_wizard" model="ir.actions.act_window">
+            <field name="name">Marcar asistencia</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">attendace.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

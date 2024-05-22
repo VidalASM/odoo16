@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_attendace_record_form" model="ir.ui.view">
+        <field name="name">attendace.record.form</field>
+        <field name="model">attendace.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="company_id"/>
+                            <field name="contract_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <field name="date_record"/>
+                            <field name="time_stay" widget="float_time"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_attendace_record_tree" model="ir.ui.view">
+        <field name="name">attendace.record.tree</field>
+        <field name="model">attendace.record</field>
+        <field name="arch" type="xml">
+            <tree default_order="date desc">
+                <field name="date"/>
+                <field name="date_record"/>
+                <field name="company_id"/>
+                <field name="contract_id"/>
+                <field name="partner_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_attendace_record" model="ir.actions.act_window">
+        <field name="name">Attendance Record</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">attendace.record</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Attendance Record!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu padre de marcación -->
+    <record id="view_attendance_form_2" model="ir.ui.view">
+        <field name="name">attendance.form.2</field>
+        <field name="model">attendace.record</field>
+        <field name="arch" type="xml">
+            <form string="Asistencias">
+                <div class="alert alert-danger" role="alert" attrs="{'invisible': 
+                [('message','not in',['El socio no tiene plan activo','No se encontraron coincidencias'])]}">
+                    <span><strong><field name="message"/></strong></span>
+                </div>
+                <div class="alert alert-success" role="alert" attrs="{'invisible': 
+                ['|',('message','=',False),('message','in',['El socio no tiene plan activo','No se encontraron coincidencias'])]}">
+                    <span><strong><field name="message"/></strong></span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <group>
+                            <field name="vat" placeholder="Documento identidad" required="False"/>
+                            <field name="partner_id" readonly="0"/>
+                            <field name="contract_id" attrs="{'invisible': False}" options="{'no_open': True, 'no_create': True, 'no_create_edit': True}"/>
+                            <field name="info"/>
+                            
+                            <field name="date_record" readonly="1"/>
+                            <field name="date" readonly="1"/>
+                            <field name="company_id" readonly="1"/>
+                        </group>
+                    </div>
+                    <div class="col-sm-4" style="max-height: none; max-width: none;">
+                        <group>
+                        <div style="text-align: left; margin-left: 200px;">
+                            <field name="image" widget="image" class="oe_avatar" options="{&quot;size&quot;: [200, 200]}" style="max-height: none; max-width: none;" readonly="0"/>
+                        </div>
+                        </group>
+                        <group>
+                            <button name="onchange_image" string="Cambiar Foto" type="object" class="btn-primary"/>
+                        </group>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="attendace_record_action_2" model="ir.actions.act_window">
+        <field name="name">Marcación de Asistencia</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">attendace.record</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_attendance_form_2"/>
+        <field name="target">inline</field>
+    </record>
+
+    <menuitem
+            id="menu_attendace_record"
+            name="Asistencias"
+            parent="gym_member_root"
+            action="action_attendace_record"
+            sequence="50"/>
+            
+    <menuitem 
+            id="menu_attendace_record_2"
+            name="Asistencias de socios"
+            action="attendace_record_action_2"
+            sequence="12"/>
+
+</odoo>

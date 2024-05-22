@@ -21,8 +21,10 @@
 #############################################################################
 
 from odoo import api, fields, models, _, Command
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
+from odoo.exceptions import UserError, ValidationError
+import calendar
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -117,6 +119,8 @@ class GymMembership(models.Model):
         ('cancelled', 'Cancelled')
     ], default='draft', tracking=2, string='Status')
     type_contract = fields.Selection([('1', 'Nuevo'), ('2', 'Renovación'),('3','Traspaso'),('4','Invitado'),('5','Referido')], string="Tipo de Contrato")
+    # Asistncias
+    attendance_ids = fields.One2many(comodel_name='attendace.record', inverse_name='contract_id', string='Asistencia', ondelete='cascade')
 
     @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
     def _compute_amount(self):
@@ -259,6 +263,40 @@ class GymMembership(models.Model):
         self.ensure_one()
         return self.env.ref('l10n_pe_edi_odoofact.invoice_ticket_80').report_action(self.invoice_id)
 
+    # Si el molinete estuviera en mantenimiento esto verificara si el usuario tiene acceso a esta sede.
+    def attendance_record(self):
+        if not self.invoice_id:
+            raise ValidationError("El contrato no tiene un comprobante asociado. Por favor confirme la membresia y cree el comprobante.")
+        if self.state_contract == 'active':
+            company_ids = self.membership_scheme.company_ids
+            if self.env.user.company_id in company_ids:
+                self.create_attendance()
+            else:
+                raise ValidationError("El socio no tiene acceso a esta sede")
+        else:
+            raise ValidationError("Este contrato no esta activo")
+        
+    # Aqui creamos la sistencia.
+    def create_attendance(self):
+        self.env['attendace.record'].create({
+            'name': fields.datetime.now(),
+            'date_record':fields.datetime.now(),
+            'date': fields.datetime.now(),
+            'contract_id': self.id,
+            'partner_id': self.member.id,
+            'company_id': self.env.user.company_id.id,
+        })
+        
+    # Aqui creamos la salida.
+    def attendance_out(self):
+        for rec in self:
+            attendance_id = self.env['attendace.record'].search([
+                ('contract_id', '=', rec.id), 
+                ('company_id', '=', self.env.user.company_id.id), 
+                ('date_end', '=', False)], limit=1)
+            if attendance_id:
+                attendance_id.date_end = fields.datetime.now()
+
 
 class SaleConfirm(models.Model):
     _inherit = "sale.order"
@@ -312,3 +350,115 @@ class MembershipTransfer(models.Model):
     date_transfer = fields.Date(string='Fecha de la transferencia')
     days_transferred = fields.Integer(string='Días transferidos')
     currente_transfer = fields.Date(string='Vigente desde')
+
+class AttendanceRecord (models.Model):
+    _name = 'attendace.record'
+    _inherit = ["mail.thread", "mail.activity.mixin", "image.mixin"]
+
+    def _get_default_company(self):
+        """ to get default company """
+        return self.env.company
+        # lambda self: self.env.context.get('active_ids')
+
+    name = fields.Char(string='name', default=lambda self: fields.datetime.now())
+    date = fields.Date(string='Fecha', default=fields.Date.today)
+    date_record = fields.Datetime(string='Hora de entrada',default=lambda self: fields.datetime.now())
+    contract_id = fields.Many2one(comodel_name='gym.membership', string='membresía')
+    company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False, default=_get_default_company)
+    date_end = fields.Datetime(string='Hora de salida')
+    time_stay = fields.Float(string='Duración')
+    partner_id = fields.Many2one('res.partner', string='Socio')
+    image = fields.Binary("Image", attachment=True, related='partner_id.image_1920', readonly=False)
+    info = fields.Text(string=u'Detalles', readonly=True, store=False)
+    message = fields.Text(string=u'Mensaje', readonly=True, store=False)
+    vat = fields.Char(string=u'DNI', store=False)
+
+    @api.onchange('vat')
+    def _onchange_vat(self):
+        if self.vat:
+            sql = """select id from res_partner where vat='"""+self.vat+"""' and active=true"""
+            self.env.cr.execute(sql)
+            res = self.env.cr.fetchall()
+            if res:
+                self.partner_id = self.env['res.partner'].browse(res[0][0])
+            else:
+                self.message = "No se encontraron coincidencias"
+                self.partner_id = False	
+                self.contract_id = False
+                self.info = False	
+        self.vat = False
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        if self.partner_id:
+            if self.partner_id.state_client == '7':
+                raise UserError(('El socio "%s" está bloqueado, no puede marcar asistencia '
+                'para este socio') % self.partner_id.name)
+            
+            memberships = self.env['gym.membership'].search([
+                ('member', '=', self.partner_id.id),
+                ('state','in',['draft','confirm']),
+                ('membership_date_from','<=', fields.Date.today()),
+                ('membership_date_to','>=', fields.Date.today()),
+                ('invoice_id.amount_residual','=',0.0),
+                ], order="membership_date_from asc")
+            
+            _logger.info("---------------------> memberships")
+            _logger.info(memberships)
+            
+            result = {'domain' :{'contract_id' : []}}
+            if memberships:
+                result = {'domain' :{'contract_id' : [('id','in',memberships.ids)]}}
+                # self.contract_id = self.env['gym.membership'].browse(memberships[0].id)
+                self.contract_id = memberships[0]
+            else:
+                self.contract_id = False
+                self.message = "El socio no tiene plan activo"
+            return result
+
+    @api.onchange('contract_id')
+    def _onchange_membership_id(self):
+        if not self.partner_id:
+            self.message = False
+        if self.contract_id:
+            _logger.info(self.contract_id.membership_date_to)
+            _logger.info(date.today())
+            # self.company_id = self.contract_id.company_id
+            days_end = abs((self.contract_id.membership_date_to - date.today()).days)
+            plan = self.contract_id.membership_scheme.name
+            self.info = "Le quedan "+str(days_end)+" días de contrato\nSede del contrato: "+str(self.contract_id.company_id.name)\
+                        +"\nFecha de finalización: "+str(self.contract_id.membership_date_to) #+"\nSede de acceso: "+str(self.company_id.name)
+            if plan:
+                self.info += "\nPlan: %s"%plan
+            # Numero de referidos
+            referred = self.env['referred.record']
+            c_month = datetime.today().month
+            c_year = datetime.today().year
+            start_date = datetime(c_year, c_month, 1)
+            end_date = datetime(c_year, c_month, calendar.mdays[c_month])
+            count_referred = referred.search_count([('date','>=',start_date), ('date','<=',end_date),
+                ('partner_id','=',self.partner_id.id), ('state','=','activa')])
+            # if len(count_referred) > 0:
+            self.info += "\nReferidos en el mes actual: %s"%str(count_referred)
+            
+            # Creacion de asistencia
+            attendance = self.create({
+                'name': self.name,
+                'date_record': fields.datetime.now(),
+                'contract_id': self.contract_id.id or False,
+                'company_id': self.company_id.id or False,
+                'partner_id': self.partner_id.id or False,
+            })
+            self.message = "¡Asistencia exitosa!"
+            self.message += ("\n%s : \n%s" % (attendance.partner_id.name, fields.Datetime.from_string(attendance.date_record) - timedelta(hours=5)))
+        else:
+            self.info = False
+
+    def onchange_image(self):
+        for rec in self:
+            # _logger.info("--------------------- imge info")
+            # _logger.info(rec.message)
+            if rec.image and rec.image != rec.partner_id.image:
+                rec.partner_id.write({'image': rec.image})
+                rec.message = "¡Cambio de foto exitoso!"
+    

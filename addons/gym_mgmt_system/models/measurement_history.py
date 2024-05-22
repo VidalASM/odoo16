@@ -22,6 +22,8 @@
 
 from odoo import api, fields, models
 from datetime import timedelta
+from odoo.exceptions import UserError, ValidationError
+from datetime import date, datetime, timedelta
 
 
 class MeasurementHistory(models.Model):
@@ -36,6 +38,9 @@ class MeasurementHistory(models.Model):
         return self.env[
             'product.template']._get_weight_uom_name_from_ir_config_parameter()
 
+    active = fields.Boolean(default="True")
+    is_attend = fields.Boolean(string='Asistió', default=False)
+    postpone_ids = fields.One2many(comodel_name='postpone.meeting', inverse_name='meeting_id', string='Postergaciones', readonly=True)
     member = fields.Many2one('res.partner', string='Socio', tracking=True, required=True, domain="[('gym_member', '!=',False)]")
     membership = fields.Many2one('gym.membership', string='Membresía', tracking=True, required=False)
     order_id = fields.Many2one('sale.order', string='Orden de Venta', tracking=True, required=False)
@@ -190,3 +195,61 @@ class MeasurementHistory(models.Model):
             if self.gender == "female":
                 self.bmr = 655.1 + (9.563 * self.weight) + \
                            (1.85 * self.height) - (6.755 * self.age)
+                
+    #Funcion para marcar la asistencia de una cita con especialista.
+    def toggle_is_attend(self):
+        self.is_attend = not self.is_attend
+
+class PostponeMeeting(models.Model):
+    _name = ('postpone.meeting')
+
+    cause = fields.Char(string='Motivo')
+    date_postpone = fields.Date(string='Fecha registrada')
+    start_date = fields.Datetime('Hora de la cita anterior')
+    start_date_new = fields.Datetime('Hora de la cita reprogramada')
+    meeting_id = fields.Many2one(comodel_name='measurement.history', string='Cita',ondelete='cascade')
+    user_id = fields.Many2one(related="meeting_id.user_id",string="Por")
+        
+class MeetingPostponeWizard(models.TransientModel):
+    _name = "meeting.wizard"
+
+    #Esta funcion nos retorna el id de la cita.
+    def _default_session(self):
+        return self.env['measurement.history'].browse(self._context.get('active_id'))
+
+    #Declaración de variables
+    meeting_id = fields.Many2one(comodel_name='measurement.history', string='Cita', default=_default_session, readonly=True)
+    user_id = fields.Many2one(comodel_name='res.users', string="Por",default=lambda self: self.env.user, readonly=True)
+    cause = fields.Char(string='Motivo',default="Imprevisto")
+    date_postpone = fields.Date(string='Registro', default=fields.Date.today, readonly=True)
+    start_date_new = fields.Datetime('Reprogramación para', required=True)
+    end_date_new = fields.Datetime('Finaliza', required=True)
+
+    #En esta funcion validamos que postergaciones no supera la unidad.
+    @api.onchange('start_date_new')
+    def _onchange_start_date(self):
+        if self.start_date_new:
+            start = fields.Datetime.from_string(self.start_date_new)
+            duration_meeting = timedelta(minutes=20)
+            self.end_date_new = start + duration_meeting
+
+    def create_postpone(self):
+        meetings = [meeting for meeting in self.meeting_id.postpone_ids]
+        if len(meetings) >= 1:
+            #Si supera la unidad se procede a impedir la creación de la programación
+            raise ValidationError("El socio no puede postergar más la cita a menos que pague por la reprogramación")
+        #Si no supera la unidad se procede a crear en el modelo postpone.meeting
+        for item in self:
+            self.env['postpone.meeting'].create({
+                'meeting_id': item.meeting_id.id,
+                'user_id': item.user_id.id,
+                'cause': self.cause,
+                'date_postpone': datetime.today(),
+                'start_date': item.meeting_id.date_start ,
+                'start_date_new': item.start_date_new,
+            })
+            #Terminamos la funcion con la actualización del start_date con el start_date_new del del wizard
+            item.meeting_id.date_start = self.start_date_new
+            item.meeting_id.date_end = self.end_date_new
+        return True
+    

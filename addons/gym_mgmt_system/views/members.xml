@@ -54,6 +54,24 @@
                 <separator string="Hijos" />
                 <field name="child_ids" />
             </xpath>
+            
+            <notebook position="inside">
+                <page string="Referidos">
+                    <field name="referred_ids" readonly="True">
+                        <tree string="Referidos">
+                            <field name="partner_id" invisible="1"/>
+                            <field name="date"/>
+                            <field name="contract_id"/>
+                            <field name="referred_id"/>
+                            <field name="quantity_days" invisible="1"/>
+                            <field name="description" invisible="1"/>
+                            <field name="counter_id"/>
+                            <field name="company_id"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
 
         </field>
     </record>

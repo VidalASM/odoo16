@@ -5,6 +5,8 @@ access_select_payment_mode_wizard,account.select.payment.mode.wizard,model_selec
 access_select_payment_mode_wizard_line,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,,1,1,1,1
 access_freeze_wizard,freeze.wizard,model_freeze_wizard,,1,1,1,1
 access_transfer_wizard,transfer.wizard,model_transfer_wizard,,1,1,1,1
+access_attendace_wizard,attendace.wizard,model_attendace_wizard,,1,1,1,1
+access_meeting_wizard,meeting.wizard,model_meeting_wizard,,1,1,1,1
 
 hr.access_hr_employee_trainer,hr.employee user,model_hr_employee,gym_mgmt_system.group_gym_trainer,1,1,1,0
 hr.access_hr_employee_member,hr.employee user,model_hr_employee,gym_mgmt_system.group_gym_member,1,0,0,0
@@ -22,9 +24,21 @@ access_membership_freeze_operator,account.membership.freeze,model_membership_fre
 access_membership_freeze_trainer,account.membership.freeze,model_membership_freeze,gym_mgmt_system.group_gym_trainer,1,0,0,0
 access_membership_freeze_member,account.membership.freeze,model_membership_freeze,gym_mgmt_system.group_gym_member,1,0,0,0
 
+access_postpone_meeting_operator,account.postpone.meeting,model_postpone_meeting,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_postpone_meeting_trainer,account.postpone.meeting,model_postpone_meeting,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_postpone_meeting_member,account.postpone.meeting,model_postpone_meeting,gym_mgmt_system.group_gym_member,1,0,0,0
+
 access_membership_transfer_operator,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_membership_transfer_trainer,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_trainer,1,0,0,0
 access_membership_transfer_member,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_attendace_record_operator,attendace.record,model_attendace_record,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_attendace_record_trainer,attendace.record,model_attendace_record,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_attendace_record_member,attendace.record,model_attendace_record,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_referred_record_operator,referred.record,model_referred_record,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_referred_record_trainer,referred.record,model_referred_record,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_referred_record_member,referred.record,model_referred_record,gym_mgmt_system.group_gym_member,1,0,0,0
 
 access_measurement_history_operator,account.measurement.history,model_measurement_history,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_measurement_history_trainer,account.measurement.history,model_measurement_history,gym_mgmt_system.group_gym_trainer,1,1,1,1
