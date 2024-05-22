@@ -51,6 +51,7 @@ class GymMembership(models.Model):
 
     reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
     member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, domain="[('gym_member', '!=',False)]")
+    vat = fields.Char("DNI", related="member.vat", store=True)
     age = fields.Integer("Edad", related="member.age", store=True)
     gender = fields.Selection("Género", related="member.gender", store=True)
     membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=4)

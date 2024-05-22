@@ -46,6 +46,7 @@
                     <group>
                         <group>
                             <field name="member"/>
+                            <field name="vat" invisible="1"/>
                             <field name="age" invisible="1"/>
                             <field name="gender" invisible="1"/>
                             <field name="membership_scheme"/>
@@ -186,6 +187,7 @@
         <field name="arch" type="xml">
             <tree default_order="reference desc">
                 <field name="reference"/>
+                <field name="vat" optional="hide"/>
                 <field name="member"/>
                 <field name="membership_scheme"/>
                 <field name="membership_fees"/>

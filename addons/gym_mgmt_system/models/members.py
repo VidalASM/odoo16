@@ -69,13 +69,13 @@ class MemberPartner(models.Model):
             rec.measurement_count = rec.env['measurement.history'].search_count(
                 [('member.id', '=', rec.id)])
 
-    @api.onchange('gym_member')
-    def _onchange_gym_member(self):
-        """ select sale person to assign workout plan """
-        if self.gym_member:
-            return {
-                'warning': {
-                    'title': 'Warning!',
-                    'message': 'select sale person (sales & purchase) '
-                               'to assign workout plan'}
-            }
+#    @api.onchange('gym_member')
+#    def _onchange_gym_member(self):
+#        """ select sale person to assign workout plan """
+#        if self.gym_member:
+#            return {
+#                'warning': {
+#                    'title': 'Warning!',
+#                    'message': 'select sale person (sales & purchase) '
+#                               'to assign workout plan'}
+#            }
