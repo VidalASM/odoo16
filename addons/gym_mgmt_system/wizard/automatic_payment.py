@@ -35,7 +35,7 @@ class SelectPaymentModeWizard(models.TransientModel):
         if not self.order_id:
             raise UserError('Debe confirmar la membresía antes de continuar.')
         # TODO FIXME Definir si van a poser hacer pagos parciales, por el momento, debe ser completo
-        if not self.line_ids:
+        if not self.line_ids and self.amount_total > 0.0:
             raise UserError('Debe definir al menos una línea de detalle para realizar los pagos.')
         # if not self.currency_id.is_zero(self.amount_diff):
         if self.amount_diff < 0.0:

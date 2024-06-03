@@ -17,7 +17,7 @@ patch(CalendarModel.prototype, "WebCalendarSlotDurationCalendarModel", {
             const [hours, minutes, seconds] = slot_duration
                 .match(/(\d+):(\d+):(\d+)/)
                 .slice(1, 4);
-            const durationFloat = hours + minutes / 60 + seconds / 3600;
+            const durationFloat = hours + minutes / 60; //+ seconds / 3600;
             partialRecord.end = partialRecord.start.plus({hours: durationFloat});
         }
         return this._super(partialRecord, options);
