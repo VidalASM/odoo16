@@ -39,4 +39,39 @@
                 </form>
             </field>
         </record>
+        
+        <!-- wizard action on res.partner -->
+        <act_window id="freeze_reboot_wizard_action"
+            name="Levantar Congelamiento"
+            binding_model="gym.membership"
+            res_model="freeze.reboot.wizard"
+            view_mode="form" target="new"
+            groups="gym_mgmt_system.group_gym_operator"/>
+
+        <!-- wizard view -->
+        <record id="freeze_reboot_wizard_view" model="ir.ui.view">
+            <field name="name">Freeze Reboot Wizard Membership</field>
+            <field name="model">freeze.reboot.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Levantamiento de Congelamiento">
+                    <div>
+                        Llene el siguiente formulario para levantar el congelamiento.
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contract_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                        <group>
+                            <field name="reboot_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Levantar Congelamiento" name="reboot_freeze" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
 </odoo>

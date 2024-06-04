@@ -13,6 +13,19 @@
         </field>
     </record>
 
+    <!-- <record id="view_member_form_inherit_calendar" model="ir.ui.view">
+        <field name="name">res.partner.inherit.cal</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="calendar.view_partners_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@button='schedule_meeting']" position="after">
+                <button class="oe_stat_button" type="object" name="action_view_membership_quotation" icon="fa-usd" context="{'partner_id': active_id, 'partner_name': name}">
+                    <field string="Membresías" name="membership_count" widget="statinfo"/>
+                </button>
+            </xpath>
+        </field>
+    </record> -->
+
     <record id="view_member_form_inherit" model="ir.ui.view">
         <field name="name">res.partner.inheriteds</field>
         <field name="model">res.partner</field>
@@ -23,6 +36,14 @@
                     <field string="Purchases" name="purchase_order_count" widget="statinfo"/>
                 </button>
             </div> -->
+            <xpath expr="//button[@name='schedule_meeting']" position="after">
+                <button class="oe_stat_button" type="object" name="action_view_membership_quotation" icon="fa-usd" context="{'partner_id': active_id, 'partner_name': name}">
+                    <field string="Membresías" name="membership_count" widget="statinfo"/>
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_view_sale_order']" position="attributes">
+                <attribute name="groups">gym_mgmt_system.group_gym_operator</attribute>
+            </xpath>
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="gym_member" />
                 <field name="state_client" />
@@ -53,6 +74,23 @@
                 <field name="tutor_relation" attrs="{'invisible': [('has_tutor','!=',True)]}"/>
                 <separator string="Hijos" />
                 <field name="child_ids" />
+            </xpath>
+            <xpath expr="//page[@name='contact_addresses']" position="before">
+                <page string="Membresías">
+                    <field name="membership_ids" readonly="True">
+                        <tree string="Membresías">
+                            <field name="member" invisible="1"/>
+                            <field name="reference"/>
+                            <field name="vat" optional="hide"/>
+                            <field name="member"/>
+                            <field name="membership_scheme"/>
+                            <field name="membership_fees"/>
+                            <field name="state"/>
+                            <field name="membership_date_from"/>
+                            <field name="membership_date_to"/>
+                        </tree>
+                    </field>
+                </page>
             </xpath>
             
             <notebook position="inside">

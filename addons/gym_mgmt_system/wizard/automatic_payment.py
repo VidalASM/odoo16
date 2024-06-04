@@ -13,6 +13,7 @@ class SelectPaymentModeWizard(models.TransientModel):
 
     membership_id = fields.Many2one('gym.membership', string='Membresía', required=True, default=_default_membership)
     partner_id = fields.Many2one(related='membership_id.member', string='Socio', required=True)
+    partner2_id = fields.Many2one('res.partner', string='Razón Social')
     order_id = fields.Many2one(related='membership_id.sale_order_id', string='Orden de Venta', required=True)
     journal_id = fields.Many2one(related='membership_id.journal_id', string='Tipo Doc.', required=True)
     currency_id = fields.Many2one(related='order_id.currency_id', string='Moneda', readonly=True)
@@ -41,6 +42,7 @@ class SelectPaymentModeWizard(models.TransientModel):
         if self.amount_diff < 0.0:
             raise UserError('El monto total de las líneas debe ser igual o menor al monto pendiente de pago (%s %.2f)' % (self.currency_id.symbol, self.amount_diff))
         
+        self.order_id.write({'partner_id': self.partner2_id.id})
         if self.order_id.state != 'sale':
             self.order_id.action_confirm()
 

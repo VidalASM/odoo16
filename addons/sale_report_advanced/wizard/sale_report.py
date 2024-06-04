@@ -97,6 +97,8 @@ class SaleReportAdvance(models.TransientModel):
             }
             products.append(a)
 
+        margin = 0.0
+
         if self.type == 'product':
             for rec in products:
                 for lines in sales_order_line:

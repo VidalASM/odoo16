@@ -30,12 +30,11 @@
             <form>
                 <header>
                     <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'confirm'), ('paid_amount','=','membership_fees')]}"/>
-                    <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': [('state', '!=', 'confirm')]}"/>
-                    <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm')]}"/>
+                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'confirm'), ('paid_amount','!=',0.0)]}" groups="gym_mgmt_system.group_gym_operator"/>
+                    <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '=', False)]}"/>
+                    <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
                     <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': [('invoice_id', '=', False)]}"/>
-                    <field name="state" widget="statusbar"
-                           options="{'clickable':'1'}"/>
+                    <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -204,6 +203,7 @@
                 <field name="state"/>
                 <field name="membership_date_from"/>
                 <field name="membership_date_to"/>
+                <field name="invoice_id" optional="hide"/>
             </tree>
         </field>
     </record>

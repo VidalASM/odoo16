@@ -31,7 +31,7 @@
     'description': "GYM Management System",
     'depends': [
         'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 
-        'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact',
+        'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact', 'calendar', 
     ],
     'images': ['static/description/banner.png'],
     'data': [

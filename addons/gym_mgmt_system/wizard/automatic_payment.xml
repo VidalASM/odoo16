@@ -19,6 +19,7 @@
                         <field name="date_invoice"/>
                         <!-- <field name="reference"/> -->
                         <field name="partner_id"/>
+                        <field name="partner2_id"/>
                     </group>
                     <notebook>
                         <page string="Detalle">

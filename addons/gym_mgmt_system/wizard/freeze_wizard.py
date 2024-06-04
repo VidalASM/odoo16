@@ -7,6 +7,7 @@ from odoo.tools import email_split
 from odoo.exceptions import UserError, ValidationError
 from odoo import api, fields, models
 from datetime import datetime, date, timedelta
+from dateutil.relativedelta import relativedelta
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -97,3 +98,64 @@ class FreezeWizard(models.TransientModel):
     #     self.ensure_one()
     #     self.user_ids.action_apply()
     #     return {'type': 'ir.actions.act_window_close'}
+
+class FreezeRebootWizard(models.TransientModel):
+    """
+        A wizard to manage the creation/removal of freeze membership.
+    """
+    _name = 'freeze.reboot.wizard'
+    _description = 'Reboot Freeze membership'
+
+    def _default_membership(self):
+        return self.env['gym.membership'].browse(self._context.get('active_id'))
+
+    def _default_start(self):
+        membership = self.env['gym.membership'].browse(self._context.get('active_id'))
+        freeze = self.env['membership.freeze'].search([('contract_id','=',membership.id)], order="id desc", limit=1)
+        if freeze:
+            return freeze.start_date
+        else:
+            return False
+
+    def _default_end(self):
+        membership = self.env['gym.membership'].browse(self._context.get('active_id'))
+        freeze = self.env['membership.freeze'].search([('contract_id','=',membership.id)], order="id desc", limit=1)
+        if freeze:
+            return freeze.end_date
+        else:
+            return False
+
+    contract_id = fields.Many2one(comodel_name='gym.membership', string='Membresía', default=_default_membership, readonly=True)
+    start_date = fields.Date(string='Desde', default=_default_start, readonly=True)
+    end_date = fields.Date(string='Reinicio', default=_default_end, readonly=True)
+    reboot_date = fields.Date(string='Nuevo Reinicio',  default=fields.Date.today, required=True)
+
+    def reboot_freeze(self):
+        # Levantamiento del freeze
+        self.ensure_one()
+        freeze = self.env['membership.freeze'].search([('contract_id','=',self.contract_id.id)], order="id desc", limit=1)
+        scheme_days_freeze = self.reboot_date
+        contract_days_freeze = freeze.start_date
+        partition_days_freeze = abs((scheme_days_freeze - contract_days_freeze).days)
+        freeze.write({'end_date': self.reboot_date, 'quantity_days': partition_days_freeze})
+        
+        res = self.contract_id.membership_date_from
+        templ = self.contract_id.membership_scheme.product_tmpl_id
+        date = fields.Date.from_string(self.contract_id.membership_date_from)
+        if self.contract_id.type_contract == '3':
+            res = date + timedelta(days=self.contract_id.days_transferred)
+        elif templ.membership_type == "variable":
+            delta = templ.membership_interval_qty
+            if templ.membership_interval_unit == "days":
+                res = date + timedelta(days=delta)
+            elif templ.membership_interval_unit == "weeks":
+                res = date + timedelta(weeks=delta)
+            elif templ.membership_interval_unit == "months":
+                res = date + relativedelta(months=delta)
+            elif templ.membership_interval_unit == "years":
+                res = date + relativedelta(years=delta)
+        
+        contract_days_freeze = sum(self.contract_id.freeze_ids.mapped('quantity_days')) if self.contract_id.freeze_ids else 0
+        res += timedelta(days=contract_days_freeze)
+        
+        self.contract_id.write({'membership_date_to': res})

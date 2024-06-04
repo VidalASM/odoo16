@@ -81,7 +81,7 @@ class GymMembership(models.Model):
         check_company=True,
         domain="[('type', '=', 'sale')]",
     )
-    adendum = fields.Text("Adendum")
+    adendum = fields.Text("Adendum", default="- Acepto Terminos y Condiciones Y politicas de Proteccion de Datos Personales.\n- No Autorizo el Tratamiento de mis datos personales para prospeccion y promocion comercial por parte de REVO SPORT.")
     restrictions = fields.Html("Restricciones", related="membership_scheme.description")
     state_contract = fields.Selection(string='Estado de Contrato', 
         selection=[('active', 'Activo'), ('inactive', 'Inactivo'), ('freezing', 'Freezing'),('pending', 'Pendiente'),],
@@ -114,9 +114,9 @@ class GymMembership(models.Model):
          'Error ! Ending Date cannot be set before Beginning Date.')
     ]
     state = fields.Selection([
-        ('draft', 'Draft'),
-        ('confirm', 'Confirm'),
-        ('cancelled', 'Cancelled')
+        ('draft', 'Borrador'),
+        ('confirm', 'Confirmado'),
+        ('cancelled', 'Anulado')
     ], default='draft', tracking=2, string='Status')
     type_contract = fields.Selection([('1', 'Nuevo'), ('2', 'Renovación'),('3','Traspaso'),('4','Invitado'),('5','Referido')], string="Tipo de Contrato")
     # Asistncias

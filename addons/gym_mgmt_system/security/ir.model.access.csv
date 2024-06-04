@@ -4,6 +4,7 @@ access_workout_plan_wizard,account.workout.plan.wizard,model_workout_plan_wizard
 access_select_payment_mode_wizard,account.select.payment.mode.wizard,model_select_payment_mode_wizard,,1,1,1,1
 access_select_payment_mode_wizard_line,account.select.payment.mode.wizard.line,model_select_payment_mode_wizard_line,,1,1,1,1
 access_freeze_wizard,freeze.wizard,model_freeze_wizard,,1,1,1,1
+access_freeze_reboot_wizard,freeze.reboot.wizard,model_freeze_reboot_wizard,,1,1,1,1
 access_transfer_wizard,transfer.wizard,model_transfer_wizard,,1,1,1,1
 access_attendace_wizard,attendace.wizard,model_attendace_wizard,,1,1,1,1
 access_meeting_wizard,meeting.wizard,model_meeting_wizard,,1,1,1,1
