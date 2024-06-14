@@ -60,8 +60,17 @@ class GymMembership(models.Model):
     _description = "Gym Membership"
     _rec_name = "reference"
 
+    # Retorna el responsable actual
+    def _default_responsible(self):
+        user_id = self.env['hr.department'].search([('company_id','=',self.env.company.id), ('parent_id','=',False)], limit=1).manager_id.user_id
+        if not user_id:
+            raise ValidationError("La sede actual no tiene responsable. Por favor configurar el responsable de la sede.")
+        return user_id.id
+    
     reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
     member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, domain="[('gym_member', '!=',False)]")
+    user_id = fields.Many2one(string='Vendedor', comodel_name='res.users', copy=False, tracking=True, default=lambda self: self.env.user,)
+    responsible_id = fields.Many2one(string='Responsable', comodel_name='res.users', copy=False, tracking=True, default=_default_responsible)
     vat = fields.Char("DNI", related="member.vat", store=True)
     age = fields.Integer("Edad", related="member.age", store=True)
     gender = fields.Selection("Género", related="member.gender", store=True)
@@ -98,11 +107,8 @@ class GymMembership(models.Model):
         tracking=3, default='pending')
     freeze_ids = fields.One2many(comodel_name='membership.freeze', inverse_name='contract_id', string='Freezers', ondelete='cascade')
     transfer_ids = fields.One2many(comodel_name='membership.transfer', inverse_name='contract_id', string='Transeferencias')
-    company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False,
-        default=lambda self: self.env.company)
-    opportunity_id = fields.Many2one(
-        'crm.lead', string='Oportunidad', check_company=True,
-        domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
+    company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False, default=lambda self: self.env.company)
+    opportunity_id = fields.Many2one('crm.lead', string='Oportunidad', check_company=True, domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
     #Si este contratro fue transferido entonces modificara la fecha de inicio.
     days_transferred = fields.Integer()
     
@@ -272,6 +278,15 @@ class GymMembership(models.Model):
         """ to override for each type of models that will use this composer."""
         self.ensure_one()
         return self.env.ref('l10n_pe_edi_odoofact.invoice_ticket_80').report_action(self.invoice_id)
+    
+    def action_invoice_sent(self):
+        """ Open a window to compose an email, with the edi invoice template
+            message loaded by default
+        """
+        self.ensure_one()
+        if not self.invoice_id:
+            raise ValidationError("El contrato no tiene un comprobante asociado. Por favor confirme la membresia y cree el comprobante.")
+        return self.invoice_id.action_invoice_sent()
 
     # Si el molinete estuviera en mantenimiento esto verificara si el usuario tiene acceso a esta sede.
     def attendance_record(self):

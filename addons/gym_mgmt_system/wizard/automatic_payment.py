@@ -11,9 +11,12 @@ class SelectPaymentModeWizard(models.TransientModel):
     def _default_membership(self):
         return self.env['gym.membership'].browse(self._context.get('active_id'))
 
+    def _default_partner(self):
+        return self.env['gym.membership'].browse(self._context.get('active_id')).member.id
+
     membership_id = fields.Many2one('gym.membership', string='Membresía', required=True, default=_default_membership)
     partner_id = fields.Many2one(related='membership_id.member', string='Socio', required=True)
-    partner2_id = fields.Many2one('res.partner', string='Razón Social')
+    partner2_id = fields.Many2one('res.partner', string='Razón Social', default=_default_partner)
     order_id = fields.Many2one(related='membership_id.sale_order_id', string='Orden de Venta', required=True)
     journal_id = fields.Many2one(related='membership_id.journal_id', string='Tipo Doc.', required=True)
     currency_id = fields.Many2one(related='order_id.currency_id', string='Moneda', readonly=True)
@@ -75,7 +78,7 @@ class SelectPaymentModeWizard(models.TransientModel):
                 'ref': label,
                 'journal_id': pay.payment_mode_id.id,
                 # 'currency_id': self.currency_id.id,
-                'partner_id': self.partner_id.id,
+                'partner_id': self.partner2_id.id,
                 'partner_bank_id': pay.payment_mode_id.bank_account_id.id,
                 # 'payment_method_line_id': payment_method_line.id,
                 # 'destination_account_id': lines[0].account_id.id,

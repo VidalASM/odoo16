@@ -148,6 +148,7 @@
               <t t-set="visa" t-value="0"/>
               <t t-set="mastercard" t-value="0"/>
               <t t-foreach="invoices" t-as="i">
+                <t t-if="i.invoice_payments_widget">
                 <t t-set="content" t-value="i.invoice_payments_widget['content']"/>
                 <t t-foreach="content" t-as="c">
                   <t t-if="c['journal_name'] == 'EFECTIVO'">
@@ -159,6 +160,7 @@
                   <t t-if="c['journal_name'] == 'MASTERCARD'">
                     <t t-set="mastercard" t-value="mastercard + c['amount']"/>
                   </t>
+                </t>
                 </t>
               </t>          
               <table id="contrato-table">
@@ -181,9 +183,9 @@
                   </tr>
                   <tr class="four">
                     <td colspan="2">DNI <input type="checkbox"/>   CE <input type="checkbox"/>   Pasaporte <input type="checkbox"/></td>
-                    <td rowspan="2" colspan="2" class="last-name">1er Apellido <t><br/> <span t-field="sale_order.partner_id.lastname"/></t> </td>
-                    <td rowspan="2" class="last-name">2do Apellido <t><br/> <span t-field="sale_order.partner_id.lastname2"/></t> </td>
-                    <td rowspan="2" colspan="2" class="name">Nombre(s) <t><br/> <span t-field="sale_order.partner_id.firstname"/></t> </td>
+                    <td rowspan="2" colspan="2" class="last-name">1er Apellido <t><br/> <span t-field="sale_order.partner_id.first_name"/></t> </td>
+                    <td rowspan="2" class="last-name">2do Apellido <t><br/> <span t-field="sale_order.partner_id.second_name"/></t> </td>
+                    <td rowspan="2" colspan="2" class="name">Nombre(s) <t><br/> <span t-field="sale_order.partner_id.partner_name"/></t> </td>
                   </tr>
                   <tr>
                     <td colspan="2">N° <span t-field="sale_order.partner_id.vat"/></td>
@@ -238,11 +240,11 @@
                 <tr>
                   <td rowspan="3"><img src="https://s.holacliente.com/doc12022024065032.png" alt="firma-imagen"/></td>
                   <td>FIRMA EL USUARIO: <t t-if="sale_order.signature"><img t-att-src="image_data_uri(sale_order.signature)" style="max-height: 6rem; max-width: 100%;"/></t></td>
-                  <td>ASESOR COMERCIAL:__________________</td>
+                  <td>ASESOR COMERCIAL: <t t-if="sale_order.membership_ids[0].responsible_id.sign_signature"><img t-att-src="image_data_uri(sale_order.membership_ids[0].responsible_id.sign_signature)" style="max-height: 6rem; max-width: 100%;"/></t></td>
                 </tr>
                 <tr>
                   <td>Nombres y Apellidos <t><br/> <span t-field="sale_order.partner_id.name"/></t> </td>
-                  <td>Nombres y Apellidos <span t-field="sale_order.user_id.name"/></td>
+                  <td>Nombres y Apellidos <span t-field="sale_order.membership_ids[0].responsible_id.name"/></td>
                 </tr>
                 <tr>
                   <td>Documento (DNI) <span t-field="sale_order.partner_id.vat"/></td>

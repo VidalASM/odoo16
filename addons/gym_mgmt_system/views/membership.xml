@@ -34,6 +34,7 @@
                     <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
                     <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': ['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
+                    <button name="action_invoice_sent" type="object" string="Enviar e Imprimir" attrs="{'invisible':['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}" data-hotkey="y"/>
                     <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
                 </header>
                 <sheet>
@@ -48,6 +49,8 @@
                             <field name="vat" invisible="1"/>
                             <field name="age" invisible="1"/>
                             <field name="gender" invisible="1"/>
+                            <field name="user_id" invisible="0"/>
+                            <field name="responsible_id" invisible="0"/>
                             <field name="membership_scheme" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                             <field name="journal_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                             <field name="paid_amount"/>
