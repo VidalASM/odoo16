@@ -45,6 +45,15 @@ PAYMENT_STATUS = [
     ('reversed', 'Reversed'),
 ]    
 
+PAYMENT_STATE_SELECTION = [
+    ('not_paid', 'Not Paid'),
+    ('in_payment', 'In Payment'),
+    ('paid', 'Paid'),
+    ('partial', 'Partially Paid'),
+    ('reversed', 'Reversed'),
+    ('invoicing_legacy', 'Invoicing App Legacy'),
+]
+
 class GymMembership(models.Model):
     _name = "gym.membership"
     _inherit = ["mail.thread", "mail.activity.mixin"]
@@ -63,6 +72,7 @@ class GymMembership(models.Model):
     # sale_order_ids = fields.One2many(
     #     'sale.order', 'membership_id', 'Ordenes de venta')
     invoice_id = fields.Many2one('account.move', string='Factura', ondelete='cascade', copy=False, readonly=False)
+    payment_state = fields.Selection(selection=PAYMENT_STATE_SELECTION, string="DNI", related="invoice_id.payment_state", store=True)
     # invoice_pay_status = fields.Selection(
     #     selection=INVOICE_STATUS,
     #     string="Invoice Status",
@@ -81,7 +91,7 @@ class GymMembership(models.Model):
         check_company=True,
         domain="[('type', '=', 'sale')]",
     )
-    adendum = fields.Text("Adendum", default="- Acepto Terminos y Condiciones Y politicas de Proteccion de Datos Personales.\n- No Autorizo el Tratamiento de mis datos personales para prospeccion y promocion comercial por parte de REVO SPORT.")
+    adendum = fields.Text("Adendum", default="- Acepto Terminos y Condiciones Y politicas de Proteccion de Datos Personales.\n- Autorizo el Tratamiento de mis datos personales para prospeccion y promocion comercial por parte de REVO SPORT.")
     restrictions = fields.Html("Restricciones", related="membership_scheme.description")
     state_contract = fields.Selection(string='Estado de Contrato', 
         selection=[('active', 'Activo'), ('inactive', 'Inactivo'), ('freezing', 'Freezing'),('pending', 'Pendiente'),],

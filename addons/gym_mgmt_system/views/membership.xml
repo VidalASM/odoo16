@@ -30,10 +30,10 @@
             <form>
                 <header>
                     <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'confirm'), ('paid_amount','!=',0.0)]}" groups="gym_mgmt_system.group_gym_operator"/>
-                    <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '=', False)]}"/>
+                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'in', ('paid','in_payment'))]}" groups="gym_mgmt_system.group_gym_operator"/>
+                    <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
-                    <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': [('invoice_id', '=', False)]}"/>
+                    <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': ['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
                 </header>
                 <sheet>
@@ -44,27 +44,30 @@
                     </div>
                     <group>
                         <group>
-                            <field name="member"/>
+                            <field name="member" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                             <field name="vat" invisible="1"/>
                             <field name="age" invisible="1"/>
                             <field name="gender" invisible="1"/>
-                            <field name="membership_scheme"/>
-                            <field name="journal_id"/>
+                            <field name="membership_scheme" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="journal_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                             <field name="paid_amount"/>
-                            <field name="adendum"/>
+                            <field name="adendum" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                         </group>
                         <group>
                             <field name="membership_fees"/>
-                            <field name="sale_order_id" readonly="0"/>
-                            <field name="invoice_id" readonly="0"/>
-                            <label for="membership_date_from" string="Fecha de Inicio"/>
+                            <field name="sale_order_id" readonly="1"/>
+                            <field name="invoice_id" readonly="1"/>
+                            <field name="payment_state" invisible="1"/>
+                            <!-- <label for="membership_date_from" string="Fecha de Inicio"/>
                             <div class="o_row">
-                                <field name="membership_date_from" required="1"/>
+                                <field name="membership_date_from" required="1" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                                 -
                                 <field name="membership_date_to" required="1"/>
-                            </div>
-                            <field name="state_contract"/>
-                            <field name="type_contract"/>
+                            </div> -->
+                            <field name="membership_date_from" required="1" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="membership_date_to" required="1"/>
+                            <field name="state_contract" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="type_contract" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                             <field name="days_transferred" attrs="{'invisible': [('type_contract', '!=', '3')]}"/>
                         </group>
                     </group>
@@ -72,14 +75,14 @@
                         <page string="Otra información" modifiers="{}">
                             <group modifiers="{}">
                                 <group string="Información de ventas" name="sales_person" modifiers="{}">
-                                    <field name="company_id"/>
+                                    <field name="company_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                                     <field name="restrictions"/>
-                                    <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates" groups="base.group_no_one"/>
+                                    <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates" groups="base.group_no_one" readonly="True"/>
                                 </group>
                                 <group string="Adenda" name="addendum" modifiers="{}">
-                                    <field name="discount"/>
-                                    <field name="authorize_user"/>
-                                    <field name="addendum" help="Number of addendum, previously autorized" groups="base.group_no_one"/>
+                                    <field name="discount" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                    <field name="authorize_user" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                    <field name="addendum" help="Number of addendum, previously autorized" groups="base.group_no_one" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
                                 </group>
                             </group>
                         </page>
@@ -97,7 +100,17 @@
                             </field>
                         </page>
                         <page string="Transferencias">
-                            <field name="transfer_ids" readonly="False" modifiers="{}"/>
+                            <field name="transfer_ids" readonly="True" modifiers="{}">
+                                <tree>
+                                    <field name="number_transfer"/>
+                                    <field name="client_id"/>
+                                    <field name="client2_id"/>
+                                    <field name="contract2_id"/>
+                                    <field name="date_transfer"/>
+                                    <field name="days_transferred"/>
+                                    <field name="currente_transfer"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Asistencias" attrs="{'invisible': [('state', '=', 'cancelled')]}">
                             <field name="attendance_ids" readonly="True">

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="inherit_calendar_form" model="ir.ui.view">
+        <field name="name">calendar.form.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='allday']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_calendar_event" model="ir.ui.view">
+        <field name="name">calendar.event.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_calendar"/>
+        <field name="arch" type="xml">
+            <xpath expr="//calendar" position="attributes">
+                <attribute name="all_day"></attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

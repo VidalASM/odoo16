@@ -97,4 +97,4 @@ class SelectPaymentModeWizardLine(models.TransientModel):
     currency_id = fields.Many2one(related='wizard_id.currency_id', readonly=True)
     payment_mode_id = fields.Many2one("account.journal", string='Diario de pago', domain="[('type', 'in', ['bank','cash'])]", required=True)
     amount = fields.Float('Monto')
-    communication = fields.Char(string="Concepto", store=True, readonly=False)
+    communication = fields.Char(string="Referencia", store=True, readonly=False)

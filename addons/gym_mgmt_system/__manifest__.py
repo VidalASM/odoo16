@@ -32,6 +32,7 @@
     'depends': [
         'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 
         'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact', 'calendar', 
+        'ruc_validation_sunat', 'partner_contact_personal_information_page', 
     ],
     'images': ['static/description/banner.png'],
     'data': [
@@ -53,6 +54,7 @@
         'views/workout_plan.xml',
         'views/trainers.xml',
         'views/crm.xml',
+        'views/calendar_views.xml',
         'wizard/upgrade_crm_lead.xml',
         'wizard/freeze_wizard_views.xml',
         'wizard/transfer_wizard_views.xml',
