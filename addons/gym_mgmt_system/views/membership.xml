@@ -35,6 +35,15 @@
                     <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
                     <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': ['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <button name="action_invoice_sent" type="object" string="Enviar e Imprimir" attrs="{'invisible':['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}" data-hotkey="y"/>
+                    
+                    <button
+                        name="%(pe_move_cancel_action)d"
+                        string="Anular en SUNAT"
+                        type="action"
+                        class="btn btn-danger"
+                        groups="account.group_account_manager"
+                        attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('invoice_id', '=', False)]}"
+                    />
                     <field name="state" widget="statusbar" options="{'clickable':'1'}"/>
                 </header>
                 <sheet>

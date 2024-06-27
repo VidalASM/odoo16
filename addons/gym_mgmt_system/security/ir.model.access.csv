@@ -89,3 +89,5 @@ crm_draw_manager,crm.draw.manager,model_crm_draw,gym_mgmt_system.group_gym_opera
 access_tutor_type_trainer,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_trainer,1,0,0,0
 access_tutor_type_operator,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_tutor_type_member,tutor.type,model_tutor_type,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_pe_move_cancel,access_pe_move_cancel,model_pe_move_cancel,base.group_user,1,1,1,1

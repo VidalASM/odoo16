@@ -59,6 +59,7 @@
         'wizard/freeze_wizard_views.xml',
         'wizard/transfer_wizard_views.xml',
         'wizard/attendace_wizard_views.xml',
+        'wizard/move_cancel_views.xml',
         'report/workout_plan_reports.xml',
         'report/workout_plan_template.xml',
         'report/my_workout_plan_reports.xml',
