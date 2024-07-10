@@ -52,7 +52,7 @@ class SelectPaymentModeWizard(models.TransientModel):
         if self.order_id.invoice_status == 'invoiced':
             invoice1 = self.order_id.invoice_ids[0]
             if not self.membership_id.invoice_id:
-                self.membership_id.write({'invoice_id': invoice1.id})
+                self.membership_id.write({'invoice_id': invoice1.id, 'state_contract': 'active'})
         else:
             invoice1 = self.order_id._create_invoices()
             invoice1.write({

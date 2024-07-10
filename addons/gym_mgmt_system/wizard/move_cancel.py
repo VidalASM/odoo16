@@ -26,7 +26,7 @@ class PeMoveCancel(models.TransientModel):
                 "l10n_pe_edi_cancel_reason": self.description,
             }
         )
-        moves.action_document_cancel()
+        moves.button_cancel()
         membership.write(
             {
                 "state": 'cancelled',

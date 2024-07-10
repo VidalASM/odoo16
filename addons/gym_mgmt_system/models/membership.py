@@ -224,6 +224,8 @@ class GymMembership(models.Model):
                 'product_uom_qty': 1,
             })
             self.sale_order_id = sale_order.id
+            sale_order.write({'state':'sent', 'journal_id':self.journal_id.id})
+            sale_order._send_order_confirmation_mail()
             self.state = 'confirm'
 
     def _get_amount_in_words(self):
