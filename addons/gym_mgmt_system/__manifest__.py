@@ -30,7 +30,7 @@
     'website': "https://www.cybrosys.com",
     'description': "GYM Management System",
     'depends': [
-        'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 
+        'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 'account', 
         'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact', 'calendar', 
         'ruc_validation_sunat', 'partner_contact_personal_information_page', 
     ],
