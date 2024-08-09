@@ -77,6 +77,88 @@
                     </group>
                     
                     <notebook modifiers="{}">
+                        <page string="Otra información" modifiers="{}">
+                            <group>
+                                <group name="group_lots_and_weight" string="Measurements">
+                                    <label for="weight"/>
+                                    <div class="o_row" name="weight">
+                                        <field name="weight"/>
+                                        <field name="weight_uom_name"/>
+                                    </div>
+                                    <label for="height"/>
+                                    <div class="o_row" name="height">
+                                        <field name="height"/>
+                                        <field name="height_uom_name"/>
+                                    </div>
+                                    <field name="bmi"/>
+                                    <field name="bmr"/>
+                                    <field name="c_fmax"/>
+                                    <field name="c_fwork"/>
+                                    <field name="c_objetivo"/>
+                                    <field name="c_observacion"/>
+                                    <field name="c_f"/>
+                                    <field name="c_t"/>
+                                    <field name="c_nivel"/>
+                                </group>
+                            </group>
+                            
+                            <group name="body_measurement" string="Body Measurements">
+                                <group>
+                                    <group>
+                                        <label for="neck"/>
+                                        <div class="o_row" name="neck">
+                                            <field name="neck"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="biceps"/>
+                                        <div class="o_row" name="biceps">
+                                            <field name="biceps"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="calf"/>
+                                        <div class="o_row" name="calf">
+                                            <field name="calf"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="hips"/>
+                                        <div class="o_row" name="hips">
+                                            <field name="hips"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label for="chest"/>
+                                        <div class="o_row" name="chest">
+                                            <field name="chest"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="waist"/>
+                                        <div class="o_row" name="waist">
+                                            <field name="waist"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                        <label for="thighs"/>
+                                        <div class="o_row" name="thighs">
+                                            <field name="thighs"/>
+                                            <field name="height_uom_name"/>
+                                        </div>
+                                    </group>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Postergaciones">
+                            <field name="postpone_ids">
+                                <tree string="Citas pospuestas">
+                                    <field name="cause"/>
+                                    <field name="date_postpone"/>
+                                    <field name="start_date"/>
+                                    <field name="start_date_new"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="Análisis Inbody">
                             <group>
                                 <group name="body_composition_analysis" string="Análisis de Composición Corporal">
@@ -285,81 +367,6 @@
                             </group>
                         </page>
 
-                        <page string="Otra información" modifiers="{}">
-                            <group>
-                                <group name="group_lots_and_weight" string="Measurements">
-                                    <label for="weight"/>
-                                    <div class="o_row" name="weight">
-                                        <field name="weight"/>
-                                        <field name="weight_uom_name"/>
-                                    </div>
-                                    <label for="height"/>
-                                    <div class="o_row" name="height">
-                                        <field name="height"/>
-                                        <field name="height_uom_name"/>
-                                    </div>
-                                    <field name="bmi"/>
-                                    <field name="bmr"/>
-                                </group>
-                            </group>
-                            
-                            <group name="body_measurement" string="Body Measurements">
-                                <group>
-                                    <group>
-                                        <label for="neck"/>
-                                        <div class="o_row" name="neck">
-                                            <field name="neck"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                        <label for="biceps"/>
-                                        <div class="o_row" name="biceps">
-                                            <field name="biceps"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                        <label for="calf"/>
-                                        <div class="o_row" name="calf">
-                                            <field name="calf"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                        <label for="hips"/>
-                                        <div class="o_row" name="hips">
-                                            <field name="hips"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                    </group>
-                                </group>
-                                <group>
-                                    <group>
-                                        <label for="chest"/>
-                                        <div class="o_row" name="chest">
-                                            <field name="chest"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                        <label for="waist"/>
-                                        <div class="o_row" name="waist">
-                                            <field name="waist"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                        <label for="thighs"/>
-                                        <div class="o_row" name="thighs">
-                                            <field name="thighs"/>
-                                            <field name="height_uom_name"/>
-                                        </div>
-                                    </group>
-                                </group>
-                            </group>
-                        </page>
-                        <page string="Postergaciones">
-                            <field name="postpone_ids">
-                                <tree string="Citas pospuestas">
-                                    <field name="cause"/>
-                                    <field name="date_postpone"/>
-                                    <field name="start_date"/>
-                                    <field name="start_date_new"/>
-                                    <field name="user_id"/>
-                                </tree>
-                            </field>
-                        </page>
                         <!-- <page string="Freezes">
                             <field name="freeze_ids" readonly="False" modifiers="{}"/>
                         </page>

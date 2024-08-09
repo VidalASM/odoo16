@@ -57,6 +57,13 @@ class MeasurementHistory(models.Model):
     weight_uom_name = fields.Char(string='Etiqueta de unidad de medida de peso', default=_get_default_weight_uom)
     height = fields.Float('Talla', digits='Stock Height', store=True)
     height_uom_name = fields.Char(string='Etiqueta de unidad de medida de peso', default='cm')
+    c_fmax = fields.Char(string='FMAX')
+    c_fwork = fields.Char(string='FWORK')
+    c_objetivo = fields.Char(string='OBJETIVO')
+    c_observacion = fields.Char(string='OBSERVACION')
+    c_f = fields.Char(string='F')
+    c_t = fields.Char(string='T')
+    c_nivel = fields.Selection(string='NIVEL', selection=[('n1', 'Novato 1'), ('n2', 'Novato 2'),('i', 'Intermedio'),('a', 'Avanzado'),])
     # bmi = fields.Float('IMC', store=True, compute='compute_display_name')
     # bmr = fields.Float('TMB', store=True, compute='compute_display_name')
     bmi = fields.Float('IMC', store=True)
@@ -179,8 +186,9 @@ class MeasurementHistory(models.Model):
     @api.onchange('date_start')
     def onchange_date_start(self):
         for rec in self:
-            rec.date_end = rec.date_start + timedelta(minutes=20)
-            rec.date = rec.date_start.date()
+            if rec.date_start:
+                rec.date_end = rec.date_start + timedelta(minutes=20)
+                rec.date = rec.date_start.date()
 
     @api.depends('weight', 'height')
     def compute_display_name(self):

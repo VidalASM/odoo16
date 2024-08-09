@@ -167,8 +167,8 @@ class CrmLead(models.Model):
         action = self.env.ref('gym_mgmt_system.action_gym_membership').read()[0]
         action['context'] = {
             'search_default_draft': 1,
-            'search_default_partner_id': self.partner_id.id,
-            'default_partner_id': self.partner_id.id,
+            'search_default_member': self.partner_id.id,
+            'default_member': self.partner_id.id,
             'default_opportunity_id': self.id
         }
         action['domain'] = [('opportunity_id', '=', self.id), ('state_contract', 'in', ['pending', 'active'])]
@@ -177,6 +177,7 @@ class CrmLead(models.Model):
             action['views'] = [(self.env.ref('gym_mgmt_system.view_membership_form').id, 'form')]
             action['res_id'] = memberships.id
         return action
+
 
     # Esta funcion elimina las oportunidades que hayan superado el cierre previsto, ademas actualiza el estado del cliente si este no tiene otras oportunidades pendientes.
     @api.model

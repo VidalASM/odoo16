@@ -215,6 +215,7 @@ class GymMembership(models.Model):
             sale_order = self.env['sale.order'].create({
                 'partner_id': self.member.id,
                 'is_contract': True,
+                'journal_id': self.journal_id.id,
             })
             self.env['sale.order.line'].create({
                 'order_id': sale_order.id,

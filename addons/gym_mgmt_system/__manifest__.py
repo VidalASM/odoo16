@@ -32,7 +32,7 @@
     'depends': [
         'mail', 'contacts', 'hr', 'product', 'membership', 'sale', 'membership_variable_period', 'crm', 'account', 
         'partner_contact_birthdate', 'partner_contact_gender', 'sign', 'l10n_pe_edi_odoofact', 'calendar', 
-        'ruc_validation_sunat', 'partner_contact_personal_information_page', 
+        'ruc_validation_sunat', 'partner_contact_personal_information_page', 'account_payment_sale', 
     ],
     'images': ['static/description/banner.png'],
     'data': [
