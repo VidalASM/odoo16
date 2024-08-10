@@ -69,6 +69,7 @@ class GymMembership(models.Model):
     
     reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
     member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, domain="[('gym_member', '!=',False)]")
+    referred_partner_id = fields.Many2one('res.partner', string=u'Referido por')
     user_id = fields.Many2one(string='Vendedor', comodel_name='res.users', copy=False, tracking=True, default=lambda self: self.env.user,)
     responsible_id = fields.Many2one(string='Responsable', comodel_name='res.users', copy=False, tracking=True, default=_default_responsible)
     vat = fields.Char("DNI", related="member.vat", store=True)
@@ -324,6 +325,27 @@ class GymMembership(models.Model):
                 ('date_end', '=', False)], limit=1)
             if attendance_id:
                 attendance_id.date_end = fields.datetime.now()
+                
+    def write(self, values):
+        record = super(GymMembership, self).write(values)
+        if self.type_contract == "5":
+            if self.referred_partner_id:
+                referred = self.env['referred.record'].search([('contract_id','=',self.id), ('partner_id','=',self.referred_partner_id.id)])
+                data = {
+                    'description': 'Invitación referido',
+                    'quantity_days': abs((self.membership_date_to - self.membership_date_from).days),
+                    'partner_id': self.referred_partner_id.id,
+                    'contract_id': self.id,
+                    'referred_id': self.member.id,
+                    'counter_id': self.user_id.id,
+                    'company_id': self.company_id.id,
+                    'state': 'activa' if self.state_contract == 'active' else 'inactiva'
+                }
+                if referred:
+                    referred.write(data)
+                else:
+                    self.env['referred.record'].create(data)
+        return record
 
 
 class SaleConfirm(models.Model):

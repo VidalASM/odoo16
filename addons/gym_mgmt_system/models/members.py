@@ -118,7 +118,7 @@ class ReferredRecord(models.Model):
         if vals.get('name', 'Nuevo') == 'Nuevo':
             if 'partner_id' in vals and 'contract_id' in vals:
                 contract = self.env['gym.membership'].browse(vals['contract_id'])
-                vals['name'] = (contract.name if contract else '') #+ ' - ' + (partner.name if partner else '')
+                vals['name'] = (contract.reference if contract else '') #+ ' - ' + (partner.name if partner else '')
         result = super(ReferredRecord, self).create(vals)
         return result
      

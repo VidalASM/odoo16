@@ -54,16 +54,16 @@
                     </div>
                     <group>
                         <group>
-                            <field name="member" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="member" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="vat" invisible="1"/>
                             <field name="age" invisible="1"/>
                             <field name="gender" invisible="1"/>
                             <field name="user_id" invisible="0"/>
                             <field name="responsible_id" invisible="0"/>
-                            <field name="membership_scheme" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
-                            <field name="journal_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="membership_scheme" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
+                            <field name="journal_id" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="paid_amount"/>
-                            <field name="adendum" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="adendum" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                         </group>
                         <group>
                             <field name="membership_fees"/>
@@ -72,29 +72,30 @@
                             <field name="payment_state" invisible="1"/>
                             <!-- <label for="membership_date_from" string="Fecha de Inicio"/>
                             <div class="o_row">
-                                <field name="membership_date_from" required="1" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                <field name="membership_date_from" required="1" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                                 -
                                 <field name="membership_date_to" required="1"/>
                             </div> -->
-                            <field name="membership_date_from" required="1" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="membership_date_from" required="1" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="membership_date_to" required="1"/>
-                            <field name="state_contract" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
-                            <field name="type_contract" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                            <field name="state_contract" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
+                            <field name="type_contract" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="days_transferred" attrs="{'invisible': [('type_contract', '!=', '3')]}"/>
+                            <field name="referred_partner_id" attrs="{'invisible': [('type_contract', '!=', '5')],'required': [('type_contract', '=', '5')],'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                         </group>
                     </group>
                     <notebook modifiers="{}">
                         <page string="Otra información" modifiers="{}">
                             <group modifiers="{}">
                                 <group string="Información de ventas" name="sales_person" modifiers="{}">
-                                    <field name="company_id" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                    <field name="company_id" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                                     <field name="restrictions"/>
                                     <field name="opportunity_id" help="Log in the chatter from which opportunity the order originates" groups="base.group_no_one" readonly="True"/>
                                 </group>
                                 <group string="Adenda" name="addendum" modifiers="{}">
-                                    <field name="discount" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
-                                    <field name="authorize_user" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
-                                    <field name="addendum" help="Number of addendum, previously autorized" groups="base.group_no_one" attrs="{'readonly': [('state', '=', 'confirm')]}"/>
+                                    <field name="discount" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
+                                    <field name="authorize_user" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
+                                    <field name="addendum" help="Number of addendum, previously autorized" groups="base.group_no_one" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                                 </group>
                             </group>
                         </page>
@@ -237,7 +238,7 @@
         <field name="name">Membership</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">gym.membership</field>
-        <field name="view_mode">tree,form,kanban,pivot,graph</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
         <field name="search_view_id" ref="view_gym_membership_filter"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
