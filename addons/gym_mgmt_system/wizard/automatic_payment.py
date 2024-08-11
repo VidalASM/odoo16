@@ -2,6 +2,8 @@
 from odoo import fields, models, api, _
 from odoo.exceptions import UserError
 
+import logging
+_logger = logging.getLogger(__name__)
 
 class SelectPaymentModeWizard(models.TransientModel):
     _name = 'select.payment.mode.wizard'
@@ -95,9 +97,24 @@ class SelectPaymentModeWizard(models.TransientModel):
 class SelectPaymentModeWizardLine(models.TransientModel):
     _name = 'select.payment.mode.wizard.line'
     _description = 'Asistente de asignación de modo de pago (Detalle)'
+
+    # Retorna el pago automatico actual
+    def _default_amount(self):
+        # _logger.info("---------------------> memberships")
+        # _logger.info(self._context)        
+        # _logger.info(self.wizard_id)
+        return self.env['gym.membership'].browse(self._context.get('active_id')).membership_fees
+        # return self.wizard_id.amount_diff
     
     wizard_id = fields.Many2one('select.payment.mode.wizard', string='Wizard', required=True, readonly=True)
     currency_id = fields.Many2one(related='wizard_id.currency_id', readonly=True)
     payment_mode_id = fields.Many2one("account.journal", string='Diario de pago', domain="[('type', 'in', ['bank','cash'])]", required=True)
-    amount = fields.Float('Monto')
+    type = fields.Selection([
+            ('sale', 'Sales'),
+            ('purchase', 'Purchase'),
+            ('cash', 'Cash'),
+            ('bank', 'Bank'),
+            ('general', 'Miscellaneous'),
+        ], related='payment_mode_id.type', string='Tipo', readonly=True)
+    amount = fields.Float('Monto', default=_default_amount)
     communication = fields.Char(string="Referencia", store=True, readonly=False)

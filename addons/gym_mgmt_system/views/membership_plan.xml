@@ -14,7 +14,7 @@
         </field>
     </record>
 
-    <menuitem name="Plan de Membresía" id="menu_membership_products" parent="gym_member_root"
+    <menuitem name="Planes" id="menu_membership_products" parent="gym_member_root"
             action="membership.action_membership_products"/>
 
 </odoo>

@@ -249,7 +249,7 @@
 
     <menuitem
             id="menu_gym_membership"
-            name="Membresía"
+            name="Membresías"
             parent="gym_member_root"
             action="action_gym_membership"
             sequence="30"/>
