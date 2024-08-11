@@ -228,7 +228,8 @@ class GymMembership(models.Model):
             self.sale_order_id = sale_order.id
             sale_order.write({'state':'sent', 'journal_id':self.journal_id.id})
             sale_order._send_order_confirmation_mail()
-            self.state = 'confirm'
+        self.state = 'confirm'
+        self.write({'state_contract': 'active' })
 
     def _get_amount_in_words(self):
         """Transform the amount to text"""
@@ -450,7 +451,7 @@ class AttendanceRecord (models.Model):
                 ('state','in',['draft','confirm']),
                 ('membership_date_from','<=', fields.Date.today()),
                 ('membership_date_to','>=', fields.Date.today()),
-                ('invoice_id.amount_residual','=',0.0),
+                # ('invoice_id.amount_residual','=',0.0),
                 ], order="membership_date_from asc")
             
             _logger.info("---------------------> memberships")

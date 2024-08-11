@@ -61,7 +61,7 @@ class AttendanceWizard(models.TransientModel):
             ('state','in',['draft','confirm']),
             ('membership_date_from','<=', fields.Date.today()),
             ('membership_date_to','>=', fields.Date.today()),
-            ('invoice_id.amount_residual','=',0.0),
+            # ('invoice_id.amount_residual','=',0.0),
             ], order="membership_date_from asc")
 
         if memberships:
