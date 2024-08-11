@@ -44,7 +44,7 @@ class MemberPartner(models.Model):
 
     gym_member = fields.Boolean(string='Socio', default=True)
     membership_ids = fields.One2many('gym.membership', 'member', 'Membresías')
-    membership_count = fields.Integer('membership_count',
+    membership_count = fields.Integer('Membresías',
                                       compute='_compute_membership_count')
     measurement_count = fields.Integer('measurement_count',
                                        compute='_compute_measurement_count')
@@ -74,18 +74,26 @@ class MemberPartner(models.Model):
                 [('member.id', '=', rec.id)])
 
     def action_view_membership_quotation(self):
-        action = self.env.ref('gym_mgmt_system.action_gym_membership').read()[0]
-        action['context'] = {
-            'search_default_draft': 1,
-            'search_default_member': self.id,
-            'default_member': self.id,
-        }
-        action['domain'] = [('member', '=', self.id), ('state_contract', 'in', ['pending', 'active'])]
-        memberships = self.mapped('membership_ids').filtered(lambda l: l.state_contract in ('pending', 'active'))
-        if len(memberships) == 1:
-            action['views'] = [(self.env.ref('gym_mgmt_system.view_membership_form').id, 'form')]
-            action['res_id'] = memberships.id
+        '''
+        This function returns an action that displays the opportunities from partner.
+        '''
+        action = self.env['ir.actions.act_window']._for_xml_id('gym_mgmt_system.action_gym_membership')
+        action['context'] = {'active_test': False}
+        action['domain'] = [('member', '=', self.id)]
         return action
+    
+        # action = self.env.ref('gym_mgmt_system.action_gym_membership').read()[0]
+        # action['context'] = {
+        #     'search_default_draft': 1,
+        #     'search_default_member': self.id,
+        #     'default_member': self.id,
+        # }
+        # action['domain'] = [('member', '=', self.id), ('state_contract', 'in', ['pending', 'active'])]
+        # memberships = self.mapped('membership_ids').filtered(lambda l: l.state_contract in ('pending', 'active'))
+        # if len(memberships) == 1:
+        #     action['views'] = [(self.env.ref('gym_mgmt_system.view_membership_form').id, 'form')]
+        #     action['res_id'] = memberships.id
+        # return action
 
     # @api.onchange('gym_member')
     # def _onchange_gym_member(self):
