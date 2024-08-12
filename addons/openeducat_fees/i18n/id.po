@@ -1,0 +1,630 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* openeducat_fees
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-12 11:35+0000\n"
+"PO-Revision-Date: 2022-12-12 11:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "<strong>Fees Detail</strong>"
+msgstr "<strong> detail biaya </strong>"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_needaction
+msgid "Action Needed"
+msgstr "Tindakan yang dibutuhkan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_3
+#: model:product.template,name:openeducat_fees.op_product_3_product_template
+msgid "Admission Fees for Course-2"
+msgstr "Biaya Penerimaan untuk Kursus-2"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_6
+#: model:product.template,name:openeducat_fees.op_product_6_product_template
+msgid "Admission Fees for Course-4"
+msgstr "Biaya Penerimaan untuk Kursus-4"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_1
+#: model:product.template,name:openeducat_fees.op_product_1_product_template
+msgid "Admission Fees for Course-Sem-1"
+msgstr "Biaya Penerimaan untuk Kursus-SEM-1"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_2
+#: model:product.template,name:openeducat_fees.op_product_2_product_template
+msgid "Admission Fees for G8-AR"
+msgstr "Biaya masuk untuk G8-AR"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_4
+#: model:product.template,name:openeducat_fees.op_product_4_product_template
+msgid "Admission Fees for PPHD"
+msgstr "Biaya masuk untuk PPHD"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_fees_terms__day_type__after
+msgid "After"
+msgstr "Setelah"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__after_discount_amount
+msgid "After Discount Amount"
+msgstr "Setelah jumlah diskon"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_search
+msgid "Archived"
+msgstr "Diarsipkan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_attachment_count
+msgid "Attachment Count"
+msgstr "Jumlah lampiran"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__batch_id
+msgid "Batch"
+msgstr "Kelompok"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_fees_terms__day_type__before
+msgid "Before"
+msgstr "Sebelum"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_student_fees_details__state__cancel
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.fees_detail_report_wizard_form
+msgid "Cancel"
+msgstr "Membatalkan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__company_id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__company_id
+msgid "Company"
+msgstr "Perusahaan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__course_id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__course_id
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__fees_detail_report_wizard__fees_filter__course
+msgid "Course"
+msgstr "Kursus"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__create_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__create_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__create_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__create_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__create_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__create_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__create_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__create_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__currency_id
+msgid "Currency"
+msgstr "Mata uang"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__note
+msgid "Description"
+msgstr "Keterangan"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+msgid "Description..."
+msgstr "Keterangan..."
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__discount
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__discount
+msgid "Discount (%)"
+msgstr "Diskon (%)"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__display_name
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__display_name
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__display_name
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__display_name
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__display_name
+msgid "Display Name"
+msgstr "Nama tampilan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_student_fees_details__state__draft
+msgid "Draft"
+msgstr "Konsep"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__due_date
+msgid "Due Date"
+msgstr "Batas waktu"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__due_days
+msgid "Due Days"
+msgstr "Hari -hari yang jatuh tempo"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__fees_id
+msgid "Fees"
+msgstr "Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__amount
+msgid "Fees Amount"
+msgstr "Jumlah biaya"
+
+#. module: openeducat_fees
+#: model:ir.ui.menu,name:openeducat_fees.menu_op_fees_analysis_report_main
+msgid "Fees Analysis"
+msgstr "Analisis biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student__fees_detail_ids
+msgid "Fees Collection Details"
+msgstr "Detail Koleksi Biaya"
+
+#. module: openeducat_fees
+#: model:ir.actions.report,name:openeducat_fees.action_report_fees_detail_analysis
+msgid "Fees Detail Analysi"
+msgstr "Biaya detail analisis"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.fees_detail_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_op_student_form_fees_inherit
+msgid "Fees Details"
+msgstr "Detail Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student__fees_details_count
+msgid "Fees Details Count"
+msgstr "Hitungan detail biaya"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_fees_terms_line
+msgid "Fees Details Line"
+msgstr "Baris detail biaya"
+
+#. module: openeducat_fees
+#: model:ir.actions.act_window,name:openeducat_fees.fees_detail_report_wizard_act
+msgid "Fees Details Report"
+msgstr "Laporan Rincian Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_fees_element
+msgid "Fees Element for course"
+msgstr "Elemen Biaya untuk Kursus"
+
+#. module: openeducat_fees
+#: model:ir.actions.act_window,name:openeducat_fees.act_op_fees_element_view
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__fees_element_line
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.op_fees_element_form_1
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.op_fees_element_tree_1
+msgid "Fees Elements"
+msgstr "Elemen biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__fees_factor
+msgid "Fees Factor"
+msgstr "Faktor Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__fees_filter
+msgid "Fees Filter"
+msgstr "Filter biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__fees_line_id
+msgid "Fees Line"
+msgstr "Jalur Biaya"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_search
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_tree
+msgid "Fees Reminder Terms"
+msgstr "Ketentuan Pengingat Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_report_openeducat_fees_report_fees_analysis
+msgid "Fees Report"
+msgstr "Laporan Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_course__fees_start_date
+msgid "Fees Start Date"
+msgstr "Tanggal Mulai Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_course__fees_term_id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_course__fees_term_id
+msgid "Fees Term"
+msgstr "Istilah biaya"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+msgid "Fees Term Line"
+msgstr "Jalur Biaya Line"
+
+#. module: openeducat_fees
+#: model:ir.actions.act_window,name:openeducat_fees.act_open_fees_terms_view
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__fees_terms_line_id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__name
+#: model:ir.ui.menu,name:openeducat_fees.menu_fees_terms
+msgid "Fees Terms"
+msgstr "Ketentuan Biaya"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_fees_terms
+msgid "Fees Terms For Course"
+msgstr "Ketentuan Biaya untuk Kursus"
+
+#. module: openeducat_fees
+#. odoo-python
+#: code:addons/openeducat_fees/models/fees_terms.py:0
+#, python-format
+msgid "Fees Terms must be Required!"
+msgstr "Biaya Syarat harus disyaratkan!"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_5
+#: model:product.template,name:openeducat_fees.op_product_5_product_template
+msgid "Fees for Course-3"
+msgstr "Biaya untuk Kursus-3"
+
+#. module: openeducat_fees
+#. odoo-python
+#: code:addons/openeducat_fees/models/fees_terms.py:0
+#, python-format
+msgid "Fees terms must be divided as such sum up in 100%"
+msgstr "Biaya istilah harus dibagi sebagai jumlah tersebut sampai di 100%"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_fees_terms__fees_terms__fixed_date
+msgid "Fixed Fees of Dates"
+msgstr "Tetap Biaya Tanggal"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_fees_terms__fees_terms__fixed_days
+msgid "Fixed Fees of Days"
+msgstr "Tetap Biaya Hari"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_follower_ids
+msgid "Followers"
+msgstr "Pengikut"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Pengikut (mitra)"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__has_message
+msgid "Has Message"
+msgstr "Memiliki pesan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__id
+msgid "ID"
+msgstr "PENGENAL"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Jika diperiksa, pesan baru memerlukan perhatian Anda."
+
+#. module: openeducat_fees
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__message_has_error
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Jika diperiksa, beberapa pesan memiliki kesalahan pengiriman."
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+msgid "Information"
+msgstr "Informasi"
+
+#. module: openeducat_fees
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__op_student_fees_details__state__invoice
+msgid "Invoice Created"
+msgstr "Faktur dibuat"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__invoice_id
+msgid "Invoice ID"
+msgstr "ID faktur"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__invoice_state
+msgid "Invoice Status"
+msgstr "Status faktur"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_op_student_form_fees_inherit
+msgid "Invoiced"
+msgstr "Fakulir"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_is_follower
+msgid "Is Follower"
+msgstr "Adalah pengikut"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_course
+msgid "LMS Course"
+msgstr "Kursus LMS"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard____last_update
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element____last_update
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms____last_update
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line____last_update
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details____last_update
+msgid "Last Modified on"
+msgstr "Terakhir dimodifikasi"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__write_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__write_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__write_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__write_uid
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir diperbarui oleh"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__write_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__write_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__write_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__write_date
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__write_date
+msgid "Last Updated on"
+msgstr "Terakhir diperbarui saat"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_7
+#: model:product.template,name:openeducat_fees.op_product_7_product_template
+msgid "Library Fees"
+msgstr "Biaya perpustakaan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Lampiran utama"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_has_error
+msgid "Message Delivery error"
+msgstr "Kesalahan pengiriman pesan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_ids
+msgid "Messages"
+msgstr "Pesan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__no_days
+msgid "No of Days"
+msgstr "Tidak ada hari"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Jumlah tindakan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_has_error_counter
+msgid "Number of errors"
+msgstr "Jumlah kesalahan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Jumlah pesan yang membutuhkan tindakan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Jumlah pesan dengan kesalahan pengiriman"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.fees_detail_report_wizard_form
+msgid "Print"
+msgstr "Mencetak"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__product_id
+msgid "Product"
+msgstr "Produk"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__product_id
+msgid "Product(s)"
+msgstr "Produk"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Kesalahan pengiriman SMS"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__sequence
+msgid "Sequence"
+msgstr "Urutan"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__state
+msgid "Status"
+msgstr ""
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_student
+#: model:ir.model.fields,field_description:openeducat_fees.field_fees_detail_report_wizard__student_id
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__student_id
+#: model:ir.model.fields.selection,name:openeducat_fees.selection__fees_detail_report_wizard__fees_filter__student
+msgid "Student"
+msgstr "Murid"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_student_course
+msgid "Student Course Details"
+msgstr "Detail Kursus Mahasiswa"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_op_student_fees_details
+msgid "Student Fees Details"
+msgstr "Detail Biaya Siswa"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "Student Name"
+msgstr "Nama siswa"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_student_fees_details__date
+msgid "Submit Date"
+msgstr "Kirim Tanggal"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__fees_terms
+msgid "Term Type"
+msgstr "Jenis istilah"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__line_ids
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.view_fees_terms_form
+msgid "Terms"
+msgstr "Ketentuan"
+
+#. module: openeducat_fees
+#. odoo-python
+#: code:addons/openeducat_fees/models/student.py:0
+#, python-format
+msgid "The value of the deposit amount must be positive."
+msgstr "Nilai dari jumlah deposit harus positif."
+
+#. module: openeducat_fees
+#. odoo-python
+#: code:addons/openeducat_fees/models/student.py:0
+#, python-format
+msgid ""
+"There is no income account defined for this product: \"%s\".You may have to "
+"install a chart of account from Accounting app, settings menu."
+msgstr ""
+"Tidak ada akun pendapatan yang ditetapkan untuk produk ini: \"% s\" .Anda "
+"mungkin harus menginstal bagan akun dari aplikasi Akuntansi, pengaturan "
+"menu."
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "Total Amount"
+msgstr "Jumlah total"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "Total Invoiced"
+msgstr "Total Faktur"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "Total Left"
+msgstr "Total kiri"
+
+#. module: openeducat_fees
+#: model_terms:ir.ui.view,arch_db:openeducat_fees.report_fees_analysis
+msgid "Total Paid"
+msgstr "Total dibayar"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_9
+#: model:product.template,name:openeducat_fees.op_product_9_product_template
+msgid "Transportation Fees"
+msgstr "Biaya transportasi"
+
+#. module: openeducat_fees
+#: model:product.product,name:openeducat_fees.op_product_8
+#: model:product.template,name:openeducat_fees.op_product_8_product_template
+msgid "Tution Fees"
+msgstr "Biaya tution"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__day_type
+msgid "Type"
+msgstr "Jenis"
+
+#. module: openeducat_fees
+#: model:product.product,uom_name:openeducat_fees.op_product_1
+#: model:product.product,uom_name:openeducat_fees.op_product_2
+#: model:product.product,uom_name:openeducat_fees.op_product_3
+#: model:product.product,uom_name:openeducat_fees.op_product_4
+#: model:product.product,uom_name:openeducat_fees.op_product_5
+#: model:product.product,uom_name:openeducat_fees.op_product_6
+#: model:product.product,uom_name:openeducat_fees.op_product_7
+#: model:product.product,uom_name:openeducat_fees.op_product_8
+#: model:product.product,uom_name:openeducat_fees.op_product_9
+#: model:product.template,uom_name:openeducat_fees.op_product_1_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_2_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_3_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_4_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_5_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_6_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_7_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_8_product_template
+#: model:product.template,uom_name:openeducat_fees.op_product_9_product_template
+msgid "Units"
+msgstr "Unit"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_element__value
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms_line__value
+msgid "Value (%)"
+msgstr "Nilai (%)"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,field_description:openeducat_fees.field_op_fees_terms__website_message_ids
+msgid "Website Messages"
+msgstr "Pesan situs web"
+
+#. module: openeducat_fees
+#: model:ir.model.fields,help:openeducat_fees.field_op_fees_terms__website_message_ids
+msgid "Website communication history"
+msgstr "Riwayat Komunikasi Situs Web"
+
+#. module: openeducat_fees
+#: model:ir.model,name:openeducat_fees.model_fees_detail_report_wizard
+msgid "Wizard For Fees Details Report"
+msgstr "Laporan Rincian Penyihir untuk Biaya"

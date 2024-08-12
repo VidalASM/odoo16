@@ -1,0 +1,1251 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* openeducat_admission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-09 12:35+0000\n"
+"PO-Revision-Date: 2022-12-09 12:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>Course:</b>"
+msgstr "<b> الدورة: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>From Date:</b>"
+msgstr "<b> من التاريخ: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>To Date:</b>"
+msgstr "<b> حتى الآن: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid ""
+"<br/>\n"
+"                            <b>Total Number of Students :</b>"
+msgstr ""
+"<br/>\n"
+"                            <b> إجمالي عدد الطلاب: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<strong>Admission Analysis</strong>"
+msgstr "<strong> تحليل القبول </strong>"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_10
+msgid "Abhinav"
+msgstr "أبيناف"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_10
+msgid "Abhinav Y Chaudhri"
+msgstr "Abhinav y Chaudhri"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__academic_years_id
+msgid "Academic Year"
+msgstr "السنة الأكاديمية"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__active
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__active
+msgid "Active"
+msgstr "نشيط"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "استثناء النشاط زخرفة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Address"
+msgstr "تبوك"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_op_admission
+msgid "Admission"
+msgstr "سماح بالدخول"
+
+#. module: openeducat_admission
+#: model:ir.actions.report,name:openeducat_admission.action_report_report_admission_analysis
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+msgid "Admission Analysis"
+msgstr "تحليل القبول"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.admission_analysis_act
+#: model:ir.model,name:openeducat_admission.model_report_openeducat_admission_report_admission_analysis
+msgid "Admission Analysis Report"
+msgstr "تقرير تحليل القبول"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_admission_analysis
+msgid "Admission Analysis Wizard"
+msgstr "معالج تحليل القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Admission Confirm"
+msgstr "تأكيد القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__admission_date
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Admission Date"
+msgstr "تاريخ القبول"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Admission Detail"
+msgstr "تفاصيل القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__admission
+msgid "Admission Process"
+msgstr "عملية القبول"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_op_admission_register
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__register_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_graph
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_pivot
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_tree
+msgid "Admission Register"
+msgstr "سجل القبول"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.act_open_op_admission_register_view
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_register
+msgid "Admission Registers"
+msgstr "سجلات القبول"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_analysis
+msgid "Admission Report"
+msgstr "تقرير القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__admission_ids
+#: model:ir.ui.menu,name:openeducat_admission.menu_op_admission_root
+#: model:ir.ui.menu,name:openeducat_admission.menu_op_admission_submenu
+msgid "Admissions"
+msgstr "القبول"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_17
+msgid "Alexis"
+msgstr "الكسيس"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_17
+msgid "Alexis K Smith"
+msgstr "الكسيس ك سميث"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__application_date
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Application Date"
+msgstr "تاريخ التقديم"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid ""
+"Application Date should be between Start Date &                     End Date"
+" of Admission Register."
+msgstr ""
+"يجب أن يكون تاريخ التطبيق بين تاريخ بدء وتاريخ الانتهاء من قبول التسجيل."
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__application
+msgid "Application Gathering"
+msgstr "جمع التطبيقات"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "Application No."
+msgstr "رقم التطبيق."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__application_number
+msgid "Application Number"
+msgstr "رقم الطلب"
+
+#. module: openeducat_admission
+#: model:ir.model.constraint,message:openeducat_admission.constraint_op_admission_unique_application_number
+msgid "Application Number must be unique per Application!"
+msgstr "يجب أن يكون رقم التطبيق فريدًا لكل تطبيق!"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Applications"
+msgstr "التطبيقات"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Archived"
+msgstr "أرشفة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_attachment_count
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_6
+msgid "Aybar"
+msgstr "أيبار"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__batch_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Batch"
+msgstr "حزمة"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_18
+msgid "Bennett"
+msgstr "بينيت"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__birth_date
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Birth Date can't be greater than current date!"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_7
+msgid "Bitar"
+msgstr "بيتار"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_3
+msgid "Boon"
+msgstr "نعمة"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Cancel"
+msgstr "يلغي"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__cancel
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__cancel
+msgid "Cancelled"
+msgstr "ألغيت"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_10
+msgid "Chaudhri"
+msgstr "تشودري"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_2
+msgid "Chua"
+msgstr "تشوا"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_5
+msgid "Cisse"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__city
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "City"
+msgstr "مدينة"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_20
+msgid "Clark"
+msgstr "كلارك"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__company_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Confirm"
+msgstr "يتأكد"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__confirm
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__confirm
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__country_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Country"
+msgstr "دولة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__course_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__course_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__course_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Course"
+msgstr "مسار"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_graph
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_pivot
+msgid "Course By Admission"
+msgstr "بالطبع عن طريق القبول"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_registration_graph
+msgid "Course By Admission Register"
+msgstr "مسار عن طريق سجل القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__product_id
+msgid "Course Fees"
+msgstr "رسوم الدورة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__create_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__create_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__create_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__create_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_8
+msgid "Damian"
+msgstr "داميان"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_1
+#: model:op.admission,last_name:openeducat_admission.op_admission_4
+msgid "Dani"
+msgstr "داني"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_16
+msgid "Daniel"
+msgstr "دانيال"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_16
+msgid "Daniel W Fostar"
+msgstr "دانييل دبليو فوستار"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_7
+msgid "Dawud"
+msgstr "داود"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_7
+msgid "Dawud L Bitar"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_11
+msgid "Deepak"
+msgstr "ديباك"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_11
+msgid "Deepak K Jha"
+msgstr "ديباك ك جها"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__discount
+msgid "Discount (%)"
+msgstr "تخفيض (٪)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__display_name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__display_name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__done
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__done
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Done"
+msgstr "فعله"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__draft
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__due_date
+msgid "Due Date"
+msgstr "تاريخ الاستحقاق"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Educational Detail"
+msgstr "التفاصيل التعليمية"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__email
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__end_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#: code:addons/openeducat_admission/wizard/admission_analysis_wizard.py:0
+#, python-format
+msgid "End Date cannot be set before Start Date."
+msgstr "تاريخ نهاية لا يمكن تعيين قبل تاريخ البدء."
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Enroll"
+msgstr "يتسجل، يلتحق"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Enrolled"
+msgstr "المقيدين"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__family_business
+msgid "Family Business"
+msgstr "شركة عائلية"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__family_income
+msgid "Family Income"
+msgstr "دخل العائلة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+msgid "Fees"
+msgstr "مصاريف"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees_start_date
+msgid "Fees Start Date"
+msgstr "تاريخ بدء الرسوم"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees_term_id
+msgid "Fees Term"
+msgstr "مصطلح الرسوم"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__f
+msgid "Female"
+msgstr "أنثى"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__first_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "First Name"
+msgstr "الاسم الاول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_follower_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_partner_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "أتباع (شركاء)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "الرمز الرائع على سبيل المثال FA-TASKS"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_16
+msgid "Fostar"
+msgstr "فوستار"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_22
+msgid "Gavin"
+msgstr "جافين"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_22
+msgid "Gavin K Robinson"
+msgstr "غافن ك روبنسون"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__gender
+msgid "Gender"
+msgstr "جنس"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_19
+msgid "Grace"
+msgstr "جمال"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_19
+msgid "Grace E Palmer"
+msgstr "جريس هالمر"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Group By..."
+msgstr "مجموعة من..."
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_21
+msgid "Hannah"
+msgstr "هانا"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_21
+msgid "Hannah J Walker"
+msgstr "هانا جي ووكر"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_14
+msgid "Hardik"
+msgstr "هارديك"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_14
+msgid "Hardik S Sharma"
+msgstr "هارديك شارما"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__has_message
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_15
+msgid "Hasnandani"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_12
+msgid "Hung"
+msgstr "التعلق"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_12
+msgid "Hung K Lan"
+msgstr "معلق K Lan"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__id
+msgid "ID"
+msgstr "بطاقة تعريف"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثناء."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم فحصها ، تتطلب رسائل جديدة انتباهك."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم فحصها ، فإن بعض الرسائل لديها خطأ في التسليم."
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Import Template for Admission"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__is_student
+msgid "Is Already Student"
+msgstr "طالب بالفعل"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_is_follower
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_is_follower
+msgid "Is Follower"
+msgstr "هو أتباع"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_20
+msgid "Isaac"
+msgstr "إسحاق"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_20
+msgid "Isaac F Clark"
+msgstr "إسحاق F كلارك"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_23
+msgid "Jayden"
+msgstr "جايدن"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_23
+msgid "Jayden N Moore"
+msgstr "جايدن ن مور"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_11
+msgid "Jha"
+msgstr "جها"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_12
+msgid "Lan"
+msgstr "LAN"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis____last_update
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission____last_update
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل على"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__last_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Last Name"
+msgstr "الكنية"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__write_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__write_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__write_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__write_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث على"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_8
+msgid "Laura"
+msgstr "لورا"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_8
+msgid "Laura Z Damian"
+msgstr "لورا زي داميان"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_3
+msgid "Liling"
+msgstr "liling"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_3
+msgid "Liling I Boon"
+msgstr "liling i boon"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_main_attachment_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__m
+msgid "Male"
+msgstr "ذكر"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_18
+msgid "Mason"
+msgstr "ميسون"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_18
+msgid "Mason D Bennett"
+msgstr "ميسون د بينيت"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_6
+msgid "Matthew"
+msgstr "ماثيو"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_6
+msgid "Matthew K Aybar"
+msgstr "ماثيو كريبار"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__max_count
+msgid "Maximum No. of Admission"
+msgstr "الحد الأقصى عدد القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ تسليم الرسائل"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__middle_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Middle Name"
+msgstr "الاسم الوسطى"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#, python-format
+msgid "Min Admission can't be greater than Max Admission"
+msgstr "مين القبول لا يمكن أن يكون أكبر من ماكس القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__min_count
+msgid "Minimum No. of Admission"
+msgstr "الحد الأدنى عدد القبول"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__minimum_age_criteria
+msgid "Minimum Required Age(Years)"
+msgstr "العمر الأدنى المطلوب (سنوات)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__mobile
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Mobile"
+msgstr "التليفون المحمول"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_23
+msgid "Moore"
+msgstr "مور"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي للنشط"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Name"
+msgstr "اسم"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__nbr
+msgid "No of Admission"
+msgstr "لا من القبول"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#, python-format
+msgid "No of Admission should be positive!"
+msgstr "لا القبول ينبغي أن تكون إيجابية!"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Not Eligible for Admission minimum required age is : %s "
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Open Student Profile"
+msgstr "افتح ملف تعريف الطالب"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__o
+msgid "Other"
+msgstr "آخر"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_19
+msgid "Palmer"
+msgstr "بالمر"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_9
+msgid "Parikh"
+msgstr "parikh"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__partner_id
+msgid "Partner"
+msgstr "شريك"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__pending
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Personal Detail"
+msgstr "التفاصيل الشخصية"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__phone
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Please fill in the mobile number"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_4
+msgid "Prachi"
+msgstr "براشي"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_4
+msgid "Prachi U Dani"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_course_id
+msgid "Previous Course"
+msgstr "الدورة السابقة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_institute_id
+msgid "Previous Institute"
+msgstr "المعهد السابق"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_result
+msgid "Previous Result"
+msgstr "النتيجة السابقة"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+msgid "Print"
+msgstr "مطبعة"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_13
+msgid "Qiang"
+msgstr "تشيانغ"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_13
+msgid "Qiang W Sim"
+msgstr "تشيانغ دبليو سيم"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Register"
+msgstr "يسجل"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.act_open_op_admission_view
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_tree
+msgid "Registration"
+msgstr "تسجيل"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__reject
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_report_root
+msgid "Reports"
+msgstr "تقارير"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_9
+msgid "Rishita"
+msgstr "ريشيتا"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_9
+msgid "Rishita T Parikh"
+msgstr "ريشيتا تي باريخ"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_22
+msgid "Robinson"
+msgstr "روبنسون"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ تسليم الرسائل القصيرة"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Set to Draft"
+msgstr "ضبط على المسودة"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_14
+msgid "Sharma"
+msgstr "شارما"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_15
+msgid "Shweta"
+msgstr "شويتا"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_15
+msgid "Shweta O Hasnandani"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_13
+msgid "Sim"
+msgstr "سيم"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_17
+msgid "Smith"
+msgstr "حداد"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Start Admission"
+msgstr "بدء القبول"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Start Application"
+msgstr "ابدأ التطبيق"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__start_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__state
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "State"
+msgstr "حالة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__state_id
+msgid "States"
+msgstr "تنص على"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__state
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Status"
+msgstr "حالة"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تم تمرير تاريخ الاستحقاق بالفعل\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__street
+msgid "Street"
+msgstr "شارع"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Street 2..."
+msgstr "الشارع 2 ..."
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Street..."
+msgstr "شارع..."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__street2
+msgid "Street2"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__student_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Student"
+msgstr "طالب علم"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "Student Name"
+msgstr "أسم الطالب"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Submit"
+msgstr "يُقدِّم"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__submit
+msgid "Submitted"
+msgstr "مُقَدَّم"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_1
+msgid "Sumita"
+msgstr "سوميتا"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_1
+msgid "Sumita S Dani"
+msgstr "سوميتا داني"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__academic_term_id
+msgid "Terms"
+msgstr "شروط"
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "The value of the deposit amount must be positive."
+msgstr "يجب أن تكون قيمة مبلغ الوديعة إيجابي."
+
+#. module: openeducat_admission
+#. odoo-python
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid ""
+"There is no income account defined for this product: \"%s\"."
+"                    You may have to install a chart of account from "
+"Accounting                    app, settings menu."
+msgstr ""
+"ليس هناك حساب الدخل تعريف لهذا المنتج: \"٪ الصورة\". قد يكون لديك لتثبيت "
+"رسما بيانيا من حساب من المحاسبة التطبيق، إعدادات القائمة."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__title
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Title"
+msgstr "عنوان"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_5
+msgid "Valdez"
+msgstr "فالديز"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_5
+msgid "Valdez L Cisse"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_21
+msgid "Walker"
+msgstr "ووكر"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ اتصال الموقع"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_2
+msgid "Xun"
+msgstr "شون"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_2
+msgid "Xun K Chua"
+msgstr ""
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "ZIP"
+msgstr "أَزِيز"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__zip
+msgid "Zip"
+msgstr "أَزِيز"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__image
+msgid "image"
+msgstr "صورة"

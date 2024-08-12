@@ -1,0 +1,1236 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* openeducat_admission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0beta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-12 05:37+0000\n"
+"PO-Revision-Date: 2022-12-12 05:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>Course:</b>"
+msgstr "<b> Курс: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>From Date:</b>"
+msgstr "<b> с даты: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<b>To Date:</b>"
+msgstr "<b> На сегодняшний день: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid ""
+"<br/>\n"
+"                            <b>Total Number of Students :</b>"
+msgstr ""
+"<br/>\n"
+"                            <b> Общее количество студентов: </b>"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "<strong>Admission Analysis</strong>"
+msgstr "<strong> анализ приема </strong>"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_10
+msgid "Abhinav"
+msgstr "Абхинав"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_10
+msgid "Abhinav Y Chaudhri"
+msgstr "Абхинав и Чаудхри"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__academic_years_id
+msgid "Academic Year"
+msgstr "Академический год"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_needaction
+msgid "Action Needed"
+msgstr "Действие необходимо"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__active
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__active
+msgid "Active"
+msgstr "Активный"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_ids
+msgid "Activities"
+msgstr "мероприятия"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Украшение исключения деятельности"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_state
+msgid "Activity State"
+msgstr "Состояние деятельности"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Значок типа деятельности"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Address"
+msgstr "Адрес"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_op_admission
+msgid "Admission"
+msgstr "Допуск"
+
+#. module: openeducat_admission
+#: model:ir.actions.report,name:openeducat_admission.action_report_report_admission_analysis
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+msgid "Admission Analysis"
+msgstr "Анализ приема"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.admission_analysis_act
+#: model:ir.model,name:openeducat_admission.model_report_openeducat_admission_report_admission_analysis
+msgid "Admission Analysis Report"
+msgstr "Отчет об анализе приема"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_admission_analysis
+msgid "Admission Analysis Wizard"
+msgstr "Волшебник для анализа приема"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Admission Confirm"
+msgstr "Прием Подтвердите"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__admission_date
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Admission Date"
+msgstr "Дата приема"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Admission Detail"
+msgstr "Деталь входа"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__admission
+msgid "Admission Process"
+msgstr "Процесс приема"
+
+#. module: openeducat_admission
+#: model:ir.model,name:openeducat_admission.model_op_admission_register
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__register_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_graph
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_pivot
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_tree
+msgid "Admission Register"
+msgstr "Регистр поступления"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.act_open_op_admission_register_view
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_register
+msgid "Admission Registers"
+msgstr "Приемные регистры"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_analysis
+msgid "Admission Report"
+msgstr "Отчет о приеме"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__admission_ids
+#: model:ir.ui.menu,name:openeducat_admission.menu_op_admission_root
+#: model:ir.ui.menu,name:openeducat_admission.menu_op_admission_submenu
+msgid "Admissions"
+msgstr "Прием"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_17
+msgid "Alexis"
+msgstr "Алексис"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_17
+msgid "Alexis K Smith"
+msgstr "Алексис К Смит"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__application_date
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Application Date"
+msgstr "Дата подачи документов"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid ""
+"Application Date should be between Start Date &                     End Date"
+" of Admission Register."
+msgstr ""
+"Дата применения должна быть между Датой начала и датой окончания Admission "
+"регистра."
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__application
+msgid "Application Gathering"
+msgstr "Сбор приложений"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "Application No."
+msgstr "Заявление №"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__application_number
+msgid "Application Number"
+msgstr "Номер заявления"
+
+#. module: openeducat_admission
+#: model:ir.model.constraint,message:openeducat_admission.constraint_op_admission_unique_application_number
+msgid "Application Number must be unique per Application!"
+msgstr "Номер приложения должен быть уникальным для приложения!"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Applications"
+msgstr "Приложения"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Archived"
+msgstr "Архивированный"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_attachment_count
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_attachment_count
+msgid "Attachment Count"
+msgstr "Подсчет приложений"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_6
+msgid "Aybar"
+msgstr "Айбар"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__batch_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Batch"
+msgstr "Партия"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_18
+msgid "Bennett"
+msgstr "Беннетт"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__birth_date
+msgid "Birth Date"
+msgstr "Дата рождения"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Birth Date can't be greater than current date!"
+msgstr "Дата рождения не может быть больше, чем текущая дата!"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_7
+msgid "Bitar"
+msgstr "Биар"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_3
+msgid "Boon"
+msgstr "Бун"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Cancel"
+msgstr "Отмена"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__cancel
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__cancel
+msgid "Cancelled"
+msgstr "Отменен"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_10
+msgid "Chaudhri"
+msgstr "Чаудхри"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_2
+msgid "Chua"
+msgstr "Чуа"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_5
+msgid "Cisse"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__city
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "City"
+msgstr "Город"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_20
+msgid "Clark"
+msgstr "Кларк"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__company_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__company_id
+msgid "Company"
+msgstr "Компания"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Confirm"
+msgstr "Подтверждать"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__confirm
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__confirm
+msgid "Confirmed"
+msgstr "Подтвержденный"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__country_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Country"
+msgstr "Страна"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__course_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__course_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__course_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Course"
+msgstr "Курс"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_graph
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_pivot
+msgid "Course By Admission"
+msgstr "Курс по поступлению"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_registration_graph
+msgid "Course By Admission Register"
+msgstr "Курс по регистрации поступления"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__product_id
+msgid "Course Fees"
+msgstr "Стоимость обучения"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__create_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__create_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__create_uid
+msgid "Created by"
+msgstr "Сделано"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__create_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__create_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__create_date
+msgid "Created on"
+msgstr "Создано на"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_8
+msgid "Damian"
+msgstr "Дамиан"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_1
+#: model:op.admission,last_name:openeducat_admission.op_admission_4
+msgid "Dani"
+msgstr "Дани"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_16
+msgid "Daniel"
+msgstr "Даниэль"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_16
+msgid "Daniel W Fostar"
+msgstr "Даниэль В. Фостар"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_7
+msgid "Dawud"
+msgstr "Дауд"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_7
+msgid "Dawud L Bitar"
+msgstr "Дауд Лит"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_11
+msgid "Deepak"
+msgstr "Дипак"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_11
+msgid "Deepak K Jha"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__discount
+msgid "Discount (%)"
+msgstr "Скидка (%)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__display_name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__display_name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__display_name
+msgid "Display Name"
+msgstr "Показать имя"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__done
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__done
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Done"
+msgstr "Сделанный"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__draft
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission_register__state__draft
+msgid "Draft"
+msgstr "Черновик"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__due_date
+msgid "Due Date"
+msgstr "Срок оплаты"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Educational Detail"
+msgstr "Образовательные детали"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__email
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Email"
+msgstr "Эл. адрес"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__end_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__end_date
+msgid "End Date"
+msgstr "Дата окончания"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#: code:addons/openeducat_admission/wizard/admission_analysis_wizard.py:0
+#, python-format
+msgid "End Date cannot be set before Start Date."
+msgstr "Дата окончания не может быть установлена ​​до даты начала."
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Enroll"
+msgstr "Зарегистрироваться"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Enrolled"
+msgstr "Зарегистрирован"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__family_business
+msgid "Family Business"
+msgstr "Семейный бизнес"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__family_income
+msgid "Family Income"
+msgstr "Семейный доход"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+msgid "Fees"
+msgstr "Сборы"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees_start_date
+msgid "Fees Start Date"
+msgstr "Стоимость начала даты"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__fees_term_id
+msgid "Fees Term"
+msgstr "Срок сборов"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__f
+msgid "Female"
+msgstr "женский"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__first_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "First Name"
+msgstr "Имя"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_follower_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_follower_ids
+msgid "Followers"
+msgstr "Последователи"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_partner_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Последователи (партнеры)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Awesome икона шрифта, например FA-задачи"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_16
+msgid "Fostar"
+msgstr "Фостар"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_22
+msgid "Gavin"
+msgstr "Гэвин"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_22
+msgid "Gavin K Robinson"
+msgstr "Гэвин К Робинсон"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__gender
+msgid "Gender"
+msgstr "Пол"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_19
+msgid "Grace"
+msgstr "Милость"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_19
+msgid "Grace E Palmer"
+msgstr "Грейс Э Палмер"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Group By..."
+msgstr "Группа по..."
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_21
+msgid "Hannah"
+msgstr "Ханна"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_21
+msgid "Hannah J Walker"
+msgstr "Ханна Дж. Уокер"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_14
+msgid "Hardik"
+msgstr "Хардик"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_14
+msgid "Hardik S Sharma"
+msgstr "Хардик С Шарма"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__has_message
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__has_message
+msgid "Has Message"
+msgstr "Имеет сообщение"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_15
+msgid "Hasnandani"
+msgstr "Хаснандани"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_12
+msgid "Hung"
+msgstr "Повесили"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_12
+msgid "Hung K Lan"
+msgstr "Повешенная К Лан"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__id
+msgid "ID"
+msgstr "Я БЫ"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_exception_icon
+msgid "Icon"
+msgstr "Значок"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Значок, чтобы указать на исключение."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_needaction
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "При проверке новые сообщения требуют вашего внимания."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_error
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "При проверке некоторые сообщения имеют ошибку доставки."
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Import Template for Admission"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__is_student
+msgid "Is Already Student"
+msgstr "Уже студент"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_is_follower
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_is_follower
+msgid "Is Follower"
+msgstr "Это последователь"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_20
+msgid "Isaac"
+msgstr "Исаак"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_20
+msgid "Isaac F Clark"
+msgstr "Исаак Ф. Кларк"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_23
+msgid "Jayden"
+msgstr "Джейден"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_23
+msgid "Jayden N Moore"
+msgstr "Джейден Н Мур"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_11
+msgid "Jha"
+msgstr "Джа"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_12
+msgid "Lan"
+msgstr "Локальный"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis____last_update
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission____last_update
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register____last_update
+msgid "Last Modified on"
+msgstr "Последнее изменено"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__last_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Last Name"
+msgstr "Фамилия"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__write_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__write_uid
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__write_uid
+msgid "Last Updated by"
+msgstr "Последнее обновлено"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__write_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__write_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__write_date
+msgid "Last Updated on"
+msgstr "Последнее обновлено"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_8
+msgid "Laura"
+msgstr "Лаура"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_8
+msgid "Laura Z Damian"
+msgstr "Лаура За Дамиан"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_3
+msgid "Liling"
+msgstr "Лилинг"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_3
+msgid "Liling I Boon"
+msgstr "Я бун"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_main_attachment_id
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Основное вложение"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__m
+msgid "Male"
+msgstr "Мужской"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_18
+msgid "Mason"
+msgstr "Масон"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_18
+msgid "Mason D Bennett"
+msgstr "Мейсон Д Беннетт"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_6
+msgid "Matthew"
+msgstr "Мэтью"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_6
+msgid "Matthew K Aybar"
+msgstr "Мэтью К Айбар"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__max_count
+msgid "Maximum No. of Admission"
+msgstr "Максимальный номер допущения"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_error
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_error
+msgid "Message Delivery error"
+msgstr "Ошибка доставки сообщения"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_ids
+msgid "Messages"
+msgstr "Сообщения"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__middle_name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Middle Name"
+msgstr "Второе имя"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#, python-format
+msgid "Min Admission can't be greater than Max Admission"
+msgstr "Min Прием не может быть больше, чем Max Допуск"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__min_count
+msgid "Minimum No. of Admission"
+msgstr "Минимальный номер допуска"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__minimum_age_criteria
+msgid "Minimum Required Age(Years)"
+msgstr "Минимальный требуемый возраст (годы)"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__mobile
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Mobile"
+msgstr "Мобильный"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_23
+msgid "Moore"
+msgstr "Мур"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Мой крайний срок действия"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__name
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__name
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Name"
+msgstr "Имя"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Следующий крайний срок действия"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_summary
+msgid "Next Activity Summary"
+msgstr "Следующее резюме деятельности"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_type_id
+msgid "Next Activity Type"
+msgstr "Следующий тип деятельности"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__nbr
+msgid "No of Admission"
+msgstr "Нет приема"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission_register.py:0
+#, python-format
+msgid "No of Admission should be positive!"
+msgstr "Нет входной билет должен быть положительным!"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Not Eligible for Admission minimum required age is : %s "
+msgstr ""
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Количество действий"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of errors"
+msgstr "Количество ошибок"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_needaction_counter
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Количество сообщений, которые требуют действия"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__message_has_error_counter
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Количество сообщений с ошибкой доставки"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Open Student Profile"
+msgstr "Открыть профиль студентов"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__gender__o
+msgid "Other"
+msgstr "Другой"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_19
+msgid "Palmer"
+msgstr "Палмер"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_9
+msgid "Parikh"
+msgstr "Парих"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__partner_id
+msgid "Partner"
+msgstr "Партнер"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__pending
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Pending"
+msgstr "В ожидании"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Personal Detail"
+msgstr "Личная деталь"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__phone
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "Please fill in the mobile number"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_4
+msgid "Prachi"
+msgstr "Прачи"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_4
+msgid "Prachi U Dani"
+msgstr "Прачи Уни"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_course_id
+msgid "Previous Course"
+msgstr "Предыдущий курс"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_institute_id
+msgid "Previous Institute"
+msgstr "Предыдущий институт"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__prev_result
+msgid "Previous Result"
+msgstr "Предыдущий результат"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.admission_analysis_form
+msgid "Print"
+msgstr "Распечатать"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_13
+msgid "Qiang"
+msgstr "Цянь"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_13
+msgid "Qiang W Sim"
+msgstr ""
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Register"
+msgstr "регистр"
+
+#. module: openeducat_admission
+#: model:ir.actions.act_window,name:openeducat_admission.act_open_op_admission_view
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_tree
+msgid "Registration"
+msgstr "Регистрация"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Reject"
+msgstr "Отклонять"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__reject
+msgid "Rejected"
+msgstr "Отклоненный"
+
+#. module: openeducat_admission
+#: model:ir.ui.menu,name:openeducat_admission.menu_admission_report_root
+msgid "Reports"
+msgstr "Отчеты"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__activity_user_id
+msgid "Responsible User"
+msgstr "Ответственный пользователь"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_9
+msgid "Rishita"
+msgstr "Ришита"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_9
+msgid "Rishita T Parikh"
+msgstr "Ришита Т Парих"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_22
+msgid "Robinson"
+msgstr "Робинсон"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__message_has_sms_error
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "СМС ошибка доставки"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Set to Draft"
+msgstr "Установить на черновик"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_14
+msgid "Sharma"
+msgstr "Шарма"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_15
+msgid "Shweta"
+msgstr "Швета"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_15
+msgid "Shweta O Hasnandani"
+msgstr "Швета О Хаснандани"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_13
+msgid "Sim"
+msgstr "Сима"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_17
+msgid "Smith"
+msgstr "Смит"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Start Admission"
+msgstr "Начать вход"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_form
+msgid "Start Application"
+msgstr "Начните приложение"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_admission_analysis__start_date
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__start_date
+msgid "Start Date"
+msgstr "Дата начала"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__state
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "State"
+msgstr "Состояние"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__state_id
+msgid "States"
+msgstr "состояния"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__state
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_search
+msgid "Status"
+msgstr "Статус"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Статус на основе деятельности\n"
+"Просрочен: дата срока уже прошла\n"
+"Сегодня: дата деятельности сегодня\n"
+"Запланировано: будущие мероприятия."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__street
+msgid "Street"
+msgstr "Улица"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Street..."
+msgstr "Улица..."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__street2
+msgid "Street2"
+msgstr "Улица # 2"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__student_id
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Student"
+msgstr "Ученик"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.report_admission_analysis
+msgid "Student Name"
+msgstr "Имя ученика"
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Submit"
+msgstr "Представлять на рассмотрение"
+
+#. module: openeducat_admission
+#: model:ir.model.fields.selection,name:openeducat_admission.selection__op_admission__state__submit
+msgid "Submitted"
+msgstr "Поданный"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_1
+msgid "Sumita"
+msgstr "Сумита"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_1
+msgid "Sumita S Dani"
+msgstr "Сумита С. Дани"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__academic_term_id
+msgid "Terms"
+msgstr "Условия"
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid "The value of the deposit amount must be positive."
+msgstr "Значение суммы депозита должно быть положительным."
+
+#. module: openeducat_admission
+#: code:addons/openeducat_admission/models/admission.py:0
+#, python-format
+msgid ""
+"There is no income account defined for this product: \"%s\"."
+"                    You may have to install a chart of account from "
+"Accounting                    app, settings menu."
+msgstr ""
+"Там нет счетов доходов определяются для данного продукта: «% S». Вы, "
+"возможно, придется установить схему счета из приложения Учет, меню настроек."
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__title
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "Title"
+msgstr "Заголовок"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип исключения деятельности на записи."
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_5
+msgid "Valdez"
+msgstr "Вальдес"
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_5
+msgid "Valdez L Cisse"
+msgstr "ВАЛДЕЗ Л. КИСС"
+
+#. module: openeducat_admission
+#: model:op.admission,last_name:openeducat_admission.op_admission_21
+msgid "Walker"
+msgstr "Уокер"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission_register__website_message_ids
+msgid "Website Messages"
+msgstr "Сообщения веб -сайта"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission__website_message_ids
+#: model:ir.model.fields,help:openeducat_admission.field_op_admission_register__website_message_ids
+msgid "Website communication history"
+msgstr "История общения веб -сайта"
+
+#. module: openeducat_admission
+#: model:op.admission,first_name:openeducat_admission.op_admission_2
+msgid "Xun"
+msgstr ""
+
+#. module: openeducat_admission
+#: model:op.admission,name:openeducat_admission.op_admission_2
+msgid "Xun K Chua"
+msgstr ""
+
+#. module: openeducat_admission
+#: model_terms:ir.ui.view,arch_db:openeducat_admission.view_op_admission_form
+msgid "ZIP"
+msgstr "Молния"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__zip
+msgid "Zip"
+msgstr "Молния"
+
+#. module: openeducat_admission
+#: model:ir.model.fields,field_description:openeducat_admission.field_op_admission__image
+msgid "image"
+msgstr "изображение"

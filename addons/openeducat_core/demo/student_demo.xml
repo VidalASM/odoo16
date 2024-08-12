@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="op_student_1" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Sara S Dani</field>
+            <field name="first_name">Sara</field>
+            <field name="middle_name">S</field>
+            <field name="last_name">Dani</field>
+            <field name="gender">f</field>
+            <field name="birth_date">1992-05-06</field>
+            <field name="blood_group">A-</field>
+            <field name="email">saradani@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_1"/>
+            <field name="user_id" ref="op_user_student"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_1.jpg"/>
+        </record>
+
+        <record id="op_student_2" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+                <field name="name">Mark R Carter</field>
+            <field name="first_name">Mark</field>
+            <field name="middle_name">R</field>
+            <field name="last_name">Carter</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1989-11-05</field>
+            <field name="blood_group">AB+</field>
+            <field name="email">markcarter@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+                <field name="partner_id" ref="op_res_partner_2"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_2.jpg"/>
+        </record>
+
+        <record id="op_student_3" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Mitzi R Russell</field>
+            <field name="first_name">Mitzi</field>
+            <field name="middle_name">R</field>
+            <field name="last_name">Russell</field>
+            <field name="gender">f</field>
+            <field name="birth_date">1991-03-12</field>
+            <field name="blood_group">AB+</field>
+            <field name="email">mitzirussell@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_3"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_3.jpg"/>
+        </record>
+
+        <record id="op_student_4" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Michael S Dani</field>
+            <field name="first_name">Michael</field>
+            <field name="middle_name">S</field>
+            <field name="last_name">Dani</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1991-05-16</field>
+            <field name="blood_group">AB-</field>
+            <field name="email">michaeldani@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_4"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_4.jpg"/>
+        </record>
+
+        <record id="op_student_5" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Lukas Simon</field>
+            <field name="first_name">Lukas</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Simon</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1991-09-12</field>
+            <field name="blood_group">AB+</field>
+            <field name="email">lukassimon@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.be"/>
+            <field name="nationality" ref="base.be"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_5"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_5.jpg"/>
+        </record>
+
+        <record id="op_student_6" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Jack S Peeters</field>
+            <field name="first_name">Jack</field>
+            <field name="middle_name">S</field>
+            <field name="last_name">Peeters</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1990-12-12</field>
+            <field name="blood_group">B-</field>
+            <field name="email">jackpeeters@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.es"/>
+            <field name="nationality" ref="base.es"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_6"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_6.jpg"/>
+        </record>
+
+        <record id="op_student_7" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Ruby J Moore</field>
+            <field name="first_name">Ruby</field>
+            <field name="middle_name">J</field>
+            <field name="last_name">Moore</field>
+            <field name="gender">f</field>
+            <field name="birth_date">1990-09-01</field>
+            <field name="blood_group">A+</field>
+            <field name="email">rubymoore@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.es"/>
+            <field name="nationality" ref="base.es"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_7"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_7.jpg"/>
+        </record>
+
+        <record id="op_student_8" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">David A Smith</field>
+            <field name="first_name">David</field>
+            <field name="middle_name">A</field>
+            <field name="last_name">Smith</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1990-06-10</field>
+            <field name="blood_group">B-</field>
+            <field name="email">davidsmith@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.de"/>
+            <field name="nationality" ref="base.de"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_8"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_8.jpg"/>
+        </record>
+
+        <record id="op_student_9" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Eric A Brown</field>
+            <field name="first_name">Eric</field>
+            <field name="middle_name">A</field>
+            <field name="last_name">Brown</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1992-05-12</field>
+            <field name="blood_group">AB+</field>
+            <field name="email">ericbrown@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.de"/>
+            <field name="nationality" ref="base.de"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_9"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_9.jpg"/>
+        </record>
+
+        <record id="op_student_10" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Alex Johnson</field>
+            <field name="first_name">Alex</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Johnson</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1989-09-30</field>
+            <field name="blood_group">O+</field>
+            <field name="email">alexjohnson@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.ca"/>
+            <field name="nationality" ref="base.ca"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_10"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_10.jpg"/>
+        </record>
+
+        <record id="op_student_11" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Ahmed Malik</field>
+            <field name="first_name">Ahmed</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Malik</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1990-07-12</field>
+            <field name="blood_group">O+</field>
+            <field name="email">ahmedmalik@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_11"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_11.jpg"/>
+        </record>
+
+        <record id="op_student_12" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">James Wilson</field>
+            <field name="first_name">James</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Wilson</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1991-12-03</field>
+            <field name="blood_group">B+</field>
+            <field name="email">jameswilson@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_12"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_12.jpg"/>
+        </record>
+
+        <record id="op_student_13" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Lily Andrew</field>
+            <field name="first_name">Lily</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Andrew</field>
+            <field name="gender">f</field>
+            <field name="birth_date">1990-07-02</field>
+            <field name="blood_group">B+</field>
+            <field name="email">lilyandrew@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.us"/>
+            <field name="nationality" ref="base.us"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_13"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_13.jpg"/>
+        </record>
+
+        <record id="op_student_14" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Robert M Stevens</field>
+            <field name="first_name">Robert</field>
+            <field name="middle_name">M</field>
+            <field name="last_name">Stevens</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1991-03-18</field>
+            <field name="blood_group">O+</field>
+            <field name="email">robertstevens@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.be"/>
+            <field name="nationality" ref="base.be"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_14"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_14.jpg"/>
+        </record>
+
+        <record id="op_student_15" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Thomas B Flynn</field>
+            <field name="first_name">Thomas</field>
+            <field name="middle_name">B</field>
+            <field name="last_name">Flynn</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1991-11-02</field>
+            <field name="blood_group">AB-</field>
+            <field name="email">thomasflynn@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.br"/>
+            <field name="nationality" ref="base.br"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_15"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_15.jpg"/>
+        </record>
+
+        <record id="op_student_16" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Nora R Jones</field>
+            <field name="first_name">Nora</field>
+            <field name="middle_name">R</field>
+            <field name="last_name">Jones</field>
+            <field name="gender">f</field>
+            <field name="birth_date">2003-01-06</field>
+            <field name="blood_group">O+</field>
+            <field name="email">norajones@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.br"/>
+            <field name="nationality" ref="base.br"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_16"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_16.jpg"/>
+        </record>
+
+        <record id="op_student_17" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Anna Taylor</field>
+            <field name="first_name">Anna</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Taylor</field>
+            <field name="gender">f</field>
+            <field name="birth_date">2003-12-03</field>
+            <field name="blood_group">B-</field>
+            <field name="email">annataylor@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.de"/>
+            <field name="nationality" ref="base.de"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_17"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_17.jpg"/>
+        </record>
+
+        <record id="op_student_18" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Sophia Martin</field>
+            <field name="first_name">Sophia</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Martin</field>
+            <field name="gender">f</field>
+            <field name="birth_date">2003-04-03</field>
+            <field name="blood_group">AB-</field>
+            <field name="email">sophiamartin@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_18"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_18.jpg"/>
+        </record>
+
+        <record id="op_student_19" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Patrick Richard</field>
+            <field name="first_name">Patrick</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Richard</field>
+            <field name="gender">m</field>
+            <field name="birth_date">2002-03-05</field>
+            <field name="blood_group">A+</field>
+            <field name="email">patrickrichard@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_19"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_19.jpg"/>
+        </record>
+
+        <record id="op_student_20" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Abdul Hajjar</field>
+            <field name="first_name">Abdul</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Hajjar</field>
+            <field name="gender">m</field>
+            <field name="birth_date">2003-09-04</field>
+            <field name="blood_group">B+</field>
+            <field name="email">abdulhajjar@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.fr"/>
+            <field name="nationality" ref="base.fr"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_20"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_20.jpg"/>
+        </record>
+        <record id="op_student_21" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Paul M Scott</field>
+            <field name="first_name">Paul</field>
+            <field name="middle_name">M</field>
+            <field name="last_name">Scott</field>
+            <field name="gender">m</field>
+            <field name="birth_date">1998-06-20</field>
+            <field name="blood_group">A-</field>
+            <field name="email">paulscott@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.za"/>
+            <field name="nationality" ref="base.za"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_33"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_21.jpg"/>
+        </record>
+
+        <record id="op_student_22" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Victor A Jacobs</field>
+            <field name="first_name">Victor</field>
+            <field name="middle_name">A</field>
+            <field name="last_name">Jacobs</field>
+            <field name="gender">m</field>
+            <field name="birth_date">2002-01-10</field>
+            <field name="blood_group">B+</field>
+            <field name="email">victorjacobs@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.za"/>
+            <field name="nationality" ref="base.za"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_34"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_22.jpg"/>
+        </record>
+
+        <record id="op_student_23" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Maria J Swartz</field>
+            <field name="first_name">Maria</field>
+            <field name="middle_name">J</field>
+            <field name="last_name">Swartz</field>
+            <field name="gender">f</field>
+            <field name="birth_date">1996-05-02</field>
+            <field name="blood_group">O+</field>
+            <field name="email">mariaswartz@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.za"/>
+            <field name="nationality" ref="base.za"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_35"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_23.jpg"/>
+        </record>
+
+        <record id="op_student_24" model="op.student">
+            <field name="title" ref="base.res_partner_title_mister"/>
+            <field name="name">Charles Miller</field>
+            <field name="first_name">Charles</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Miller</field>
+            <field name="gender">m</field>
+            <field name="birth_date">2003-12-18</field>
+            <field name="blood_group">B+</field>
+            <field name="email">charlesmiller@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.dk"/>
+            <field name="nationality" ref="base.dk"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_36"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_24.jpg"/>
+        </record>
+
+        <record id="op_student_25" model="op.student">
+            <field name="title" ref="base.res_partner_title_miss"/>
+            <field name="name">Kate Anderson</field>
+            <field name="first_name">Kate</field>
+            <field name="middle_name"></field>
+            <field name="last_name">Anderson</field>
+            <field name="gender">f</field>
+                <field name="birth_date">1992-07-25</field>
+            <field name="blood_group">AB-</field>
+            <field name="email">kateanderson@example.com</field>
+            <field name="city"></field>
+            <field name="country_id" ref="base.ca"/>
+            <field name="nationality" ref="base.ca"/>
+            <field name="type">contact</field>
+            <field name="active">True</field>
+            <field name="partner_id" ref="op_res_partner_37"/>
+            <field name="image_1920" type="base64"
+                   file="openeducat_core/static/img/student_25.jpg"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_fees_detail_analysis" model="ir.actions.report">
+        <field name="name">Fees Detail Analysi</field>
+        <field name="model">op.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">openeducat_fees.report_fees_analysis</field>
+        <field name="report_file">openeducat_fees.report_fees_analysis</field>
+    </record>
+</odoo>

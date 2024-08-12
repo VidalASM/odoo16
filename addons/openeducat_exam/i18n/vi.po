@@ -1,0 +1,1188 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* openeducat_exam
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-27 05:40+0000\n"
+"PO-Revision-Date: 2019-09-27 05:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "<b>Course\n"
+"                                                        </b>"
+msgstr "<B> Khóa học\n"
+"                                                        </ B>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "<b>Course :</b>"
+msgstr "<B> Khóa học: </ b>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "<b>Exam\n"
+"                                                            Code\n"
+"                                                        </b>"
+msgstr "<B> thi\n"
+"                                                            Mã\n"
+"                                                        </ B>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "<b>Exam\n"
+"                                                            Name\n"
+"                                                        </b>"
+msgstr "<B> thi\n"
+"                                                            Tên\n"
+"                                                        </ B>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "<b>Hall Ticket</b>"
+msgstr "<B> Hội trường Ticket </ b>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "<b>Roll No :</b>"
+msgstr "<B> cuộn Số: </ b>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "<b>Student\n"
+"                                                            Name\n"
+"                                                        </b>"
+msgstr "<B> Sinh viên\n"
+"                                                            Tên\n"
+"                                                        </ B>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "<b>Student Name :</b>"
+msgstr "<B> Tên Sinh viên: </ b>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "<strong>MarkSheet\n"
+"                                            </strong>"
+msgstr "<Strong> MarkSheet\n"
+"                                            </ Strong>"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+#: selection:op.exam.attendees,status:0
+msgid "Absent"
+msgstr "Vắng mặt"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_held_exam_form
+msgid "Absent Attendees"
+msgstr "Những người tham dự vắng mặt"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_needaction
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_needaction
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_needaction
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_needaction
+msgid "Action Needed"
+msgstr "Hành động cần thiết"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/result_template.py:56
+#, python-format
+msgid "All subject exam should be done."
+msgstr "Tất cả các kỳ thi môn học nên được thực hiện."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_attachment_count
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_attachment_count
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_attachment_count
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_attachment_count
+msgid "Attachment Count"
+msgstr "Đếm tập tin đính kèm"
+
+#. module: openeducat_exam
+#: sql_constraint:op.exam.attendees:0
+msgid "Attendee must be unique per exam."
+msgstr "Người tham dự phải là duy nhất cho mỗi kỳ thi."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__attendees_line
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__attendees_line
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+msgid "Attendees"
+msgstr "Những người tham dự"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__batch_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__batch_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__batch_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__batch_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__batch_id
+msgid "Batch"
+msgstr "hàng loạt"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.student_hall_ticket_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: openeducat_exam
+#: selection:op.exam,state:0
+#: selection:op.exam.session,state:0
+#: selection:op.marksheet.register,state:0
+msgid "Cancelled"
+msgstr "Hủy bỏ"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__capacity
+msgid "Capacity"
+msgstr "Sức chứa"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam_room.py:39
+#, python-format
+msgid "Capacity over Classroom capacity!"
+msgstr "Công suất trên công suất Lớp học!"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__classroom_id
+msgid "Classroom"
+msgstr "Lớp học"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__code
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_search
+msgid "Code"
+msgstr "Mã"
+
+#. module: openeducat_exam
+#: sql_constraint:op.exam.session:0
+msgid "Code should be unique per exam session!"
+msgstr "Mã phải là duy nhất cho mỗi phiên kỳ thi!"
+
+#. module: openeducat_exam
+#: sql_constraint:op.exam.type:0
+msgid "Code should be unique per exam type!"
+msgstr "Mã phải là duy nhất cho mỗi loại kỳ thi!"
+
+#. module: openeducat_exam
+#: sql_constraint:op.exam:0
+msgid "Code should be unique per exam!"
+msgstr "Mã phải là duy nhất cho mỗi kỳ thi!"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "Company LOGO"
+msgstr "LOGO công ty"
+
+#. module: openeducat_exam
+#: model:ir.ui.menu,name:openeducat_exam.menu_exam_configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__course_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__course_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__course_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__course_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__course_id
+msgid "Course"
+msgstr "Khóa học"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__create_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__create_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__create_date
+msgid "Created on"
+msgstr "Được tạo ra"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "Date"
+msgstr "Ngày"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+msgid "Description"
+msgstr "Miêu tả"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_marksheet_report__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_ticket__display_name
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: selection:op.exam,state:0
+#: selection:op.exam.session,state:0
+msgid "Done"
+msgstr "Thực hiện"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: selection:op.exam,state:0
+#: selection:op.exam.session,state:0
+#: selection:op.marksheet.register,state:0
+#: selection:op.result.template,state:0
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__end_date
+msgid "End Date"
+msgstr "Ngày cuối"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam_session.py:71
+#, python-format
+msgid "End Date cannot be set before Start Date."
+msgstr "Ngày Kết Thúc không thể được đặt trước Ngày bắt đầu."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__end_time
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__end_time
+msgid "End Time"
+msgstr "Thời gian kết thúc"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam.py:82
+#, python-format
+msgid "End Time cannot be set             before Start Time."
+msgstr "End Time không thể được thiết lập trước khi bắt đầu thời gian."
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam_room.py:37
+#, python-format
+msgid "Enter proper Capacity"
+msgstr "Nhập Dung tích thích hợp"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/result_line.py:45
+#, python-format
+msgid "Enter proper Marks or Percentage!"
+msgstr "Nhập Marks thích hợp hoặc Tỷ lệ phần trăm!"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/marksheet_line.py:56
+#, python-format
+msgid "Enter proper marks or percentage!"
+msgstr "Nhập dấu thích hợp hoặc tỷ lệ phần trăm!"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam.py:66
+#: code:addons/openeducat_exam/models/exam_attendees.py:58
+#, python-format
+msgid "Enter proper marks!"
+msgstr "Nhập dấu thích hợp!"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/marksheet_register.py:63
+#, python-format
+msgid "Enter proper pass or fail!"
+msgstr "Nhập đường chuyền đúng hay thất bại!"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__evaluation_type
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__evaluation_type
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__evaluation_type
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__evaluation_type
+msgid "Evolution type"
+msgstr "loại tiến hóa"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__exam_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__exam_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__exam_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__name
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_tree
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Exam"
+msgstr "Kỳ thi"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Exam\n"
+"                                                    Type"
+msgstr "Thi\n"
+"                                                    Thể loại"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_exam_attendees_view
+#: model:ir.model,name:openeducat_exam.model_op_exam_attendees
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_attendees_sub
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_tree
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_room_distribution_form
+msgid "Exam Attendees"
+msgstr "Những người tham dự kỳ thi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__exam_code
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_search
+msgid "Exam Code"
+msgstr "Mã thi"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_report_openeducat_exam_report_marksheet_report
+msgid "Exam Marksheet Report"
+msgstr "Thi Báo cáo Marksheet"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_exam_room
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_room_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_room_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_room_tree
+msgid "Exam Room"
+msgstr "Phòng thi"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_room_distribution_view
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_room_distribution_form
+msgid "Exam Room Distribution"
+msgstr "Phân phối thi Phòng"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_exam_room_view
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__room_ids
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_room_sub
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_room_distribution_form
+msgid "Exam Rooms"
+msgstr "Phòng thi"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_exam_session
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__session_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__exam_session_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__exam_session_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__exam_session
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__exam_session_id
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_tree
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+msgid "Exam Session"
+msgstr "Buổi thi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__exam_code
+msgid "Exam Session Code"
+msgstr "Mã phiên thi"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_exam_session_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_session
+msgid "Exam Sessions"
+msgstr "Buổi thi"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_report_openeducat_exam_report_ticket
+msgid "Exam Ticket Report"
+msgstr "Thi Báo cáo Ticket"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam.py:87
+#, python-format
+msgid "Exam Time should in between Exam Session Dates."
+msgstr "Thi Thời gian nên ở giữa Ngày thi Session."
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_exam_type
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__exam_type
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_tree
+msgid "Exam Type"
+msgstr "Loại Bài kiểm tra"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_exam_type_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_type_sub
+msgid "Exam Types"
+msgstr "Các loại bài thi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__exam_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__exam_id
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+msgid "Exam(s)"
+msgstr "Thi (s)"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_exam_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_main
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_root
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_school_exam_result
+msgid "Exams"
+msgstr "Kỳ thi"
+
+#. module: openeducat_exam
+#: selection:op.marksheet.line,status:0
+#: selection:op.result.line,status:0
+msgid "Fail"
+msgstr "Thất bại"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_follower_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_follower_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_follower_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_channel_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_channel_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_channel_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Người theo dõi (Channels)"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_partner_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_partner_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_partner_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Partners)"
+
+#. module: openeducat_exam
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_exam_general
+msgid "General"
+msgstr "Tổng quát"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_template_form
+msgid "Generate Result"
+msgstr "tạo quả"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__generated_by
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+msgid "Generated By"
+msgstr "tạo bởi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__generated_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__generated_date
+msgid "Generated Date"
+msgstr "ngày tạo ra"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__grade
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__grade
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+#: selection:op.exam.session,evaluation_type:0
+msgid "Grade"
+msgstr "Cấp"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_grade_configuration_view
+#: model:ir.model,name:openeducat_exam.model_op_grade_configuration
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__grade_ids
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_grade_configuration
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_grade_configuration_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_grade_configuration_tree
+msgid "Grade Configuration"
+msgstr "Cấu hình lớp"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_template_form
+msgid "Grades"
+msgstr "lớp"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Group By..."
+msgstr "Nhóm theo..."
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_held_exam_form
+#: selection:op.exam,state:0
+#: selection:op.exam.session,state:0
+msgid "Held"
+msgstr "Tổ chức"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_held_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+msgid "Held Exam"
+msgstr "thi được tổ chức"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_held_exam_view
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_held_exam_form
+msgid "Held Exam Wizard"
+msgstr "Được tổ chức thi Hướng dẫn"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_marksheet_report__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_ticket__id
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__id
+msgid "ID"
+msgstr ""
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_unread
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_unread
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_unread
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Nếu kiểm tra tin nhắn mới đòi hỏi sự chú ý của bạn."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_needaction
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_needaction
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_needaction
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu được chọn, các thông điệp mới đòi hỏi sự chú ý của bạn."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_has_error
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_has_error
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_has_error
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu được chọn, một số thông báo có một lỗi giao hàng."
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_is_follower
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_is_follower
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_is_follower
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_is_follower
+msgid "Is Follower"
+msgstr "Trở thành người theo dõi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_marksheet_report____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_report_openeducat_exam_report_ticket____last_update
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket____last_update
+msgid "Last Modified on"
+msgstr "Sửa đổi lần cuối trên"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__write_uid
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__write_date
+#: model:ir.model.fields,field_description:openeducat_exam.field_student_hall_ticket__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_main_attachment_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_main_attachment_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_main_attachment_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Đính kèm chính"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__marks
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__marks
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Marks"
+msgstr "Điểm"
+
+#. module: openeducat_exam
+#: model:ir.actions.report,name:openeducat_exam.report_marksheet
+msgid "Marksheet"
+msgstr ""
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_marksheet_line
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__marksheet_line_id
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_tree
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Marksheet Line"
+msgstr "Marksheet Dòng"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_marksheet_line_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_marksheet_line_sub
+msgid "Marksheet Lines"
+msgstr "Marksheet dòng"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_marksheet_register
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__marksheet_reg_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__name
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_tree
+msgid "Marksheet Register"
+msgstr "Marksheet Đăng ký"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_marksheet_register_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_marksheet_register_sub
+msgid "Marksheet Registers"
+msgstr "Đăng ký Marksheet"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__marksheet_line
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_form
+msgid "Marksheets"
+msgstr ""
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__max_per
+msgid "Maximum Percentage"
+msgstr "Tỷ lệ phần trăm tối đa"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_has_error
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_has_error
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_has_error
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_has_error
+msgid "Message Delivery error"
+msgstr "thông báo lỗi giao hàng"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__min_per
+msgid "Minimum Percentage"
+msgstr "Tỷ lệ phần trăm tối thiểu"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Month/Year\n"
+"                                                    of Passing"
+msgstr "Năm tháng\n"
+"                                                    of Passing"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_room__name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_type__name
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__name
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_type_search
+msgid "Name"
+msgstr "Tên"
+
+#. module: openeducat_exam
+#: selection:op.exam.session,evaluation_type:0
+msgid "Normal"
+msgstr "bình thường"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__note
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__note
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_form
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_needaction_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_needaction_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_needaction_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số Actions"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_has_error_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_has_error_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_has_error_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_has_error_counter
+msgid "Number of error"
+msgstr "Số lỗi"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_needaction_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_needaction_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_needaction_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Số lượng tin nhắn mà đòi hỏi phải có một hành động"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_has_error_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_has_error_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_has_error_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Số lượng tin nhắn với lỗi giao hàng"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__message_unread_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__message_unread_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__message_unread_counter
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Số tin nhắn chưa đọc"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Obtained\n"
+"                                                    Grade"
+msgstr "thu được\n"
+"                                                    Cấp"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Obtained\n"
+"                                                    Marks"
+msgstr "thu được\n"
+"                                                    Điểm"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Obtained\n"
+"                                                    Marks/Total\n"
+"                                                    Marks"
+msgstr "thu được\n"
+"                                                    Marks / Tổng số\n"
+"                                                    Điểm"
+
+#. module: openeducat_exam
+#: selection:op.marksheet.line,status:0
+#: selection:op.result.line,status:0
+msgid "Pass"
+msgstr "Vượt qua"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Passing\n"
+"                                                    Marks"
+msgstr "Đi qua\n"
+"                                                    Điểm"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__min_marks
+msgid "Passing Marks"
+msgstr "đi qua Marks"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/exam.py:68
+#, python-format
+msgid "Passing Marks can't be greater than Total Marks"
+msgstr "Đi qua Marks không thể lớn hơn Tổng Marks"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__percentage
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Percentage"
+msgstr "tỷ lệ phần trăm"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/models/result_template.py:73
+#, python-format
+msgid "Percentage range conflict with other record."
+msgstr "phạm vi xung đột Tỷ lệ phần trăm với kỷ lục khác."
+
+#. module: openeducat_exam
+#: selection:op.exam.attendees,status:0
+msgid "Present"
+msgstr "Hiện nay"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.student_hall_ticket_form
+msgid "Print"
+msgstr "In"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__responsible_id
+msgid "Responsible"
+msgstr "Chịu trách nhiệm"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Result"
+msgstr "Kết quả"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__result_date
+msgid "Result Date"
+msgstr "ngày kết quả"
+
+#. module: openeducat_exam
+#: selection:op.result.template,state:0
+msgid "Result Generated"
+msgstr "kết quả tạo"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_result_line
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_tree
+msgid "Result Line"
+msgstr "Dòng kết quả"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_result_line_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_result_line_sub
+msgid "Result Lines"
+msgstr "Dây chuyền kết quả"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_result_template
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__result_template_id
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_template_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_template_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_template_tree
+msgid "Result Template"
+msgstr "Kết quả mẫu"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.act_open_op_result_template_view
+#: model:ir.ui.menu,name:openeducat_exam.menu_op_result_template
+msgid "Result Templates"
+msgstr "Kết quả mẫu"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: selection:op.exam,state:0
+msgid "Result Updated"
+msgstr "kết quả cập nhật"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_grade_configuration__result
+msgid "Result to Display"
+msgstr "Kết quả để hiển thị"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__result_line
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_form
+msgid "Results"
+msgstr "Các kết quả"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__room_id
+msgid "Room"
+msgstr "Phòng"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__room_capacity
+msgid "Room Capacity"
+msgstr "Công suất phòng"
+
+#. module: openeducat_exam
+#: model:ir.model,name:openeducat_exam.model_op_room_distribution
+msgid "Room Distribution"
+msgstr "Phân phối phòng"
+
+#. module: openeducat_exam
+#: code:addons/openeducat_exam/wizard/room_distribution.py:102
+#, python-format
+msgid "Room capacity must be greater than total number                       of student"
+msgstr "công suất phòng phải lớn hơn tổng số sinh viên"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_session_form
+msgid "Schedule"
+msgstr "lịch trình"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_form
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_room_distribution_form
+msgid "Schedule Exam"
+msgstr "lịch thi"
+
+#. module: openeducat_exam
+#: selection:op.exam,state:0
+#: selection:op.exam.session,state:0
+msgid "Scheduled"
+msgstr "Theo lịch trình"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_form
+msgid "Set to Draft"
+msgstr "Set để Dự thảo"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__start_date
+msgid "Start Date"
+msgstr "ngày bắt đầu"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__start_time
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__start_time
+msgid "Start Time"
+msgstr "Thời gian bắt đầu"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__state
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__state
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__state
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_search
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__status
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__status
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__state
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__status
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_attendees__student_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__student_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_line__student_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__student_ids
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_attendees_search
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_line_search
+msgid "Student"
+msgstr "Sinh viên"
+
+#. module: openeducat_exam
+#: model:ir.actions.report,name:openeducat_exam.action_student_hall_ticket_report
+#: model:ir.model,name:openeducat_exam.model_student_hall_ticket
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.student_hall_ticket_form
+msgid "Student Hall Ticket"
+msgstr "Vé sinh viên trường"
+
+#. module: openeducat_exam
+#: model:ir.actions.act_window,name:openeducat_exam.student_hall_ticket_act
+#: model:ir.ui.menu,name:openeducat_exam.menu_student_hall_ticket
+msgid "Student Hall Tickets"
+msgstr "Sinh viên Hall vé"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "Student Image"
+msgstr "hình ảnh sinh viên"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_result_line_search
+msgid "Students"
+msgstr "Sinh viên"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__subject_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_held_exam__subject_id
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__subject_id
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_exam_search
+msgid "Subject"
+msgstr "Môn học"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "Supervisor Sign"
+msgstr "Supervisor Đăng"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_ticket
+msgid "Time"
+msgstr "Thời gian"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.report_marksheet_report
+msgid "Total\n"
+"                                                    Marks"
+msgstr "Toàn bộ\n"
+"                                                    Điểm"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__total_failed
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+msgid "Total Fail"
+msgstr "Tổng Fail"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__total_marks
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_line__total_marks
+msgid "Total Marks"
+msgstr "Tổng số điểm"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__total_pass
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_search
+msgid "Total Pass"
+msgstr "Tổng số đèo"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_room_distribution__total_student
+msgid "Total Student"
+msgstr "Tổng số sinh viên"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_unread
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_unread
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_unread
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_unread
+msgid "Unread Messages"
+msgstr "Tin nhắn chưa đọc"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__message_unread_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__message_unread_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__message_unread_counter
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Tin nhắn chưa đọc Counter"
+
+#. module: openeducat_exam
+#: model_terms:ir.ui.view,arch_db:openeducat_exam.view_op_marksheet_register_form
+msgid "Validate Marksheet"
+msgstr ""
+
+#. module: openeducat_exam
+#: selection:op.marksheet.register,state:0
+msgid "Validated"
+msgstr "xác nhận"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__venue
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_faculty__is_venue
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_student__is_venue
+#: model:ir.model.fields,field_description:openeducat_exam.field_res_partner__is_venue
+#: model:ir.model.fields,field_description:openeducat_exam.field_res_users__is_venue
+msgid "Venue"
+msgstr "Hội họp"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam__website_message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_exam_session__website_message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_marksheet_register__website_message_ids
+#: model:ir.model.fields,field_description:openeducat_exam.field_op_result_template__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn của trang web"
+
+#. module: openeducat_exam
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam__website_message_ids
+#: model:ir.model.fields,help:openeducat_exam.field_op_exam_session__website_message_ids
+#: model:ir.model.fields,help:openeducat_exam.field_op_marksheet_register__website_message_ids
+#: model:ir.model.fields,help:openeducat_exam.field_op_result_template__website_message_ids
+msgid "Website communication history"
+msgstr "lịch sử truyền thông website"
+
