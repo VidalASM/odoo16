@@ -46,7 +46,7 @@ class MeasurementHistory(models.Model):
     order_id = fields.Many2one('sale.order', string='Orden de Venta', tracking=True, required=False)
     date_start = fields.Datetime('Inicio de la cita', required=True)
     date_end = fields.Datetime(string='Finaliza')
-    user_id = fields.Many2one('res.users', 'Responsable', required=True)
+    user_id = fields.Many2one('res.users', 'Responsable', default=lambda self: self.env.user, required=True)
     gender = fields.Selection([
         ('male', 'Masculino'),
         ('female', 'Femenino'),
@@ -176,6 +176,8 @@ class MeasurementHistory(models.Model):
         for rec in self:
             rec.gender = rec.member.gender
             rec.age = rec.member.age
+            last_membership = self.env['gym.membership'].search([('member', '=', rec.member.id), ('state', '=', 'confirm')], order='id desc', limit=1)
+            rec.membership = last_membership.id if last_membership else False
             return {'domain': {'membership': [('member', '=', rec.member.id)], 'order_id': [('partner_id', '=', rec.member.id)]}}
     
     @api.onchange('membership')

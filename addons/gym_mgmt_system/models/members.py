@@ -78,7 +78,11 @@ class MemberPartner(models.Model):
         This function returns an action that displays the opportunities from partner.
         '''
         action = self.env['ir.actions.act_window']._for_xml_id('gym_mgmt_system.action_gym_membership')
-        action['context'] = {'active_test': False}
+        action['context'] = {
+            'search_default_draft': 1,
+            'search_default_member': self.id,
+            'default_member': self.id,
+        }
         action['domain'] = [('member', '=', self.id)]
         return action
     

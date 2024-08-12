@@ -68,7 +68,8 @@ class GymMembership(models.Model):
         return user_id.id
     
     reference = fields.Char(string='Referencia', required=True, readonly=True, default=lambda self: _('New'))
-    member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, domain="[('gym_member', '!=',False)]")
+    member = fields.Many2one('res.partner', string='Socio', required=True, tracking=4, 
+        change_default=True, index=True, domain="[('gym_member', '!=',False)]")
     referred_partner_id = fields.Many2one('res.partner', string=u'Referido por')
     user_id = fields.Many2one(string='Vendedor', comodel_name='res.users', copy=False, tracking=True, default=lambda self: self.env.user,)
     responsible_id = fields.Many2one(string='Responsable', comodel_name='res.users', copy=False, tracking=True, default=_default_responsible)
@@ -249,9 +250,10 @@ class GymMembership(models.Model):
     def send_parent_signature(self):
         self.ensure_one()
         # request = self.env['sign.send.request']
+        template = self.env['sign.template'].search([('name','=','ANEXO_3')])
         sign_request = self.env['sign.send.request'].create({
             'set_sign_order': False, 
-            'template_id': 12, 
+            'template_id': template.id, 
             'signer_ids': [[0, 'virtual_3', {'role_id': 1, 'partner_id': self.member.tutor_id.id, 'mail_sent_order': 1}]], 
             'signer_id': False, 
             'signers_count': 1, 

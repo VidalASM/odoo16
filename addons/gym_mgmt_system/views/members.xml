@@ -121,7 +121,10 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//button[@name='schedule_meeting']" position="after">
-                <button class="oe_stat_button" type="object" name="action_view_membership_quotation" icon="fa-usd" context="{'partner_id': active_id, 'partner_name': name}">
+                <button class="oe_stat_button" type="object" 
+                    name="action_view_membership_quotation" 
+                    icon="fa-usd" 
+                    context="{'member': active_id}">
                     <field string="Membresías" name="membership_count" widget="statinfo"/>
                 </button>
             </xpath>
