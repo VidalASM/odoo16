@@ -269,6 +269,13 @@
             </xpath>
             <xpath expr="//field[@name='user_id']" position="after">
                 <field name="is_contract"/>
+                <field name="is_manager"/>
+            </xpath>
+            <!-- <xpath expr="//page[@name='other_information']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_manager</attribute>
+            </xpath> -->
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_manager','=',False)]}</attribute>
             </xpath>
         </field>
     </record>

@@ -218,6 +218,7 @@ class GymMembership(models.Model):
                 'partner_id': self.member.id,
                 'is_contract': True,
                 'journal_id': self.journal_id.id,
+                'user_id': self.user_id.id,
             })
             self.env['sale.order.line'].create({
                 'order_id': sale_order.id,
@@ -358,6 +359,11 @@ class SaleConfirm(models.Model):
     is_contract = fields.Boolean(string="Es membresìa", default=False)
     membership_ids = fields.One2many(
         'gym.membership', 'sale_order_id', 'Membresías')
+    # chek if the current user is administrator
+    is_manager = fields.Boolean(compute='_check_user_group')
+
+    def _check_user_group(self):
+        self.is_manager =  self.env.user.has_group('sales_team.group_sale_manager')
 
     def action_confirm(self):
         """ membership  created directly from sale order confirmed """
