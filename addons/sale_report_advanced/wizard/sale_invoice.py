@@ -36,7 +36,7 @@ except ImportError:
 class SaleReportAdvance(models.TransientModel):
     _name = "sale.report.invoice"
 
-    customer_ids = fields.Many2many('res.partner', string="Customers",required=True)
+    customer_ids = fields.Many2many('res.partner', string="Clientes", required=True)
     from_date = fields.Date(string="Start Date")
     to_date = fields.Date(string="End Date")
     status = fields.Selection([('open', 'Open'), ('paid', 'Paid'), ('both', 'Both')],

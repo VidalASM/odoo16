@@ -6,17 +6,18 @@
               sequence="1"/>
     <menuitem id="sale_advanced_report_root"
               parent="sale.menu_sale_report"
-              name="Sale Advanced Reports"
+              name="Reportes Avanzados de Ventas"
               sequence="2"/>
     <menuitem id="sale_advanced_report"
               parent="sale_advanced_report_root"
-              name="Sale Product Profit"
+              name="Reporte de Ventas y Pagos"
               action="sale_report_advance"
               sequence="2"/>
-    <menuitem id="sale_report_invoice"
+    <!-- <menuitem id="sale_report_invoice"
               parent="sale_advanced_report_root"
               name="Invoice analysis"
               action="sale_invoice_report"
+              invisible=True
               sequence="3"/>
     <menuitem id="category_report"
               parent="sale_advanced_report_root"
@@ -37,5 +38,5 @@
               parent="sale_advanced_report_root"
               name="Sales Hourly Wise"
               action="sale_weekly_report"
-              sequence="7"/>
+              sequence="7"/> -->
 </odoo>

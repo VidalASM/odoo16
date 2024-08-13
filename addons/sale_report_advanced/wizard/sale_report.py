@@ -38,13 +38,14 @@ except ImportError:
 class SaleReportAdvance(models.TransientModel):
     _name = "sale.report.advance"
 
-    customer_ids = fields.Many2many('res.partner', string="Customers")
-    product_ids = fields.Many2many('product.product', string='Products')
-    from_date = fields.Date(string="Start Date")
-    to_date = fields.Date(string="End Date")
-    type = fields.Selection([('customer', 'Customers'), ('product', 'Products'), ('both', 'Both')],
-                            string='Report Print By', default='customer', required=True)
-    company_ids = fields.Many2many('res.company', string='Companies')
+    user_ids = fields.Many2many('res.users', string="Vendedores")
+    customer_ids = fields.Many2many('res.partner', string="Clientes")
+    product_ids = fields.Many2many('product.product', string='Productos')
+    from_date = fields.Date(string="Fecha inicial", required=True)
+    to_date = fields.Date(string="Fecha Final", required=True)
+    type = fields.Selection([('customer', 'Clientes'), ('product', 'Productos'), ('both', 'Ambos')], 
+        string='Imprimir reporte por', default='customer', required=True)
+    company_ids = fields.Many2many('res.company', string='Sedes')
     today_date = fields.Date(default=fields.Date.today())
 
     def _get_data(self):
@@ -52,38 +53,31 @@ class SaleReportAdvance(models.TransientModel):
         sales_order_line = self.env['sale.order.line'].search([('order_id.state','!=','cancel')])
 
         if self.from_date and self.to_date and self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date and x.company_id in self.company_ids,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date and x.company_id in self.company_ids, sale))
         elif not self.from_date and self.to_date and self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() <= self.to_date and x.company_id in self.company_ids,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() <= self.to_date and x.company_id in self.company_ids, sale))
         elif self.from_date and not self.to_date and self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() >= self.from_date and x.company_id in self.company_ids,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.company_id in self.company_ids, sale))
         elif self.from_date and self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date, sale))
         elif not self.from_date and not self.to_date and self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.company_id in self.company_ids,
-                                      sale))
+            sales_order = list(filter(lambda x: x.company_id in self.company_ids, sale))
         elif not self.from_date and self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() <= self.to_date,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() <= self.to_date, sale))
         elif self.from_date and not self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda
-                                          x: x.date_order.date() >= self.from_date,
-                                      sale))
+            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date, sale))
         else:
             sales_order = sale
         result = []
+        users = []
         customers = []
         products = []
+        for rec in self.user_ids:
+            a = {
+                'id': rec,
+                'name': rec.name
+            }
+            users.append(a)
         for rec in self.customer_ids:
             a = {
                 'id': rec,
@@ -99,7 +93,7 @@ class SaleReportAdvance(models.TransientModel):
 
         margin = 0.0
 
-        if self.type == 'product':
+        if self.type == 'product' and 1 == 0:
             for rec in products:
                 for lines in sales_order_line:
                     if lines.product_id == rec['id']:
@@ -116,9 +110,15 @@ class SaleReportAdvance(models.TransientModel):
                             'profit': profit,
                             'margin': margin,
                             'partner': lines.order_id.partner_id.name,
+                            'vat': lines.order_id.partner_id.vat,
+                            'discount': lines.discount,
+                            'qty_invoiced': lines.qty_invoiced,
+                            'document_types': '',
+                            'document_names': '',
+                            'payment_journals': '',
                         }
                         result.append(res)
-        if self.type == 'customer':
+        if self.type == 'customer' and 1 == 0:
             for rec in customers:
                 for so in sales_order:
                     if so.partner_id == rec['id']:
@@ -136,9 +136,16 @@ class SaleReportAdvance(models.TransientModel):
                                 'profit': profit,
                                 'margin': margin,
                                 'partner_id': so.partner_id,
+                                'partner': so.partner_id.name,
+                                'vat': so.partner_id.vat,
+                                'discount': lines.discount,
+                                'qty_invoiced': lines.qty_invoiced,
+                                'document_types': '',
+                                'document_names': '',
+                                'payment_journals': '',
                             }
                             result.append(res)
-        if self.type == 'both':
+        if self.type == 'both' and 1 == 0:
             for rec in customers:
                 for p in products:
                     for so in sales_order:
@@ -158,10 +165,29 @@ class SaleReportAdvance(models.TransientModel):
                                         'profit': profit,
                                         'margin': margin,
                                         'partner': so.partner_id.name,
+                                        'vat': so.partner_id.vat,
+                                        'discount': lines.discount,
+                                        'qty_invoiced': lines.qty_invoiced,
+                                        'document_types': '',
+                                        'document_names': '',
+                                        'payment_journals': '',
                                     }
                                     result.append(res)
-        if self.from_date and self.to_date and not self.customer_ids and not self.product_ids:
+        if self.from_date and self.to_date: #and not self.customer_ids and not self.product_ids:
             for so in sales_order:
+                invoices = so.invoice_ids
+                document_types = [invoice.l10n_latam_document_type_id.name for invoice in invoices]
+                document_types = ', '.join(x for x in document_types)
+                document_names = [invoice.name for invoice in invoices]
+                document_names = ', '.join(x for x in document_names)
+                reconciled_moves = []
+                for invoice in invoices:
+                    content = invoice.invoice_payments_widget['content']
+                    for c in content:
+                        reconciled_moves.append(c['move_id'])
+                payments = self.env['account.move'].browse(reconciled_moves).mapped('payment_id')
+                payment_journals = ', '.join(str(x) for x in [payment.journal_id.name for payment in payments])
+                user_id = self.env['hr.department'].search([('company_id','=',so.company_id.id), ('parent_id','=',False)], limit=1).manager_id.user_id
                 for lines in so.order_line:
                     profit = round(lines.product_id.list_price - lines.product_id.standard_price, 2)
                     if lines.product_id.standard_price != 0:
@@ -176,6 +202,16 @@ class SaleReportAdvance(models.TransientModel):
                         'profit': profit,
                         'margin': margin,
                         'partner': so.partner_id.name,
+                        'vat': so.partner_id.vat,
+                        'discount': lines.discount,
+                        'document_types': document_types,
+                        'document_names': document_names,
+                        'payment_journals': payment_journals,
+                        'amount_cash': sum(payments.filtered(lambda x: x.journal_id.type == 'cash').mapped('amount')),
+                        'amount_bank': sum(payments.filtered(lambda x: x.journal_id.type == 'bank').mapped('amount')),
+                        'manager_id': user_id.name,
+                        'user_id': so.user_id.name if so.user_id else '',
+                        'date_invoice': invoices[0].invoice_date if invoices else '',
                     }
                     result.append(res)
 
@@ -214,26 +250,40 @@ class SaleReportAdvance(models.TransientModel):
     def get_xlsx_report(self, data, response):
         output = io.BytesIO()
         workbook = xlsxwriter.Workbook(output, {'in_memory': True})
-        sheet = workbook.add_worksheet()
+        sheet = workbook.add_worksheet('VENTAS')
         record = []
-        cell_format = workbook.add_format({'font_size': '12px', })
-        head = workbook.add_format({'align': 'center', 'bold': True, 'font_size': '20px'})
-        txt = workbook.add_format({'font_size': '10px', 'align': 'center'})
-        sheet.merge_range('G2:N3', 'Sales Profit Report', head)
+        # cell_format = workbook.add_format({'font_size': '12px'})
+        # head = workbook.add_format({'align': 'center', 'bold': True, 'font_size': '20px'})
+        # txt = workbook.add_format({'font_size': '10px', 'align': 'center'})
+        # format1 = workbook.add_format({'font_size': 10, 'align': 'center','bg_color':'#bbd5fc','border': 1})
+        # format2 = workbook.add_format({'font_size': 10, 'align': 'center', 'bold': True,'bg_color': '#6BA6FE', 'border': 1})
+        # format4 = workbook.add_format({'font_size': 10, 'align': 'center', 'bold': True,'border': 1})
+        # format3 = workbook.add_format({'font_size': 10, 'align': 'center', 'bold': True, 'bg_color': '#c0dbfa', 'border': 1})
+        format0 = workbook.add_format({'font_size': 20, 'align': 'center', 'valign': 'vcenter', 'bold': True})
+        format4 = workbook.add_format({'font_size': 12, 'align': 'left', 'bold': True})
+        format21 = workbook.add_format({'font_size': 10, 'align': 'center', 'bold': True})
+        format22 = workbook.add_format({'font_size': 10, 'align': 'right', 'bold': True})
+        font_size_8 = workbook.add_format({'font_size': 8, 'align': 'center', 'valign': 'vcenter'})
+        font_size_8_r = workbook.add_format({'font_size': 8, 'align': 'right', 'valign': 'vcenter'})
+        monetary_size_8_r = workbook.add_format({'num_format': '"S/." #,##0.00', 'font_size': 8, 'align': 'right', 'valign': 'vcenter'})
+        
+        # sheet.merge_range('G2:N3', 'Sales Profit Report', cell_format)
+        # if data['start_date'] and data['end_date']:
+        #     sheet.write('G6', 'From:', cell_format)
+        #     sheet.merge_range('H6:I6', data['start_date'], txt)
+        #     sheet.write('L6', 'To:', cell_format)
+        #     sheet.merge_range('M6:N6', data['end_date'], txt)
+        # if data['type'] == 'product':
+        #     record = data['product_id']
+        # if data['type'] == 'customer':
+        #     record = data['partner_id']
+            
+        sheet.merge_range('A2:P2', 'DETALLE DE VENTAS', format0)
         if data['start_date'] and data['end_date']:
-            sheet.write('G6', 'From:', cell_format)
-            sheet.merge_range('H6:I6', data['start_date'], txt)
-            sheet.write('L6', 'To:', cell_format)
-            sheet.merge_range('M6:N6', data['end_date'], txt)
-        format1 = workbook.add_format(
-            {'font_size': 10, 'align': 'center','bg_color':'#bbd5fc','border': 1})
-        format2 = workbook.add_format(
-            {'font_size': 10, 'align': 'center', 'bold': True,
-             'bg_color': '#6BA6FE', 'border': 1})
-        format4 = workbook.add_format(
-            {'font_size': 10, 'align': 'center', 'bold': True,'border': 1})
-        format3 = workbook.add_format(
-            {'font_size': 10, 'align': 'center', 'bold': True, 'bg_color': '#c0dbfa', 'border': 1})
+            sheet.write('A4', 'Desde:', format4)
+            sheet.merge_range('B4:C4', data['start_date'], format21)
+            sheet.write('F4', 'Hasta:', format4)
+            sheet.merge_range('G4:H4', data['end_date'], format21)
         if data['type'] == 'product':
             record = data['product_id']
         if data['type'] == 'customer':
@@ -242,188 +292,316 @@ class SaleReportAdvance(models.TransientModel):
         h_col = 9
         count = 0
         row = 5
-        col = 6
-        row_number = 6
+        col = 0
+        row_number = 5
         t_row = 6
-        if data['type'] == 'product' or data['type'] == 'customer':
-            for rec in record:
-                sheet.merge_range(h_row, h_col-3,h_row,h_col+4,rec['name'], format3)
-                row = row + count + 3
-                sheet.write(row, col, 'Order', format2)
-                col += 1
-                sheet.write(row, col, 'Date', format2)
-                sheet.set_column('H:H', 15)
-                col += 1
-                if data['type'] == 'product':
-                    sheet.write(row, col, 'Customer', format2)
-                    sheet.set_column('I:I', 20)
-                    col += 1
-                elif data['type'] == 'customer':
-                    sheet.write(row, col, 'Product', format2)
-                    sheet.set_column('I:I', 20)
-                    col += 1
-                sheet.write(row, col, 'Quantity', format2)
-                col += 1
-                sheet.write(row, col, 'Cost', format2)
-                col += 1
-                sheet.write(row, col, 'Price', format2)
-                col += 1
-                sheet.write(row, col, 'Profit', format2)
-                col += 1
-                sheet.write(row, col, 'Margin(%)', format2)
-                col += 1
-                col = 6
-                count = 0
-                row_number = row_number + count + 3
-                t_qty = 0
-                t_cost = 0
-                t_price = 0
-                t_profit = 0
-                t_margin = 0
-                t_col = 8
-                for val in data['form']:
-                    if data['type'] == 'customer':
-                        if val['partner_id'] == rec['id']:
-                            count += 1
-                            column_number = 6
-                            sheet.write(row_number, column_number, val['sequence'], format1)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['date'], format1)
-                            sheet.set_column('H:H', 15)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['product'], format1)
-                            sheet.set_column('I:I', 20)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['quantity'], format1)
-                            t_qty += val['quantity']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['cost'], format1)
-                            t_cost += val['cost']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['price'], format1)
-                            t_price += val['price']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['profit'], format1)
-                            t_profit += val['profit']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['margin'], format1)
-                            t_margin += val['margin']
-                            column_number += 1
-                            row_number += 1
-                    if data['type'] == 'product':
-                        if val['product_id'] == rec['id']:
-                            count += 1
-                            column_number = 6
-                            sheet.write(row_number, column_number, val['sequence'], format1)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['date'], format1)
-                            sheet.set_column('H:H', 15)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['partner'], format1)
-                            sheet.set_column('I:I', 20)
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['quantity'], format1)
-                            t_qty += val['quantity']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['cost'], format1)
-                            t_cost += val['cost']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['price'], format1)
-                            t_price += val['price']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['profit'], format1)
-                            t_profit += val['profit']
-                            column_number += 1
-                            sheet.write(row_number, column_number, val['margin'], format1)
-                            t_margin += val['margin']
-                            column_number += 1
-                            row_number += 1
-                t_row = t_row + count + 3
-                sheet.write(t_row, t_col, 'Total', format4)
-                t_col += 1
-                sheet.write(t_row, t_col, t_qty, format4)
-                t_col += 1
-                sheet.write(t_row, t_col, t_cost, format4)
-                t_col += 1
-                sheet.write(t_row, t_col, t_price, format4)
-                t_col += 1
-                sheet.write(t_row, t_col, t_profit, format4)
-                t_col += 1
-                sheet.write(t_row, t_col, t_margin, format4)
-                t_col += 1
-                h_row = h_row + count + 3
-        if data['type'] == 'both' or data['no_value'] == True:
-            row += 3
+        if 1 == 1:
+            row += 1
             row_number += 2
             t_qty = 0
             t_cost = 0
             t_price = 0
             t_profit = 0
             t_margin = 0
-            t_col = 9
-            sheet.write(row, col, 'Order', format2)
+            t_cash = 0
+            t_bank = 0
+            t_col = 4
+            sheet.write(row, col, 'Order', format21)
             col += 1
-            sheet.write(row, col, 'Date', format2)
-            sheet.set_column('H:H', 15)
+            sheet.write(row, col, 'DNI', format21)
             col += 1
-            sheet.write(row, col, 'Customer', format2)
+            sheet.write(row, col, 'Cliente', format21)
+            sheet.set_column('C:C', 20)
+            col += 1
+            sheet.write(row, col, 'Fecha', format21)
+            sheet.set_column('D:D', 15)
+            col += 1
+            sheet.write(row, col, 'Producto', format21)
+            sheet.set_column('E:E', 20)
+            col += 1
+            sheet.write(row, col, 'Cantidad', format21)
+            col += 1
+            # sheet.write(row, col, 'Costo', format21)
+            # col += 1
+            sheet.write(row, col, 'Precio', format21)
+            col += 1
+            # sheet.write(row, col, 'Beneficio', format21)
+            # col += 1    
+            # sheet.write(row, col, 'Margen', format21)
+            # col += 1
+            sheet.write(row, col, 'Descuento', format21)
+            col += 1
+            sheet.write(row, col, 'Tipo de Comprobante', format21)
             sheet.set_column('I:I', 20)
             col += 1
-            sheet.write(row, col, 'Product', format2)
+            sheet.write(row, col, 'Número de Comprobante', format21)
             sheet.set_column('J:J', 20)
             col += 1
-            sheet.write(row, col, 'Quantity', format2)
+            sheet.write(row, col, 'Diarios de Pago', format21)
+            sheet.set_column('K:K', 15)
             col += 1
-            sheet.write(row, col, 'Cost', format2)
+            sheet.write(row, col, 'Total Efectivo', format21)
+            sheet.set_column('L:L', 12)
             col += 1
-            sheet.write(row, col, 'Price', format2)
+            sheet.write(row, col, 'Total Banco', format21)
+            sheet.set_column('M:M', 12)
             col += 1
-            sheet.write(row, col, 'Profit', format2)
+            sheet.write(row, col, 'Responsable', format21)
+            sheet.set_column('N:N', 15)
             col += 1
-            sheet.write(row, col, 'Margin', format2)
+            sheet.write(row, col, 'Vendedor', format21)
+            sheet.set_column('O:O', 15)
             col += 1
-            row_number+=1
+            sheet.write(row, col, 'Fecha Factura', format21)
+            sheet.set_column('P:P', 12)
+            col += 1
             for val in data['form']:
-                column_number = 6
-                sheet.write(row_number, column_number, val['sequence'], format1)
+                column_number = 0
+                sheet.write(row_number, column_number, val['sequence'], font_size_8)
                 column_number += 1
-                sheet.write(row_number, column_number, val['date'], format1)
-                sheet.set_column('H:H', 15)
+                sheet.write(row_number, column_number, val['vat'], font_size_8)
                 column_number += 1
-                sheet.write(row_number, column_number, val['partner'], format1)
+                sheet.write(row_number, column_number, val['partner'], font_size_8)
                 sheet.set_column('I:I', 20)
                 column_number += 1
-                sheet.write(row_number, column_number, val['product'], format1)
+                sheet.write(row_number, column_number, val['date'], font_size_8)
+                sheet.set_column('H:H', 15)
+                column_number += 1
+                sheet.write(row_number, column_number, val['product'], font_size_8)
                 sheet.set_column('J:J', 20)
                 column_number += 1
-                sheet.write(row_number, column_number, val['quantity'], format1)
+                sheet.write(row_number, column_number, val['quantity'], font_size_8_r)
                 t_qty += val['quantity']
                 column_number += 1
-                sheet.write(row_number, column_number, val['cost'], format1)
-                t_cost += val['cost']
-                column_number += 1
-                sheet.write(row_number, column_number, val['price'], format1)
+                # sheet.write(row_number, column_number, val['cost'], monetary_size_8_r)
+                # t_cost += val['cost']
+                # column_number += 1
+                sheet.write(row_number, column_number, val['price'], monetary_size_8_r)
                 t_price += val['price']
                 column_number += 1
-                sheet.write(row_number, column_number, val['profit'], format1)
-                t_profit += val['profit']
+                # sheet.write(row_number, column_number, val['profit'], monetary_size_8_r)
+                # t_profit += val['profit']
+                # column_number += 1
+                # sheet.write(row_number, column_number, val['margin'], monetary_size_8_r)
+                # t_margin += val['margin']
+                # column_number += 1
+                sheet.write(row_number, column_number, val['discount'], font_size_8_r)
                 column_number += 1
-                sheet.write(row_number, column_number, val['margin'], format1)
-                t_margin += val['margin']
+                sheet.write(row_number, column_number, val['document_types'], font_size_8)
+                column_number += 1
+                sheet.write(row_number, column_number, val['document_names'], font_size_8)
+                column_number += 1
+                sheet.write(row_number, column_number, val['payment_journals'], font_size_8)
+                column_number += 1
+                sheet.write(row_number, column_number, val['amount_cash'], monetary_size_8_r)
+                t_cash += val['price']
+                column_number += 1
+                sheet.write(row_number, column_number, val['amount_bank'], monetary_size_8_r)
+                t_bank += val['price']
+                column_number += 1
+                sheet.write(row_number, column_number, val['manager_id'], font_size_8)
+                column_number += 1
+                sheet.write(row_number, column_number, val['user_id'], font_size_8)
+                column_number += 1
+                sheet.write(row_number, column_number, val['date_invoice'], font_size_8)
                 column_number += 1
                 row_number += 1
             sheet.write(row_number, t_col, 'Total', format4)
             t_col += 1
-            sheet.write(row_number, t_col, t_qty, format4)
+            sheet.write(row_number, t_col, t_qty, format22)
             t_col += 1
-            sheet.write(row_number, t_col, t_cost, format4)
+            # sheet.write(row_number, t_col, t_cost, format4)
+            # t_col += 1
+            sheet.write(row_number, t_col, t_price, format22)
+            t_col += 5
+            # sheet.write(row_number, t_col, t_profit, format4)
+            # t_col += 1
+            # sheet.write(row_number, t_col, t_margin, format4)
+            # t_col += 1
+            sheet.write(row_number, t_col, t_cash, format22)
             t_col += 1
-            sheet.write(row_number, t_col, t_price, format4)
+            sheet.write(row_number, t_col, t_bank, format22)
             t_col += 1
-            sheet.write(row_number, t_col, t_profit, format4)
-            t_col += 1
-            sheet.write(row_number, t_col, t_margin, format4)
-            t_col += 1
+
+        # if data['type'] == 'product' or data['type'] == 'customer':
+        #     for rec in record:
+        #         sheet.merge_range(h_row, h_col-3,h_row,h_col+4,rec['name'], format3)
+        #         row = row + count + 3
+        #         sheet.write(row, col, 'Order', format2)
+        #         col += 1
+        #         sheet.write(row, col, 'Date', format2)
+        #         sheet.set_column('H:H', 15)
+        #         col += 1
+        #         if data['type'] == 'product':
+        #             sheet.write(row, col, 'Customer', format2)
+        #             sheet.set_column('I:I', 20)
+        #             col += 1
+        #         elif data['type'] == 'customer':
+        #             sheet.write(row, col, 'Product', format2)
+        #             sheet.set_column('I:I', 20)
+        #             col += 1
+        #         sheet.write(row, col, 'Quantity', format2)
+        #         col += 1
+        #         sheet.write(row, col, 'Cost', format2)
+        #         col += 1
+        #         sheet.write(row, col, 'Price', format2)
+        #         col += 1
+        #         sheet.write(row, col, 'Profit', format2)
+        #         col += 1
+        #         sheet.write(row, col, 'Margin(%)', format2)
+        #         col += 1
+        #         col = 6
+        #         count = 0
+        #         row_number = row_number + count + 3
+        #         t_qty = 0
+        #         t_cost = 0
+        #         t_price = 0
+        #         t_profit = 0
+        #         t_margin = 0
+        #         t_col = 8
+        #         for val in data['form']:
+        #             if data['type'] == 'customer':
+        #                 if val['partner_id'] == rec['id']:
+        #                     count += 1
+        #                     column_number = 6
+        #                     sheet.write(row_number, column_number, val['sequence'], format1)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['date'], format1)
+        #                     sheet.set_column('H:H', 15)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['product'], format1)
+        #                     sheet.set_column('I:I', 20)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['quantity'], format1)
+        #                     t_qty += val['quantity']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['cost'], format1)
+        #                     t_cost += val['cost']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['price'], format1)
+        #                     t_price += val['price']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['profit'], format1)
+        #                     t_profit += val['profit']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['margin'], format1)
+        #                     t_margin += val['margin']
+        #                     column_number += 1
+        #                     row_number += 1
+        #             if data['type'] == 'product':
+        #                 if val['product_id'] == rec['id']:
+        #                     count += 1
+        #                     column_number = 6
+        #                     sheet.write(row_number, column_number, val['sequence'], format1)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['date'], format1)
+        #                     sheet.set_column('H:H', 15)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['partner'], format1)
+        #                     sheet.set_column('I:I', 20)
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['quantity'], format1)
+        #                     t_qty += val['quantity']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['cost'], format1)
+        #                     t_cost += val['cost']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['price'], format1)
+        #                     t_price += val['price']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['profit'], format1)
+        #                     t_profit += val['profit']
+        #                     column_number += 1
+        #                     sheet.write(row_number, column_number, val['margin'], format1)
+        #                     t_margin += val['margin']
+        #                     column_number += 1
+        #                     row_number += 1
+        #         t_row = t_row + count + 3
+        #         sheet.write(t_row, t_col, 'Total', format4)
+        #         t_col += 1
+        #         sheet.write(t_row, t_col, t_qty, format4)
+        #         t_col += 1
+        #         sheet.write(t_row, t_col, t_cost, format4)
+        #         t_col += 1
+        #         sheet.write(t_row, t_col, t_price, format4)
+        #         t_col += 1
+        #         sheet.write(t_row, t_col, t_profit, format4)
+        #         t_col += 1
+        #         sheet.write(t_row, t_col, t_margin, format4)
+        #         t_col += 1
+        #         h_row = h_row + count + 3
+        # if data['type'] == 'both' or data['no_value'] == True:
+        #     row += 3
+        #     row_number += 2
+        #     t_qty = 0
+        #     t_cost = 0
+        #     t_price = 0
+        #     t_profit = 0
+        #     t_margin = 0
+        #     t_col = 9
+        #     sheet.write(row, col, 'Order', format2)
+        #     col += 1
+        #     sheet.write(row, col, 'Date', format2)
+        #     sheet.set_column('H:H', 15)
+        #     col += 1
+        #     sheet.write(row, col, 'Customer', format2)
+        #     sheet.set_column('I:I', 20)
+        #     col += 1
+        #     sheet.write(row, col, 'Product', format2)
+        #     sheet.set_column('J:J', 20)
+        #     col += 1
+        #     sheet.write(row, col, 'Quantity', format2)
+        #     col += 1
+        #     sheet.write(row, col, 'Cost', format2)
+        #     col += 1
+        #     sheet.write(row, col, 'Price', format2)
+        #     col += 1
+        #     sheet.write(row, col, 'Profit', format2)
+        #     col += 1
+        #     sheet.write(row, col, 'Margin', format2)
+        #     col += 1
+        #     row_number+=1
+        #     for val in data['form']:
+        #         column_number = 6
+        #         sheet.write(row_number, column_number, val['sequence'], format1)
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['date'], format1)
+        #         sheet.set_column('H:H', 15)
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['partner'], format1)
+        #         sheet.set_column('I:I', 20)
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['product'], format1)
+        #         sheet.set_column('J:J', 20)
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['quantity'], format1)
+        #         t_qty += val['quantity']
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['cost'], format1)
+        #         t_cost += val['cost']
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['price'], format1)
+        #         t_price += val['price']
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['profit'], format1)
+        #         t_profit += val['profit']
+        #         column_number += 1
+        #         sheet.write(row_number, column_number, val['margin'], format1)
+        #         t_margin += val['margin']
+        #         column_number += 1
+        #         row_number += 1
+        #     sheet.write(row_number, t_col, 'Total', format4)
+        #     t_col += 1
+        #     sheet.write(row_number, t_col, t_qty, format4)
+        #     t_col += 1
+        #     sheet.write(row_number, t_col, t_cost, format4)
+        #     t_col += 1
+        #     sheet.write(row_number, t_col, t_price, format4)
+        #     t_col += 1
+        #     sheet.write(row_number, t_col, t_profit, format4)
+        #     t_col += 1
+        #     sheet.write(row_number, t_col, t_margin, format4)
+        #     t_col += 1
         workbook.close()
         output.seek(0)
         response.stream.write(output.read())

@@ -37,7 +37,7 @@ except ImportError:
 class SaleReportAdvance(models.TransientModel):
     _name = "sale.report.analysis"
 
-    customer_ids = fields.Many2many('res.partner', string="Customers", required=True)
+    customer_ids = fields.Many2many('res.partner', string="Clientes", required=True)
     product_ids = fields.Many2many('product.product', string='Products')
     from_date = fields.Date(string="Start Date")
     to_date = fields.Date(string="End Date")
