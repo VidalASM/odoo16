@@ -6,6 +6,8 @@ access_select_payment_mode_wizard_line,account.select.payment.mode.wizard.line,m
 access_freeze_wizard,freeze.wizard,model_freeze_wizard,,1,1,1,1
 access_freeze_reboot_wizard,freeze.reboot.wizard,model_freeze_reboot_wizard,,1,1,1,1
 access_transfer_wizard,transfer.wizard,model_transfer_wizard,,1,1,1,1
+access_transfer_wizard,transfer.wizard,model_transfer_wizard,,1,1,1,1
+access_extra_days_wizard,extra.days.wizard,model_extra_days_wizard,,1,1,1,1
 access_attendace_wizard,attendace.wizard,model_attendace_wizard,,1,1,1,1
 access_meeting_wizard,meeting.wizard,model_meeting_wizard,,1,1,1,1
 
@@ -32,6 +34,10 @@ access_postpone_meeting_member,account.postpone.meeting,model_postpone_meeting,g
 access_membership_transfer_operator,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_membership_transfer_trainer,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_trainer,1,0,0,0
 access_membership_transfer_member,account.membership.transfer,model_membership_transfer,gym_mgmt_system.group_gym_member,1,0,0,0
+
+access_membership_extra_days_operator,account.membership.extra.days,model_membership_extra_days,gym_mgmt_system.group_gym_operator,1,1,1,1
+access_membership_extra_days_trainer,account.membership.extra.days,model_membership_extra_days,gym_mgmt_system.group_gym_trainer,1,0,0,0
+access_membership_extra_days_member,account.membership.extra.days,model_membership_extra_days,gym_mgmt_system.group_gym_member,1,0,0,0
 
 access_attendace_record_operator,attendace.record,model_attendace_record,gym_mgmt_system.group_gym_operator,1,1,1,1
 access_attendace_record_trainer,attendace.record,model_attendace_record,gym_mgmt_system.group_gym_trainer,1,0,0,0

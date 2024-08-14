@@ -125,6 +125,19 @@
                                 </tree>
                             </field>
                         </page>
+                        <page string="Días Extra">                     
+                            <field name="extra_days_ids" readonly="True" modifiers="{}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="user_id"/>
+                                    <field name="client_id"/>
+                                    <field name="reason_transfer"/>
+                                    <field name="date_register"/>
+                                    <field name="quantity_days"/>
+                                    <field name="state_active"/>
+                                </tree>
+                            </field>
+                        </page>
                         <page string="Asistencias" attrs="{'invisible': [('state', '=', 'cancelled')]}">
                             <field name="attendance_ids" readonly="True">
                                 <tree string="Asistencias">

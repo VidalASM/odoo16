@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- wizard action on res.partner -->
+        <act_window id="extra_days_wizard_action"
+            name="Adidionar días"
+            binding_model="gym.membership"
+            res_model="extra.days.wizard"
+            view_mode="form" target="new"
+            groups="gym_mgmt_system.group_gym_operator"/>
+
+        <!-- wizard view -->
+        <record id="extra_days_wizard_view" model="ir.ui.view">
+            <field name="name">Extra Days Wizard Membership</field>
+            <field name="model">extra.days.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Días Adicional">
+                    <!-- <div>
+                        Llene el siguiente formulario para validar la transferencia.
+                    </div> -->
+                    <group>
+                        <group>
+                            <field name="contract_id"/>
+                            <field name="client_id"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="quantity_days"/>
+                            <field name="date_register"/>
+                            <field name="reason_transfer"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string="Adionar Días" name="create_register" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+</odoo>

@@ -109,6 +109,8 @@ class GymMembership(models.Model):
         tracking=3, default='pending')
     freeze_ids = fields.One2many(comodel_name='membership.freeze', inverse_name='contract_id', string='Freezers', ondelete='cascade')
     transfer_ids = fields.One2many(comodel_name='membership.transfer', inverse_name='contract_id', string='Transeferencias')
+    extra_days_ids = fields.One2many(comodel_name='membership.extra.days', inverse_name='contract_id', string='Días Adicionales', ondelete='cascade')
+    
     company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False, default=lambda self: self.env.company)
     opportunity_id = fields.Many2one('crm.lead', string='Oportunidad', check_company=True, domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
     #Si este contratro fue transferido entonces modificara la fecha de inicio.
@@ -149,7 +151,7 @@ class GymMembership(models.Model):
             else:
                 rec.paid_amount = 0.0
 
-    @api.depends('membership_scheme', 'membership_date_from', 'freeze_ids')
+    @api.depends('membership_scheme', 'membership_date_from', 'freeze_ids', 'extra_days_ids')
     def _compute_membership_date_to(self):
         """ to get membership_date_to """
         for rec in self:
@@ -161,17 +163,19 @@ class GymMembership(models.Model):
             elif templ.membership_type == "variable":
                 delta = templ.membership_interval_qty
                 if templ.membership_interval_unit == "days":
-                    res = date + timedelta(days=delta)
+                    res = date + timedelta(days=delta) - timedelta(days=1)
                 elif templ.membership_interval_unit == "weeks":
-                    res = date + timedelta(weeks=delta)
+                    res = date + timedelta(weeks=delta) - timedelta(days=1)
                 elif templ.membership_interval_unit == "months":
-                    res = date + relativedelta(months=delta)
+                    res = date + relativedelta(months=delta) - timedelta(days=1)
                 elif templ.membership_interval_unit == "years":
-                    res = date + relativedelta(years=delta)
+                    res = date + relativedelta(years=delta) - timedelta(days=1)
             
             contract_days_freeze = sum(rec.freeze_ids.mapped('quantity_days')) if rec.freeze_ids else 0
+            extra_days_register = sum(rec.extra_days_ids.mapped('quantity_days')) if rec.extra_days_ids else 0
             res += timedelta(days=contract_days_freeze)
-                
+            res += timedelta(days=extra_days_register)
+            
             # date_to = rec.membership_scheme._get_next_date(rec.membership_date_from, qty=1)
             rec.membership_date_to = res
 
@@ -409,6 +413,18 @@ class MembershipTransfer(models.Model):
     date_transfer = fields.Date(string='Fecha de la transferencia')
     days_transferred = fields.Integer(string='Días transferidos')
     currente_transfer = fields.Date(string='Vigente desde')
+
+class MembershipExtraDays(models.Model):
+    _name = "membership.extra.days"
+
+    name = fields.Char(string='Nro de Registro')
+    user_id = fields.Many2one(string='Usuario', comodel_name='res.users', copy=False, tracking=True, default=lambda self: self.env.user,)
+    client_id = fields.Many2one('res.partner', string='Socio', ondelete='cascade')
+    contract_id = fields.Many2one('gym.membership', string='Contrato',ondelete='cascade')
+    reason_transfer = fields.Char(string='Motivo del registro')
+    date_register = fields.Date(string='Fecha de registro')
+    quantity_days = fields.Integer(string='Cantidad de días')
+    state_active = fields.Boolean(string='Estado', default=False)
 
 class AttendanceRecord (models.Model):
     _name = 'attendace.record'

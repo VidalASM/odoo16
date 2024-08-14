@@ -27,3 +27,4 @@ from . import freeze_wizard
 from . import transfer_wizard
 from . import attendace_wizard
 from . import move_cancel
+from . import extra_days_wizard

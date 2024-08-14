@@ -59,6 +59,7 @@
         'wizard/upgrade_crm_lead.xml',
         'wizard/freeze_wizard_views.xml',
         'wizard/transfer_wizard_views.xml',
+        'wizard/extra_days_wizard_views.xml',
         'wizard/attendace_wizard_views.xml',
         'report/workout_plan_reports.xml',
         'report/workout_plan_template.xml',
