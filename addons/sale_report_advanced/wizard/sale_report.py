@@ -28,6 +28,7 @@ from xlsxwriter import workbook
 from odoo.tools import date_utils
 from odoo import fields, models
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import pytz
 
 try:
     from odoo.tools.misc import xlsxwriter
@@ -175,6 +176,7 @@ class SaleReportAdvance(models.TransientModel):
                                     result.append(res)
         if self.from_date and self.to_date: #and not self.customer_ids and not self.product_ids:
             for so in sales_order:
+                tz = pytz.timezone(self.env.user.tz or 'UTC')
                 invoices = so.invoice_ids
                 document_types = [invoice.l10n_latam_document_type_id.name for invoice in invoices]
                 document_types = ', '.join(x for x in document_types)
@@ -182,7 +184,7 @@ class SaleReportAdvance(models.TransientModel):
                 document_names = ', '.join(x for x in document_names)
                 reconciled_moves = []
                 for invoice in invoices:
-                    content = invoice.invoice_payments_widget['content']
+                    content = invoice.invoice_payments_widget['content'] if invoice.invoice_payments_widget else []
                     for c in content:
                         reconciled_moves.append(c['move_id'])
                 payments = self.env['account.move'].browse(reconciled_moves).mapped('payment_id')
@@ -194,7 +196,7 @@ class SaleReportAdvance(models.TransientModel):
                         margin = round((profit * 100) / lines.product_id.standard_price, 2)
                     res = {
                         'sequence': so.name,
-                        'date': so.date_order,
+                        'date': so.date_order.astimezone(tz),
                         'product': lines.product_id.name,
                         'quantity': lines.product_uom_qty,
                         'cost': lines.product_id.standard_price,
@@ -394,10 +396,10 @@ class SaleReportAdvance(models.TransientModel):
                 sheet.write(row_number, column_number, val['payment_journals'], font_size_8)
                 column_number += 1
                 sheet.write(row_number, column_number, val['amount_cash'], monetary_size_8_r)
-                t_cash += val['price']
+                t_cash += val['amount_cash']
                 column_number += 1
                 sheet.write(row_number, column_number, val['amount_bank'], monetary_size_8_r)
-                t_bank += val['price']
+                t_bank += val['amount_bank']
                 column_number += 1
                 sheet.write(row_number, column_number, val['manager_id'], font_size_8)
                 column_number += 1
