@@ -78,7 +78,7 @@ class GymMembership(models.Model):
     gender = fields.Selection("Género", related="member.gender", store=True)
     membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=4)
     paid_amount = fields.Float(string="Monto pagado", tracking=4, compute="_compute_amount")
-    membership_fees = fields.Float(string="Precio", tracking=4, related="membership_scheme.list_price", store=True)
+    membership_fees = fields.Float(string="Precio", tracking=4, default=0.0, store=True)
     sale_order_id = fields.Many2one('sale.order', string='Orden de venta', ondelete='cascade', copy=False, readonly=False)
     # sale_order_ids = fields.One2many(
     #     'sale.order', 'membership_id', 'Ordenes de venta')
@@ -114,7 +114,7 @@ class GymMembership(models.Model):
     company_id = fields.Many2one('res.company', string='Sede', required=True, readonly=False, default=lambda self: self.env.company)
     opportunity_id = fields.Many2one('crm.lead', string='Oportunidad', check_company=True, domain="[('type', '=', 'opportunity'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]")
     #Si este contratro fue transferido entonces modificara la fecha de inicio.
-    days_transferred = fields.Integer()
+    days_transferred = fields.Integer(string='Días Transferidos')
     
     # Discount autorization
     discount = fields.Float(
@@ -142,6 +142,11 @@ class GymMembership(models.Model):
     # Asistncias
     attendance_ids = fields.One2many(comodel_name='attendace.record', inverse_name='contract_id', string='Asistencia', ondelete='cascade')
 
+    @api.onchange('membership_scheme')
+    def _onchange_membership_scheme(self):
+        if self.membership_scheme:
+            self.membership_fees = self.membership_scheme.list_price
+        
     @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
     def _compute_amount(self):
         """ to get the total of paids """

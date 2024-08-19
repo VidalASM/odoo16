@@ -67,6 +67,7 @@ class TransferWizard(models.TransientModel):
             'journal_id': self.contract_id.journal_id.id,
             'authorize_user': self.authorize_user.id,
             'discount': self.discount,
+            'membership_fees': 80,
         })
         #Realizamos la creación de la transferencia
         self.env['membership.transfer'].create({
