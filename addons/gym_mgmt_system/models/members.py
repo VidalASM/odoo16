@@ -113,6 +113,7 @@ class MemberPartner(models.Model):
         partner_id = Partner.search([('vat','=',self.vat), ('active','=',True)], limit=1)
         if not partner_id:
             _logger.info("---------------------> No encontrado")
+            _logger.info(self.name)
             catalog = Catalog6.search([('code','=',self.l10n_latam_identification_type_id.l10n_pe_vat_code)])
             Partner.create({
                 'company_type': self.company_type,
@@ -121,7 +122,7 @@ class MemberPartner(models.Model):
                 'registration_name': self.name,
                 'vat': self.vat,
                 'street': self.street,
-                'date_birth': self.birthdate_date,
+                'date_birth': str(self.birthdate_date),
                 'phone': self.phone,
                 'mobile': self.mobile,
                 'email': self.email,

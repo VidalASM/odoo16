@@ -382,7 +382,7 @@ class GymMembership(models.Model):
         dni = self.member.vat
         sale_ref = self.sale_order_id.name
         scheme = self.membership_scheme.name
-        description_sale = self.membership_scheme.description_sale
+        description_sale = self.membership_scheme.description_sale if self.membership_scheme.description_sale else ''
         list_price = self.membership_scheme.list_price
         invoice_name = self.invoice_id.name
         _logger.info("---------------------> payments")
@@ -424,7 +424,7 @@ class GymMembership(models.Model):
             'number': invoice_name,
             'payment_type': payment_type,
             'elec_serie_id': serie_id[0],
-            'date_invoice': self.invoice_id.invoice_date,
+            'date_invoice': str(self.invoice_id.invoice_date),
             'serie_id': invoice_name.split('-')[0],
             'numero': invoice_name.split('-')[1],
         })
@@ -435,7 +435,7 @@ class GymMembership(models.Model):
                 'partner_id': partner_id1[0],
             })
         invoice.action_invoice_open()
-        if invoice.state == 'open':
+        if invoice.state != 'paid':
             for payment in payments:
                 pay1 = Payment1.create({
                     'invoice_ids': [(6, 0, [invoice.id])],
@@ -446,7 +446,7 @@ class GymMembership(models.Model):
                     'partner_type': 'customer',
                     'communication': invoice.reference,
                     'journal_id': payment_list[payment['journal_name']],
-                    'payment_date': payment['date'],
+                    'payment_date': str(payment['date']),
                     'payment_method_id': 1,
                 })
                 pay1 = Payment1.browse(pay1)
