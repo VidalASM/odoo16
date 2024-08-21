@@ -23,6 +23,10 @@
 from odoo import fields, models, api
 from datetime import datetime, timedelta
 
+import odoorpc
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class GymMember(models.Model):
     _name = "gym.member"
@@ -98,6 +102,34 @@ class MemberPartner(models.Model):
         #     action['views'] = [(self.env.ref('gym_mgmt_system.view_membership_form').id, 'form')]
         #     action['res_id'] = memberships.id
         # return action
+
+    def action_check_server(self):
+        odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
+        # _logger.info(odoo.db.list())
+        odoo.login('REVO_DB_02','admin-dev','Admin-dev45*')
+
+        Partner = odoo.env['res.partner']
+        Catalog6 = odoo.env['einvoice.catalog.06']
+        partner_id = Partner.search([('vat','=',self.vat), ('active','=',True)], limit=1)
+        if not partner_id:
+            _logger.info("---------------------> No encontrado")
+            catalog = Catalog6.search([('code','=',self.l10n_latam_identification_type_id.l10n_pe_vat_code)])
+            Partner.create({
+                'company_type': self.company_type,
+                'name': self.name,
+                'catalog_06_id': catalog[0],
+                'registration_name': self.name,
+                'vat': self.vat,
+                'street': self.street,
+                'date_birth': self.birthdate_date,
+                'phone': self.phone,
+                'mobile': self.mobile,
+                'email': self.email,
+            })
+        else:
+            _logger.info("---------------------> member")
+            _logger.info(partner_id)
+
 
     # @api.onchange('gym_member')
     # def _onchange_gym_member(self):

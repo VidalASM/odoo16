@@ -233,6 +233,15 @@
         <field name="name">gym.membership.tree</field>
         <field name="model">gym.membership</field>
         <field name="arch" type="xml">
+            <header>
+                <button 
+                    name="action_member_send" 
+                    type="object" 
+                    string="Sincronizar Odoo"
+                    groups="base.group_system"
+                    invisible="False"
+                />
+            </header>
             <tree default_order="reference desc">
                 <field name="reference"/>
                 <field name="vat" optional="hide"/>
