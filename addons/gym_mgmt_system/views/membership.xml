@@ -58,15 +58,16 @@
                             <field name="vat" invisible="1"/>
                             <field name="age" invisible="1"/>
                             <field name="gender" invisible="1"/>
-                            <field name="user_id" invisible="0"/>
-                            <field name="responsible_id" invisible="0"/>
+                            <field name="user_id" invisible="1"/>
+                            <field name="responsible_id" invisible="1"/>
                             <field name="membership_scheme" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="journal_id" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="paid_amount"/>
                             <field name="adendum" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
+                            <field name="is_send">
                         </group>
                         <group>
-                            <field name="membership_fees" readonly="1"/>
+                            <field name="membership_fees" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="sale_order_id" readonly="1"/>
                             <field name="invoice_id" readonly="1"/>
                             <field name="payment_state" invisible="1"/>
@@ -242,7 +243,8 @@
                     invisible="False"
                 />
             </header>
-            <tree default_order="reference desc">
+            <tree default_order="create_date desc">
+                <field name="create_date" optional="hide"/>
                 <field name="reference"/>
                 <field name="vat" optional="hide"/>
                 <field name="member"/>
@@ -285,8 +287,19 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Membresìas" attrs="{'invisible': [('is_contract','!=',True)]}">
                     <!-- <group col="4"> -->
-                        <field name="membership_ids"/>
+                        <!-- <field name="membership_ids"/> -->
                     <!-- </group> -->
+                    <field name="membership_ids">
+                        <tree>
+                            <field name="reference"/>
+                            <field name="user_id"/>
+                            <field name="membership_scheme"/>
+                            <field name="paid_amount"/>
+                            <field name="membership_date_from"/>
+                            <field name="membership_date_to"/>
+                            <field name="state_contract"/>
+                        </tree>
+                    </field>
                 </page>
             </xpath>
             <xpath expr="//field[@name='user_id']" position="after">

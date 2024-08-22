@@ -122,7 +122,7 @@ class MemberPartner(models.Model):
                 'registration_name': self.name,
                 'vat': self.vat,
                 'street': self.street,
-                'date_birth': str(self.birthdate_date),
+                'date_birth': str(self.birthdate_date) if self.birthdate_date else False,
                 'phone': self.phone,
                 'mobile': self.mobile,
                 'email': self.email,

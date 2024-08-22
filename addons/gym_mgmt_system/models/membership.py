@@ -79,7 +79,7 @@ class GymMembership(models.Model):
     gender = fields.Selection("Género", related="member.gender", store=True)
     membership_scheme = fields.Many2one('product.product', string='Producto', required=True, tracking=4)
     paid_amount = fields.Float(string="Monto pagado", tracking=4, compute="_compute_amount")
-    membership_fees = fields.Float(string="Precio", tracking=4, default=0.0, store=True)
+    membership_fees = fields.Float(string="Precio", tracking=4, store=True)
     sale_order_id = fields.Many2one('sale.order', string='Orden de venta', ondelete='cascade', copy=False, readonly=False)
     # sale_order_ids = fields.One2many(
     #     'sale.order', 'membership_id', 'Ordenes de venta')
@@ -140,13 +140,14 @@ class GymMembership(models.Model):
         ('cancelled', 'Anulado')
     ], default='draft', tracking=2, string='Status')
     type_contract = fields.Selection([('1', 'Nuevo'), ('2', 'Renovación'),('3','Traspaso'),('4','Invitado'),('5','Referido')], string="Tipo de Contrato")
-    # Asistncias
+    # Asistencias
     attendance_ids = fields.One2many(comodel_name='attendace.record', inverse_name='contract_id', string='Asistencia', ondelete='cascade')
+    is_send = fields.Boolean(string="Sincronizado", default=False)
 
     @api.onchange('membership_scheme')
     def _onchange_membership_scheme(self):
         if self.membership_scheme:
-            self.membership_fees = self.membership_scheme.list_price
+            self.membership_fees = self.membership_scheme.lst_price
         
     @api.depends('invoice_id.amount_total', 'invoice_id.amount_residual')
     def _compute_amount(self):
@@ -377,7 +378,7 @@ class GymMembership(models.Model):
             'VISA': 100, 'MASTERCARD': 123, 'EFECTIVO': 99
         }
 
-        payments = self.invoice_id.invoice_payments_widget['content']
+        payments = self.invoice_id.invoice_payments_widget['content'] if self.invoice_id.invoice_payments_widget else []
         payment_type = 'bank' if '00' in self.journal_id.name else 'cash'
         dni = self.member.vat
         sale_ref = self.sale_order_id.name
@@ -465,7 +466,7 @@ class GymMembership(models.Model):
             and x.invoice_id
         ):
             rec.member.action_check_server()
-            rec.action_member_server()
+            # rec.action_member_server()
 
 
 class SaleConfirm(models.Model):
