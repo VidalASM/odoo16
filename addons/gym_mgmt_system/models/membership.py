@@ -362,6 +362,74 @@ class GymMembership(models.Model):
                     self.env['referred.record'].create(data)
         return record
     
+    def action_member_server_free(self):
+        odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
+        odoo.login('REVO_DB_02','admin-dev','Admin-dev45*')
+
+        Partner = odoo.env['res.partner']
+        Order = odoo.env['sale.order']
+        Product = odoo.env['product.product']
+        OrderLine = odoo.env['sale.order.line']
+        FactSerie = odoo.env['factelec.serie']
+        Invoice = odoo.env['account.invoice']
+        Payment1 = odoo.env['account.payment']
+        payment_list = {
+            'VISA': 100, 'MASTERCARD': 123, 'EFECTIVO': 99
+        }
+
+        if self.membership_fees == 0.0:
+            dni = self.member.vat
+            sale_ref = self.sale_order_id.name
+            scheme = self.membership_scheme.name
+            description_sale = self.membership_scheme.description_sale if self.membership_scheme.description_sale else ''
+            list_price = self.membership_scheme.list_price
+            _logger.info("---------------------> payments")
+            _logger.info(list_price)
+
+            partner_id = Partner.search([('vat','=',dni), ('active','=',True)], limit=1)
+            order_id = Order.search([('name','=',sale_ref), ('partner_id','=',partner_id)])
+            product_id = Product.search([('name','=',scheme), ('active','=',True)], limit=1)
+            serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',22)], limit=1)
+            if not order_id:
+                order_id = Order.create({
+                    'name': sale_ref,
+                    'partner_id': partner_id[0],
+                    'type_sale': '1',
+                    'type_contract': self.type_contract,
+                    'contract_number': self.reference,
+                    'date_order': str(self.sale_order_id.date_order),
+                    'start_date': str(self.membership_date_from),
+                    'date_end': str(self.membership_date_to),
+                    'state_contract': self.state_contract,
+                })
+                OrderLine.create({
+                    'order_id': order_id,
+                    'product_id': product_id[0],
+                    'name': scheme + '\n' + description_sale,
+                    'product_uom_qty': 1,
+                    'price_unit': list_price,
+                })
+            order = Order.browse(order_id)
+            order.action_confirm()
+            order.write({'confirmation_date': str(self.sale_order_id.date_order)})
+            if order.invoice_ids:
+                invoices = order.invoice_ids
+                invoice = invoices[0]
+            else:
+                invoices = order.action_invoice_create()
+                invoice = Invoice.browse(invoices)
+            if self.member != self.invoice_id.partner_id:
+                self.invoice_id.partner_id.action_check_server()
+                partner_id1 = Partner.search([('vat','=',self.invoice_id.partner_id.vat), ('active','=',True)], limit=1)
+                invoice.write({
+                    'partner_id': partner_id1[0],
+                })
+            if invoice.state != 'open':
+                invoice.action_invoice_open()
+            _logger.info("---------------------> Registro completado")
+            _logger.info(order)
+            _logger.info(invoice)
+    
     def action_member_server(self):
         odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
         # _logger.info(odoo.db.list())
@@ -467,6 +535,13 @@ class GymMembership(models.Model):
         ):
             rec.member.action_check_server()
             rec.action_member_server()
+
+        for rec in self.filtered(
+            lambda x: x.state == "confirm"
+            and x.sale_order_id
+        ):
+            rec.member.action_check_server()
+            rec.action_member_server_free()
 
 
 class SaleConfirm(models.Model):
