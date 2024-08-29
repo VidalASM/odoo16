@@ -64,7 +64,7 @@
                             <field name="journal_id" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="paid_amount"/>
                             <field name="adendum" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
-                            <field name="is_send">
+                            <field name="is_send"/>
                         </group>
                         <group>
                             <field name="membership_fees" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>

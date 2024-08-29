@@ -87,6 +87,7 @@ class TransferWizard(models.TransientModel):
         sale_order = self.env['sale.order'].create({
             'partner_id': self.client_id.id,
             'is_contract': True,
+            'journal_id': self.contract_id.journal_id.id,
         })
         self.env['sale.order.line'].create({
             'order_id': sale_order.id,
@@ -97,7 +98,7 @@ class TransferWizard(models.TransientModel):
             'discount': self.discount,
         })
         membership2.sale_order_id = sale_order.id
-        membership2.state = 'confirm'
+        # membership2.state = 'confirm'
 
         #Ahora solo queda dar debaja este contrato.
         self.contract_id.membership_date_to = datetime.today()

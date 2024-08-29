@@ -466,7 +466,7 @@ class GymMembership(models.Model):
             and x.invoice_id
         ):
             rec.member.action_check_server()
-            # rec.action_member_server()
+            rec.action_member_server()
 
 
 class SaleConfirm(models.Model):
