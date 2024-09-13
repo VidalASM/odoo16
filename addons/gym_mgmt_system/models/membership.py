@@ -573,6 +573,113 @@ class SaleConfirm(models.Model):
         #          }])
             
         return res
+    
+    def action_check_server(self):
+        odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
+        odoo.login('REVO_DB_02','admin-dev','Admin-dev45*')
+
+        Partner = odoo.env['res.partner']
+        Order = odoo.env['sale.order']
+        Product = odoo.env['product.product']
+        OrderLine = odoo.env['sale.order.line']
+        FactSerie = odoo.env['factelec.serie']
+        Invoice = odoo.env['account.invoice']
+        Payment1 = odoo.env['account.payment']
+        payment_list = {
+            'VISA': 100, 'MASTERCARD': 123, 'EFECTIVO': 99
+        }
+
+        dni = self.partner_id.vat
+        sale_ref = self.name
+        _logger.info("---------------------> payments")
+        _logger.info(payments)
+
+        partner_id = Partner.search([('vat','=',dni), ('active','=',True)], limit=1)
+        order_id = Order.search([('name','=',sale_ref), ('partner_id','=',partner_id)])
+        
+        if not order_id:
+            order_id = Order.create({
+                'name': sale_ref,
+                'partner_id': partner_id[0],
+                'type_sale': '1' if self.membership_ids else '2',
+                'type_contract': '1',
+                'contract_number': self.reference,
+                'date_order': str(self.date_order),
+                'start_date': str(self.membership_ids[0].membership_date_from) if self.membership_ids else False,
+                'date_end': str(self.membership_ids[0].membership_date_to) if self.membership_ids else False,
+                'state_contract': self.membership_ids[0].state_contract if self.membership_ids else 'ninguno',
+            })
+            for line in self.order_line:
+                product_id = Product.search([('name','=',line.product_id.name), ('active','=',True)], limit=1)
+                description_sale = line.product_id.description_sale if line.product_id.description_sale else ''
+                OrderLine.create({
+                    'order_id': order_id,
+                    'product_id': product_id[0],
+                    'name': line.product_id.name + '\n' + description_sale,
+                    'product_uom_qty': 1,
+                    'price_unit': line.product_id.list_price,
+                })
+        order = Order.browse(order_id)
+        order.action_confirm()
+        order.write({'confirmation_date': str(self.date_order)})
+        invoice = False
+        if order.invoice_ids:
+            invoices = order.invoice_ids
+            invoice = invoices[0]
+            invoice.action_invoice_draft()
+        elif self.invoice_ids:
+            invoices = order.action_invoice_create()
+            invoice = Invoice.browse(invoices)
+        if invoice:
+            invoice_name = self.invoice_ids[0].name
+            payment_type = 'bank' if '00' in self.invoice_ids[0].journal_id.name else 'cash'
+            serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',22)], limit=1)
+            invoice.write({
+                'number': invoice_name,
+                'payment_type': payment_type,
+                'elec_serie_id': serie_id[0],
+                'date_invoice': str(self.invoice_ids[0].invoice_date),
+                'serie_id': invoice_name.split('-')[0],
+                'numero': invoice_name.split('-')[1],
+            })
+            if self.partner_id != self.invoice_ids[0].partner_id:
+                self.invoice_ids[0].partner_id.action_check_server()
+                partner_id1 = Partner.search([('vat','=',self.invoice_ids[0].partner_id.vat), ('active','=',True)], limit=1)
+                invoice.write({
+                    'partner_id': partner_id1[0],
+                })
+            invoice.action_invoice_open()
+            if invoices[0].state == 'cancel':
+                invoice.action_invoice_cancel()
+
+        payments = self.invoice_ids[0].invoice_payments_widget['content'] if self.invoice_ids[0].invoice_payments_widget else []
+        if invoice.state != 'paid':
+            for payment in payments:
+                pay1 = Payment1.create({
+                    'invoice_ids': [(6, 0, [invoice.id])],
+                    'amount': payment['amount'],
+                    'currency_id': invoice.currency_id.id,
+                    'payment_type': 'inbound',
+                    'partner_id': invoice.commercial_partner_id.id,
+                    'partner_type': 'customer',
+                    'communication': invoice.reference,
+                    'journal_id': payment_list[payment['journal_name']],
+                    'payment_date': str(payment['date']),
+                    'payment_method_id': 1,
+                })
+                pay1 = Payment1.browse(pay1)
+                pay1.post()
+        _logger.info("---------------------> Registro completado")
+        _logger.info(order)
+        _logger.info(invoice)
+
+    def action_server_send(self):
+        """
+        This method creates the request to PSE/OSE provider
+        """
+        for rec in self:
+            rec.partner_id.action_check_server()
+            rec.action_check_server()
 
 class MembershipFreeze(models.Model):
     _name = "membership.freeze"

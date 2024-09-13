@@ -314,4 +314,23 @@
             </xpath>
         </field>
     </record>
+    
+    <record id="view_quotation_member_tree" model="ir.ui.view">
+        <field name="name">sale.order.member.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="before">
+                <header>
+                    <button 
+                        name="action_server_send" 
+                        type="object" 
+                        string="Sincronizar Odoo"
+                        groups="base.group_system"
+                        invisible="False"
+                    />
+                </header>
+            </xpath>
+        </field>
+    </record>
 </odoo>
