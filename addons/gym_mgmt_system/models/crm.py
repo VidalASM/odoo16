@@ -77,7 +77,7 @@ class CrmDraw(models.Model):
         c_date = datetime.today().replace(day=1, hour=0, minute=0, second=0) + timedelta(hours=5)
         for client in clients: 
             # if client.opportunity_count == 0:
-            if not client.opportunity_ids.filtered(lambda r:r.create_date > str(c_date)):
+            if not client.opportunity_ids.filtered(lambda r:r.create_date > c_date):
                 partners.append(client.id)
 
         self.partner_ids = self.env['res.partner'].search([['id', 'in', partners]])
@@ -140,6 +140,7 @@ class CrmDraw(models.Model):
         'date_deadline':datetime.today() + timedelta(days=self.follow_up_days),
         'company_id': self.company_id.id,
         'type_opportunity':self.filter_draw,
+        'stage_id': 968,
         'user_id': user.id,
         })
 

@@ -389,7 +389,7 @@ class GymMembership(models.Model):
             partner_id = Partner.search([('vat','=',dni), ('active','=',True)], limit=1)
             order_id = Order.search([('name','=',sale_ref), ('partner_id','=',partner_id)])
             product_id = Product.search([('name','=',scheme), ('active','=',True)], limit=1)
-            serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',22)], limit=1)
+            # serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',22)], limit=1)
             if not order_id:
                 order_id = Order.create({
                     'name': sale_ref,
