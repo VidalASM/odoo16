@@ -50,6 +50,7 @@ class SaleReportAdvance(models.TransientModel):
     today_date = fields.Date(default=fields.Date.today())
 
     def _get_data(self):
+        tz = pytz.timezone(self.env.user.tz or 'UTC')
         sale = self.env['sale.order'].search([('state','!=','cancel')])
         sales_order_line = self.env['sale.order.line'].search([('order_id.state','!=','cancel')])
 
@@ -60,7 +61,7 @@ class SaleReportAdvance(models.TransientModel):
         elif self.from_date and not self.to_date and self.company_ids:
             sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.company_id in self.company_ids, sale))
         elif self.from_date and self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() >= self.from_date and x.date_order.astimezone(tz).date() <= self.to_date, sale))
         elif not self.from_date and not self.to_date and self.company_ids:
             sales_order = list(filter(lambda x: x.company_id in self.company_ids, sale))
         elif not self.from_date and self.to_date and not self.company_ids:
