@@ -39,35 +39,52 @@ except ImportError:
 class SaleReportAdvance(models.TransientModel):
     _name = "sale.report.advance"
 
+    def _default_first_day(self):
+        tz = pytz.timezone(self.env.user.tz or 'UTC')
+        cmonth = datetime.now().month
+        cyear = datetime.now().year
+        return datetime.strptime('%s-%s-01' % (cyear,cmonth),'%Y-%m-%d')
+
     user_ids = fields.Many2many('res.users', string="Vendedores")
     customer_ids = fields.Many2many('res.partner', string="Clientes")
     product_ids = fields.Many2many('product.product', string='Productos')
-    from_date = fields.Date(string="Fecha inicial", required=True)
-    to_date = fields.Date(string="Fecha Final", required=True)
+    from_date = fields.Date(string="Fecha inicial", required=True, default=_default_first_day)
+    to_date = fields.Date(string="Fecha Final", required=True, default=fields.Date.today())
     type = fields.Selection([('customer', 'Clientes'), ('product', 'Productos'), ('both', 'Ambos')], 
         string='Imprimir reporte por', default='customer', required=True)
     company_ids = fields.Many2many('res.company', string='Sedes')
     today_date = fields.Date(default=fields.Date.today())
+    renovations = fields.Boolean(string='Renovaciones')
+    complete = fields.Boolean(string='Reporte completo')
 
     def _get_data(self):
         tz = pytz.timezone(self.env.user.tz or 'UTC')
-        sale = self.env['sale.order'].search([('state','!=','cancel')])
+        sale = self.env['sale.order'].search([('state','!=','cancel'), ('invoice_ids.payment_state','in',['paid','in_payment'])])
         sales_order_line = self.env['sale.order.line'].search([('order_id.state','!=','cancel')])
+        if self.renovations:
+            sale = self.env['sale.order'].search([('state','!=','cancel'), ('invoice_ids.payment_state','in',['paid','in_payment']), ('membership_ids.type_contract','=','2')])
+            sales_order_line = self.env['sale.order.line'].search([('order_id.state','!=','cancel')])
+        if self.complete:
+            sale = self.env['sale.order'].search([])
+            sales_order_line = self.env['sale.order.line'].search([])
+        if self.renovations and self.complete:
+            sale = self.env['sale.order'].search([('membership_ids.type_contract','=','2')])
+            sales_order_line = self.env['sale.order.line'].search([])
 
         if self.from_date and self.to_date and self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.date_order.date() <= self.to_date and x.company_id in self.company_ids, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() >= self.from_date and x.date_order.astimezone(tz).date() <= self.to_date and x.company_id in self.company_ids, sale))
         elif not self.from_date and self.to_date and self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() <= self.to_date and x.company_id in self.company_ids, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() <= self.to_date and x.company_id in self.company_ids, sale))
         elif self.from_date and not self.to_date and self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date and x.company_id in self.company_ids, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() >= self.from_date and x.company_id in self.company_ids, sale))
         elif self.from_date and self.to_date and not self.company_ids:
             sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() >= self.from_date and x.date_order.astimezone(tz).date() <= self.to_date, sale))
         elif not self.from_date and not self.to_date and self.company_ids:
             sales_order = list(filter(lambda x: x.company_id in self.company_ids, sale))
         elif not self.from_date and self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() <= self.to_date, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() <= self.to_date, sale))
         elif self.from_date and not self.to_date and not self.company_ids:
-            sales_order = list(filter(lambda x: x.date_order.date() >= self.from_date, sale))
+            sales_order = list(filter(lambda x: x.date_order.astimezone(tz).date() >= self.from_date, sale))
         else:
             sales_order = sale
         result = []
@@ -202,6 +219,7 @@ class SaleReportAdvance(models.TransientModel):
                         'quantity': lines.product_uom_qty,
                         'cost': lines.product_id.standard_price,
                         'price': lines.product_id.list_price,
+                        'price_invoiced' : lines.qty_invoiced * lines.product_id.list_price,
                         'profit': profit,
                         'margin': margin,
                         'partner': so.partner_id.name,
@@ -304,6 +322,7 @@ class SaleReportAdvance(models.TransientModel):
             t_qty = 0
             t_cost = 0
             t_price = 0
+            t_subtotal = 0
             t_profit = 0
             t_margin = 0
             t_cash = 0
@@ -328,6 +347,8 @@ class SaleReportAdvance(models.TransientModel):
             # col += 1
             sheet.write(row, col, 'Precio', format21)
             col += 1
+            sheet.write(row, col, 'Importe', format21)
+            col += 1
             # sheet.write(row, col, 'Beneficio', format21)
             # col += 1    
             # sheet.write(row, col, 'Margen', format21)
@@ -335,28 +356,28 @@ class SaleReportAdvance(models.TransientModel):
             sheet.write(row, col, 'Descuento', format21)
             col += 1
             sheet.write(row, col, 'Tipo de Comprobante', format21)
-            sheet.set_column('I:I', 20)
-            col += 1
-            sheet.write(row, col, 'Número de Comprobante', format21)
             sheet.set_column('J:J', 20)
             col += 1
+            sheet.write(row, col, 'Número de Comprobante', format21)
+            sheet.set_column('K:K', 20)
+            col += 1
             sheet.write(row, col, 'Diarios de Pago', format21)
-            sheet.set_column('K:K', 15)
+            sheet.set_column('L:L', 15)
             col += 1
             sheet.write(row, col, 'Total Efectivo', format21)
-            sheet.set_column('L:L', 12)
-            col += 1
-            sheet.write(row, col, 'Total Banco', format21)
             sheet.set_column('M:M', 12)
             col += 1
-            sheet.write(row, col, 'Responsable', format21)
-            sheet.set_column('N:N', 15)
+            sheet.write(row, col, 'Total Banco', format21)
+            sheet.set_column('N:N', 12)
             col += 1
-            sheet.write(row, col, 'Vendedor', format21)
+            sheet.write(row, col, 'Responsable', format21)
             sheet.set_column('O:O', 15)
             col += 1
+            sheet.write(row, col, 'Vendedor', format21)
+            sheet.set_column('P:P', 15)
+            col += 1
             sheet.write(row, col, 'Fecha Factura', format21)
-            sheet.set_column('P:P', 12)
+            sheet.set_column('Q:Q', 12)
             col += 1
             for val in data['form']:
                 column_number = 0
@@ -365,13 +386,10 @@ class SaleReportAdvance(models.TransientModel):
                 sheet.write(row_number, column_number, val['vat'], font_size_8)
                 column_number += 1
                 sheet.write(row_number, column_number, val['partner'], font_size_8)
-                sheet.set_column('I:I', 20)
                 column_number += 1
                 sheet.write(row_number, column_number, val['date'], font_size_8)
-                sheet.set_column('H:H', 15)
                 column_number += 1
                 sheet.write(row_number, column_number, val['product'], font_size_8)
-                sheet.set_column('J:J', 20)
                 column_number += 1
                 sheet.write(row_number, column_number, val['quantity'], font_size_8_r)
                 t_qty += val['quantity']
@@ -381,6 +399,9 @@ class SaleReportAdvance(models.TransientModel):
                 # column_number += 1
                 sheet.write(row_number, column_number, val['price'], monetary_size_8_r)
                 t_price += val['price']
+                column_number += 1
+                sheet.write(row_number, column_number, val['price_invoiced'], monetary_size_8_r)
+                t_subtotal += val['price_invoiced']
                 column_number += 1
                 # sheet.write(row_number, column_number, val['profit'], monetary_size_8_r)
                 # t_profit += val['profit']
@@ -416,6 +437,8 @@ class SaleReportAdvance(models.TransientModel):
             # sheet.write(row_number, t_col, t_cost, format4)
             # t_col += 1
             sheet.write(row_number, t_col, t_price, format22)
+            t_col += 1
+            sheet.write(row_number, t_col, t_subtotal, format22)
             t_col += 5
             # sheet.write(row_number, t_col, t_profit, format4)
             # t_col += 1

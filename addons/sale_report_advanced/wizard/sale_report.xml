@@ -5,15 +5,19 @@
         <field name="model">sale.report.advance</field>
                 <field name="arch" type="xml">
                     <form>
-                        <group col="1">
-                            <field name="from_date"/>
-                            <field name="to_date"/>
+                        <group col="2">
+                            <group><field name="from_date"/></group>
+                            <group><field name="to_date"/></group>
                         </group>
                         <group col="2">
                             <field name="company_ids" widget="many2many_tags"/>
-                            <field name="user_ids" widget="many2many_tags"/>
+                        </group>
+                        <group col="2">
+                            <group><field name="renovations"/></group>
+                            <group><field name="complete"/></group>
+                            <field name="user_ids" widget="many2many_tags" attrs="{'invisible': True}"/>
                             <field name="type" widget="radio" attrs="{'invisible': True}"></field>
-                            <field name="customer_ids" widget="many2many_tags" attrs="{'invisible': [('type', '=', 'product')]}"/>
+                            <field name="customer_ids" widget="many2many_tags" attrs="{'invisible': True}"/>
                             <field name="product_ids" widget="many2many_tags" attrs="{'invisible': [('type', '=', 'customer')]}"/>
                         </group>
                         <footer>
