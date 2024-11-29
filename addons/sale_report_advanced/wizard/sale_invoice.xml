@@ -5,19 +5,19 @@
         <field name="model">sale.report.invoice</field>
                 <field name="arch" type="xml">
                     <form>
-                        <group col="1">
+                        <group col="2">
                             <field name="from_date"/>
                             <field name="to_date"/>
-                            <field name="customer_ids" widget="many2many_tags"/>
-                            <field name="company_ids" widget="many2many_tags"/>
+                            <field name="customer_ids" widget="many2many_tags" attrs="{'invisible': True}"/>
+                            <field name="company_ids" widget="many2many_tags" attrs="{'invisible': True}"/>
                         </group>
                         <group col="2">
                             <field name="status" widget="radio"></field>
                         </group>
                         <footer>
                             <button name="get_invoice_report" string="PDF Report"
-                                    type="object" class="btn-primary"/>
-                            <button name="get_excel_invoice_report" string="XLSX Report"
+                                    type="object" class="btn-primary" attrs="{'invisible': True}"/>
+                            <button name="get_excel_invoice_report" string="Reporte XLSX"
                                     type="object" class="btn-primary"/>
 
                         </footer>
@@ -25,7 +25,7 @@
                 </field>
     </record>
     <record id="sale_invoice_report" model="ir.actions.act_window">
-        <field name="name">Sale Invoice Report</field>
+        <field name="name">Reporte de Facturación</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">sale.report.invoice</field>
         <field name="view_mode">form</field>

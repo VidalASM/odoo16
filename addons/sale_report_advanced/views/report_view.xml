@@ -13,13 +13,12 @@
               name="Reporte de Ventas y Pagos"
               action="sale_report_advance"
               sequence="2"/>
-    <!-- <menuitem id="sale_report_invoice"
-              parent="sale_advanced_report_root"
-              name="Invoice analysis"
+    <menuitem id="sale_report_invoice"
+              parent="account.account_reports_management_menu"
+              name="Reporte de Facturación"
               action="sale_invoice_report"
-              invisible=True
               sequence="3"/>
-    <menuitem id="category_report"
+    <!-- <menuitem id="category_report"
               parent="sale_advanced_report_root"
               name="Sales category"
               action="sale_category_report"
