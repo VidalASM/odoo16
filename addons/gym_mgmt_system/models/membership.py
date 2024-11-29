@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 #############################################################################
 #
@@ -90,7 +91,7 @@ class GymMembership(models.Model):
     #     string="Invoice Status",
     #     compute='_compute_invoice_status',
     #     store=True)
-    membership_date_from = fields.Date(string='Fecha de inicio de la membresía', tracking=5, default=datetime.today(), 
+    membership_date_from = fields.Date(string='Fecha de inicio de la membresía', tracking=5, default=fields.Date.context_today, 
         help='Date from which membership becomes active.')
     membership_date_to = fields.Date(string='Fecha de vencimiento de la membresía', tracking=5, compute="_compute_membership_date_to", 
         help='Date until which membership remains active.', store=True)
@@ -242,6 +243,7 @@ class GymMembership(models.Model):
             sale_order.write({'state':'sent', 'journal_id':self.journal_id.id})
             sale_order._send_order_confirmation_mail()
         self.state = 'confirm'
+        #sale_order.state = 'sent'
         self.write({'state_contract': 'active' })
 
     def _get_amount_in_words(self):
@@ -592,11 +594,17 @@ class SaleConfirm(models.Model):
         dni = self.partner_id.vat
         sale_ref = self.name
         _logger.info("---------------------> payments")
-        _logger.info(payments)
+        #_logger.info(payments)
 
         partner_id = Partner.search([('vat','=',dni), ('active','=',True)], limit=1)
         order_id = Order.search([('name','=',sale_ref), ('partner_id','=',partner_id)])
-        
+
+        if order_id:
+            order = Order.browse(order_id)
+            if not order.order_line:
+                order.write({'state':'draft'})
+                order.unlink()
+                order_id = False
         if not order_id:
             order_id = Order.create({
                 'name': sale_ref,
@@ -607,10 +615,12 @@ class SaleConfirm(models.Model):
                 'date_order': str(self.date_order),
                 'start_date': str(self.membership_ids[0].membership_date_from) if self.membership_ids else False,
                 'date_end': str(self.membership_ids[0].membership_date_to) if self.membership_ids else False,
-                'state_contract': self.membership_ids[0].state_contract if self.membership_ids else 'ninguno',
+                'state_contract': self.membership_ids[0].state_contract if self.membership_ids and self.membership_ids[0].state_contract != 'pending' else 'ninguno',
             })
             for line in self.order_line:
                 product_id = Product.search([('name','=',line.product_id.name), ('active','=',True)], limit=1)
+                if not product_id:
+                    product_id = Product.search([('name','=',line.product_id.name), ('active','=',False)], limit=1)
                 description_sale = line.product_id.description_sale if line.product_id.description_sale else ''
                 OrderLine.create({
                     'order_id': order_id,
@@ -626,6 +636,7 @@ class SaleConfirm(models.Model):
         if order.invoice_ids:
             invoices = order.invoice_ids
             invoice = invoices[0]
+            invoice.write({'state':'cancel'}) #invoice.action_invoice_cancel()
             invoice.action_invoice_draft()
         elif self.invoice_ids:
             invoices = order.action_invoice_create()
@@ -649,11 +660,13 @@ class SaleConfirm(models.Model):
                     'partner_id': partner_id1[0],
                 })
             invoice.action_invoice_open()
-            if invoices[0].state == 'cancel':
+            if self.invoice_ids[0].state == 'cancel':
+                #if invoice.state == 'paid':
+                invoice.write({'state':'draft'})
                 invoice.action_invoice_cancel()
 
         payments = self.invoice_ids[0].invoice_payments_widget['content'] if self.invoice_ids[0].invoice_payments_widget else []
-        if invoice.state != 'paid':
+        if invoice.state == 'open':
             for payment in payments:
                 pay1 = Payment1.create({
                     'invoice_ids': [(6, 0, [invoice.id])],

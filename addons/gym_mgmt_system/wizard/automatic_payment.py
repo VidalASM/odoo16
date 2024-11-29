@@ -91,6 +91,7 @@ class SelectPaymentModeWizard(models.TransientModel):
             # reconcile
             move_line_12 = payment.move_id.line_ids.filtered(lambda r: r.debit == 0.0)[0]
             invoice1.js_assign_outstanding_line(move_line_12.id)
+        self.order_id.write({'state':'sent'})
 
         return {}
 

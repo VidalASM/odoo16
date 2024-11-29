@@ -30,7 +30,7 @@
             <form>
                 <header>
                     <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'in', ('paid','in_payment'))]}" groups="gym_mgmt_system.group_gym_operator"/>
+                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': ['|', '|', ('membership_fees','=',0.0), ('state', '!=', 'confirm'), ('payment_state', 'in', ('paid','in_payment'))]}" groups="gym_mgmt_system.group_gym_operator"/>
                     <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
                     <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': ['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
@@ -320,7 +320,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_quotation_tree" />
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="before">
+            <xpath expr="//tree" position="inside">
                 <header>
                     <button 
                         name="action_server_send" 
