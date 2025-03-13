@@ -30,6 +30,15 @@ class TransferWizard(models.TransientModel):
     days_transferred = fields.Integer(string='Días disponibles', compute="_get_days_avilable")
     discount = fields.Float(string="Descuento (%)", digits='Discount')
     authorize_user = fields.Many2one(comodel_name='res.users', string="Autoriza")
+    journal_id = fields.Many2one(
+        'account.journal',
+        string='Tipo Doc.',
+        store=True, readonly=False,
+        required=True, tracking=4,
+        states={'draft': [('readonly', False)]},
+        check_company=True,
+        domain="[('type', '=', 'sale')]",
+    )
 
     @api.depends('contract_id')
     def _get_days_avilable(self):
@@ -64,7 +73,7 @@ class TransferWizard(models.TransientModel):
             'membership_date_to': end,
             'state_contract': "inactive",
             'membership_scheme': self.contract_id.membership_scheme.id,
-            'journal_id': self.contract_id.journal_id.id,
+            'journal_id': self.journal_id.id,
             'authorize_user': self.authorize_user.id,
             'discount': self.discount,
             'membership_fees': 80,
@@ -87,7 +96,7 @@ class TransferWizard(models.TransientModel):
         sale_order = self.env['sale.order'].create({
             'partner_id': self.client_id.id,
             'is_contract': True,
-            'journal_id': self.contract_id.journal_id.id,
+            'journal_id': self.journal_id.id,
         })
         self.env['sale.order.line'].create({
             'order_id': sale_order.id,
@@ -101,7 +110,11 @@ class TransferWizard(models.TransientModel):
         # membership2.state = 'confirm'
 
         #Ahora solo queda dar debaja este contrato.
-        self.contract_id.membership_date_to = datetime.today()
+        if self.contract_id.membership_date_from > datetime.today().date():
+            self.contract_id.membership_date_to = self.contract_id.membership_date_from
+        else:
+            self.contract_id.membership_date_to = datetime.today()
+        #self.contract_id.membership_date_to = datetime.today()
         self.contract_id.state_contract = 'inactive'
 
         #Si todo el proceso esta ok retornamos true

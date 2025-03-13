@@ -165,9 +165,7 @@
               </style>
               <div class="invoice-ticket">
                 <div class="invoice-center-align">
-                  <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" alt="Logo" width="150px"/>
-                  <div class="info">
-                    <t t-esc="o.company_id.name"/>
+                    <t t-esc="o.company_id.partner_id.parent_id.name"/><br/>
                     <t t-if="o.company_id.phone">
                       <div>Tel:
                       <!-- <t t-esc='o.company_id.phone'/> -->
@@ -177,10 +175,17 @@
                     </t>
                     <!-- <span class="company_address" t-field="o.company_id.partner_id" 
                     t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;], &quot;no_marker&quot;: true}"/> -->
-                    <span class="company_address" t-if='o.company_id.street'><t  t-esc='o.company_id.street' />, </span>
-                    <span class="company_address" t-if='o.company_id.city'><t t-esc="o.company_id.city" />- </span>
-                    <span class="company_address" t-if='o.company_id.state_id'><t t-esc="o.company_id.state_id.name" />- </span>
-                    <span class="company_address" t-if='o.company_id.country_id'><t t-esc="o.company_id.country_id.name" /></span>
+                    <span class="company_address" t-if="o.company_id.street"><t t-esc="o.company_id.street"/>, </span>
+                    <span class="company_address" t-if="o.company_id.city" style="text-transform: uppercase;"><t t-esc="o.company_id.city"/> - </span>
+                    <span class="company_address" t-if="o.company_id.state_id" style="text-transform: uppercase;"><t t-esc="o.company_id.state_id.name"/> - </span>
+                    <span class="company_address" t-if="o.company_id.country_id" style="text-transform: uppercase;"><t t-esc="o.company_id.country_id.name"/></span>
+                    <t t-if="o.company_id.street2">
+                      <br/>
+                      <span class="company_address" style="text-transform: uppercase;">
+                        SUCURSAL: <t t-esc="o.company_id.street2"/>
+                      </span>
+                    </t>
+
                     <!-- <t t-if="o.user_id">
                       <div class="cashier">
                         <div>Atentido por

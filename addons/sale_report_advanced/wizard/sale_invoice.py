@@ -141,7 +141,7 @@ class SaleReportAdvance(models.TransientModel):
         #                         result.append(res)
 
         lines = []
-        searchv = [('company_id','=',self.env.user.company_id.id), ('move_type', 'in', ['out_invoice','out_refund']), ('invoice_date','>=',self.from_date), ('invoice_date','<=',self.to_date)]
+        searchv = [('company_id','=',self.env.company.id), ('move_type', 'in', ['out_invoice','out_refund']), ('invoice_date','>=',self.from_date), ('invoice_date','<=',self.to_date)]
         if self.status == 'paid':
             searchv.append(('payment_state','in',['in_payment','paid']))
         if self.status == 'open':
@@ -215,6 +215,7 @@ class SaleReportAdvance(models.TransientModel):
         datas = {
             'ids': self,
             'model': 'sale.report.invoice',
+            "company": self.env.company.name,
             'form': lines,
             'partner_id': customers,
             'start_date': self.from_date,
@@ -241,7 +242,7 @@ class SaleReportAdvance(models.TransientModel):
         workbook = xlsxwriter.Workbook(output, {'in_memory': True})
         sheet = workbook.add_worksheet('REPORTE VENTAS')
         record =[]
-        comp = self.env.user.company_id.name
+        # comp = self.env['res.company'].browse(self.env.company.id)
         # cell_format = workbook.add_format({'font_size': '12px',})
         # head = workbook.add_format({'align': 'center', 'bold': True, 'font_size': '20px'})
         # txt = workbook.add_format({'font_size': '10px','align': 'center'})
@@ -289,7 +290,7 @@ class SaleReportAdvance(models.TransientModel):
         #     sheet.merge_range('L6:M6', data['end_date'], txt)
 
         sheet.merge_range(1, 4, 2, 10, 'REPORTE DE VENTAS', format0)
-        sheet.merge_range(3, 4, 3, 10, comp, format11)
+        sheet.merge_range(3, 4, 3, 10, data['company'], format11)
         sheet.merge_range(4, 0, 4, 1, 'Rango de Fechas : ', format4)
         sheet.merge_range(4, 2, 4, 4, str(data['start_date']) +
                           " - " + str(data['end_date']), format21)

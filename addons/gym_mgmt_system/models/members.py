@@ -106,7 +106,7 @@ class MemberPartner(models.Model):
     def action_check_server(self):
         odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
         # _logger.info(odoo.db.list())
-        odoo.login('REVO_DB_02','admin-dev','Admin-dev45*')
+        odoo.login('REVO_DB_02','admin-dev','Admin1*')
 
         Partner = odoo.env['res.partner']
         Catalog6 = odoo.env['einvoice.catalog.06']

@@ -122,7 +122,7 @@ class GymMembership(models.Model):
     discount = fields.Float(
         string="Descuento (%)",
         digits='Discount',
-        store=True
+        store=True, copy=False
     )
     authorize_user = fields.Many2one(comodel_name='res.users', string="Autoriza", 
                                      states={'draft': [('readonly', False)], 'confirm': [('readonly', True)]}, ondelete='cascade')
@@ -238,6 +238,7 @@ class GymMembership(models.Model):
                 'product_id': self.membership_scheme.id,
                 'price_unit': self.membership_fees,
                 'product_uom_qty': 1,
+                'discount': self.discount,
             })
             self.sale_order_id = sale_order.id
             sale_order.write({'state':'sent', 'journal_id':self.journal_id.id})
@@ -578,7 +579,14 @@ class SaleConfirm(models.Model):
     
     def action_check_server(self):
         odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
-        odoo.login('REVO_DB_02','admin-dev','Admin-dev45*')
+        odoo.login('REVO_DB_02','admin-dev','Admin1*')
+        ids_list ={
+            'visa': 42, #42, #93, #121, #114, #107, #100,
+            'mastercard': 43, #43, #126, #125, #122, #124, #123,
+            'efectivo': 25, #25, #92, #120, #113, #106, #99,
+            'company': 3, #3, #21, #25, #24, #23, #22,
+            'type': 2
+        }
 
         Partner = odoo.env['res.partner']
         Order = odoo.env['sale.order']
@@ -588,7 +596,7 @@ class SaleConfirm(models.Model):
         Invoice = odoo.env['account.invoice']
         Payment1 = odoo.env['account.payment']
         payment_list = {
-            'VISA': 100, 'MASTERCARD': 123, 'EFECTIVO': 99
+            'VISA': ids_list['visa'], 'MASTERCARD': ids_list['mastercard'], 'EFECTIVO': ids_list['efectivo']
         }
 
         dni = self.partner_id.vat
@@ -619,14 +627,17 @@ class SaleConfirm(models.Model):
             })
             for line in self.order_line:
                 product_id = Product.search([('name','=',line.product_id.name), ('active','=',True)], limit=1)
-                if not product_id:
-                    product_id = Product.search([('name','=',line.product_id.name), ('active','=',False)], limit=1)
+                if product_id:
+                    product_id = product_id[0]
+                else:
+                    #product_id = Product.search([('name','=',line.product_id.name), ('active','=',False)], limit=1)
+                    product_id = Product.create({'name': line.product_id.name, 'type': 'service', 'lst_price': line.product_id.lst_price})
                 description_sale = line.product_id.description_sale if line.product_id.description_sale else ''
                 OrderLine.create({
                     'order_id': order_id,
-                    'product_id': product_id[0],
+                    'product_id': product_id, #product_id[0],
                     'name': line.product_id.name + '\n' + description_sale,
-                    'product_uom_qty': 1,
+                    'product_uom_qty': line.product_uom_qty,
                     'price_unit': line.product_id.list_price,
                 })
         order = Order.browse(order_id)
@@ -644,9 +655,10 @@ class SaleConfirm(models.Model):
         if invoice:
             invoice_name = self.invoice_ids[0].name
             payment_type = 'bank' if '00' in self.invoice_ids[0].journal_id.name else 'cash'
-            serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',22)], limit=1)
+            serie_id = FactSerie.search([('name','=',invoice_name.split('-')[0]), ('company_id','=',ids_list['company'])], limit=1)
             invoice.write({
                 'number': invoice_name,
+                'type_document_id': ids_list['type'],
                 'payment_type': payment_type,
                 'elec_serie_id': serie_id[0],
                 'date_invoice': str(self.invoice_ids[0].invoice_date),
