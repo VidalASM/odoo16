@@ -1092,6 +1092,8 @@ class AccountMove(models.Model):
         Genera el resumen diario por fecha y compañia
         """
         companies = self.env['res.company'].search([])
+        # logging.info('{} segundos'.format(tiempo.seconds))
+        logging.info(companies)
         idx = 1
         for company in companies:
             invoices = self.search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('journal_id.l10n_pe_edi_is_einvoice','=',True), 
@@ -1111,7 +1113,7 @@ class AccountMove(models.Model):
             i = 1		
             for inv in invoices:
                 # if inv.elec_serie_id.is_factelec:
-                num_inv = inv.sequence_number.rjust(8, '0')
+                num_inv = str(inv.sequence_number).rjust(8, '0')
                 line = {
                     "fecEmision": date_sent,
                     "fecResumen": date_sent,
@@ -1188,7 +1190,7 @@ class AccountMove(models.Model):
             values["resumenDiario"] = []
             i = 1		
             for inv in invoices:
-                num_inv = str(inv.sequence_number) if len(inv.sequence_number) == 8 else inv.sequence_number.rjust(8, '0')
+                num_inv = str(inv.sequence_number) if len(inv.sequence_number) == 8 else str(inv.sequence_number).rjust(8, '0')
                 line = {
                     "fecEmision": date_sent,
                     "fecResumen": date_sent,
