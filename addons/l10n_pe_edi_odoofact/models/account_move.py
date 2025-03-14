@@ -1091,14 +1091,18 @@ class AccountMove(models.Model):
         """
         Genera el resumen diario por fecha y compañia
         """
-        companies = self.env['res.company'].search([])
-        # logging.info('{} segundos'.format(tiempo.seconds))
+        companies = self.env['res.company'].search([], order='id asc')
+        #moves = self.env['account.move'].search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('l10n_pe_edi_legend_value','=',False)])
+        #logging.info('{} moves'.format(len(moves)))
         logging.info(companies)
         idx = 1
         for company in companies:
+            logging.info('{} company'.format(company.id))
             invoices = self.search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('journal_id.l10n_pe_edi_is_einvoice','=',True), 
                 ('move_type','=','out_invoice'), ('l10n_latam_document_type_id.code', '=', '03'), 
-                ('l10n_pe_edi_sunat_accepted','=',False),('company_id','=',company.id)])
+                ('l10n_pe_edi_legend_value','=',False), # ('l10n_pe_edi_sunat_accepted','=',False),
+                ('company_id','=',company.id)])
+            logging.info('{} invoices'.format(len(invoices)))
             # Connection to SSH Client
             # ssh = paramiko.SSHClient()
             # ssh.load_host_keys(os.path.expanduser(os.path.join("/root", ".ssh", "known_hosts")))
@@ -1165,7 +1169,7 @@ class AccountMove(models.Model):
             if invoices:
                 title = company.vat +'-RC-'+ date_sent[0:4] + date_sent[5:7] + date_sent[8:10] + '-' + str(idx) + '.JSON'
                 path_file_rc = os.path.join(company.sfs_path, title)
-                print("path file -----------> ", title, path_file_rc)
+                logging.info("path file -----------> {}, {}".format(title, path_file_rc))
                 with open(path_file_rc, 'w') as f:
                     json.dump(values, f)
                 # remotepath = os.path.join('/root/florencia/sfs/DATA', title)
