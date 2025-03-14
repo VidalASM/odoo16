@@ -10,6 +10,7 @@
 
 import json
 import logging
+import os
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
@@ -1084,3 +1085,163 @@ class AccountMove(models.Model):
                 commercial and commercial.vat or "",
             ]
         )
+    
+    @api.model
+    def _send_daily_summary(self, date_sent):
+        """
+        Genera el resumen diario por fecha y compañia
+        """
+        companies = self.env['res.company'].search([])
+        idx = 1
+        for company in companies:
+            invoices = self.search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('journal_id.l10n_pe_edi_is_einvoice','=',True), 
+                ('move_type','=','out_invoice'), ('l10n_latam_document_type_id.code', '=', '03'), 
+                ('l10n_pe_edi_sunat_accepted','=',False),('company_id','=',company.id)])
+            # Connection to SSH Client
+            # ssh = paramiko.SSHClient()
+            # ssh.load_host_keys(os.path.expanduser(os.path.join("/root", ".ssh", "known_hosts")))
+            # hostname = '51.79.53.219'
+            # username = 'root'
+            # password = 'CHd2JIYu'
+            # ssh.connect(hostname, username=username, password=password)
+            # sftp = ssh.open_sftp()
+            # create json
+            values = {}
+            values["resumenDiario"] = []
+            i = 1		
+            for inv in invoices:
+                # if inv.elec_serie_id.is_factelec:
+                num_inv = inv.sequence_number.rjust(8, '0')
+                line = {
+                    "fecEmision": date_sent,
+                    "fecResumen": date_sent,
+                    "tipDocResumen": "03",
+                    "idDocResumen": inv.name if "-" in inv.name and len(inv.name) == 13 else str(inv.sequence_prefix)[0:4] + "-" + num_inv,
+                    "tipDocUsuario": inv.partner_id.l10n_latam_identification_type_id.l10n_pe_vat_code,
+                    "numDocUsuario": inv.partner_id.vat,
+                    "tipMoneda": inv.currency_id.name,
+                    "totValGrabado": "%.2f" % inv.l10n_pe_edi_amount_base,
+                    "totValExoneado": "%.2f" % inv.l10n_pe_edi_amount_exonerated,
+                    "totValInafecto": "%.2f" % inv.l10n_pe_edi_amount_unaffected,
+                    "totValExportado": "0",
+                    "monValGratuito": "%.2f" % inv.l10n_pe_edi_amount_free,
+                    "totOtroCargo": "0",
+                    "totImpCpe": "%.2f" % inv.amount_total_signed,
+                    "tipDocModifico": "",
+                    "serDocModifico": "",
+                    "numDocModifico": "",
+                    "tipRegPercepcion": "",
+                    "porPercepcion": "",
+                    "monBasePercepcion": "",
+                    "monPercepcion": "",
+                    "monTotIncPercepcion": "",
+                    "tipEstado": "1",
+                    "tributosDocResumen": [
+                        {
+                            "idLineaRd": "%i"%i,
+                            "ideTributoRd": "1000",
+                            "nomTributoRd": "IGV",
+                            "codTipTributoRd": "VAT",
+                            "mtoBaseImponibleRd": "%.2f" % inv.l10n_pe_edi_amount_base,
+                            "mtoTributoRd": "%.2f" % inv.l10n_pe_edi_amount_igv
+                        }
+                    ]
+                }
+                if inv.amount_tax == 0.00:
+                    line["tributosDocResumen"].append(
+                        {
+                            "idLineaRd": "%i"%i,
+                            "ideTributoRd": "9997",
+                            "nomTributoRd": "EXO",
+                            "codTipTributoRd": "VAT",
+                            "mtoBaseImponibleRd": "%.2f" % inv.l10n_pe_edi_amount_base,
+                            "mtoTributoRd": "0.00"
+                        }
+                    )
+                values["resumenDiario"].append(line)
+                i+=1
+            if invoices:
+                title = company.vat +'-RC-'+ date_sent[0:4] + date_sent[5:7] + date_sent[8:10] + '-' + str(idx) + '.JSON'
+                path_file_rc = os.path.join(company.sfs_path, title)
+                print("path file -----------> ", title, path_file_rc)
+                with open(path_file_rc, 'w') as f:
+                    json.dump(values, f)
+                # remotepath = os.path.join('/root/florencia/sfs/DATA', title)
+                # sftp.put(path_file_rc, remotepath)
+                # Close SSH Client
+                # sftp.close()
+                # ssh.close()
+                idx += 1
+    
+    @api.model
+    def _send_daily_summary_nc(self, date_sent):
+        """
+        Genera el resumen diario por fecha y compañia
+        """
+        companies = self.env['res.company'].search([])
+        idx = 9
+        for company in companies:
+            invoices = self.search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('journal_id.l10n_pe_edi_is_einvoice','=',True), 
+                ('move_type','=','out_invoice'), ('l10n_latam_document_type_id.code', '=', '07'), ('doc_code_prefix','=','B'),
+                ('l10n_pe_edi_sunat_accepted','=',False),('company_id','=',company.id)])
+            values = {}
+            values["resumenDiario"] = []
+            i = 1		
+            for inv in invoices:
+                num_inv = str(inv.sequence_number) if len(inv.sequence_number) == 8 else inv.sequence_number.rjust(8, '0')
+                line = {
+                    "fecEmision": date_sent,
+                    "fecResumen": date_sent,
+                    "tipDocResumen": "07",
+                    "idDocResumen": inv.name if "-" in inv.name and len(inv.name) == 13 else str(inv.sequence_prefix)[0:4] + "-" + num_inv,
+                    "tipDocUsuario": inv.partner_id.l10n_latam_identification_type_id.l10n_pe_vat_code,
+                    "numDocUsuario": inv.partner_id.vat,
+                    "tipMoneda": inv.currency_id.name,
+                    "totValGrabado": "%.2f" % inv.l10n_pe_edi_amount_base,
+                    "totValExoneado": "%.2f" % inv.l10n_pe_edi_amount_exonerated,
+                    "totValInafecto": "%.2f" % inv.l10n_pe_edi_amount_unaffected,
+                    "totValExportado": "0",
+                    "monValGratuito": "%.2f" % inv.l10n_pe_edi_amount_free,
+                    "totOtroCargo": "0",
+                    "totImpCpe": "%.2f" % inv.amount_total_signed,
+
+                    "tipDocModifico": "03",
+                    "serDocModifico": str(inv.l10n_pe_edi_origin_move_id.sequence_prefix)[0:4],
+                    "numDocModifico": inv.sequence_number.rjust(8, '0'),
+                    "tipRegPercepcion": "",
+                    "porPercepcion": "",
+                    "monBasePercepcion": "",
+                    "monPercepcion": "",
+                    "monTotIncPercepcion": "",
+                    "tipEstado": "1",
+                    "tributosDocResumen": [
+                        {
+                            "idLineaRd": "%i"%i,
+                            "ideTributoRd": "1000",
+                            "nomTributoRd": "IGV",
+                            "codTipTributoRd": "VAT",
+                            "mtoBaseImponibleRd": "%.2f" % inv.l10n_pe_edi_amount_base,
+                            "mtoTributoRd": "%.2f" % inv.l10n_pe_edi_amount_igv
+                        }
+                    ]
+                }
+                if inv.amount_tax == 0.00:
+                    line["tributosDocResumen"].append(
+                        {
+                            "idLineaRd": "%i"%i,
+                            "ideTributoRd": "9997",
+                            "nomTributoRd": "EXO",
+                            "codTipTributoRd": "VAT",
+                            "mtoBaseImponibleRd": "%.2f" % inv.l10n_pe_edi_amount_base,
+                            "mtoTributoRd": "0.00"
+                        }
+                    )
+                values["resumenDiario"].append(line)
+                i+=1
+            if invoices:
+                title = company.vat +'-RC-'+ date_sent[0:4] + date_sent[5:7] + date_sent[8:10] + '-' + str(idx) + '.JSON'
+                path_file_rc = os.path.join(company.sfs_path, title)
+                # print("path file -----------> ", title, path_file_rc)
+                with open(path_file_rc, 'w') as f:
+                    json.dump(values, f)
+                idx += 1
