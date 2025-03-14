@@ -823,6 +823,11 @@ msgid "Min Amount for Retention"
 msgstr "Importe minimo para Retención"
 
 #. module: l10n_pe_edi_odoofact
+#: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_res_company__sfs_path
+msgid "SFS Location"
+msgstr "Ubicación SFS"
+
+#. module: l10n_pe_edi_odoofact
 #: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_dues__move_id
 #: model:ir.model.fields,field_description:l10n_pe_edi_odoofact.field_l10n_pe_edi_picking_number__invoice_id
 msgid "Move"

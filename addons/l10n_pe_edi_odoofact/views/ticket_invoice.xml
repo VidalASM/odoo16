@@ -124,7 +124,7 @@
       <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
           <t t-call="web.basic_layout">
-            <t t-set="o" t-value="o.with_context(lang=lang)" />
+            <t t-set="o" t-value="o.with_context(lang=lang)"/>
             <div class="page">
               <style>
                 body{
@@ -165,6 +165,8 @@
               </style>
               <div class="invoice-ticket">
                 <div class="invoice-center-align">
+                  <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.partner_id.parent_id.image_1920)" alt="Logo" width="150px"/>
+                  <div class="info">
                     <t t-esc="o.company_id.partner_id.parent_id.name"/><br/>
                     <t t-if="o.company_id.phone">
                       <div>Tel:
@@ -185,7 +187,6 @@
                         SUCURSAL: <t t-esc="o.company_id.street2"/>
                       </span>
                     </t>
-
                     <!-- <t t-if="o.user_id">
                       <div class="cashier">
                         <div>Atentido por
@@ -209,40 +210,40 @@
                 </div>
                 <div class="receipt-phone client-info">
                     <t t-if="o.partner_id">
-                        <span  style="font-size: 12px;font-weight: bold;" >CLIENTE</span><br/>
+                        <span style="font-size: 12px;font-weight: bold;">CLIENTE</span><br/>
                         <span class="text-nowrap" t-esc="o.partner_id.commercial_partner_id.l10n_latam_identification_type_id and o.partner_id.commercial_partner_id.l10n_latam_identification_type_id.name or 'DOCUMENTO'"/>:
                         <t t-esc="o.partner_id.vat"/>
                         <br/>
                         <t t-esc="o.partner_id.name"/>
                         <div name="extra-customer-info">
                         </div>
-                        <span t-if='o.partner_id.street'><t  t-esc='o.partner_id.street' />, </span>
-                        <span t-if='o.partner_id.l10n_pe_district'><t t-esc="o.partner_id.l10n_pe_district.name" />- </span>
-                        <span t-if='o.partner_id.city_id'><t t-esc="o.partner_id.city_id.name" />- </span>
-                        <span t-if='o.partner_id.state_id'><t t-esc="o.partner_id.state_id.name" />- </span>
-                        <span t-if='o.partner_id.country_id'><t t-esc="o.partner_id.country_id.name" /></span>
+                        <span t-if="o.partner_id.street"><t t-esc="o.partner_id.street"/>, </span>
+                        <span t-if="o.partner_id.l10n_pe_district"><t t-esc="o.partner_id.l10n_pe_district.name"/>- </span>
+                        <span t-if="o.partner_id.city_id"><t t-esc="o.partner_id.city_id.name"/>- </span>
+                        <span t-if="o.partner_id.state_id"><t t-esc="o.partner_id.state_id.name"/>- </span>
+                        <span t-if="o.partner_id.country_id"><t t-esc="o.partner_id.country_id.name"/></span>
                         <br/>
                     </t>
                 </div>
                 <div class="receipt-phone client-info">
-                    <span  style="font-size: 12px;font-weight: bold;" >FECHA EMISIÓN</span>
+                    <span style="font-size: 12px;font-weight: bold;">FECHA EMISIÓN</span>
                     <span t-field="o.invoice_date"/>
                     <br/>
-                    <span  style="font-size: 12px;font-weight: bold;" >FECHA VENCIMIENTO</span>
+                    <span style="font-size: 12px;font-weight: bold;">FECHA VENCIMIENTO</span>
                     <span t-field="o.invoice_date_due"/>
                 </div>
 
                 <div class="receipt-phone client-info" t-if="o.invoice_payment_term_id">
-                    <span  style="font-size: 12px;font-weight: bold;" >
+                    <span style="font-size: 12px;font-weight: bold;">
                         CONDICIÓN DE PAGO:
                     </span>
                     <span t-field="o.invoice_payment_term_id.name"/>
                 </div>
                 <div class="receipt-phone client-info">
-                    <span  style="font-size: 12px;font-weight: bold;" >
+                    <span style="font-size: 12px;font-weight: bold;">
                         FORMA DE PAGO:
                     </span>
-                    <t t-esc="o.l10n_pe_edi_is_sale_credit and '[CRÉDITO POR PAGAR]' or '[CONTADO]'" />
+                    <t t-esc="o.l10n_pe_edi_is_sale_credit and '[CRÉDITO POR PAGAR]' or '[CONTADO]'"/>
                 </div>
                 <br/>
 
@@ -257,11 +258,11 @@
                     </tr>
                   </thead>
                     <colgroup>
-                        <col width='15%' />
-                        <col width='15%' />
-                        <col width='40%' />
-                        <col width='15%' />
-                        <col width='15%' />
+                        <col width="15%"/>
+                        <col width="15%"/>
+                        <col width="40%"/>
+                        <col width="15%"/>
+                        <col width="15%"/>
                     </colgroup>
                   <tbody>
                     <t t-foreach="o.invoice_line_ids" t-as="line">
@@ -279,7 +280,7 @@
                           <span t-field="line.price_unit"/>
                         </td>
                         <td class="text-right">
-                          <span t-field="line.price_total" t-options='{"widget": "float", "precision": 2}'/>
+                          <span t-field="line.price_total" t-options="{&quot;widget&quot;: &quot;float&quot;, &quot;precision&quot;: 2}"/>
                         </td>
                       </tr>
                     </t>
@@ -288,7 +289,7 @@
                 <br/>                
                 
                 <table class="table table-sm" style="page-break-inside: avoid;">
-                    <tr class="o_subtotal" style="" t-if="o.l10n_pe_edi_amount_base">
+                    <tr class="o_subtotal" style="">
                         <td>
                             <span><strong>MONTO BASE </strong></span>
                         </td>
@@ -409,16 +410,14 @@
 
                   <div class="invoice-center-align">                    
                     <div t-attf-class="#{'col-12' if report_type != 'html' else 'col-12 col-sm-12'} col-auto mb-12">
-                        <img
-                            t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o._get_qr_code(), 100, 100)"
-                        />
+                        <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', o._get_qr_code(), 100, 100)"/>
                     </div>
                   </div>
-                  <t >
+                  <t>
                     <p t-if="o.l10n_latam_document_type_id.code == '07'">Representación impresa de la nota de crédito electrónica: <span class="font-weight-bold">https://ww1.sunat.gob.pe/ol-ti-itconsultaunificadalibre/consultaUnificadaLibre/consulta</span></p>
                     <p t-if="o.l10n_latam_document_type_id.code == '08'">Representación impresa de la nota de débito electrónica: <span class="font-weight-bold">https://ww1.sunat.gob.pe/ol-ti-itconsultaunificadalibre/consultaUnificadaLibre/consulta</span></p>
                   </t>
-                  <t >
+                  <t>
                     <p t-if="o.l10n_latam_document_type_id.code == '01'">Representación impresa de la factura electrónica: <span class="font-weight-bold">https://ww1.sunat.gob.pe/ol-ti-itconsultaunificadalibre/consultaUnificadaLibre/consulta</span></p>
                     <p t-if="o.l10n_latam_document_type_id.code == '03'">Representación impresa de la boleta de venta electrónica: <span class="font-weight-bold">https://ww1.sunat.gob.pe/ol-ti-itconsultaunificadalibre/consultaUnificadaLibre/consulta</span></p>
                   </t>

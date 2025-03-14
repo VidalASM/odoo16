@@ -115,4 +115,17 @@
             </xpath>
         </field>
     </record>
+
+    <record id="res_company_form_view_inherit_sfs" model="ir.ui.view">
+        <field name="name">res.company.form.view.inherit.sfs</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_id']" position="after">
+                <group>
+                    <field name="sfs_path"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
 </odoo>

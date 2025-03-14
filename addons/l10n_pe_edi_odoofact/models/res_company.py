@@ -24,3 +24,4 @@ class ResCompany(models.Model):
     l10n_pe_edi_detraction_bank_account_id = fields.Many2one(
         comodel_name="res.partner.bank", string="National bank Account"
     )
+    sfs_path = fields.Char(string="SFS Location")
