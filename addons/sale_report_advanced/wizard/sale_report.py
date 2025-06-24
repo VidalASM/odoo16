@@ -379,6 +379,10 @@ class SaleReportAdvance(models.TransientModel):
             sheet.write(row, col, 'Fecha Factura', format21)
             sheet.set_column('Q:Q', 12)
             col += 1
+
+            inv_list = []
+            amount_cash1 = 0
+            amount_bank1 = 0  
             for val in data['form']:
                 column_number = 0
                 sheet.write(row_number, column_number, val['sequence'], font_size_8)
@@ -417,12 +421,26 @@ class SaleReportAdvance(models.TransientModel):
                 column_number += 1
                 sheet.write(row_number, column_number, val['payment_journals'], font_size_8)
                 column_number += 1
-                sheet.write(row_number, column_number, val['amount_cash'], monetary_size_8_r)
-                t_cash += val['amount_cash']
+
+                amount_cash1 = 0
+                amount_bank1 = 0
+                if val['sequence'] not in inv_list:
+                    amount_cash1 = val['amount_cash']
+                    amount_bank1 = val['amount_bank']
+                sheet.write(row_number, column_number, amount_cash1, monetary_size_8_r)
+                t_cash += amount_cash1
                 column_number += 1
-                sheet.write(row_number, column_number, val['amount_bank'], monetary_size_8_r)
-                t_bank += val['amount_bank']
+                sheet.write(row_number, column_number, amount_bank1, monetary_size_8_r)
+                t_bank += amount_bank1
                 column_number += 1
+
+                #sheet.write(row_number, column_number, val['amount_cash'], monetary_size_8_r)
+                #t_cash += val['amount_cash']
+                #column_number += 1
+                #sheet.write(row_number, column_number, val['amount_bank'], monetary_size_8_r)
+                #t_bank += val['amount_bank']
+                #column_number += 1
+
                 sheet.write(row_number, column_number, val['manager_id'], font_size_8)
                 column_number += 1
                 sheet.write(row_number, column_number, val['user_id'], font_size_8)
@@ -430,6 +448,8 @@ class SaleReportAdvance(models.TransientModel):
                 sheet.write(row_number, column_number, val['date_invoice'], font_size_8)
                 column_number += 1
                 row_number += 1
+                inv_list.append(val['sequence'])
+
             sheet.write(row_number, t_col, 'Total', format4)
             t_col += 1
             sheet.write(row_number, t_col, t_qty, format22)

@@ -1188,13 +1188,13 @@ class AccountMove(models.Model):
         idx = 9
         for company in companies:
             invoices = self.search([('state', '=', 'posted'),('invoice_date', '=', date_sent),('journal_id.l10n_pe_edi_is_einvoice','=',True), 
-                ('move_type','=','out_invoice'), ('l10n_latam_document_type_id.code', '=', '07'), ('doc_code_prefix','=','B'),
-                ('l10n_pe_edi_sunat_accepted','=',False),('company_id','=',company.id)])
+                ('move_type','=','out_refund'), ('l10n_latam_document_type_id.code', '=', '07'), ('l10n_latam_document_type_id.doc_code_prefix','=','B'),
+                ('edi_state','=','to_send'),('company_id','=',company.id)])
             values = {}
             values["resumenDiario"] = []
             i = 1		
             for inv in invoices:
-                num_inv = str(inv.sequence_number) if len(inv.sequence_number) == 8 else str(inv.sequence_number).rjust(8, '0')
+                num_inv = str(inv.sequence_number).rjust(8, '0')
                 line = {
                     "fecEmision": date_sent,
                     "fecResumen": date_sent,
@@ -1209,11 +1209,11 @@ class AccountMove(models.Model):
                     "totValExportado": "0",
                     "monValGratuito": "%.2f" % inv.l10n_pe_edi_amount_free,
                     "totOtroCargo": "0",
-                    "totImpCpe": "%.2f" % inv.amount_total_signed,
+                    "totImpCpe": "%.2f" % inv.amount_total,
 
                     "tipDocModifico": "03",
                     "serDocModifico": str(inv.l10n_pe_edi_origin_move_id.sequence_prefix)[0:4],
-                    "numDocModifico": inv.sequence_number.rjust(8, '0'),
+                    "numDocModifico": str(inv.sequence_number).rjust(8, '0'),
                     "tipRegPercepcion": "",
                     "porPercepcion": "",
                     "monBasePercepcion": "",
