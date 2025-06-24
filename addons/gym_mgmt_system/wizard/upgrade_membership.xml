@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="upgrade_membership_wizard" model="ir.ui.view">
+        <field name="name">upgrade.membership.wizard.view</field>
+        <field name="model">upgrade.membership.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Seleccionar datos a actualizar">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="membership_id" invisible="1" force_save="1"/>
+                            <field name="order_id" invisible="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="partner_id"/>
+                            <field name="membership_scheme"/>
+                            <field name="membership_fees"/>
+                            <field name="amount_total"/>
+                            <field name="amount_diff"/>
+                        </group>
+                        <group>
+                            <field name="journal_id"/>
+                            <field name="journal_rec_id"/>
+                            <field name="date_invoice"/>
+                            <!-- <field name="reference"/> -->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Detalle">
+                            <field name="line_ids" nolabel="1" >
+                                <tree editable="bottom" create="1" edit="1" delete="1">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="payment_mode_id" options="{'no_create': 1}"/>
+                                    <field name="type" invisible="1"/>
+                                    <field name="communication" attrs="{'readonly':[('type','=','cash')]}"/>
+                                    <field name="amount" sum="Total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button string="Procesar pagos" name="action_process_sale" 
+                        type="object" class="btn-primary" icon="fa-gear"/>
+                    <button string="Cerrar" name="cancel" special="cancel" class="oe_link oe_inline"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_upgrade_membership_wizard" model="ir.actions.act_window">
+        <field name="name">Asistente de actualización</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">upgrade.membership.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- wizard action on res.partner -->
+    <act_window id="upgrade_membership_action"
+        name="Cambiar plan"
+        binding_model="gym.membership"
+        res_model="upgrade.membership.wizard"
+        view_mode="form" target="new"
+        groups="gym_mgmt_system.group_gym_operator"/>
+</odoo>

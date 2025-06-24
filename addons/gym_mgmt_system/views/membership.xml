@@ -30,7 +30,7 @@
             <form>
                 <header>
                     <button string="Confirmar Membresia" type="object" name="create_membership_sale" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': ['|', '|', ('membership_fees','=',0.0), ('state', '!=', 'confirm'), ('payment_state', 'in', ('paid','in_payment'))]}" groups="gym_mgmt_system.group_gym_operator"/>
+                    <button name="%(action_view_payment_mode_wizard)d" type="action" string="Registrar Pagos" class="oe_highlight" attrs="{'invisible': ['|', '|', '|', ('membership_fees','=',0.0), ('state', '!=', 'confirm'), ('payment_state', 'in', ('paid','in_payment')), ('discount','&gt;',99)]}" groups="gym_mgmt_system.group_gym_operator"/>
                     <button string="Abrir y Firmar Contrato" type="object" name="open_sale_order" attrs="{'invisible': ['|', ('state', '!=', 'confirm'), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
                     <button string="Enviar Anexo 3" type="object" name="send_parent_signature" attrs="{'invisible': [('state', '!=', 'confirm'), ('invoice_id', '!=', False)]}"/>
                     <button string="Imprimir Comprobante" type="object" name="print_invoice" attrs="{'invisible': ['|', ('invoice_id', '=', False), ('payment_state', 'not in', ('paid','in_payment'))]}"/>
@@ -245,6 +245,7 @@
             </header>
             <tree default_order="create_date desc">
                 <field name="create_date" optional="hide"/>
+                <field name="company_id" optional="hide"/>
                 <field name="reference"/>
                 <field name="vat" optional="hide"/>
                 <field name="member"/>
@@ -254,6 +255,7 @@
                 <field name="membership_date_from"/>
                 <field name="membership_date_to"/>
                 <field name="invoice_id" optional="hide"/>
+                <field name="sale_order_id" optional="hide"/>
             </tree>
         </field>
     </record>
@@ -333,4 +335,43 @@
             </xpath>
         </field>
     </record>
+
+    <!-- membership.transfer -->
+    <record id="membership_transfer_tree" model="ir.ui.view">
+        <field name="name">membership.transfer.tree</field>
+        <field name="model">membership.transfer</field>
+        <field name="arch" type="xml">
+            <tree default_order="create_date desc">
+                <field name="number_transfer"/>
+                <field name="client2_id"/>
+                <field name="client_id"/>
+                <field name="contract_id"/>
+                <field name="contract2_id"/>
+                <field name="date_transfer"/>
+                <field name="days_transferred"/>
+                <field name="currente_transfer"/>
+                <field name="reason_transfer" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_membership_transfer" model="ir.actions.act_window">
+        <field name="name">Traspasos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">membership.transfer</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <!-- <field name="search_view_id" ref="view_membership_transfer_filter"/> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first Transfer!
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_membership_transfer"
+            name="Traspasos"
+            parent="gym_member_root"
+            action="action_membership_transfer"
+            sequence="40"/>
 </odoo>
