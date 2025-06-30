@@ -64,7 +64,7 @@
                             <field name="journal_id" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="paid_amount"/>
                             <field name="adendum" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
-                            <field name="is_send"/>
+                            <field name="is_send" invisible="1"/>
                         </group>
                         <group>
                             <field name="membership_fees" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
@@ -78,7 +78,7 @@
                                 <field name="membership_date_to" required="1"/>
                             </div> -->
                             <field name="membership_date_from" required="1" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
-                            <field name="membership_date_to" required="1"/>
+                            <field name="membership_date_to" required="1" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="state_contract" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="type_contract" attrs="{'readonly': [('state', 'in', ['confirm','cancelled'])]}"/>
                             <field name="days_transferred" attrs="{'invisible': [('type_contract', '!=', '3')]}"/>
@@ -252,6 +252,8 @@
                 <field name="membership_scheme"/>
                 <field name="membership_fees"/>
                 <field name="state"/>
+                <field name="state_contract" optional="show"/>
+                <field name="type_contract" optional="hide"/>
                 <field name="membership_date_from"/>
                 <field name="membership_date_to"/>
                 <field name="invoice_id" optional="hide"/>

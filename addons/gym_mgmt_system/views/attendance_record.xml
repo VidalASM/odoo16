@@ -62,12 +62,12 @@
         <field name="model">attendace.record</field>
         <field name="arch" type="xml">
             <form string="Asistencias">
+                <field name="success" invisible="1"/>
                 <div class="alert alert-danger" role="alert" attrs="{'invisible': 
-                [('message','not in',['El socio no tiene plan activo','No se encontraron coincidencias'])]}">
+                ['|',('message','=',False),('success','=',True)]}">
                     <span><strong><field name="message"/></strong></span>
                 </div>
-                <div class="alert alert-success" role="alert" attrs="{'invisible': 
-                ['|',('message','=',False),('message','in',['El socio no tiene plan activo','No se encontraron coincidencias'])]}">
+                <div class="alert alert-success" role="alert" attrs="{'invisible': ['|',('message','=',False),('success','=',False)]}">
                     <span><strong><field name="message"/></strong></span>
                 </div>
                 <div class="row">

@@ -767,6 +767,7 @@ class AttendanceRecord (models.Model):
     info = fields.Text(string=u'Detalles', readonly=True, store=False)
     message = fields.Text(string=u'Mensaje', readonly=True, store=False)
     vat = fields.Char(string=u'DNI', store=False)
+    success = fields.Boolean(string='Exitoso', default=False)
 
     @api.onchange('vat')
     def _onchange_vat(self):
@@ -782,6 +783,7 @@ class AttendanceRecord (models.Model):
                 self.contract_id = False
                 self.info = False	
         self.vat = False
+        self.success = False
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
@@ -792,9 +794,11 @@ class AttendanceRecord (models.Model):
             
             memberships = self.env['gym.membership'].search([
                 ('member', '=', self.partner_id.id),
-                ('state','in',['draft','confirm']),
-                ('membership_date_from','<=', fields.Date.today()),
-                ('membership_date_to','>=', fields.Date.today()),
+                ('state', 'in', ['draft','confirm']),
+                ('membership_date_from', '<=', fields.Date.today()),
+                ('membership_date_to', '>=', fields.Date.today()),
+                ('state', '=', 'confirm'),
+                ('state_contract', '=', 'active'),
                 # ('invoice_id.amount_residual','=',0.0),
                 ], order="membership_date_from asc")
             
@@ -819,33 +823,48 @@ class AttendanceRecord (models.Model):
             _logger.info(self.contract_id.membership_date_to)
             _logger.info(date.today())
             # self.company_id = self.contract_id.company_id
-            days_end = abs((self.contract_id.membership_date_to - date.today()).days)
-            plan = self.contract_id.membership_scheme.name
-            self.info = "Le quedan "+str(days_end)+" días de contrato\nSede del contrato: "+str(self.contract_id.company_id.name)\
-                        +"\nFecha de finalización: "+str(self.contract_id.membership_date_to) #+"\nSede de acceso: "+str(self.company_id.name)
-            if plan:
-                self.info += "\nPlan: %s"%plan
-            # Numero de referidos
-            referred = self.env['referred.record']
-            c_month = datetime.today().month
-            c_year = datetime.today().year
-            start_date = datetime(c_year, c_month, 1)
-            end_date = datetime(c_year, c_month, calendar.mdays[c_month])
-            count_referred = referred.search_count([('date','>=',start_date), ('date','<=',end_date),
-                ('partner_id','=',self.partner_id.id), ('state','=','activa')])
-            # if len(count_referred) > 0:
-            self.info += "\nReferidos en el mes actual: %s"%str(count_referred)
-            
-            # Creacion de asistencia
-            attendance = self.create({
-                'name': self.name,
-                'date_record': fields.datetime.now(),
-                'contract_id': self.contract_id.id or False,
-                'company_id': self.company_id.id or False,
-                'partner_id': self.partner_id.id or False,
-            })
-            self.message = "¡Asistencia exitosa!"
-            self.message += ("\n%s : \n%s" % (attendance.partner_id.name, fields.Datetime.from_string(attendance.date_record) - timedelta(hours=5)))
+            order_id = self.contract_id.sale_order_id
+            invoice_id = self.contract_id.invoice_id
+            payment = False
+            if order_id and self.contract_id.membership_fees == 0:
+                payment = True
+            else:
+                if not invoice_id or (invoice_id and invoice_id.payment_state not in ('in_payment','paid')):
+                    self.message = "La venta no se encuentra pagada"
+                elif not order_id.signature:
+                    self.message = "El contrato no se encuentra firmado"
+                else:
+                    payment = True
+
+            if payment:
+                days_end = abs((self.contract_id.membership_date_to - date.today()).days)
+                plan = self.contract_id.membership_scheme.name
+                self.info = "Le quedan "+str(days_end)+" días de contrato\nSede del contrato: "+str(self.contract_id.company_id.name)\
+                            +"\nFecha de finalización: "+str(self.contract_id.membership_date_to) #+"\nSede de acceso: "+str(self.company_id.name)
+                if plan:
+                    self.info += "\nPlan: %s"%plan
+                # Numero de referidos
+                referred = self.env['referred.record']
+                c_month = datetime.today().month
+                c_year = datetime.today().year
+                start_date = datetime(c_year, c_month, 1)
+                end_date = datetime(c_year, c_month, calendar.mdays[c_month])
+                count_referred = referred.search_count([('date','>=',start_date), ('date','<=',end_date),
+                    ('partner_id','=',self.partner_id.id), ('state','=','activa')])
+                # if len(count_referred) > 0:
+                self.info += "\nReferidos en el mes actual: %s"%str(count_referred)
+                
+                # Creacion de asistencia
+                attendance = self.create({
+                    'name': self.name,
+                    'date_record': fields.datetime.now(),
+                    'contract_id': self.contract_id.id or False,
+                    'company_id': self.company_id.id or False,
+                    'partner_id': self.partner_id.id or False,
+                })
+                self.message = "¡Asistencia exitosa!"
+                self.message += ("\n%s : \n%s" % (attendance.partner_id.name, fields.Datetime.from_string(attendance.date_record) - timedelta(hours=5)))
+                self.success = True
         else:
             self.info = False
 
