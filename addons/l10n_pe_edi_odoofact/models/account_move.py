@@ -638,16 +638,17 @@ class AccountMove(models.Model):
             and x.l10n_pe_edi_is_einvoice
             and not x.l10n_pe_edi_ose_accepted
         ):
-            rec.l10n_pe_edi_request_id.action_api_connect("generar")
-            if (
-                rec.l10n_pe_edi_request_id.log_id
-                and rec.l10n_pe_edi_request_id.log_id.json_response
-            ):
-                json_response = json.loads(
-                    rec.l10n_pe_edi_request_id.log_id.json_response
-                )
-                if json_response.get("codigo", 0) == 23:
-                    rec.l10n_pe_edi_request_id.action_api_connect("consultar")
+            # rec.l10n_pe_edi_request_id.action_api_connect("generar")
+            # if (
+            #     rec.l10n_pe_edi_request_id.log_id
+            #     and rec.l10n_pe_edi_request_id.log_id.json_response
+            # ):
+            #     json_response = json.loads(
+            #         rec.l10n_pe_edi_request_id.log_id.json_response
+            #     )
+            #     if json_response.get("codigo", 0) == 23:
+            #         rec.l10n_pe_edi_request_id.action_api_connect("consultar")
+            rec._get_invoice_values_sfs()
 
     def action_document_check(self):
         """
@@ -1251,3 +1252,181 @@ class AccountMove(models.Model):
                 with open(path_file_rc, 'w') as f:
                     json.dump(values, f)
                 idx += 1
+
+    def _get_invoice_values_sfs(self):
+        """
+        Prepare the dict of values to create the request for electronic invoice. Valid for SFS.
+        """
+        if not self.l10n_latam_document_type_id:
+            raise UserError(_('Please define Edocument type on this invoice.'))
+        currency_exchange = self.currency_id.with_context(date=self.invoice_date)._get_conversion_rate(self.company_id.currency_id, self.currency_id, self.env.user.company_id, self.invoice_date)
+        if currency_exchange == 0:
+            raise UserError(_('The currency rate should be different to 0.0, Please check the rate at %s' ) % self.invoice_date) 
+        commercial = self.commercial_partner_id
+        commercial_doc_type = commercial.l10n_latam_identification_type_id
+        currency = CURRENCY.get(self.currency_id.name, False)
+        values = {}
+        values['cabecera'] = {
+            'tipOperacion': '01'+str(self.l10n_pe_edi_odoofact_operation_type).rjust(2, '0'),
+            'fecEmision': self.invoice_date.strftime("%Y-%m-%d"),
+            'horEmision': self.write_date.time().strftime("%H:%M:%S"),
+            'fecVencimiento': self.invoice_date_due and self.invoice_date_due.strftime("%Y-%m-%d") or "",
+            'codLocalEmisor': self.l10n_pe_edi_shop_id and self.l10n_pe_edi_shop_id.code or '0000',
+            'tipDocUsuario': commercial_doc_type.l10n_pe_vat_code,
+            'numDocUsuario': commercial.vat or '00000000',
+            'rznSocialUsuario': commercial.name,
+            'tipMoneda': currency,
+            'sumTotTributos': "%.2f" % abs(self.amount_tax),
+            'sumTotValVenta': "%.2f" % abs(self.amount_untaxed),
+            'sumPrecioVenta': "%.2f" % abs(self.amount_total),
+            'sumDescTotal': "%.2f" % abs(self.l10n_pe_edi_amount_discount),
+            'sumOtrosCargos': '00.00',
+            'sumTotalAnticipos': "%.2f" % self.l10n_pe_edi_amount_advance,
+            'sumImpVenta': "%.2f" % abs(self.amount_total),
+            'ublVersionId': '2.1',
+            'customizationId': '2.0',
+        }
+        if self.l10n_latam_document_type_id.internal_type != 'invoice':
+            codMotivo = self.l10n_pe_edi_reversal_type_id and self.l10n_pe_edi_reversal_type_id.code or ''
+            if self.l10n_latam_document_type_id.internal_type == 'debit_note':
+                codMotivo = self.l10n_pe_edi_debit_type_id and self.l10n_pe_edi_debit_type_id.code or '',
+            values['cabecera'] = {
+                'tipOperacion': '01'+str(self.l10n_pe_edi_odoofact_operation_type).rjust(2, '0'),
+                'fecEmision': self.invoice_date.strftime("%Y-%m-%d"),
+                'horEmision': self.write_date.time().strftime("%H:%M:%S"),
+                'codLocalEmisor': self.l10n_pe_edi_shop_id and self.l10n_pe_edi_shop_id.code or '0000',
+                'tipDocUsuario': commercial_doc_type.l10n_pe_vat_code,
+                'numDocUsuario': commercial.vat or '00000000',
+                'rznSocialUsuario': commercial.name,
+                'tipMoneda': currency,
+                'codMotivo': codMotivo,
+                'desMotivo': self.ref or '',
+                'tipDocAfectado': self.l10n_pe_edi_origin_move_id and self.l10n_pe_edi_origin_move_id.l10n_latam_document_type_id.code or '12',
+                'numDocAfectado': self.l10n_pe_edi_origin_move_id and self.l10n_pe_edi_origin_move_id.name or 'XXXX-99999999',
+                'sumTotTributos': "%.2f" % abs(self.amount_tax),
+                'sumTotValVenta': "%.2f" % abs(self.amount_untaxed),
+                'sumPrecioVenta': "%.2f" % abs(self.amount_total),
+                'sumDescTotal': "%.2f" % abs(self.l10n_pe_edi_amount_discount),
+                'sumOtrosCargos': '00.00',
+                'sumTotalAnticipos': "%.2f" % self.l10n_pe_edi_amount_advance,
+                'sumImpVenta': "%.2f" % abs(self.amount_total),
+                'ublVersionId': '2.1',
+                'customizationId': '2.0',
+            }
+        values['detalle'] = []
+        values['tributos'] = []
+        values['leyendas'] = [{
+            'codLeyenda': '1000',
+            'desLeyenda': 'SON ' + self._get_amount_in_words(),
+        }]
+        tax_groups = []
+        codT = {'IGV':'VAT', 'IVAP':'VAT', 'ISC':'EXC', 'ICBPER':'OTH', 'EXP':'FRE', 'GRA':'FRE', 'EXO':'VAT', 'INA':'FRE', 'OTROS':'OTH'}
+        for line in self.invoice_line_ids:
+            if line.display_type == 'product':
+                taxes_discount = line.tax_ids.compute_all(line.price_unit * (1 - (line.discount or 0.0) / 100.0), line.quantity, line.currency_id, line.quantity, product=line.product_id, partner=line.partner_id, is_refund=line.move_id.move_type in ('out_refund', 'in_refund'))
+                for tax in line.tax_ids:
+                    tax_name = tax.tax_group_id.name
+                    igv_taxes_ids = line.tax_ids.filtered(lambda r: r.tax_group_id.name == tax_name)
+                    igv_amount = sum( r['amount'] for r in taxes_discount['taxes'] if r['id'] in igv_taxes_ids.ids)
+                    subtot = abs(line.l10n_pe_edi_amount_free if line.l10n_pe_edi_free_product else line.price_subtotal)
+                    if tax_name in tax_groups:
+                        val_idx = values['tributos'][tax_groups.index(tax_name)]
+                        val_idx['mtoBaseImponible'] = "%.2f" % (float(val_idx['mtoBaseImponible']) + subtot)
+                        val_idx['mtoTributo'] = "%.2f" % (float(val_idx['mtoTributo']) + igv_amount)
+                    else:
+                        tax_groups.append(tax_name)
+                        values['tributos'].append({
+                            'ideTributo': tax.l10n_pe_edi_tax_code,
+                            'nomTributo': tax_name,
+                            'codTipTributo': codT[tax_name],
+                            'mtoBaseImponible': "%.2f" % subtot,
+                            'mtoTributo': "%.2f" % igv_amount,
+                        })
+                baseTri = "%.2f" % (abs(line.l10n_pe_edi_amount_free if line.l10n_pe_edi_free_product else line.price_subtotal))
+                taxes = line.tax_ids.mapped('tax_group_id').mapped('name')
+                def codTri(codTax):
+                    return line.tax_ids.filtered(lambda r: r.tax_group_id.name == codTax)[0]
+                val_line = {
+                    'codUnidadMedida': 'ZZ' if line.product_id.type == 'service' else 'NIU',
+                    'ctdUnidadItem': "%.2f" % abs(line.quantity),
+                    'codProducto': line.product_id and line.product_id.default_code or '-',
+                    'codProductoSUNAT': line.product_id.l10n_pe_edi_product_code_id and line.product_id.l10n_pe_edi_product_code_id.code or '-',
+                    'desItem': line.name,
+                    'mtoValorUnitario': "%.6f" % abs((line.price_total / line.quantity) / 1.18), #abs(line.l10n_pe_edi_price_unit_excluded),
+                    'sumTotTributosItem': "%.2f" % sum( r['amount'] for r in taxes_discount['taxes']),
+                    'codTriIGV': '1000',
+                    'mtoIgvItem': "%.2f" % abs(line.l10n_pe_edi_igv_amount),
+                    'mtoBaseIgvItem': baseTri,
+                    'nomTributoIgvItem': tax_name if tax_name in ['IGV'] else 'IGV',
+                    'codTipTributoIgvItem': 'VAT',
+                    'tipAfeIGV': line.l10n_pe_edi_tax_type.code_of, #line.l10n_pe_edi_igv_type.code,
+                    'porIgvItem': str(self.l10n_pe_edi_igv_percent),
+                    'codTriISC': '-',
+                    'mtoIscItem': '00.00',
+                    'mtoBaseIscItem': '00.00',
+                    'nomTributoIscItem': '',
+                    'codTipTributoIscItem': '',
+                    'tipSisISC': '',
+                    'porIscItem': '15.00',
+                    'codTriOtroItem': '',
+                    'mtoTriOtroItem': "%.2f" % line.l10n_pe_edi_icbper_amount,
+                    'mtoBaseTriOtroItem': baseTri if 'OTROS' in taxes else '00.00',
+                    'nomTributoIOtroItem': 'OTROS' if 'OTROS' in taxes else '',
+                    'codTipTributoIOtroItem': codT['OTROS'] if 'OTROS' in taxes else '',
+                    'porTriOtroItem': "%.2f" % codTri('OTROS').amount if 'OTROS' in taxes else '15.00',
+                    'codTriIcbper': codTri('ICBPER').l10n_pe_edi_tax_code if 'ICBPER' in taxes else '',
+                    'mtoTriIcbperItem': "%.2f" % line.l10n_pe_edi_icbper_amount,
+                    'ctdBolsasTriIcbperItem': "%.2f" % abs(line.quantity) if 'ICBPER' in taxes else '00.00',
+                    'nomTributoIcbperItem': 'ICBPER' if 'ICBPER' in taxes else '',
+                    'codTipTributoIcbperItem': codT['ICBPER'] if 'ICBPER' in taxes else '',
+                    'mtoTriIcbperUnidad': "%.2f" % codTri('ICBPER').amount if 'ICBPER' in taxes else '00.00',
+                    'mtoPrecioVentaUnitario': "%.2f" % abs(line.l10n_pe_edi_price_unit_included) if line.l10n_pe_edi_price_unit_included > 0.005 else "%.4f" % abs(line.l10n_pe_edi_price_unit_included),
+                    'mtoValorVentaItem': "%.2f" % abs(line.l10n_pe_edi_amount_free if line.l10n_pe_edi_free_product else line.price_subtotal),
+                    'mtoValorReferencialUnitario': '00.00',
+                }
+                values['detalle'].append(val_line)
+        if self.journal_id.l10n_latam_document_type_id.code == '01':
+            values['datoPago'] = {
+                'formaPago': 'Contado',
+                'mtoNetoPendientePago': '0.00',
+                'tipMonedaMtoNetoPendientePago': self.currency_id.name,
+            }
+            values['detallePago'] = []
+            if self.invoice_date_due and self.invoice_date_due > self.invoice_date:
+                values['datoPago'] = {
+                    'formaPago': 'Credito',
+                    'mtoNetoPendientePago': "%.2f" % abs(self.amount_total),
+                    'tipMonedaMtoNetoPendientePago': self.currency_id.name,
+                }
+                dato_line = {
+                    'mtoCuotaPago': "%.2f" % abs(self.amount_total),
+                    'fecCuotaPago': self.invoice_date_due and self.invoice_date_due.strftime("%Y-%m-%d") or "",
+                    'tipMonedaCuotaPago': self.currency_id.name,
+                }
+                values['detallePago'].append(dato_line)
+                if self.invoice_payment_term_id:
+                    values['detallePago'].pop()
+                    counted_total = 0.0
+                    if not self.l10n_pe_edi_dues_ids:
+                        raise UserError(_('Please define credit lines on this invoice.'))
+                    else:
+                        for due in self.l10n_pe_edi_dues_ids:
+                            dato_line = {
+                                'mtoCuotaPago': "%.2f" % due.amount,
+                                'fecCuotaPago': due.paid_date.strftime("%Y-%m-%d"),
+                                'tipMonedaCuotaPago': self.currency_id.name,
+                            }
+                            counted_total += due.amount
+                            values['detallePago'].append(dato_line)
+                    values['datoPago']["mtoNetoPendientePago"] = "%.2f" % (abs(self.amount_total) - counted_total)
+                
+        _logger.info(values)
+        ruc_inv = self.company_id.vat
+        serie = str(self.sequence_prefix)[0:4]
+        num_inv = str(self.sequence_number).rjust(8, '0')
+        title = ruc_inv +'-'+ self.l10n_latam_document_type_id.code +'-'+ serie + '-' + num_inv + '.JSON'
+
+        my_path = os.path.join(self.company_id.sfs_path, 'DATA')
+        path_file_det = os.path.join(my_path,title)
+        with open(path_file_det, 'w') as f:
+            json.dump(values, f)
