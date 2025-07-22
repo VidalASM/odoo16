@@ -370,10 +370,51 @@
         </field>
     </record>
 
+    <!-- membership.freeze -->
+    <record id="membership_freeze_tree" model="ir.ui.view">
+        <field name="name">membership.freeze.tree</field>
+        <field name="model">membership.freeze</field>
+        <field name="arch" type="xml">
+            <tree default_order="create_date desc">
+                <field name="contract_id"/>
+                <field name="number_freeze"/>
+                <field name="cause"/>
+                <field name="date_freeze"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="quantity_days"/>
+                <field name="counter_id" optional="hide"/>
+                <field name="state_freeze"/>
+                <field name="is_force" optional="hide"/>
+                <field name="sede_id" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_membership_freeze" model="ir.actions.act_window">
+        <field name="name">Traspasos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">membership.freeze</field>
+        <field name="view_mode">tree,pivot,graph</field>
+        <!-- <field name="search_view_id" ref="view_membership_transfer_filter"/> -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first freeze!
+            </p>
+        </field>
+    </record>
+
     <menuitem
             id="menu_membership_transfer"
             name="Traspasos"
             parent="gym_member_root"
             action="action_membership_transfer"
             sequence="40"/>
+
+    <menuitem
+            id="menu_membership_freeze"
+            name="Congelamientos"
+            parent="gym_member_root"
+            action="action_membership_freeze"
+            sequence="41"/>
 </odoo>
