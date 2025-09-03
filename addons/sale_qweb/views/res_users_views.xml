@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_users_view_form_signature" model="ir.ui.view">
+        <field name="name">res.users.form.sign.inherit.signature</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="sign.res_users_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sign']" position="attributes">
+                <!-- Permitimos a administradores Y a usuarios de ventas -->
+                <attribute name="groups">base.group_system,sales_team.group_sale_salesman</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
