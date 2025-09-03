@@ -581,10 +581,10 @@ class SaleConfirm(models.Model):
         odoo = odoorpc.ODOO('77.37.43.9', port=10069, protocol='jsonrpc')
         odoo.login('REVO_DB_02','admin-dev','Admin1*')
         ids_list ={
-            'visa': 107, #42, #93, #121, #114, #107, #100,
-            'mastercard': 124, #43, #126, #125, #122, #124, #123,
-            'efectivo': 106, #25, #92, #120, #113, #106, #99,
-            'company': 23, #3, #21, #25, #24, #23, #22,
+            'visa': 114, #42, #93, #121, #114, #107, #100,
+            'mastercard': 122, #43, #126, #125, #122, #124, #123,
+            'efectivo': 113, #25, #92, #120, #113, #106, #99,
+            'company': 24, #3, #21, #25, #24, #23, #22,
             'type': 2
         }
 
@@ -826,7 +826,7 @@ class AttendanceRecord (models.Model):
             order_id = self.contract_id.sale_order_id
             invoice_id = self.contract_id.invoice_id
             payment = False
-            if order_id and self.contract_id.membership_fees == 0:
+            if order_id and (self.contract_id.membership_fees == 0 or self.contract_id.discount == 100.0):
                 payment = True
             else:
                 if not invoice_id or (invoice_id and invoice_id.payment_state not in ('in_payment','paid')):
